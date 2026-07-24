@@ -70,8 +70,8 @@
 .drawer-search input:focus { border-color: #60A5FA; box-shadow: 0 0 0 3px rgba(96,165,250,0.35); }
 .drawer-search button { flex: 0 0 auto; background: #FF6B2B; color: #0A1628; border: none; border-radius: 8px; padding: 0 14px; font-size: 1rem; cursor: pointer; transition: background 0.2s; }
 .drawer-search button:hover { background: #e85e22; }
-.mobile-drawer-guides { border-left: 3px solid #60A5FA !important; padding-left: 12px !important; color: #8FC0FF !important; margin-top: 4px; }
-.mobile-drawer-guides:hover { color: #FFFFFF !important; }
+.mobile-drawer-guides { background: #1A6BFF !important; border-left: 3px solid #60A5FA !important; padding: 12px !important; padding-left: 12px !important; color: #FFFFFF !important; margin-top: 4px; border-radius: 6px; border-bottom: none !important; box-shadow: 0 2px 10px rgba(26,107,255,0.35); }
+.mobile-drawer-guides:hover { color: #FFFFFF !important; background: #2563EB !important; }
 .mobile-drawer-dispatch { border-left: 3px solid #FF6B2B !important; padding-left: 12px !important; color: #FF8C2A !important; }
 .mobile-drawer-dispatch:hover { color: #FFB347 !important; }
 .mobile-drawer-cta { background: #FF6B2B !important; color: #0A1628 !important; text-align: center; border-radius: 6px; padding: 14px !important; border-bottom: none !important; margin-top: 8px; }
