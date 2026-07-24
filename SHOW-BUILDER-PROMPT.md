@@ -6,7 +6,7 @@ Paste this entire document at the start of a new chat session before requesting 
 
 ## What This Project Is
 
-Vegas Sidekick (`vegassidekick.com`) is a **static HTML website** for Las Vegas show ticket discovery and affiliate booking. No build system, no npm, no framework — pure HTML/CSS/JS files deployed via Netlify on push to `main`.
+Vegas Sidekick (`vegassidekick.com`) is a **static HTML website** for Las Vegas show ticket discovery and affiliate booking. No build system, no npm, no framework — pure HTML/CSS/JS files deployed via Cloudflare Pages on push to `main`.
 
 **Revenue model:** Affiliate commissions via ticket links in the format:
 ```
@@ -20,7 +20,7 @@ https://spotlight.vegas/shows/{category-slug}/{show-slug}/ref/vegassidekick
 ## Repository
 
 - **Repo:** `VegasSidekick/vegas-sidekick` on GitHub
-- **Deploy branch:** `main` — Netlify auto-deploys on push
+- **Deploy branch:** `main` — Cloudflare Pages auto-deploys on push
 - **Feature branches:** `claude/feature-description-<id>` for AI-assisted work
 - **Git push** works normally from this environment
 
@@ -737,7 +737,7 @@ git commit -m "Add Show Name show page"
 git push -u origin claude/feature-name-<id>
 ```
 
-After pushing to `main`, Netlify deploys automatically. No other steps needed.
+After pushing to `main`, Cloudflare Pages deploys automatically. No other steps needed.
 
 ---
 

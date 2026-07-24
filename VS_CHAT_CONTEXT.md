@@ -40,7 +40,7 @@ Vegas Sidekick (`vegassidekick.com`) is a static affiliate site for Las Vegas sh
 - **Deploy:** Push to `main` → Cloudflare Pages auto-deploys. No build commands.
 - **Git push is blocked** in the remote Claude Code environment (proxy returns 403). File pushes go through the GitHub MCP API instead — see CLAUDE.md for the Python snippet.
 - After every MCP push, sync local: `git fetch origin main && git reset --hard origin/main`
-- Cloudflare Worker deploys separately via Cloudflare dashboard (not Netlify).
+- Cloudflare Worker deploys separately via Cloudflare dashboard (apart from the Cloudflare Pages static deploy).
 
 ---
 
@@ -367,7 +367,7 @@ Image paths are **root-relative** (`/images/filename.jpg`) — pages live in sub
 ## Known Gaps & Open Items
 
 1. **Algolia index not auto-synced** — adding a show page doesn't update the search index. Must be manually populated via Algolia dashboard or API.
-2. **No category landing pages** — `/shows/comedy/`, `/shows/magic/`, etc. don't exist as curated pages; those URL paths would 404 unless Netlify or `shows/index.html` handles them. Header nav links to them — worth verifying these routes.
+2. **No category landing pages** — `/shows/comedy/`, `/shows/magic/`, etc. don't exist as curated pages; those URL paths would 404 unless Cloudflare Pages routing or `shows/index.html` handles them. Header nav links to them — worth verifying these routes.
 3. **`also-grid` show cards are hardcoded** — "You Might Also Like" on each show page points to 3 hand-picked shows. Not dynamic.
 4. **SVG seating charts are per-page** — each show has a custom hand-drawn SVG. Not pulled from any shared source.
 5. **Ticker content is hardcoded** — show-specific, must be updated manually per page.
@@ -392,7 +392,7 @@ Image paths are **root-relative** (`/images/filename.jpg`) — pages live in sub
 
 ## Git State (as of audit)
 
-- **Primary branch:** `main` (Netlify auto-deploys)
+- **Primary branch:** `main` (Cloudflare Pages auto-deploys)
 - **Active feature branch:** `claude/vegas-sidekick-audit-4naacg`
 - **Recent work:** Canonical show template established (`v-the-ultimate-variety-show`), WOW page added, "Sweet Spot" badge system formalized, SHOW-BUILDER-PROMPT.md updated
 
