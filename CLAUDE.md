@@ -35,7 +35,7 @@ vegas-sidekick/
 │       └── michael-jackson-one/index.html
 ├── index.html              # Homepage
 ├── sitemap.xml             # SEO sitemap
-└── _redirects              # Netlify routing rules
+└── _redirects              # Cloudflare Pages routing rules
 ```
 
 ---
@@ -44,7 +44,7 @@ vegas-sidekick/
 
 | Layer | Technology |
 |---|---|
-| Hosting | Netlify (static) + Cloudflare Workers (functions) |
+| Hosting | Cloudflare Pages (static) + Cloudflare Workers (functions) |
 | CMS | Decap CMS v3 (GitHub-backed) |
 | Search | Algolia InstantSearch v4 |
 | Email | Brevo (formerly Sendinblue) |
@@ -237,7 +237,7 @@ Changes apply site-wide automatically since all pages load these components.
 
 ### Deploying
 
-Push to the `main` branch (the repository's default branch). Netlify auto-deploys on push. The Cloudflare Worker (`functions/api/auth.js`) must be deployed separately via Cloudflare dashboard or Wrangler CLI.
+Push to the `main` branch (the repository's default branch). Cloudflare Pages auto-deploys on push. The Cloudflare Worker (`functions/api/auth.js`) must be deployed separately via Cloudflare dashboard or Wrangler CLI.
 
 ---
 
