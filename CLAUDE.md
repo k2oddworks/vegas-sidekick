@@ -130,9 +130,19 @@ The seating chart is an interactive SVG — clickable zones call `selectZone('id
 - **"Sweet Spot"** — the recommended *seating section* within a show's venue (e.g. "VIP is the Sweet Spot"). Used in the seating chart's zone popup/accordion badge (`🪑 Sweet Spot`), urgency pills, and FAQ copy about seating.
 - **"Sidekick Pick"** — a recommendation of the *entire show* itself (the `sp:true` flag in the `SHOWS` JS arrays on `shows/index.html` and category index pages, and the standalone `🌵 Sidekick Pick` urgency pill with no section name attached). Never append a seating section name to a "Sidekick Pick" label (e.g. never "Sidekick Pick — VIP") — that's a Sweet Spot claim, not a show-level pick.
 
-### URL Pattern for Affiliate Links
+### Affiliate Links — use the real Spotlight URL
+
+**Do NOT guess the affiliate URL from the show slug.** Spotlight's own URLs are inconsistent — different path segments (`/show/...` vs `/shows/...`), different sub-categories (`/tribute/...`), and slugs that don't match ours (extra suffixes, reworded names). There is **no reliable pattern to derive** the link.
+
+**Workflow:** Kris provides the actual Spotlight listing URL for the show. Take that URL and append `/ref/vegassidekick` to it — that's the affiliate link. Use it verbatim in every CTA slot on the page (hero, sidebar, mobile buy bar, final CTA, save pill, both seen-widget links, the JSON-LD `offers.url`, and the schedule slider's `affiliateUrl`). If Kris hasn't given the URL yet, ask for it (or leave a clearly-flagged placeholder) rather than inventing one — a wrong affiliate link silently loses revenue.
+
+Real examples (note how different they are):
 ```
-https://spotlight.vegas/shows/{category}/{show-slug}/ref/vegassidekick
+Spotlight: https://spotlight.vegas/show/tribute/mj-live-at-planet-hollywood/
+Link:      https://spotlight.vegas/show/tribute/mj-live-at-planet-hollywood/ref/vegassidekick
+
+Spotlight: https://spotlight.vegas/shows/tribute/ikons-of-rock-api/
+Link:      https://spotlight.vegas/shows/tribute/ikons-of-rock-api/ref/vegassidekick/
 ```
 
 ---
@@ -206,7 +216,7 @@ This is a one-time step per article and takes ~10 seconds. Article content, in-p
 1. Create directory: `shows/{category}/{show-slug}/`
 2. Copy an existing show page (e.g., `shows/comedy/carrot-top/index.html`) as a template
 3. Update all show-specific content: title, description, images, pricing, show times, venue, FAQ
-4. Update the affiliate ticket link to `https://spotlight.vegas/shows/{category}/{show-slug}/ref/vegassidekick`
+4. Set the affiliate ticket links from the **real Spotlight listing URL Kris provides** + `/ref/vegassidekick` — do not guess it from the slug (see **Affiliate Links** above). Update every CTA slot on the page.
 5. Add show images to `images/` directory
 6. Add the show to `sitemap.xml`
 7. Register the show in the listing pages: add an entry to the `SHOWS` array in `shows/{category}/index.html` (category listing) and in `shows/index.html` (the "All Shows" master list). The homepage `index.html` is a **curated** subset — only add a card there if the show is meant to be featured.
