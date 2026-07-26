@@ -27,7 +27,7 @@ vegas-sidekick/
 │   ├── spike-*.png/.jpg    # Mascot (Spike) assets
 │   └── news/               # CMS-managed news article images
 ├── search/
-│   └── index.html          # Algolia-powered search page
+│   └── index.html          # Client-side search page (uses /components/search-data.js)
 ├── shows/                  # Show detail pages
 │   ├── comedy/
 │   │   └── carrot-top/index.html
@@ -46,7 +46,7 @@ vegas-sidekick/
 |---|---|
 | Hosting | Cloudflare Pages (static) + Cloudflare Workers (functions) |
 | CMS | Decap CMS v3 (GitHub-backed) |
-| Search | Algolia InstantSearch v4 |
+| Search | Dependency-free client-side search (local JS dataset — no third-party service) |
 | Email | Brevo (formerly Sendinblue) |
 | Auth | GitHub OAuth (for CMS admin) |
 | Fonts | Google Fonts (Bebas Neue, Barlow, Barlow Condensed) |
@@ -183,13 +183,12 @@ Credentials are embedded in client-side code (read-only, restricted scope):
 
 | Service | Credential | Location |
 |---|---|---|
-| Algolia | App ID: `E402SBJE6D`, Search Key in source | `search/index.html` |
 | Brevo | API Key in source, List ID: `2` | `components/footer.js` |
 | GitHub OAuth | Client ID: `Ov23lit31UqvtSuPp7tJ` | `functions/api/auth.js` |
 | GitHub OAuth | Client Secret via `GITHUB_CLIENT_SECRET` env var | `functions/api/auth.js` |
 | Cloudinary | Cloud: `dvhunpinz`, API Key: `966995363786296`, Secret: in `.cloudinary` | OG image hosting |
 
-**Note:** The Algolia key is a search-only key and the Brevo key has restricted permissions. The GitHub Client Secret must be stored as an environment variable in Cloudflare Workers — never commit it to the repo.
+**Note:** The Brevo key has restricted permissions. The GitHub Client Secret must be stored as an environment variable in Cloudflare Workers — never commit it to the repo. (Site search no longer uses Algolia — it runs entirely client-side off a local JS dataset. See **Site Search** below.)
 
 The Cloudinary API credentials are stored in `.cloudinary` (gitignored). However, server-to-server uploads are blocked by Cloudinary's IP restrictions. The established workflow for OG/social images is:
 1. Kris uploads the article image to Cloudinary from his phone (Cloudinary mobile or browser)
@@ -210,7 +209,8 @@ This is a one-time step per article and takes ~10 seconds. Article content, in-p
 4. Update the affiliate ticket link to `https://spotlight.vegas/shows/{category}/{show-slug}/ref/vegassidekick`
 5. Add show images to `images/` directory
 6. Add the show to `sitemap.xml`
-7. Link the show from the relevant category section on `index.html`
+7. Register the show in the listing pages: add an entry to the `SHOWS` array in `shows/{category}/index.html` (category listing) and in `shows/index.html` (the "All Shows" master list). The homepage `index.html` is a **curated** subset — only add a card there if the show is meant to be featured.
+8. Add the show to site search: append a record to `components/search-data.js` and bump the `?v=` cache-buster on every page that loads it (see **Site Search** below). Without this the show will not appear in `/search/`.
 
 **Image order:** When multiple photos are provided for a new show page, the **first one uploaded/attached is always the hero image** — main hero slide, primary `og:image`/`twitter:image`, first entry in the Event JSON-LD `image` array — unless explicitly told otherwise. Don't guess which photo looks most "hero-like."
 
@@ -239,6 +239,15 @@ Changes apply site-wide automatically since all pages load these components.
 
 Push to the `main` branch (the repository's default branch). Cloudflare Pages auto-deploys on push. The Cloudflare Worker (`functions/api/auth.js`) must be deployed separately via Cloudflare dashboard or Wrangler CLI.
 
+### "Make Live" — standing instruction
+
+When Kris says **"make live"** (or "make it live", "publish it", "ship it"), it means: **do every step required to publish the current work so it is live on the website — then give back the live URL.** Do not ask clarifying questions and do not explain the steps first — just carry them out. Concretely:
+
+1. Commit all work on the current working branch.
+2. Get it onto `main` (fast-forward `main` to the working branch, or merge) and push `main` so Cloudflare Pages deploys.
+3. Make sure every publish step is actually done — including listing pages and the **search index** (`components/search-data.js` + `?v=` bump) for a new show, plus `sitemap.xml`.
+4. Return the live URL(s) and note the ~1–2 min CDN propagation.
+
 ---
 
 ## Naming Conventions
@@ -261,7 +270,7 @@ Push to the `main` branch (the repository's default branch). Cloudflare Pages au
 4. **Image paths are root-relative** — use `/images/filename.jpg` not relative paths, since pages exist in subdirectories.
 5. **Sitemap must be updated manually** — add new pages to `sitemap.xml` when creating new show pages.
 6. **CSS is all inline** — there is no shared stylesheet. The design system exists as repeated CSS custom properties in each page's `<style>` block.
-7. **Algolia index is external** — the search index `vegas_shows` must be populated separately via the Algolia dashboard or API. Adding a show page does not auto-index it.
+7. **Search is a local dataset, not automatic** — site search reads `components/search-data.js` (a plain JS array), matched client-side. Adding a show page does **not** add it to search. You must append a record to `search-data.js` and bump the `?v=` cache-buster on the pages that load it. See **Site Search** below.
 
 ---
 
@@ -400,15 +409,45 @@ The stop hook checks for uncommitted local changes — the local repo must alway
 
 ---
 
-## Algolia Search Index Schema
+## Site Search (client-side)
 
-The `vegas_shows` Algolia index expects records with these fields:
-- `name` — Show name
-- `venue` — Venue/hotel name
-- `description` — Short description
-- `price` — Price string (e.g., `"From $68"`)
-- `category` — Category tag (e.g., `"comedy"`, `"cirque"`)
-- `url` — Relative path to show page
+Search is **dependency-free and runs entirely in the browser** — there is no Algolia and no external service. Two files power it:
+
+- **`components/search-data.js`** — sets `window.VS_SHOWS`, a single JS array of show records (one object per show).
+- **`components/search.js`** — exposes `vsSearch(query)` / `vsNorm(s)`. It normalizes text (lowercase, strips accents), requires **every** whitespace-separated term to appear somewhere in the record (AND match), and ranks by relevance (name-prefix > name-contains > exact category, plus per-term name hits).
+
+The search page (`search/index.html`) loads both plus renders result cards. `search-data.js` is also loaded on `shows/index.html` and `index.html`.
+
+### Record schema (`search-data.js`)
+
+Each entry is an object:
+```js
+{ "name": "Ikons of Rock",                       // show name
+  "sub": "Rock's Biggest Stars in One Show",      // subtitle (optional, "")
+  "venue": "The STRAT Theater · The STRAT Hotel", // venue line
+  "cat": "Music",                                  // category label (Title Case: Comedy, Magic, Cirque, Music, Family, Adult, Spectaculars)
+  "price": 62,                                     // numeric price (for sort)
+  "pd": "$62",                                     // display price string
+  "img": "/images/ikons-of-rock-hero.webp",        // hero image ("" falls back to name text)
+  "kw": "Live Classic Rock ... Kiss Ozzy ...",     // free-text keyword blob — everything you want the show findable by
+  "url": "/shows/music/ikons-of-rock/" }           // relative path to the show page
+```
+
+The **`kw`** field is the workhorse: because matching is AND across all terms, pack it with venue names, performer/act names, categories, price, schedule words, and any synonym a visitor might type. Only `name`, `sub`, `venue`, `cat`, and `kw` are searched.
+
+### Adding / updating a show in search
+
+1. Append (or edit) the record in `components/search-data.js`.
+2. **Bump the cache-buster.** All three loaders reference it with a version query — `search-data.js?v=N`. Browsers cache per-URL, so returning visitors keep the stale dataset until the number changes. Bump `?v=` on **every** page that references it:
+   ```bash
+   grep -rl 'search-data.js?v=' --include="*.html" .   # find them
+   # then bulk-replace ?v=N -> ?v=N+1 across all of them
+   ```
+   (Same principle and pitfall as `header.js`/`footer.js` cache-busting.)
+3. Sanity-check locally with Node:
+   ```bash
+   node -e "global.window={};require('./components/search-data.js');require('./components/search.js');console.log(window.vsSearch('rock').map(s=>s.name));"
+   ```
 
 ---
 
