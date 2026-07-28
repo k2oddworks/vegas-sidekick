@@ -6,3 +6,23 @@
 /play/desert-crossing/* /play/walk-the-strip/ 301
 /shows/adult/absinthe/ /shows/spectaculars/absinthe/ 301
 /shows/adult/absinthe/* /shows/spectaculars/absinthe/ 301
+
+# Canonical trailing slash — every indexed URL in sitemap.xml and every
+# canonical tag ends in a slash. These collapse the non-trailing-slash
+# duplicates search engines sometimes crawl into the canonical version.
+# Placeholders (:name) match exactly one path segment, so they never match
+# an already-slashed URL — no redirect loops.
+/about /about/ 301
+/affiliate-disclosure /affiliate-disclosure/ 301
+/contact /contact/ 301
+/guides /guides/ 301
+/news /news/ 301
+/privacy /privacy/ 301
+/search /search/ 301
+/shows /shows/ 301
+/terms /terms/ 301
+/guides/:slug /guides/:slug/ 301
+/news/:slug /news/:slug/ 301
+/play/:slug /play/:slug/ 301
+/shows/:category /shows/:category/ 301
+/shows/:category/:slug /shows/:category/:slug/ 301
