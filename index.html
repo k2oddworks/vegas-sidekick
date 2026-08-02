@@ -2132,6 +2132,44 @@
       }, { passive: true });
     }());
 
+    // ── GRADIENT BAR POSITIONING ──
+    // header.js injects the promo/memorial banner asynchronously and grows
+    // body's padding-top to clear it, but it doesn't know about this page's
+    // own fixed .gradient-bar — without this, the bar stays glued at its
+    // hardcoded CSS top (nav height only) and cuts through the banner
+    // whenever one is showing. Reposition it below nav + banner instead.
+    (function () {
+      var gbar = document.querySelector('.gradient-bar');
+      if (!gbar) return;
+      function place() {
+        var nav = document.getElementById('vs-nav');
+        var navH = nav ? nav.getBoundingClientRect().height : (window.innerWidth <= 900 ? 60 : 84);
+        var banner = document.getElementById('vs-memorial-banner');
+        var bannerH = (banner && banner.classList.contains('vsm-visible')) ? banner.offsetHeight : 0;
+        gbar.style.top = (navH + bannerH) + 'px';
+      }
+      place();
+      window.addEventListener('resize', place);
+      var banner = document.getElementById('vs-memorial-banner');
+      if (banner) {
+        new MutationObserver(place).observe(banner, { attributes: true, attributeFilter: ['class'] });
+      } else {
+        // header.js may not have rendered the banner element yet — poll briefly.
+        var tries = 0;
+        var iv = setInterval(function () {
+          var b = document.getElementById('vs-memorial-banner');
+          tries++;
+          if (b) {
+            new MutationObserver(place).observe(b, { attributes: true, attributeFilter: ['class'] });
+            place();
+            clearInterval(iv);
+          } else if (tries > 30) {
+            clearInterval(iv);
+          }
+        }, 100);
+      }
+    }());
+
     // ── VIBE MODAL ──
     var vibeModal = document.getElementById('vibe-modal');
 
