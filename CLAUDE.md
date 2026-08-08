@@ -221,12 +221,56 @@ This is a one-time step per article and takes ~10 seconds. Article content, in-p
 6. Add the show to `sitemap.xml`
 7. Register the show in the listing pages: add an entry to the `SHOWS` array in `shows/{category}/index.html` (category listing) and in `shows/index.html` (the "All Shows" master list). The homepage `index.html` is a **curated** subset — only add a card there if the show is meant to be featured.
 8. Add the show to site search: append a record to `components/search-data.js` and bump the `?v=` cache-buster on every page that loads it (see **Site Search** below). Without this the show will not appear in `/search/`.
+9. Validate the JSON-LD before shipping: `python3 scripts/audit-event-schema.py`. See **Structured Data (JSON-LD) Requirements** below for the exact fields it checks.
 
 **Image order:** When multiple photos are provided for a new show page, the **first one uploaded/attached is always the hero image** — main hero slide, primary `og:image`/`twitter:image`, first entry in the Event JSON-LD `image` array — unless explicitly told otherwise. Don't guess which photo looks most "hero-like."
 
 **Photo policy (site-wide standard):** On every show page, the photo/camera detail card and the "Can I take photos?" FAQ should use this wording (paraphrase as needed for tone): *"Still photos may be allowed as long as they aren't distracting — please check with your usher on the way in. No flash photography."* Use this even when the source listing (e.g. Spotlight) says cameras are strictly prohibited — this is the Vegas Sidekick default going forward for all shows.
 
 **Sidekick Pick (`sp:true`):** Never set `sp:true` on a new show by default. It stays `sp:false` unless the user explicitly says to mark that specific show as a Sidekick Pick.
+
+### Structured Data (JSON-LD) Requirements
+
+Every show page's `<script type="application/ld+json">` **Event** block must include every field below — Google Search Console flags any that are missing or malformed, and it silently accumulates across pages if the wrong page gets copied as a template for the next one. Use `@type: "Event"` (not `EventSeries`) for all new show pages — it's what every show built this way uses, and it's the type that requires `startDate`/`endDate`, which keeps the schema unambiguous.
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Show Name",
+  "description": "...",
+  "image": "https://vegassidekick.com/images/{slug}-hero.webp",
+  "url": "https://vegassidekick.com/shows/{category}/{slug}/",
+  "startDate": "2026-01-01",
+  "endDate": "2027-01-01",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "organizer": { "@type": "Organization", "name": "Show Name", "url": "https://vegassidekick.com/shows/{category}/{slug}/" },
+  "location": {
+    "@type": "Place",
+    "name": "Venue Name",
+    "address": { "@type": "PostalAddress", "streetAddress": "...", "addressLocality": "Las Vegas", "addressRegion": "NV", "postalCode": "...", "addressCountry": "US" }
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "39",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "https://spotlight.vegas/.../ref/vegassidekick",
+    "validFrom": "2026-01-01"
+  },
+  "performer": { "@type": "PerformingGroup", "name": "Show Name Cast" }
+}
+```
+
+**The one gotcha that caused nearly every GSC error on this site:** `offers.price` must be a bare number string — `"39"`, never `"$39"`. Google rejects the `$`.
+
+Other rules baked into that skeleton:
+- `organizer.url` — always the show's own vegassidekick.com page (not the venue's site, not Spotlight).
+- `offers.validFrom` — required even though it's easy to forget; use `"2026-01-01"` unless there's a real on-sale date.
+- `performer` — use `PerformingGroup` with `"{Show Name} Cast"` for ensemble/cast shows, or `Person` with the performer's actual name for solo acts (Donny Osmond, Wayne Newton, Carrot Top, etc.). Never omit it.
+- `startDate`/`endDate` — required on every Event block, even for open-ended residencies. Use `"2026-01-01"`/`"2027-01-01"` as the default range unless a real end date is known.
+
+Re-run `python3 scripts/audit-event-schema.py` any time you touch a show page's JSON-LD, or as a spot check after a batch of new shows — it parses every show page's Event block and reports exactly which required field is missing or malformed, file by file. It's cheap enough to run after every build; there's no need for it to be a scheduled/recurring task. (Google's own crawl status — the actual Search Console Enhancements report — is a separate thing worth a periodic glance since it reflects Google's re-crawl schedule, not the source files, but that's a dashboard check, not something this repo can automate.)
 
 ### Adding a New Category Page
 
