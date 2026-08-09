@@ -228,6 +228,13 @@
     .trust-desc{font-size:.75rem;color:#64748B;line-height:1.4}
     .section-label{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--show);margin-bottom:8px}
     .section-title{font-family:var(--font-hero);font-size:clamp(1.6rem,5vw,2.2rem);color:var(--navy);line-height:1.1;margin-bottom:16px}
+    .gallery-section{margin-bottom:28px}
+    .gallery-grid{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:1fr 1fr;gap:10px;height:380px}
+    .gallery-grid a{position:relative;overflow:hidden;border-radius:var(--radius);display:block;background:#E2E8F2}
+    .gallery-grid a:first-child{grid-row:1 / span 2}
+    .gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+    .gallery-grid a:hover img{transform:scale(1.05)}
+    @media(max-width:700px){.gallery-grid{grid-template-columns:1fr;grid-template-rows:none;height:auto;gap:8px}.gallery-grid a{aspect-ratio:4/3}.gallery-grid a:first-child{grid-row:auto}}
     .about-body{font-size:.95rem;line-height:1.7;color:#334155}
     .about-body p{margin-bottom:14px}
     .spike-callout{border-left:4px solid var(--show);background:rgba(139,21,87,.05);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:14px 16px;margin:20px 0;font-style:italic;font-size:.88rem;color:#334155;line-height:1.6}
@@ -424,6 +431,22 @@
         </div>
         <div class="spike-callout">
           "A Vegas show that feels like nothing else on the Strip — part saloon, part circus ring, all mayhem. The crowd becomes part of the act from the moment the doors open."
+        </div>
+      </section>
+
+      <section class="section gallery-section fade-up" id="section-gallery" aria-labelledby="gallery-heading">
+        <div class="section-label">Photos</div>
+        <h2 id="gallery-heading" class="section-title">Inside the Saloon</h2>
+        <div class="gallery-grid">
+          <a href="/images/atomic-saloon-hero.webp" target="_blank" rel="noopener" aria-label="View full-size photo 1">
+            <img src="/images/atomic-saloon-hero.webp" alt="Atomic Saloon Show cast — cowboys, showgirls, acrobats and comedians on the ornate saloon stage at The Venetian Las Vegas" loading="lazy" />
+          </a>
+          <a href="/images/atomic-saloon-2.webp" target="_blank" rel="noopener" aria-label="View full-size photo 2">
+            <img src="/images/atomic-saloon-2.webp" alt="Atomic Saloon Show finale — confetti raining on performers and audience at The Venetian" loading="lazy" />
+          </a>
+          <a href="/images/atomic-saloon-3.webp" target="_blank" rel="noopener" aria-label="View full-size photo 3">
+            <img src="/images/atomic-saloon-3.webp" alt="Atomic Saloon Show performer in rhinestone cowboy costume working the crowd at The Venetian Las Vegas" loading="lazy" />
+          </a>
         </div>
       </section>
 
