@@ -125,30 +125,30 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:       #0A1628;
-      --navy-mid:   #0f1e38;
-      --blue:       #1A6BDD;
-      --blue-lt:    #4d90f0;
-      --orange:     #FF6B2B;
-      --orange-lt:  #ff8c33;
+      --navy: #1c0a3a;
+      --navy-mid: #2b0f5c;
+      --blue: #7c3aed;
+      --blue-lt: #a855f7;
+      --orange: #ff2e7e;
+      --orange-lt: #ff5fa0;
       --red:        #CC1A1A;
       --red-lt:     #e87070;
       --white:      #FFFFFF;
-      --off-white:  #F7F9FC;
-      --gray-100:   #F1F4F9;
-      --gray-200:   #E2E8F2;
+      --off-white:  #f6f5fb;
+      --gray-100:   #f4f2fb;
+      --gray-200:   #ece9f6;
       --gray-400:   #94A3B8;
-      --text:       #0F172A;
+      --text: #171225;
       --text-muted: #64748B;
       --green:      #4ade80;
-      --font-display: 'Bebas Neue', sans-serif;
-      --font-price:   'Barlow Condensed', sans-serif;
-      --font-body:    'Barlow', sans-serif;
+      --font-display: 'Plus Jakarta Sans', sans-serif;
+      --font-price:   'Plus Jakarta Sans', sans-serif;
+      --font-body:    'Inter', sans-serif;
       --font-mono:    'IBM Plex Mono', monospace;
       --radius:    12px;
       --radius-sm: 8px;
@@ -208,13 +208,13 @@
     .hero-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 0; }
     .pill { display: inline-flex; align-items: center; gap: 5px; padding: 5px 11px; border-radius: 100px; font-family: var(--font-price); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.1); }
     .pill-red { background: rgba(204,26,26,0.18); color: #e87070; border-color: rgba(204,26,26,0.3); }
-    .pill-orange { background: rgba(255,107,0,0.15); color: #ffaa66; border-color: rgba(255,107,0,0.25); }
+    .pill-orange { background: rgba(255,46,126,0.15); color: #ff85b0; border-color: rgba(255,46,126,0.25); }
     .urgency-pills { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 13px; }
     .upill { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 0.64rem; color: rgba(255,255,255,0.52); letter-spacing: 0.03em; }
     .udot { width: 5px; height: 5px; border-radius: 50%; background: var(--red-lt); animation: blink 1.8s infinite; flex-shrink: 0; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
 
-    .price-strip { background: linear-gradient(135deg, #0d1f3a 0%, #0A1628 100%); border-top: 1px solid rgba(204,26,26,0.2); padding: 18px 24px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+    .price-strip { background: linear-gradient(135deg, #0d1f3a 0%, #1c0a3a 100%); border-top: 1px solid rgba(204,26,26,0.2); padding: 18px 24px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
     .price-block { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
     .price-lbl { font-family: var(--font-mono); font-size: 0.62rem; color: rgba(255,255,255,0.38); text-transform: uppercase; letter-spacing: 0.06em; }
     .price-cur { font-family: var(--font-price); font-size: 2.4rem; font-weight: 800; color: var(--orange); line-height: 1; }
@@ -271,7 +271,7 @@
     .spike-text { color: rgba(255,255,255,0.72); font-size: 0.88rem; line-height: 1.72; }
     .spike-text strong { color: var(--red-lt); display: block; margin-bottom: 6px; font-family: var(--font-price); font-size: 1rem; letter-spacing: 0.04em; }
 
-    .email-signup { background: linear-gradient(135deg, #0d1f3a, #0A1628); border-radius: var(--radius-lg); padding: 28px 28px 28px 0; margin-bottom: 40px; display: flex; gap: 0; overflow: hidden; border: 1px solid rgba(204,26,26,0.18); }
+    .email-signup { background: linear-gradient(135deg, #0d1f3a, #1c0a3a); border-radius: var(--radius-lg); padding: 28px 28px 28px 0; margin-bottom: 40px; display: flex; gap: 0; overflow: hidden; border: 1px solid rgba(204,26,26,0.18); }
     .email-bar { width: 5px; background: linear-gradient(180deg, var(--red), #ff6b6b); flex-shrink: 0; border-radius: 3px 0 0 3px; margin-right: 24px; }
     .email-heading { font-family: var(--font-display); font-size: 3rem; color: rgba(204,26,26,0.15); letter-spacing: 0.05em; writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); flex-shrink: 0; line-height: 1; margin-right: 18px; }
     .email-body h3 { font-family: var(--font-display); font-size: 1.6rem; color: white; letter-spacing: 0.02em; margin-bottom: 8px; }
@@ -390,27 +390,27 @@
     .mbb-cta:hover { background: var(--orange-lt); }
   
   .sk-schedule{margin-bottom:50px;min-width:0;}
-  .sk-eyebrow{font-family:var(--font-mono);font-size:0.68rem;font-weight:600;color:#FF6B2B;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;}
-  .sk-sched-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.6rem,4vw,2.2rem);color:var(--navy);line-height:1;margin-bottom:10px;}
+  .sk-eyebrow{font-family:var(--font-mono);font-size:0.68rem;font-weight:600;color:#ff2e7e;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;}
+  .sk-sched-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.6rem,4vw,2.2rem);color:var(--navy);line-height:1;margin-bottom:10px;}
   .sk-sched-intro{font-size:0.95rem;color:var(--text-muted,#4B5563);line-height:1.6;margin-bottom:20px;}
   .sk-sched-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-  .sk-day{background:#EEF3FE;border:1px solid #DFE8FB;border-radius:12px;padding:20px 12px 22px;text-align:center;min-height:118px;display:flex;flex-direction:column;justify-content:center;gap:6px;}
-  .sk-day-name{font-weight:700;font-size:15px;letter-spacing:1.5px;color:#0A0F2C;}
-  .sk-day-time{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;color:#1A6BFF;line-height:1.15;}
+  .sk-day{background:#f3f0fb;border:1px solid #ece7f8;border-radius:12px;padding:20px 12px 22px;text-align:center;min-height:118px;display:flex;flex-direction:column;justify-content:center;gap:6px;}
+  .sk-day-name{font-weight:700;font-size:15px;letter-spacing:1.5px;color:#12061f;}
+  .sk-day-time{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;color:#7c3aed;line-height:1.15;}
   .sk-day-dark-label{font-size:17px;color:#B7BECF;font-weight:500;}
-  .sk-day--dark{background:#F2F4F8;border-color:#E7EAF1;}
-  .sk-day--today{background:#0A0F2C;border-color:#0A0F2C;box-shadow:0 10px 24px rgba(10,15,44,.28);transform:translateY(-2px);}
-  .sk-day--today .sk-day-name{color:#FF6B2B;}
+  .sk-day--dark{background:#f5f3fb;border-color:#efedf6;}
+  .sk-day--today{background:#12061f;border-color:#12061f;box-shadow:0 10px 24px rgba(18,6,31,.28);transform:translateY(-2px);}
+  .sk-day--today .sk-day-name{color:#ff2e7e;}
   .sk-day--today .sk-day-time{color:#fff;}
-  .sk-day--tomorrow{border:2px solid #FF6B2B;background:#FFF8F4;}
-  .sk-day-badge{font-size:11px;font-weight:700;letter-spacing:2.5px;color:#FF6B2B;}
-  .sk-day-link{display:inline-block;margin-top:4px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:.3px;color:#1A6BFF;}
-  .sk-day--today .sk-day-link{color:#FF6B2B;}
+  .sk-day--tomorrow{border:2px solid #ff2e7e;background:#fdf2f8;}
+  .sk-day-badge{font-size:11px;font-weight:700;letter-spacing:2.5px;color:#ff2e7e;}
+  .sk-day-link{display:inline-block;margin-top:4px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:.3px;color:#7c3aed;}
+  .sk-day--today .sk-day-link{color:#ff2e7e;}
   .sk-day-link:hover{text-decoration:underline;}
   .sk-sched-disclaimer{margin-top:22px;font-size:14px;color:#8A93A8;line-height:1.5;}
-  .sk-day--cta{background:linear-gradient(145deg,#1A6BFF 0%,#0e55d4 100%);border-color:#1459d6;}
+  .sk-day--cta{background:linear-gradient(145deg,#7c3aed 0%,#6a2fd0 100%);border-color:#6a2fd0;}
   .sk-day--cta .sk-day-name{color:rgba(255,255,255,0.7);}
-  .sk-day--cta .sk-day-cta-body{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:#fff;line-height:1.2;}
+  .sk-day--cta .sk-day-cta-body{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;color:#fff;line-height:1.2;}
   .sk-day--cta .sk-day-link{color:#fff;font-size:14px;}
   .sk-day--cta .sk-day-link:hover{color:#fff;}
   @media (max-width:640px){.sk-sched-grid{grid-template-columns:repeat(2,1fr);}}
@@ -423,10 +423,27 @@
   .sk-swipe-hint{font-size:14px;color:#6B7280;text-align:center;margin-top:8px;letter-spacing:0.2px;font-weight:500;}
   @media (max-width:640px){.sk-schedule--slider .sk-day{flex:0 0 108px;}}
       /* MOBILE TRUST STRIP */
-    .trust-strip-mobile { display: none; justify-content: space-between; background: var(--gray-100, #f1f4f9); border-top: 1px solid var(--gray-200, #e2e8f2); border-bottom: 1px solid var(--gray-200, #e2e8f2); padding: 10px 20px; }
-    .trust-strip-item { display: flex; align-items: center; gap: 4px; font-family: var(--font-mono, 'Barlow', sans-serif); font-size: 0.66rem; font-weight: 600; color: var(--text, #0f172a); white-space: nowrap; }
+    .trust-strip-mobile { display: none; justify-content: space-between; background: var(--gray-100, #f4f2fb); border-top: 1px solid var(--gray-200, #ece9f6); border-bottom: 1px solid var(--gray-200, #ece9f6); padding: 10px 20px; }
+    .trust-strip-item { display: flex; align-items: center; gap: 4px; font-family: var(--font-mono, 'Inter', sans-serif); font-size: 0.66rem; font-weight: 600; color: var(--text, #171225); white-space: nowrap; }
     .mob-trust-line { font-family: var(--font-mono, monospace); font-size: 0.56rem; font-weight: 600; color: rgba(147,197,253,0.7); margin-top: 3px; }
     @media (max-width: 600px) { .trust-grid { display: none; } .trust-strip-mobile { display: flex; } }
+
+/* ===== VS REDESIGN OVERRIDES — blue primary, friendly pills (appended, wins by cascade) ===== */
+:root { --primary: #3b82f6; --primary-lt: #60a5fa; }
+.hero-cta, .sb-cta, .mob-cta, .final-cta-btn, .save-pill-cta, .seen-yes { background: var(--primary) !important; }
+.hero-cta:hover, .sb-cta:hover, .mob-cta:hover, .final-cta-btn:hover, .save-pill-cta:hover { background: var(--primary-lt) !important; }
+.hero-cta, .sb-cta, .mob-cta, .final-cta-btn, .save-pill-cta { color: #fff !important; }
+.price-cur, .sb-price, .save-pill-price { color: var(--primary) !important; }
+.cta-ticket { filter: hue-rotate(75deg) saturate(1.7) brightness(1.15) drop-shadow(0 0 7px rgba(198,242,46,0.95)) !important; }
+.info-pills, .urgency-pills { gap: 8px !important; }
+.pill { padding: 7px 15px !important; border-radius: 100px !important; font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: 0.8rem !important; font-weight: 700 !important; letter-spacing: 0 !important; text-transform: none !important; background: rgba(255,255,255,0.09) !important; color: #fff !important; border: 1px solid rgba(255,255,255,0.18) !important; }
+.pill-gold, .pill-green { background: rgba(198,242,46,0.16) !important; color: #e7ff9e !important; border-color: rgba(198,242,46,0.42) !important; }
+.pill-orange { background: rgba(255,46,126,0.16) !important; color: #ffaccb !important; border-color: rgba(255,46,126,0.42) !important; }
+.upill { padding: 6px 14px !important; border-radius: 100px !important; font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: 0.74rem !important; font-weight: 700 !important; letter-spacing: 0 !important; text-transform: none !important; background: rgba(124,58,237,0.16) !important; color: #d6c6f7 !important; border: 1px solid rgba(124,58,237,0.36) !important; }
+.udot { width: 6px !important; height: 6px !important; background: #c6f22e !important; box-shadow: 0 0 6px rgba(198,242,46,0.7) !important; }
+.spike-text strong, .faq-icon { color: #ff2e7e !important; }
+.spike-callout { border-left-color: #ff2e7e !important; }
+.expect-card { border-left-color: #ff2e7e !important; }
 </style>
 </head>
 <body>
@@ -683,31 +700,31 @@
             <!-- PREMIUM -->
             <g class="seat-zone" onclick="selectZone('premium')" role="button" aria-label="Premium seating">
               <polygon points="195,74 425,74 408,118 212,118" fill="#6B2050" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-              <text x="310" y="102" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="11" font-family="'Barlow Condensed',sans-serif" font-weight="700" pointer-events="none">PREMIUM</text>
+              <text x="310" y="102" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="11" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" pointer-events="none">PREMIUM</text>
             </g>
 
             <!-- CATEGORY A — Spike's Pick -->
             <g class="seat-zone" onclick="selectZone('catA')" role="button" aria-label="Category A seating — Sweet Spot">
               <polygon points="152,128 468,128 447,182 173,182" fill="#B52020" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-              <text x="310" y="162" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="12" font-family="'Barlow Condensed',sans-serif" font-weight="700" pointer-events="none">CATEGORY A  &#9733;</text>
+              <text x="310" y="162" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="12" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" pointer-events="none">CATEGORY A  &#9733;</text>
             </g>
 
             <!-- CATEGORY B — Spike's Pick -->
             <g class="seat-zone" onclick="selectZone('catB')" role="button" aria-label="Category B seating — Sweet Spot">
               <polygon points="100,192 520,192 496,250 124,250" fill="#C4621A" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-              <text x="310" y="228" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="12" font-family="'Barlow Condensed',sans-serif" font-weight="700" pointer-events="none">CATEGORY B  &#9733;</text>
+              <text x="310" y="228" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="12" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" pointer-events="none">CATEGORY B  &#9733;</text>
             </g>
 
             <!-- CATEGORY C -->
             <g class="seat-zone" onclick="selectZone('catC')" role="button" aria-label="Category C seating">
               <polygon points="48,260 572,260 548,314 72,314" fill="#1e4060" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-              <text x="310" y="292" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="12" font-family="'Barlow Condensed',sans-serif" font-weight="700" pointer-events="none">CATEGORY C</text>
+              <text x="310" y="292" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="12" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" pointer-events="none">CATEGORY C</text>
             </g>
 
             <!-- CATEGORY D -->
             <g class="seat-zone" onclick="selectZone('catD')" role="button" aria-label="Category D seating">
               <polygon points="14,324 606,324 582,378 38,378" fill="#162a40" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-              <text x="310" y="356" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="12" font-family="'Barlow Condensed',sans-serif" font-weight="700" pointer-events="none">CATEGORY D</text>
+              <text x="310" y="356" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="12" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" pointer-events="none">CATEGORY D</text>
             </g>
 
             <!-- Side wings -->
