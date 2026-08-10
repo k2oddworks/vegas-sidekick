@@ -161,31 +161,31 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:       #0A1628;
-      --navy-mid:   #0f1e38;
-      --blue:       #1A6BDD;
-      --blue-lt:    #4d90f0;
-      --orange:     #FF6B2B;
-      --orange-lt:  #ff8c33;
+      --navy: #1c0a3a;
+      --navy-mid: #2b0f5c;
+      --blue: #7c3aed;
+      --blue-lt: #a855f7;
+      --orange: #ff2e7e;
+      --orange-lt: #ff5fa0;
       --white:      #FFFFFF;
-      --off-white:  #F7F9FC;
-      --gray-100:   #F1F4F9;
-      --gray-200:   #E2E8F2;
+      --off-white:  #f6f5fb;
+      --gray-100:   #f4f2fb;
+      --gray-200:   #ece9f6;
       --gray-400:   #94A3B8;
-      --text:       #0F172A;
+      --text: #171225;
       --text-muted: #64748B;
       --green:      #4ade80;
       --age-red:    #C0183A;
-      --show-red:   #C41230;
-      --show-red-lt:#E84060;
-      --font-display: 'Bebas Neue', sans-serif;
-      --font-price:   'Barlow Condensed', sans-serif;
-      --font-body:    'Barlow', sans-serif;
+      --show-red: #ff2e7e;
+      --show-red-lt: #ff5fa0;
+      --font-display: 'Plus Jakarta Sans', sans-serif;
+      --font-price:   'Plus Jakarta Sans', sans-serif;
+      --font-body:    'Inter', sans-serif;
       --font-mono:    'IBM Plex Mono', monospace;
       --radius:    12px;
       --radius-sm: 8px;
@@ -259,10 +259,10 @@
     .info-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 15px; }
     .pill { display: inline-flex; align-items: center; gap: 5px; padding: 4px 12px; border-radius: 100px; font-family: var(--font-mono); font-size: 0.67rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.74); border: 1px solid rgba(255,255,255,0.11); }
     .pill-red { background: rgba(196,18,48,0.18); color: #ff8090; border-color: rgba(196,18,48,0.36); }
-    .pill-orange { background: rgba(255,107,0,0.13); color: var(--orange-lt); border-color: rgba(255,107,0,0.26); }
+    .pill-orange { background: rgba(255,46,126,0.13); color: var(--orange-lt); border-color: rgba(255,46,126,0.26); }
     .pill-age { background: rgba(192,24,58,0.18); color: #ff8090; border-color: rgba(192,24,58,0.36); }
     .urgency-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 20px; }
-    .upill { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 6px; font-family: var(--font-mono); font-size: 0.63rem; font-weight: 600; letter-spacing: 0.04em; background: rgba(255,107,0,0.09); color: var(--orange-lt); border: 1px solid rgba(255,107,0,0.2); }
+    .upill { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 6px; font-family: var(--font-mono); font-size: 0.63rem; font-weight: 600; letter-spacing: 0.04em; background: rgba(255,46,126,0.09); color: var(--orange-lt); border: 1px solid rgba(255,46,126,0.2); }
     .udot { width: 5px; height: 5px; border-radius: 50%; background: var(--orange); flex-shrink: 0; animation: blink 1.6s infinite; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.36} }
 
@@ -342,7 +342,7 @@
 
     .about-body p { font-size: 0.98rem; color: var(--text); line-height: 1.78; margin-bottom: 16px; }
     .about-body p:last-child { margin-bottom: 0; }
-    .spike-callout { display: flex; gap: 13px; align-items: flex-start; background: linear-gradient(135deg, rgba(196,18,48,0.05), rgba(255,107,0,0.03)); border: 1px solid rgba(196,18,48,0.15); border-left: 4px solid var(--show-red); border-radius: var(--radius); padding: 16px 20px; margin: 20px 0; }
+    .spike-callout { display: flex; gap: 13px; align-items: flex-start; background: linear-gradient(135deg, rgba(196,18,48,0.05), rgba(255,46,126,0.03)); border: 1px solid rgba(196,18,48,0.15); border-left: 4px solid var(--show-red); border-radius: var(--radius); padding: 16px 20px; margin: 20px 0; }
     .spike-emoji { font-size: 1.85rem; flex-shrink: 0; margin-top: 2px; }
     .spike-text { font-family: var(--font-mono); font-size: 0.81rem; color: var(--navy); line-height: 1.62; }
     .spike-text strong { color: var(--show-red); display: block; margin-bottom: 4px; font-size: 0.63rem; letter-spacing: 0.06em; text-transform: uppercase; }
@@ -426,7 +426,7 @@
     .final-cta { background: linear-gradient(135deg, var(--show-red) 0%, #5a0010 60%, var(--navy) 100%); padding: 50px 32px; border-radius: var(--radius-lg); text-align: center; margin-bottom: 50px; position: relative; overflow: hidden; }
     .final-cta-orb { position: absolute; border-radius: 50%; pointer-events: none; }
     .orb1 { width: 260px; height: 260px; background: radial-gradient(circle, rgba(232,64,96,0.22) 0%, transparent 70%); top: -80px; right: -60px; animation: orbDrift 8s ease-in-out infinite; }
-    .orb2 { width: 180px; height: 180px; background: radial-gradient(circle, rgba(255,107,0,0.15) 0%, transparent 70%); bottom: -50px; left: -40px; animation: orbDrift 11s ease-in-out infinite reverse; }
+    .orb2 { width: 180px; height: 180px; background: radial-gradient(circle, rgba(255,46,126,0.15) 0%, transparent 70%); bottom: -50px; left: -40px; animation: orbDrift 11s ease-in-out infinite reverse; }
     @keyframes orbDrift { 0%,100%{transform:translate(0,0)} 33%{transform:translate(14px,-10px)} 66%{transform:translate(-8px,12px)} }
     .final-cta-tag { font-family: var(--font-mono); font-size: 0.64rem; color: rgba(255,255,255,0.55); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; position: relative; }
     .final-cta-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.1rem); color: white; line-height: 1; margin-bottom: 9px; position: relative; }
@@ -461,27 +461,27 @@
     }
   
   .sk-schedule{margin-bottom:50px;min-width:0;}
-  .sk-eyebrow{font-family:var(--font-mono);font-size:0.68rem;font-weight:600;color:#FF6B2B;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;}
-  .sk-sched-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.6rem,4vw,2.2rem);color:var(--navy);line-height:1;margin-bottom:10px;}
+  .sk-eyebrow{font-family:var(--font-mono);font-size:0.68rem;font-weight:600;color:#ff2e7e;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;}
+  .sk-sched-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.6rem,4vw,2.2rem);color:var(--navy);line-height:1;margin-bottom:10px;}
   .sk-sched-intro{font-size:0.95rem;color:var(--text-muted,#4B5563);line-height:1.6;margin-bottom:20px;}
   .sk-sched-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-  .sk-day{background:#EEF3FE;border:1px solid #DFE8FB;border-radius:12px;padding:20px 12px 22px;text-align:center;min-height:118px;display:flex;flex-direction:column;justify-content:center;gap:6px;}
-  .sk-day-name{font-weight:700;font-size:15px;letter-spacing:1.5px;color:#0A0F2C;}
-  .sk-day-time{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;color:#1A6BFF;line-height:1.15;}
+  .sk-day{background:#f3f0fb;border:1px solid #ece7f8;border-radius:12px;padding:20px 12px 22px;text-align:center;min-height:118px;display:flex;flex-direction:column;justify-content:center;gap:6px;}
+  .sk-day-name{font-weight:700;font-size:15px;letter-spacing:1.5px;color:#12061f;}
+  .sk-day-time{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;color:#7c3aed;line-height:1.15;}
   .sk-day-dark-label{font-size:17px;color:#B7BECF;font-weight:500;}
-  .sk-day--dark{background:#F2F4F8;border-color:#E7EAF1;}
-  .sk-day--today{background:#0A0F2C;border-color:#0A0F2C;box-shadow:0 10px 24px rgba(10,15,44,.28);transform:translateY(-2px);}
-  .sk-day--today .sk-day-name{color:#FF6B2B;}
+  .sk-day--dark{background:#f5f3fb;border-color:#efedf6;}
+  .sk-day--today{background:#12061f;border-color:#12061f;box-shadow:0 10px 24px rgba(18,6,31,.28);transform:translateY(-2px);}
+  .sk-day--today .sk-day-name{color:#ff2e7e;}
   .sk-day--today .sk-day-time{color:#fff;}
-  .sk-day--tomorrow{border:2px solid #FF6B2B;background:#FFF8F4;}
-  .sk-day-badge{font-size:11px;font-weight:700;letter-spacing:2.5px;color:#FF6B2B;}
-  .sk-day-link{display:inline-block;margin-top:4px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:.3px;color:#1A6BFF;}
-  .sk-day--today .sk-day-link{color:#FF6B2B;}
+  .sk-day--tomorrow{border:2px solid #ff2e7e;background:#fdf2f8;}
+  .sk-day-badge{font-size:11px;font-weight:700;letter-spacing:2.5px;color:#ff2e7e;}
+  .sk-day-link{display:inline-block;margin-top:4px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:.3px;color:#7c3aed;}
+  .sk-day--today .sk-day-link{color:#ff2e7e;}
   .sk-day-link:hover{text-decoration:underline;}
   .sk-sched-disclaimer{margin-top:22px;font-size:14px;color:#8A93A8;line-height:1.5;}
-  .sk-day--cta{background:linear-gradient(145deg,#1A6BFF 0%,#0e55d4 100%);border-color:#1459d6;}
+  .sk-day--cta{background:linear-gradient(145deg,#7c3aed 0%,#6a2fd0 100%);border-color:#6a2fd0;}
   .sk-day--cta .sk-day-name{color:rgba(255,255,255,0.7);}
-  .sk-day--cta .sk-day-cta-body{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:#fff;line-height:1.2;}
+  .sk-day--cta .sk-day-cta-body{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;color:#fff;line-height:1.2;}
   .sk-day--cta .sk-day-link{color:#fff;font-size:14px;}
   .sk-day--cta .sk-day-link:hover{color:#fff;}
   @media (max-width:640px){.sk-sched-grid{grid-template-columns:repeat(2,1fr);}}
@@ -495,10 +495,27 @@
   @media (max-width:640px){.sk-schedule--slider .sk-day{flex:0 0 108px;}}
   .sk-schedule--slider .sk-day-time{font-size:13px;line-height:1.3;}
       /* MOBILE TRUST STRIP */
-    .trust-strip-mobile { display: none; justify-content: space-between; background: var(--gray-100, #f1f4f9); border-top: 1px solid var(--gray-200, #e2e8f2); border-bottom: 1px solid var(--gray-200, #e2e8f2); padding: 10px 20px; }
-    .trust-strip-item { display: flex; align-items: center; gap: 4px; font-family: var(--font-mono, 'Barlow', sans-serif); font-size: 0.66rem; font-weight: 600; color: var(--text, #0f172a); white-space: nowrap; }
+    .trust-strip-mobile { display: none; justify-content: space-between; background: var(--gray-100, #f4f2fb); border-top: 1px solid var(--gray-200, #ece9f6); border-bottom: 1px solid var(--gray-200, #ece9f6); padding: 10px 20px; }
+    .trust-strip-item { display: flex; align-items: center; gap: 4px; font-family: var(--font-mono, 'Inter', sans-serif); font-size: 0.66rem; font-weight: 600; color: var(--text, #171225); white-space: nowrap; }
     .mob-trust-line { font-family: var(--font-mono, monospace); font-size: 0.56rem; font-weight: 600; color: rgba(147,197,253,0.7); margin-top: 3px; }
     @media (max-width: 600px) { .trust-grid { display: none; } .trust-strip-mobile { display: flex; } }
+
+/* ===== VS REDESIGN OVERRIDES — blue primary, friendly pills (appended, wins by cascade) ===== */
+:root { --primary: #3b82f6; --primary-lt: #60a5fa; }
+.hero-cta, .sb-cta, .mob-cta, .final-cta-btn, .save-pill-cta, .seen-yes { background: var(--primary) !important; }
+.hero-cta:hover, .sb-cta:hover, .mob-cta:hover, .final-cta-btn:hover, .save-pill-cta:hover { background: var(--primary-lt) !important; }
+.hero-cta, .sb-cta, .mob-cta, .final-cta-btn, .save-pill-cta { color: #fff !important; }
+.price-cur, .sb-price, .save-pill-price { color: var(--primary) !important; }
+.cta-ticket { filter: hue-rotate(75deg) saturate(1.7) brightness(1.15) drop-shadow(0 0 7px rgba(198,242,46,0.95)) !important; }
+.info-pills, .urgency-pills { gap: 8px !important; }
+.pill { padding: 7px 15px !important; border-radius: 100px !important; font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: 0.8rem !important; font-weight: 700 !important; letter-spacing: 0 !important; text-transform: none !important; background: rgba(255,255,255,0.09) !important; color: #fff !important; border: 1px solid rgba(255,255,255,0.18) !important; }
+.pill-gold, .pill-green { background: rgba(198,242,46,0.16) !important; color: #e7ff9e !important; border-color: rgba(198,242,46,0.42) !important; }
+.pill-orange { background: rgba(255,46,126,0.16) !important; color: #ffaccb !important; border-color: rgba(255,46,126,0.42) !important; }
+.upill { padding: 6px 14px !important; border-radius: 100px !important; font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: 0.74rem !important; font-weight: 700 !important; letter-spacing: 0 !important; text-transform: none !important; background: rgba(124,58,237,0.16) !important; color: #d6c6f7 !important; border: 1px solid rgba(124,58,237,0.36) !important; }
+.udot { width: 6px !important; height: 6px !important; background: #c6f22e !important; box-shadow: 0 0 6px rgba(198,242,46,0.7) !important; }
+.spike-text strong, .faq-icon { color: #ff2e7e !important; }
+.spike-callout { border-left-color: #ff2e7e !important; }
+.expect-card { border-left-color: #ff2e7e !important; }
 </style>
 </head>
 <body>
@@ -796,7 +813,7 @@
       <div class="seat-svg-wrap">
         <svg viewBox="0 0 560 640" xmlns="http://www.w3.org/2000/svg" aria-label="The STRAT Theater seating chart — Rouge Las Vegas" role="img">
           <path d="M140,10 Q280,52 420,10 L420,48 Q280,88 140,48 Z" fill="#222"/>
-          <text x="280" y="34" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="16" fill="white" letter-spacing="4">STAGE</text>
+          <text x="280" y="34" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="16" fill="white" letter-spacing="4">STAGE</text>
           <g class="seat-zone" onclick="selectZone('premium-vip')" tabindex="0" role="button" aria-label="Premium VIP — click for details">
             <circle cx="224" cy="72" r="6" fill="#e8704a"/><circle cx="240" cy="68" r="6" fill="#e8704a"/><circle cx="256" cy="65" r="6" fill="#e8704a"/><circle cx="272" cy="64" r="6" fill="#e8704a"/><circle cx="288" cy="65" r="6" fill="#e8704a"/><circle cx="304" cy="68" r="6" fill="#e8704a"/><circle cx="320" cy="72" r="6" fill="#e8704a"/>
             <circle cx="214" cy="88" r="6" fill="#e8704a"/><circle cx="230" cy="83" r="6" fill="#e8704a"/><circle cx="246" cy="80" r="6" fill="#e8704a"/><circle cx="262" cy="78" r="6" fill="#e8704a"/><circle cx="278" cy="77" r="6" fill="#e8704a"/><circle cx="294" cy="78" r="6" fill="#e8704a"/><circle cx="310" cy="80" r="6" fill="#e8704a"/><circle cx="326" cy="83" r="6" fill="#e8704a"/><circle cx="342" cy="88" r="6" fill="#e8704a"/>
@@ -826,8 +843,8 @@
             <circle cx="210" cy="277" r="6" fill="#9060c8"/><circle cx="226" cy="273" r="6" fill="#9060c8"/><circle cx="242" cy="270" r="6" fill="#9060c8"/><circle cx="258" cy="268" r="6" fill="#9060c8"/><circle cx="274" cy="267" r="6" fill="#9060c8"/><circle cx="290" cy="267" r="6" fill="#9060c8"/><circle cx="306" cy="268" r="6" fill="#9060c8"/><circle cx="322" cy="270" r="6" fill="#9060c8"/><circle cx="338" cy="273" r="6" fill="#9060c8"/><circle cx="354" cy="277" r="6" fill="#9060c8"/>
             <circle cx="156" cy="198" r="6" fill="#9060c8"/><circle cx="148" cy="214" r="6" fill="#9060c8"/><circle cx="160" cy="230" r="6" fill="#9060c8"/><circle cx="150" cy="246" r="6" fill="#9060c8"/><circle cx="166" cy="262" r="6" fill="#9060c8"/><circle cx="156" cy="278" r="6" fill="#9060c8"/><circle cx="136" cy="228" r="6" fill="#9060c8"/><circle cx="126" cy="246" r="6" fill="#9060c8"/><circle cx="118" cy="264" r="6" fill="#9060c8"/><circle cx="112" cy="282" r="6" fill="#9060c8"/><circle cx="106" cy="300" r="6" fill="#9060c8"/><circle cx="142" cy="264" r="6" fill="#9060c8"/><circle cx="134" cy="280" r="6" fill="#9060c8"/>
             <circle cx="404" cy="198" r="6" fill="#9060c8"/><circle cx="412" cy="214" r="6" fill="#9060c8"/><circle cx="400" cy="230" r="6" fill="#9060c8"/><circle cx="410" cy="246" r="6" fill="#9060c8"/><circle cx="394" cy="262" r="6" fill="#9060c8"/><circle cx="404" cy="278" r="6" fill="#9060c8"/><circle cx="424" cy="228" r="6" fill="#9060c8"/><circle cx="434" cy="246" r="6" fill="#9060c8"/><circle cx="442" cy="264" r="6" fill="#9060c8"/><circle cx="448" cy="282" r="6" fill="#9060c8"/><circle cx="454" cy="300" r="6" fill="#9060c8"/><circle cx="418" cy="264" r="6" fill="#9060c8"/><circle cx="426" cy="280" r="6" fill="#9060c8"/>
-            <rect x="176" y="288" width="208" height="20" rx="4" fill="rgba(255,107,0,0.28)" stroke="rgba(255,107,0,0.55)" stroke-width="1.2"/>
-            <text x="280" y="302" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="8.5" font-weight="600" fill="#ffb380" letter-spacing="0.3">🪑 SWEET SPOT</text>
+            <rect x="176" y="288" width="208" height="20" rx="4" fill="rgba(255,46,126,0.28)" stroke="rgba(255,46,126,0.55)" stroke-width="1.2"/>
+            <text x="280" y="302" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="8.5" font-weight="600" fill="#ff9ec2" letter-spacing="0.3">🪑 SWEET SPOT</text>
           </g>
           <g class="seat-zone" onclick="selectZone('rear')" tabindex="0" role="button" aria-label="Rear — click for details">
             <circle cx="78" cy="306" r="6" fill="#4ab86a"/><circle cx="62" cy="320" r="6" fill="#4ab86a"/><circle cx="88" cy="322" r="6" fill="#4ab86a"/><circle cx="72" cy="338" r="6" fill="#4ab86a"/><circle cx="96" cy="338" r="6" fill="#4ab86a"/><circle cx="80" cy="354" r="6" fill="#4ab86a"/><circle cx="104" cy="354" r="6" fill="#4ab86a"/><circle cx="88" cy="370" r="6" fill="#4ab86a"/><circle cx="112" cy="370" r="6" fill="#4ab86a"/><circle cx="96" cy="386" r="6" fill="#4ab86a"/><circle cx="120" cy="386" r="6" fill="#4ab86a"/><circle cx="104" cy="402" r="6" fill="#4ab86a"/><circle cx="130" cy="402" r="6" fill="#4ab86a"/><circle cx="56" cy="336" r="6" fill="#4ab86a"/><circle cx="48" cy="354" r="6" fill="#4ab86a"/><circle cx="40" cy="372" r="6" fill="#4ab86a"/><circle cx="36" cy="390" r="6" fill="#4ab86a"/><circle cx="54" cy="390" r="6" fill="#4ab86a"/><circle cx="46" cy="408" r="6" fill="#4ab86a"/>
