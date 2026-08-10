@@ -241,13 +241,13 @@
     .venue-label { font-family: var(--font-mono); font-size: 0.69rem; color: var(--gold-lt); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 9px; }
     .hero-title { font-family: var(--font-display); font-size: clamp(2.8rem, 5.5vw, 5rem); color: white; line-height: 0.94; letter-spacing: 0.02em; margin-bottom: 9px; }
     .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: clamp(1.15rem, 2.2vw, 1.55rem); color: var(--gold-lt); letter-spacing: 0.01em; margin-bottom: 20px; }
-    .info-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 15px; }
-    .pill { display: inline-flex; align-items: center; gap: 5px; padding: 4px 12px; border-radius: 100px; font-family: var(--font-mono); font-size: 0.67rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.74); border: 1px solid rgba(255,255,255,0.11); }
-    .pill-gold { background: rgba(198,242,46,0.15); color: var(--gold-lt); border-color: rgba(198,242,46,0.3); }
-    .pill-orange { background: rgba(255,46,126,0.13); color: var(--orange-lt); border-color: rgba(255,46,126,0.26); }
-    .urgency-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 20px; }
-    .upill { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 6px; font-family: var(--font-mono); font-size: 0.63rem; font-weight: 600; letter-spacing: 0.04em; background: rgba(255,46,126,0.09); color: var(--orange-lt); border: 1px solid rgba(255,46,126,0.2); }
-    .udot { width: 5px; height: 5px; border-radius: 50%; background: var(--primary); flex-shrink: 0; animation: blink 1.6s infinite; }
+    .info-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+    .pill { display: inline-flex; align-items: center; gap: 7px; padding: 7px 15px; border-radius: 100px; font-family: var(--font-price); font-size: 0.8rem; font-weight: 700; letter-spacing: 0; text-transform: none; background: rgba(255,255,255,0.09); color: #fff; border: 1px solid rgba(255,255,255,0.18); }
+    .pill-gold { background: rgba(198,242,46,0.16); color: #e7ff9e; border-color: rgba(198,242,46,0.42); }
+    .pill-orange { background: rgba(255,46,126,0.16); color: #ffaccb; border-color: rgba(255,46,126,0.42); }
+    .urgency-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .upill { display: inline-flex; align-items: center; gap: 7px; padding: 6px 14px; border-radius: 100px; font-family: var(--font-price); font-size: 0.74rem; font-weight: 700; letter-spacing: 0; text-transform: none; background: rgba(124,58,237,0.16); color: #d6c6f7; border: 1px solid rgba(124,58,237,0.36); }
+    .udot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; animation: blink 1.6s infinite; box-shadow: 0 0 6px rgba(198,242,46,0.7); }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.36} }
 
     .price-strip { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 22px; padding: 17px 24px; background: rgba(255,255,255,0.03); border-top: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; }
@@ -261,7 +261,7 @@
     @keyframes shimmer { 100%{ left:100%; } }
     @keyframes pulseGlowCta { 0% { box-shadow: 0 0 10px rgba(96,165,250,0.55), 0 0 22px rgba(96,165,250,0.28), 0 0 0 0 rgba(96,165,250,0.45); } 70% { box-shadow: 0 0 10px rgba(96,165,250,0.55), 0 0 22px rgba(96,165,250,0.28), 0 0 0 14px rgba(96,165,250,0); } 100% { box-shadow: 0 0 10px rgba(96,165,250,0.55), 0 0 22px rgba(96,165,250,0.28), 0 0 0 0 rgba(96,165,250,0); } }
     @keyframes bobTicket { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-4px) rotate(-6deg); } }
-    .cta-ticket { display: inline-block; filter: hue-rotate(190deg) saturate(1.6) drop-shadow(0 0 5px rgba(96,165,250,0.85)); animation: bobTicket 1.8s ease-in-out infinite; }
+    .cta-ticket { display: inline-block; filter: hue-rotate(75deg) saturate(1.7) brightness(1.15) drop-shadow(0 0 7px rgba(198,242,46,0.95)); animation: bobTicket 1.8s ease-in-out infinite; }
     .hero-cta:hover { background: var(--orange-lt); transform: translateY(-2px); }
     .urgency-txt { font-family: var(--font-mono); font-size: 0.62rem; color: rgba(255,255,255,0.32); }
 
