@@ -30,6 +30,7 @@
   <a href="/shows/spectaculars/">Spectaculars</a>
   <a href="/shows/family/">Family Shows</a>
   <a href="/shows/adult/">Adult Shows</a>
+  <a href="/guides/">Guides</a>
   <a href="/guides/best-cheap-vegas-shows/" class="d-guides">&#127797; Deals Under $50</a>
   <a href="/news/" class="d-dispatch">Vegas Dispatch</a>
   <a href="/shows/" class="d-cta">All Shows &rarr;</a>
