@@ -42,18 +42,18 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --navy: #0A1628;
-      --navy-mid: #0f1e38;
-      --orange: #FF6B00;
-      --orange-lt: #FF8C2A;
-      --show: #B8710A;
-      --show-lt: #E89520;
-      --font-display: 'Bebas Neue', sans-serif;
-      --font-condensed: 'Barlow Condensed', sans-serif;
-      --font-body: 'Barlow', sans-serif;
+      --navy: #1c0a3a;
+      --navy-mid: #2b0f5c;
+      --orange: #ff2e7e;
+      --orange-lt: #ff5fa0;
+      --show: #ff2e7e;
+      --show-lt: #ff5fa0;
+      --font-display: 'Plus Jakarta Sans', sans-serif;
+      --font-condensed: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Inter', sans-serif;
       --font-mono: 'IBM Plex Mono', monospace;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -72,7 +72,7 @@
     .slide.active { opacity: 1; animation: kenBurns 7s ease-out forwards; }
     @keyframes kenBurns { from { transform: scale(1); } to { transform: scale(1.06); } }
     @media (prefers-reduced-motion: reduce) { .slide.active { animation: none; } .ticker-track { animation: none !important; } }
-    .slide-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,22,40,0.1) 0%, rgba(10,22,40,0.6) 100%); pointer-events: none; }
+    .slide-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(28,10,58,0.1) 0%, rgba(28,10,58,0.6) 100%); pointer-events: none; }
     .slide-dots { position: absolute; bottom: 14px; right: 18px; display: flex; gap: 7px; z-index: 10; }
     .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.35); cursor: pointer; transition: background 0.3s, transform 0.2s; border: none; padding: 0; }
     .dot.active { background: var(--show-lt); transform: scale(1.3); }
@@ -84,7 +84,7 @@
     .pill { display: inline-flex; align-items: center; gap: 5px; padding: 4px 12px; border-radius: 100px; font-family: var(--font-mono); font-size: 0.67rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.74); border: 1px solid rgba(255,255,255,0.11); }
     .pill-show { background: rgba(184,113,10,0.2); color: var(--show-lt); border-color: rgba(232,149,32,0.35); }
     .urgency-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
-    .upill { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 6px; font-family: var(--font-mono); font-size: 0.63rem; background: rgba(255,107,0,0.09); color: var(--orange-lt); border: 1px solid rgba(255,107,0,0.2); }
+    .upill { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 6px; font-family: var(--font-mono); font-size: 0.63rem; background: rgba(255,46,126,0.09); color: var(--orange-lt); border: 1px solid rgba(255,46,126,0.2); }
     .udot { width: 5px; height: 5px; border-radius: 50%; background: var(--orange); animation: blink 1.6s infinite; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.36} }
     .price-strip { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 14px 18px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; }
@@ -146,7 +146,7 @@
     .spike-callout { border-left: 3px solid var(--show); background: rgba(184,113,10,0.08); border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 18px 0; }
     .spike-callout strong { font-family: var(--font-condensed); font-size: 0.78rem; font-weight: 700; color: var(--show-lt); letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 5px; }
     .spike-callout p { font-size: 0.88rem; color: rgba(255,255,255,0.72); margin: 0; line-height: 1.55; }
-    .email-signup { background: linear-gradient(90deg, rgba(184,113,10,0.12) 0%, rgba(255,107,0,0.07) 100%); border: 1px solid rgba(184,113,10,0.2); border-radius: 10px; padding: 20px 22px; margin-bottom: 32px; display: flex; flex-direction: column; gap: 12px; }
+    .email-signup { background: linear-gradient(90deg, rgba(184,113,10,0.12) 0%, rgba(255,46,126,0.07) 100%); border: 1px solid rgba(184,113,10,0.2); border-radius: 10px; padding: 20px 22px; margin-bottom: 32px; display: flex; flex-direction: column; gap: 12px; }
     @media (min-width: 600px) { .email-signup { flex-direction: row; align-items: center; } }
     .email-signup-text { flex: 1; }
     .email-signup-title { font-family: var(--font-condensed); font-size: 1.05rem; font-weight: 700; color: #fff; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 3px; }
@@ -215,7 +215,7 @@
     .final-cta { background: linear-gradient(135deg, #4A2E04 0%, #2B1A02 60%, var(--navy) 100%); border: 1px solid rgba(232,149,32,0.15); border-radius: 14px; padding: 36px 30px; text-align: center; margin-bottom: 32px; position: relative; overflow: hidden; }
     .final-cta-orb { position: absolute; border-radius: 50%; pointer-events: none; }
     .orb-1 { width: 220px; height: 220px; background: radial-gradient(circle, rgba(184,113,10,0.18) 0%, transparent 70%); top: -60px; left: -40px; }
-    .orb-2 { width: 180px; height: 180px; background: radial-gradient(circle, rgba(255,107,0,0.12) 0%, transparent 70%); bottom: -40px; right: -20px; }
+    .orb-2 { width: 180px; height: 180px; background: radial-gradient(circle, rgba(255,46,126,0.12) 0%, transparent 70%); bottom: -40px; right: -20px; }
     .final-cta-title { font-family: var(--font-display); font-size: clamp(1.6rem, 4vw, 2.4rem); color: #fff; margin-bottom: 8px; position: relative; z-index: 1; }
     .final-cta-sub { font-size: 0.95rem; color: rgba(255,255,255,0.6); margin-bottom: 22px; position: relative; z-index: 1; }
     .final-cta-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: #fff; font-family: var(--font-display); font-size: 1.2rem; letter-spacing: 0.07em; padding: 13px 32px; border-radius: 8px; text-decoration: none; position: relative; z-index: 1; transition: background 0.2s; }
@@ -231,27 +231,27 @@
     .mob-cta:hover { background: var(--orange-lt); }
     @media (max-width: 940px) { .mobile-sticky { display: block; } }
   .sk-schedule{margin-bottom:32px;min-width:0;}
-  .sk-eyebrow{font-family:var(--font-mono);font-size:0.68rem;font-weight:600;color:#FF6B2B;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;}
-  .sk-sched-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.6rem,4vw,2.2rem);color:#0A0F2C;line-height:1;margin-bottom:10px;}
+  .sk-eyebrow{font-family:var(--font-mono);font-size:0.68rem;font-weight:600;color:#ff2e7e;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;}
+  .sk-sched-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.6rem,4vw,2.2rem);color:#12061f;line-height:1;margin-bottom:10px;}
   .sk-sched-intro{font-size:0.95rem;color:#374151;line-height:1.6;margin-bottom:20px;}
   .sk-sched-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-  .sk-day{background:#EEF3FE;border:1px solid #DFE8FB;border-radius:12px;padding:20px 12px 22px;text-align:center;min-height:118px;display:flex;flex-direction:column;justify-content:center;gap:6px;}
-  .sk-day-name{font-weight:700;font-size:15px;letter-spacing:1.5px;color:#0A0F2C;}
-  .sk-day-time{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;color:#1A6BFF;line-height:1.15;}
+  .sk-day{background:#f3f0fb;border:1px solid #ece7f8;border-radius:12px;padding:20px 12px 22px;text-align:center;min-height:118px;display:flex;flex-direction:column;justify-content:center;gap:6px;}
+  .sk-day-name{font-weight:700;font-size:15px;letter-spacing:1.5px;color:#12061f;}
+  .sk-day-time{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;color:#7c3aed;line-height:1.15;}
   .sk-day-dark-label{font-size:17px;color:#B7BECF;font-weight:500;}
-  .sk-day--dark{background:#F2F4F8;border-color:#E7EAF1;}
-  .sk-day--today{background:#0A0F2C;border-color:#0A0F2C;box-shadow:0 10px 24px rgba(10,15,44,.28);transform:translateY(-2px);}
-  .sk-day--today .sk-day-name{color:#FF6B2B;}
+  .sk-day--dark{background:#f5f3fb;border-color:#efedf6;}
+  .sk-day--today{background:#12061f;border-color:#12061f;box-shadow:0 10px 24px rgba(18,6,31,.28);transform:translateY(-2px);}
+  .sk-day--today .sk-day-name{color:#ff2e7e;}
   .sk-day--today .sk-day-time{color:#fff;}
-  .sk-day--tomorrow{border:2px solid #FF6B2B;background:#FFF8F4;}
-  .sk-day-badge{font-size:11px;font-weight:700;letter-spacing:2.5px;color:#FF6B2B;}
-  .sk-day-link{display:inline-block;margin-top:4px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:.3px;color:#1A6BFF;}
-  .sk-day--today .sk-day-link{color:#FF6B2B;}
+  .sk-day--tomorrow{border:2px solid #ff2e7e;background:#fdf2f8;}
+  .sk-day-badge{font-size:11px;font-weight:700;letter-spacing:2.5px;color:#ff2e7e;}
+  .sk-day-link{display:inline-block;margin-top:4px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:.3px;color:#7c3aed;}
+  .sk-day--today .sk-day-link{color:#ff2e7e;}
   .sk-day-link:hover{text-decoration:underline;}
   .sk-sched-disclaimer{margin-top:22px;font-size:14px;color:#8A93A8;line-height:1.5;}
-  .sk-day--cta{background:linear-gradient(145deg,#1A6BFF 0%,#0e55d4 100%);border-color:#1459d6;}
+  .sk-day--cta{background:linear-gradient(145deg,#7c3aed 0%,#6a2fd0 100%);border-color:#6a2fd0;}
   .sk-day--cta .sk-day-name{color:rgba(255,255,255,0.7);}
-  .sk-day--cta .sk-day-cta-body{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:#fff;line-height:1.2;}
+  .sk-day--cta .sk-day-cta-body{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;color:#fff;line-height:1.2;}
   .sk-day--cta .sk-day-link{color:#fff;font-size:14px;}
   .sk-day--cta .sk-day-link:hover{color:#fff;}
   @media (max-width:640px){.sk-sched-grid{grid-template-columns:repeat(3,1fr);gap:10px;}.sk-day{padding:14px 8px 16px;min-height:100px;}.sk-day-time{font-size:19px;}.sk-day-name{font-size:13px;}.sk-day--cta .sk-day-cta-body{font-size:16px;}}
@@ -265,10 +265,27 @@
   .sk-swipe-hint{font-size:14px;color:#6B7280;text-align:center;margin-top:8px;letter-spacing:0.2px;font-weight:500;}
   .main-content{min-width:0;}
       /* MOBILE TRUST STRIP */
-    .trust-strip-mobile { display: none; justify-content: space-between; background: var(--gray-100, #f1f4f9); border-top: 1px solid var(--gray-200, #e2e8f2); border-bottom: 1px solid var(--gray-200, #e2e8f2); padding: 10px 20px; }
-    .trust-strip-item { display: flex; align-items: center; gap: 4px; font-family: var(--font-mono, 'Barlow', sans-serif); font-size: 0.66rem; font-weight: 600; color: var(--text, #0f172a); white-space: nowrap; }
+    .trust-strip-mobile { display: none; justify-content: space-between; background: var(--gray-100, #f4f2fb); border-top: 1px solid var(--gray-200, #ece9f6); border-bottom: 1px solid var(--gray-200, #ece9f6); padding: 10px 20px; }
+    .trust-strip-item { display: flex; align-items: center; gap: 4px; font-family: var(--font-mono, 'Inter', sans-serif); font-size: 0.66rem; font-weight: 600; color: var(--text, #171225); white-space: nowrap; }
     .mob-trust-line { font-family: var(--font-mono, monospace); font-size: 0.56rem; font-weight: 600; color: rgba(147,197,253,0.7); margin-top: 3px; }
     @media (max-width: 600px) { .trust-grid { display: none; } .trust-strip-mobile { display: flex; } }
+
+/* ===== VS REDESIGN OVERRIDES — blue primary, friendly pills (appended, wins by cascade) ===== */
+:root { --primary: #3b82f6; --primary-lt: #60a5fa; }
+.hero-cta, .sb-cta, .mob-cta, .final-cta-btn, .save-pill-cta, .seen-yes { background: var(--primary) !important; }
+.hero-cta:hover, .sb-cta:hover, .mob-cta:hover, .final-cta-btn:hover, .save-pill-cta:hover { background: var(--primary-lt) !important; }
+.hero-cta, .sb-cta, .mob-cta, .final-cta-btn, .save-pill-cta { color: #fff !important; }
+.price-cur, .sb-price, .save-pill-price { color: var(--primary) !important; }
+.cta-ticket { filter: hue-rotate(75deg) saturate(1.7) brightness(1.15) drop-shadow(0 0 7px rgba(198,242,46,0.95)) !important; }
+.info-pills, .urgency-pills { gap: 8px !important; }
+.pill { padding: 7px 15px !important; border-radius: 100px !important; font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: 0.8rem !important; font-weight: 700 !important; letter-spacing: 0 !important; text-transform: none !important; background: rgba(255,255,255,0.09) !important; color: #fff !important; border: 1px solid rgba(255,255,255,0.18) !important; }
+.pill-gold, .pill-green { background: rgba(198,242,46,0.16) !important; color: #e7ff9e !important; border-color: rgba(198,242,46,0.42) !important; }
+.pill-orange { background: rgba(255,46,126,0.16) !important; color: #ffaccb !important; border-color: rgba(255,46,126,0.42) !important; }
+.upill { padding: 6px 14px !important; border-radius: 100px !important; font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: 0.74rem !important; font-weight: 700 !important; letter-spacing: 0 !important; text-transform: none !important; background: rgba(124,58,237,0.16) !important; color: #d6c6f7 !important; border: 1px solid rgba(124,58,237,0.36) !important; }
+.udot { width: 6px !important; height: 6px !important; background: #c6f22e !important; box-shadow: 0 0 6px rgba(198,242,46,0.7) !important; }
+.spike-text strong, .faq-icon { color: #ff2e7e !important; }
+.spike-callout { border-left-color: #ff2e7e !important; }
+.expect-card { border-left-color: #ff2e7e !important; }
 </style>
 </head>
 <body>
@@ -436,34 +453,34 @@
         <text x="260" y="16" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="7" fill="rgba(255,255,255,0.3)" letter-spacing="1">ATHENA SHOWLOUNGE &middot; ALEXIS PARK RESORT &mdash; SELECT A SECTION</text>
         <!-- Stage -->
         <path d="M155,26 Q260,14 365,26 L365,68 Q260,58 155,68 Z" fill="#2A4070" stroke="#3A5090" stroke-width="1.5"/>
-        <text x="260" y="50" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="14" fill="#8AA0C0" letter-spacing="2">STAGE</text>
+        <text x="260" y="50" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" font-size="14" fill="#8AA0C0" letter-spacing="2">STAGE</text>
         <!-- Gold Left -->
         <g class="seat-zone" onclick="selectZone('gold')" tabindex="0" role="button" aria-label="Gold Theatre Seats - Sweet Spot">
           <rect x="118" y="84" width="118" height="130" rx="5" fill="#9B6308" opacity="0.9"/>
           <rect x="118" y="84" width="118" height="130" rx="5" fill="none" stroke="#D4A012" stroke-width="1.5"/>
-          <text x="177" y="140" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="15" fill="#F0C040" letter-spacing="1">GOLD</text>
-          <text x="177" y="158" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="7.5" font-weight="600" fill="#ffb380" letter-spacing="0.3">&#x1FA91; SWEET SPOT</text>
+          <text x="177" y="140" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" font-size="15" fill="#F0C040" letter-spacing="1">GOLD</text>
+          <text x="177" y="158" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="7.5" font-weight="600" fill="#ff9ec2" letter-spacing="0.3">&#x1FA91; SWEET SPOT</text>
         </g>
         <!-- Gold Right -->
         <g class="seat-zone" onclick="selectZone('gold')" tabindex="0" role="button" aria-label="Gold Theatre Seats - Sweet Spot">
           <rect x="284" y="84" width="118" height="130" rx="5" fill="#9B6308" opacity="0.9"/>
           <rect x="284" y="84" width="118" height="130" rx="5" fill="none" stroke="#D4A012" stroke-width="1.5"/>
-          <text x="343" y="140" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="15" fill="#F0C040" letter-spacing="1">GOLD</text>
-          <text x="343" y="158" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="7.5" font-weight="600" fill="#ffb380" letter-spacing="0.3">&#x1FA91; SWEET SPOT</text>
+          <text x="343" y="140" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" font-size="15" fill="#F0C040" letter-spacing="1">GOLD</text>
+          <text x="343" y="158" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="7.5" font-weight="600" fill="#ff9ec2" letter-spacing="0.3">&#x1FA91; SWEET SPOT</text>
         </g>
         <!-- Side Booth Left -->
         <g class="seat-zone" onclick="selectZone('cocktail')" tabindex="0" role="button" aria-label="Cocktail Lounge">
           <rect x="24" y="94" width="80" height="158" rx="5" fill="#8B1A44" opacity="0.85"/>
           <rect x="24" y="94" width="80" height="158" rx="5" fill="none" stroke="#D4186A" stroke-width="1.5" opacity="0.7"/>
-          <text x="64" y="167" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="11" fill="#F080A0">SIDE</text>
-          <text x="64" y="181" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="11" fill="#F080A0">BOOTH</text>
+          <text x="64" y="167" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" font-size="11" fill="#F080A0">SIDE</text>
+          <text x="64" y="181" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" font-size="11" fill="#F080A0">BOOTH</text>
         </g>
         <!-- Side Booth Right -->
         <g class="seat-zone" onclick="selectZone('cocktail')" tabindex="0" role="button" aria-label="Cocktail Lounge">
           <rect x="416" y="94" width="80" height="158" rx="5" fill="#8B1A44" opacity="0.85"/>
           <rect x="416" y="94" width="80" height="158" rx="5" fill="none" stroke="#D4186A" stroke-width="1.5" opacity="0.7"/>
-          <text x="456" y="167" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="11" fill="#F080A0">SIDE</text>
-          <text x="456" y="181" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="11" fill="#F080A0">BOOTH</text>
+          <text x="456" y="167" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" font-size="11" fill="#F080A0">SIDE</text>
+          <text x="456" y="181" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" font-size="11" fill="#F080A0">BOOTH</text>
         </g>
         <!-- Cocktail Tables Left -->
         <g class="seat-zone" onclick="selectZone('cocktail')" tabindex="0" role="button" aria-label="Cocktail Lounge">
@@ -481,12 +498,12 @@
           <circle cx="366" cy="272" r="14" fill="rgba(0,0,0,0.3)" stroke="#D4186A" stroke-width="1.5"/>
           <circle cx="343" cy="310" r="14" fill="rgba(0,0,0,0.3)" stroke="#D4186A" stroke-width="1.5"/>
         </g>
-        <text x="260" y="352" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="11" fill="#F080A0" letter-spacing="1">COCKTAIL LOUNGE</text>
+        <text x="260" y="352" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" font-size="11" fill="#F080A0" letter-spacing="1">COCKTAIL LOUNGE</text>
         <!-- GA -->
         <g class="seat-zone" onclick="selectZone('ga')" tabindex="0" role="button" aria-label="General Admission">
           <rect x="108" y="362" width="304" height="46" rx="5" fill="#1A3A80" opacity="0.9"/>
           <rect x="108" y="362" width="304" height="46" rx="5" fill="none" stroke="#4A6ABF" stroke-width="1.5" opacity="0.7"/>
-          <text x="260" y="391" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="13" fill="#8AACF0" letter-spacing="2">GENERAL ADMISSION</text>
+          <text x="260" y="391" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" font-size="13" fill="#8AACF0" letter-spacing="2">GENERAL ADMISSION</text>
         </g>
         <text x="260" y="414" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="7.5" fill="rgba(255,255,255,0.28)" letter-spacing="1.5">&#x2190; ENTRANCE</text>
       </svg>
