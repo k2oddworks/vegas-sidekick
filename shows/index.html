@@ -27,24 +27,24 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:      #0A1628;
-      --blue:      #1A6BDD;
-      --blue-lt:   #4d90f0;
-      --orange:    #FF6B2B;
-      --orange-lt: #ff8c33;
+      --navy: #1c0a3a;
+      --blue: #7c3aed;
+      --blue-lt: #a855f7;
+      --orange: #ff2e7e;
+      --orange-lt: #ff5fa0;
       --white:     #FFFFFF;
       --page-bg:   #F4F7FB;
-      --border:    #E2E8F2;
-      --text:      #0F172A;
+      --border:    #ece9f6;
+      --text: #171225;
       --muted:     #64748B;
-      --font-display: 'Bebas Neue', sans-serif;
-      --font-price:   'Barlow Condensed', sans-serif;
-      --font-body:    'Barlow', sans-serif;
+      --font-display: 'Plus Jakarta Sans', sans-serif;
+      --font-price:   'Plus Jakarta Sans', sans-serif;
+      --font-body:    'Inter', sans-serif;
       --font-mono:    'IBM Plex Mono', monospace;
       --radius:    12px;
       --radius-sm: 8px;
@@ -80,8 +80,8 @@
     .filter-btn[class*="fb-"] { border: 1px solid currentColor; }
     .sort-btn { background: #F1F5F9; color: #64748B; border: 1px solid currentColor; }
     .sort-btn:hover { background: #E2E8F0; color: #334155; }
-    .sort-btn.active { background: #FF6B2B; color: #fff; }
-    .fb-all  { background: rgba(10,22,40,.08); color: #0A1628; } .fb-all.active, .fb-all:hover  { background: #0A1628; color: #fff; }
+    .sort-btn.active { background: #ff2e7e; color: #fff; }
+    .fb-all  { background: rgba(28,10,58,.08); color: #1c0a3a; } .fb-all.active, .fb-all:hover  { background: #1c0a3a; color: #fff; }
     .fb-comedy { background: rgba(232,82,26,.10); color: #C44A0E; } .fb-comedy.active, .fb-comedy:hover { background: #E8521A; color: #fff; }
     .fb-magic  { background: rgba(124,58,237,.10); color: #6D28D9; } .fb-magic.active,  .fb-magic:hover  { background: #7C3AED; color: #fff; }
     .fb-cirque { background: rgba(26,107,255,.10); color: #1A55CC; } .fb-cirque.active, .fb-cirque:hover { background: #1A6BFF; color: #fff; }
@@ -114,18 +114,18 @@
     .card-name-link:hover .card-name { color: var(--blue); }
 
     .card-sp-badge { position: absolute; top: 10px; left: 10px; display: flex; align-items: center; gap: 4px; padding: 3px 9px; background: var(--orange); color: white; font-family: var(--font-mono); font-size: 0.58rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; border-radius: 100px; }
-    .card-cat-tag { position: absolute; bottom: 10px; right: 10px; background: rgba(10,22,40,0.78); backdrop-filter: blur(4px); color: rgba(255,255,255,0.82); font-family: var(--font-mono); font-size: 0.57rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; }
+    .card-cat-tag { position: absolute; bottom: 10px; right: 10px; background: rgba(28,10,58,0.78); backdrop-filter: blur(4px); color: rgba(255,255,255,0.82); font-family: var(--font-mono); font-size: 0.57rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; }
 
     .cb-label { position: absolute; top: 10px; right: 10px; width: 24px; height: 24px; display: block; cursor: pointer; }
     .cb-label input[type="checkbox"] { position: absolute; opacity: 0; width: 0; height: 0; }
-    .cb-custom { position: absolute; inset: 0; border-radius: 6px; border: 2px solid rgba(255,255,255,0.75); background: rgba(10,22,40,0.35); backdrop-filter: blur(4px); transition: background 0.15s, border-color 0.15s; }
+    .cb-custom { position: absolute; inset: 0; border-radius: 6px; border: 2px solid rgba(255,255,255,0.75); background: rgba(28,10,58,0.35); backdrop-filter: blur(4px); transition: background 0.15s, border-color 0.15s; }
     .cb-label input:checked ~ .cb-custom { background: var(--blue); border-color: var(--blue); }
     .cb-check { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.7rem; font-weight: 700; opacity: 0; transition: opacity 0.15s; pointer-events: none; }
     .cb-label input:checked ~ .cb-check { opacity: 1; }
 
     .card-body { padding: 14px 14px 16px; display: flex; flex-direction: column; flex: 1; gap: 0; }
     .card-name { font-family: var(--font-display); font-size: 1.45rem; color: var(--navy); line-height: 1.05; letter-spacing: 0.02em; margin-bottom: 4px; }
-    .card-subtitle { font-family: var(--font-display); font-size: 0.95rem; color: rgba(10,22,40,0.45); letter-spacing: 0.04em; }
+    .card-subtitle { font-family: var(--font-display); font-size: 0.95rem; color: rgba(28,10,58,0.45); letter-spacing: 0.04em; }
     .card-venue { font-family: var(--font-mono); font-size: 0.59rem; color: var(--muted); letter-spacing: 0.03em; margin-bottom: 10px; margin-top: 2px; }
     .card-cat-eyebrow { display: none; }
     .card-pills { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 13px; }
@@ -139,7 +139,7 @@
     .card-cta:hover { background: var(--orange-lt); }
 
     /* COMPARE BAR */
-    .compare-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 500; background: var(--navy); border-top: 1px solid rgba(255,107,0,0.25); padding: 13px 24px; transform: translateY(110%); transition: transform 0.3s ease; box-shadow: 0 -4px 28px rgba(0,0,0,0.35); }
+    .compare-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 500; background: var(--navy); border-top: 1px solid rgba(255,46,126,0.25); padding: 13px 24px; transform: translateY(110%); transition: transform 0.3s ease; box-shadow: 0 -4px 28px rgba(0,0,0,0.35); }
     .compare-bar.visible { transform: translateY(0); }
     .compare-bar-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 12px; }
     .compare-info { font-family: var(--font-mono); font-size: 0.68rem; color: rgba(255,255,255,0.45); flex: 1; line-height: 1.4; }
@@ -212,7 +212,7 @@
     .cat-nav-link.current { background: var(--navy); color: white; border-color: var(--navy); }
 
     /* TOAST */
-    .max-toast { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%) translateY(10px); background: var(--navy); color: white; font-family: var(--font-mono); font-size: 0.7rem; padding: 10px 18px; border-radius: 8px; border: 1px solid rgba(255,107,0,0.3); opacity: 0; transition: opacity 0.22s, transform 0.22s; pointer-events: none; white-space: nowrap; z-index: 600; }
+    .max-toast { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%) translateY(10px); background: var(--navy); color: white; font-family: var(--font-mono); font-size: 0.7rem; padding: 10px 18px; border-radius: 8px; border: 1px solid rgba(255,46,126,0.3); opacity: 0; transition: opacity 0.22s, transform 0.22s; pointer-events: none; white-space: nowrap; z-index: 600; }
     .max-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
   
     /* SHOWS SEARCH */
@@ -246,7 +246,14 @@
       .card-price-row::after { content: '\203A'; color: var(--orange); font-family: var(--font-price); font-weight: 800; font-size: 1.15rem; line-height: 1; margin-top: 1px; }
       .card-cta { display: none; }
     }
-  </style>
+  
+/* ===== VS BROWSE REDESIGN — blue primary, new fonts (appended, wins by cascade) ===== */
+:root { --primary: #3b82f6; --primary-lt: #60a5fa; }
+.card-cta { background: var(--primary) !important; color: #fff !important; }
+.card-cta:hover { background: var(--primary-lt) !important; }
+.card-price { color: var(--primary) !important; }
+.sort-btn.active, .filter-btn.active:not([class*="fb-"]) { background: var(--navy) !important; color: #fff !important; border-color: var(--navy) !important; }
+</style>
 </head>
 <body>
 <div id="vs-header"></div>
