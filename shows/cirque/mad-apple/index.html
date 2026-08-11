@@ -8,6 +8,7 @@
   <title>Mad Apple by Cirque du Soleil Las Vegas Tickets 2026 | New York-New York | Vegas Sidekick</title>
   <meta name="description" content="Mad Apple by Cirque du Soleil tickets from $56. NYC energy, world-class acrobatics, live comedy, and a pre-show bar at New York-New York. Adults 18+ only. Tue–Sun 7PM &amp; 9:30PM." />
   <link rel="canonical" href="https://vegassidekick.com/shows/cirque/mad-apple/" />
+  <link rel="preload" as="image" href="/images/mad-apple-hero.webp" type="image/webp" fetchpriority="high" />
   <meta property="og:title" content="Mad Apple by Cirque du Soleil Las Vegas Tickets | Vegas Sidekick" />
   <meta property="og:description" content="NYC energy meets Cirque du Soleil. Acrobatics, comedy, live music, and a pre-show bar. From $56. 18+ only. Tue–Sun." />
   <meta property="og:image" content="https://vegassidekick.com/images/mad-apple-hero.jpg" />
@@ -237,6 +238,7 @@
     .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.65s ease; }
     .slide.active { opacity: 1; }
     .slide img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.65s ease; }
+    .slide picture, .gallery-grid picture { display: contents; }
     .slide.active img { animation: kenBurns 7s ease-out forwards; }
     @keyframes kenBurns { from { transform: scale(1) translate(0,0); } to { transform: scale(1.08) translate(0.4%,0.4%); } }
     .slider-dots { position: absolute; bottom: 13px; left: 50%; transform: translateX(-50%); display: flex; gap: 7px; z-index: 3; }
@@ -586,13 +588,13 @@
 
   <div class="slider" id="heroSlider" role="region" aria-label="Show photos">
     <div class="slide active">
-      <img src="/images/mad-apple-hero.jpg" alt="Mad Apple by Cirque du Soleil at New York-New York Las Vegas — performers mid-act under dramatic stage lighting" loading="eager" />
+      <picture><source type="image/webp" srcset="/images/mad-apple-hero.webp" /><img src="/images/mad-apple-hero.jpg" alt="Mad Apple by Cirque du Soleil at New York-New York Las Vegas — performers mid-act under dramatic stage lighting" width="960" height="465" loading="eager" fetchpriority="high" /></picture>
     </div>
     <div class="slide">
-      <img src="/images/mad-apple-show-2.jpg" alt="Mad Apple Cirque du Soleil aerial acrobatics at New York-New York Hotel Las Vegas" loading="lazy" />
+      <picture><source type="image/webp" srcset="/images/mad-apple-show-2.webp" /><img src="/images/mad-apple-show-2.jpg" alt="Mad Apple Cirque du Soleil aerial acrobatics at New York-New York Hotel Las Vegas" width="800" height="600" loading="lazy" /></picture>
     </div>
     <div class="slide">
-      <img src="/images/mad-apple-show-3.jpg" alt="Mad Apple by Cirque du Soleil full stage at New York-New York Las Vegas" loading="lazy" />
+      <picture><source type="image/webp" srcset="/images/mad-apple-show-3.webp" /><img src="/images/mad-apple-show-3.jpg" alt="Mad Apple by Cirque du Soleil full stage at New York-New York Las Vegas" width="800" height="600" loading="lazy" /></picture>
     </div>
     <button class="s-arrow prev" onclick="sliderMove(-1)" aria-label="Previous slide">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
@@ -746,13 +748,13 @@
     <h2 id="gallery-heading" class="section-title">Inside the <span>Show</span></h2>
     <div class="gallery-grid">
       <a href="/images/mad-apple-hero.jpg" target="_blank" rel="noopener" aria-label="View full-size photo 1">
-        <img src="/images/mad-apple-hero.jpg" alt="Mad Apple by Cirque du Soleil at New York-New York Las Vegas — performers mid-act under dramatic stage lighting" loading="lazy" />
+        <picture><source type="image/webp" srcset="/images/mad-apple-hero.webp" /><img src="/images/mad-apple-hero.jpg" alt="Mad Apple by Cirque du Soleil at New York-New York Las Vegas — performers mid-act under dramatic stage lighting" width="960" height="465" loading="lazy" /></picture>
       </a>
       <a href="/images/mad-apple-show-2.jpg" target="_blank" rel="noopener" aria-label="View full-size photo 2">
-        <img src="/images/mad-apple-show-2.jpg" alt="Mad Apple Cirque du Soleil aerial acrobatics at New York-New York Hotel Las Vegas" loading="lazy" />
+        <picture><source type="image/webp" srcset="/images/mad-apple-show-2.webp" /><img src="/images/mad-apple-show-2.jpg" alt="Mad Apple Cirque du Soleil aerial acrobatics at New York-New York Hotel Las Vegas" width="800" height="600" loading="lazy" /></picture>
       </a>
       <a href="/images/mad-apple-show-3.jpg" target="_blank" rel="noopener" aria-label="View full-size photo 3">
-        <img src="/images/mad-apple-show-3.jpg" alt="Mad Apple by Cirque du Soleil full stage at New York-New York Las Vegas" loading="lazy" />
+        <picture><source type="image/webp" srcset="/images/mad-apple-show-3.webp" /><img src="/images/mad-apple-show-3.jpg" alt="Mad Apple by Cirque du Soleil full stage at New York-New York Las Vegas" width="800" height="600" loading="lazy" /></picture>
       </a>
     </div>
   </section>
