@@ -30,9 +30,9 @@
   <a href="/shows/spectaculars/">Spectaculars</a>
   <a href="/shows/family/">Family Shows</a>
   <a href="/shows/adult/">Adult Shows</a>
-  <a href="/guides/">Guides</a>
+  <a href="/guides/" class="d-blue">&#128214; Guides</a>
   <a href="/guides/best-cheap-vegas-shows/" class="d-guides">&#127797; Deals Under $50</a>
-  <a href="/news/" class="d-dispatch">Vegas Dispatch</a>
+  <a href="/news/" class="d-dispatch">&#128240; Vegas Dispatch</a>
   <a href="/shows/" class="d-cta">All Shows &rarr;</a>
 </div>
 <div class="nav-overlay" id="vsNavOverlay" onclick="vsToggleMenu()"></div>`;
@@ -64,11 +64,13 @@
 .nav-mobile-drawer .drawer-search button { flex: 0 0 auto; border: none; border-radius: 10px; background: #ff2e7e; color: #fff; padding: 0 15px; font-size: 1rem; cursor: pointer; }
 .nav-mobile-drawer > a { color: rgba(255,255,255,0.86); text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 13px 4px; border-bottom: 1px solid rgba(255,255,255,0.1); transition: color 0.18s; }
 .nav-mobile-drawer > a:hover { color: #c6f22e; }
-.nav-mobile-drawer > a.d-guides { margin-top: 10px; background: #7c3aed; color: #fff; border-left: 3px solid #c6f22e; border-bottom: none; border-radius: 8px; padding: 13px 12px; box-shadow: 0 4px 14px rgba(124,58,237,0.35); }
+.nav-mobile-drawer > a.d-blue { margin-top: 10px; background: #3b82f6; color: #fff; border-bottom: none; border-radius: 8px; padding: 13px 14px; box-shadow: 0 4px 14px rgba(59,130,246,0.35); }
+.nav-mobile-drawer > a.d-blue:hover { color: #fff; background: #2f6fe0; }
+.nav-mobile-drawer > a.d-guides { margin-top: 8px; background: #7c3aed; color: #fff; border-left: 3px solid #c6f22e; border-bottom: none; border-radius: 8px; padding: 13px 14px; box-shadow: 0 4px 14px rgba(124,58,237,0.35); }
 .nav-mobile-drawer > a.d-guides:hover { color: #fff; background: #8b3be0; }
-.nav-mobile-drawer > a.d-dispatch { border-left: 3px solid #ff2e7e; border-bottom: none; padding-left: 12px; color: #ff5fa0; margin-top: 4px; }
-.nav-mobile-drawer > a.d-dispatch:hover { color: #ff86b6; }
-.nav-mobile-drawer > a.d-cta { margin-top: 10px; background: #ff2e7e; color: #fff; text-align: center; border-radius: 10px; border-bottom: none; padding: 14px; box-shadow: 0 6px 16px rgba(255,46,126,0.32); }
+.nav-mobile-drawer > a.d-dispatch { margin-top: 8px; background: #0fb5c9; color: #fff; border-bottom: none; border-radius: 8px; padding: 13px 14px; box-shadow: 0 4px 14px rgba(15,181,201,0.35); }
+.nav-mobile-drawer > a.d-dispatch:hover { color: #fff; background: #0da3b5; }
+.nav-mobile-drawer > a.d-cta { margin-top: 8px; background: #ff2e7e; color: #fff; text-align: center; border-radius: 10px; border-bottom: none; padding: 14px; box-shadow: 0 6px 16px rgba(255,46,126,0.32); }
 .nav-mobile-drawer > a.d-cta:hover { color: #fff; background: #ff1f72; }
 @media (max-width: 980px) {
   .vs-announce { display: none; }

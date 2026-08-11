@@ -144,11 +144,13 @@
     .drawer-search button:hover { background: #ff1f72; }
     .drawer a { text-decoration: none; color: rgba(255,255,255,0.86); font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 13px 4px; border-bottom: 1px solid rgba(255,255,255,0.1); transition: color 0.18s; }
     .drawer a:hover { color: var(--lime); }
-    .drawer a.d-guides { margin-top: 10px; background: var(--purple); color: #fff; border-left: 3px solid var(--lime); border-bottom: none; border-radius: 8px; padding: 13px 12px; box-shadow: 0 4px 14px rgba(124,58,237,0.35); }
+    .drawer a.d-blue { margin-top: 10px; background: #3b82f6; color: #fff; border-bottom: none; border-radius: 8px; padding: 13px 14px; box-shadow: 0 4px 14px rgba(59,130,246,0.35); }
+    .drawer a.d-blue:hover { color: #fff; background: #2f6fe0; }
+    .drawer a.d-guides { margin-top: 8px; background: var(--purple); color: #fff; border-left: 3px solid var(--lime); border-bottom: none; border-radius: 8px; padding: 13px 14px; box-shadow: 0 4px 14px rgba(124,58,237,0.35); }
     .drawer a.d-guides:hover { color: #fff; background: #8b3be0; }
-    .drawer a.d-dispatch { border-left: 3px solid var(--pink); border-bottom: none; padding-left: 12px; color: var(--pink-2); margin-top: 4px; }
-    .drawer a.d-dispatch:hover { color: #ff86b6; }
-    .drawer a.d-cta { margin-top: 10px; background: var(--pink); color: #fff; text-align: center; border-radius: 10px; border-bottom: none; padding: 14px; box-shadow: 0 6px 16px rgba(255,46,126,0.32); }
+    .drawer a.d-dispatch { margin-top: 8px; background: #0fb5c9; color: #fff; border-bottom: none; border-radius: 8px; padding: 13px 14px; box-shadow: 0 4px 14px rgba(15,181,201,0.35); }
+    .drawer a.d-dispatch:hover { color: #fff; background: #0da3b5; }
+    .drawer a.d-cta { margin-top: 8px; background: var(--pink); color: #fff; text-align: center; border-radius: 10px; border-bottom: none; padding: 14px; box-shadow: 0 6px 16px rgba(255,46,126,0.32); }
     .drawer a.d-cta:hover { color: #fff; background: #ff1f72; }
     .scrim { position: fixed; inset: 0; background: rgba(23,18,37,0.42); z-index: 1100; opacity: 0; visibility: hidden; transition: opacity 0.28s; }
     .scrim.open { opacity: 1; visibility: visible; }
@@ -425,14 +427,15 @@
     .spk-form button:hover { background: #2f6fe0; }
     .spike-poke-hint { position: absolute; bottom: 4%; left: 50%; transform: translateX(-50%); font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.72); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); padding: 4px 10px; border-radius: 100px; white-space: nowrap; pointer-events: none; animation: pokePulse 2.4s ease-in-out infinite; }
     @keyframes pokePulse { 0%,100% { opacity: 0.55; } 50% { opacity: 1; } }
-    .show-bubble { position: absolute; border-radius: 50%; background-size: cover; background-position: center; border: 2px solid rgba(255,255,255,0.85); box-shadow: 0 6px 18px rgba(10,4,26,0.45); z-index: 5; text-decoration: none; animation: bubFloat 6s ease-in-out infinite; transition: transform 0.18s; }
-    .show-bubble:hover { transform: scale(1.14); }
-    .sb-1 { width: 54px; height: 54px; top: 5%; left: 0; animation-delay: 0s; }
-    .sb-2 { width: 44px; height: 44px; top: 32%; right: -2%; animation-delay: 1.3s; }
-    .sb-3 { width: 46px; height: 46px; bottom: 14%; left: -2%; animation-delay: 2.2s; }
-    .sb-4 { width: 50px; height: 50px; bottom: 24%; right: 2%; animation-delay: 0.7s; }
-    @keyframes bubFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-    @media (max-width: 900px) { .sb-1,.sb-2,.sb-3,.sb-4 { width: 42px; height: 42px; } }
+    .show-bubble { position: absolute; top: 50%; left: 50%; border-radius: 50%; background-size: cover; background-position: center; border: 2px solid rgba(255,255,255,0.85); box-shadow: 0 6px 18px rgba(10,4,26,0.45); z-index: 5; text-decoration: none; animation-name: orbit; animation-timing-function: linear; animation-iteration-count: infinite; transition: box-shadow 0.18s; }
+    .show-bubble:hover { z-index: 7; box-shadow: 0 8px 26px rgba(59,130,246,0.55); }
+    .sb-1 { width: 52px; height: 52px; margin: -26px 0 0 -26px; --r: 162px; animation-duration: 7s; animation-delay: 0s; }
+    .sb-2 { width: 44px; height: 44px; margin: -22px 0 0 -22px; --r: 186px; animation-duration: 8s; animation-delay: -3s; }
+    .sb-3 { width: 46px; height: 46px; margin: -23px 0 0 -23px; --r: 150px; animation-duration: 6.5s; animation-delay: -5s; }
+    .sb-4 { width: 50px; height: 50px; margin: -25px 0 0 -25px; --r: 176px; animation-duration: 7.5s; animation-delay: -1.5s; }
+    @keyframes orbit { from { transform: rotate(0deg) translateX(var(--r)) rotate(0deg); } to { transform: rotate(360deg) translateX(var(--r)) rotate(-360deg); } }
+    @media (max-width: 900px) { .sb-1 { --r: 116px; } .sb-2 { --r: 132px; } .sb-3 { --r: 104px; } .sb-4 { --r: 122px; } }
+    @media (prefers-reduced-motion: reduce) { .show-bubble { animation: none; } .sb-1 { transform: rotate(35deg) translateX(var(--r)) rotate(-35deg); } .sb-2 { transform: rotate(120deg) translateX(var(--r)) rotate(-120deg); } .sb-3 { transform: rotate(210deg) translateX(var(--r)) rotate(-210deg); } .sb-4 { transform: rotate(305deg) translateX(var(--r)) rotate(-305deg); } }
     @media (prefers-reduced-motion: reduce) { .show-bubble, .spike-poke-hint { animation: none; } }
 </style>
 </head>
@@ -471,8 +474,9 @@
     <a href="/shows/spectaculars/">Spectaculars</a>
     <a href="/shows/family/">Family Shows</a>
     <a href="/shows/adult/">Adult Shows</a>
+    <a href="/guides/" class="d-blue">&#128214; Guides</a>
     <a href="/guides/best-cheap-vegas-shows/" class="d-guides">&#127797; Deals Under $50</a>
-    <a href="/news/" class="d-dispatch">Vegas Dispatch</a>
+    <a href="/news/" class="d-dispatch">&#128240; Vegas Dispatch</a>
     <a href="/shows/" class="d-cta">All Shows &rarr;</a>
   </nav>
 
@@ -971,14 +975,11 @@
     var img = document.getElementById('spikeImg'), say = document.getElementById('spikeSay'), hint = document.getElementById('spikePokeHint');
     if (!img || !say) return;
     var lines = [
-      "Prices climb while you dither. Just sayin'. 🌵",
-      "I've seen every show on the Strip. Twice. From the cheap seats.",
+      "Prices may increase closer to the show. Just sayin'.",
+      "I've seen every show on the Strip. Multiple times. From the front row to the last row.",
       "Water me, I find you deals. Fair trade.",
-      "Blackjack? Risky. This site? Guaranteed good night.",
-      "I'm 90% water and 100% here for your Vegas trip.",
-      "Poke me again. I dare you. 😎",
-      "Fun fact: I have never paid full price. Ever.",
-      "That big headliner's overpriced — let me show you a hidden gem."
+      "Poke me again. Don't hurt yourself.",
+      "Fun fact: I have never paid full price. Ever."
     ];
     var pitch = "Okay okay — want my secret deals before everyone else? 🌵";
     var i = 0, taps = 0, hideT;
