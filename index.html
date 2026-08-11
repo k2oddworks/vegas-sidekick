@@ -438,6 +438,39 @@
     @media (prefers-reduced-motion: reduce) { .show-bubble { animation: none; } .sb-1 { transform: rotate(35deg) translateX(var(--r)) rotate(-35deg); } .sb-2 { transform: rotate(120deg) translateX(var(--r)) rotate(-120deg); } .sb-3 { transform: rotate(210deg) translateX(var(--r)) rotate(-210deg); } .sb-4 { transform: rotate(305deg) translateX(var(--r)) rotate(-305deg); } }
     @media (prefers-reduced-motion: reduce) { .show-bubble, .spike-poke-hint { animation: none; } }
 </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://vegassidekick.com/#organization",
+      "name": "Vegas Sidekick",
+      "url": "https://vegassidekick.com/",
+      "logo": "https://vegassidekick.com/images/logo-pill-alt.png",
+      "description": "Handpicked Las Vegas show tickets at real discounts \u2014 no membership, no hidden fees, no markup games.",
+      "sameAs": [
+        "https://www.facebook.com/VegasSidekick",
+        "https://www.instagram.com/VegasSidekick",
+        "https://www.reddit.com/r/VegasSidekick/",
+        "https://www.pinterest.com/vegassidekickcom/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://vegassidekick.com/#website",
+      "url": "https://vegassidekick.com/",
+      "name": "Vegas Sidekick",
+      "publisher": { "@id": "https://vegassidekick.com/#organization" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": { "@type": "EntryPoint", "urlTemplate": "https://vegassidekick.com/search/?q={search_term_string}" },
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <div id="progress-bar"></div>
