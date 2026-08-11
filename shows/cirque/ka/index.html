@@ -137,7 +137,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="image" href="/images/ka-hero.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="/images/ka-hero.webp" type="image/webp" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -519,7 +519,8 @@
 .spike-text strong, .faq-icon { color: #ff2e7e !important; }
 .spike-callout { border-left-color: #ff2e7e !important; }
 .expect-card { border-left-color: #ff2e7e !important; }
-</style>
+    picture{display:contents}
+  </style>
   <link rel="canonical" href="https://vegassidekick.com/shows/cirque/ka/" />
 </head>
 <body>
@@ -561,7 +562,7 @@
       <span class="s-badge">🪑 Sweet Spot</span>
       <div class="s-track" id="sTrack">
         <div class="slide slide-photo active">
-          <img src="/images/ka-hero.jpg" alt="KÀ by Cirque du Soleil at MGM Grand Las Vegas" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"  loading="eager" fetchpriority="high" />
+          <picture><source type="image/webp" srcset="/images/ka-hero.webp" /><img src="/images/ka-hero.jpg" alt="KÀ by Cirque du Soleil at MGM Grand Las Vegas" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"  loading="eager" fetchpriority="high" /></picture>
           <div class="slide-ph" style="display:none"><div class="em">⚔️</div><div class="pt">KÀ</div><div class="pl">Photo 1</div></div>
         </div>
         <div class="slide slide-photo">

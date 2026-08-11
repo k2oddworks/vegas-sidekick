@@ -152,7 +152,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="image" href="/images/laugh-factory-hero.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="/images/laugh-factory-hero.webp" type="image/webp" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
@@ -532,7 +532,8 @@
 .spike-text strong, .faq-icon { color: #ff2e7e !important; }
 .spike-callout { border-left-color: #ff2e7e !important; }
 .expect-card { border-left-color: #ff2e7e !important; }
-</style>
+    picture{display:contents}
+  </style>
 </head>
 <body>
 
@@ -561,7 +562,7 @@
   <!-- 3-photo slider -->
   <div class="slider" role="region" aria-label="Show photos">
     <div class="slide active">
-      <img src="/images/laugh-factory-hero.jpg" alt="Laugh Factory Las Vegas comedy club logo with microphone stand and seating at Horseshoe Las Vegas" loading="eager"  fetchpriority="high" />
+      <picture><source type="image/webp" srcset="/images/laugh-factory-hero.webp" /><img src="/images/laugh-factory-hero.jpg" alt="Laugh Factory Las Vegas comedy club logo with microphone stand and seating at Horseshoe Las Vegas" loading="eager"  fetchpriority="high" /></picture>
     </div>
     <div class="slide">
       <img src="/images/laugh-factory-2.jpg" alt="Audience watching live stand-up comedy at Laugh Factory Las Vegas at Horseshoe Las Vegas" loading="lazy" />

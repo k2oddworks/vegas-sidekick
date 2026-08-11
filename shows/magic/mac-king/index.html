@@ -151,7 +151,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="image" href="/images/mac-king-hero.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="/images/mac-king-hero.webp" type="image/webp" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
@@ -512,7 +512,8 @@
 .spike-text strong, .faq-icon { color: #ff2e7e !important; }
 .spike-callout { border-left-color: #ff2e7e !important; }
 .expect-card { border-left-color: #ff2e7e !important; }
-</style>
+    picture{display:contents}
+  </style>
 </head>
 <body>
 
@@ -544,7 +545,7 @@
     <span class="s-badge">Best Bargain on the Strip</span>
     <div class="s-track" id="sTrack">
       <div class="slide active">
-        <img src="/images/mac-king-hero.jpg" alt="Mac King Comedy Magic Las Vegas — Mac King in signature plaid suit, Excalibur" loading="eager"  fetchpriority="high" />
+        <picture><source type="image/webp" srcset="/images/mac-king-hero.webp" /><img src="/images/mac-king-hero.jpg" alt="Mac King Comedy Magic Las Vegas — Mac King in signature plaid suit, Excalibur" loading="eager"  fetchpriority="high" /></picture>
       </div>
       <div class="slide">
         <img src="/images/mac-king-2.jpg" alt="Mac King performing a card trick on stage at Thunderland Theater, Excalibur" loading="lazy" />

@@ -150,7 +150,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="image" href="/images/zombie-burlesque-hero.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="/images/zombie-burlesque-hero.webp" type="image/webp" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
 
   <style>
@@ -527,7 +527,8 @@
 .spike-text strong, .faq-icon { color: #ff2e7e !important; }
 .spike-callout { border-left-color: #ff2e7e !important; }
 .expect-card { border-left-color: #ff2e7e !important; }
-</style>
+    picture{display:contents}
+  </style>
 </head>
 <body>
 <div id="progress-bar" aria-hidden="true"></div>
@@ -558,7 +559,7 @@
 
   <div class="slider" id="heroSlider" role="region" aria-label="Show photos">
     <div class="slide active">
-      <img src="/images/zombie-burlesque-hero.jpg" alt="Zombie Burlesque official poster art — a zombie showgirl reaching out beneath the show's title treatment, V Theater Las Vegas" loading="eager"  fetchpriority="high" />
+      <picture><source type="image/webp" srcset="/images/zombie-burlesque-hero.webp" /><img src="/images/zombie-burlesque-hero.jpg" alt="Zombie Burlesque official poster art — a zombie showgirl reaching out beneath the show's title treatment, V Theater Las Vegas" loading="eager"  fetchpriority="high" /></picture>
     </div>
     <div class="slide">
       <img src="/images/zombie-burlesque-show-2.jpg" alt="Zombie Burlesque live band performing on the upper balcony above acrobatic burlesque performers on the stage below" loading="lazy" />

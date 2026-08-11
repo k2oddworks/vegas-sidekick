@@ -143,7 +143,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="image" href="/images/tape-face-hero.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="/images/tape-face-hero.webp" type="image/webp" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
@@ -528,7 +528,8 @@
 .spike-text strong, .faq-icon { color: #ff2e7e !important; }
 .spike-callout { border-left-color: #ff2e7e !important; }
 .expect-card { border-left-color: #ff2e7e !important; }
-</style>
+    picture{display:contents}
+  </style>
 </head>
 <body>
 
@@ -560,7 +561,7 @@
 
   <div class="slider" role="region" aria-label="Show photos and trailer">
     <div class="slide active">
-      <img src="/images/tape-face-hero.jpg" alt="Tape Face performing on stage at the Underground Theater, MGM Grand Las Vegas" loading="eager"  fetchpriority="high" />
+      <picture><source type="image/webp" srcset="/images/tape-face-hero.webp" /><img src="/images/tape-face-hero.jpg" alt="Tape Face performing on stage at the Underground Theater, MGM Grand Las Vegas" loading="eager"  fetchpriority="high" /></picture>
     </div>
     <div class="slide">
       <img src="/images/tape-face-2.jpg" alt="Tape Face with props on stage in Las Vegas" loading="lazy" />

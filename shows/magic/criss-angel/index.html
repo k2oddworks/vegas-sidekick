@@ -148,7 +148,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="image" href="/images/criss-angel-hero.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="/images/criss-angel-hero.webp" type="image/webp" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
@@ -483,7 +483,8 @@
 .spike-text strong, .faq-icon { color: #ff2e7e !important; }
 .spike-callout { border-left-color: #ff2e7e !important; }
 .expect-card { border-left-color: #ff2e7e !important; }
-</style>
+    picture{display:contents}
+  </style>
 </head>
 <body>
 <div id="progress-bar" aria-hidden="true"></div>
@@ -496,7 +497,7 @@
 
   <div class="slider" role="region" aria-label="Show photos">
     <div class="slide active">
-      <img src="/images/criss-angel-hero.jpg" alt="Criss Angel levitating barefoot in gothic black outfit with playing cards floating around him — iconic MINDFREAK promotional photo at Planet Hollywood Las Vegas" loading="eager"  fetchpriority="high" />
+      <picture><source type="image/webp" srcset="/images/criss-angel-hero.webp" /><img src="/images/criss-angel-hero.jpg" alt="Criss Angel levitating barefoot in gothic black outfit with playing cards floating around him — iconic MINDFREAK promotional photo at Planet Hollywood Las Vegas" loading="eager"  fetchpriority="high" /></picture>
     </div>
     <div class="slide">
       <img src="/images/criss-angel-2.jpg" alt="Criss Angel MINDFREAK stage performance — illuminated box frame with showgirls inside, multicolor LED wall backdrop and hooded figures at the Criss Angel Theater, Planet Hollywood" loading="lazy" />

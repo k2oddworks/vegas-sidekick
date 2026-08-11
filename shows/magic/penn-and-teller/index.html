@@ -151,7 +151,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="image" href="/images/penn-and-teller-hero.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="/images/penn-and-teller-hero.webp" type="image/webp" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
@@ -489,7 +489,8 @@
 .spike-text strong, .faq-icon { color: #ff2e7e !important; }
 .spike-callout { border-left-color: #ff2e7e !important; }
 .expect-card { border-left-color: #ff2e7e !important; }
-</style>
+    picture{display:contents}
+  </style>
 </head>
 <body>
 <div id="progress-bar" aria-hidden="true"></div>
@@ -502,7 +503,7 @@
 
   <div class="slider" role="region" aria-label="Show photos">
     <div class="slide active">
-      <img src="/images/penn-and-teller-hero.jpg" alt="Penn Jillette and Teller in a dramatic promotional photo with a sparking Danger High Voltage machine — Penn & Teller Las Vegas magic show at the Rio Hotel" loading="eager"  fetchpriority="high" />
+      <picture><source type="image/webp" srcset="/images/penn-and-teller-hero.webp" /><img src="/images/penn-and-teller-hero.jpg" alt="Penn Jillette and Teller in a dramatic promotional photo with a sparking Danger High Voltage machine — Penn & Teller Las Vegas magic show at the Rio Hotel" loading="eager"  fetchpriority="high" /></picture>
     </div>
     <div class="slide">
       <img src="/images/penn-and-teller-2.jpg" alt="Penn Jillette and Teller in their classic back-to-back promo pose — the world's most famous magic-comedy duo, 21 years at the Penn & Teller Theater at Rio Hotel Las Vegas" loading="lazy" />
