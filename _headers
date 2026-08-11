@@ -32,3 +32,6 @@
 # (belt-and-suspenders with the page's noindex meta). Orphan page, not in sitemap.
 /brand-bible/*
   X-Robots-Tag: noindex, nofollow, noarchive
+
+/build-log/*
+  X-Robots-Tag: noindex, nofollow, noarchive
