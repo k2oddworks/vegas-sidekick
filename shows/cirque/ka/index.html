@@ -137,6 +137,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" href="/images/ka-hero.jpg" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -560,7 +561,7 @@
       <span class="s-badge">🪑 Sweet Spot</span>
       <div class="s-track" id="sTrack">
         <div class="slide slide-photo active">
-          <img src="/images/ka-hero.jpg" alt="KÀ by Cirque du Soleil at MGM Grand Las Vegas" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <img src="/images/ka-hero.jpg" alt="KÀ by Cirque du Soleil at MGM Grand Las Vegas" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"  loading="eager" fetchpriority="high" />
           <div class="slide-ph" style="display:none"><div class="em">⚔️</div><div class="pt">KÀ</div><div class="pl">Photo 1</div></div>
         </div>
         <div class="slide slide-photo">
