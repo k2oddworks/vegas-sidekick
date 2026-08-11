@@ -49,7 +49,7 @@ vegas-sidekick/
 | Search | Dependency-free client-side search (local JS dataset — no third-party service) |
 | Email | Brevo (formerly Sendinblue) |
 | Auth | GitHub OAuth (for CMS admin) |
-| Fonts | Google Fonts (Bebas Neue, Barlow, Barlow Condensed) |
+| Fonts | Google Fonts — **Plus Jakarta Sans** (display) + **Inter** (body); Cormorant Garamond italic for editorial accents. *(Legacy Bebas Neue/Barlow fully retired in the Aug 2026 redesign.)* |
 
 **No npm, no build step, no bundler.** All third-party libraries are loaded from CDN.
 
@@ -57,30 +57,68 @@ vegas-sidekick/
 
 ## Design System
 
+> **Redesigned Aug 2026 — neon palette + Plus Jakarta Sans/Inter.** The pre-2026 look (navy/orange + Bebas Neue/Barlow) is fully retired from rendered pages. ⚠️ Show-page base CSS still *defines* legacy token names like `--navy`/`--orange`, but they're overridden by the neon palette and a blue `--primary: #3b82f6`. **When building/updating a page, match a current live page — not any legacy prose below that still mentions Bebas Neue, Barlow, or orange CTAs.**
+
 ### Color Palette (CSS Custom Properties)
 ```css
---navy:     #0A1628   /* Primary background */
---blue:     #1A6BFF   /* Secondary accent, links */
---orange:   #FF6B2B   /* Primary CTA buttons */
---white:    #FFFFFF
---gray-*:   various   /* Text hierarchy */
+--ink:     #171225   /* Primary text */
+--bg:      #ffffff   /* Page background (light) */
+--soft:    #f5f4fb   /* Soft section background */
+--blue:    #3b82f6   /* PRIMARY — CTAs + price (locked-in) */
+--pink:    #ff2e7e   /* Highlight accent — use sparingly */
+--lime:    #c6f22e   /* Lime accent */
+--purple:  #7c3aed   /* Eyebrows / secondary */
+--teal:    #0fb5c9   /* Tertiary accent */
+/* Hero gradient: linear #1c0a3a → #2b0f5c → #12061f (deep-purple neon) */
 ```
 
 ### Typography
-- **Headlines:** Bebas Neue (Google Fonts)
-- **Body text:** Barlow 400/600/700 (Google Fonts)
-- **Labels/Callouts:** Barlow Condensed 700/800 (Google Fonts)
+- **Display/Headlines:** Plus Jakarta Sans (700/800)
+- **Body:** Inter (400–700)
+- **Editorial accent:** Cormorant Garamond italic (tagline + `.lede` on show pages)
 
 ### Responsive Breakpoints
 - Desktop → Tablet: `900px`
 - Tablet → Mobile: `480px`
 
 ### Visual Conventions
-- Dark navy theme throughout
-- Orange for primary CTAs, Blue for secondary actions
-- Starfield background (CSS radial-gradient pattern)
-- Glassmorphism on cards (`backdrop-filter: blur`)
-- Animations: `fadeUp`, `fadeIn`, `float`, `ctaPulse`
+- Light page background with deep-purple **neon-gradient hero** sections (white text, starburst speckles)
+- **Blue (`#3b82f6`) primary CTAs**; pink `#ff2e7e` as a small highlight only
+- Glassy hero pills; purple uppercase `.eyebrow` section labels
+- Rounded cards (`--radius: 18px`), soft shadows
+- Animations: `fadeUp`/scroll-reveal (`IntersectionObserver`), Ken Burns hero sliders, `pulseGlowCta`
+
+---
+
+## Current State & Recent Changes (updated 2026-08-11)
+
+Durable facts from recent work. Where these conflict with older prose elsewhere in this file, **these win.**
+
+### `_headers` file (Cloudflare) — caching + security
+A root `_headers` file now sets response headers:
+- **HTML + `/components/*`** → `Cache-Control: public, max-age=0, must-revalidate` (always revalidate → always fresh).
+- **`/images/*`, favicons** → `public, max-age=31536000, immutable`.
+- Security headers site-wide: `X-Content-Type-Options`, `Strict-Transport-Security`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`.
+
+**Implication for the `?v=` cache-busting instructions elsewhere in this file:** bumping `?v=` on `header.js`/`footer.js`/`search-data.js` is **no longer required for correctness** — those files now revalidate on every load. It's optional/harmless, not mandatory. (Only takes effect on the branch Cloudflare deploys — i.e. `main`.)
+
+### Author / E-E-A-T entity
+- **`/about/kris-kidd/`** is the canonical **`Person` entity** page (`ProfilePage` + `Person` JSON-LD, `@id …#kris`, `sameAs` → FB/IG/Reddit/Pinterest `VegasSidekick`).
+- **`/about/`** carries `AboutPage` + `Organization` (`@id …#organization`) with `founder` → Kris.
+- All **news articles** link their `author` schema + visible byline to `/about/kris-kidd/`.
+- **Real bio facts (use these, don't invent):** Kris Kidd — Las Vegas local since **2005**; in show **ticketing since 2006**, ~15+ yrs ticketing & concierge, most recently high-end concierge at **Hilton Grand Vacation Club**; has seen **100+** shows; personal favorites **VEGAS! The Show, Atomic Saloon Show, Mac King**. Founded the site because he was tired of being told what to recommend.
+- Both About pages are on the new neon design; author photo is `images/kris-kidd.webp` (real binary).
+
+### Image / performance patterns (Core Web Vitals)
+- **Hero images:** add `<link rel="preload" as="image" href="…" fetchpriority="high">` (add `type="image/webp"` for webp) in `<head>`, plus `fetchpriority="high"` + `loading="eager"` on the hero `<img>`.
+- **Format:** serve WebP via `<picture><source type="image/webp" srcset="…webp"><img src="…jpg" …></picture>`; add `picture{display:contents}` so existing img CSS is unaffected. **Keep the original `.jpg` on disk** — OG/social tags and homepage/listing/search cards reference it, and crawlers need a real (non-data-URL) file.
+- **No data-URL heroes.** All show pages now reference real image files (the 7 old base64-embedded pages were converted). Below-fold/gallery images use `loading="lazy"`.
+- **Resize oversized sources** to ~1280px wide before encoding — the biggest LCP win came from an oversized 2500px hero, not from de-bloating base64.
+- **Binaries CAN be committed via `git` in this environment** (unlike the MCP `push_files` path, which corrupts binaries). Convert with `cwebp` or PIL (`Image.save(..., 'WEBP', quality=78, method=6)`).
+
+### Git workflow in this environment
+- Remote is **`k2oddworks/vegas-sidekick`**; plain **`git push` works** here (the MCP `push_files` API described later in this file is a *different* setup — use real git in this session).
+- Develop on the feature branch; for **"make live"**, fast-forward the change onto **`main`** and push (Cloudflare Pages deploys `main`). Because `main` and the feature branch can have divergent history, "make live" is done by checking out `main` and applying just the changed files (`git checkout <branch> -- <files>`), then committing + pushing `main`.
 
 ---
 

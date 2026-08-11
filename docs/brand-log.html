@@ -1,0 +1,271 @@
+<title>Vegas Sidekick — Brand & Build Log</title>
+<style>
+  :root{
+    --void:#0b0518; --night:#160a30; --night2:#241048; --panel:#170b32; --panel2:#1e0f3e;
+    --line:rgba(198,163,255,.16); --line2:rgba(198,163,255,.28);
+    --text:#f3eeff; --muted:#a99fce; --dim:#7d75a3;
+    --blue:#5b95ff; --blue-deep:#3b82f6; --pink:#ff2e7e; --lime:#c6f22e; --purple:#a855f7; --teal:#22c7db;
+    --radius:16px;
+    --disp:"Plus Jakarta Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+    --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--void); color:var(--text); font-family:var(--body);
+    line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+    background-image:
+      radial-gradient(900px 500px at 82% -8%, rgba(124,58,237,.38), transparent 60%),
+      radial-gradient(760px 460px at 8% 8%, rgba(255,46,126,.16), transparent 55%),
+      radial-gradient(700px 620px at 50% 108%, rgba(15,181,201,.14), transparent 60%);
+    background-attachment:fixed;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  h1,h2,h3,.disp{font-family:var(--disp);letter-spacing:-.02em;line-height:1.03;text-wrap:balance}
+  a{color:var(--blue);text-decoration:none}
+  ::selection{background:var(--pink);color:#12061f}
+
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--purple)}
+
+  /* HERO */
+  header.hero{position:relative;padding:96px 0 60px;text-align:center;overflow:hidden}
+  .mark{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);
+    border:1px solid var(--line);border-radius:100px;padding:8px 16px;margin-bottom:30px;background:rgba(255,255,255,.03)}
+  .mark b{color:var(--lime);letter-spacing:.24em}
+  .wordmark{font-family:var(--disp);font-weight:800;font-size:clamp(3.1rem,10vw,6.6rem);letter-spacing:-.03em;line-height:.92}
+  .wordmark .v{color:#fff;text-shadow:0 0 26px rgba(91,149,255,.55)}
+  .wordmark .s{color:var(--pink);text-shadow:0 0 30px rgba(255,46,126,.65),0 0 60px rgba(255,46,126,.35)}
+  .tagline{font-family:var(--disp);font-weight:700;font-size:clamp(1.15rem,3vw,1.7rem);margin-top:22px;
+    background:linear-gradient(90deg,var(--pink),var(--lime));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .lede{max-width:56ch;margin:16px auto 0;color:var(--muted);font-size:1.05rem}
+  .updated{margin-top:26px;font-family:var(--mono);font-size:.74rem;color:var(--dim);letter-spacing:.06em}
+  .glowline{height:2px;width:min(680px,86%);margin:44px auto 0;border-radius:2px;
+    background:linear-gradient(90deg,transparent,var(--blue),var(--pink),var(--lime),transparent);opacity:.8}
+
+  section{padding:64px 0}
+  .sec-head{display:flex;flex-direction:column;gap:8px;margin-bottom:34px}
+  .sec-head h2{font-size:clamp(1.6rem,4vw,2.3rem);font-weight:800}
+
+  /* STATS */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .stat{border:1px solid var(--line);border-radius:var(--radius);padding:22px 20px;background:linear-gradient(180deg,var(--panel),rgba(23,11,50,.4))}
+  .stat .n{font-family:var(--disp);font-weight:800;font-size:2.3rem;line-height:1;font-variant-numeric:tabular-nums}
+  .stat:nth-child(1) .n{color:var(--lime)} .stat:nth-child(2) .n{color:var(--pink)}
+  .stat:nth-child(3) .n{color:var(--blue)} .stat:nth-child(4) .n{color:var(--teal)}
+  .stat .l{margin-top:8px;color:var(--muted);font-size:.9rem}
+
+  /* BRAND SNAPSHOT */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .card{border:1px solid var(--line);border-radius:var(--radius);padding:26px;background:linear-gradient(180deg,var(--panel),rgba(20,10,44,.35))}
+  .card h3{font-size:1.15rem;margin-bottom:14px}
+  .swatches{display:flex;flex-wrap:wrap;gap:10px}
+  .sw{flex:1 1 92px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:rgba(0,0,0,.2)}
+  .sw .chip{height:46px}
+  .sw .meta{padding:7px 9px;font-family:var(--mono);font-size:.66rem;color:var(--muted);line-height:1.3}
+  .sw .meta b{display:block;color:var(--text);font-size:.72rem;letter-spacing:.02em}
+  .typerow{display:flex;flex-direction:column;gap:14px}
+  .typ{border-bottom:1px dashed var(--line);padding-bottom:12px}
+  .typ:last-child{border:0;padding:0}
+  .typ .big{font-family:var(--disp);font-weight:800;font-size:1.7rem}
+  .typ .big.body{font-family:var(--body);font-weight:600}
+  .typ .big.mono{font-family:var(--mono);font-weight:500;font-size:1.3rem}
+  .typ .cap{font-family:var(--mono);font-size:.68rem;color:var(--dim);letter-spacing:.14em;text-transform:uppercase;margin-top:4px}
+  .voice li{list-style:none;padding:9px 0 9px 26px;position:relative;color:var(--muted)}
+  .voice li::before{content:"";position:absolute;left:0;top:15px;width:11px;height:2px;background:var(--lime);box-shadow:0 0 8px var(--lime)}
+  .voice li b{color:var(--text);font-weight:600}
+
+  /* FOUNDER */
+  .founder{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;
+    border:1px solid var(--line2);border-radius:var(--radius);padding:26px;
+    background:radial-gradient(400px 200px at 12% 0,rgba(255,46,126,.12),transparent 60%),linear-gradient(180deg,var(--panel2),rgba(20,10,44,.5))}
+  .founder img{width:132px;height:132px;border-radius:16px;display:block;
+    box-shadow:0 0 0 1px rgba(91,149,255,.4),0 12px 34px rgba(124,58,237,.5),0 0 40px rgba(34,199,219,.28)}
+  .founder h3{font-size:1.35rem}
+  .founder .role{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin:4px 0 12px}
+  .founder p{color:var(--muted);font-size:.98rem}
+  .founder .favs{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+  .tag{font-family:var(--mono);font-size:.72rem;border:1px solid var(--line2);border-radius:100px;padding:5px 12px;color:var(--text);background:rgba(255,255,255,.03)}
+
+  /* TIMELINE */
+  .tl{position:relative;margin-top:8px;padding-left:30px}
+  .tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;
+    background:linear-gradient(180deg,var(--blue),var(--pink),var(--lime))}
+  .ev{position:relative;padding:0 0 30px 8px}
+  .ev::before{content:"";position:absolute;left:-30px;top:4px;width:16px;height:16px;border-radius:50%;
+    background:var(--void);border:2px solid var(--pink);box-shadow:0 0 12px var(--pink)}
+  .ev.blue::before{border-color:var(--blue);box-shadow:0 0 12px var(--blue)}
+  .ev.lime::before{border-color:var(--lime);box-shadow:0 0 12px var(--lime)}
+  .ev.teal::before{border-color:var(--teal);box-shadow:0 0 12px var(--teal)}
+  .ev .date{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--dim);text-transform:uppercase}
+  .ev h4{font-family:var(--disp);font-weight:700;font-size:1.12rem;margin:3px 0 5px}
+  .ev p{color:var(--muted);font-size:.95rem;max-width:64ch}
+  .ev .metric{display:inline-block;margin-top:7px;font-family:var(--mono);font-size:.72rem;color:var(--lime);
+    border:1px solid var(--line);border-radius:6px;padding:2px 8px;background:rgba(198,242,46,.06)}
+  .era{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--purple);
+    margin:8px 0 18px;padding-left:8px}
+
+  /* PRIMER */
+  .primer{border:1px solid var(--line2);border-radius:var(--radius);overflow:hidden;background:#0a0416}
+  .primer .bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);
+    font-family:var(--mono);font-size:.74rem;color:var(--muted);background:rgba(255,255,255,.02)}
+  .primer .dot{width:11px;height:11px;border-radius:50%}
+  .primer .body{padding:22px 24px;font-family:var(--mono);font-size:.82rem;line-height:1.85;color:#d7cff2}
+  .primer .body .k{color:var(--teal)} .primer .body .p{color:var(--pink)} .primer .body .g{color:var(--lime)}
+  .primer .body .c{color:var(--dim)}
+  .files{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px}
+  .file{font-family:var(--mono);font-size:.76rem;border:1px solid var(--line2);border-radius:8px;padding:8px 13px;color:var(--text);background:rgba(255,255,255,.03)}
+  .file b{color:var(--lime)}
+
+  footer{padding:50px 0 70px;text-align:center;color:var(--dim);font-family:var(--mono);font-size:.76rem;letter-spacing:.06em}
+  footer .glowline{margin-bottom:30px}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:820px){
+    .stats{grid-template-columns:1fr 1fr}
+    .grid2{grid-template-columns:1fr}
+    .founder{grid-template-columns:1fr;text-align:center}
+    .founder img{margin:0 auto}
+    .founder .favs{justify-content:center}
+  }
+  @media(prefers-reduced-motion:reduce){.reveal{transition:none;opacity:1;transform:none}*{animation:none!important}}
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="mark">🌵 Spike's Field Notes · <b>brand&nbsp;+&nbsp;build&nbsp;log</b></span>
+    <div class="wordmark"><span class="v">VEGAS</span> <span class="s">SIDEKICK</span></div>
+    <div class="tagline">Vegas Without The Trauma.</div>
+    <p class="lede">The living record of what this site is, how it looks, and everything we've shipped — a single page to orient a teammate or hand context to a brand-new conversation.</p>
+    <div class="updated">LAST UPDATED · 2026-08-11</div>
+    <div class="glowline"></div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stat"><div class="n">63</div><div class="l">show pages tuned for speed</div></div>
+      <div class="stat"><div class="n">~3.5MB</div><div class="l">image &amp; HTML weight removed</div></div>
+      <div class="stat"><div class="n">58</div><div class="l">heroes now preloaded first</div></div>
+      <div class="stat"><div class="n">20</div><div class="l">articles wired to the author entity</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Identity</span><h2>The brand at a glance</h2></div>
+    <div class="grid2">
+      <div class="card reveal">
+        <h3>Neon palette</h3>
+        <div class="swatches">
+          <div class="sw"><div class="chip" style="background:#3b82f6"></div><div class="meta"><b>Blue</b>#3b82f6 · primary</div></div>
+          <div class="sw"><div class="chip" style="background:#ff2e7e"></div><div class="meta"><b>Pink</b>#ff2e7e · highlight</div></div>
+          <div class="sw"><div class="chip" style="background:#c6f22e"></div><div class="meta"><b>Lime</b>#c6f22e · accent</div></div>
+          <div class="sw"><div class="chip" style="background:#7c3aed"></div><div class="meta"><b>Purple</b>#7c3aed · label</div></div>
+          <div class="sw"><div class="chip" style="background:#0fb5c9"></div><div class="meta"><b>Teal</b>#0fb5c9 · tertiary</div></div>
+          <div class="sw"><div class="chip" style="background:linear-gradient(135deg,#1c0a3a,#2b0f5c,#12061f)"></div><div class="meta"><b>Night</b>hero gradient</div></div>
+        </div>
+      </div>
+      <div class="card reveal">
+        <h3>Typography</h3>
+        <div class="typerow">
+          <div class="typ"><div class="big">Plus Jakarta Sans</div><div class="cap">Display · headlines 700/800</div></div>
+          <div class="typ"><div class="big body">Inter — clean, quiet body text</div><div class="cap">Body · 400–700</div></div>
+          <div class="typ"><div class="big mono">IBM Plex Mono · meta &amp; labels</div><div class="cap">Utility · dates, eyebrows</div></div>
+        </div>
+      </div>
+      <div class="card reveal">
+        <h3>Voice</h3>
+        <ul class="voice">
+          <li><b>Honest recommendations. No BS.</b> Real prices, no fake countdowns.</li>
+          <li><b>Local, not tourist.</b> Someone who actually lives here and sees the shows.</li>
+          <li><b>Spike</b> — the deadpan saguaro sidekick — is the straight-talk mascot.</li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <h3>What it is</h3>
+        <p style="color:var(--muted);font-size:.98rem">A static Cloudflare Pages site for discovering Las Vegas shows and booking through Spotlight.vegas affiliate links. No backend, no build step — plain HTML/CSS/JS with injected header/footer components and a client-side search.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">The person behind the picks</span><h2>Kris Kidd</h2></div>
+    <div class="founder reveal">
+      <img src="data:image/webp;base64,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" alt="Kris Kidd, founder of Vegas Sidekick, against a neon Las Vegas skyline" />
+      <div>
+        <h3>Kris Kidd</h3>
+        <div class="role">Founder · Chief Vegas Officer</div>
+        <p>Las Vegas local since <b style="color:var(--text)">2005</b>. In show ticketing since 2006 and 15+ years in ticketing &amp; concierge — most recently high-end concierge at Hilton Grand Vacation Club. Has seen well over a hundred productions on and off the Strip. Built Vegas Sidekick because he was tired of being told what to recommend.</p>
+        <div class="favs">
+          <span class="tag">★ VEGAS! The Show</span>
+          <span class="tag">★ Atomic Saloon Show</span>
+          <span class="tag">★ Mac King</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Build log</span><h2>What we've shipped</h2></div>
+    <div class="era reveal">Aug 11, 2026 — the big session</div>
+    <div class="tl">
+      <div class="ev teal reveal"><div class="date">2026-08-11</div><h4>Cloudflare <code>_headers</code> — caching + security</h4><p>Security headers site-wide (HSTS, nosniff, frame/referrer/permissions policy). HTML &amp; components revalidate every load; images cached immutable for a year.</p><span class="metric">retires the ?v= cache-bust chore</span></div>
+      <div class="ev pink reveal"><div class="date">2026-08-11</div><h4>E-E-A-T author entity</h4><p>Made <code>/about/kris-kidd/</code> a canonical Person entity (ProfilePage + JSON-LD + sameAs), tied the Organization's founder to it, and linked all 20 news bylines. Corrected the bio to Kris's real story.</p><span class="metric">20 articles → 1 verifiable entity</span></div>
+      <div class="ev purple reveal"><div class="date">2026-08-11</div><h4>About &amp; Kris Kidd pages reskinned</h4><p>Rebuilt both on the neon design system with a real WebP portrait — and dropped ~450KB of legacy inline CSS in the process.</p></div>
+      <div class="ev blue reveal"><div class="date">2026-08-11</div><h4>Performance · Phase 1 — preload the hero</h4><p>Added hero preload + <code>fetchpriority="high"</code> across every page that shows a hero image — the biggest single lever on load-time perception.</p><span class="metric">50 pages in one pass</span></div>
+      <div class="ev blue reveal"><div class="date">2026-08-11</div><h4>Performance · Phase 2 — de-bloat</h4><p>Converted the 7 heaviest pages from base64-embedded images to real, cacheable WebP files.</p><span class="metric">222–383KB → 79–93KB per page · −1.6MB</span></div>
+      <div class="ev blue reveal"><div class="date">2026-08-11</div><h4>Performance · Phase 3 — modern format</h4><p>Swapped JPG heroes for WebP via <code>&lt;picture&gt;</code> (JPG kept for social + cards). Resized one oversized 2500px hero from 685KB to 65KB.</p><span class="metric">23 pages · hero payload 2.3MB → 1.4MB</span></div>
+      <div class="ev lime reveal"><div class="date">2026-08-11</div><h4>Measured it — and stayed honest</h4><p>A controlled before/after showed the real LCP win came from fixing oversized images (−36%), not from de-bloating base64. The measurement corrected the assumption.</p></div>
+    </div>
+    <div class="era reveal">Earlier — the foundations</div>
+    <div class="tl">
+      <div class="ev purple reveal"><div class="date">prior sessions</div><h4>The neon redesign</h4><p>Recreated the homepage and rolled a new dark neon header/footer site-wide — interactive Spike, orbiting show bubbles, colorful drawer. Moved the whole site off Bebas Neue/Barlow onto Plus Jakarta Sans + Inter.</p></div>
+      <div class="ev pink reveal"><div class="date">prior sessions</div><h4>SEO overhaul</h4><p>Keyword-aligned H1s and titles ("cheap/discount tickets"), sitemap freshness, and structured data — Organization, WebSite, FAQPage, canonicals.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">For a fresh conversation</span><h2>Context primer</h2></div>
+    <div class="primer reveal">
+      <div class="bar"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span><span style="margin-left:8px">paste-me-into-a-new-chat.txt</span></div>
+      <div class="body">
+<span class="c"># Vegas Sidekick — orientation for a new session</span><br>
+Static Cloudflare Pages site · LV show tickets · Spotlight affiliate (<span class="g">/ref/vegassidekick</span>).<br>
+Deploy: plain <span class="k">git push</span> to <span class="k">k2oddworks/vegas-sidekick</span>; "make live" = apply files onto <span class="k">main</span>.<br>
+Design: <span class="p">Plus Jakarta Sans</span> + <span class="p">Inter</span>, neon palette, blue <span class="k">#3b82f6</span> primary, pink <span class="k">#ff2e7e</span> highlight.<br>
+<span class="c"># legacy --navy/--orange token names persist but are overridden — match a live page.</span><br>
+Caching: <span class="k">_headers</span> makes HTML/components revalidate → <span class="g">?v= bumps optional</span>.<br>
+Author: <span class="k">/about/kris-kidd/</span> = canonical Person entity; bio facts are real, don't invent.<br>
+Images: real files only, no data-URLs; hero preload + fetchpriority; WebP via &lt;picture&gt;, keep the .jpg.<br>
+Binaries: commit via git here (the MCP push path corrupts them).
+      </div>
+    </div>
+    <div class="files">
+      <span class="file">Full rules → <b>CLAUDE.md</b></span>
+      <span class="file">Running log → <b>docs/context-primer.md</b></span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="glowline"></div>
+    🌵 &nbsp;A living document — updated as we ship. &nbsp;·&nbsp; Vegas Sidekick &nbsp;·&nbsp; vegassidekick.com
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
