@@ -1,0 +1,29 @@
+# Cloudflare Pages custom response headers
+# Docs: https://developers.cloudflare.com/pages/configuration/headers/
+
+# ---------------------------------------------------------------------------
+# Default: applies to every response (HTML pages + /components/*.js).
+# Security headers on everything, and NO long-term caching on HTML/JS so
+# content and the header/footer components always revalidate and stay fresh.
+# This is what removes the need to bump ?v= cache-busters on every edit.
+# ---------------------------------------------------------------------------
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+  X-Frame-Options: SAMEORIGIN
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Cache-Control: public, max-age=0, must-revalidate
+
+# ---------------------------------------------------------------------------
+# Static assets: content-addressed by filename, safe to cache hard.
+# When an image changes it gets a new filename, so immutable is safe.
+# ---------------------------------------------------------------------------
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/favicon.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/favicon.png
+  Cache-Control: public, max-age=31536000, immutable
