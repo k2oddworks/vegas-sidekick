@@ -46,6 +46,7 @@
         <div class="vs-footer-col">
           <div class="vs-footer-col-title">Explore</div>
           <a href="/search/">Search All Shows</a>
+          <a href="/venues/">Shows by Venue</a>
           <a href="/guides/best-cheap-vegas-shows/">Deals Under $50</a>
           <a href="/news/">Vegas Dispatch</a>
           <a href="/about/">About Vegas Sidekick</a>
