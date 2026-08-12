@@ -476,7 +476,7 @@ function renderGrid() {
       <span class="card-from">From</span>
       <span class="card-price">${s.pd}</span>
     </div>
-    <a href="/shows/magic/${s.slug}/" class="card-cta">See Show →</a>
+    <a href="/shows/magic/${s.slug}/" class="card-cta">See ${s.name} →</a>
   </div>
 </div>`;
   }).join('');
@@ -539,7 +539,7 @@ function openCompare() {
       <div class="cmp-row"><div class="cmp-row-lbl">Age Requirement</div><div class="cmp-row-val">${s.age}</div></div>
       <div class="cmp-row"><div class="cmp-row-lbl">Schedule</div><div class="cmp-row-val">${s.schedule}</div></div>
       <div class="cmp-row"><div class="cmp-row-lbl">Sidekick Pick</div><div class="cmp-row-val">${s.sp?'🌵 Yes':'—'}</div></div>
-      <a href="/shows/magic/${s.slug}/" class="cmp-col-cta">See Show →</a>
+      <a href="/shows/magic/${s.slug}/" class="cmp-col-cta">See ${s.name} →</a>
     </div>`).join('');
   document.getElementById('cmp-modal').classList.add('visible');
   document.body.style.overflow = 'hidden';
