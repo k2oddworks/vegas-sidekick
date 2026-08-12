@@ -2,110 +2,121 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" href="/favicon.png" type="image/png" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="shortcut icon" href="/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Search Las Vegas Shows | Vegas Sidekick</title>
   <meta name="description" content="Search all Las Vegas shows — comedy, magic, Cirque du Soleil, production shows and more. Find discount tickets with no hidden fees." />
+  <link rel="canonical" href="https://vegassidekick.com/search/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy: #0A1628; --blue: #1A7FE8; --blue-bright: #2E9BFF;
-      --orange: #FF6B2B; --orange-bright: #FF8C2A;
-      --white: #FFFFFF; --gray: #A8B4C4; --gray-light: #D4DCE8;
-      --card-bg: #0F1E38; --green: #22C55E;
+      --ink:#171225; --bg:#ffffff; --soft:#f5f4fb; --line:#ece9f6; --muted:#6c6883;
+      --purple:#7c3aed; --pink:#ff2e7e; --lime:#c6f22e; --blue:#3b82f6; --blue-dk:#2563eb; --teal:#0fb5c9;
+      --hero-1:#1c0a3a; --hero-2:#2b0f5c; --hero-3:#12061f; --radius:18px;
     }
     html { scroll-behavior: smooth; }
-    body { background: var(--navy); color: var(--white); font-family: 'Barlow', sans-serif; min-height: 100vh; overflow-x: hidden; }
-    body::before { content: ''; position: fixed; inset: 0; background-image: radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.4) 0%, transparent 100%), radial-gradient(1px 1px at 70% 45%, rgba(255,255,255,0.3) 0%, transparent 100%), radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,0.3) 0%, transparent 100%); pointer-events: none; z-index: 0; }
-    a { text-decoration: none; color: inherit; }
+    body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; overflow-x: hidden; }
+    h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: -.02em; line-height: 1.08; }
+    a { text-decoration: none; color: var(--blue); }
     button { font-family: inherit; cursor: pointer; }
+    img { max-width: 100%; display: block; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 22px; }
 
-    .search-page { position: relative; z-index: 1; padding: 100px 40px 80px; max-width: 1040px; margin: 0 auto; }
-    .search-hero { text-align: center; margin-bottom: 28px; }
-    .search-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); margin-bottom: 12px; }
-    .search-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: 2px; line-height: 1; margin-bottom: 12px; }
-    .search-title span { color: var(--blue-bright); }
-    .search-sub { font-size: 1rem; color: var(--gray); }
+    /* HERO */
+    .hero { position: relative; overflow: hidden; color: #fff; text-align: center; padding: 104px 0 62px;
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(124,58,237,.55), transparent 60%),
+                  radial-gradient(900px 520px at 8% 120%, rgba(255,46,126,.32), transparent 55%),
+                  linear-gradient(160deg, var(--hero-1), var(--hero-2) 60%, var(--hero-3)); }
+    .hero::after { content:""; position:absolute; inset:0; pointer-events:none; opacity:.8;
+      background-image: radial-gradient(1.5px 1.5px at 20% 30%, rgba(255,255,255,.6), transparent),
+                        radial-gradient(1.5px 1.5px at 75% 25%, rgba(198,242,46,.7), transparent),
+                        radial-gradient(1.5px 1.5px at 40% 75%, rgba(255,95,160,.6), transparent); }
+    .hero .in { position: relative; z-index: 2; }
+    .eyebrow { font-weight: 700; font-size: .76rem; letter-spacing: .16em; text-transform: uppercase; color: #c9b8ff; margin-bottom: 14px; }
+    .hero h1 { font-size: clamp(2.6rem, 6vw, 4rem); font-weight: 800; margin-bottom: 14px; }
+    .hero h1 span { background: linear-gradient(90deg, var(--pink), var(--lime)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero .sub { color: rgba(255,255,255,.82); max-width: 54ch; margin: 0 auto; font-size: 1.06rem; }
 
     /* SEARCH BOX */
-    .vs-searchbox { display: flex; gap: 0; position: relative; max-width: 720px; margin: 0 auto 18px; }
-    .vs-searchbox input { width: 100%; background: var(--card-bg); border: 2px solid rgba(26,127,232,0.25); border-right: none; border-radius: 10px 0 0 10px; padding: 16px 20px; color: var(--white); font-family: 'Barlow', sans-serif; font-size: 1.1rem; outline: none; transition: border-color 0.2s; }
-    .vs-searchbox input:focus { border-color: var(--blue-bright); }
-    .vs-searchbox input::placeholder { color: var(--gray); }
-    .vs-searchbox button { background: var(--orange); border: none; border-radius: 0 10px 10px 0; padding: 16px 28px; color: var(--navy); font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; transition: background 0.2s; white-space: nowrap; }
-    .vs-searchbox button:hover { background: var(--orange-bright); }
+    .searchbox { display: flex; max-width: 640px; margin: 30px auto 0; border-radius: 100px; overflow: hidden; box-shadow: 0 16px 44px rgba(10,4,25,.4); }
+    .searchbox input { flex: 1; min-width: 0; border: none; padding: 17px 24px; background: #fff; color: var(--ink); font-family: 'Inter', sans-serif; font-size: 1.05rem; outline: none; }
+    .searchbox input::placeholder { color: var(--muted); }
+    .searchbox button { border: none; background: var(--blue); color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1rem; padding: 17px 30px; white-space: nowrap; transition: background .15s; }
+    .searchbox button:hover { background: var(--blue-dk); }
+
+    /* RESULTS SECTION */
+    .results { padding: 34px 0 80px; }
 
     /* CHIPS */
-    .vs-chips-wrap { max-width: 720px; margin: 0 auto 28px; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
-    .vs-chips-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); margin-right: 2px; }
-    .vs-chip { background: var(--card-bg); border: 1px solid rgba(26,127,232,0.22); border-radius: 100px; padding: 6px 14px; font-size: 0.8rem; color: var(--gray-light); font-weight: 600; transition: all 0.18s; }
-    .vs-chip:hover { border-color: var(--orange); color: var(--orange); }
+    .vs-chips-wrap { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; margin-bottom: 24px; }
+    .vs-chips-label { font-weight: 700; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--purple); margin-right: 4px; }
+    .vs-chip { background: var(--soft); border: 1px solid var(--line); border-radius: 100px; padding: 7px 16px; font-size: .84rem; color: var(--ink); font-weight: 600; transition: all .16s; }
+    .vs-chip:hover { border-color: var(--blue); color: var(--blue); background: #fff; }
 
-    .vs-stats { font-size: 0.82rem; color: var(--gray); margin: 0 auto 18px; max-width: 720px; }
+    .vs-stats { font-size: .9rem; color: var(--muted); margin-bottom: 18px; font-weight: 500; }
 
-    /* RESULTS GRID (reuses card look) */
+    /* RESULTS GRID */
     .vs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; list-style: none; }
-    .show-hit-card { background: var(--card-bg); border: 1px solid rgba(26,127,232,0.12); border-radius: 12px; overflow: hidden; color: var(--white); transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
-    .show-hit-card:hover { transform: translateY(-4px); border-color: rgba(255,107,0,0.35); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
-    .show-hit-img { aspect-ratio: 16/9; background: linear-gradient(135deg, #122448, #0D1F3C); display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 1px; color: rgba(255,255,255,0.5); position: relative; overflow: hidden; }
+    .show-hit-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; color: var(--ink); box-shadow: 0 8px 24px rgba(23,18,37,.05); transition: transform .16s, box-shadow .16s; display: flex; flex-direction: column; }
+    .show-hit-card:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(23,18,37,.12); }
+    .show-hit-img { aspect-ratio: 16/9; background: var(--soft); display: flex; align-items: center; justify-content: center; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.1rem; letter-spacing: .3px; color: var(--muted); position: relative; overflow: hidden; text-align: center; padding: 0 10px; }
     .show-hit-img img { width: 100%; height: 100%; object-fit: cover; }
-    .show-hit-category { position: absolute; top: 8px; left: 8px; background: var(--orange); color: var(--navy); font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 9px; border-radius: 4px; }
-    .show-hit-body { padding: 13px 15px; flex: 1; display: flex; flex-direction: column; gap: 5px; }
-    .show-hit-venue { font-size: 0.66rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-bright); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .show-hit-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.35rem; line-height: 1.02; letter-spacing: 0.5px; }
-    .show-hit-name mark { background: rgba(255,107,0,0.28); color: #ffb380; border-radius: 3px; padding: 0 1px; }
-    .show-hit-footer { display: flex; align-items: center; justify-content: space-between; padding: 11px 15px; border-top: 1px solid rgba(255,255,255,0.06); }
-    .show-hit-price { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--orange); }
-    .show-hit-price small { font-size: 0.62rem; font-weight: 700; color: var(--gray); letter-spacing: 1px; text-transform: uppercase; margin-right: 2px; vertical-align: 1px; }
-    .show-hit-cta { font-family: 'Barlow Condensed', sans-serif; font-size: 0.76rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-bright); background: rgba(26,127,232,0.1); border: 1px solid rgba(26,127,232,0.2); padding: 6px 13px; border-radius: 5px; transition: all 0.2s; }
-    .show-hit-card:hover .show-hit-cta { background: var(--orange); color: var(--navy); border-color: var(--orange); }
+    .show-hit-category { position: absolute; top: 10px; left: 10px; color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; font-size: .64rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; }
+    .show-hit-body { padding: 15px 16px 8px; flex: 1; display: flex; flex-direction: column; gap: 5px; }
+    .show-hit-venue { font-size: .78rem; font-weight: 500; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .show-hit-name { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.12rem; line-height: 1.15; color: var(--ink); }
+    .show-hit-name mark { background: rgba(255,46,126,.16); color: var(--pink); border-radius: 3px; padding: 0 2px; }
+    .show-hit-footer { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px 15px; }
+    .show-hit-price { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.18rem; color: var(--blue); }
+    .show-hit-price small { font-size: .68rem; font-weight: 600; color: var(--muted); text-transform: none; margin-right: 3px; }
+    .show-hit-cta { font-family: 'Plus Jakarta Sans', sans-serif; font-size: .86rem; font-weight: 700; color: var(--pink); }
 
     /* EMPTY STATE */
-    .vs-empty { text-align: center; padding: 46px 20px 20px; }
-    .vs-empty-icon { font-size: 2.6rem; margin-bottom: 12px; }
-    .vs-empty-head { font-family: 'Bebas Neue', sans-serif; font-size: 1.7rem; letter-spacing: 1.5px; margin-bottom: 6px; }
-    .vs-empty-sub { font-size: 0.9rem; color: var(--gray); margin-bottom: 22px; }
+    .vs-empty { text-align: center; padding: 40px 20px 10px; }
+    .vs-empty-icon { font-size: 2.8rem; margin-bottom: 14px; }
+    .vs-empty-head { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.6rem; margin-bottom: 8px; color: var(--ink); }
+    .vs-empty-sub { font-size: .96rem; color: var(--muted); margin-bottom: 24px; }
     .vs-empty .vs-chips-wrap { justify-content: center; }
-    .vs-browse { display: inline-block; margin-top: 22px; background: var(--orange); color: var(--navy); font-family: 'Barlow Condensed', sans-serif; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; font-size: 0.95rem; padding: 12px 26px; border-radius: 8px; transition: background 0.2s; }
-    .vs-browse:hover { background: var(--orange-bright); }
+    .vs-browse { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; background: var(--blue); color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1rem; padding: 14px 28px; border-radius: 100px; box-shadow: 0 12px 30px rgba(59,130,246,.35); transition: transform .15s, background .15s; }
+    .vs-browse:hover { background: var(--blue-dk); transform: translateY(-2px); }
 
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
     @media (max-width: 600px) {
-      .search-page { padding: 90px 18px 70px; }
-      .vs-searchbox button { padding: 16px 16px; font-size: 0.85rem; }
+      .hero { padding: 92px 0 52px; }
+      .searchbox button { padding: 17px 18px; }
       .vs-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-      .show-hit-name { font-size: 1.15rem; }
+      .show-hit-name { font-size: 1rem; }
     }
   </style>
-  <link rel="canonical" href="https://vegassidekick.com/search/" />
 </head>
 <body>
 
   <div id="vs-header"></div>
 
-  <div class="search-page">
-    <div class="search-hero">
-      <div class="search-eyebrow">Vegas Sidekick</div>
-      <h1 class="search-title">Find Your <span>Show</span></h1>
-      <p class="search-sub">Search 50+ Las Vegas shows. Discount tickets, no hidden fees.</p>
+  <section class="hero">
+    <div class="wrap in">
+      <div class="eyebrow">Search</div>
+      <h1>Find Your <span>Show</span></h1>
+      <p class="sub">Search every Las Vegas show we track — comedy, magic, Cirque, music and more. Real prices, no hidden fees.</p>
+      <form class="searchbox" id="vs-form" role="search">
+        <input id="vs-q" type="search" placeholder="Search shows, venues, categories…" autocomplete="off" aria-label="Search shows" />
+        <button type="submit">Search</button>
+      </form>
     </div>
+  </section>
 
-    <form class="vs-searchbox" id="vs-form" role="search">
-      <input id="vs-q" type="search" placeholder="Search shows, venues, categories…" autocomplete="off" aria-label="Search shows" />
-      <button type="submit">Search</button>
-    </form>
-
-    <div class="vs-chips-wrap" id="vs-chips">
-      <span class="vs-chips-label">Popular</span>
+  <section class="results">
+    <div class="wrap">
+      <div class="vs-chips-wrap" id="vs-chips"><span class="vs-chips-label">Popular</span></div>
+      <div class="vs-stats" id="vs-stats" hidden></div>
+      <div class="vs-grid" id="vs-results"></div>
+      <div class="vs-empty" id="vs-empty" hidden></div>
     </div>
-
-    <div class="vs-stats" id="vs-stats" hidden></div>
-    <div class="vs-grid" id="vs-results"></div>
-    <div class="vs-empty" id="vs-empty" hidden></div>
-  </div>
+  </section>
 
   <div id="vs-footer"></div>
 
@@ -116,6 +127,7 @@
   <script>
   (function () {
     var POPULAR = ['Comedy', 'Magic', 'Cirque', 'Cirque du Soleil', 'Carrot Top', 'Family', 'Adult'];
+    var CAT_COLOR = { 'Comedy':'#ff2e7e', 'Magic':'#7c3aed', 'Cirque':'#0fb5c9', 'Music':'#3b82f6', 'Family':'#0fb5c9', 'Adult':'#c6f22e', 'Spectaculars':'#0fb5c9' };
     var input   = document.getElementById('vs-q');
     var form    = document.getElementById('vs-form');
     var results = document.getElementById('vs-results');
@@ -137,13 +149,14 @@
       var img = s.img
         ? '<img src="' + s.img + '" alt="' + esc(s.name) + '" loading="lazy" onerror="this.remove()">'
         : esc(s.name);
-      var price = s.pd ? '<span class="show-hit-price"><small>From</small>' + esc(s.pd) + '</span>'
+      var price = s.pd ? '<span class="show-hit-price"><small>from</small>' + esc(s.pd) + '</span>'
                        : '<span class="show-hit-price">See Prices</span>';
+      var color = CAT_COLOR[s.cat] || '#7c3aed';
       return '<a class="show-hit-card" href="' + s.url + '">' +
-        '<div class="show-hit-img">' + img + '<span class="show-hit-category">' + esc(s.cat) + '</span></div>' +
-        '<div class="show-hit-body"><div class="show-hit-venue">' + esc(s.venue) + '</div>' +
+        '<div class="show-hit-img">' + img + '<span class="show-hit-category" style="background:' + color + '">' + esc(s.cat) + '</span></div>' +
+        '<div class="show-hit-body"><div class="show-hit-venue">📍 ' + esc(s.venue) + '</div>' +
         '<div class="show-hit-name">' + hl(s.name, q) + '</div></div>' +
-        '<div class="show-hit-footer">' + price + '<span class="show-hit-cta">See Show →</span></div></a>';
+        '<div class="show-hit-footer">' + price + '<span class="show-hit-cta">View →</span></div></a>';
     }
 
     function chipRow(label) {
@@ -176,7 +189,7 @@
           '<div class="vs-empty-head">No shows match “' + esc(q) + '”</div>' +
           '<div class="vs-empty-sub">Check the spelling, or try one of these:</div>' +
           '<div class="vs-chips-wrap">' + chipRow('Try') + '</div>' +
-          '<a class="vs-browse" href="/shows/">Browse all 50+ shows →</a>';
+          '<a class="vs-browse" href="/shows/">Browse all shows →</a>';
       }
       var url = q ? '/search/?q=' + encodeURIComponent(q) : '/search/';
       if (pushUrl) history.replaceState(null, '', url);
