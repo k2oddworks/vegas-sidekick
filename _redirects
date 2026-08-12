@@ -26,3 +26,7 @@
 /play/:slug /play/:slug/ 301
 /shows/:category /shows/:category/ 301
 /shows/:category/:slug /shows/:category/:slug/ 301
+
+# Old private pages consolidated into the HQ hub
+/brand-bible/* /hq/ 301
+/build-log/* /hq/ 301

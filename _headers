@@ -28,10 +28,7 @@
 /favicon.png
   Cache-Control: public, max-age=31536000, immutable
 
-# Private brand bible — keep it out of search indexes at the header level too
+# Private internal hub — keep it out of search indexes at the header level too
 # (belt-and-suspenders with the page's noindex meta). Orphan page, not in sitemap.
-/brand-bible/*
-  X-Robots-Tag: noindex, nofollow, noarchive
-
-/build-log/*
+/hq/*
   X-Robots-Tag: noindex, nofollow, noarchive
