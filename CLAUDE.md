@@ -185,6 +185,46 @@ Link:      https://spotlight.vegas/shows/tribute/ikons-of-rock-api/ref/vegasside
 
 ---
 
+### Video Previews (Show Trailers)
+
+Show pages can embed an official YouTube trailer via a reusable **click-to-play facade** — a thumbnail + a "Watch video preview" button that swap in an inline player on click. It plays **on our page** (privacy-friendly `youtube-nocookie`, autoplay on click, fullscreen enabled) and never navigates to YouTube. It's **lazy by design** — only the thumbnail loads until the visitor clicks — so it doesn't hurt LCP.
+
+**Reference implementation:** `shows/comedy/carrot-top/index.html` (first build). The `/search/` card `onerror` and this facade are the only places we use inline `onerror`.
+
+**Rule — never guess the trailer (same discipline as affiliate links):** Kris provides the **official** YouTube trailer URL. **Embed the producer's official video; never re-host** someone else's trailer on a Vegas Sidekick channel (copyright — Content-ID will flag it). For each trailer, Kris must give three things:
+1. the **official YouTube URL** (the video ID is the part after `youtu.be/`, `watch?v=`, or `/embed/` — ignore any `?si=` / `?is=` share-tracking param),
+2. the **upload date**, and
+3. the **run-time (duration)**.
+
+Upload date + duration are **required for the `VideoObject` schema and Google validates them — do not fabricate**. If you only have the URL, ship the working embed and leave the `VideoObject` for a follow-up rather than inventing a date. (YouTube is unreachable from the build env, so you can't auto-pull these — they come from Kris / the video's YouTube page.)
+
+**To add a trailer to a show:**
+
+1. Drop the video block into the page — a `#section-trailer` section, normally placed right after the About section:
+   ```html
+   <section class="section fade-up" id="section-trailer" aria-labelledby="trailer-heading">
+     <h2 id="trailer-heading" class="section-title">Watch the <span>Preview</span></h2>
+     <div class="vs-video" data-yt="VIDEO_ID" data-title="Show Name — Las Vegas Show Trailer">
+       <span class="vs-video-badge">▶ Show Trailer</span>
+       <img class="vs-video-thumb" src="https://i.ytimg.com/vi/VIDEO_ID/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/VIDEO_ID/hqdefault.jpg'" alt="Show Name trailer — venue, Las Vegas" loading="lazy" width="1280" height="720" />
+       <button class="vs-video-play" type="button" aria-label="Play Show Name video preview"></button>
+     </div>
+     <button class="vs-video-cta" type="button" data-yt-trigger>▶ Watch video preview</button>
+   </section>
+   ```
+   The `maxresdefault` thumbnail is sharp 16:9 but isn't generated for every video, so the `onerror` falls back to the universal `hqdefault`.
+2. Ensure the page carries the shared **`.vs-video*` CSS** (in the `<style>` block) and the shared **player script** (just before `</body>`) — copy both verbatim from Carrot Top. The script reads `data-yt` and injects `https://www.youtube-nocookie.com/embed/{id}?autoplay=1&rel=0&modestbranding=1` on click; it wires both the thumbnail (`.vs-video`) and the `[data-yt-trigger]` button.
+3. If the page has the `.dnav-dot` section nav, add a dot after About: `<a href="#section-trailer" class="dnav-dot" data-label="Trailer" aria-label="Trailer"></a>`.
+4. Add the `VideoObject` JSON-LD in `<head>` (alongside the Event/FAQ/Breadcrumb blocks):
+   ```json
+   {"@context":"https://schema.org","@type":"VideoObject","name":"…","description":"…","thumbnailUrl":"https://i.ytimg.com/vi/VIDEO_ID/maxresdefault.jpg","uploadDate":"YYYY-MM-DD","duration":"PT#M#S","embedUrl":"https://www.youtube.com/embed/VIDEO_ID","contentUrl":"https://www.youtube.com/watch?v=VIDEO_ID"}
+   ```
+   `duration` is ISO 8601 (38s → `PT38S`; 1m32s → `PT1M32S`).
+
+**Trailer inventory** — which shows have a live trailer — is tracked in the private `/hq/` hub → **Trailers** tab.
+
+---
+
 ## Components
 
 ### `components/header.js`
