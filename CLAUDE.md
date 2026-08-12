@@ -234,16 +234,11 @@ Credentials are embedded in client-side code (read-only, restricted scope):
 | Brevo | API Key in source, List ID: `2` | `components/footer.js` |
 | GitHub OAuth | Client ID: `Ov23lit31UqvtSuPp7tJ` | `functions/api/auth.js` |
 | GitHub OAuth | Client Secret via `GITHUB_CLIENT_SECRET` env var | `functions/api/auth.js` |
-| Cloudinary | Cloud: `dvhunpinz`, API Key: `966995363786296`, Secret: in `.cloudinary` | OG image hosting |
+| Cloudinary | **RETIRED (Aug 2026).** No longer used — all OG images are self-hosted. Formerly clouds `dvhunpinz` + `vegassidekick`. | — |
 
 **Note:** The Brevo key has restricted permissions. The GitHub Client Secret must be stored as an environment variable in Cloudflare Workers — never commit it to the repo. (Site search no longer uses Algolia — it runs entirely client-side off a local JS dataset. See **Site Search** below.)
 
-The Cloudinary API credentials are stored in `.cloudinary` (gitignored). However, server-to-server uploads are blocked by Cloudinary's IP restrictions. The established workflow for OG/social images is:
-1. Kris uploads the article image to Cloudinary from his phone (Cloudinary mobile or browser)
-2. He pastes the resulting URL (e.g. `https://res.cloudinary.com/dvhunpinz/image/upload/f_auto,q_auto/...`)
-3. Claude updates the `og:image` and `twitter:image` meta tags in the article with that URL
-
-This is a one-time step per article and takes ~10 seconds. Article content, in-page images, and all other publishing steps remain fully automated.
+**OG/social images are now self-hosted (Cloudinary retired Aug 2026).** Because binaries commit via `git` in this environment, OG images live as real files in `/images/` (e.g. `/images/{slug}-og.jpg`) and the `og:image`/`twitter:image`/JSON-LD `image` tags point at `https://vegassidekick.com/images/...`. Convert the source to a web-optimized JPG (`Image.save(..., 'JPEG', quality=85, optimize=True)`, ~1080px square or ~1600px wide), commit it, and reference it. Crawlers need a real hosted file (never a data-URL), which a committed `/images/` file satisfies. The old Cloudinary "upload from phone, paste URL" workflow is no longer used — all prior Cloudinary references were migrated to self-hosted files.
 
 ---
 
@@ -383,7 +378,7 @@ For images that appear inside HTML pages (article heroes, card thumbnails):
 - Use `cwebp -size 71680 input.jpg -o output.webp` to hit a specific byte count
 - MCP payload limit is ~500KB per push — keep total HTML file under that
 
-**OG/social preview images** require a real hosted file URL (crawlers can't use data URLs). These must be uploaded as binary via the GitHub web interface: `github.com/VegasSidekick/vegas-sidekick/upload/main/images/news` — drag and drop the file directly.
+**OG/social preview images** require a real hosted file URL (crawlers can't use data URLs). In this environment, just commit the image as a real file in `/images/` via `git` and point the OG tags at `https://vegassidekick.com/images/...` (see **External Services** above — Cloudinary is retired; OG images are self-hosted).
 
 ---
 
