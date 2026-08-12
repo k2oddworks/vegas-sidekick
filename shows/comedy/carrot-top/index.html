@@ -552,6 +552,21 @@
 .spike-callout { border-left-color: #ff2e7e !important; }
 .expect-card { border-left-color: #ff2e7e !important; }
     picture{display:contents}
+
+    /* VIDEO PREVIEW (reusable YouTube facade — plays inline, never leaves the page) */
+    .vs-video { position: relative; aspect-ratio: 16/9; border-radius: var(--radius); overflow: hidden; background: #0a0512; cursor: pointer; box-shadow: 0 14px 40px rgba(23,18,37,0.28); border: 1px solid rgba(255,255,255,0.08); }
+    .vs-video-thumb { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .45s ease; }
+    .vs-video:hover .vs-video-thumb { transform: scale(1.035); }
+    .vs-video::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg, rgba(10,5,18,0) 45%, rgba(10,5,18,0.55)); opacity: .85; transition: opacity .3s; }
+    .vs-video:hover::before { opacity: .6; }
+    .vs-video-badge { position: absolute; top: 12px; left: 12px; z-index: 2; display: inline-flex; align-items: center; gap: 6px; background: rgba(10,5,18,0.66); color: #fff; font-family: var(--font-display); font-size: .72rem; font-weight: 700; letter-spacing: .02em; padding: 5px 12px; border-radius: 100px; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+    .vs-video-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 2; width: 74px; height: 74px; border-radius: 50%; border: none; cursor: pointer; background: var(--show, #ff2e7e); display: grid; place-items: center; box-shadow: 0 8px 26px rgba(255,46,126,0.5); transition: transform .2s, background .2s; }
+    .vs-video:hover .vs-video-play { transform: translate(-50%,-50%) scale(1.09); }
+    .vs-video-play::after { content: ""; display: block; width: 0; height: 0; border-style: solid; border-width: 12px 0 12px 21px; border-color: transparent transparent transparent #fff; margin-left: 5px; }
+    .vs-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; z-index: 3; }
+    .vs-video-cta { display: inline-flex; align-items: center; gap: 9px; margin-top: 16px; font-family: var(--font-display); font-weight: 700; font-size: 1rem; padding: 13px 26px; border-radius: 100px; background: var(--primary, #3b82f6); color: #fff; border: none; cursor: pointer; box-shadow: 0 10px 26px rgba(59,130,246,.36); transition: transform .15s, background .15s; }
+    .vs-video-cta:hover { transform: translateY(-2px); background: #2563eb; }
+    @media (prefers-reduced-motion: reduce) { .vs-video-thumb, .vs-video-play, .vs-video-cta { transition: none; } }
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebPage","url":"https://vegassidekick.com/shows/comedy/carrot-top/","dateModified":"2026-08-12","lastReviewed":"2026-08-12","reviewedBy":{"@type":"Organization","name":"Vegas Sidekick","url":"https://vegassidekick.com/"}}
@@ -573,6 +588,7 @@
 <nav class="dot-nav" aria-label="Page sections">
   <a href="#section-seen" class="dnav-dot" data-label="Seen It?" aria-label="Seen It?"></a>
   <a href="#section-about" class="dnav-dot" data-label="About" aria-label="About"></a>
+  <a href="#section-trailer" class="dnav-dot" data-label="Trailer" aria-label="Trailer"></a>
   <a href="#section-gallery" class="dnav-dot" data-label="Gallery" aria-label="Gallery"></a>
   <a href="#section-details" class="dnav-dot" data-label="Details" aria-label="Details"></a>
   <a href="#section-blueprint" class="dnav-dot" data-label="Your Night" aria-label="Your Night"></a>
@@ -760,6 +776,17 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- TRAILER -->
+  <section class="section fade-up" id="section-trailer" aria-labelledby="trailer-heading">
+    <h2 id="trailer-heading" class="section-title">Watch the <span>Preview</span></h2>
+    <div class="vs-video" data-yt="XRdqvnCZe-A" data-title="Carrot Top — Las Vegas Show Trailer">
+      <span class="vs-video-badge">▶ Show Trailer</span>
+      <img class="vs-video-thumb" src="https://i.ytimg.com/vi/XRdqvnCZe-A/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/XRdqvnCZe-A/hqdefault.jpg'" alt="Carrot Top show trailer — prop comedy at the Atrium Showroom, Luxor Las Vegas" loading="lazy" width="1280" height="720" />
+      <button class="vs-video-play" type="button" aria-label="Play Carrot Top video preview"></button>
+    </div>
+    <button class="vs-video-cta" type="button" data-yt-trigger>▶ Watch video preview</button>
   </section>
 
   <!-- GALLERY -->
@@ -1398,6 +1425,35 @@
       btn.querySelector('.faq-chevron').style.transform = 'rotate(180deg)';
     }
   }
+</script>
+<script>
+/* Reusable click-to-play YouTube facade — swaps the thumbnail for an inline
+   privacy-friendly (nocookie) autoplay player. Nothing leaves the page. */
+(function () {
+  function play(box) {
+    if (!box || box.dataset.on) return;
+    var id = box.getAttribute('data-yt');
+    if (!id) return;
+    box.dataset.on = '1';
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1';
+    f.title = box.getAttribute('data-title') || 'Video preview';
+    f.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; fullscreen');
+    f.setAttribute('allowfullscreen', '');
+    box.innerHTML = '';
+    box.appendChild(f);
+  }
+  document.querySelectorAll('.vs-video').forEach(function (box) {
+    box.addEventListener('click', function () { play(box); });
+  });
+  document.querySelectorAll('[data-yt-trigger]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var box = (btn.parentNode && btn.parentNode.querySelector('.vs-video')) || document.querySelector('.vs-video');
+      play(box);
+      if (box) box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+})();
 </script>
 </body>
 </html>
