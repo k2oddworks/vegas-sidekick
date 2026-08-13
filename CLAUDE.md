@@ -302,6 +302,20 @@ Credentials are embedded in client-side code (read-only, restricted scope):
 
 **Sidekick Pick (`sp:true`):** Never set `sp:true` on a new show by default. It stays `sp:false` unless the user explicitly says to mark that specific show as a Sidekick Pick.
 
+### Updating a Show's Price (Price Change Checklist)
+
+**Prices are denormalized — a single show's price is hand-copied into ~10 files.** There is no build step and no single source of truth, so changing a price in one place is **not** enough. When Kris gives a price change (e.g. "Mad Apple went $56 → $59"), you MUST find and update **every** occurrence. Start by grepping the whole repo for the show slug and both the old and new numbers (`grep -rn '\$56\|"price":\s*56\|from \$56' --include=index.html --include=*.js .`), then work this checklist:
+
+1. **Show detail page** (`shows/{cat}/{slug}/index.html`) — every visible price (hero price strip, sidebar/`.sb`/save-pill, mobile buy bar, any "from $X"), **and** the JSON-LD `offers.price` (bare number, no `$`), **and** the "✓ Prices verified · Month 2026" freshness line if the month is now stale.
+2. **`components/search-data.js`** — the record's `price` (number) **and** `pd` (display string like `"$56"`) **and** any price mentioned in the free-text `kw` blob. Bump the `?v=` cache-buster on every page that loads it (see **Site Search**).
+3. **Category listing** (`shows/{cat}/index.html`) — the `SHOWS` array entry's `price` and `pd`.
+4. **All Shows master list** (`shows/index.html`) — same `SHOWS` array entry.
+5. **Homepage** (`index.html`) — only if the show has a curated card there (`.pr`/price text).
+6. **Venue pages** (`venues/*/index.html`) — the show's `from <b>$X</b>` card price, **and** the hero "from $X" stat / sub-head if this show set the venue's cheapest price.
+7. **Guides** (`guides/*/index.html` + `guides/index.html`) — the trickiest. Update: the `.price-badge` (`From $X`), the `.g-meta`/`.stat` "From $X" hero/card figures, **and any price written into prose or the FAQ** (e.g. "starting around $56"), including the duplicated copy inside the `FAQPage` JSON-LD.
+
+**Watch for cascading claims, not just numbers.** A price change can break superlatives and ordering: "cheapest", "under $50", "from $X" hero stats, a guide's price-sorted ranking, or a show's eligibility for `best-cheap-vegas-shows`. Re-read any "cheapest/from/under" wording near the changed show and fix the logic, not only the digits. When done, run `python3 scripts/audit-event-schema.py` and report the full list of files touched.
+
 ### Structured Data (JSON-LD) Requirements
 
 Every show page's `<script type="application/ld+json">` **Event** block must include every field below — Google Search Console flags any that are missing or malformed, and it silently accumulates across pages if the wrong page gets copied as a template for the next one. Use `@type: "Event"` (not `EventSeries`) for all new show pages — it's what every show built this way uses, and it's the type that requires `startDate`/`endDate`, which keeps the schema unambiguous.
