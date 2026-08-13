@@ -44,6 +44,15 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vegassidekick.com/guides/best-cirque-shows/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-08-13</lastmod>
+      <image:image>
+      <image:loc>https://vegassidekick.com/images/guide-cirque-cover.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vegassidekick.com/guides/best-shows-for-couples/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
