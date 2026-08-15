@@ -11,6 +11,9 @@
 # while still tagging the traffic for Google Analytics. The QR encodes
 # https://vegassidekick.com/go ; this 302 forwards it to the homepage with UTM.
 /go https://vegassidekick.com/?utm_source=social&utm_medium=qr&utm_campaign=spike 302
+/go-ig https://vegassidekick.com/?utm_source=instagram&utm_medium=qr&utm_campaign=spike 302
+/go-fb https://vegassidekick.com/?utm_source=facebook&utm_medium=qr&utm_campaign=spike 302
+/go-pin https://vegassidekick.com/?utm_source=pinterest&utm_medium=qr&utm_campaign=spike 302
 
 # Canonical trailing slash — every indexed URL in sitemap.xml and every
 # canonical tag ends in a slash. These collapse the non-trailing-slash
