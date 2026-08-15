@@ -151,6 +151,11 @@
     color:var(--ui-dim);background:rgba(255,255,255,.05);border:1px solid var(--ui-line);
     transition:all .22s}
   .btn:hover{color:#fff;background:rgba(255,255,255,.1);border-color:rgba(150,170,255,.34)}
+  .alt{display:block;padding:11px 13px;margin-bottom:8px;border-radius:11px;text-decoration:none;
+    background:rgba(255,255,255,.045);border:1px solid var(--ui-line);transition:all .22s}
+  .alt:hover{background:rgba(255,255,255,.09);border-color:rgba(91,200,245,.42);transform:translateY(-1px)}
+  .alt b{display:block;font-size:13px;color:var(--ui);font-weight:700}
+  .alt span{display:block;font-size:11.5px;color:var(--ui-dim);margin-top:2px}
   .credit{margin-top:26px;font-size:11px;line-height:1.6;color:rgba(139,147,176,.75)}
   .credit b{color:var(--accent);font-weight:600}
 
@@ -225,6 +230,10 @@
   <div class="toggle on" id="tgSpin"><span>Auto-turn</span><span class="tk"></span></div>
   <div class="toggle on" id="tgCars"><span>Traffic</span><span class="tk"></span></div>
   <button class="btn" id="reset">Reset view</button>
+
+  <h2>Other methods</h2>
+  <a class="alt" href="/play/sphere-lowpoly/"><b>Low-poly faceted</b><span>Flat facets as giant pixels, on a floating island</span></a>
+  <a class="alt" href="/play/vegas-sign/"><b>Dot cloud</b><span>Tens of thousands of glowing points</span></a>
 
   <div class="credit">
     <b id="triCount">&mdash;</b> triangles, orthographic camera, and a 512&times;256 screen

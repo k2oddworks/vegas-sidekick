@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Sphere Low-Poly — Vegas Sidekick Break Room</title>
+<meta name="description" content="The Sphere rendered as a flat-shaded low-poly icosphere on a floating desert island — every facet is a giant pixel.">
+<link rel="canonical" href="https://vegassidekick.com/play/sphere-lowpoly/">
+<meta property="og:title" content="Sphere Low-Poly — Vegas Sidekick Break Room">
+<meta property="og:description" content="The Sphere as a flat-shaded low-poly icosphere — every facet is a giant pixel.">
+<meta property="og:image" content="https://vegassidekick.com/images/logo-dark-square.png">
+<meta property="og:url" content="https://vegassidekick.com/play/sphere-lowpoly/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vegas Sidekick">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sphere Low-Poly — Vegas Sidekick Break Room">
+<meta name="twitter:description" content="The Sphere as a flat-shaded low-poly icosphere.">
+<meta name="twitter:image" content="https://vegassidekick.com/images/logo-dark-square.png">
+<meta name="theme-color" content="#2f6fae">
+<link rel="icon" href="/favicon.png" type="image/png">
+<style>
+  :root{
+    --ui:#eef1f8; --ui-dim:#95a0b8; --ui-line:rgba(160,180,255,.16);
+    --ui-panel:rgba(11,15,28,.86); --accent:#ffb454;
+    --sans:"Inter","Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%;overflow:hidden}
+  body{background:#2f6fae;color:var(--ui);font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;
+    overscroll-behavior:none;touch-action:none}
+  #sky{position:fixed;inset:0;z-index:0;transition:background 900ms ease}
+  canvas#gl{position:fixed;inset:0;z-index:1;display:block;width:100%;height:100%;cursor:grab}
+  canvas#gl.drag{cursor:grabbing}
+  #vig{position:fixed;inset:0;z-index:2;pointer-events:none;
+    background:radial-gradient(ellipse 86% 74% at 50% 46%,transparent 48%,rgba(0,0,0,.30) 100%)}
+
+  .brand{position:fixed;top:18px;left:14px;z-index:12;display:flex;align-items:center;gap:9px;
+    font-size:12.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
+    color:rgba(255,255,255,.92);text-decoration:none;padding:9px 14px;border-radius:100px;
+    background:rgba(10,13,28,.42);border:1px solid rgba(255,255,255,.18);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    transition:transform .25s,border-color .25s}
+  .brand:hover{border-color:rgba(255,180,84,.7);transform:translateY(-1px)}
+  .brand span{opacity:.6;font-size:14px}
+
+  .hint{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:12;
+    font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.92);
+    padding:9px 18px;border-radius:100px;background:rgba(10,13,28,.42);
+    border:1px solid rgba(255,255,255,.18);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    white-space:nowrap;transition:opacity .8s ease;pointer-events:none}
+  .hint.gone{opacity:0}
+  .hint .hs{display:none}
+
+  #menuBtn{position:fixed;top:16px;right:18px;z-index:30;width:52px;height:52px;border-radius:50%;
+    border:1px solid rgba(255,180,84,.45);background:rgba(12,16,32,.6);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    cursor:pointer;display:grid;place-items:center;box-shadow:0 8px 30px rgba(0,0,0,.4);
+    transition:transform .3s cubic-bezier(.34,1.4,.5,1),border-color .3s}
+  #menuBtn:hover{transform:scale(1.07);border-color:rgba(255,180,84,.9)}
+  #menuBtn:active{transform:scale(.95)}
+  #menuBtn .bars{position:relative;width:20px;height:15px}
+  #menuBtn .bars i{position:absolute;left:0;height:2px;width:100%;border-radius:2px;
+    background:var(--accent);transition:transform .38s cubic-bezier(.65,.05,.36,1),opacity .2s,width .38s}
+  #menuBtn .bars i:nth-child(1){top:0}
+  #menuBtn .bars i:nth-child(2){top:6.5px;width:74%}
+  #menuBtn .bars i:nth-child(3){top:13px}
+  #menuBtn[aria-expanded="true"] .bars i:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+  #menuBtn[aria-expanded="true"] .bars i:nth-child(2){opacity:0;width:0}
+  #menuBtn[aria-expanded="true"] .bars i:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+  #panel{position:fixed;top:0;right:0;z-index:25;width:336px;max-width:90vw;height:100%;
+    background:var(--ui-panel);
+    backdrop-filter:blur(26px) saturate(1.3);-webkit-backdrop-filter:blur(26px) saturate(1.3);
+    border-left:1px solid var(--ui-line);box-shadow:-30px 0 70px rgba(0,0,0,.5);
+    transform:translateX(104%);transition:transform .5s cubic-bezier(.22,1,.36,1);
+    overflow-y:auto;overscroll-behavior:contain;padding:78px 22px 40px}
+  #panel.open{transform:translateX(0)}
+  #panel h2{font-size:11px;letter-spacing:.19em;text-transform:uppercase;color:var(--accent);
+    margin:26px 0 12px;font-weight:700;display:flex;align-items:center;gap:9px}
+  #panel h2::after{content:"";flex:1;height:1px;background:var(--ui-line)}
+  #panel h2:first-of-type{margin-top:0}
+  .ptitle{font-size:19px;font-weight:800;letter-spacing:-.01em;margin-bottom:3px}
+  .psub{font-size:12.5px;color:var(--ui-dim);line-height:1.5;margin-bottom:8px}
+
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{font:inherit;font-size:12px;font-weight:600;color:var(--ui-dim);
+    padding:7px 12px;border-radius:100px;cursor:pointer;
+    background:rgba(255,255,255,.045);border:1px solid var(--ui-line);
+    transition:all .22s;white-space:nowrap}
+  .chip:hover{color:var(--ui);background:rgba(255,255,255,.09);transform:translateY(-1px)}
+  .chip.on{color:#2a1a04;background:var(--accent);border-color:var(--accent);
+    box-shadow:0 4px 16px rgba(255,180,84,.28)}
+
+  .field{margin-top:4px}
+  .field input[type=text]{width:100%;font:inherit;font-size:14px;color:var(--ui);
+    background:rgba(255,255,255,.06);border:1px solid var(--ui-line);
+    border-radius:11px;padding:11px 13px;outline:none;transition:border-color .22s,background .22s}
+  .field input[type=text]:focus{border-color:var(--accent);background:rgba(255,255,255,.1)}
+  .field input[type=text]::placeholder{color:rgba(149,160,184,.7)}
+  .fhint{font-size:11px;color:var(--ui-dim);margin-top:7px;line-height:1.5}
+
+  .row{margin-bottom:15px}
+  .row .lbl{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px}
+  .row .lbl span:first-child{font-size:12.5px;color:var(--ui)}
+  .row .lbl span:last-child{font-size:11px;color:var(--accent);font-variant-numeric:tabular-nums}
+  input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:4px;
+    background:linear-gradient(90deg,var(--accent) 0%,var(--accent) var(--p,50%),rgba(255,255,255,.13) var(--p,50%));
+    outline:none;cursor:pointer}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;
+    background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.6);cursor:pointer;transition:transform .18s}
+  input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.18)}
+  input[type=range]::-moz-range-thumb{width:16px;height:16px;border:none;border-radius:50%;
+    background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.6);cursor:pointer}
+
+  .toggle{display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding:10px 0;font-size:12.5px;cursor:pointer}
+  .toggle .tk{position:relative;flex:0 0 auto;width:40px;height:22px;border-radius:100px;
+    background:rgba(255,255,255,.12);transition:background .28s}
+  .toggle .tk::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;
+    border-radius:50%;background:#fff;transition:transform .28s cubic-bezier(.34,1.4,.5,1)}
+  .toggle.on .tk{background:var(--accent)}
+  .toggle.on .tk::after{transform:translateX(18px)}
+
+  .btn{width:100%;margin-top:20px;padding:12px;border-radius:11px;cursor:pointer;
+    font:inherit;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ui-dim);background:rgba(255,255,255,.05);border:1px solid var(--ui-line);
+    transition:all .22s}
+  .btn:hover{color:#fff;background:rgba(255,255,255,.1);border-color:rgba(160,180,255,.34)}
+  .alt{display:block;padding:11px 13px;margin-bottom:8px;border-radius:11px;text-decoration:none;
+    background:rgba(255,255,255,.045);border:1px solid var(--ui-line);transition:all .22s}
+  .alt:hover{background:rgba(255,255,255,.09);border-color:rgba(255,180,84,.42);transform:translateY(-1px)}
+  .alt b{display:block;font-size:13px;color:var(--ui);font-weight:700}
+  .alt span{display:block;font-size:11.5px;color:var(--ui-dim);margin-top:2px}
+  .credit{margin-top:26px;font-size:11px;line-height:1.6;color:rgba(149,160,184,.75)}
+  .credit b{color:var(--accent);font-weight:600}
+
+  #scrim{position:fixed;inset:0;z-index:20;background:rgba(2,3,8,.45);
+    opacity:0;pointer-events:none;transition:opacity .45s}
+  #scrim.on{opacity:1;pointer-events:auto}
+  #boot{position:fixed;inset:0;z-index:40;display:grid;place-items:center;
+    background:#0b1220;transition:opacity .7s ease}
+  #boot.gone{opacity:0;pointer-events:none}
+  #boot .bt{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);
+    animation:blink 1.3s ease-in-out infinite}
+  @keyframes blink{0%,100%{opacity:.25}50%{opacity:1}}
+  #fallback{position:fixed;inset:0;z-index:50;display:none;place-items:center;text-align:center;
+    padding:30px;background:#0b1220}
+  #fallback p{max-width:380px;color:var(--ui-dim);font-size:14px;line-height:1.7}
+
+  @media (max-width:640px){
+    #panel{width:100%;max-width:100%;height:80vh;top:auto;bottom:0;border-left:none;
+      border-top:1px solid var(--ui-line);border-radius:22px 22px 0 0;padding:24px 20px 40px;
+      transform:translateY(104%);box-shadow:0 -24px 60px rgba(0,0,0,.6)}
+    #panel.open{transform:translateY(0)}
+    #panel::before{content:"";display:block;width:38px;height:4px;border-radius:4px;
+      background:rgba(255,255,255,.22);margin:0 auto 18px}
+    .brand{top:14px;left:14px;padding:8px 11px;font-size:10.5px}
+    #menuBtn{top:12px;right:14px;width:48px;height:48px}
+    .hint{bottom:16px;font-size:10.5px;padding:8px 14px}
+    .hint .hf{display:none}
+    .hint .hs{display:inline}
+  }
+  @media (prefers-reduced-motion:reduce){ #boot .bt{animation:none;opacity:.8} }
+</style>
+</head>
+<body>
+
+<div id="sky"></div>
+<canvas id="gl"></canvas>
+<div id="vig"></div>
+
+<a class="brand" href="/"><span>&#8592;</span> Vegas Sidekick</a>
+<button id="menuBtn" aria-label="Open options menu" aria-expanded="false" aria-controls="panel">
+  <span class="bars"><i></i><i></i><i></i></span>
+</button>
+<div id="scrim"></div>
+
+<aside id="panel" aria-label="Low-poly Sphere options">
+  <div class="ptitle">The Sphere &mdash; Low-Poly</div>
+  <div class="psub">Flat-shaded facets on a floating desert island. Every triangle is one giant pixel.</div>
+
+  <h2>On the facets</h2>
+  <div class="chips" id="showChips"></div>
+
+  <div id="msgBox" style="display:none">
+    <h2>Your message</h2>
+    <div class="field">
+      <input type="text" id="msgInput" maxlength="60" placeholder="Type anything&hellip;"
+             autocomplete="off" spellcheck="false" aria-label="Message to show on the Sphere">
+      <div class="fhint">Each facet is one pixel, so the ball is a low-resolution display &mdash; letters come out chunky and only a few fit at once. Try <b>Fine</b> facets for cleaner type.</div>
+    </div>
+    <div class="chips" id="msgColors" style="margin-top:12px"></div>
+  </div>
+
+  <h2>Facet count</h2>
+  <div class="chips" id="subChips"></div>
+
+  <h2>Time of day</h2>
+  <div class="chips" id="timeChips"></div>
+
+  <h2>View</h2>
+  <div class="row">
+    <div class="lbl"><span>Zoom</span><span id="zoomVal">1.0&times;</span></div>
+    <input type="range" id="zoom" min="0" max="100" value="50">
+  </div>
+  <div class="toggle on" id="tgSpin"><span>Auto-turn</span><span class="tk"></span></div>
+  <div class="toggle on" id="tgIsland"><span>Show the island</span><span class="tk"></span></div>
+  <button class="btn" id="reset">Reset view</button>
+
+  <h2>Other methods</h2>
+  <a class="alt" href="/play/sphere/"><b>Isometric diorama</b><span>Smooth ball, textured screen, tilt-shift</span></a>
+  <a class="alt" href="/play/vegas-sign/"><b>Dot cloud</b><span>Twenty thousand glowing points</span></a>
+
+  <div class="credit">
+    <b id="triCount">&mdash;</b> flat-shaded triangles, perspective camera. Facet colours are
+    quantised on the CPU each frame &mdash; no texture involved.
+  </div>
+</aside>
+
+<div class="hint" id="hint">
+  <span class="hf">Drag to orbit &middot; Scroll to zoom &middot; &#9776; for facets &amp; messages</span>
+  <span class="hs">Drag to orbit &middot; &#9776; options</span>
+</div>
+
+<div id="boot"><div class="bt">Faceting the ball&hellip;</div></div>
+<div id="fallback"><p>This toy needs WebGL, which your browser has turned off or doesn't support.</p></div>
+
+<script>
+(function(){
+"use strict";
+var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function hex(h){
+  h = h.replace('#','');
+  var n = parseInt(h,16);
+  return [((n>>16)&255)/255, ((n>>8)&255)/255, (n&255)/255];
+}
+function norm(v){ var L = Math.hypot(v[0],v[1],v[2])||1; return [v[0]/L, v[1]/L, v[2]/L]; }
+
+/* ============================================================
+   1. GEOMETRY — everything is flat shaded, so each triangle
+      carries its own normal and its own colour.
+   ============================================================ */
+var P = [], N = [], C = [], K = [];       /* the island and its props */
+var SP = [], SN = [], SC = [], SFUV = []; /* the ball: colours change per frame */
+
+function tri(a, b, c, col, kind, inside){
+  var e1 = [b[0]-a[0], b[1]-a[1], b[2]-a[2]];
+  var e2 = [c[0]-a[0], c[1]-a[1], c[2]-a[2]];
+  var n = norm([e1[1]*e2[2]-e1[2]*e2[1], e1[2]*e2[0]-e1[0]*e2[2], e1[0]*e2[1]-e1[1]*e2[0]]);
+  /* winding is easy to get wrong on generated shapes, so flip toward daylight */
+  if(inside === 'up'){
+    if(n[1] < 0) n = [-n[0], -n[1], -n[2]];
+  } else if(inside){
+    var cn = [(a[0]+b[0]+c[0])/3 - inside[0],
+              (a[1]+b[1]+c[1])/3 - inside[1],
+              (a[2]+b[2]+c[2])/3 - inside[2]];
+    if(n[0]*cn[0] + n[1]*cn[1] + n[2]*cn[2] < 0) n = [-n[0], -n[1], -n[2]];
+  }
+  var v = [a,b,c];
+  for(var i=0;i<3;i++){
+    P.push(v[i][0], v[i][1], v[i][2]);
+    N.push(n[0], n[1], n[2]);
+    C.push(col[0], col[1], col[2]);
+    K.push(kind || 0);
+  }
+}
+function jitterCol(c, amt){
+  var d = 1 + (Math.random()-0.5)*amt;
+  return [Math.min(1,c[0]*d), Math.min(1,c[1]*d), Math.min(1,c[2]*d)];
+}
+
+/* ---- the icosphere ---- */
+function icosphere(sub){
+  var t = (1+Math.sqrt(5))/2;
+  var v = [[-1,t,0],[1,t,0],[-1,-t,0],[1,-t,0],[0,-1,t],[0,1,t],
+           [0,-1,-t],[0,1,-t],[t,0,-1],[t,0,1],[-t,0,-1],[-t,0,1]].map(norm);
+  var f = [[0,11,5],[0,5,1],[0,1,7],[0,7,10],[0,10,11],[1,5,9],[5,11,4],[11,10,2],
+           [10,7,6],[7,1,8],[3,9,4],[3,4,2],[3,2,6],[3,6,8],[3,8,9],[4,9,5],
+           [2,4,11],[6,2,10],[8,6,7],[9,8,1]];
+  for(var s=0;s<sub;s++){
+    var nf = [], cache = {};
+    function mid(a,b){
+      var key = a<b ? a+'_'+b : b+'_'+a;
+      if(cache[key] !== undefined) return cache[key];
+      v.push(norm([(v[a][0]+v[b][0])/2, (v[a][1]+v[b][1])/2, (v[a][2]+v[b][2])/2]));
+      cache[key] = v.length-1;
+      return cache[key];
+    }
+    for(var i=0;i<f.length;i++){
+      var A=f[i][0], B=f[i][1], Cc=f[i][2];
+      var ab=mid(A,B), bc=mid(B,Cc), ca=mid(Cc,A);
+      nf.push([A,ab,ca],[B,bc,ab],[Cc,ca,bc],[ab,bc,ca]);
+    }
+    f = nf;
+  }
+  return {v:v, f:f};
+}
+
+var RX = 1.78, RY = 1.26;
+var SPY = 1.62;                      /* centre height of the ball */
+
+function buildBall(sub){
+  SP.length = 0; SN.length = 0; SC.length = 0; SFUV.length = 0;
+  var ico = icosphere(sub);
+  for(var i=0;i<ico.f.length;i++){
+    var idx = ico.f[i];
+    var pts = [], cen = [0,0,0];
+    for(var k=0;k<3;k++){
+      var d = ico.v[idx[k]];
+      pts.push([d[0]*RX, SPY + d[1]*RY, d[2]*RX]);
+      cen[0]+=d[0]; cen[1]+=d[1]; cen[2]+=d[2];
+    }
+    cen = norm(cen);
+    /* the equirect coordinate of the facet centre — one sample per facet */
+    SFUV.push(0.5 + Math.atan2(cen[0], cen[2])/(Math.PI*2),
+              Math.acos(Math.max(-1, Math.min(1, cen[1])))/Math.PI);
+    var e1 = [pts[1][0]-pts[0][0], pts[1][1]-pts[0][1], pts[1][2]-pts[0][2]];
+    var e2 = [pts[2][0]-pts[0][0], pts[2][1]-pts[0][1], pts[2][2]-pts[0][2]];
+    var n = norm([e1[1]*e2[2]-e1[2]*e2[1], e1[2]*e2[0]-e1[0]*e2[2], e1[0]*e2[1]-e1[1]*e2[0]]);
+    if(n[0]*cen[0] + n[1]*cen[1] + n[2]*cen[2] < 0) n = [-n[0], -n[1], -n[2]];
+    for(k=0;k<3;k++){
+      SP.push(pts[k][0], pts[k][1], pts[k][2]);
+      SN.push(n[0], n[1], n[2]);
+      SC.push(1,1,1);
+    }
+  }
+}
+
+/* ---- the floating island ---- */
+var SAND = hex('#ecd9a6'), SAND2 = hex('#dcc389'), SCRUB = hex('#8a9b5c'), ROCK = hex('#9c8465'),
+    ROCK_D = hex('#6d5b44'), TRUNK = hex('#7a6039'), FROND = hex('#4e8a45'),
+    CONC = hex('#b9b3a6'), CONC_D = hex('#948d81');
+
+var ISLE_R = 5.4, RINGS = 7, SEG = 26;
+function buildIsland(){
+  var i, j;
+  var pts = [];
+  for(i=0;i<=RINGS;i++){
+    pts[i] = [];
+    for(j=0;j<SEG;j++){
+      var a = j/SEG*Math.PI*2;
+      var r = ISLE_R*(i/RINGS);
+      var wob = (i===RINGS) ? (1 + Math.sin(a*3.1)*0.06 + Math.cos(a*5.7)*0.04) : 1;
+      var y = (i===0) ? 0 : (Math.sin(a*2.3 + i)*0.05 + Math.cos(a*4.1 - i*0.7)*0.04) * (i/RINGS);
+      pts[i][j] = [Math.cos(a)*r*wob, y, Math.sin(a)*r*wob];
+    }
+  }
+  /* the plateau */
+  for(i=0;i<RINGS;i++){
+    for(j=0;j<SEG;j++){
+      var j2 = (j+1)%SEG;
+      var r3 = Math.random();
+      var col = jitterCol(r3 < 0.09 ? SCRUB : (r3 < 0.30 ? SAND2 : SAND), 0.10);
+      if(i===0) tri([0,0,0], pts[1][j], pts[1][j2], col, 0, 'up');
+      else{
+        tri(pts[i][j], pts[i+1][j], pts[i+1][j2], col, 0, 'up');
+        tri(pts[i][j], pts[i+1][j2], pts[i][j2], jitterCol(col, 0.06), 0, 'up');
+      }
+    }
+  }
+  /* the cliff, then a tip so it reads as a chunk torn out of the desert */
+  var LEV = [{y:-0.55, s:0.97}, {y:-1.5, s:0.82}, {y:-2.5, s:0.58}, {y:-3.4, s:0.28}];
+  var prev = pts[RINGS];
+  for(var L=0;L<LEV.length;L++){
+    var cur = [];
+    for(j=0;j<SEG;j++){
+      var q = prev[j];
+      var wob2 = 1 + (Math.random()-0.5)*0.12;
+      cur[j] = [q[0]*LEV[L].s*wob2, LEV[L].y, q[2]*LEV[L].s*wob2];
+    }
+    for(j=0;j<SEG;j++){
+      var jj = (j+1)%SEG;
+      var rc = jitterCol(L < 2 ? ROCK : ROCK_D, 0.16);
+      var ax = [0, (prev[j][1] + cur[j][1])/2, 0];
+      tri(prev[j], cur[j], cur[jj], rc, 0, ax);
+      tri(prev[j], cur[jj], prev[jj], jitterCol(rc, 0.10), 0, ax);
+    }
+    prev = cur;
+  }
+  var tip = [0,-4.3,0];
+  for(j=0;j<SEG;j++) tri(prev[j], tip, prev[(j+1)%SEG], jitterCol(ROCK_D, 0.18), 0, [0,-2.0,0]);
+
+  /* the podium the ball rests on */
+  var PR = 1.42, PY = 0.62, PSEG = 16;
+  for(j=0;j<PSEG;j++){
+    var a0 = j/PSEG*Math.PI*2, a1 = (j+1)/PSEG*Math.PI*2;
+    var p0=[Math.cos(a0)*PR,0,Math.sin(a0)*PR], p1=[Math.cos(a1)*PR,0,Math.sin(a1)*PR];
+    var q0=[Math.cos(a0)*PR,PY,Math.sin(a0)*PR], q1=[Math.cos(a1)*PR,PY,Math.sin(a1)*PR];
+    var pc = jitterCol(CONC, 0.08);
+    tri(p0,q0,q1,pc,0,[0,PY/2,0]); tri(p0,q1,p1,jitterCol(pc,0.06),0,[0,PY/2,0]);
+    tri([0,PY,0], q0, q1, jitterCol(CONC_D,0.07), 0, 'up');
+  }
+
+  /* props */
+  var PALMS = [[-3.5,-2.2,1.05],[-4.4,0.6,0.95],[-3.0,3.1,1.0],[0.4,4.3,0.9],
+               [3.3,2.9,1.05],[4.3,-0.4,0.95],[3.1,-3.0,1.0],[-0.6,-4.2,0.9],
+               [-2.0,-3.6,0.8],[2.0,4.0,0.85]];
+  for(i=0;i<PALMS.length;i++) palm(PALMS[i][0], PALMS[i][1], PALMS[i][2]);
+  var ROCKS = [[-2.4,2.6,0.3],[2.7,1.3,0.24],[-1.4,-3.4,0.28],[3.8,-1.8,0.22],[-4.0,-0.9,0.26]];
+  for(i=0;i<ROCKS.length;i++) rock(ROCKS[i][0], ROCKS[i][1], ROCKS[i][2]);
+}
+
+function palm(x, z, h){
+  var seg = 5, i, r0 = 0.075;
+  for(i=0;i<seg;i++){
+    var t0 = i/seg, t1 = (i+1)/seg;
+    var y0 = h*t0, y1 = h*t1;
+    var rr0 = r0*(1-t0*0.55), rr1 = r0*(1-t1*0.55);
+    var b0 = x + 0.16*t0*t0, b1 = x + 0.16*t1*t1;
+    var col = jitterCol(TRUNK, 0.12);
+    for(var s=0;s<5;s++){
+      var a0 = s/5*Math.PI*2, a1 = (s+1)/5*Math.PI*2;
+      var A=[b0+Math.cos(a0)*rr0, y0, z+Math.sin(a0)*rr0];
+      var B=[b0+Math.cos(a1)*rr0, y0, z+Math.sin(a1)*rr0];
+      var Cc=[b1+Math.cos(a1)*rr1, y1, z+Math.sin(a1)*rr1];
+      var D=[b1+Math.cos(a0)*rr1, y1, z+Math.sin(a0)*rr1];
+      var pax = [(b0+b1)/2, (y0+y1)/2, z];
+      tri(A,D,Cc,col,0,pax); tri(A,Cc,B,col,0,pax);
+    }
+  }
+  var top = [x+0.16, h, z];
+  for(i=0;i<7;i++){
+    var a = i/7*Math.PI*2 + x, L = 0.62 + (i%3)*0.10;
+    var ex = top[0]+Math.cos(a)*L, ez = top[2]+Math.sin(a)*L;
+    var mx = top[0]+Math.cos(a)*L*0.5, mz = top[2]+Math.sin(a)*L*0.5;
+    var w = 0.13, px = -Math.sin(a)*w, pz = Math.cos(a)*w;
+    var fc = jitterCol(FROND, 0.20);
+    tri([top[0],top[1]+0.04,top[2]], [mx+px,top[1]+0.10,mz+pz], [mx-px,top[1]+0.10,mz-pz], fc, 0, 'up');
+    tri([mx+px,top[1]+0.10,mz+pz], [ex,top[1]-0.16,ez], [mx-px,top[1]+0.10,mz-pz], jitterCol(fc,0.14), 0, 'up');
+  }
+}
+function rock(x, z, s){
+  var ico = icosphere(0);
+  for(var i=0;i<ico.f.length;i++){
+    var p = [];
+    for(var k=0;k<3;k++){
+      var d = ico.v[ico.f[i][k]];
+      p.push([x + d[0]*s*(1+(d[1]*0.2)), Math.max(0, d[1]*s*0.8 + s*0.45), z + d[2]*s]);
+    }
+    tri(p[0], p[1], p[2], jitterCol(ROCK, 0.20), 0, [x, s*0.45, z]);
+  }
+}
+
+/* ============================================================
+   2. THE FACET SCREEN — drawn on a canvas, then quantised to
+      one flat colour per facet on the CPU. No texture at all.
+   ============================================================ */
+var CW = 256, CH = 128;
+var ccv = document.createElement('canvas');
+ccv.width = CW; ccv.height = CH;
+var cc = ccv.getContext('2d', {willReadFrequently:true});
+
+var eye = {u:0.5, v:0.5, tu:0.5, tv:0.5, du:0, dv:0, look:0, lid:0, blinkAt:1.6, blinking:false, bt:0};
+var faceU = 0.5, faceV = 0.42;
+
+function updateEye(t, dt){
+  if(t > eye.look){
+    eye.du = (Math.random()-0.5)*0.17;
+    eye.dv = (Math.random()-0.5)*0.15;
+    if(Math.random() < 0.35){ eye.du *= 0.15; eye.dv *= 0.15; }
+    eye.look = t + 1.0 + Math.random()*2.4;
+  }
+  eye.tu = faceU + eye.du;
+  eye.tv = Math.max(0.28, Math.min(0.74, faceV + eye.dv));
+  var k = Math.min(1, dt*8);
+  var d = eye.tu - eye.u;
+  while(d > 0.5) d -= 1; while(d < -0.5) d += 1;
+  eye.u += d*k;
+  eye.v += (eye.tv - eye.v)*k;
+  if(!eye.blinking && t > eye.blinkAt){ eye.blinking = true; eye.bt = 0; }
+  if(eye.blinking){
+    eye.bt += dt;
+    var D = 0.18;
+    eye.lid = eye.bt < D/2 ? eye.bt/(D/2) : 1 - (eye.bt - D/2)/(D/2);
+    eye.lid = Math.max(0, Math.min(1, eye.lid));
+    if(eye.bt > D){
+      eye.blinking = false; eye.lid = 0;
+      eye.blinkAt = t + 2.2 + Math.random()*4.5;
+      if(Math.random() < 0.25) eye.blinkAt = t + 0.22;
+    }
+  }
+}
+function drawEye(){
+  cc.fillStyle = '#f2f0ec'; cc.fillRect(0,0,CW,CH);
+  var ix = eye.u*CW, iy = eye.v*CH, R = 22;
+  var st = Math.min(2.2, 1/Math.max(0.28, Math.sin(eye.v*Math.PI)));
+  [-CW,0,CW].forEach(function(off){
+    cc.save(); cc.translate(ix+off, iy); cc.scale(st,1);
+    var g = cc.createRadialGradient(0,0,2, 0,0,R);
+    g.addColorStop(0,'#bff0ff'); g.addColorStop(0.45,'#2aa8ef'); g.addColorStop(1,'#0b4f95');
+    cc.fillStyle = g; cc.beginPath(); cc.arc(0,0,R,0,7); cc.fill();
+    cc.fillStyle = '#05060a'; cc.beginPath(); cc.arc(0,0,R*0.42,0,7); cc.fill();
+    cc.fillStyle = 'rgba(255,255,255,.95)';
+    cc.beginPath(); cc.arc(-R*0.34,-R*0.36,R*0.20,0,7); cc.fill();
+    cc.restore();
+  });
+  if(eye.lid > 0.001){
+    var lh = eye.lid*CH*0.54;
+    cc.fillStyle = '#0b0c12';
+    cc.fillRect(0,0,CW,lh); cc.fillRect(0,CH-lh,CW,lh);
+  }
+}
+var MSG_COLORS = [
+  {name:'Neon',  bg:'#07080f', fg:'#5bc8f5'},
+  {name:'Gold',  bg:'#0b0803', fg:'#ffc94a'},
+  {name:'Pink',  bg:'#0d0410', fg:'#ff4fa3'},
+  {name:'Lime',  bg:'#050c04', fg:'#c6f22e'},
+  {name:'White', bg:'#0a0a0c', fg:'#ffffff'}
+];
+function drawMessage(t){
+  var pal = MSG_COLORS[S.msgColor] || MSG_COLORS[0];
+  cc.fillStyle = pal.bg; cc.fillRect(0,0,CW,CH);
+  var txt = ((S.msg||'').trim() || 'WELCOME TO FABULOUS LAS VEGAS') + '   •   ';
+  /* strokes thinner than one facet vanish when quantised, so the type is
+     set large and then fattened with an outline before sampling */
+  cc.font = '800 26px "Arial Black", Arial, sans-serif';
+  cc.textBaseline = 'middle';
+  cc.lineJoin = 'round'; cc.lineWidth = 4;
+  var w = Math.max(20, cc.measureText(txt).width);
+  var off = -((t*26) % w);
+  /* hold the type near the equator: no equirect stretch there, and it is
+     the widest band so it lands on the most facets */
+  var ty = Math.max(CH*0.44, Math.min(CH*0.56, faceV*CH));
+  cc.fillStyle = pal.fg; cc.strokeStyle = pal.fg;
+  for(var x=off; x<CW+w; x+=w){ cc.strokeText(txt, x, ty); cc.fillText(txt, x, ty); }
+}
+function drawNeon(t){
+  var cols = ['#ff2e7e','#7c3aed','#3b82f6','#0fb5c9','#c6f22e','#ffb020'];
+  for(var i=0;i<CW;i+=8){
+    var k = Math.floor((i/8 + t*4)) % cols.length;
+    cc.fillStyle = cols[(k+cols.length)%cols.length];
+    cc.fillRect(i,0,8,CH);
+  }
+}
+function drawOff(){ cc.fillStyle = '#23262d'; cc.fillRect(0,0,CW,CH); }
+
+var SHOWS = [
+  {id:'eye',    name:'Eye',     draw:drawEye},
+  {id:'msg',    name:'Message', draw:drawMessage},
+  {id:'mirror', name:'Mirror',  draw:null},      /* pure faceted glass */
+  {id:'neon',   name:'Neon',    draw:drawNeon},
+  {id:'off',    name:'Off',     draw:drawOff}
+];
+
+/* ============================================================
+   3. WEBGL
+   ============================================================ */
+var cvs = document.getElementById('gl');
+var gl = cvs.getContext('webgl', {alpha:true, antialias:true})
+      || cvs.getContext('experimental-webgl', {alpha:true, antialias:true});
+if(!gl){
+  document.getElementById('boot').classList.add('gone');
+  document.getElementById('fallback').style.display = 'grid';
+  return;
+}
+
+var VS = [
+'attribute vec3 aPos; attribute vec3 aNrm; attribute vec3 aCol;',
+'uniform mat4 uMVP;',
+'varying vec3 vN, vC, vP;',
+'void main(){ vN = aNrm; vC = aCol; vP = aPos; gl_Position = uMVP * vec4(aPos,1.0); }'
+].join('\n');
+
+var FS = [
+'precision mediump float;',
+'varying vec3 vN, vC, vP;',
+'uniform vec3 uSun, uSunCol, uAmb, uSkyCol, uGndCol, uEye;',
+'uniform float uMirror, uGlow, uNight;',
+'void main(){',
+'  vec3 Nn = normalize(vN);',
+'  vec3 L = normalize(uSun);',
+'  vec3 V = normalize(uEye - vP);',
+'  float diff = max(dot(Nn, L), 0.0);',
+'  float half_ = max(dot(Nn, normalize(L+V)), 0.0);',
+'  float spec = pow(half_, 42.0);',
+   /* a cheap environment: sky above, ground below, mixed by facet normal */
+'  vec3 env = mix(uGndCol, uSkyCol, clamp(Nn.y*0.5+0.5, 0.0, 1.0));',
+'  float fres = pow(1.0 - max(dot(Nn, V), 0.0), 3.0);',
+'  vec3 lit = vC * (uAmb + uSunCol * diff) + uSunCol * spec * 0.65;',
+   /* mirrored glass leans on the environment and the fresnel rim */
+'  vec3 glass = mix(vC * 0.32, env, 0.55 + 0.45 * fres) + uSunCol * spec * 1.1;',
+'  vec3 col = mix(lit, glass, uMirror);',
+   /* when the facets are a screen, keep some shading so they still read 3D */
+'  col = mix(col, vC * (0.74 + 0.30 * diff) * (1.0 + uNight * 0.45), uGlow);',
+'  gl_FragColor = vec4(col, 1.0);',
+'}'].join('\n');
+
+function sh(src,t){
+  var s = gl.createShader(t); gl.shaderSource(s,src); gl.compileShader(s);
+  if(!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s));
+  return s;
+}
+var prog;
+try{
+  prog = gl.createProgram();
+  gl.attachShader(prog, sh(VS, gl.VERTEX_SHADER));
+  gl.attachShader(prog, sh(FS, gl.FRAGMENT_SHADER));
+  gl.linkProgram(prog);
+  if(!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog));
+}catch(e){
+  console.error('Low-poly shader error:', e.message);
+  document.getElementById('boot').classList.add('gone');
+  document.getElementById('fallback').style.display = 'grid';
+  return;
+}
+gl.useProgram(prog);
+
+var A = {}, U = {};
+['aPos','aNrm','aCol'].forEach(function(k){ A[k] = gl.getAttribLocation(prog,k); });
+['uMVP','uSun','uSunCol','uAmb','uSkyCol','uGndCol','uEye','uMirror','uGlow','uNight']
+  .forEach(function(k){ U[k] = gl.getUniformLocation(prog,k); });
+
+var S = {show:'eye', msg:'', msgColor:0, sub:3, time:'golden', spin:true, island:true, zoom:1.0};
+try{
+  var raw = localStorage.getItem('vs-splp-v1');
+  if(raw){ var o = JSON.parse(raw); for(var k in o) if(k in S) S[k] = o[k]; }
+}catch(e){}
+function save(){ try{ localStorage.setItem('vs-splp-v1', JSON.stringify(S)); }catch(e){} }
+
+buildIsland();
+var bIsle = {
+  pos: gl.createBuffer(), nrm: gl.createBuffer(), col: gl.createBuffer(), count: P.length/3
+};
+gl.bindBuffer(gl.ARRAY_BUFFER, bIsle.pos); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(P), gl.STATIC_DRAW);
+gl.bindBuffer(gl.ARRAY_BUFFER, bIsle.nrm); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(N), gl.STATIC_DRAW);
+gl.bindBuffer(gl.ARRAY_BUFFER, bIsle.col); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(C), gl.STATIC_DRAW);
+
+var bBall = {pos:gl.createBuffer(), nrm:gl.createBuffer(), col:gl.createBuffer(), count:0};
+var ballCol = null, faceTint = null;
+
+function rebuildBall(){
+  buildBall(S.sub);
+  bBall.count = SP.length/3;
+  gl.bindBuffer(gl.ARRAY_BUFFER, bBall.pos); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(SP), gl.STATIC_DRAW);
+  gl.bindBuffer(gl.ARRAY_BUFFER, bBall.nrm); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(SN), gl.STATIC_DRAW);
+  ballCol = new Float32Array(SP.length);
+  /* a touch of per-facet variation is what sells the low-poly look */
+  var nf = SFUV.length/2;
+  faceTint = new Float32Array(nf);
+  for(var i=0;i<nf;i++) faceTint[i] = 0.93 + Math.random()*0.14;
+  gl.bindBuffer(gl.ARRAY_BUFFER, bBall.col); gl.bufferData(gl.ARRAY_BUFFER, ballCol, gl.DYNAMIC_DRAW);
+  document.getElementById('triCount').textContent =
+    ((bIsle.count + bBall.count)/3 | 0).toLocaleString();
+  window.__TRIS = (bIsle.count + bBall.count)/3 | 0;
+  window.__FACETS = nf;
+}
+rebuildBall();
+
+/* one canvas sample per facet — this is the whole trick */
+function paintFacets(){
+  var nf = SFUV.length/2;
+  var img = cc.getImageData(0,0,CW,CH).data;
+  for(var i=0;i<nf;i++){
+    var u = SFUV[i*2], v = SFUV[i*2+1];
+    var px = (u*CW)|0, py = (v*CH)|0;
+    if(px<0) px=0; if(px>=CW) px=CW-1;
+    if(py<0) py=0; if(py>=CH) py=CH-1;
+    var o = (py*CW+px)*4, tint = faceTint[i];
+    var r = img[o]/255*tint, g = img[o+1]/255*tint, b = img[o+2]/255*tint;
+    for(var k=0;k<3;k++){
+      ballCol[(i*3+k)*3]   = r;
+      ballCol[(i*3+k)*3+1] = g;
+      ballCol[(i*3+k)*3+2] = b;
+    }
+  }
+  gl.bindBuffer(gl.ARRAY_BUFFER, bBall.col);
+  gl.bufferData(gl.ARRAY_BUFFER, ballCol, gl.DYNAMIC_DRAW);
+}
+function paintMirror(){
+  var nf = SFUV.length/2;
+  for(var i=0;i<nf;i++){
+    var tint = faceTint[i];
+    for(var k=0;k<3;k++){
+      ballCol[(i*3+k)*3]   = 0.42*tint;
+      ballCol[(i*3+k)*3+1] = 0.47*tint;
+      ballCol[(i*3+k)*3+2] = 0.55*tint;
+    }
+  }
+  gl.bindBuffer(gl.ARRAY_BUFFER, bBall.col);
+  gl.bufferData(gl.ARRAY_BUFFER, ballCol, gl.DYNAMIC_DRAW);
+}
+
+function persp(fovy, aspect, near, far){
+  var f = 1/Math.tan(fovy/2);
+  return new Float32Array([f/aspect,0,0,0, 0,f,0,0, 0,0,(far+near)/(near-far),-1,
+    0,0,(2*far*near)/(near-far),0]);
+}
+function mul(a,b){
+  var o = new Float32Array(16);
+  for(var i=0;i<4;i++) for(var j=0;j<4;j++){
+    var s=0; for(var k2=0;k2<4;k2++) s += a[k2*4+j]*b[i*4+k2];
+    o[i*4+j]=s;
+  }
+  return o;
+}
+function rotY(t){ var c=Math.cos(t),s=Math.sin(t); return new Float32Array([c,0,-s,0, 0,1,0,0, s,0,c,0, 0,0,0,1]); }
+function rotX(t){ var c=Math.cos(t),s=Math.sin(t); return new Float32Array([1,0,0,0, 0,c,s,0, 0,-s,c,0, 0,0,0,1]); }
+function trans(x,y,z){ return new Float32Array([1,0,0,0, 0,1,0,0, 0,0,1,0, x,y,z,1]); }
+
+var TIMES = {
+  day:   {name:'Midday', sun:[-0.5,1.0,0.45], sunc:[1.0,0.96,0.88], amb:[0.40,0.44,0.52],
+          sky:[0.52,0.72,0.92], gnd:[0.42,0.36,0.28], night:0.0,
+          bg:'linear-gradient(180deg,#1c62a8 0%,#3f8fd0 44%,#8dc4e6 76%,#d5ecf5 100%)', tc:'#3f8fd0'},
+  golden:{name:'Golden', sun:[-0.9,0.46,0.34], sunc:[1.0,0.74,0.44], amb:[0.44,0.36,0.36],
+          sky:[0.94,0.62,0.38], gnd:[0.30,0.20,0.18], night:0.20,
+          bg:'linear-gradient(180deg,#2b3f7a 0%,#a95f76 40%,#f0925a 74%,#ffd9a0 100%)', tc:'#f0925a'},
+  dusk:  {name:'Dusk',   sun:[-0.8,0.34,0.26], sunc:[0.62,0.46,0.56], amb:[0.32,0.30,0.42],
+          sky:[0.36,0.30,0.52], gnd:[0.16,0.14,0.22], night:0.62,
+          bg:'linear-gradient(180deg,#101a3d 0%,#2c2f63 44%,#6a4a72 76%,#c07a66 100%)', tc:'#2c2f63'},
+  night: {name:'Midnight',sun:[0.4,0.85,0.3], sunc:[0.20,0.24,0.36], amb:[0.20,0.22,0.32],
+          sky:[0.10,0.14,0.26], gnd:[0.05,0.06,0.10], night:1.0,
+          bg:'radial-gradient(ellipse 120% 70% at 50% 108%,rgba(255,170,80,.18),transparent 62%),linear-gradient(180deg,#05070f 0%,#0c1329 52%,#182446 100%)', tc:'#0c1329'}
+};
+
+var view = {yaw:-0.55, pitch:0.34, vy:0, drag:false, lx:0, ly:0, idle:0};
+var DIST = 16.0, LOOKY = 0.05;
+var PR = Math.min(2, window.devicePixelRatio || 1);
+function resize(){
+  var w = window.innerWidth, h = window.innerHeight;
+  cvs.width = Math.round(w*PR); cvs.height = Math.round(h*PR);
+  gl.viewport(0,0,cvs.width,cvs.height);
+}
+window.addEventListener('resize', resize);
+function applySky(){
+  var T = TIMES[S.time] || TIMES.day;
+  document.getElementById('sky').style.background = T.bg;
+  document.querySelector('meta[name=theme-color]').setAttribute('content', T.tc);
+  document.body.style.background = T.tc;
+}
+
+var t0 = performance.now(), last = t0;
+function frame(now){
+  var dt = Math.min(0.05, (now-last)/1000); last = now;
+  var t = (now-t0)/1000;
+
+  updateEye(t, dt);
+  var show = SHOWS.filter(function(s){ return s.id === S.show; })[0] || SHOWS[0];
+  if(show.id === 'mirror') paintMirror();
+  else { show.draw(t); paintFacets(); }
+
+  if(!view.drag){
+    view.yaw += view.vy*dt;
+    view.vy *= Math.pow(0.002, dt);
+    view.idle += dt;
+    if(S.spin && !REDUCED && view.idle > 1.4 && Math.abs(view.vy) < 0.2) view.yaw += 0.10*dt;
+  }
+  view.pitch = Math.max(-0.12, Math.min(1.05, view.pitch));
+
+  var aspect = cvs.width/cvs.height;
+  var d = DIST / S.zoom;
+  var proj = persp(34*Math.PI/180, aspect, 0.1, 120);
+  var mv = mul(mul(mul(trans(0,0,-d), rotX(view.pitch)), rotY(view.yaw)), trans(0,-LOOKY,0));
+  var mvp = mul(proj, mv);
+
+  /* camera position in model space, for specular and fresnel */
+  var cp = Math.cos(view.pitch), sp2 = Math.sin(view.pitch);
+  var cyaw = Math.cos(view.yaw), syaw = Math.sin(view.yaw);
+  var eyePos = [ d*cp*(-syaw), LOOKY + d*sp2, d*cp*cyaw ];
+  faceU = 0.5 - view.yaw/(Math.PI*2);
+  faceV = Math.max(0.24, Math.min(0.76, Math.acos(Math.max(-1,Math.min(1, sp2)))/Math.PI));
+
+  var T = TIMES[S.time] || TIMES.day;
+  gl.clearColor(0,0,0,0);
+  gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+  gl.enable(gl.DEPTH_TEST);
+  gl.disable(gl.BLEND);
+
+  gl.useProgram(prog);
+  gl.uniformMatrix4fv(U.uMVP, false, mvp);
+  gl.uniform3fv(U.uSun, T.sun);
+  gl.uniform3fv(U.uSunCol, T.sunc);
+  gl.uniform3fv(U.uAmb, T.amb);
+  gl.uniform3fv(U.uSkyCol, T.sky);
+  gl.uniform3fv(U.uGndCol, T.gnd);
+  gl.uniform3fv(U.uEye, eyePos);
+  gl.uniform1f(U.uNight, T.night);
+
+  if(S.island){
+    gl.uniform1f(U.uMirror, 0); gl.uniform1f(U.uGlow, 0);
+    bind(bIsle.pos,A.aPos,3); bind(bIsle.nrm,A.aNrm,3); bind(bIsle.col,A.aCol,3);
+    gl.drawArrays(gl.TRIANGLES, 0, bIsle.count);
+  }
+  gl.uniform1f(U.uMirror, S.show === 'mirror' ? 1 : 0);
+  gl.uniform1f(U.uGlow,   S.show === 'mirror' ? 0 : 1);
+  bind(bBall.pos,A.aPos,3); bind(bBall.nrm,A.aNrm,3); bind(bBall.col,A.aCol,3);
+  gl.drawArrays(gl.TRIANGLES, 0, bBall.count);
+
+  requestAnimationFrame(frame);
+}
+function bind(b, loc, size){
+  if(loc < 0) return;
+  gl.bindBuffer(gl.ARRAY_BUFFER, b);
+  gl.enableVertexAttribArray(loc);
+  gl.vertexAttribPointer(loc, size, gl.FLOAT, false, 0, 0);
+}
+
+/* ---------- input ---------- */
+function down(x,y){ view.drag=true; view.lx=x; view.ly=y; view.idle=0; cvs.classList.add('drag'); }
+function move(x,y){
+  if(!view.drag) return;
+  var dx=x-view.lx, dy=y-view.ly; view.lx=x; view.ly=y;
+  view.yaw += dx*0.0072; view.pitch += dy*0.0040; view.vy = dx*0.22;
+}
+function up(){ view.drag=false; view.idle=0; cvs.classList.remove('drag'); }
+cvs.addEventListener('mousedown', function(e){ down(e.clientX,e.clientY); });
+window.addEventListener('mousemove', function(e){ move(e.clientX,e.clientY); });
+window.addEventListener('mouseup', up);
+var pinch=0;
+cvs.addEventListener('touchstart', function(e){
+  if(e.touches.length===1) down(e.touches[0].clientX,e.touches[0].clientY);
+  else if(e.touches.length===2){ view.drag=false;
+    pinch=Math.hypot(e.touches[0].clientX-e.touches[1].clientX, e.touches[0].clientY-e.touches[1].clientY); }
+}, {passive:true});
+cvs.addEventListener('touchmove', function(e){
+  if(e.touches.length===1) move(e.touches[0].clientX,e.touches[0].clientY);
+  else if(e.touches.length===2 && pinch){
+    var d2=Math.hypot(e.touches[0].clientX-e.touches[1].clientX, e.touches[0].clientY-e.touches[1].clientY);
+    setZoom(S.zoom*(d2/pinch)); pinch=d2;
+  }
+  e.preventDefault();
+}, {passive:false});
+cvs.addEventListener('touchend', function(){ pinch=0; up(); }, {passive:true});
+cvs.addEventListener('wheel', function(e){ e.preventDefault(); setZoom(S.zoom*(1-e.deltaY*0.0011)); }, {passive:false});
+function setZoom(z){ S.zoom = Math.max(0.55, Math.min(2.8, z)); paintZoom(); save(); }
+
+/* ============================================================
+   4. UI
+   ============================================================ */
+var panel = document.getElementById('panel'),
+    menuBtn = document.getElementById('menuBtn'),
+    scrim = document.getElementById('scrim');
+function setMenu(open){
+  panel.classList.toggle('open', open);
+  scrim.classList.toggle('on', open);
+  menuBtn.setAttribute('aria-expanded', open?'true':'false');
+  menuBtn.setAttribute('aria-label', (open?'Close':'Open')+' options menu');
+}
+menuBtn.addEventListener('click', function(){ setMenu(menuBtn.getAttribute('aria-expanded') !== 'true'); });
+scrim.addEventListener('click', function(){ setMenu(false); });
+
+var showChips = document.getElementById('showChips');
+var msgBox = document.getElementById('msgBox');
+function syncMsgBox(){ msgBox.style.display = (S.show === 'msg') ? 'block' : 'none'; }
+SHOWS.forEach(function(sh2){
+  var b = document.createElement('button');
+  b.className = 'chip' + (S.show === sh2.id ? ' on' : '');
+  b.textContent = sh2.name; b.dataset.id = sh2.id;
+  b.addEventListener('click', function(){
+    S.show = sh2.id;
+    [].forEach.call(showChips.children, function(c){ c.classList.toggle('on', c.dataset.id === sh2.id); });
+    syncMsgBox(); save();
+    if(sh2.id === 'msg') setTimeout(function(){ msgInput.focus(); }, 120);
+  });
+  showChips.appendChild(b);
+});
+var msgInput = document.getElementById('msgInput');
+msgInput.value = S.msg || '';
+msgInput.addEventListener('input', function(){ S.msg = msgInput.value; save(); });
+msgInput.addEventListener('keydown', function(e){ if(e.key === 'Enter') msgInput.blur(); });
+window.addEventListener('keydown', function(e){
+  if(e.key === 'Escape' && document.activeElement !== msgInput) setMenu(false);
+});
+
+var msgColors = document.getElementById('msgColors');
+MSG_COLORS.forEach(function(c,i){
+  var b = document.createElement('button');
+  b.className = 'chip' + (S.msgColor === i ? ' on' : '');
+  b.textContent = c.name; b.dataset.i = i;
+  b.addEventListener('click', function(){
+    S.msgColor = i;
+    [].forEach.call(msgColors.children, function(x){ x.classList.toggle('on', +x.dataset.i === i); });
+    save();
+  });
+  msgColors.appendChild(b);
+});
+
+var subChips = document.getElementById('subChips');
+[['Chunky',2],['Balanced',3],['Fine',4]].forEach(function(pair){
+  var b = document.createElement('button');
+  b.className = 'chip' + (S.sub === pair[1] ? ' on' : '');
+  b.textContent = pair[0]; b.dataset.s = pair[1];
+  b.addEventListener('click', function(){
+    S.sub = pair[1];
+    [].forEach.call(subChips.children, function(c){ c.classList.toggle('on', +c.dataset.s === pair[1]); });
+    rebuildBall(); save();
+  });
+  subChips.appendChild(b);
+});
+
+var timeChips = document.getElementById('timeChips');
+Object.keys(TIMES).forEach(function(key){
+  var b = document.createElement('button');
+  b.className = 'chip' + (S.time === key ? ' on' : '');
+  b.textContent = TIMES[key].name; b.dataset.key = key;
+  b.addEventListener('click', function(){
+    S.time = key;
+    [].forEach.call(timeChips.children, function(c){ c.classList.toggle('on', c.dataset.key === key); });
+    applySky(); save();
+  });
+  timeChips.appendChild(b);
+});
+
+var zoomEl = document.getElementById('zoom'), zoomVal = document.getElementById('zoomVal');
+function paintZoom(){
+  var pct = (S.zoom-0.55)/(2.8-0.55)*100;
+  zoomEl.value = Math.round(pct);
+  zoomEl.style.setProperty('--p', pct+'%');
+  zoomVal.textContent = S.zoom.toFixed(1)+'×';
+}
+zoomEl.addEventListener('input', function(){
+  S.zoom = 0.55 + (zoomEl.value/100)*(2.8-0.55); paintZoom(); save();
+});
+function toggle(id, get, set){
+  var el = document.getElementById(id);
+  el.classList.toggle('on', !!get());
+  el.addEventListener('click', function(){ set(!get()); el.classList.toggle('on', !!get()); save(); });
+}
+toggle('tgSpin', function(){return S.spin;}, function(v){ S.spin=v; });
+toggle('tgIsland', function(){return S.island;}, function(v){ S.island=v; });
+document.getElementById('reset').addEventListener('click', function(){
+  view.yaw=-0.55; view.pitch=0.34; view.vy=0; S.zoom=1.0; paintZoom(); save();
+});
+
+resize(); applySky(); paintZoom(); syncMsgBox();
+requestAnimationFrame(frame);
+setTimeout(function(){ document.getElementById('boot').classList.add('gone'); }, 140);
+setTimeout(function(){ document.getElementById('hint').classList.add('gone'); }, 8000);
+window.__READY = true;
+
+})();
+</script>
+</body>
+</html>
