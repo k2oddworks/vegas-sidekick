@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Neon Dot Sign — Vegas Sidekick Break Room</title>
-<meta name="description" content="The Welcome to Fabulous Las Vegas sign rebuilt from twenty thousand glowing dots. Spin it, light it up, and repaint it however you like.">
+<title>Vegas in Dots — Vegas Sidekick Break Room</title>
+<meta name="description" content="The Welcome to Las Vegas sign and the Luxor, rebuilt from tens of thousands of glowing dots. Spin them, light them up, repaint them.">
 <link rel="canonical" href="https://vegassidekick.com/play/vegas-sign/">
-<meta property="og:title" content="Neon Dot Sign — Vegas Sidekick Break Room">
-<meta property="og:description" content="The Welcome to Fabulous Las Vegas sign rebuilt from twenty thousand glowing dots. Spin it, light it up, and repaint it however you like.">
+<meta property="og:title" content="Vegas in Dots — Vegas Sidekick Break Room">
+<meta property="og:description" content="The Welcome to Las Vegas sign and the Luxor, rebuilt from tens of thousands of glowing dots. Spin them, light them up, repaint them.">
 <meta property="og:image" content="https://vegassidekick.com/images/logo-dark-square.png">
 <meta property="og:url" content="https://vegassidekick.com/play/vegas-sign/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vegas Sidekick">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Neon Dot Sign — Vegas Sidekick Break Room">
-<meta name="twitter:description" content="The Welcome to Fabulous Las Vegas sign rebuilt from twenty thousand glowing dots.">
+<meta name="twitter:title" content="Vegas in Dots — Vegas Sidekick Break Room">
+<meta name="twitter:description" content="Las Vegas landmarks rebuilt from tens of thousands of glowing dots.">
 <meta name="twitter:image" content="https://vegassidekick.com/images/logo-dark-square.png">
 <meta name="theme-color" content="#05070f">
 <link rel="icon" href="/favicon.png" type="image/png">
@@ -55,7 +55,7 @@
 
   /* ---------- chrome ---------- */
   .brand{
-    position:fixed;top:18px;left:20px;z-index:12;
+    position:fixed;top:18px;left:84px;z-index:12;
     display:flex;align-items:center;gap:9px;
     font-size:12.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
     color:rgba(233,236,247,.62);text-decoration:none;
@@ -78,7 +78,7 @@
   .hint.gone{opacity:0}
 
   /* ---------- menu button ---------- */
-  #menuBtn{
+  #menuBtn,#propBtn{
     position:fixed;top:16px;right:18px;z-index:30;
     width:52px;height:52px;border-radius:50%;
     border:1px solid rgba(255,217,138,.3);
@@ -93,23 +93,39 @@
     0%,100%{box-shadow:0 0 0 0 rgba(255,217,138,.30),0 8px 30px rgba(0,0,0,.5)}
     50%{box-shadow:0 0 0 9px rgba(255,217,138,0),0 8px 30px rgba(0,0,0,.5)}
   }
-  #menuBtn:hover{transform:scale(1.07);border-color:rgba(255,217,138,.7)}
-  #menuBtn:active{transform:scale(.95)}
-  #menuBtn .bars{position:relative;width:20px;height:15px}
-  #menuBtn .bars i{
+  #menuBtn:hover,#propBtn:hover{transform:scale(1.07);border-color:rgba(255,217,138,.7)}
+  #menuBtn:active,#propBtn:active{transform:scale(.95)}
+  #menuBtn .bars,#propBtn .bars{position:relative;width:20px;height:15px}
+  #menuBtn .bars i,#propBtn .bars i{
     position:absolute;left:0;height:2px;width:100%;border-radius:2px;background:var(--accent);
     transition:transform .38s cubic-bezier(.65,.05,.36,1),opacity .2s,width .38s;
   }
-  #menuBtn .bars i:nth-child(1){top:0}
-  #menuBtn .bars i:nth-child(2){top:6.5px;width:74%}
-  #menuBtn .bars i:nth-child(3){top:13px}
-  #menuBtn[aria-expanded="true"]{animation:none}
-  #menuBtn[aria-expanded="true"] .bars i:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
-  #menuBtn[aria-expanded="true"] .bars i:nth-child(2){opacity:0;width:0}
-  #menuBtn[aria-expanded="true"] .bars i:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+  #menuBtn .bars i:nth-child(1),#propBtn .bars i:nth-child(1){top:0}
+  #menuBtn .bars i:nth-child(2),#propBtn .bars i:nth-child(2){top:6.5px;width:74%}
+  #menuBtn .bars i:nth-child(3),#propBtn .bars i:nth-child(3){top:13px}
+  #menuBtn[aria-expanded="true"],#propBtn[aria-expanded="true"]{animation:none}
+  #menuBtn[aria-expanded="true"] .bars i:nth-child(1),#propBtn[aria-expanded="true"] .bars i:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+  #menuBtn[aria-expanded="true"] .bars i:nth-child(2),#propBtn[aria-expanded="true"] .bars i:nth-child(2){opacity:0;width:0}
+  #menuBtn[aria-expanded="true"] .bars i:nth-child(3),#propBtn[aria-expanded="true"] .bars i:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+  #propBtn{ left:18px; right:auto; }
+  #propBtn .bars i{ background:var(--accent) }
 
   /* ---------- panel ---------- */
-  #panel{
+  .prop{
+    display:block;width:100%;text-align:left;cursor:pointer;font:inherit;
+    padding:14px 15px;margin-bottom:10px;border-radius:13px;
+    background:rgba(255,255,255,.045);border:1px solid var(--ui-line);
+    transition:all .22s;
+  }
+  .prop:hover{ background:rgba(255,255,255,.09);border-color:rgba(255,217,138,.42);transform:translateY(-1px) }
+  .prop.on{ border-color:var(--accent);background:rgba(255,217,138,.11) }
+  .prop b{ display:block;font-size:15px;font-weight:800;letter-spacing:-.01em;color:var(--ui);margin-bottom:2px }
+  .prop.on b{ color:var(--accent) }
+  .prop span{ display:block;font-size:12px;color:var(--ui-dim);line-height:1.45 }
+  .soon{ margin-top:14px;font-size:11.5px;color:rgba(139,147,176,.75);line-height:1.6 }
+
+  #panel,#propPanel{
     position:fixed;top:0;right:0;z-index:25;
     width:344px;max-width:88vw;height:100%;
     background:var(--ui-panel);
@@ -121,13 +137,20 @@
     overflow-y:auto;overscroll-behavior:contain;
     padding:78px 22px 40px;
   }
-  #panel.open{transform:translateX(0)}
-  #panel h2{
+  #panel.open,#propPanel.open{transform:translateX(0)}
+  #panel h2,#propPanel h2{
     font-size:11px;letter-spacing:.19em;text-transform:uppercase;color:var(--accent);
     margin:26px 0 12px;font-weight:700;display:flex;align-items:center;gap:9px;
   }
-  #panel h2::after{content:"";flex:1;height:1px;background:var(--ui-line)}
-  #panel h2:first-of-type{margin-top:0}
+  #panel h2::after,#propPanel h2::after{content:"";flex:1;height:1px;background:var(--ui-line)}
+  #panel h2:first-of-type,#propPanel h2:first-of-type{margin-top:0}
+  #propPanel{
+    left:0; right:auto;
+    border-left:none; border-right:1px solid var(--ui-line);
+    box-shadow:30px 0 70px rgba(0,0,0,.55);
+    transform:translateX(-104%);
+  }
+  #propPanel.open{ transform:translateX(0) }
   .ptitle{font-size:19px;font-weight:800;letter-spacing:-.01em;margin-bottom:3px}
   .psub{font-size:12.5px;color:var(--ui-dim);line-height:1.5;margin-bottom:8px}
 
@@ -231,6 +254,18 @@
   #fallback p{max-width:380px;color:var(--ui-dim);font-size:14px;line-height:1.7}
 
   @media (max-width:640px){
+    #propPanel{
+      width:100%;max-width:100%;height:auto;max-height:78vh;top:auto;bottom:0;
+      border-right:none;border-top:1px solid var(--ui-line);
+      border-radius:22px 22px 0 0;padding:24px 20px 34px;
+      transform:translateY(104%);
+      box-shadow:0 -24px 60px rgba(0,0,0,.6);
+    }
+    #propPanel.open{transform:translateY(0)}
+    #propPanel::before{
+      content:"";display:block;width:38px;height:4px;border-radius:4px;
+      background:rgba(255,255,255,.22);margin:0 auto 18px;
+    }
     #panel{
       width:100%;max-width:100%;height:78vh;top:auto;bottom:0;
       border-left:none;border-top:1px solid var(--ui-line);
@@ -244,11 +279,12 @@
       background:rgba(255,255,255,.22);margin:0 auto 18px;
     }
     .hint{bottom:16px;font-size:10.5px;padding:8px 14px}
-    .brand{top:14px;left:14px;padding:8px 12px;font-size:11px}
-    #menuBtn{top:12px;right:14px;width:48px;height:48px}
+    .brand{top:14px;left:72px;padding:8px 11px;font-size:10.5px}
+    #menuBtn,#propBtn{top:12px;right:14px;width:48px;height:48px}
+    #propBtn{left:14px;right:auto}
   }
   @media (prefers-reduced-motion:reduce){
-    #menuBtn{animation:none}
+    #menuBtn,#propBtn{animation:none}
     #boot .bt{animation:none;opacity:.8}
   }
 </style>
@@ -262,11 +298,22 @@
 
 <a class="brand" href="/"><span>&#8592;</span> Vegas Sidekick</a>
 
+<button id="propBtn" aria-label="Open landmarks menu" aria-expanded="false" aria-controls="propPanel">
+  <span class="bars"><i></i><i></i><i></i></span>
+</button>
+
 <button id="menuBtn" aria-label="Open customization menu" aria-expanded="false" aria-controls="panel">
   <span class="bars"><i></i><i></i><i></i></span>
 </button>
 
 <div id="scrim"></div>
+
+<aside id="propPanel" aria-label="Landmarks">
+  <div class="ptitle">Vegas Landmarks</div>
+  <div class="psub">Pick one to rebuild out of dots.</div>
+  <div id="propList"></div>
+  <div class="soon">More of the Strip on the way.</div>
+</aside>
 
 <aside id="panel" aria-label="Sign customization">
   <div class="ptitle">Customize the Sign</div>
@@ -313,7 +360,7 @@
   </div>
 </aside>
 
-<div class="hint" id="hint">Drag to spin &middot; Scroll to zoom &middot; Tap &#9776; to customize</div>
+<div class="hint" id="hint">Drag to spin &middot; Scroll to zoom &middot; &#9776; for landmarks &amp; colors</div>
 
 <div id="boot"><div class="bt">Lighting the bulbs&hellip;</div></div>
 <div id="fallback"><p>This toy needs WebGL, which your browser has turned off or doesn't support. Try a different browser and the sign will light right up.</p></div>
@@ -353,8 +400,15 @@ var PATTERNS = [
   {id:8, name:'All on'}
 ];
 
+var MODELS = {
+  sign:  {name:'Welcome Sign', tag:'Welcome to Fabulous Las Vegas, 1959',
+          yaw:-0.34, pitch:0.10, z:3.18},
+  luxor: {name:'Luxor',        tag:'Pyramid, Sphinx and the Sky Beam',
+          yaw:-0.70, pitch:0.05, z:3.95}
+};
+
 var DEFAULTS = {
-  preset:'classic', pattern:0, speed:1.0, dotSize:3.4, glow:1.0,
+  model:'sign', preset:'classic', pattern:0, speed:1.0, dotSize:3.4, glow:1.0,
   density:1, autoSpin:true, neon:true, stars:true,
   colors:null
 };
@@ -537,22 +591,43 @@ function wy(y){ return -(y - ART.pivotY)/ART.hw; }
 
 var G = null;   /* built geometry */
 
-function buildGeometry(densityIdx){
+function buildGeometry(model, densityIdx){
   /* lower multiplier = finer sampling step = more dots */
   var mult = [0.80, 1.0, 1.32][densityIdx] || 1.0;
   var st = function(base){ return Math.max(3, Math.round(base*mult)); };
 
   var pos=[], typ=[], shd=[], seed=[], org=[];
+  var bpos=[], bu=[], bseed=[], bbr=[], borg=[];
   var circles = circleCenters();
+
+  function scatter(into){
+    var a = Math.random()*Math.PI*2, b = Math.acos(2*Math.random()-1), R = 2.6 + Math.random()*3.2;
+    into.push(Math.sin(b)*Math.cos(a)*R, Math.cos(b)*R*0.8, Math.sin(b)*Math.sin(a)*R);
+  }
+  function pushBulb(x, y, z, u, bright){
+    bpos.push(x, y, z);
+    bu.push(u); bseed.push(Math.random());
+    bbr.push(bright === undefined ? 1 : bright);
+    scatter(borg);
+  }
+  function pack(){
+    return {
+      n: typ.length,
+      pos:new Float32Array(pos), org:new Float32Array(org),
+      typ:new Float32Array(typ), shd:new Float32Array(shd), seed:new Float32Array(seed),
+      col:new Float32Array(typ.length*3),
+      bn: bu.length,
+      bpos:new Float32Array(bpos), borg:new Float32Array(borg),
+      bu:new Float32Array(bu), bseed:new Float32Array(bseed), bbr:new Float32Array(bbr)
+    };
+  }
 
   function push(x, y, z, type, shade){
     pos.push(x, y, z + (Math.random()-0.5)*0.012);
     typ.push(type);
     shd.push(shade);
     seed.push(Math.random());
-    /* scatter origin for the assemble intro */
-    var a = Math.random()*Math.PI*2, b = Math.acos(2*Math.random()-1), R = 2.6 + Math.random()*3.2;
-    org.push(Math.sin(b)*Math.cos(a)*R, Math.cos(b)*R*0.8, Math.sin(b)*Math.sin(a)*R);
+    scatter(org);   /* where this dot flies in from */
   }
   function addPts(pts, z, type, shadeFn){
     for(var i=0;i<pts.length;i+=2){
@@ -560,6 +635,8 @@ function buildGeometry(densityIdx){
       push(wx(X), wy(Y), z, type, shadeFn ? shadeFn(X,Y) : 1);
     }
   }
+
+  if(model === 'luxor'){ buildLuxor(push, pushBulb, mult); return pack(); }
 
   /* --- back plate: dim silhouette so the sign has volume when it turns --- */
   addPts(sample(function(c){
@@ -702,7 +779,6 @@ function buildGeometry(densityIdx){
   }, st(9)), -0.10, T.POLE, function(){ return 0.9; });
 
   /* --- bulbs: evenly spaced around the rim, indexed for chase patterns --- */
-  var bpos=[], bu=[], bseed=[], borg=[];
   (function(){
     var ins = ART.band/2, w = ART.hw-ins, h = ART.hh-ins, cx=ART.cx, cy=ART.cy;
     var V = [[cx,cy-h],[cx+w,cy],[cx,cy+h],[cx-w,cy]];
@@ -719,11 +795,7 @@ function buildGeometry(densityIdx){
         if(d <= acc + s.L){
           var t = (d-acc)/s.L;
           var X = s.A[0]+(s.B[0]-s.A[0])*t, Y = s.A[1]+(s.B[1]-s.A[1])*t;
-          bpos.push(wx(X), wy(Y), 0.058);
-          bu.push(i/N);
-          bseed.push(Math.random());
-          var a=Math.random()*Math.PI*2, b=Math.acos(2*Math.random()-1), R=3.0+Math.random()*3.0;
-          borg.push(Math.sin(b)*Math.cos(a)*R, Math.cos(b)*R*0.8, Math.sin(b)*Math.sin(a)*R);
+          pushBulb(wx(X), wy(Y), 0.058, i/N, 1);
           break;
         }
         acc += s.L;
@@ -731,15 +803,156 @@ function buildGeometry(densityIdx){
     }
   })();
 
-  return {
-    n: typ.length,
-    pos:new Float32Array(pos), org:new Float32Array(org),
-    typ:new Float32Array(typ), shd:new Float32Array(shd), seed:new Float32Array(seed),
-    col:new Float32Array(typ.length*3),
-    bn: bu.length,
-    bpos:new Float32Array(bpos), borg:new Float32Array(borg),
-    bu:new Float32Array(bu), bseed:new Float32Array(bseed)
-  };
+  return pack();
+}
+
+/* ============================================================
+   LUXOR — real 3D geometry rather than a sampled flat plane.
+   Every dot on the pyramid stands in for a glass panel, so the
+   window grid comes for free; a few are lit rooms.
+   ============================================================ */
+function buildLuxor(push, pushBulb, mult){
+  var d  = 0.024 * mult;          /* dot spacing, world units */
+  var PW = 1.0, PH = 1.22;        /* half-base, apex height    */
+  var Y0 = -0.55;                 /* sink so the frame centres */
+  var rnd = Math.random;
+
+  function P(x, y, z, type, shade){ push(x, y + Y0, z, type, shade); }
+  function lerp3(a, b, t){
+    return [a[0]+(b[0]-a[0])*t, a[1]+(b[1]-a[1])*t, a[2]+(b[2]-a[2])*t];
+  }
+
+  var C = [[-PW,0,-PW],[PW,0,-PW],[PW,0,PW],[-PW,0,PW]];
+  var APEX = [0, PH, 0];
+  var slant = Math.sqrt(PH*PH + PW*PW);
+  var f, i, j, t;
+
+  /* ---- the four glass faces ---- */
+  var rows = Math.max(10, Math.round(slant/d));
+  for(f=0; f<4; f++){
+    var A = C[f], B = C[(f+1)%4];
+    for(i=0; i<=rows; i++){
+      t = i/rows;
+      var L = lerp3(A, APEX, t), R = lerp3(B, APEX, t);
+      var cols = Math.round(Math.hypot(R[0]-L[0], R[1]-L[1], R[2]-L[2])/d);
+      for(j=0; j<=cols; j++){
+        var p = lerp3(L, R, cols ? j/cols : 0.5);
+        if(rnd() < 0.045) P(p[0], p[1], p[2], T.BORDER, 1.00 + rnd()*0.45); /* lit room */
+        else              P(p[0], p[1], p[2], T.POLE, 0.30 + rnd()*0.18);   /* dark glass */
+      }
+    }
+  }
+
+  /* ---- the corner lights running up all four edges ---- */
+  var edgeN = Math.max(30, Math.round(slant/(d*1.10)));
+  for(f=0; f<4; f++){
+    for(i=0; i<=edgeN; i++){
+      t = i/edgeN;
+      var e = lerp3(C[f], APEX, t);
+      pushBulb(e[0], e[1] + Y0, e[2], t, 1.05);
+    }
+  }
+  /* base perimeter, dimmer */
+  for(f=0; f<4; f++){
+    var A2 = C[f], B2 = C[(f+1)%4];
+    var n2 = Math.round(2*PW/(d*1.7));
+    for(i=0; i<n2; i++){
+      var q = lerp3(A2, B2, i/n2);
+      pushBulb(q[0], q[1] + Y0 + 0.012, q[2], i/n2, 0.34);
+    }
+  }
+
+  /* ---- the Sky Beam ---- */
+  var BH = 2.35, beamRows = Math.max(30, Math.round(BH/(d*1.5)));
+  for(i=0; i<=beamRows; i++){
+    var h = i/beamRows;
+    var y = PH + h*BH;
+    var rad = 0.020 + h*0.085;
+    var k = Math.max(2, Math.round(17*(1 - h*0.80)));
+    for(j=0; j<k; j++){
+      var ang = rnd()*Math.PI*2, rr = Math.sqrt(rnd())*rad;
+      pushBulb(Math.cos(ang)*rr, y + Y0, Math.sin(ang)*rr, h,
+               Math.pow(1-h, 1.4)*2.2 + 0.06);
+    }
+  }
+  /* hot spot at the apex */
+  for(i=0; i<26; i++){
+    pushBulb((rnd()-0.5)*0.05, PH + Y0 + rnd()*0.05, (rnd()-0.5)*0.05, 1, 2.1);
+  }
+
+  /* ---- the Sphinx, out front ---- */
+  var SC = 0.44, SZ = 1.30;
+  function S3(x, y, z, type, shade){ P(x*SC, y*SC, SZ + z*SC, type, shade); }
+  function box(x0, x1, y0, y1, z0, z1, type, shade){
+    var dd = (d*0.68)/SC;
+    var nx = Math.max(1, Math.round((x1-x0)/dd));
+    var ny = Math.max(1, Math.round((y1-y0)/dd));
+    var nz = Math.max(1, Math.round((z1-z0)/dd));
+    var a, b, x, y, z;
+    function put(x, y, z){
+      S3(x, y, z, (typeof type === 'function') ? type(x,y,z) : type,
+                  (typeof shade === 'function') ? shade(x,y,z) : shade);
+    }
+    for(a=0; a<=nx; a++){ x = x0+(x1-x0)*a/nx;
+      for(b=0; b<=nz; b++) put(x, y1, z0+(z1-z0)*b/nz);            /* top   */
+      for(b=0; b<=ny; b++){ y = y0+(y1-y0)*b/ny;
+        put(x, y, z1); put(x, y, z0); }                             /* front/back */
+    }
+    for(a=0; a<=nz; a++){ z = z0+(z1-z0)*a/nz;
+      for(b=0; b<=ny; b++){ y = y0+(y1-y0)*b/ny;
+        put(x1, y, z); put(x0, y, z); }                             /* sides */
+    }
+  }
+  /* the nemes headdress is the cue that reads as "sphinx": blue/gold bands */
+  function nemes(x, y, z){
+    return (Math.floor((y - 0.70)/0.040) % 2 === 0) ? T.ACC : T.BORDER;
+  }
+
+  box(-0.48, 0.48,  0.00, 0.09, -0.80, 0.95, T.FACE, 0.26);   /* plinth      */
+  box(-0.33, 0.33,  0.10, 0.52, -0.94,-0.25, T.FACE, 0.68);   /* haunches    */
+  box(-0.31, 0.31,  0.10, 0.46, -0.35, 0.30, T.FACE, 0.76);   /* body        */
+  box(-0.30, 0.30,  0.10, 0.62,  0.14, 0.50, T.FACE, 0.84);   /* chest       */
+  box(-0.30,-0.10,  0.10, 0.24,  0.44, 1.10, T.FACE, 0.72);   /* left paw    */
+  box( 0.10, 0.30,  0.10, 0.24,  0.44, 1.10, T.FACE, 0.72);   /* right paw   */
+  /* the headdress is built around the face, not over it, so the pale
+     face reads as a face framed by blue-and-gold bands */
+  box(-0.42, 0.42,  0.86, 0.97,  0.10, 0.52, nemes, 1.04);    /* crown band  */
+  box(-0.42,-0.21,  0.58, 0.88,  0.10, 0.52, nemes, 1.00);    /* nemes L     */
+  box( 0.21, 0.42,  0.58, 0.88,  0.10, 0.52, nemes, 1.00);    /* nemes R     */
+  box(-0.42, 0.42,  0.58, 0.97,  0.10, 0.22, nemes, 0.90);    /* nemes back  */
+  box(-0.44,-0.32,  0.38, 0.62,  0.20, 0.50, nemes, 0.95);    /* lappet L    */
+  box( 0.32, 0.44,  0.38, 0.62,  0.20, 0.50, nemes, 0.95);    /* lappet R    */
+  box(-0.20, 0.20,  0.60, 0.87,  0.34, 0.60, T.FACE, 1.20);   /* face        */
+  box(-0.05, 0.05,  0.97, 1.05,  0.40, 0.52, T.BORDER, 1.25); /* uraeus      */
+
+  /* ---- palms and a hint of plaza ---- */
+  function palm(px, pz, h){
+    var steps = Math.max(4, Math.round(h/(d*1.3))), k2, u2;
+    for(k2=0; k2<=steps; k2++){
+      u2 = k2/steps;
+      P(px + 0.10*u2*u2, u2*h, pz, T.POLE, 0.38);
+    }
+    for(k2=0; k2<7; k2++){
+      var fa = k2/7*Math.PI*2 + px, len = 0.20 + rnd()*0.10;
+      var fs = Math.max(3, Math.round(len/(d*1.1)));
+      for(j=0; j<=fs; j++){
+        u2 = j/fs;
+        P(px + 0.10 + Math.cos(fa)*len*u2, h + 0.02 - 0.17*u2*u2, pz + Math.sin(fa)*len*u2, T.POLE, 0.42);
+      }
+    }
+  }
+  var PALMS = [[-1.60,1.05,0.50],[-1.30,1.70,0.42],[1.35,1.65,0.48],[1.62,1.02,0.44],
+               [-1.85,0.25,0.46],[1.88,0.30,0.50],[-1.72,-0.75,0.40],[1.76,-0.70,0.44],
+               [-1.95,1.55,0.38],[1.98,1.50,0.40],[-1.40,-1.45,0.38],[1.45,-1.40,0.40]];
+  for(i=0; i<PALMS.length; i++) palm(PALMS[i][0], PALMS[i][1], PALMS[i][2]);
+
+  var gN = Math.round(1500/(mult*mult));
+  for(i=0; i<gN; i++){
+    var ga = rnd()*Math.PI*2, gr = 1.05 + Math.sqrt(rnd())*2.1;
+    var gx = Math.cos(ga)*gr, gz = Math.sin(ga)*gr;
+    if(Math.abs(gx) < PW*1.02 && Math.abs(gz) < PW*1.02) continue;
+    P(gx, 0, gz, T.FACE, 0.05 + 0.07*(1 - (gr-1)/2.1));
+  }
 }
 
 /* type -> palette slot */
@@ -811,6 +1024,7 @@ var FS_STRUCT = [
 
 var VS_BULB = [
 'attribute vec3 aPos; attribute vec3 aOrg; attribute float aU; attribute float aSeed;',
+'attribute float aBright;',
 'uniform mat4 uProj; uniform mat3 uRot;',
 'uniform float uCamZ,uTime,uAssemble,uDotSize,uPR,uPattern,uSpeed,uGlow;',
 'uniform vec3 uBulb;',
@@ -853,7 +1067,7 @@ var VS_BULB = [
 '  } else {',
 '    b = 0.90 + 0.10*sin(t*2.0 + aSeed*6.0);',
 '  }',
-'  vB = b * uGlow * mix(0.15, 1.0, a);',
+'  vB = b * uGlow * aBright * mix(0.15, 1.0, a);',
 '  vCol = col;',
 '}'].join('\n');
 
@@ -902,12 +1116,12 @@ function locs(p, attrs, unis){
 }
 var LS = locs(progS, ['aPos','aOrg','aCol','aType','aSeed'],
                      ['uProj','uRot','uCamZ','uTime','uAssemble','uDotSize','uPR','uNeon','uSpeed','uFacing']);
-var LB = locs(progB, ['aPos','aOrg','aU','aSeed'],
+var LB = locs(progB, ['aPos','aOrg','aU','aSeed','aBright'],
                      ['uProj','uRot','uCamZ','uTime','uAssemble','uDotSize','uPR','uPattern','uSpeed','uGlow','uBulb']);
 
 var buf = {};
 function mkBuf(){ return gl.createBuffer(); }
-['pos','org','col','typ','seed','bpos','borg','bu','bseed'].forEach(function(k){ buf[k]=mkBuf(); });
+['pos','org','col','typ','seed','bpos','borg','bu','bseed','bbr'].forEach(function(k){ buf[k]=mkBuf(); });
 
 function upload(b, data, usage){
   gl.bindBuffer(gl.ARRAY_BUFFER, b);
@@ -919,6 +1133,7 @@ function uploadAll(){
   upload(buf.col, G.col, gl.DYNAMIC_DRAW);
   upload(buf.bpos, G.bpos); upload(buf.borg, G.borg);
   upload(buf.bu, G.bu);     upload(buf.bseed, G.bseed);
+  upload(buf.bbr, G.bbr);
 }
 function bindAttr(loc, b, size){
   if(loc < 0) return;
@@ -1058,6 +1273,7 @@ function frame(now){
   bindAttr(LB.a.aOrg, buf.borg, 3);
   bindAttr(LB.a.aU, buf.bu, 1);
   bindAttr(LB.a.aSeed, buf.bseed, 1);
+  bindAttr(LB.a.aBright, buf.bbr, 1);
   gl.uniformMatrix4fv(LB.u.uProj, false, proj);
   gl.uniformMatrix3fv(LB.u.uRot, false, rot);
   gl.uniform1f(LB.u.uCamZ, view.camZ);
@@ -1131,18 +1347,53 @@ var panel = document.getElementById('panel'),
     menuBtn = document.getElementById('menuBtn'),
     scrim = document.getElementById('scrim');
 
+var propPanel = document.getElementById('propPanel'),
+    propBtn = document.getElementById('propBtn');
+
 function setMenu(open){
   panel.classList.toggle('open', open);
-  scrim.classList.toggle('on', open);
   menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
   menuBtn.setAttribute('aria-label', (open ? 'Close' : 'Open') + ' customization menu');
+  if(open) setProps(false);
+  syncScrim();
+}
+function setProps(open){
+  propPanel.classList.toggle('open', open);
+  propBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  propBtn.setAttribute('aria-label', (open ? 'Close' : 'Open') + ' landmarks menu');
+  if(open) setMenu(false);
+  syncScrim();
+}
+function syncScrim(){
+  scrim.classList.toggle('on', panel.classList.contains('open') || propPanel.classList.contains('open'));
 }
 menuBtn.addEventListener('click', function(){
   setMenu(menuBtn.getAttribute('aria-expanded') !== 'true');
 });
-scrim.addEventListener('click', function(){ setMenu(false); });
+propBtn.addEventListener('click', function(){
+  setProps(propBtn.getAttribute('aria-expanded') !== 'true');
+});
+scrim.addEventListener('click', function(){ setMenu(false); setProps(false); });
 window.addEventListener('keydown', function(e){
-  if(e.key === 'Escape') setMenu(false);
+  if(e.key === 'Escape'){ setMenu(false); setProps(false); }
+});
+
+/* landmark list */
+var propList = document.getElementById('propList');
+Object.keys(MODELS).forEach(function(key){
+  var m = MODELS[key];
+  var b = document.createElement('button');
+  b.className = 'prop' + (S.model === key ? ' on' : '');
+  b.dataset.key = key;
+  b.innerHTML = '<b></b><span></span>';
+  b.querySelector('b').textContent = m.name;
+  b.querySelector('span').textContent = m.tag;
+  b.addEventListener('click', function(){
+    if(S.model !== key){ S.model = key; rebuild(); resetView(); save(); }
+    [].forEach.call(propList.children, function(c){ c.classList.toggle('on', c.dataset.key === key); });
+    setProps(false);
+  });
+  propList.appendChild(b);
 });
 
 /* presets */
@@ -1268,15 +1519,22 @@ document.getElementById('reset').addEventListener('click', function(){
   document.getElementById('tgNeon').classList.add('on');
   document.getElementById('tgStars').classList.add('on');
   syncSwatches(); paintSpeed(); paintSize(); paintGlow();
-  view.yaw = -0.34; view.pitch = 0.10; view.vy = 0; view.vx = 0; view.targetZ = 3.18;
-  rebuild(); applySky(); drawStars(); save();
+  [].forEach.call(propList.children, function(c){ c.classList.toggle('on', c.dataset.key === 'sign'); });
+  rebuild(); resetView(); applySky(); drawStars(); save();
 });
 
 /* ============================================================
    7. BOOT
    ============================================================ */
+function resetView(){
+  var m = MODELS[S.model] || MODELS.sign;
+  view.yaw = m.yaw; view.pitch = m.pitch;
+  view.vy = 0; view.vx = 0;
+  view.targetZ = m.z; view.camZ = m.z;
+  assemble = 0;                       /* let the new landmark fly together */
+}
 function rebuild(){
-  G = buildGeometry(S.density);
+  G = buildGeometry(S.model, S.density);
   recolor();
   uploadAll();
   var total = G.n + G.bn;
@@ -1288,6 +1546,7 @@ function rebuild(){
 function boot(){
   resize();
   rebuild();
+  resetView();
   applySky();
   drawStars();
   requestAnimationFrame(frame);
