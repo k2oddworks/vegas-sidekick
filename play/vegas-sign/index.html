@@ -389,7 +389,8 @@ function hex2rgb(h){
 var ART = {W:1200, H:1580, cx:600, cy:900, hw:560, hh:272, band:30, pivotY:764};
 
 /* dot type ids (drive animation, not colour lookup) */
-var T = {FACE:0, BORDER:1, MAIN:2, ACC:3, STAR:4, POLE:5, BACK:6, CIRCLE:7, BMAIN:8, BACC:9};
+var T = {FACE:0, BORDER:1, MAIN:2, ACC:3, STAR:4, POLE:5, BACK:6, CIRCLE:7,
+         BMAIN:8, BACC:9, PFACE:10, PDISC:11, PBACK:12};
 
 function diamondPath(c, inset){
   var w = ART.hw - inset, h = ART.hh - inset, cx = ART.cx, cy = ART.cy, r = 0.11;
@@ -602,6 +603,7 @@ function buildGeometry(densityIdx){
     c.fillStyle='#fff'; diamondPath(c, ART.band); c.fill();
     c.globalCompositeOperation = 'destination-out';
     drawMainText(c, 11); drawAccText(c, 11);
+    drawBackMain(c, 11); drawBackAcc(c, 11);
     c.globalCompositeOperation = 'source-over';
   }, st(6)), 0, T.FACE, function(X,Y){
     var d = Math.hypot((X-ART.cx)/ART.hw, (Y-ART.cy)/ART.hh);
@@ -630,6 +632,46 @@ function buildGeometry(densityIdx){
       if(d<best) best=d;
     }
     return best > 0.88 ? 0.72 : 0.98 + 0.26*(1-best);   /* soft rim, brighter middle */
+  });
+
+  /* --- Patches. The front lettering is punched out of the face and the discs,
+         which from behind would read as ghost letters. These fill those holes
+         back in and are only drawn while you're looking at the reverse. --- */
+  addPts(sample(function(c){
+    c.save(); diamondPath(c, ART.band); c.clip();
+    drawMainText(c, 11); drawAccText(c, 11);
+    /* keep clear of the reverse lettering, or it sits bright white behind it */
+    c.globalCompositeOperation = 'destination-out';
+    drawBackMain(c, 11); drawBackAcc(c, 11);
+    c.globalCompositeOperation = 'source-over';
+    c.restore();
+  }, st(6)), 0, T.PFACE, function(X,Y){
+    var d = Math.hypot((X-ART.cx)/ART.hw, (Y-ART.cy)/ART.hh);
+    return 0.94 + 0.30*(1-Math.min(1,d));
+  });
+
+  addPts(sample(function(c){
+    c.save(); c.beginPath();
+    for(var i=0;i<circles.length;i++){
+      var q=circles[i]; c.moveTo(q.x+q.r, q.y); c.arc(q.x, q.y, q.r, 0, 7);
+    }
+    c.clip();
+    drawDiscLetters(c, 11);
+    c.restore();
+  }, st(6)), 0.062, T.PDISC, function(){ return 1.05; });
+
+  /* mirror of the above: the reverse lettering is punched out of the face so
+     it reads clean from behind, so fill those holes back in for the front */
+  addPts(sample(function(c){
+    c.save(); diamondPath(c, ART.band); c.clip();
+    drawBackMain(c, 11); drawBackAcc(c, 11);
+    c.globalCompositeOperation = 'destination-out';
+    drawMainText(c, 11); drawAccText(c, 11);
+    c.globalCompositeOperation = 'source-over';
+    c.restore();
+  }, st(6)), 0, T.PBACK, function(X,Y){
+    var d = Math.hypot((X-ART.cx)/ART.hw, (Y-ART.cy)/ART.hh);
+    return 0.94 + 0.30*(1-Math.min(1,d));
   });
 
   /* --- red lettering: WELCOME letters, TO, LAS VEGAS --- */
@@ -705,7 +747,8 @@ function recolor(){
   var p = S.colors;
   var C = [hex2rgb(p.face), hex2rgb(p.border), hex2rgb(p.main), hex2rgb(p.acc),
            hex2rgb(p.star), hex2rgb(p.pole), hex2rgb(p.face), hex2rgb(p.circle),
-           hex2rgb(p.main), hex2rgb(p.acc)];
+           hex2rgb(p.main), hex2rgb(p.acc), hex2rgb(p.face), hex2rgb(p.circle),
+           hex2rgb(p.face)];
   for(var i=0;i<G.n;i++){
     var c = C[G.typ[i]] || C[0], s = G.shd[i];
     G.col[i*3]   = Math.min(1.6, c[0]*s);
@@ -742,8 +785,8 @@ var VS_STRUCT = [
 /* two-sided sign: front lettering hides when you spin behind it, and the
    reverse lettering only shows from back there */
 '  float hide = 0.0;',
-'  if(aType > 7.5 && uFacing > 0.0) hide = 1.0;',
-'  if(aType > 1.5 && aType < 3.5 && uFacing < 0.0) hide = 1.0;',
+'  if(aType > 7.5 && aType < 11.5 && uFacing > 0.0) hide = 1.0;',
+'  if(((aType > 1.5 && aType < 3.5) || aType > 11.5) && uFacing < 0.0) hide = 1.0;',
 '  gl_Position = mix(uProj * view, vec4(0.0, 0.0, -2.0, 1.0), hide);',
 '  float dist = max(0.25, -view.z);',
 '  gl_PointSize = clamp(uDotSize * uPR * (3.2/dist), 1.0, 26.0) * (1.0 - hide);',
