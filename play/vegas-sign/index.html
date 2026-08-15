@@ -47,8 +47,10 @@
   /* ---------- evening backdrop ---------- */
   #sky{position:fixed;inset:0;z-index:0;transition:background 700ms ease}
   #stars{position:fixed;inset:0;z-index:1;opacity:.7;pointer-events:none}
-  #vignette{position:fixed;inset:0;z-index:3;pointer-events:none;
+  #vignette{position:fixed;inset:0;z-index:3;pointer-events:none;transition:opacity .6s ease;
     background:radial-gradient(ellipse 78% 65% at 50% 45%,transparent 40%,rgba(0,0,0,.55) 100%)}
+  body.day #vignette{opacity:.22}
+  body.day #stars{opacity:0}
 
   canvas#gl{position:fixed;inset:0;z-index:2;display:block;width:100%;height:100%;cursor:grab}
   canvas#gl.drag{cursor:grabbing}
@@ -76,6 +78,7 @@
     white-space:nowrap;transition:opacity .8s ease;pointer-events:none;
   }
   .hint.gone{opacity:0}
+  .hint .hs{display:none}
 
   /* ---------- menu button ---------- */
   #menuBtn,#propBtn{
@@ -279,6 +282,8 @@
       background:rgba(255,255,255,.22);margin:0 auto 18px;
     }
     .hint{bottom:16px;font-size:10.5px;padding:8px 14px}
+    .hint .hf{display:none}
+    .hint .hs{display:inline}
     .brand{top:14px;left:72px;padding:8px 11px;font-size:10.5px}
     #menuBtn,#propBtn{top:12px;right:14px;width:48px;height:48px}
     #propBtn{left:14px;right:auto}
@@ -347,7 +352,13 @@
     <div class="chips" id="densityChips"></div>
   </div>
 
+  <div id="screenSec" style="display:none">
+    <h2>Sphere Screen</h2>
+    <div class="chips" id="screenChips"></div>
+  </div>
+
   <h2>Motion</h2>
+  <div class="toggle" id="tgDay"><span>Daylight</span><span class="tk"></span></div>
   <div class="toggle on" id="tgAuto"><span>Auto-spin</span><span class="tk"></span></div>
   <div class="toggle on" id="tgNeon"><span>Neon flicker</span><span class="tk"></span></div>
   <div class="toggle on" id="tgStars"><span>Night sky</span><span class="tk"></span></div>
@@ -360,7 +371,7 @@
   </div>
 </aside>
 
-<div class="hint" id="hint">Drag to spin &middot; Scroll to zoom &middot; &#9776; for landmarks &amp; colors</div>
+<div class="hint" id="hint"><span class="hf">Drag to spin &middot; Scroll to zoom &middot; &#9776; for landmarks &amp; colors</span><span class="hs">Drag to spin &middot; &#9776; for landmarks</span></div>
 
 <div id="boot"><div class="bt">Lighting the bulbs&hellip;</div></div>
 <div id="fallback"><p>This toy needs WebGL, which your browser has turned off or doesn't support. Try a different browser and the sign will light right up.</p></div>
@@ -404,11 +415,13 @@ var MODELS = {
   sign:  {name:'Welcome Sign', tag:'Welcome to Fabulous Las Vegas, 1959',
           yaw:-0.34, pitch:0.10, z:3.18},
   luxor: {name:'Luxor',        tag:'Pyramid, Sphinx and the Sky Beam',
-          yaw:-0.70, pitch:0.05, z:3.95}
+          yaw:-0.70, pitch:0.05, z:3.95},
+  sphere:{name:'The Sphere',   tag:'An Exosphere you can put anything on',
+          yaw:-0.20, pitch:0.04, z:3.95}
 };
 
 var DEFAULTS = {
-  model:'sign', preset:'classic', pattern:0, speed:1.0, dotSize:3.4, glow:1.0,
+  model:'sign', day:false, preset:'classic', pattern:0, speed:1.0, dotSize:3.4, glow:1.0,
   density:1, autoSpin:true, neon:true, stars:true,
   colors:null
 };
@@ -444,7 +457,8 @@ var ART = {W:1200, H:1580, cx:600, cy:900, hw:560, hh:272, band:30, pivotY:764};
 
 /* dot type ids (drive animation, not colour lookup) */
 var T = {FACE:0, BORDER:1, MAIN:2, ACC:3, STAR:4, POLE:5, BACK:6, CIRCLE:7,
-         BMAIN:8, BACC:9, PFACE:10, PDISC:11, PBACK:12};
+         BMAIN:8, BACC:9, PFACE:10, PDISC:11, PBACK:12, SCREEN:13};
+var SPHERE_Y = 0.20;
 
 function diamondPath(c, inset){
   var w = ART.hw - inset, h = ART.hh - inset, cx = ART.cx, cy = ART.cy, r = 0.11;
@@ -597,6 +611,7 @@ function buildGeometry(model, densityIdx){
   var st = function(base){ return Math.max(3, Math.round(base*mult)); };
 
   var pos=[], typ=[], shd=[], seed=[], org=[];
+  var uvs=[], scr=[], siz=[];
   var bpos=[], bu=[], bseed=[], bbr=[], borg=[];
   var circles = circleCenters();
 
@@ -616,18 +631,23 @@ function buildGeometry(model, densityIdx){
       pos:new Float32Array(pos), org:new Float32Array(org),
       typ:new Float32Array(typ), shd:new Float32Array(shd), seed:new Float32Array(seed),
       col:new Float32Array(typ.length*3),
+      uv:new Float32Array(uvs), scr:new Float32Array(scr), siz:new Float32Array(siz),
+      hasScreen: scr.indexOf(1) >= 0,
       bn: bu.length,
       bpos:new Float32Array(bpos), borg:new Float32Array(borg),
       bu:new Float32Array(bu), bseed:new Float32Array(bseed), bbr:new Float32Array(bbr)
     };
   }
 
-  function push(x, y, z, type, shade){
+  function push(x, y, z, type, shade, u, v, sz){
     pos.push(x, y, z + (Math.random()-0.5)*0.012);
     typ.push(type);
     shd.push(shade);
     seed.push(Math.random());
     scatter(org);   /* where this dot flies in from */
+    scr.push(u === undefined ? 0 : 1);
+    uvs.push(u || 0, v || 0);
+    siz.push(sz || 1);
   }
   function addPts(pts, z, type, shadeFn){
     for(var i=0;i<pts.length;i+=2){
@@ -636,7 +656,8 @@ function buildGeometry(model, densityIdx){
     }
   }
 
-  if(model === 'luxor'){ buildLuxor(push, pushBulb, mult); return pack(); }
+  if(model === 'luxor'){  buildLuxor(push, pushBulb, mult);  return pack(); }
+  if(model === 'sphere'){ buildSphere(push, pushBulb, mult); return pack(); }
 
   /* --- back plate: dim silhouette so the sign has volume when it turns --- */
   addPts(sample(function(c){
@@ -955,6 +976,203 @@ function buildLuxor(push, pushBulb, mult){
   }
 }
 
+/* ============================================================
+   THE SPHERE — a Fibonacci shell where every dot is an LED puck.
+   Dot colours come from an equirectangular content canvas rather
+   than the palette, so the Exosphere can actually show something.
+   ============================================================ */
+var SCR_W = 512, SCR_H = 256;
+var scrCvs = document.createElement('canvas');
+scrCvs.width = SCR_W; scrCvs.height = SCR_H;
+var scrCtx = scrCvs.getContext('2d', {willReadFrequently:true});
+
+var CONTENT = [
+  {id:'eye', name:'Eye', draw:function(c){
+    c.fillStyle = '#07080e'; c.fillRect(0,0,SCR_W,SCR_H);
+    /* drawn twice so the eye still faces you from behind */
+    [SCR_W*0.5, 0, SCR_W].forEach(function(cx){
+      c.save(); c.translate(cx, SCR_H*0.5);
+      c.fillStyle = '#f2f4f8';
+      c.beginPath(); c.ellipse(0, 0, 126, 76, 0, 0, 7); c.fill();
+      var g = c.createRadialGradient(0,0,3, 0,0,54);
+      g.addColorStop(0,'#b6ecff'); g.addColorStop(0.5,'#2ba6f0'); g.addColorStop(1,'#0f5fb4');
+      c.fillStyle = g; c.beginPath(); c.arc(0,0,54,0,7); c.fill();
+      c.fillStyle = '#05060a'; c.beginPath(); c.arc(0,0,15,0,7); c.fill();
+      c.fillStyle = 'rgba(255,255,255,.95)';
+      c.beginPath(); c.arc(-19,-19,9,0,7); c.fill();
+      c.strokeStyle = 'rgba(214,72,72,.45)'; c.lineWidth = 2.5;
+      for(var k=0;k<8;k++){
+        var a = Math.PI*0.12 + k*0.72;
+        c.beginPath(); c.moveTo(Math.cos(a)*58, Math.sin(a)*36);
+        c.lineTo(Math.cos(a)*112, Math.sin(a)*66); c.stroke();
+      }
+      c.restore();
+    });
+  }},
+  {id:'emoji', name:'Emoji', draw:function(c){
+    c.fillStyle = '#ffcf1a'; c.fillRect(0,0,SCR_W,SCR_H);
+    c.fillStyle = '#1a1305';
+    [SCR_W*0.5, 0, SCR_W].forEach(function(cx){
+      c.save(); c.translate(cx, SCR_H*0.5);
+      c.beginPath(); c.ellipse(-62,-30,20,30,0,0,7); c.fill();
+      c.beginPath(); c.ellipse( 62,-30,20,30,0,0,7); c.fill();
+      c.lineWidth = 17; c.strokeStyle = '#1a1305'; c.lineCap = 'round';
+      c.beginPath(); c.arc(0, 6, 78, 0.28*Math.PI, 0.72*Math.PI); c.stroke();
+      c.restore();
+    });
+  }},
+  {id:'ball', name:'Basketball', draw:function(c){
+    c.fillStyle = '#d9631f'; c.fillRect(0,0,SCR_W,SCR_H);
+    c.strokeStyle = '#140a05'; c.lineWidth = 7;
+    c.beginPath(); c.moveTo(0,SCR_H*0.5); c.lineTo(SCR_W,SCR_H*0.5); c.stroke();
+    [0.25, 0.75].forEach(function(u){
+      c.beginPath(); c.moveTo(SCR_W*u, 0); c.lineTo(SCR_W*u, SCR_H); c.stroke();
+    });
+    [0.0, 0.5].forEach(function(u){
+      c.beginPath();
+      c.moveTo(SCR_W*u, 0);
+      c.bezierCurveTo(SCR_W*(u+0.10), SCR_H*0.34, SCR_W*(u+0.10), SCR_H*0.66, SCR_W*u, SCR_H);
+      c.stroke();
+    });
+  }},
+  {id:'moon', name:'Moon', draw:function(c){
+    c.fillStyle = '#b9bcc4'; c.fillRect(0,0,SCR_W,SCR_H);
+    for(var k=0;k<150;k++){
+      var x = Math.random()*SCR_W, y = Math.random()*SCR_H;
+      var r = 4 + Math.random()*22;
+      c.fillStyle = 'rgba(122,126,136,'+(0.25+Math.random()*0.5).toFixed(2)+')';
+      c.beginPath(); c.arc(x,y,r,0,7); c.fill();
+    }
+  }},
+  {id:'earth', name:'Earth', draw:function(c){
+    c.fillStyle = '#123f8f'; c.fillRect(0,0,SCR_W,SCR_H);
+    c.fillStyle = '#2f8f4a';
+    for(var k=0;k<26;k++){
+      var x = Math.random()*SCR_W, y = SCR_H*0.18 + Math.random()*SCR_H*0.64;
+      c.beginPath();
+      c.ellipse(x, y, 16+Math.random()*54, 12+Math.random()*32, Math.random()*3, 0, 7);
+      c.fill();
+    }
+    c.fillStyle = '#eef6ff';
+    c.fillRect(0, 0, SCR_W, 20); c.fillRect(0, SCR_H-20, SCR_W, 20);
+  }},
+  {id:'neon', name:'Neon', draw:function(c){
+    var cols = ['#ff2e7e','#7c3aed','#3b82f6','#0fb5c9','#c6f22e','#ffb020'];
+    for(var k=0;k<cols.length;k++){
+      c.fillStyle = cols[k];
+      c.fillRect(k*SCR_W/cols.length, 0, SCR_W/cols.length + 1, SCR_H);
+    }
+  }},
+  {id:'off', name:'Off', draw:function(c){
+    c.fillStyle = '#2b2f38'; c.fillRect(0,0,SCR_W,SCR_H);
+  }}
+];
+
+function buildSphere(push, pushBulb, mult){
+  var d  = 0.030 * mult;
+  var RX = 1.18, RY = 0.98;
+  var Y0 = SPHERE_Y;
+  var i, a, b;
+
+  /* --- Exosphere: Fibonacci points give even coverage, no pole clumping --- */
+  var N  = Math.round(34000/(mult*mult));
+  var ga = Math.PI*(3 - Math.sqrt(5));
+  for(i=0; i<N; i++){
+    var yy = 1 - (i/(N-1))*2;
+    var rr = Math.sqrt(Math.max(0, 1 - yy*yy));
+    var th = ga*i;
+    var px = Math.cos(th)*rr, pz = Math.sin(th)*rr;
+    var u  = 0.5 + Math.atan2(px, pz)/(2*Math.PI);
+    var v  = Math.acos(Math.max(-1, Math.min(1, yy)))/Math.PI;
+    push(px*RX, yy*RY + Y0, pz*RX, T.SCREEN, 1, u, v, 1.55);
+  }
+
+  /* --- podium the sphere rests on --- */
+  function drum(rad, y0, y1, type, shade){
+    var nA = Math.max(12, Math.round(2*Math.PI*rad/d));
+    var nY = Math.max(1, Math.round((y1-y0)/d));
+    for(a=0; a<nA; a++){
+      var an = a/nA*2*Math.PI;
+      for(b=0; b<=nY; b++){
+        push(Math.cos(an)*rad, y0 + (y1-y0)*b/nY + Y0, Math.sin(an)*rad, type, shade);
+      }
+    }
+  }
+  function disc(rad, y, type, shade){
+    var rings = Math.max(2, Math.round(rad/d));
+    for(var r=1; r<=rings; r++){
+      var rr2 = rad*r/rings;
+      var nA2 = Math.max(6, Math.round(2*Math.PI*rr2/d));
+      for(a=0; a<nA2; a++){
+        var an2 = a/nA2*2*Math.PI;
+        push(Math.cos(an2)*rr2, y + Y0, Math.sin(an2)*rr2, type, shade);
+      }
+    }
+  }
+  var baseTop = -RY + 0.10;
+  drum(0.92, baseTop - 0.42, baseTop, T.POLE, 0.42);
+  disc(0.92, baseTop, T.POLE, 0.34);
+  drum(1.46, baseTop - 0.56, baseTop - 0.42, T.POLE, 0.30);
+  disc(1.46, baseTop - 0.42, T.FACE, 0.20);
+
+  /* --- accent lights around the plaza edge, so the flash patterns bite --- */
+  var nB = Math.max(48, Math.round(2*Math.PI*1.46/(d*1.9)));
+  for(i=0; i<nB; i++){
+    var ab = i/nB*2*Math.PI;
+    pushBulb(Math.cos(ab)*1.47, baseTop - 0.40 + Y0, Math.sin(ab)*1.47, i/nB, 0.9);
+  }
+
+  /* --- ground --- */
+  var gN = Math.round(1300/(mult*mult));
+  for(i=0; i<gN; i++){
+    var gaa = Math.random()*Math.PI*2, gr = 1.55 + Math.sqrt(Math.random())*1.9;
+    push(Math.cos(gaa)*gr, baseTop - 0.56 + Y0, Math.sin(gaa)*gr, T.FACE,
+         0.05 + 0.07*(1 - (gr-1.55)/1.9));
+  }
+}
+
+/* paint the Exosphere dots from the current content frame */
+var contentIdx = 0, contentAuto = true, contentTimer = 0;
+var scrFrom = null, scrTo = null, scrPhase = 1;
+
+function sampleContent(idx){
+  scrCtx.clearRect(0, 0, SCR_W, SCR_H);
+  scrCtx.save(); CONTENT[idx].draw(scrCtx); scrCtx.restore();
+  var data = scrCtx.getImageData(0, 0, SCR_W, SCR_H).data;
+  var out = new Float32Array(G.n*3);
+  var lift = S.day ? 0.55 : 1.28;          /* daylight washes the LEDs out */
+  var amb  = S.day ? 0.20 : 0.0;
+  for(var i=0; i<G.n; i++){
+    if(!G.scr[i]) continue;
+    var px = (G.uv[i*2]*SCR_W)|0, py = (G.uv[i*2+1]*SCR_H)|0;
+    if(px<0) px=0; if(px>=SCR_W) px=SCR_W-1;
+    if(py<0) py=0; if(py>=SCR_H) py=SCR_H-1;
+    var o = (py*SCR_W + px)*4;
+    out[i*3]   = Math.min(1.7, data[o]  /255*lift + amb);
+    out[i*3+1] = Math.min(1.7, data[o+1]/255*lift + amb);
+    out[i*3+2] = Math.min(1.7, data[o+2]/255*lift + amb);
+  }
+  return out;
+}
+function paintScreen(instant){
+  if(!G || !G.hasScreen) return;
+  var target = sampleContent(contentIdx);
+  if(instant || !scrTo){
+    scrTo = target; scrFrom = target; scrPhase = 1;
+    for(var i=0;i<G.n;i++){
+      if(!G.scr[i]) continue;
+      G.col[i*3]=target[i*3]; G.col[i*3+1]=target[i*3+1]; G.col[i*3+2]=target[i*3+2];
+    }
+  }else{
+    scrFrom = scrTo; scrTo = target; scrPhase = 0;   /* dissolve, LED-wall style */
+  }
+}
+function setContent(idx){
+  contentIdx = (idx + CONTENT.length) % CONTENT.length;
+  contentTimer = 0;
+  paintScreen(false);
+}
+
 /* type -> palette slot */
 function recolor(){
   var p = S.colors;
@@ -962,12 +1180,16 @@ function recolor(){
            hex2rgb(p.star), hex2rgb(p.pole), hex2rgb(p.face), hex2rgb(p.circle),
            hex2rgb(p.main), hex2rgb(p.acc), hex2rgb(p.face), hex2rgb(p.circle),
            hex2rgb(p.face)];
+  /* by day the dots are lit surfaces against a bright sky, not emitters */
+  var dm = S.day ? 0.66 : 1;
   for(var i=0;i<G.n;i++){
+    if(G.scr[i]) continue;                 /* painted from the screen canvas */
     var c = C[G.typ[i]] || C[0], s = G.shd[i];
-    G.col[i*3]   = Math.min(1.6, c[0]*s);
-    G.col[i*3+1] = Math.min(1.6, c[1]*s);
-    G.col[i*3+2] = Math.min(1.6, c[2]*s);
+    G.col[i*3]   = Math.min(1.6, c[0]*s*dm);
+    G.col[i*3+1] = Math.min(1.6, c[1]*s*dm);
+    G.col[i*3+2] = Math.min(1.6, c[2]*s*dm);
   }
+  paintScreen(true);
 }
 
 /* ============================================================
@@ -985,9 +1207,9 @@ if(!gl){
 
 var VS_STRUCT = [
 'attribute vec3 aPos; attribute vec3 aOrg; attribute vec3 aCol;',
-'attribute float aType; attribute float aSeed;',
+'attribute float aType; attribute float aSeed; attribute float aSize;',
 'uniform mat4 uProj; uniform mat3 uRot;',
-'uniform float uCamZ,uTime,uAssemble,uDotSize,uPR,uNeon,uSpeed,uFacing;',
+'uniform float uCamZ,uTime,uAssemble,uDotSize,uPR,uNeon,uSpeed,uFacing,uSphereY;',
 'varying vec3 vCol;',
 'void main(){',
 '  float a = clamp(uAssemble*1.7 - aSeed*0.7, 0.0, 1.0);',
@@ -999,10 +1221,14 @@ var VS_STRUCT = [
    reverse lettering only shows from back there */
 '  float hide = 0.0;',
 '  if(aType > 7.5 && aType < 11.5 && uFacing > 0.0) hide = 1.0;',
-'  if(((aType > 1.5 && aType < 3.5) || aType > 11.5) && uFacing < 0.0) hide = 1.0;',
+'  if(((aType > 1.5 && aType < 3.5) || (aType > 11.5 && aType < 12.5)) && uFacing < 0.0) hide = 1.0;',
+'  if(aType > 12.5){',
+'    vec3 nrm = uRot * (aPos - vec3(0.0, uSphereY, 0.0));',
+'    if(nrm.z < 0.0) hide = 1.0;',
+'  }',
 '  gl_Position = mix(uProj * view, vec4(0.0, 0.0, -2.0, 1.0), hide);',
 '  float dist = max(0.25, -view.z);',
-'  gl_PointSize = clamp(uDotSize * uPR * (3.2/dist), 1.0, 26.0) * (1.0 - hide);',
+'  gl_PointSize = clamp(uDotSize * aSize * uPR * (3.2/dist), 1.0, 34.0) * (1.0 - hide);',
 '  float b = 1.0;',
 '  if(aType > 1.5 && aType < 4.5){',
 '    float f = 0.86 + 0.14*sin(uTime*2.3*uSpeed + aSeed*41.0);',
@@ -1114,14 +1340,14 @@ function locs(p, attrs, unis){
   for(i=0;i<unis.length;i++) o.u[unis[i]] = gl.getUniformLocation(p, unis[i]);
   return o;
 }
-var LS = locs(progS, ['aPos','aOrg','aCol','aType','aSeed'],
-                     ['uProj','uRot','uCamZ','uTime','uAssemble','uDotSize','uPR','uNeon','uSpeed','uFacing']);
+var LS = locs(progS, ['aPos','aOrg','aCol','aType','aSeed','aSize'],
+                     ['uProj','uRot','uCamZ','uTime','uAssemble','uDotSize','uPR','uNeon','uSpeed','uFacing','uSphereY']);
 var LB = locs(progB, ['aPos','aOrg','aU','aSeed','aBright'],
                      ['uProj','uRot','uCamZ','uTime','uAssemble','uDotSize','uPR','uPattern','uSpeed','uGlow','uBulb']);
 
 var buf = {};
 function mkBuf(){ return gl.createBuffer(); }
-['pos','org','col','typ','seed','bpos','borg','bu','bseed','bbr'].forEach(function(k){ buf[k]=mkBuf(); });
+['pos','org','col','typ','seed','siz','bpos','borg','bu','bseed','bbr'].forEach(function(k){ buf[k]=mkBuf(); });
 
 function upload(b, data, usage){
   gl.bindBuffer(gl.ARRAY_BUFFER, b);
@@ -1130,6 +1356,7 @@ function upload(b, data, usage){
 function uploadAll(){
   upload(buf.pos, G.pos);   upload(buf.org, G.org);
   upload(buf.typ, G.typ);   upload(buf.seed, G.seed);
+  upload(buf.siz, G.siz);
   upload(buf.col, G.col, gl.DYNAMIC_DRAW);
   upload(buf.bpos, G.bpos); upload(buf.borg, G.borg);
   upload(buf.bu, G.bu);     upload(buf.bseed, G.bseed);
@@ -1200,6 +1427,15 @@ function drawStars(){
 }
 function applySky(){
   var bg = S.colors.bg;
+  document.body.classList.toggle('day', !!S.day);
+  if(S.day){
+    document.getElementById('sky').style.background =
+      'radial-gradient(ellipse 42% 48% at 76% 10%, rgba(255,244,201,.9), transparent 55%),' +
+      'linear-gradient(180deg, #1a5fa8 0%, #3f92d6 42%, #86c3e8 74%, #cfe4ee 100%)';
+    document.querySelector('meta[name=theme-color]').setAttribute('content', '#3f92d6');
+    document.body.style.background = '#3f92d6';
+    return;
+  }
   document.getElementById('sky').style.background =
     'radial-gradient(ellipse 120% 78% at 50% 112%, rgba(255,150,60,.16), transparent 58%),' +
     'radial-gradient(ellipse 90% 60% at 50% 38%, ' + shade(bg, 1.85) + ', transparent 70%),' +
@@ -1222,6 +1458,23 @@ function frame(now){
   var t = (now - t0)/1000;
 
   assemble = Math.min(1, assemble + dt/(REDUCED ? 0.35 : 1.9));
+
+  /* Exosphere: dissolve between frames, then hold */
+  if(G && G.hasScreen){
+    if(scrPhase < 1){
+      scrPhase = Math.min(1, scrPhase + dt/0.9);
+      for(var si=0; si<G.n; si++){
+        if(!G.scr[si]) continue;
+        var src = (G.seed[si] < scrPhase) ? scrTo : scrFrom;
+        G.col[si*3]=src[si*3]; G.col[si*3+1]=src[si*3+1]; G.col[si*3+2]=src[si*3+2];
+      }
+      upload(buf.col, G.col, gl.DYNAMIC_DRAW);
+    }
+    if(contentAuto){
+      contentTimer += dt;
+      if(contentTimer > 7 && assemble > 0.98){ setContent(contentIdx + 1); }
+    }
+  }
 
   /* inertia + idle auto-spin */
   if(!view.drag){
@@ -1253,6 +1506,7 @@ function frame(now){
   bindAttr(LS.a.aCol, buf.col, 3);
   bindAttr(LS.a.aType, buf.typ, 1);
   bindAttr(LS.a.aSeed, buf.seed, 1);
+  bindAttr(LS.a.aSize, buf.siz, 1);
   gl.uniformMatrix4fv(LS.u.uProj, false, proj);
   gl.uniformMatrix3fv(LS.u.uRot, false, rot);
   gl.uniform1f(LS.u.uCamZ, view.camZ);
@@ -1260,9 +1514,10 @@ function frame(now){
   gl.uniform1f(LS.u.uAssemble, assemble);
   gl.uniform1f(LS.u.uDotSize, S.dotSize);
   gl.uniform1f(LS.u.uPR, PR);
-  gl.uniform1f(LS.u.uNeon, S.neon ? 1 : 0);
+  gl.uniform1f(LS.u.uNeon, (S.neon && !S.day) ? 1 : 0);
   gl.uniform1f(LS.u.uSpeed, S.speed);
   gl.uniform1f(LS.u.uFacing, Math.cos(view.pitch) * Math.cos(view.yaw));
+  gl.uniform1f(LS.u.uSphereY, S.model === 'sphere' ? SPHERE_Y : 0);
   gl.drawArrays(gl.POINTS, 0, G.n);
 
   /* --- bulb pass (additive glow, depth-tested but not written) --- */
@@ -1283,7 +1538,7 @@ function frame(now){
   gl.uniform1f(LB.u.uPR, PR);
   gl.uniform1f(LB.u.uPattern, REDUCED && S.pattern===7 ? 8 : S.pattern);
   gl.uniform1f(LB.u.uSpeed, REDUCED ? S.speed*0.35 : S.speed);
-  gl.uniform1f(LB.u.uGlow, S.glow);
+  gl.uniform1f(LB.u.uGlow, S.glow * (S.day ? 0.16 : 1));
   var bc = hex2rgb(S.colors.bulb);
   gl.uniform3f(LB.u.uBulb, bc[0], bc[1], bc[2]);
   gl.drawArrays(gl.POINTS, 0, G.bn);
@@ -1458,6 +1713,31 @@ function syncSwatches(){
   });
 }
 
+/* Exosphere content picker (only meaningful on the Sphere) */
+var screenChips = document.getElementById('screenChips');
+(function(){
+  function mk(label, on, fn){
+    var b = document.createElement('button');
+    b.className = 'chip' + (on ? ' on' : '');
+    b.textContent = label;
+    b.addEventListener('click', function(){
+      fn();
+      [].forEach.call(screenChips.children, function(c){ c.classList.remove('on'); });
+      b.classList.add('on');
+      save();
+    });
+    screenChips.appendChild(b);
+  }
+  mk('Auto', true, function(){ contentAuto = true; contentTimer = 0; });
+  CONTENT.forEach(function(c, i){
+    mk(c.name, false, function(){ contentAuto = false; setContent(i); });
+  });
+})();
+function syncScreenSection(){
+  document.getElementById('screenSec').style.display =
+    (G && G.hasScreen) ? 'block' : 'none';
+}
+
 /* sliders */
 function slider(id, valId, min, max, get, set, fmt){
   var el = document.getElementById(id), out = document.getElementById(valId);
@@ -1505,6 +1785,9 @@ function toggle(id, get, set){
     save();
   });
 }
+toggle('tgDay', function(){return S.day;}, function(v){
+  S.day = v; applySky(); drawStars(); recolor(); upload(buf.col, G.col, gl.DYNAMIC_DRAW);
+});
 toggle('tgAuto', function(){return S.autoSpin;}, function(v){S.autoSpin=v;});
 toggle('tgNeon', function(){return S.neon;}, function(v){S.neon=v;});
 toggle('tgStars', function(){return S.stars;}, function(v){S.stars=v; drawStars();});
@@ -1515,6 +1798,7 @@ document.getElementById('reset').addEventListener('click', function(){
   [].forEach.call(presetChips.children, function(c){ c.classList.toggle('on', c.dataset.key === 'classic'); });
   [].forEach.call(patternChips.children, function(c){ c.classList.toggle('on', +c.dataset.id === 0); });
   [].forEach.call(densityChips.children, function(c){ c.classList.toggle('on', +c.dataset.i === 1); });
+  document.getElementById('tgDay').classList.remove('on');
   document.getElementById('tgAuto').classList.add('on');
   document.getElementById('tgNeon').classList.add('on');
   document.getElementById('tgStars').classList.add('on');
@@ -1537,6 +1821,7 @@ function rebuild(){
   G = buildGeometry(S.model, S.density);
   recolor();
   uploadAll();
+  syncScreenSection();
   var total = G.n + G.bn;
   document.getElementById('dotCount').textContent = total.toLocaleString();
   document.getElementById('countVal').textContent = total.toLocaleString() + ' dots';
