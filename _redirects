@@ -7,6 +7,11 @@
 /shows/adult/absinthe/ /shows/spectaculars/absinthe/ 301
 /shows/adult/absinthe/* /shows/spectaculars/absinthe/ 301
 
+# Marketing QR shortlink — keeps the encoded URL short (crisp, low-density code)
+# while still tagging the traffic for Google Analytics. The QR encodes
+# https://vegassidekick.com/go ; this 302 forwards it to the homepage with UTM.
+/go https://vegassidekick.com/?utm_source=social&utm_medium=qr&utm_campaign=spike 302
+
 # Canonical trailing slash — every indexed URL in sitemap.xml and every
 # canonical tag ends in a slash. These collapse the non-trailing-slash
 # duplicates search engines sometimes crawl into the canonical version.
