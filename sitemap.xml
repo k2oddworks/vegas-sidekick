@@ -905,6 +905,15 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vegassidekick.com/play/sphere-clay/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <lastmod>2026-08-15</lastmod>
+      <image:image>
+      <image:loc>https://vegassidekick.com/images/logo-dark-square.png</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vegassidekick.com/play/sphere-lowpoly/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
