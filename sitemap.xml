@@ -1048,4 +1048,10 @@
       <image:loc>https://vegassidekick.com/images/elm-og.jpg</image:loc>
     </image:image>
   </url>
+  <url>
+    <loc>https://vegassidekick.com/vegas-sign/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-08-17</lastmod>
+  </url>
 </urlset>
