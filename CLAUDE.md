@@ -316,6 +316,42 @@ Credentials are embedded in client-side code (read-only, restricted scope):
 
 **Watch for cascading claims, not just numbers.** A price change can break superlatives and ordering: "cheapest", "under $50", "from $X" hero stats, a guide's price-sorted ranking, or a show's eligibility for `best-cheap-vegas-shows`. Re-read any "cheapest/from/under" wording near the changed show and fix the logic, not only the digits. When done, run `python3 scripts/audit-event-schema.py` and report the full list of files touched.
 
+### When a Show Closes (Show Closing Checklist)
+
+Shows close. When one does, follow this three-part standing policy — **don't wait to be told the steps, just run the checklist**:
+
+1. **Pull it from every catalog/listing page** (but never delete the show's own page — see #3).
+2. **Add a closed-show banner** to the show's own page directing visitors to the catalog.
+3. **Never delete the page.** Shows reopen, get revived under new producers, or come back for limited returns — keep the page intact so it can be updated and republished instead of rebuilt from scratch.
+
+**Timing — don't act early.** A "closing" announcement usually names a final performance date that's still weeks or months out. The show is still running and still sellable up to that date — leave it fully live in the catalog with normal buy CTAs. A "final weeks, don't miss it" urgency note on the page itself is good (drives ticket sales), but the steps below don't start until the day **after** the actual final performance.
+
+**Step 1 — Remove from the catalog.** Same denormalization problem as the Price Change Checklist — grep the whole repo for the show's slug (`grep -rln 'slug-name' --include=index.html --include=*.js .`) and work through:
+
+- **`components/search-data.js`** — delete the show's record entirely. Bump the `?v=` cache-buster on every page that loads it (see **Site Search**).
+- **Category listing** (`shows/{cat}/index.html`) — remove the entry from the `SHOWS` array.
+- **All Shows master list** (`shows/index.html`) — remove the same entry.
+- **Homepage** (`index.html`) — remove the curated card if it has one.
+- **Venue pages** (`venues/*/index.html`) — remove the show's card.
+- **Guides** (`guides/*/index.html` + `guides/index.html`) — remove any recommendation/ranking of the show, including inside `FAQPage` JSON-LD prose. Same "cascading claims" warning as the price checklist applies — check whether removing it breaks a "3 best..." count or a superlative claim about the guide's remaining shows.
+- **"You Might Also Like" cross-links** (`.also-grid`) on *other* show pages — grep for the slug across `shows/**/index.html` and remove the card from any page that links to it.
+- **`sitemap.xml`** — leave the URL in (the page still exists), but this is a judgment call; update `lastmod` when you touch the page.
+
+**What NOT to touch:** old news articles that mention the show historically (e.g. an announcement post from when it opened). That's a dated record, not a live catalog reference — don't rewrite history there.
+
+**Step 2 — Add the closed-show banner to the show's own page.**
+
+- Place it directly below the breadcrumb, unmissable — not a subtle dismissible thing.
+- Style it in the show's own `--show` accent color so it doesn't read as a generic site error.
+- Copy pattern: *"[Show Name] closed on [date]. Explore other [category] shows in Las Vegas →"* linking to the category listing page.
+- **Neutralize every buy CTA on the page** (`.hero-cta`, `.sb-cta`, `.mob-cta`, `.final-cta-btn`) — don't leave live "Get Tickets" buttons pointing at a Spotlight affiliate link for a show that isn't running. Repoint them to "Browse Similar Shows" → the category page instead of just disabling them.
+- **Update the JSON-LD Event block** — otherwise Google Search Console keeps surfacing a live ticket/event rich result for a dead show. Default approach: **strip the Event block entirely** while closed (cleanest, avoids stale rich results). Restore it verbatim on reopen.
+- Make every edit in this step a clean, reversible diff — comment out what you're neutralizing rather than deleting it, and keep the banner in one isolated block. The goal is that "reopen" is a mirror-image of this checklist, not a rebuild.
+
+**Step 3 — If it reopens.** Reverse Step 2 (remove the banner block, uncomment the CTAs, restore the Event JSON-LD) and re-add the show to every file touched in Step 1, exactly like adding a new show page (see **Adding a New Show Page**). Re-run `python3 scripts/audit-event-schema.py` after.
+
+When you finish either direction of this checklist, report the full list of files touched — same discipline as the Price Change Checklist.
+
 ### Structured Data (JSON-LD) Requirements
 
 Every show page's `<script type="application/ld+json">` **Event** block must include every field below — Google Search Console flags any that are missing or malformed, and it silently accumulates across pages if the wrong page gets copied as a template for the next one. Use `@type: "Event"` (not `EventSeries`) for all new show pages — it's what every show built this way uses, and it's the type that requires `startDate`/`endDate`, which keeps the schema unambiguous.
