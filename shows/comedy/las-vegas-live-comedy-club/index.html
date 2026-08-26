@@ -19,7 +19,8 @@
   <meta name="twitter:description" content="Rotating stand-up headliners nightly at V Theater inside Planet Hollywood. From $29." />
   <meta name="twitter:image" content="https://vegassidekick.com/images/las-vegas-live-comedy-club-hero.jpg" />
 
-  <script type="application/ld+json">
+  <!-- CLOSED-EVENT-SCHEMA (restore on reopen):
+<script type="application/ld+json">
   {
       "@context": "https://schema.org",
       "@type": "EventSeries",
@@ -74,6 +75,7 @@
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
   }
   </script>
+-->
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -515,6 +517,21 @@
 .spike-callout { border-left-color: #ff2e7e !important; }
 .expect-card { border-left-color: #ff2e7e !important; }
     picture{display:contents}
+  
+    /* CLOSED-SHOW BANNER — remove this rule block on reopen */
+    .closed-banner{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin:0 0 20px;padding:15px 20px;
+      border:1px solid #ff2e7e;border-left:6px solid #ff2e7e;border-radius:14px;
+      background:linear-gradient(90deg,rgba(255,46,126,0.16),rgba(255,46,126,0.05));
+      box-shadow:0 8px 24px rgba(0,0,0,0.25);}
+    .cb-badge{flex:0 0 auto;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:0.68rem;
+      letter-spacing:0.12em;text-transform:uppercase;color:#12061f;background:#ff2e7e;
+      padding:5px 11px;border-radius:100px;}
+    .cb-copy{flex:1 1 260px;min-width:0;color:#fff;font-size:0.96rem;line-height:1.45;}
+    .cb-copy strong{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.05rem;}
+    .cb-copy span{color:rgba(255,255,255,0.8);}
+    .cb-link{flex:0 0 auto;font-weight:700;font-size:0.92rem;color:#ff2e7e;text-decoration:none;white-space:nowrap;}
+    .cb-link:hover{text-decoration:underline;}
+    @media (max-width:560px){.closed-banner{gap:8px}.cb-link{white-space:normal}}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebPage","url":"https://vegassidekick.com/shows/comedy/las-vegas-live-comedy-club/","dateModified":"2026-08-12","lastReviewed":"2026-08-12","reviewedBy":{"@type":"Organization","name":"Vegas Sidekick","url":"https://vegassidekick.com/"}}
@@ -537,13 +554,21 @@
 
 <!-- SAVE PILL -->
 <div class="save-pill" id="save-pill">
-  <a href="https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick" target="_blank" rel="noopener sponsored">From $29 → Get Tickets</a>
+  <!-- CLOSED-CTA (restore on reopen): <a href="https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick" target="_blank" rel="noopener sponsored">From $29 → Get Tickets</a> --><a href="/shows/comedy/">Browse similar shows &rarr;</a>
 </div>
 
 <section class="hero" aria-label="Show hero">
   <nav class="breadcrumb" aria-label="Breadcrumb">
     <a href="/">Home</a> › <a href="/shows/comedy/">Comedy</a> › <span>Las Vegas LIVE Comedy Club</span>
    &nbsp;·&nbsp; <a href="/venues/planet-hollywood/" style="color:#3b82f6;font-weight:600" title="All shows at Planet Hollywood">🏨 All Planet Hollywood shows →</a></nav>
+      <!-- CLOSED-SHOW BANNER (added 2026-08-26). TO REOPEN: delete this block, uncomment every
+           CLOSED-CTA below, and uncomment the CLOSED-EVENT-SCHEMA block in <head>. -->
+      <div class="closed-banner" role="status">
+        <span class="cb-badge">Closed</span>
+        <div class="cb-copy"><strong>Las Vegas LIVE Comedy Club has closed.</strong><span>This show is no longer running in Las Vegas.</span></div>
+        <a class="cb-link" href="/shows/comedy/">Explore other comedy shows in Las Vegas &rarr;</a>
+      </div>
+
 
   <div class="slider" role="region" aria-label="Show photos">
     <div class="slide active">
@@ -592,7 +617,7 @@
       <div class="price-lbl">Vegas Sidekick Price</div>
       <div class="price-cur">$29</div>
     </div>
-    <a href="https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick" target="_blank" rel="noopener sponsored" class="hero-cta">Get Tickets →</a>
+    <!-- CLOSED-CTA (restore on reopen): <a href="https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick" target="_blank" rel="noopener sponsored" class="hero-cta">Get Tickets →</a> --><a href="/shows/comedy/" class="hero-cta">Browse Similar Shows</a>
     <span class="urgency-txt">⏰ Prices may increase closer to show date</span><span class="vs-verified" style="display:block;font-size:.8rem;font-weight:600;color:#0fb5c9;margin-top:6px">✓ Prices verified &middot; August 2026</span>
   </div>
 </section>
@@ -666,11 +691,11 @@
     </div>
     <div class="seen-resp" id="seen-yes">
       <p>The lineup rotates so whoever's on stage tonight is probably different from your last visit. $29 for 75 minutes at a room right inside Planet Hollywood — the math still works. Check who's on before you book and come back for it.</p>
-      <p><a href="https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick" target="_blank" rel="noopener sponsored">Get tickets →</a></p>
+      <p><!-- CLOSED-CTA (restore on reopen): <a href="https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick" target="_blank" rel="noopener sponsored">Get tickets →</a> --><a href="/shows/comedy/">Browse similar shows &rarr;</a></p>
     </div>
     <div class="seen-resp" id="seen-no">
       <p>75 minutes of rotating stand-up at $29 a ticket, nightly at 9 PM in the upstairs showroom at the V Theater inside Miracle Mile Shops. Three seating zones, clear sight lines throughout, and a room that was built for comedy. For the price point and the location, it's one of the more accessible entry points into Las Vegas stand-up.</p>
-      <p><a href="https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick" target="_blank" rel="noopener sponsored">Get tickets →</a></p>
+      <p><!-- CLOSED-CTA (restore on reopen): <a href="https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick" target="_blank" rel="noopener sponsored">Get tickets →</a> --><a href="/shows/comedy/">Browse similar shows &rarr;</a></p>
     </div>
   </div>
 
@@ -1135,7 +1160,7 @@
     <div class="final-cta-title">Ready to Catch the Show?</div>
     <div class="final-cta-sub">Las Vegas LIVE Comedy Club · V Theater Upstairs · Planet Hollywood · Nightly at 9 PM</div>
     <div class="final-cta-amount">$29</div>
-    <a href="https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick" target="_blank" rel="noopener sponsored" class="final-cta-btn">Get Tickets →</a>
+    <!-- CLOSED-CTA (restore on reopen): <a href="https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick" target="_blank" rel="noopener sponsored" class="final-cta-btn">Get Tickets →</a> --><a href="/shows/comedy/" class="final-cta-btn">Browse Similar Shows</a>
     <div class="final-cta-note">Prices may increase closer to show date &nbsp;·&nbsp; <a href="/affiliate-disclosure/">Affiliate disclosure</a></div>
   </div>
 
@@ -1147,7 +1172,7 @@
     <div class="sb-price-lbl">Vegas Sidekick Price</div>
     <div class="sb-price">$29</div>
   </div>
-  <a href="https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick" target="_blank" rel="noopener sponsored" class="sb-cta">Get Tickets →</a>
+  <!-- CLOSED-CTA (restore on reopen): <a href="https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick" target="_blank" rel="noopener sponsored" class="sb-cta">Get Tickets →</a> --><a href="/shows/comedy/" class="sb-cta">Browse Similar Shows</a>
   <div class="sb-urgency">Prices may increase closer to show date</div>
   <div class="sb-div"></div>
   <ul class="trust-list">
@@ -1189,7 +1214,7 @@
       <div class="mob-price">$29</div>
       <div class="mob-trust-line">🔒 Secure · No Hidden Fees</div>
       </div>
-    <a href="https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick" target="_blank" rel="noopener sponsored" class="mob-cta">Get Tickets →</a>
+    <!-- CLOSED-CTA (restore on reopen): <a href="https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick" target="_blank" rel="noopener sponsored" class="mob-cta">Get Tickets →</a> --><a href="/shows/comedy/" class="mob-cta">Browse Similar Shows</a>
   </div>
 </div>
 
@@ -1344,7 +1369,7 @@
   });
 
 const SHOW_SCHEDULE = {
-  affiliateUrl: "https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick",
+  affiliateUrl: "/shows/comedy/" /* CLOSED — original: https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick */,
   days: {
     0: ['21:00'],
     1: ['21:00'],

@@ -303,9 +303,9 @@
   </url>
   <url>
     <loc>https://vegassidekick.com/shows/comedy/las-vegas-live-comedy-club/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-08-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2026-08-26</lastmod>
       <image:image>
       <image:loc>https://vegassidekick.com/images/las-vegas-live-comedy-club-hero.jpg</image:loc>
     </image:image>
@@ -330,9 +330,9 @@
   </url>
   <url>
     <loc>https://vegassidekick.com/shows/comedy/marriage-can-be-murder/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-08-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2026-08-26</lastmod>
       <image:image>
       <image:loc>https://vegassidekick.com/images/marriage-can-be-murder-hero.jpg</image:loc>
     </image:image>
@@ -591,9 +591,9 @@
   </url>
   <url>
     <loc>https://vegassidekick.com/shows/magic/david-goldrake/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-08-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2026-08-26</lastmod>
       <image:image>
       <image:loc>https://vegassidekick.com/images/david-goldrake-hero.webp</image:loc>
     </image:image>
