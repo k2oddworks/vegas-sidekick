@@ -225,6 +225,41 @@ from the sitemap. It was live for a week. Make targeted edits.
 
 ---
 
+## 7a. What we cover — the venue rule
+
+> **We don't cover venues a visitor can't place, unless the act's own name carries
+> the search.**
+
+Coverage is not a completeness exercise. A show earns a page when someone is
+plausibly going to search for it, and there are only two ways that happens: the
+**room** is recognisable, or the **name on the marquee** is.
+
+The second half of that rule does more work than the first. Nobody types "shows at
+the LaMarre Theater." They type "Carlos Mencia Vegas." So **The Rat Pack Is Back!**
+is worth a page despite living at Tuscany Suites — the show is a 20-year institution
+and the venue is incidental. **Barry Manilow at Westgate** is the same trade. And the
+inverse holds: a $22 magic show on the LINQ Promenade sits in a location everyone
+knows and still has nothing anyone would search for.
+
+**The low-competition exception.** A cluster of shows at an overlooked property is
+worth covering *even when neither test passes*, if the big sellers have ignored it.
+We are never going to outrank the major OTAs for "O tickets." We can own
+"[obscure property] shows" outright, because nobody has bothered to write that page.
+Several shows in one building is also its own signal — that much programming implies
+real demand somebody is serving.
+
+This is why **Alexis Park Resort** is in scope and LaMarre Theater and Notoriety at
+Neonopolis are not. Alexis Park is a lesser-known property, but it is minutes from the
+Strip, directly across from Virgin Hotels, close to the airport, and carries seven
+shows. That combination — walkable location, enough programming to justify a venue
+page, and no serious competition for the query — beats venue fame. The target there is
+modest and deliberate: steady daily volume, not a headline earner.
+
+When the two tests and the exception all fail, the answer is no. Breadth for its own
+sake dilutes the catalogue and costs maintenance on every future price change.
+
+---
+
 ## 8. Catalogue snapshot — 2026-08-26
 
 60 shows, **$27–$156**.
@@ -249,9 +284,25 @@ Las Vegas LIVE Comedy Club, David Goldrake.
 
 **Cheapest ticket:** Jimmy Kimmel's Comedy Club, $27. **Priciest:** "O", $156.
 
-**Known gap:** ~29 ongoing Spotlight residencies we don't yet list, including entire
-venues — Alexis Park Resort (6 shows), LaMarre Theater (4), Notoriety at Neonopolis
-(3). Mostly the $17–$65 value bracket that suits our audience best.
+**The pipeline.** 29 ongoing Spotlight residencies are not yet listed. Under the venue
+rule above they split three ways:
+
+- **Building (7)** — the **Alexis Park Resort** cluster: Sinatra Live!, Queen Selena,
+  Sir Elton, King of Diamonds, America The Show, Wastin' Away (all ~$40) and Motown
+  Brunch ($65). Wants a venue page as well as show pages.
+- **Next up (11)** — where the name carries the search or the room is well known:
+  Barry Manilow ($91), The Rat Pack Is Back! ($92), Eddie Griffin ($87), Carlos Mencia
+  ($27), Luenell ($37), MIND2MIND at Fontainebleau ($82 — our first coverage of that
+  resort), Carpenters Legacy ($49), Paranormal at Horseshoe ($31), Soul Of Motown
+  ($54), Drag Brunch Las Vegas ($55), Jen Kramer ($17 — the cheapest ticket on
+  Spotlight).
+- **Declined (11)** — LaMarre Theater (4) and Notoriety at Neonopolis (3): rooms
+  visitors can't place, with no act carrying its own search. Plus four low-signal
+  fillers (The Spanish Magician, Farrell Dillon, Late Night Magic, Viva Drag Brunch).
+
+We also skip single-night concerts and one-off comedy bookings entirely, and the
+individual comedians booked into Jimmy Kimmel's Comedy Club and Aces of Comedy —
+those are lineup entries for venues we already cover, not standalone shows.
 
 ---
 
