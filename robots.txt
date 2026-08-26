@@ -6,10 +6,7 @@ Disallow: /admin/
 Disallow: /hq/
 Disallow: /preview/
 Disallow: /logo-sample/
-Disallow: /striptacular/
-Disallow: /mom/
 Disallow: /_archive/
-Disallow: /shows/comedy/carrot-top/test-v1/
 
 # Thin / non-indexable utility pages (client-side search results)
 Disallow: /search/
