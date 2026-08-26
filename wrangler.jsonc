@@ -6,7 +6,10 @@
     "enabled": true
   },
   "assets": {
-    "directory": "."
+    "directory": ".",
+    // Without this, an unmatched path returns a bare 404 with no body and the
+    // browser shows its own error page instead of /404.html. The default is "none".
+    "not_found_handling": "404-page"
   },
   "compatibility_flags": [
     "nodejs_compat"

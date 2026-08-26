@@ -5,3 +5,10 @@
 .cloudinary
 CLAUDE.md
 wrangler.jsonc
+
+# Internal working docs and tooling — never web pages
+BRAND.md
+SHOW-BUILDER-PROMPT.md
+VS_CHAT_CONTEXT.md
+docs/context-primer.md
+scripts
