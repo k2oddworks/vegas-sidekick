@@ -563,7 +563,7 @@
       </div>
       <div class="urgency-pills">
         <div class="upill"><span class="udot"></span>Mon &amp; Fri · 6:00 PM</div>
-        <div class="upill"><span class="udot"></span>Wed, Thu, Sat &amp; Sun · 6:00 PM &amp; 8:30 PM</div>
+        <div class="upill"><span class="udot"></span>Thu, Sat &amp; Sun · 6:00 PM &amp; 8:30 PM</div>
         <div class="upill"><span class="udot"></span>39% Off Regular Price</div>
       </div>
     </div>
@@ -701,7 +701,7 @@
   <section class="sk-schedule sk-schedule--slider fade-up" id="sk-schedule">
     <div class="sk-eyebrow">Plan Your Night</div>
     <h2 class="sk-sched-title">Show Days &amp; Times</h2>
-    <p class="sk-sched-intro">Six nights a week at Excalibur. Mon &amp; Fri one show at 6:00&nbsp;pm; Wed, Thu, Sat &amp; Sun two shows at 6:00 and 8:30&nbsp;pm. Dark Tuesday.</p>
+    <p class="sk-sched-intro">Five nights a week at Excalibur. Mon &amp; Fri one show at 6:00&nbsp;pm; Thu, Sat &amp; Sun two shows at 6:00 and 8:30&nbsp;pm. Dark Tuesday and Wednesday.</p>
     <div class="sk-sched-slider-wrap">
       <div class="sk-sched-grid" id="sk-sched-grid"><!-- cards injected by JS --></div>
     </div>
@@ -728,7 +728,7 @@
       <div class="detail-card">
         <div class="detail-card-icon">🕕</div>
         <div class="detail-card-lbl">Wed–Sun Schedule</div>
-        <div class="detail-card-val">Wed, Thu, Sat &amp; Sun</div>
+        <div class="detail-card-val">Thu, Sat &amp; Sun</div>
         <div class="detail-card-sub">6:00 PM &amp; 8:30 PM. Two shows per day. Check availability for your date.</div>
       </div>
       <div class="detail-card">
@@ -939,7 +939,7 @@
         <div class="also-body">
           <div class="also-venue">Wynn Las Vegas</div>
           <div class="also-name">Awakening</div>
-          <div class="also-price">From $70</div>
+          <div class="also-price">From $92</div>
         </div>
       </a>
       <a href="/shows/music/blue-man-group/" class="also-card">
@@ -947,7 +947,7 @@
         <div class="also-body">
           <div class="also-venue">Luxor Hotel · Blue Man Theater</div>
           <div class="also-name">Blue Man Group</div>
-          <div class="also-price">From $65</div>
+          <div class="also-price">From $74</div>
         </div>
       </a>
       <a href="/shows/magic/mac-king/" class="also-card">
@@ -955,7 +955,7 @@
         <div class="also-body">
           <div class="also-venue">Harrah's Las Vegas</div>
           <div class="also-name">Mac King Comedy Magic</div>
-          <div class="also-price">From $28</div>
+          <div class="also-price">From $50</div>
         </div>
       </a>
     </div>
@@ -978,7 +978,7 @@
   </ul>
   <div class="sb-div"></div>
   <div class="sb-info-item"><span class="sb-info-icon">📍</span><div><span class="sb-info-lbl">Venue</span><span class="sb-info-val">King Arthur's Arena · Excalibur Hotel</span></div></div>
-  <div class="sb-info-item"><span class="sb-info-icon">🗓️</span><div><span class="sb-info-lbl">Schedule</span><span class="sb-info-val">Mon &amp; Fri 6:00 PM · Wed/Thu/Sat/Sun 6:00 &amp; 8:30 PM</span></div></div>
+  <div class="sb-info-item"><span class="sb-info-icon">🗓️</span><div><span class="sb-info-lbl">Schedule</span><span class="sb-info-val">Mon &amp; Fri 6:00 PM · Thu/Sat/Sun 6:00 &amp; 8:30 PM</span></div></div>
   <div class="sb-info-item"><span class="sb-info-icon">⏱️</span><div><span class="sb-info-lbl">Duration</span><span class="sb-info-val">75 minutes · No intermission</span></div></div>
   <div class="sb-info-item"><span class="sb-info-icon">👪</span><div><span class="sb-info-lbl">Age</span><span class="sb-info-val">All ages · Ages 3 &amp; under free</span></div></div>
   <div class="sb-info-item"><span class="sb-info-icon">🍗</span><div><span class="sb-info-lbl">Meal</span><span class="sb-info-val">Full Cornish hen feast included</span></div></div>
@@ -1139,14 +1139,14 @@
 const SHOW_SCHEDULE = {
   affiliateUrl: "https://spotlight.vegas/shows/family/tournament-of-kings/ref/vegassidekick",
   days: {
-    0: ['18:00', '20:30'],
-    1: ['18:00'],
-    2: [],
-    3: ['18:00', '20:30'],
-    4: ['18:00', '20:30'],
-    5: ['18:00'],
-    6: ['18:00', '20:30']
-  }
+      0: ["18:00", "20:30"], // Sun
+      1: ["18:00"], // Mon
+      2: [], // dark // Tue
+      3: [], // dark // Wed
+      4: ["18:00", "20:30"], // Thu
+      5: ["18:00"], // Fri
+      6: ["18:00", "20:30"], // Sat
+    }
 };
 (function () {
   "use strict";
