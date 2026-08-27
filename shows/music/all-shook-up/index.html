@@ -212,11 +212,15 @@
     .also-section { margin-bottom: 32px; }
     .also-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
     @media (max-width: 600px) { .also-grid { grid-template-columns: 1fr; } }
-    .also-card { display: block; text-decoration: none; background: var(--navy-mid); border: 1px solid rgba(255,255,255,0.07); border-radius: 9px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
-    .also-card:hover { transform: translateY(-3px); border-color: rgba(255,255,255,0.15); }
-    .also-img { width: 100%; aspect-ratio: 16/9; background-size: cover; background-position: center; }
-    .also-body { padding: 12px; }
-    .also-venue { font-family: var(--font-mono); font-size: 0.62rem; color: var(--show-lt); letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 3px; }
+    .also-card { display: block; text-decoration: none; background: #fff; border: 1px solid #ece9f6; border-radius: 12px; overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; }
+    .also-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.09); transform: translateY(-3px); }
+    .also-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; background: #ece9f6; }
+    .also-body { padding: 13px; }
+    .also-cat { font-family: var(--font-mono); font-size: 0.59rem; color: var(--orange); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px; }
+    .also-title { font-family: var(--font-display); font-size: 1.12rem; font-weight: 700; color: #171225; margin-bottom: 2px; line-height: 1.1; }
+    .also-venue { font-family: var(--font-body); font-size: 0.73rem; color: #64748B; text-transform: none; letter-spacing: normal; margin-bottom: 10px; }
+    .also-cta { display: block; width: 100%; padding: 9px; background: var(--orange); color: #fff; font-family: var(--font-condensed); font-size: 0.82rem; font-weight: 800; text-align: center; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.05em; transition: background 0.2s; border: none; text-decoration: none; }
+    .also-cta:hover { background: var(--orange-lt); }
     .also-name { font-family: var(--font-condensed); font-weight: 700; font-size: 0.92rem; color: #fff; margin-bottom: 4px; }
     .also-price { font-family: var(--font-condensed); font-size: 0.85rem; color: var(--orange); font-weight: 700; }
     .final-cta { background: linear-gradient(135deg, #4A2E04 0%, #2B1A02 60%, var(--navy) 100%); border: 1px solid rgba(232,149,32,0.15); border-radius: 14px; padding: 36px 30px; text-align: center; margin-bottom: 32px; position: relative; overflow: hidden; }
@@ -681,33 +685,33 @@
   <div class="also-section fade-up">
     <h2 class="section-title">You Might <span>Also Like</span></h2>
     <div class="also-grid" data-vs-picks='{"count":3,"exclude":"auto","preferCat":"auto"}'>
-      <div class="also-card">
+      <a class="also-card" href="/shows/music/sinatra-live/">
         <img class="also-img" src="/images/sinatra-live-hero.webp" alt="Sinatra Live! at the Athena Showlounge, Alexis Park Resort" loading="lazy" />
         <div class="also-body">
           <div class="also-cat">Music · Tribute</div>
           <div class="also-title">Sinatra Live!</div>
           <div class="also-venue">Athena Showlounge &middot; Alexis Park Resort</div>
-          <a href="/shows/music/sinatra-live/" class="also-cta">See Sinatra Live! &rarr;</a>
+          <span class="also-cta">See Sinatra Live! &rarr;</span>
         </div>
-      </div>
-      <div class="also-card">
+      </a>
+      <a class="also-card" href="/shows/music/king-of-diamonds/">
         <img class="also-img" src="/images/king-of-diamonds-hero.webp" alt="King of Diamonds at the Athena Showlounge, Alexis Park Resort" loading="lazy" />
         <div class="also-body">
           <div class="also-cat">Music · Tribute</div>
           <div class="also-title">King of Diamonds</div>
           <div class="also-venue">Athena Showlounge &middot; Alexis Park Resort</div>
-          <a href="/shows/music/king-of-diamonds/" class="also-cta">See King of Diamonds &rarr;</a>
+          <span class="also-cta">See King of Diamonds &rarr;</span>
         </div>
-      </div>
-      <div class="also-card">
+      </a>
+      <a class="also-card" href="/shows/music/motown-brunch/">
         <img class="also-img" src="/images/motown-brunch-hero.webp" alt="Motown Brunch at the Athena Showlounge, Alexis Park Resort" loading="lazy" />
         <div class="also-body">
           <div class="also-cat">Music · Tribute</div>
           <div class="also-title">Motown Brunch</div>
           <div class="also-venue">Athena Showlounge &middot; Alexis Park Resort</div>
-          <a href="/shows/music/motown-brunch/" class="also-cta">See Motown Brunch &rarr;</a>
+          <span class="also-cta">See Motown Brunch &rarr;</span>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 
