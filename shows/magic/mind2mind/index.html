@@ -77,10 +77,10 @@
     },
     {
       "@type": "Question",
-      "name": "What's the difference between Theater Seating and VIP Tables?",
+      "name": "What's the difference between Theater Seating and the Cabaret Tables?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Because Azul Lounge is such an intimate room, there isn't a single 'best' seat — Theater Seating and VIP Tables both put you close to the stage. The main difference is style: Theater Seating is individual reserved chairs across two sections, while VIP Tables are shared cabaret-style tables up front, better suited to groups who want to sit together. Section 102 also includes wheelchair-accessible seating."
+        "text": "Theater Seating (sections 101 and 102) is closest to the stage. The Cabaret Tables are the row directly behind, between the seating sections and the bar. The main difference is style: Theater Seating is individual reserved chairs, while the Cabaret Tables are shared round tables, better suited to groups who want to sit together — Azul Lounge is small enough that neither is a meaningfully worse view. Section 102 also includes wheelchair-accessible seating."
       }
     },
     {
@@ -668,7 +668,7 @@
       <button class="seen-btn seen-no" onclick="showSeen('no')">First time</button>
     </div>
     <div class="seen-resp" id="seen-yes">
-      <p>James Harrington and Marina Liani built this show around genuine audience interaction, so it holds up on a repeat visit — the mystery is in how they do it, not just what happens. If you're bringing someone who's never seen a live mentalism act up close, this is a strong pick. Grab a VIP Table if you're coming as a group.</p>
+      <p>James Harrington and Marina Liani built this show around genuine audience interaction, so it holds up on a repeat visit — the mystery is in how they do it, not just what happens. If you're bringing someone who's never seen a live mentalism act up close, this is a strong pick. Grab one of the Cabaret Tables if you're coming as a group.</p>
       <p><a href="https://spotlight.vegas/shows/magic/mind2mind/ref/vegassidekick" target="_blank" rel="noopener sponsored">Get tickets →</a></p>
     </div>
     <div class="seen-resp" id="seen-no">
@@ -840,8 +840,8 @@
             <text x="350" y="270" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9" fill="rgba(255,255,255,0.65)" letter-spacing="0.5">THEATER SEATING</text>
           </g>
 
-          <!-- ===== VIP TABLES ===== -->
-          <g class="seat-zone" onclick="selectZone('tables')" tabindex="0" role="button" aria-label="VIP Tables — click for details">
+          <!-- ===== CABARET TABLES ===== -->
+          <g class="seat-zone" onclick="selectZone('tables')" tabindex="0" role="button" aria-label="Cabaret Tables — click for details">
             <circle cx="165" cy="345" r="30" fill="#0fb5c9" opacity="0.88"/>
             <circle cx="120" cy="315" r="5" fill="#0fb5c9" opacity="0.6"/><circle cx="210" cy="315" r="5" fill="#0fb5c9" opacity="0.6"/>
             <circle cx="120" cy="375" r="5" fill="#0fb5c9" opacity="0.6"/><circle cx="210" cy="375" r="5" fill="#0fb5c9" opacity="0.6"/>
@@ -854,7 +854,7 @@
             <circle cx="535" cy="345" r="30" fill="#0fb5c9" opacity="0.88"/>
             <circle cx="490" cy="315" r="5" fill="#0fb5c9" opacity="0.6"/><circle cx="580" cy="315" r="5" fill="#0fb5c9" opacity="0.6"/>
             <circle cx="490" cy="375" r="5" fill="#0fb5c9" opacity="0.6"/><circle cx="580" cy="375" r="5" fill="#0fb5c9" opacity="0.6"/>
-            <text x="350" y="405" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9" fill="rgba(255,255,255,0.65)" letter-spacing="0.5">VIP TABLES</text>
+            <text x="350" y="405" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9" fill="rgba(255,255,255,0.65)" letter-spacing="0.5">CABARET TABLES</text>
           </g>
 
           <!-- BAR -->
@@ -869,7 +869,7 @@
       <!-- Legend -->
       <div class="seat-legend">
         <div class="legend-item"><div class="legend-dot" style="background:#7c3aed;"></div>Theater Seating · Sections 101 &amp; 102</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#0fb5c9;"></div>VIP Tables · Cabaret-Style, Front of Room</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#0fb5c9;"></div>Cabaret Tables · Behind Theater Seating</div>
       </div>
 
       <!-- Zone popup -->
@@ -893,18 +893,18 @@
           </div>
           <span class="sa-chev">▾</span>
         </button>
-        <div class="sa-body"><div class="sa-body-inner">Individual reserved seats across two sections — 101 and 102 — flanking the center aisle, directly facing the stage. Azul Lounge is a small, intimate room, so every seat has a clear view; 101 and 102 are essentially mirror images of each other, and there's no meaningfully better side. Section 102 also includes wheelchair-accessible seating.</div></div>
+        <div class="sa-body"><div class="sa-body-inner">Individual reserved seats across two sections — 101 and 102 — flanking the center aisle, closest to the stage. Azul Lounge is a small, intimate room, so every seat has a clear view; 101 and 102 are essentially mirror images of each other, and there's no meaningfully better side. Section 102 also includes wheelchair-accessible seating.</div></div>
       </div>
 
       <div class="sa-item">
         <button class="sa-hdr" onclick="toggleSA(this)" aria-expanded="false">
           <div class="sa-left">
             <div class="sa-dot" style="background:#0fb5c9;"></div>
-            <span class="sa-name">VIP Tables</span>
+            <span class="sa-name">Cabaret Tables</span>
           </div>
           <span class="sa-chev">▾</span>
         </button>
-        <div class="sa-body"><div class="sa-body-inner">Four shared cabaret-style tables at the front of the room, closest to the stage. A good pick for groups who'd rather sit together around a table than in a row of individual seats — the proximity is the same as Theater Seating, just a different style of seating.</div></div>
+        <div class="sa-body"><div class="sa-body-inner">Four shared round tables directly behind Theater Seating, between the seating sections and the bar. A good pick for groups who'd rather sit together around a table than in a row of individual seats — you're one row back from the closest seats, but still well within the room.</div></div>
       </div>
     </div>
   </section>
@@ -932,10 +932,10 @@
 
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          <span class="faq-q-text">What's the difference between Theater Seating and VIP Tables?</span>
+          <span class="faq-q-text">What's the difference between Theater Seating and the Cabaret Tables?</span>
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Because Azul Lounge is such an intimate room, there isn't a single "best" seat — Theater Seating and VIP Tables both put you close to the stage. The main difference is style: Theater Seating is individual reserved chairs across two sections, while VIP Tables are shared cabaret-style tables up front, better suited to groups who want to sit together. Section 102 also includes wheelchair-accessible seating.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Theater Seating (sections 101 and 102) is closest to the stage. The Cabaret Tables are the row directly behind, between the seating sections and the bar. The main difference is style: Theater Seating is individual reserved chairs, while the Cabaret Tables are shared round tables, better suited to groups who want to sit together — Azul Lounge is small enough that neither is a meaningfully worse view. Section 102 also includes wheelchair-accessible seating.</div></div>
       </div>
 
       <div class="faq-item">
@@ -1161,11 +1161,11 @@
   const zones = {
     theater: {
       name: 'Theater Seating',
-      desc: 'Individual reserved seats across two sections — 101 and 102 — flanking the center aisle, directly facing the stage. Azul Lounge is a small, intimate room, so every seat has a clear view; 101 and 102 are essentially mirror images of each other, and there\'s no meaningfully better side. Section 102 also includes wheelchair-accessible seating.'
+      desc: 'Individual reserved seats across two sections — 101 and 102 — flanking the center aisle, closest to the stage. Azul Lounge is a small, intimate room, so every seat has a clear view; 101 and 102 are essentially mirror images of each other, and there\'s no meaningfully better side. Section 102 also includes wheelchair-accessible seating.'
     },
     tables: {
-      name: 'VIP Tables',
-      desc: 'Four shared cabaret-style tables at the front of the room, closest to the stage. A good pick for groups who\'d rather sit together around a table than in a row of individual seats — the proximity is the same as Theater Seating, just a different style of seating.'
+      name: 'Cabaret Tables',
+      desc: 'Four shared round tables directly behind Theater Seating, between the seating sections and the bar. A good pick for groups who\'d rather sit together around a table than in a row of individual seats — you\'re one row back from the closest seats, but still well within the room.'
     }
   };
 
