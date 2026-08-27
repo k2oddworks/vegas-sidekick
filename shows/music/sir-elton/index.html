@@ -403,7 +403,7 @@
     .also-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
     .also-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; background: var(--gray-200); }
     .gallery-section { margin-bottom: 50px; }
-    .gallery-grid { display: grid; grid-template-columns: 1.4fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; height: 380px; }
+    .gallery-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; height: 380px; }
     .gallery-grid a { position: relative; overflow: hidden; border-radius: var(--radius); display: block; background: var(--gray-200); }
     .gallery-grid a:first-child { grid-row: 1 / span 2; }
     .gallery-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
@@ -546,6 +546,23 @@
     <div class="slide active">
       <img src="/images/sir-elton-hero.webp" alt="Sir Elton — an Elton John tribute at the piano, Athena Showlounge, Alexis Park Resort Las Vegas" loading="eager"  fetchpriority="high" />
     </div>
+    <div class="slide">
+      <img src="/images/sir-elton-4.webp" alt="Sir Elton performer with the live band at the Athena Showlounge, Alexis Park Resort" loading="lazy" />
+    </div>
+    <div class="slide">
+      <img src="/images/sir-elton-3.webp" alt="Sir Elton performer singing at the piano at the Athena Showlounge, Alexis Park Resort" loading="lazy" />
+    </div>
+    <button class="s-arrow prev" onclick="sliderMove(-1)" aria-label="Previous slide">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="s-arrow next" onclick="sliderMove(1)" aria-label="Next slide">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="slider-dots" role="tablist">
+      <button class="dot-btn active" onclick="goToSlide(0)" role="tab" aria-label="Photo 1" aria-selected="true"></button>
+      <button class="dot-btn" onclick="goToSlide(1)" role="tab" aria-label="Photo 2" aria-selected="false"></button>
+      <button class="dot-btn" onclick="goToSlide(2)" role="tab" aria-label="Photo 3" aria-selected="false"></button>
+    </div>
     </div>
 
   <div class="hero-content-wrap">
@@ -682,6 +699,18 @@
     <div class="gallery-grid">
       <a href="/images/sir-elton-hero.webp" target="_blank" rel="noopener" aria-label="View full-size photo 1">
         <img src="/images/sir-elton-hero.webp" alt="Sir Elton — an Elton John tribute at the piano, Athena Showlounge, Alexis Park Resort Las Vegas" loading="lazy" />
+      </a>
+      <a href="/images/sir-elton-2.webp" target="_blank" rel="noopener" aria-label="View full-size photo 2">
+        <img src="/images/sir-elton-2.webp" alt="Sir Elton performer at the piano at the Athena Showlounge, Alexis Park Resort" loading="lazy" />
+      </a>
+      <a href="/images/sir-elton-3.webp" target="_blank" rel="noopener" aria-label="View full-size photo 3">
+        <img src="/images/sir-elton-3.webp" alt="Sir Elton performer singing at the piano at the Athena Showlounge, Alexis Park Resort" loading="lazy" />
+      </a>
+      <a href="/images/sir-elton-4.webp" target="_blank" rel="noopener" aria-label="View full-size photo 4">
+        <img src="/images/sir-elton-4.webp" alt="Sir Elton performer with the live band at the Athena Showlounge, Alexis Park Resort" loading="lazy" />
+      </a>
+      <a href="/images/sir-elton-5.webp" target="_blank" rel="noopener" aria-label="View full-size photo 5">
+        <img src="/images/sir-elton-5.webp" alt="Sir Elton performer on stage in smoke and lights at the Athena Showlounge, Alexis Park Resort" loading="lazy" />
       </a>
       </div>
   </section>
