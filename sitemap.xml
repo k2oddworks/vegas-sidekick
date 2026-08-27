@@ -437,6 +437,15 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vegassidekick.com/shows/magic/mind2mind/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-27</lastmod>
+      <image:image>
+      <image:loc>https://vegassidekick.com/images/mind2mind-hero.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vegassidekick.com/shows/magic/criss-angel/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
