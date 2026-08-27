@@ -546,6 +546,23 @@
     <div class="slide active">
       <img src="/images/sinatra-live-hero.webp" alt="Sinatra Live! starring Michael Sinatra at the Athena Showlounge, Alexis Park Resort Las Vegas" loading="eager"  fetchpriority="high" />
     </div>
+    <div class="slide">
+      <img src="/images/sinatra-live-3.webp" alt="Sinatra Live! performer in tuxedo and hat at the Athena Showlounge, Alexis Park Resort" loading="lazy" />
+    </div>
+    <div class="slide">
+      <img src="/images/sinatra-live-4.webp" alt="Sinatra Live! performer silhouetted in stage smoke at the Athena Showlounge, Alexis Park Resort" loading="lazy" />
+    </div>
+    <button class="s-arrow prev" onclick="sliderMove(-1)" aria-label="Previous slide">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="s-arrow next" onclick="sliderMove(1)" aria-label="Next slide">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="slider-dots" role="tablist">
+      <button class="dot-btn active" onclick="goToSlide(0)" role="tab" aria-label="Photo 1" aria-selected="true"></button>
+      <button class="dot-btn" onclick="goToSlide(1)" role="tab" aria-label="Photo 2" aria-selected="false"></button>
+      <button class="dot-btn" onclick="goToSlide(2)" role="tab" aria-label="Photo 3" aria-selected="false"></button>
+    </div>
     </div>
 
   <div class="hero-content-wrap">
