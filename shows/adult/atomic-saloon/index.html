@@ -705,7 +705,7 @@ async function submitEmail(){
   try{const r=await fetch('https://brevo-subscribe.vegassidekickcom.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email})});msg.textContent=r.ok?'✅ You\'re on the list!':'❌ Something went wrong.';}catch{msg.textContent='❌ Something went wrong.';}
 }
 </script>
-<script src="/components/search-data.js?v=23"></script>
+<script src="/components/search-data.js?v=24"></script>
 <script src="/components/picks.js?v=1"></script>
 </body>
 </html>
