@@ -109,7 +109,7 @@ Replaced the swipe-required horizontal card carousel (`.sk-schedule--slider` / `
 1. `shows/adult/magic-mike-live/index.html` had its schedule `<script>` nested inside `<script src="/components/footer.js?v=10">...</script>` — a `src`-attributed script tag ignores its inline content, so this script never ran at all. Split into its own tag.
 2. Four pages (`magic-mike-live`, `rouge`, `thunder-from-down-under`, `absinthe`) had a `vegasNow()` requesting the weekday in `"long"` format (`"Thursday"`) but comparing it against a short-form array (`["Sun","Mon",...]`) — `todayIdx` was always `-1`. The old carousel tolerated this silently (today just never got highlighted); the new module's today-row rendering does not. Fixed the format to `"short"`.
 
-**Known data gap, not a bug:** `magic-mike-live` and `rouge` still have every day set to `"?"` (unconfirmed time) in `SHOW_SCHEDULE.days` — real showtimes were never supplied for these two. The module gracefully renders "See times" instead of a real time, but this needs real Spotlight showtimes from Kris to fully fix.
+**`magic-mike-live` and `rouge` intentionally have every day set to `"?"` in `SHOW_SCHEDULE.days`** — confirmed by Kris, not a data gap. These two don't run a fixed weekly schedule, so "?" (renders as "See times") is the correct, permanent state, not a placeholder waiting on real times.
 
 The old `.sk-day`/`.sk-schedule--slider` CSS was left in place (now dead/unused) on all 68 pages rather than removed, to keep the rollout diff lower-risk — worth a cleanup pass at some point, not urgent (it's harmless unused CSS, not shipped to any element).
 
