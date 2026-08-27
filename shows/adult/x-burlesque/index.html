@@ -548,7 +548,7 @@
       <section class="fade-up">
         <div class="section-label">You Might Also Like</div>
         <h2 class="section-title">More Adult Shows</h2>
-        <div class="also-grid">
+        <div class="also-grid" data-vs-picks='{"count":3,"exclude":"auto","preferCat":"auto"}'>
           <a href="/shows/spectaculars/absinthe/" class="also-card">
             <img src="/images/absinthe-hero.webp" alt="Absinthe Las Vegas — outrageous acrobatic variety show at Caesars Palace" class="also-img" loading="lazy">
             <div class="also-body"><div class="also-name">Absinthe</div><div class="also-price">From $122</div></div>
@@ -653,5 +653,7 @@ async function submitEmail(){
   try{const r=await fetch('https://brevo-subscribe.vegassidekickcom.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email})});msg.textContent=r.ok?'✅ You\'re on the list!':'❌ Something went wrong.';}catch{msg.textContent='❌ Something went wrong.';}
 }
 </script>
+<script src="/components/search-data.js?v=22"></script>
+<script src="/components/picks.js?v=1"></script>
 </body>
 </html>

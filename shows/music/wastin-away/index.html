@@ -969,7 +969,7 @@
   <!-- YOU MIGHT ALSO LIKE -->
   <section class="section fade-up" aria-labelledby="also-heading">
     <h2 id="also-heading" class="section-title">You Might <span>Also Like</span></h2>
-    <div class="also-grid">
+    <div class="also-grid" data-vs-picks='{"count":3,"exclude":"auto","preferCat":"auto"}'>
       <div class="also-card">
         <img class="also-img" src="/images/sinatra-live-hero.webp" alt="Sinatra Live! at the Athena Showlounge, Alexis Park Resort" loading="lazy" />
         <div class="also-body">
@@ -1325,5 +1325,7 @@ const SHOW_SCHEDULE = {
     : build();
 })();
 </script>
+<script src="/components/search-data.js?v=22"></script>
+<script src="/components/picks.js?v=1"></script>
 </body>
 </html>

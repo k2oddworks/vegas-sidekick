@@ -282,7 +282,26 @@
       <div class="faq"><button class="faq-q" aria-expanded="false">What is Mad Apple at New York-New York?<span class="faq-ic">+</span></button><div class="faq-a"><p>Mad Apple is Cirque du Soleil's New York-themed variety show — a high-energy mix of acrobatics, magic, comedy and live music with a rooftop-party feel. It plays the New York-New York Theater right across the street from MGM Grand.</p></div></div>
     </div>
   </div></section>
-  <section class="final"><div class="wrap">
+    <section class="sec"><div class="wrap">
+    <div class="eyebrow">Elsewhere in town</div>
+    <h2>More Las Vegas shows</h2>
+    <p>A rotating look at what else we track &mdash; refresh for a different three.</p>
+    <div class="grid" data-vs-picks='{"count":3,"excludeVenue":["mgm grand","new york-new york"]}'>
+      <a class="show-card" href="/shows/spectaculars/absinthe/">
+        <div class="sc-img"><img src="/images/absinthe-hero.webp" alt="Absinthe Las Vegas" loading="lazy" width="400" height="225" /><span class="sc-cat" style="background:#0fb5c9">Spectaculars</span></div>
+        <div class="sc-body"><h3>Absinthe</h3><div class="sc-venue">📍 Caesars Palace</div><div class="sc-foot"><span class="sc-price">from <b>$122</b></span><span class="sc-cta">View →</span></div></div>
+      </a>
+      <a class="show-card" href="/shows/cirque/mystere/">
+        <div class="sc-img"><img src="/images/mystere-hero.jpg" alt="Mystère Las Vegas" loading="lazy" width="400" height="225" /><span class="sc-cat" style="background:#0fb5c9">Cirque</span></div>
+        <div class="sc-body"><h3>Mystère</h3><div class="sc-venue">📍 Treasure Island</div><div class="sc-foot"><span class="sc-price">from <b>$68</b></span><span class="sc-cta">View →</span></div></div>
+      </a>
+      <a class="show-card" href="/shows/magic/mat-franco/">
+        <div class="sc-img"><img src="/images/mat-franco-hero.jpg" alt="Mat Franco Las Vegas" loading="lazy" width="400" height="225" /><span class="sc-cat" style="background:#7c3aed">Magic</span></div>
+        <div class="sc-body"><h3>Mat Franco</h3><div class="sc-venue">📍 The LINQ Hotel</div><div class="sc-foot"><span class="sc-price">from <b>$57</b></span><span class="sc-cta">View →</span></div></div>
+      </a>
+    </div>
+  </div></section>
+<section class="final"><div class="wrap">
     <h2>Not set on <span>this corner?</span></h2>
     <p>Browse every Las Vegas show we track — or explore more venues.</p>
     <a class="btn" href="/venues/">Browse Las Vegas shows by venue →</a>
@@ -293,5 +312,7 @@
   <script>
     document.querySelectorAll('.faq-q').forEach(function(b){b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));var a=b.nextElementSibling;a.style.maxHeight=open?null:a.scrollHeight+'px';});});
   </script>
+  <script src="/components/search-data.js?v=22"></script>
+  <script src="/components/picks.js?v=1"></script>
 </body>
 </html>

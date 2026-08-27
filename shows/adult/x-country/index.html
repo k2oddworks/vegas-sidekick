@@ -702,7 +702,7 @@
 
   <section class="fade-up" style="margin-bottom:32px">
     <h2 class="section-title">You Might <span>Also Like</span></h2>
-    <div class="also-grid">
+    <div class="also-grid" data-vs-picks='{"count":3,"exclude":"auto","preferCat":"auto"}'>
       <a href="/shows/adult/thunder-from-down-under/" class="also-card">
         <img src="/images/thunder-from-down-under-hero.webp" alt="Thunder From Down Under" class="also-img" loading="lazy">
         <div class="also-body">
@@ -914,5 +914,7 @@ async function submitEmail() {
   document.getElementById('emailSuccess').style.display='block';
 }
 </script>
+<script src="/components/search-data.js?v=22"></script>
+<script src="/components/picks.js?v=1"></script>
 </body>
 </html>

@@ -1066,7 +1066,7 @@
   <!-- YOU MIGHT ALSO LIKE -->
   <section class="section fade-up" aria-labelledby="also-heading">
     <h2 id="also-heading" class="section-title">You Might <span>Also Like</span></h2>
-    <div class="also-grid">
+    <div class="also-grid" data-vs-picks='{"count":3,"exclude":"auto","preferCat":"auto"}'>
       <div class="also-card">
         <img class="also-img" src="/images/ka-hero.jpg" alt="KÀ by Cirque du Soleil at MGM Grand Las Vegas — aerial battle sequences on tilting stage" loading="lazy" />
         <div class="also-body">
@@ -1423,5 +1423,7 @@
     z.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); z.click(); } });
   });
 </script>
+<script src="/components/search-data.js?v=22"></script>
+<script src="/components/picks.js?v=1"></script>
 </body>
 </html>

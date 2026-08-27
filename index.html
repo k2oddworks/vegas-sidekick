@@ -631,6 +631,20 @@
       </div>
     </div>
   </section>
+  <!-- TONIGHT'S PICKS — rotates per visit, drawn live from search-data.js. The three cards below are the no-JS fallback and the structural template. -->
+  <section class="band soft">
+    <div class="wrap">
+      <div class="sec-head fade-up">
+        <div>
+          <div class="eyebrow">Fresh every visit</div>
+          <h2>Tonight&rsquo;s picks</h2>
+        </div>
+        <a href="/shows/" class="viewall">Browse all shows &rarr;</a>
+      </div>
+      <div class="row fade-up" data-vs-picks='{"count":3}'><a class="scard" href="/shows/spectaculars/absinthe/"><div class="imgw"><img src="/images/absinthe-hero.webp" alt="Absinthe" loading="lazy"></div><div class="bd"><div class="vn">Caesars Palace</div><div class="nm">Absinthe</div><div class="de">Outrageous acrobatic variety under the big top.</div><div class="pr">From $122</div><span class="cta">See details &rarr;</span></div></a><a class="scard" href="/shows/cirque/mystere/"><div class="imgw"><img src="/images/mystere-hero.jpg" alt="Myst&egrave;re" loading="lazy"></div><div class="bd"><div class="vn">Treasure Island</div><div class="nm">Myst&egrave;re</div><div class="de">The original Cirque du Soleil show in Las Vegas.</div><div class="pr">From $68</div><span class="cta">See details &rarr;</span></div></a><a class="scard" href="/shows/magic/mat-franco/"><div class="imgw"><img src="/images/mat-franco-hero.jpg" alt="Mat Franco" loading="lazy"></div><div class="bd"><div class="vn">The LINQ Hotel</div><div class="nm">Mat Franco</div><div class="de">America&rsquo;s Got Talent winner, close-up magic nightly.</div><div class="pr">From $57</div><span class="cta">See details &rarr;</span></div></a></div>
+    </div>
+  </section>
+
 
   <!-- STEPS -->
   <section class="band soft">
@@ -1052,5 +1066,7 @@
     };
   })();
   </script>
+<script src="/components/search-data.js?v=22"></script>
+<script src="/components/picks.js?v=1"></script>
 </body>
 </html>
