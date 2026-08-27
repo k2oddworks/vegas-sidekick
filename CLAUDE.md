@@ -250,6 +250,30 @@ To include in a page:
 <script src="/components/footer.js"></script>
 ```
 
+### `components/picks.js` — rotating show cards
+
+Fills any grid marked `data-vs-picks` with live records from `window.VS_SHOWS`, reshuffled on every page load. **Mounted on 75 pages** (68 show pages, the homepage, 6 venue pages).
+
+Because it reads name, venue, price and image straight from `search-data.js`, these cards can never quote a stale price or link to a closed show — **they are exempt from the Price Change Checklist and the Show Closing Checklist.**
+
+It never invents markup: it clones the grid's own first card and rewrites the fields it recognises, so it adapts to whichever card variant the page uses (the site has five: `div.also-card`, `a.also-card` with a price, the `also-name` variant, `.scard`, `.show-card`). The cards already in the HTML stay as the no-JS fallback **and** as that structural template — never delete them.
+
+```html
+<div class="also-grid" data-vs-picks='{"count":3,"exclude":"auto","preferCat":"auto"}'>
+  <!-- one or more real cards: fallback + template -->
+</div>
+```
+
+Options: `count`, `exclude` (`"auto"` = this page), `preferCat` (`"auto"` = this page's category; same-category sorts first), `cat` (hard filter), `excludeVenue` (string or array of lowercase substrings).
+
+Requires **both** scripts, in this order:
+```html
+<script src="/components/search-data.js?v=22"></script>
+<script src="/components/picks.js?v=1"></script>
+```
+
+It degrades silently — if `VS_SHOWS` is missing, if there are fewer matches than requested, or if anything throws, the static cards stay untouched. That makes a broken mount invisible, so **verify in a browser after wiring, don't assume.**
+
 ---
 
 ## CMS (Decap)
@@ -414,7 +438,18 @@ Changes apply site-wide automatically since all pages load these components.
 
 ### Deploying
 
-Push to the `main` branch (the repository's default branch). Cloudflare Pages auto-deploys on push. The Cloudflare Worker (`functions/api/auth.js`) must be deployed separately via Cloudflare dashboard or Wrangler CLI.
+Push to the `main` branch (the repository's default branch). Cloudflare auto-deploys on push. The Cloudflare Worker (`functions/api/auth.js`) must be deployed separately via Cloudflare dashboard or Wrangler CLI.
+
+**⚠️ This is a Worker with static assets, NOT classic Cloudflare Pages.** There is a `wrangler.jsonc` at the repo root with an `assets` block. Most Cloudflare advice you will find online assumes Pages and does not apply. Two consequences that have already bitten us:
+
+- **`404.html` is not automatic.** The asset server's `not_found_handling` defaults to `"none"`, which returns a bare 404 with *no body* — browsers then show their own error page. It must be set explicitly:
+  ```jsonc
+  "assets": { "directory": ".", "not_found_handling": "404-page" }
+  ```
+  Symptom when this is wrong: a bad URL shows Chrome's "This page can't be found" instead of ours, and editing `404.html` appears to do nothing because it was never being served.
+- **`.assetsignore` controls what ships.** Anything not listed is publicly fetchable by URL. Internal docs (`CLAUDE.md`, `BRAND.md`, `ROADMAP.md`, `SHOW-BUILDER-PROMPT.md`, `VS_CHAT_CONTEXT.md`) and `scripts/` are excluded there. **Add any new internal file to `.assetsignore` when you create it.**
+
+If redirects or headers ever appear to be ignored, suspect this same Pages-vs-Workers difference before anything else.
 
 ### "Make Live" — standing instruction
 

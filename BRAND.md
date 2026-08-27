@@ -8,7 +8,7 @@ conventions, the price-change and show-closing checklists, JSON-LD requirements.
 doc deliberately does not repeat it. When the two touch the same subject, CLAUDE.md
 wins on mechanics, BRAND.md wins on wording.
 
-*Accurate as of 2026-08-26.*
+*Accurate as of 2026-08-27.*
 
 ---
 
@@ -260,51 +260,48 @@ sake dilutes the catalogue and costs maintenance on every future price change.
 
 ---
 
-## 8. Catalogue snapshot — 2026-08-26
+## 8. Catalogue snapshot — 2026-08-27
 
-60 shows, **$27–$156**.
+67 shows, **$27–$156**.
 
 | Category | Shows |
 |---|---|
-| Music | 14 |
+| Music | 20 |
 | Magic | 13 |
 | Adult | 11 |
 | Comedy | 10 |
 | Cirque | 5 |
-| Spectaculars | 4 |
+| Spectaculars | 5 |
 | Family | 3 |
 
 *(Category **pages** cross-list — the Family page shows 26 because Cirque and Magic
-titles are surfaced there too. These counts are the primary category assignment.)*
+titles surface there too. These are primary category assignments.)*
 
-**Site:** 132 pages · 122 sitemap URLs · 6 guides · 5 venue pages · 21 news articles.
+**Site:** 140 pages · 130 sitemap URLs · 70 show pages · 6 venue pages · 6 guides ·
+21 news articles.
+
+**Cheapest ticket:** Jimmy Kimmel's Comedy Club, $27. **Priciest:** "O", $156.
 
 **Recently closed** (pages live, catalogue entries removed): Marriage Can Be Murder,
 Las Vegas LIVE Comedy Club, David Goldrake.
 
-**Cheapest ticket:** Jimmy Kimmel's Comedy Club, $27. **Priciest:** "O", $156.
+**Recently added:** the Alexis Park Resort cluster — seven show pages plus
+`/venues/alexis-park/`, the first application of the venue rule in section 7a.
 
-**The pipeline.** 29 ongoing Spotlight residencies are not yet listed. Under the venue
-rule above they split three ways:
+**The pipeline.** Under the venue rule the remaining Spotlight residencies split:
 
-- **Building (7)** — the **Alexis Park Resort** cluster: Sinatra Live!, Queen Selena,
-  Sir Elton, King of Diamonds, America The Show, Wastin' Away (all ~$40) and Motown
-  Brunch ($65). Wants a venue page as well as show pages.
-- **Next up (11)** — where the name carries the search or the room is well known:
-  Barry Manilow ($91), The Rat Pack Is Back! ($92), Eddie Griffin ($87), Carlos Mencia
-  ($27), Luenell ($37), MIND2MIND at Fontainebleau ($82 — our first coverage of that
-  resort), Carpenters Legacy ($49), Paranormal at Horseshoe ($31), Soul Of Motown
-  ($54), Drag Brunch Las Vegas ($55), Jen Kramer ($17 — the cheapest ticket on
-  Spotlight).
+- **Next up (11)** — Barry Manilow ($91), The Rat Pack Is Back! ($92), Eddie Griffin
+  ($87), Carlos Mencia ($27), Luenell ($37), MIND2MIND at Fontainebleau ($82 — our
+  first coverage of that resort), Carpenters Legacy ($49), Paranormal at Horseshoe
+  ($31), Soul Of Motown ($54), Drag Brunch Las Vegas ($55), Jen Kramer ($17 — the
+  cheapest ticket on Spotlight).
 - **Declined (11)** — LaMarre Theater (4) and Notoriety at Neonopolis (3): rooms
   visitors can't place, with no act carrying its own search. Plus four low-signal
   fillers (The Spanish Magician, Farrell Dillon, Late Night Magic, Viva Drag Brunch).
 
-We also skip single-night concerts and one-off comedy bookings entirely, and the
-individual comedians booked into Jimmy Kimmel's Comedy Club and Aces of Comedy —
-those are lineup entries for venues we already cover, not standalone shows.
-
----
+We also skip single-night concerts and one-off comedy bookings, and the individual
+comedians booked into Jimmy Kimmel's Comedy Club and Aces of Comedy — those are
+lineup entries for venues we already cover, not standalone shows.
 
 ## 9. Architecture, briefly
 
