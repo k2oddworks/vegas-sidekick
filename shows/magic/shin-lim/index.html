@@ -451,6 +451,35 @@
   .sk-day--today .sk-day-link{color:#ff2e7e;}
   .sk-day-link:hover{text-decoration:underline;}
   .sk-sched-disclaimer{margin-top:22px;font-size:14px;color:#8A93A8;line-height:1.5;}
+  /* ===== Schedule: stacked list ===== */
+  .sk-list{ display:flex; flex-direction:column; }
+  .sk-row{ display:flex; align-items:center; gap:16px; background:#fff; border:1px solid #ece9f6; border-radius:10px; padding:13px 18px; border-left:3px solid transparent; }
+  .sk-row + .sk-row{ margin-top:8px; }
+  .sk-row.is-today{ border-left-color:#ff2e7e; }
+  .sk-row-day{ font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:.95rem; width:112px; flex-shrink:0; color:#171225; }
+  .sk-row-day span{ display:block; font-family:'IBM Plex Mono',monospace; font-size:.62rem; color:#ff2e7e; font-weight:700; letter-spacing:.05em; text-transform:uppercase; }
+  .sk-row-time{ font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:1rem; flex:1; color:#171225; }
+  .sk-row-dark{ flex:1; font-size:.88rem; color:#64748B; font-weight:600; }
+  .sk-row-cta{ font-family:'Inter',sans-serif; font-weight:600; font-size:.82rem; text-decoration:none; white-space:nowrap; color:#7c3aed; }
+  .sk-row.is-today .sk-row-cta{ color:#ff2e7e; }
+  .sk-more{ display:grid; grid-template-rows:0fr; transition:grid-template-rows .38s cubic-bezier(.16,1,.3,1); }
+  .sk-more.is-open{ grid-template-rows:1fr; }
+  .sk-more-inner{ overflow:hidden; }
+  .sk-more-body{ display:flex; flex-direction:column; gap:8px; padding-top:8px; }
+  .sk-banner{ display:flex; align-items:center; justify-content:space-between; gap:12px; width:100%; margin-top:8px; padding:16px 20px; border:none; border-radius:12px; background:#171225; color:#fff; cursor:pointer; text-align:left; font-family:'Inter',sans-serif; }
+  .sk-banner-text{ min-width:0; }
+  .sk-banner-lbl{ display:block; font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:1rem; line-height:1.3; }
+  .sk-banner-sub{ display:block; font-family:'IBM Plex Mono',monospace; font-size:.68rem; color:#ff2e7e; letter-spacing:.05em; text-transform:uppercase; margin-top:3px; }
+  .sk-banner-arrow{ width:34px; height:34px; border-radius:50%; background:#ff2e7e; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:1rem; transition:transform .3s ease; }
+  .sk-banner[aria-expanded="true"] .sk-banner-arrow{ transform:rotate(90deg); }
+  .sk-pill-wrap{ margin-top:8px; display:flex; }
+  .sk-pill{ display:flex; align-items:center; gap:12px; width:100%; text-align:left; background:#ff7a1e; border:none; color:#171225; border-radius:12px; padding:16px 20px; cursor:pointer; font-family:'Inter',sans-serif; text-decoration:none; }
+  .sk-pill:hover{ background:#e8630a; }
+  .sk-pill-ico{ width:34px; height:34px; border-radius:50%; background:#171225; color:#fff; display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0; }
+  .sk-pill-lbl{ display:block; font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:1rem; }
+  .sk-pill-sub{ display:block; font-size:.78rem; color:rgba(23,18,37,.72); margin-top:3px; font-weight:600; }
+  @media (prefers-reduced-motion:reduce){ .sk-banner-arrow{ transition:none; } .sk-more{ transition:none; } }
+  @media (max-width:480px){ .sk-row-day{ width:82px; } }
   .sk-day--cta{background:linear-gradient(145deg,#7c3aed 0%,#6a2fd0 100%);border-color:#6a2fd0;}
   .sk-day--cta .sk-day-name{color:rgba(255,255,255,0.7);}
   .sk-day--cta .sk-day-cta-body{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;color:#fff;line-height:1.2;}
@@ -690,14 +719,11 @@
 
 
   <!-- ===== SHOW DAYS & TIMES — Variant B ===== -->
-  <section class="sk-schedule sk-schedule--slider fade-up" id="sk-schedule">
+    <section class="sk-schedule fade-up" id="sk-schedule">
     <div class="sk-eyebrow">Plan Your Night</div>
     <h2 class="sk-sched-title">Show Days &amp; Times</h2>
     <p class="sk-sched-intro">Five nights a week at 7:30&nbsp;pm at Mandalay Bay. Dark on Tuesdays and Wednesdays.</p>
-    <div class="sk-sched-slider-wrap">
-      <div class="sk-sched-grid" id="sk-sched-grid"><!-- cards injected by JS --></div>
-    </div>
-    <p class="sk-swipe-hint">Swipe to see all days &#8594;</p>
+    <div class="sk-list" id="sk-list"><!-- rows injected by JS --></div>
     <p class="sk-sched-disclaimer">Schedules shift and dark nights happen. Always confirm the date at checkout.</p>
   </section>
 
@@ -1271,57 +1297,66 @@ const SHOW_SCHEDULE = {
     const [h, m] = times[times.length - 1].split(":").map(Number);
     return now.hour > h || (now.hour === h && now.minute >= m);
   }
-  function build() {
-    const grid = document.getElementById("sk-sched-grid");
-    if (!grid || typeof SHOW_SCHEDULE === "undefined") return;
-    const now = vegasNow();
-    const todayIdx = now.dayIdx;
-    const tomorrowIdx = (todayIdx + 1) % 7;
-    const order = [1, 2, 3, 4, 5, 6, 0];
-    const frag = document.createDocumentFragment();
-    order.forEach(function (d) {
-      const times = SHOW_SCHEDULE.days[d] || [];
-      const card = document.createElement("div");
-      card.className = "sk-day";
-      let inner = '<span class="sk-day-name">' + DAY_LABELS[d] + "</span>";
-      if (!times.length) {
-        card.classList.add("sk-day--dark");
-        inner += '<span class="sk-day-dark-label">No Show</span>';
-      } else {
-        inner += '<span class="sk-day-time">' + times.map(formatTime).join("<br>") + "</span>";
-      }
-      if (d === todayIdx) {
-        card.classList.remove("sk-day--dark");
-        card.classList.add("sk-day--today");
-        inner += '<span class="sk-day-badge">TODAY</span>';
-        if (times.length && !lastShowPassed(times, now)) {
-          inner += '<a class="sk-day-link" rel="sponsored" href="' + SHOW_SCHEDULE.affiliateUrl + '">Tonight\'s tickets \u2192</a>';
+    const DAY_LABELS_FULL = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    function build() {
+      const list = document.getElementById("sk-list");
+      if (!list || typeof SHOW_SCHEDULE === "undefined") return;
+      const now = vegasNow();
+      const todayIdx = now.dayIdx;
+      const tomorrowIdx = (todayIdx + 1) % 7;
+      const restOrder = [];
+      for (let k = 1; k <= 6; k++) restOrder.push((todayIdx + k) % 7);
+
+      function rowHTML(d, isToday) {
+        const times = SHOW_SCHEDULE.days[d] || [];
+        const dark = !times.length;
+        let badge = "";
+        if (isToday) badge = "<span>Today</span>";
+        else if (d === tomorrowIdx) badge = "<span>Tomorrow</span>";
+        let right;
+        if (dark) {
+          right = '<div class="sk-row-dark">Dark — no show</div>';
+        } else {
+          const timeStr = times.map(formatTime).join(" &amp; ");
+          let cta = "Get tickets →";
+          if (isToday) cta = lastShowPassed(times, now) ? "" : "Tonight’s tickets →";
+          else if (d === tomorrowIdx) cta = "See seats →";
+          right = '<div class="sk-row-time">' + timeStr + '</div>' +
+            (cta ? '<a class="sk-row-cta" rel="sponsored" href="' + SHOW_SCHEDULE.affiliateUrl + '">' + cta + '</a>' : '');
         }
-      } else if (d === tomorrowIdx) {
-        card.classList.add("sk-day--tomorrow");
-        inner += '<span class="sk-day-badge">TOMORROW</span>';
-        if (times.length) {
-          inner += '<a class="sk-day-link" rel="sponsored" href="' + SHOW_SCHEDULE.affiliateUrl + '">See seats \u2192</a>';
-        }
-      } else if (times.length) {
-        inner += '<a class="sk-day-link" rel="sponsored" href="' + SHOW_SCHEDULE.affiliateUrl + '">Get tickets \u2192</a>';
+        return '<div class="sk-row' + (isToday ? ' is-today' : '') + '">' +
+          '<div class="sk-row-day">' + DAY_LABELS_FULL[d] + badge + '</div>' + right +
+          '</div>';
       }
-      card.innerHTML = inner;
-      frag.appendChild(card);
-    });
-    const ctaCard = document.createElement("div");
-    ctaCard.className = "sk-day sk-day--cta";
-    ctaCard.innerHTML = '<span class="sk-day-name">ALL DATES</span>' +
-      '<span class="sk-day-cta-body">All available<br>dates & times</span>' +
-      '<a class="sk-day-link" rel="sponsored" href="' + SHOW_SCHEDULE.affiliateUrl + '">Check availability \u2192</a>';
-    frag.appendChild(ctaCard);
-    grid.appendChild(frag);
-    var todayCard = grid.querySelector(".sk-day--today");
-    if (todayCard) {
-      var offset = todayCard.offsetLeft - (grid.clientWidth - todayCard.offsetWidth) / 2;
-      grid.scrollLeft = Math.max(0, offset);
+
+      const restCount = restOrder.filter(function (d) { return (SHOW_SCHEDULE.days[d] || []).length; }).length;
+
+      let html = rowHTML(todayIdx, true);
+      html += '<button class="sk-banner" id="sk-banner-btn" type="button" aria-expanded="false">' +
+        '<span class="sk-banner-text"><span class="sk-banner-lbl" id="sk-banner-lbl">Tap to see the full week</span>' +
+        '<span class="sk-banner-sub">' + restCount + ' more date' + (restCount === 1 ? '' : 's') + '</span></span>' +
+        '<span class="sk-banner-arrow">→</span></button>' +
+        '<div class="sk-more" id="sk-more"><div class="sk-more-inner"><div class="sk-more-body">' +
+        restOrder.map(function (d) { return rowHTML(d, false); }).join("") +
+        '</div></div></div>' +
+        '<div class="sk-pill-wrap"><a class="sk-pill" rel="sponsored" href="' + SHOW_SCHEDULE.affiliateUrl + '">' +
+        '<span class="sk-pill-ico">📅</span><span><span class="sk-pill-lbl">Booking for a later date?</span>' +
+        '<span class="sk-pill-sub">See tickets weeks and months ahead</span></span></a></div>';
+
+      list.innerHTML = html;
+
+      const btn = document.getElementById("sk-banner-btn");
+      const more = document.getElementById("sk-more");
+      const lbl = document.getElementById("sk-banner-lbl");
+      let open = false;
+      btn.addEventListener("click", function () {
+        open = !open;
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        more.classList.toggle("is-open", open);
+        lbl.textContent = open ? "Hide the rest of the week" : "Tap to see the full week";
+      });
     }
-  }
+
   document.readyState === "loading"
     ? document.addEventListener("DOMContentLoaded", build)
     : build();
