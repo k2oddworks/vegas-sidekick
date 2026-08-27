@@ -1122,9 +1122,11 @@
     img.style.animation = '';
   }
   function sliderMove(d) { goToSlide(cur + d); }
-  let si = setInterval(() => sliderMove(1), 5000);
-  document.querySelector('.slider').addEventListener('mouseenter', () => clearInterval(si));
-  document.querySelector('.slider').addEventListener('mouseleave', () => { si = setInterval(() => sliderMove(1), 5000); });
+  if (slides.length > 1 && dotBtns.length === slides.length) {
+    let si = setInterval(() => sliderMove(1), 5000);
+    document.querySelector('.slider').addEventListener('mouseenter', () => clearInterval(si));
+    document.querySelector('.slider').addEventListener('mouseleave', () => { si = setInterval(() => sliderMove(1), 5000); });
+  }
 
   // SEEN WIDGET
   function showSeen(t) {
