@@ -460,6 +460,14 @@ When Kris says **"make live"** (or "make it live", "publish it", "ship it"), it 
 3. Make sure every publish step is actually done — including listing pages and the **search index** (`components/search-data.js` + `?v=` bump) for a new show, plus `sitemap.xml`.
 4. Return the live URL(s) and note the ~1–2 min CDN propagation.
 
+### End-of-task report — standing instruction
+
+Every time a task is completed (not just "make live"), close out with three things:
+
+1. **The URL(s) of any updated pages**, if the task touched live pages.
+2. **A summary paragraph** of what was actually updated.
+3. **A suggestion for what to do next** — pull from `ROADMAP.md` where relevant.
+
 ---
 
 ## Naming Conventions
