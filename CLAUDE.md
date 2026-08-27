@@ -69,7 +69,7 @@ vegas-sidekick/
 --lime:    #c6f22e   /* Lime accent */
 --purple:  #7c3aed   /* Eyebrows / secondary */
 --teal:    #0fb5c9   /* Tertiary accent */
---tangerine: #ff7a1e /* NEW Aug 2026 — "book for later" pills / future-date CTAs. Piloted on 3 pages, not yet site-wide. */
+--tangerine: #ff7a1e /* NEW Aug 2026 — "book for later" pills / future-date CTAs. Live site-wide on all 68 show pages with a schedule module. */
 /* Hero gradient: linear #1c0a3a → #2b0f5c → #12061f (deep-purple neon) */
 ```
 
@@ -97,15 +97,21 @@ vegas-sidekick/
 
 Durable facts from recent work. Where these conflict with older prose elsewhere in this file, **these win.**
 
-### Show Days & Times — new stacked-list module (pilot, not yet site-wide)
-Replacing the swipe-required horizontal card carousel (`.sk-schedule--slider` / `.sk-day` / `#sk-sched-grid`) with a stacked list:
+### Show Days & Times — stacked-list module (site-wide, Aug 2026)
+Replaced the swipe-required horizontal card carousel (`.sk-schedule--slider` / `.sk-day` / `#sk-sched-grid`) with a stacked list, on **all 68 pages** that had a `SHOW_SCHEDULE` block (`shows/adult/x-burlesque/` is the one show page with a schedule section that never used this component at all — different template, untouched):
 - **Today's showtime** shown by default (`.sk-row.is-today`).
 - A bold dark banner (`.sk-banner`, "Tap to see the full week") expands the rest of the week inline (`.sk-more`) — no swipe required anywhere.
-- A **tangerine pill** (`.sk-pill`, `#ff7a1e`) — *"Booking for a later date? See tickets weeks and months ahead"* — replaces the old trailing "ALL DATES / Check availability" carousel card with a standalone, always-visible CTA pointing at the same `SHOW_SCHEDULE.affiliateUrl`.
-- **Two showtimes on one day** (matinee + evening) render as one row, times joined with `&` (e.g. "6:30pm & 9:00pm") — decided over splitting into sub-rows.
-- The underlying data/logic is untouched: still reads the page's own `SHOW_SCHEDULE.days`/`affiliateUrl`, still uses `vegasNow()` (real Vegas time via `America/Los_Angeles`), `formatTime`, `lastShowPassed`. Only the render function and the HTML/CSS output changed.
+- A **tangerine pill** (`.sk-pill`, `#ff7a1e`, solid fill, full width, dark ink text) — *"Booking for a later date? See tickets weeks and months ahead"* — replaces the old trailing "ALL DATES / Check availability" carousel card with a standalone, always-visible CTA pointing at the same `SHOW_SCHEDULE.affiliateUrl`. Made deliberately more visually prominent than the banner above it, not less — that was an explicit design call, not an oversight.
+- **Multiple showtimes on one day** (matinee + evening, or more — verified up to 3/day) render as one row, times joined with `&` (e.g. "6:30pm & 9:00pm") — decided over splitting into sub-rows.
+- The underlying data/logic is untouched on every page: still reads that page's own `SHOW_SCHEDULE.days`/`affiliateUrl`, still uses `vegasNow()`, `formatTime`, `lastShowPassed`. Only the render function and the HTML/CSS output changed.
 
-**Piloted on 3 pages** (Aug 2026): `shows/comedy/carrot-top/`, `shows/music/vegas-the-show/` (the canonical template — see below), `shows/cirque/mystere/` (multi-showtime case). **Not yet rolled out** to the other ~65 pages using the old carousel pattern — do that as a batch once the pilot is confirmed good live, reusing the same `build()` rewrite (each page's `SHOW_SCHEDULE`/`vegasNow`/`formatTime`/`lastShowPassed` stay as-is; only replace the section HTML, add the new CSS, and swap the render logic — see git history on the 3 piloted pages for the exact pattern). The old `.sk-day`/`.sk-schedule--slider` CSS was left in place on the 3 piloted pages (now dead/unused) rather than removed, to keep the pilot diff low-risk — worth a cleanup pass once the rollout is done.
+**Two real bugs found and fixed while rolling this out** (pre-existing, unrelated to the redesign, both now fixed everywhere):
+1. `shows/adult/magic-mike-live/index.html` had its schedule `<script>` nested inside `<script src="/components/footer.js?v=10">...</script>` — a `src`-attributed script tag ignores its inline content, so this script never ran at all. Split into its own tag.
+2. Four pages (`magic-mike-live`, `rouge`, `thunder-from-down-under`, `absinthe`) had a `vegasNow()` requesting the weekday in `"long"` format (`"Thursday"`) but comparing it against a short-form array (`["Sun","Mon",...]`) — `todayIdx` was always `-1`. The old carousel tolerated this silently (today just never got highlighted); the new module's today-row rendering does not. Fixed the format to `"short"`.
+
+**Known data gap, not a bug:** `magic-mike-live` and `rouge` still have every day set to `"?"` (unconfirmed time) in `SHOW_SCHEDULE.days` — real showtimes were never supplied for these two. The module gracefully renders "See times" instead of a real time, but this needs real Spotlight showtimes from Kris to fully fix.
+
+The old `.sk-day`/`.sk-schedule--slider` CSS was left in place (now dead/unused) on all 68 pages rather than removed, to keep the rollout diff lower-risk — worth a cleanup pass at some point, not urgent (it's harmless unused CSS, not shipped to any element).
 
 ### `_headers` file (Cloudflare) — caching + security
 A root `_headers` file now sets response headers:
