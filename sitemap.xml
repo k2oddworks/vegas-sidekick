@@ -1171,4 +1171,13 @@
       <image:loc>https://vegassidekick.com/images/motown-brunch-hero.jpg</image:loc>
     </image:image>
   </url>
+  <url>
+    <loc>https://vegassidekick.com/shows/music/rat-pack-is-back/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-29</lastmod>
+      <image:image>
+      <image:loc>https://vegassidekick.com/images/rat-pack-is-back-hero.webp</image:loc>
+    </image:image>
+  </url>
 </urlset>
