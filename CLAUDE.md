@@ -564,12 +564,22 @@ When publishing a new article, these files must all be updated:
 2. **Update** `news/index.html` — promote new article to featured, add grid card, shift oldest out
 3. **Update** `index.html` — update the Vegas Dispatch section with the new article card
 4. **Update** `sitemap.xml` — add new URL entry with `<lastmod>` date
+5. **Update** `news-sitemap.xml` (Google News sitemap, added Aug 2026 — see below)
 
 **Before touching `index.html`**, always check git log to confirm the current state:
 ```bash
 git log --oneline --format="%h %ad %s" --date=short index.html | head -5
 ```
 If there has been recent homepage work not done in this session, pull the latest and make only the targeted change (the dispatch/news card section). Never rewrite index.html from scratch.
+
+### `news-sitemap.xml` — Google News sitemap (requires pruning, not just adding)
+
+A separate file from `sitemap.xml`, using the `news:` namespace, referenced in `robots.txt`. Google's own rule for this file: **only include articles published in the last 48 hours** — older entries should be removed, not left in. (Older articles stay discoverable in Google News through normal crawling and `sitemap.xml`; this file is purely a "come get this fast, it's fresh" signal.) A stale news sitemap full of week-old entries looks worse to Google than a mostly-empty one, so treat pruning as part of every publish, not an occasional cleanup.
+
+On every new article publish:
+1. Add a `<url>` entry for the new article (see the existing entry in the file for the exact `news:` field structure — `news:name` is always `"Vegas Sidekick"`, `news:language` is always `"en"`, `news:publication_date` matches the article's `article:published_time` meta tag exactly, `news:title` matches the `<h1>`).
+2. Remove any entry whose `news:publication_date` is more than 48 hours old.
+3. It's normal and expected for this file to often contain just one entry, or even be empty between publishes — don't treat an empty file as broken.
 
 ### News article HTML structure
 

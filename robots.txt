@@ -12,3 +12,4 @@ Disallow: /_archive/
 Disallow: /search/
 
 Sitemap: https://vegassidekick.com/sitemap.xml
+Sitemap: https://vegassidekick.com/news-sitemap.xml
