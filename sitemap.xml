@@ -20,7 +20,7 @@
     <loc>https://vegassidekick.com/guides/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-07-20</lastmod>
+    <lastmod>2026-08-29</lastmod>
       <image:image>
       <image:loc>https://vegassidekick.com/images/guide-cheap-vegas-cover.jpg</image:loc>
     </image:image>
@@ -50,6 +50,15 @@
     <lastmod>2026-08-13</lastmod>
       <image:image>
       <image:loc>https://vegassidekick.com/images/guide-cirque-cover.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vegassidekick.com/guides/best-tribute-shows/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-08-29</lastmod>
+      <image:image>
+      <image:loc>https://vegassidekick.com/images/guide-tribute-cover.jpg</image:loc>
     </image:image>
   </url>
   <url>
