@@ -62,6 +62,15 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vegassidekick.com/guides/best-adult-shows/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-08-30</lastmod>
+      <image:image>
+      <image:loc>https://vegassidekick.com/images/guide-adult-cover.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vegassidekick.com/guides/best-shows-for-couples/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
