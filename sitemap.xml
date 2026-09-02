@@ -1118,6 +1118,15 @@
     </image:image>
   </url>
   <url>
+    <loc>https://vegassidekick.com/venues/horseshoe/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-02</lastmod>
+      <image:image>
+      <image:loc>https://vegassidekick.com/images/horseshoe-og.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://vegassidekick.com/shows/music/sinatra-live/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
