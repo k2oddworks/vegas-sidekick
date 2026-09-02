@@ -5,7 +5,7 @@
     <loc>https://vegassidekick.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-02</lastmod>
       <image:image>
       <image:loc>https://vegassidekick.com/images/logo-pill-alt.png</image:loc>
     </image:image>
@@ -719,7 +719,7 @@
     <loc>https://vegassidekick.com/news/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-02</lastmod>
       <image:image>
       <image:loc>https://vegassidekick.com/images/news/matt-rife-stay-golden-las-vegas.jpg</image:loc>
     </image:image>
@@ -731,6 +731,15 @@
     <lastmod>2026-07-20</lastmod>
       <image:image>
       <image:loc>https://vegassidekick.com/images/logo-pill-alt.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vegassidekick.com/news/activate-town-square-opens-october-3/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-09-02</lastmod>
+      <image:image>
+      <image:loc>https://vegassidekick.com/images/news/activate-town-square-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
