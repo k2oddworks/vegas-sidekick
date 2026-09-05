@@ -112,6 +112,13 @@
   .g-meta b{color:#fff;font-weight:700}
 
   .lede{font-family:var(--font-editorial);font-style:italic;font-weight:500;font-size:clamp(1.3rem,3.4vw,1.7rem);line-height:1.45;color:var(--ink);margin:38px 0 6px}
+  .expert-box{display:flex;align-items:center;gap:16px;background:var(--soft);border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px;margin:22px 0 6px}
+  .expert-box img{width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid #fff;box-shadow:0 2px 8px rgba(23,18,37,.12)}
+  .expert-box .eb-label{font-family:var(--font-display);font-weight:700;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin-bottom:2px}
+  .expert-box .eb-name{font-family:var(--font-display);font-weight:800;font-size:1.05rem;color:var(--ink);text-decoration:none}
+  .expert-box .eb-name:hover{text-decoration:underline}
+  .expert-box .eb-cred{font-family:var(--font-mono);font-size:.72rem;color:var(--muted);margin-top:3px;line-height:1.5}
+  @media (max-width:480px){.expert-box{padding:14px 16px;gap:12px}.expert-box img{width:44px;height:44px}.expert-box .eb-cred{font-size:.68rem}}
   .intro{color:var(--muted);font-size:1.02rem;margin:16px 0 4px}
   .intro a{color:var(--blue);font-weight:600}
   .divider{height:1px;background:var(--line);margin:40px 0 34px}
@@ -195,6 +202,15 @@
 <main><div class="wrap">
   <p class="lede">No city on Earth has more Cirque du Soleil than Las Vegas — five resident productions, each in a theater built specifically for it, each a completely different animal. The hard part isn't finding one. It's picking which one.</p>
   <p class="intro">So here's every Cirque show in town, ranked — not by ticket price, but by who should actually see each one. A water masterpiece, a Michael Jackson dance party, a martial-arts epic, the all-ages original, and a New York variety bash. Every price is the real <b>"from" price</b> through Vegas Sidekick — no membership, no account, no hidden fees. Here's how to choose.</p>
+
+  <div class="expert-box">
+    <img src="/images/kris-kidd.webp" alt="Kris Kidd" width="56" height="56" loading="lazy">
+    <div>
+      <div class="eb-label">Written by</div>
+      <a class="eb-name" href="/about/kris-kidd/">Kris Kidd</a>
+      <div class="eb-cred">Vegas entertainment insider &bull; 20+ years in Las Vegas &bull; Ticketing since 2006 &bull; Personally seen hundreds of shows</div>
+    </div>
+  </div>
 
   <div class="divider"></div>
 
