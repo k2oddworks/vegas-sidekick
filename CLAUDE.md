@@ -153,7 +153,7 @@ All CSS embedded in `<style>` tags. All JS inline at bottom. Components loaded v
 
 ### Show Detail Pages (`shows/{category}/{show-slug}/index.html`)
 
-**Model/reference page: `shows/adult/absinthe/index.html`**
+**Model/reference page: `shows/spectaculars/absinthe/index.html`**
 
 Absinthe is the design and feature standard for all show pages. When building or updating any show page, consult Absinthe first — every page should be inspired by and consistent with it. Features like info pills (`.info-pills`, `.pill`, `.pill-green`, `.pill-orange`, `.urgency-pills`, `.upill`), the seen-widget behavior, sidebar layout, and mobile-buy-bar are all benchmarked against Absinthe.
 
