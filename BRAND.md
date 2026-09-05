@@ -58,9 +58,9 @@ work: Google needs a real, consistent human behind the opinions.
 **Use these facts. Do not invent new ones.**
 
 - Las Vegas local since **2005**
-- In show **ticketing since 2006** — roughly 15+ years across ticketing and concierge
-- Most recently high-end concierge at **Hilton Grand Vacation Club**
-- Has seen **100+** Vegas shows
+- In show **ticketing since 2006** — 20+ years as a **Ticketing & Vegas Entertainment Specialist**
+- Including several years as a high-end concierge at prestigious Las Vegas resorts
+- Has seen **hundreds** of Vegas shows
 - Personal favourites: **VEGAS! The Show**, **Atomic Saloon Show**, **Mac King**
 - Founded the site because he was **tired of being told what to recommend** — the
   concierge desk pays out on whoever pays the most, not on what the guest would enjoy

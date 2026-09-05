@@ -8,7 +8,7 @@
 ## What this is
 **Vegas Sidekick** (`vegassidekick.com`) — a static Cloudflare Pages site for discovering Las Vegas show tickets, earning affiliate revenue via Spotlight.vegas links (`/ref/vegassidekick`). No backend, no build step: plain HTML/CSS/JS, components injected by small JS files, Decap CMS for news.
 
-**Founder / voice:** Kris Kidd — LV local since 2005, 15+ yrs in show ticketing & concierge (most recently high-end concierge at Hilton Grand Vacation Club), 100+ shows seen. Favorites: VEGAS! The Show, Atomic Saloon Show, Mac King.
+**Founder / voice:** Kris Kidd — LV local since 2005, 20+ yrs as a Ticketing & Vegas Entertainment Specialist (including several years as a high-end concierge at prestigious Las Vegas resorts), hundreds of shows seen (no specific number). Favorites: VEGAS! The Show, Atomic Saloon Show, Mac King.
 
 ## Current design system (post Aug-2026 redesign)
 - **Fonts:** Plus Jakarta Sans (display) + Inter (body); Cormorant Garamond italic for editorial accents. *(Bebas Neue/Barlow retired.)*
