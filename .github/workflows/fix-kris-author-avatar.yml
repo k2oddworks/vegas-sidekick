@@ -1,0 +1,32 @@
+name: Fix Kris author avatar
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/fix-kris-author-avatar.yml']
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/fix-kris-author-avatar.py
+      - name: Validate avatar references
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          for name in ['news/activate-town-square-opens-october-3/index.html','news/index.html']:
+              s=Path(name).read_text(encoding='utf-8')
+              assert '/images/kris-kidd.webp' in s
+              assert '/images/kris-kidd-avatar.jpg' not in s
+          assert Path('images/kris-kidd.webp').exists()
+          print('Kris avatar references validated')
+          PY
+      - name: Commit fix
+        run: |
+          git config user.name "Vegas Sidekick Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add news/activate-town-square-opens-october-3/index.html news/index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Use production Kris image for Dispatch author avatar"
+          git push origin main
