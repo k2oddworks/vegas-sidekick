@@ -42,3 +42,4 @@ jobs:
           git diff --cached --quiet && exit 0
           git commit -m "Standardize show SEO metadata benchmark"
           git push origin main
+# retry after adding organizer.url and offers.validFrom
