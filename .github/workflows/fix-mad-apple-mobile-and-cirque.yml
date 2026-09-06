@@ -1,0 +1,25 @@
+name: Fix Mad Apple Mobile and Cirque
+on:
+  push:
+    paths:
+      - 'scripts/fix-mad-apple-mobile-and-cirque.py'
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply fixes
+        run: python scripts/fix-mad-apple-mobile-and-cirque.py
+      - name: Commit fixes
+        run: |
+          git config user.name "Kris Kidd"
+          git config user.email "k2oddworks@gmail.com"
+          git add shows/cirque/index.html shows/cirque/mad-apple/index.html news/mad-apple-closing-september-5/index.html BRAND.md
+          git diff --cached --quiet && exit 0
+          git commit -m "Fix Mad Apple category and mobile heroes"
+          git push
