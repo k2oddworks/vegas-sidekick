@@ -1,0 +1,50 @@
+name: Retire Mad Apple
+on:
+  push:
+    paths:
+      - 'scripts/retire-mad-apple.py'
+      - '.github/workflows/retire-mad-apple.yml'
+permissions:
+  contents: write
+jobs:
+  retire:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install beautifulsoup4
+      - run: python scripts/retire-mad-apple.py
+      - name: Validate
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json,re
+          bad=[]
+          for p in Path('.').rglob('*.html'):
+              rel=p.as_posix()
+              if rel.startswith(('preview/','docs/','news/')) or rel=='shows/cirque/mad-apple/index.html':
+                  continue
+              t=p.read_text(encoding='utf-8')
+              if 'href="/shows/cirque/mad-apple/"' in t or "href='/shows/cirque/mad-apple/'" in t:
+                  bad.append(rel)
+              for m in re.findall(r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',t,re.S|re.I):
+                  json.loads(m)
+          assert not bad, 'Active Mad Apple links remain: '+', '.join(bad)
+          page=Path('shows/cirque/mad-apple/index.html').read_text(encoding='utf-8')
+          assert 'Closed September 5, 2026' in page
+          assert 'spotlight.vegas' not in page
+          print('Closure validation passed')
+          PY
+      - name: Commit cleanup
+        run: |
+          git config user.name 'Kris Kidd'
+          git config user.email 'k2oddworks@gmail.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'No cleanup changes needed.'
+          else
+            git commit -m 'Run Mad Apple show-closing checklist'
+            git push
+          fi
