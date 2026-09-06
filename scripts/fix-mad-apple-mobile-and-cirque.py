@@ -68,3 +68,5 @@ for path in [cirque, product, article]:
         json.loads(block)
 
 print('Mad Apple category/mobile hero fixes validated')
+
+# one-time trigger
