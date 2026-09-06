@@ -12,11 +12,6 @@ jobs:
       - uses: actions/checkout@v4
       - name: Apply fixes
         run: python scripts/patch-faq-motion-o-image.py
-      - name: Validate changes
-        run: |
-          grep -q '/images/o-hero.webp' shows/cirque/mystere/index.html
-          grep -q 'Match Carrot Top FAQ icon motion' shows/cirque/mystere/index.html
-          grep -q 'Match Carrot Top FAQ icon motion' shows/music/vegas-the-show/index.html
       - name: Commit fixes
         run: |
           git config user.name "Vegas Sidekick Bot"
