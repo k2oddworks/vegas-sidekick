@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" href="/favicon.png" type="image/png" />
 <title>Carrot Top Las Vegas Tickets, Showtimes & Seat Guide | Vegas Sidekick</title>
-<meta name="description" content="Carrot Top Las Vegas tickets from $62. Compare seats, watch the official trailer and check Luxor showtimes, age rules and the honest downside before booking." />
+<meta name="description" content="Carrot Top Las Vegas tickets from $62. Compare seats, watch the official trailer and check Luxor showtimes, age rules and the local take before booking." />
 <meta name="robots" content="index,follow,max-image-preview:large" />
 <link rel="canonical" href="https://vegassidekick.com/shows/comedy/carrot-top/" />
 <meta property="og:type" content="website" />
@@ -71,13 +71,19 @@ h2{font-size:clamp(1.9rem,4vw,2.7rem)}
 .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center}
 .hero-media:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#1c0a3a,transparent 36%);pointer-events:none}
 
-/* facts + nav */
-.facts{background:var(--sand);border-bottom:1px solid var(--line)}
-.facts-grid{display:grid;grid-template-columns:repeat(5,1fr)}
-.fact{text-align:center;padding:18px 10px;border-right:1px solid var(--line)}
+/* animated facts + moving banner + nav */
+.facts{background:#fff;border-bottom:1px solid var(--line)}
+.facts-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.fact{text-align:center;padding:28px 12px 25px;border-right:1px solid var(--line)}
 .fact:last-child{border-right:0}
-.fact strong{display:block;font-family:var(--display);font-size:1.18rem}
-.fact span{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.fact strong{display:block;font-family:var(--display);font-size:clamp(2.2rem,4.2vw,3.45rem);font-weight:700;line-height:1;color:#24104d;letter-spacing:-.045em;font-variant-numeric:tabular-nums}
+.fact span{display:block;margin-top:8px;font-size:.7rem;color:#737080;text-transform:uppercase;letter-spacing:.14em;font-weight:700}
+.ticker{overflow:hidden;background:linear-gradient(90deg,#7c3aed,#ff2c7d 52%,#7c3aed);color:#fff;border-bottom:1px solid rgba(23,16,52,.12)}
+.ticker-track{display:flex;width:max-content;align-items:center;animation:carrotTicker 25s linear infinite;will-change:transform}
+.ticker-set{display:flex;align-items:center;flex-shrink:0}
+.ticker-item{display:flex;align-items:center;gap:10px;white-space:nowrap;padding:14px 20px;font-family:var(--display);font-size:.78rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.ticker-sep{color:var(--lime);font-size:1rem;padding:0 3px}
+@keyframes carrotTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .subnav{position:sticky;top:var(--header);z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .subnav .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px}
 .subnav a{white-space:nowrap;padding:7px 12px;border-radius:999px;font-weight:700;font-size:.8rem;color:var(--muted);min-height:44px;display:flex;align-items:center}
@@ -170,14 +176,21 @@ h2{font-size:clamp(1.9rem,4vw,2.7rem)}
 .detail span{font-size:.88rem;color:var(--muted)}
 
 /* FAQ */
-.faq{margin-top:22px}
-.faq-row{border-top:1px solid var(--line)}
-.faq-row:last-child{border-bottom:1px solid var(--line)}
-.faq-row summary{padding:20px 4px;cursor:pointer;font-family:var(--display);font-weight:800;list-style:none}
+#faq{background:linear-gradient(180deg,#fff 0%,#faf8ff 100%)}
+.faq{display:grid;gap:12px;margin-top:26px;max-width:960px}
+.faq-row{--faq-accent:var(--purple);--faq-tint:#f5f0ff;background:#fff;border:1px solid var(--line);border-left:5px solid var(--faq-accent);border-radius:15px;overflow:hidden;box-shadow:0 8px 24px rgba(39,25,72,.045);transition:border-color .2s,box-shadow .2s,transform .2s}
+.faq-row:nth-child(2){--faq-accent:var(--blue);--faq-tint:#eff6ff}
+.faq-row:nth-child(3){--faq-accent:var(--orange);--faq-tint:#fff5e9}
+.faq-row:nth-child(4){--faq-accent:#22a06b;--faq-tint:#eefaf4}
+.faq-row:nth-child(5){--faq-accent:var(--pink);--faq-tint:#fff0f6}
+.faq-row:nth-child(6){--faq-accent:#6d5ce7;--faq-tint:#f2f0ff}
+.faq-row:nth-child(7){--faq-accent:#d16b18;--faq-tint:#fff5e8}
+.faq-row[open]{background:linear-gradient(90deg,var(--faq-tint),#fff 52%);border-color:var(--faq-accent);box-shadow:0 12px 30px rgba(39,25,72,.08);transform:translateY(-1px)}
+.faq-row summary{display:flex;align-items:center;gap:11px;padding:19px 20px;cursor:pointer;font-family:var(--display);font-weight:800;list-style:none}
 .faq-row summary::-webkit-details-marker{display:none}
-.faq-row summary::before{content:"▸";display:inline-block;margin-right:8px;transition:.2s}
-.faq-row[open] summary::before{transform:rotate(90deg)}
-.faq-answer p{padding:0 4px 20px;color:var(--muted);max-width:820px}
+.faq-row summary::before{content:"+";display:grid;place-items:center;flex:0 0 25px;width:25px;height:25px;border-radius:50%;background:var(--faq-accent);color:#fff;font-size:1rem;line-height:1;transition:.2s}
+.faq-row[open] summary::before{content:"−";transform:rotate(180deg)}
+.faq-answer p{padding:0 20px 20px 56px;color:#575160;max-width:850px}
 
 /* related shows */
 .related{background:linear-gradient(135deg,#171034,#2c1455);color:#fff}
@@ -229,8 +242,10 @@ h2{font-size:clamp(1.9rem,4vw,2.7rem)}
   .hero-copy{padding:30px 22px}
   .buybox{align-items:stretch}
   .buybox .cta{margin-left:0}
-  .facts-grid{grid-template-columns:repeat(2,1fr)}
-  .fact{border-bottom:1px solid var(--line)}
+  .facts-grid{grid-template-columns:repeat(4,1fr)}
+  .fact{padding:20px 4px;border-bottom:0}
+  .fact strong{font-size:clamp(1.75rem,8vw,2.4rem)}
+  .fact span{font-size:.58rem;letter-spacing:.08em}
   .seat-layout{grid-template-columns:1fr}
   .seat-side{position:static}
   .decision,.details,.related-grid{grid-template-columns:1fr}
@@ -256,6 +271,7 @@ h2{font-size:clamp(1.9rem,4vw,2.7rem)}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .ticker-track{transform:none!important}
 }
 </style>
 
@@ -448,13 +464,18 @@ h2{font-size:clamp(1.9rem,4vw,2.7rem)}
   </div>
 </header>
 
-<div class="facts">
+<div class="facts" id="quickFacts" aria-label="Carrot Top quick facts">
   <div class="wrap facts-grid">
-    <div class="fact"><strong>$62</strong><span>From price</span></div>
-    <div class="fact"><strong>75 min</strong><span>Runtime</span></div>
-    <div class="fact"><strong>8 PM</strong><span>Typical start</span></div>
-    <div class="fact"><strong>16+</strong><span>Minimum age</span></div>
-    <div class="fact"><strong>Luxor</strong><span>Atrium Showroom</span></div>
+    <div class="fact"><strong class="count-stat" data-target="75" data-suffix="">75</strong><span>Minutes</span></div>
+    <div class="fact"><strong class="count-stat" data-target="62" data-prefix="$">$62</strong><span>From</span></div>
+    <div class="fact"><strong class="count-stat" data-target="8" data-suffix=" PM">8 PM</strong><span>Typical start</span></div>
+    <div class="fact"><strong class="count-stat" data-target="16" data-suffix="+">16+</strong><span>Ages</span></div>
+  </div>
+</div>
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <div class="ticker-set"><span class="ticker-item">🥕 Prop comedy</span><span class="ticker-sep">•</span><span class="ticker-item">⚡ Fast visual gags</span><span class="ticker-sep">•</span><span class="ticker-item">🎭 Crowd moments</span><span class="ticker-sep">•</span><span class="ticker-item">🕗 75 minutes</span><span class="ticker-sep">•</span><span class="ticker-item">🌵 Spike's pick: center</span><span class="ticker-sep">•</span></div>
+    <div class="ticker-set"><span class="ticker-item">🥕 Prop comedy</span><span class="ticker-sep">•</span><span class="ticker-item">⚡ Fast visual gags</span><span class="ticker-sep">•</span><span class="ticker-item">🎭 Crowd moments</span><span class="ticker-sep">•</span><span class="ticker-item">🕗 75 minutes</span><span class="ticker-sep">•</span><span class="ticker-item">🌵 Spike's pick: center</span><span class="ticker-sep">•</span></div>
   </div>
 </div>
 
@@ -476,7 +497,7 @@ h2{font-size:clamp(1.9rem,4vw,2.7rem)}
       <div class="eyebrow">The 30-second answer</div>
       <h2>Is Carrot Top worth seeing?</h2>
       <p class="lede lede-highlight">The show is built around visual props, quick punchlines and crowd interaction. You can walk in cold and keep up.</p>
-      <p>Yes, if prop comedy is your thing. The appeal is the constant switch from one visual gag to the next, rather than a long story with one payoff. The tradeoff: if you find props distracting, that is the format for the whole night. Watch the trailer before paying for a seat.</p>
+      <p>Yes, especially if you like comedy that keeps moving. Carrot Top fires through handmade props, rapid visual jokes and audience moments, so there is always something new happening onstage. It is easy to follow, fast on its feet and built to get laughs without making you wait through a long setup. Watch the trailer for a quick read on the pace.</p>
       <div class="take"><span>🌵</span><div><b>Spike's take</b><p>My Sweet Spot is the center section: a straight-on stage view without buying the closest seat just because it costs more. Compare the actual seat map and price for your date. Center is my pick.</p></div></div>
     </div>
     <div class="decision">
@@ -491,7 +512,7 @@ h2{font-size:clamp(1.9rem,4vw,2.7rem)}
   <div class="wrap">
     <div class="eyebrow">See the tone first</div>
     <h2>Watch the short official trailer</h2>
-    <p>It gives you the pace and prop-heavy style fast. If that does not land, compare another comedy show before buying.</p>
+    <p>It gives you the pace and prop-heavy style fast. If it clicks, you will know almost immediately.</p>
     <div class="video" id="video" data-id="XRdqvnCZe-A">
       <img src="https://i.ytimg.com/vi/XRdqvnCZe-A/maxresdefault.jpg" alt="Official Carrot Top Las Vegas trailer thumbnail" loading="lazy" width="1280" height="720" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/XRdqvnCZe-A/hqdefault.jpg'">
       <button class="play" aria-label="Play official Carrot Top trailer"><span>▶</span></button>
@@ -605,7 +626,7 @@ h2{font-size:clamp(1.9rem,4vw,2.7rem)}
   <div class="wrap">
     <div class="eyebrow">You may also like</div>
     <h2 id="related-heading">Three comedy shows worth comparing</h2>
-    <p class="related-intro">If Carrot Top is not quite your lane, start here.</p>
+    <p class="related-intro">Carrot Top is a Vegas original. If your answers point toward a different comedy style, these are the three rooms I would compare next.</p>
     <div class="related-grid">
       <a class="related-card" href="/shows/comedy/tape-face/">
         <img src="/images/tape-face-hero.jpg" alt="Tape Face performing in Las Vegas" loading="lazy">
@@ -703,16 +724,16 @@ h2{font-size:clamp(1.9rem,4vw,2.7rem)}
     const result=document.getElementById('quizResult');
     let title,copy,url,label,outcome;
     if(answers.pace===0){
-      outcome='compare';title='Compare stand-up first.';
-      copy='You prefer story-led stand-up. Props and quick visual gags are the core of this show, so I would compare the comedy rooms before buying.';
+      outcome='compare';title='Carrot Top is still worth a look.';
+      copy='Your answers lean toward story-led stand-up. Carrot Top is one of the Strip’s signature comedy shows, with fast props and visual punchlines, so I would still keep it on the list — then compare the comedy rooms and pick the style that sounds best tonight.';
       url='/shows/comedy/';label='Compare comedy shows →';
     }else if(answers.crowd===0){
-      outcome='caution';title='Watch the trailer before booking.';
-      copy='The visual style fits, but no seat can promise zero crowd interaction. If that is a dealbreaker, compare another show. Otherwise, my seat pick is center rather than front.';
-      url='#trailer';label='Watch the official trailer →';
+      outcome='caution';title='Carrot Top could still fit — start with the trailer.';
+      copy='The props and visual jokes do most of the heavy lifting. Crowd interaction is part of the mix, so there is no zero-interaction promise, but center or farther-back seats give you more distance while you still get the full show.';
+      url='#trailer';label='Watch the short trailer →';
     }else{
       outcome='fit';title='Carrot Top fits your comedy style.';
-      copy=(answers.crowd===1?'You want proximity and are comfortable with attention from the stage. Compare front seats.':'Fast visual comedy is the reason to book this one. My seat pick is center.')+(answers.runtime===0?' Just know the show is about 75 minutes; plan another stop if you want a longer night.':'');
+      copy=(answers.crowd===1?'You like being close to the action and are comfortable with some attention from the stage. Compare front seats.':'Fast visual comedy is the reason to book this one. My seat pick is center.')+(answers.runtime===0?' The 75-minute runtime keeps the pace tight; if you want a fuller night, pair it with dinner or another stop afterward.':'');
       url=AFF;label='Check dates & tickets →';
     }
     const strong=document.createElement('strong');strong.textContent=title;
@@ -723,6 +744,30 @@ h2{font-size:clamp(1.9rem,4vw,2.7rem)}
     result.classList.add('show');
     track('show_fit_complete',{result:outcome});
   })));
+
+  const statEls=[...document.querySelectorAll('.count-stat')];
+  const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const paintStat=(el,value)=>{el.textContent=(el.dataset.prefix||'')+Math.round(value)+(el.dataset.suffix||'');};
+  const animateStat=(el)=>{
+    if(el.dataset.counted==='true')return;
+    el.dataset.counted='true';
+    const target=Number(el.dataset.target||0);
+    if(reducedMotion){paintStat(el,target);return;}
+    const duration=950;
+    const start=performance.now();
+    const tick=(now)=>{
+      const t=Math.min(1,(now-start)/duration);
+      const eased=1-Math.pow(1-t,3);
+      paintStat(el,target*eased);
+      if(t<1)requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+  if(!reducedMotion)statEls.forEach(el=>paintStat(el,0));
+  if('IntersectionObserver' in window){
+    const statObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){animateStat(entry.target);statObserver.unobserve(entry.target);}}),{threshold:.45});
+    statEls.forEach(el=>statObserver.observe(el));
+  }else{statEls.forEach(animateStat);}
 
   document.querySelectorAll('details.faq-row').forEach(row=>row.addEventListener('toggle',()=>{if(row.open)track('faq_open',{question:row.querySelector('summary').textContent});}));
 
