@@ -74,6 +74,15 @@
   .d-meta a{color:#fff;font-weight:600;text-decoration:none}
   .d-meta a:hover{text-decoration:underline}
   .d-dot{opacity:.5}
+  /* Dispatch mobile standard: keep the hero useful, not full-screen. */
+  @media(max-width:600px){
+    .d-hero{height:clamp(360px,104vw,430px);min-height:0;max-height:430px}
+    .d-hero img{object-position:center 44%}
+    .d-hero-content{padding:22px 20px 28px}
+    .d-crumb{margin-bottom:10px}
+    .d-tag{margin-bottom:10px}
+    .d-hero h1{font-size:clamp(1.65rem,7.5vw,2.2rem);margin-bottom:10px}
+  }
 
   .d-wrap{max-width:760px;margin:0 auto;padding:48px 24px 8px}
 

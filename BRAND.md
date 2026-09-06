@@ -346,3 +346,8 @@ Before anything ships, read it and ask: **would a Vegas local who works in ticke
 actually say this to a friend?**
 
 If it sounds like a brochure, a press release, or an affiliate blog, it isn't ready.
+
+
+### Dispatch mobile hero standard
+
+On mobile, Vegas Dispatch article heroes should not consume a full screen before the reader reaches the story. Cap editorial hero height at roughly 360–430px depending on viewport, keep the headline and byline visible over the image, and use `object-fit: cover` / deliberate `object-position` cropping. Desktop can retain the larger cinematic treatment.
