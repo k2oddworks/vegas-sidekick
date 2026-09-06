@@ -798,7 +798,7 @@ After pushing to `main`, Cloudflare Pages deploys automatically. No other steps 
 ### Cirque & Acrobatic (`/shows/cirque/`)
 | Show | URL | Our Price |
 |---|---|---|
-| Mad Apple | /shows/cirque/mad-apple/ | $53 |
+| Mad Apple | /shows/cirque/mad-apple/ | CLOSED Sep 5, 2026 |
 | O by Cirque du Soleil | /shows/cirque/o/ | $119 |
 | KÀ by Cirque du Soleil | /shows/cirque/ka/ | — |
 | Michael Jackson ONE | /shows/cirque/michael-jackson-one/ | — |
