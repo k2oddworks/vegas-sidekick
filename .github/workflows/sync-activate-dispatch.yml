@@ -16,11 +16,10 @@ jobs:
           python3 - <<'PY'
           from pathlib import Path
           import json,re
-          p=Path('news/activate-town-square-opens-october-3/index.html')
-          s=p.read_text()
-          assert '15 arenas' not in s
+          s=Path('news/activate-town-square-opens-october-3/index.html').read_text()
           assert '<meta name="robots" content="index,follow,max-image-preview:large">' in s
           assert 'FAQPage' in s and 'BreadcrumbList' in s and 'NewsArticle' in s
+          assert '14 game rooms' in s
           for b in re.findall(r'<script type="application/ld\+json">(.*?)</script>',s,re.S): json.loads(b)
           assert '14 game rooms' in Path('news/index.html').read_text()
           print('Activate Dispatch checks passed')
