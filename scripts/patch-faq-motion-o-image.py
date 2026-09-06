@@ -10,7 +10,8 @@ def patch(path_str, fix_o=False):
     path = Path(path_str)
     s = path.read_text(encoding='utf-8')
     if fix_o:
-        s = s.replace('/images/o-hero.jpg', '/images/o-hero.webp')
+        s = s.replace('/images/o-hero.jpg', '/images/o-show-2.jpg')
+        s = s.replace('/images/o-hero.webp', '/images/o-show-2.jpg')
     if 'Match Carrot Top FAQ icon motion' not in s:
         marker = '</style>'
         if marker not in s:
