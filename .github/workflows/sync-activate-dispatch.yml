@@ -1,0 +1,35 @@
+name: Sync Activate Dispatch
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/sync-activate-dispatch.yml']
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/sync-activate-dispatch.py
+      - name: Validate article
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,re
+          p=Path('news/activate-town-square-opens-october-3/index.html')
+          s=p.read_text()
+          assert '15 arenas' not in s
+          assert '<meta name="robots" content="index,follow,max-image-preview:large">' in s
+          assert 'FAQPage' in s and 'BreadcrumbList' in s and 'NewsArticle' in s
+          for b in re.findall(r'<script type="application/ld\+json">(.*?)</script>',s,re.S): json.loads(b)
+          assert '14 game rooms' in Path('news/index.html').read_text()
+          print('Activate Dispatch checks passed')
+          PY
+      - name: Commit sync
+        run: |
+          git config user.name "Vegas Sidekick Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add news/index.html index.html sitemap.xml
+          git diff --cached --quiet && exit 0
+          git commit -m "Sync Activate opening details across site"
+          git push origin main
