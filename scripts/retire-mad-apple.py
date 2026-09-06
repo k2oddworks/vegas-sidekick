@@ -29,7 +29,7 @@ def rewrite_jsonld(script):
                             touched=True; continue
                         nv.append(clean(item))
                     obj[k]=nv
-                    if k in ('itemListElement','itemListOrder') and isinstance(obj[k],list):
+                    if k=='itemListElement' and isinstance(obj[k],list):
                         for i,item in enumerate(obj[k],1):
                             if isinstance(item,dict) and 'position' in item: item['position']=i
                 else: obj[k]=clean(v)
@@ -41,13 +41,14 @@ def rewrite_jsonld(script):
     return touched
 
 def find_removal(a):
-    if a.name=='tr': return a
     for p in [a,*list(a.parents)[:6]]:
-        if getattr(p,'name',None)=='tr': return p
-        classes=set(p.get('class',[])) if hasattr(p,'get') else set()
-        if p.name=='article' and ('card' in classes or any('card' in c for c in classes)): return p
-        if p.name=='a' and (classes & CARD_CLASSES or any('card' in c for c in classes)): return p
-        if p.name in ('div','li') and (classes & CARD_CLASSES or any(c in CARD_CLASSES or c.endswith('-card') for c in classes)):
+        name=getattr(p,'name',None)
+        if name=='tr': return p
+        attrs=getattr(p,'attrs',None) or {}
+        classes=set(attrs.get('class',[]) or [])
+        if name=='article' and ('card' in classes or any('card' in c for c in classes)): return p
+        if name=='a' and (classes & CARD_CLASSES or any('card' in c for c in classes)): return p
+        if name in ('div','li') and (classes & CARD_CLASSES or any(c in CARD_CLASSES or c.endswith('-card') for c in classes)):
             return p
     return None
 
@@ -60,24 +61,22 @@ for path in ROOT.rglob('*.html'):
     touched=False
     for a in list(soup.find_all('a',href=TARGET)):
         rem=find_removal(a)
-        if rem is not None and rem.name not in ('html','body'):
+        if rem is not None and getattr(rem,'name',None) not in ('html','body'):
             rem.decompose(); touched=True
         else:
             a['href']=NEWS
-            if a.get_text(' ',strip=True).lower().startswith(('get tickets','see mad apple','book','check tickets')):
-                a.string='Read closure update →'
+            label=a.get_text(' ',strip=True).lower()
+            if label.startswith(('get tickets','see mad apple','book','check tickets')):
+                a.clear(); a.append('Read closure update →')
             touched=True
     for s in soup.find_all('script',attrs={'type':'application/ld+json'}):
         if rewrite_jsonld(s): touched=True
-    # Renumber ranked guide cards after removals.
     if rel.startswith('guides/'):
         ranks=soup.select('article.card .rank')
         for i,r in enumerate(ranks,1):
             if r.get_text(strip=True)!=str(i): r.string=str(i); touched=True
-    # Remove stale Mad Apple rows in ordinary comparison tables even when the link wasn't exact.
     for tr in list(soup.find_all('tr')):
         if 'mad apple' in tr.get_text(' ',strip=True).lower(): tr.decompose(); touched=True
-    # Known stale category/venue copy.
     if rel=='shows/cirque/index.html':
         for node in list(soup.find_all(string=re.compile('Mad Apple',re.I))):
             t=str(node)
@@ -92,7 +91,7 @@ for path in ROOT.rglob('*.html'):
         for meta in soup.find_all('meta'):
             c=meta.get('content','')
             if 'Mad Apple' in c:
-                meta['content']=re.sub(r'All 7 shows at MGM Grand & New York-New York[^.]*\.?','Current shows at MGM Grand and New York-New York, with prices, venues and honest recommendations.',c); touched=True
+                meta['content']='Current shows at MGM Grand and New York-New York, with prices, venues and honest recommendations.'; touched=True
         if soup.title and 'Mad Apple' in soup.title.get_text():
             soup.title.string='Las Vegas Shows at MGM Grand & New York-New York (2026) | Vegas Sidekick'; touched=True
     if touched:
@@ -101,21 +100,17 @@ for path in ROOT.rglob('*.html'):
         path.write_text(out,encoding='utf-8')
         changed.append(rel)
 
-# Search/index data: remove simple one-line or object entries that explicitly point at the active Mad Apple URL.
 for path in list(ROOT.rglob('*.js'))+list(ROOT.rglob('*.json')):
     rel=path.as_posix()
     if rel.startswith(('preview/','node_modules/','.git/')): continue
     text=path.read_text(encoding='utf-8')
     if 'mad-apple' not in text.lower(): continue
     old=text
-    # Common JSON object/list entry shapes.
     text=re.sub(r'\{[^{}]*?(?:mad-apple|Mad Apple)[^{}]*?\}\s*,?', '', text, flags=re.I|re.S)
-    # Common single-line data rows.
-    text='\n'.join(line for line in text.splitlines() if not ('mad-apple' in line.lower() and ('show' in line.lower() or 'Mad Apple' in line)))+'\n'
+    text='\n'.join(line for line in text.splitlines() if not ('mad-apple' in line.lower() and ('show' in line.lower() or 'mad apple' in line.lower())))+'\n'
     if text!=old:
         path.write_text(text,encoding='utf-8'); changed.append(rel)
 
-# Documentation inventory: mark retired rather than leaving it as an active-price example/table row.
 for rel in ('SHOW-BUILDER-PROMPT.md','VS_CHAT_CONTEXT.md'):
     path=Path(rel)
     if not path.exists(): continue
