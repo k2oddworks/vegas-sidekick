@@ -1,0 +1,22 @@
+name: Sync Mystere price
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/sync-mystere-price.yml']
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sync Mystere price references
+        run: python scripts/sync-mystere-price.py
+      - name: Commit synced prices
+        run: |
+          git config user.name "Vegas Sidekick Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add . ':!.github/workflows/sync-mystere-price.yml' ':!scripts/sync-mystere-price.py'
+          git diff --cached --quiet && exit 0
+          git commit -m "Sync Mystere price to 84"
+          git push origin main
