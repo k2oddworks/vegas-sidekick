@@ -1,0 +1,42 @@
+name: Promote guide system
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/promote-guide-system.yml']
+permissions:
+  contents: write
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/promote-guide-system.py
+      - name: Validate guide rollout
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re, json
+          guides=Path('guides')
+          assert 'Tell me what kind of Vegas night you want.' in (guides/'index.html').read_text()
+          ft=(guides/'best-shows-for-first-timers/index.html').read_text()
+          assert 'For a first Vegas trip, I’d start with VEGAS! The Show.' in ft
+          assert 'Email not required. Want occasional Vegas updates? Join our list.' in ft
+          # #1 visible card should contain VEGAS after the rank marker
+          m=re.search(r'<article class="card">(.*?)</article>',ft,re.S)
+          assert m and 'VEGAS! The Show' in m.group(1) and '<div class="rank">1</div>' in m.group(1)
+          for p in guides.glob('*/index.html'):
+              s=p.read_text()
+              assert 'guide-benchmark-v2' in s, p
+              assert 'No email wall' not in s and 'no email wall' not in s, p
+              for b in re.findall(r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',s,re.S|re.I):
+                  json.loads(b.strip())
+          print('Guide rollout validated')
+          PY
+      - name: Commit live guides
+        run: |
+          git config user.name "Vegas Sidekick Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add guides
+          git diff --cached --quiet && exit 0
+          git commit -m "Promote new guide design system"
+          git push origin main
