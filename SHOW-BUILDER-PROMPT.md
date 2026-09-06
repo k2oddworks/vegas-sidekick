@@ -57,6 +57,31 @@ Main content sections order (inside `<main>`):
 
 ---
 
+## Current Show-Page Benchmark — Carrot Top
+
+**Current benchmark/model:** `shows/comedy/carrot-top/index.html`. For new show pages and major rebuilds, use Carrot Top as the interaction, conversion, motion, mobile UX, and SEO metadata benchmark. Preserve each show's own personality; reuse the system, not the skin.
+
+### Required SEO metadata package
+Every rebuilt show page must include all of the following:
+
+- Unique `<title>` targeting the show plus useful Las Vegas ticket intent
+- Unique `<meta name="description">` using verified current price/venue/show facts
+- `<meta name="robots" content="index,follow,max-image-preview:large">`
+- Self-referencing canonical URL
+- Open Graph: `og:type`, `og:site_name`, `og:title`, `og:description`, `og:image`, `og:image:alt`, `og:url`
+- Twitter: `twitter:card=summary_large_image` and `twitter:image`
+- Preload the primary hero image used above the fold
+- JSON-LD: `EventSeries` (or `Event` when appropriate), `BreadcrumbList`, visible-FAQ-backed `FAQPage`, and `WebPage` author/date metadata
+- `organizer.url` must be present; use a verified official organizer URL when known, otherwise follow the repo convention used by existing benchmark pages
+- `offers.price` must be a bare numeric value with no `$`
+- `offers.validFrom` is required; use the real on-sale date when known, otherwise the repo default date documented in the structured-data rules
+- Structured-data image order must match the page's primary social/hero image unless explicitly directed otherwise
+- Run `python3 scripts/audit-event-schema.py` before shipping and fix any issues caused by the changed page
+
+Do not add unverifiable urgency, discounts, fee claims, delivery promises, ratings, or review counts to metadata or structured data.
+
+---
+
 ## Building the Page (Technical Notes)
 
 Pages are 200–350 KB of HTML. **Do not use the Edit tool for initial page creation** — build the entire file in Python and write it with `open(..., 'w').write(html)`.
