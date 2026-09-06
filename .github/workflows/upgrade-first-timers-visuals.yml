@@ -1,0 +1,28 @@
+name: Upgrade First-Timers Visuals
+on:
+  push:
+    paths:
+      - 'scripts/upgrade-first-timers-visuals.py'
+jobs:
+  upgrade:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: python scripts/upgrade-first-timers-visuals.py
+      - name: Validate result
+        run: |
+          grep -q 'first-timers-photo-upgrade' guides/best-shows-for-first-timers/index.html
+          grep -q 'ft-visuals' guides/best-shows-for-first-timers/index.html
+          grep -q 'qa-photo' guides/best-shows-for-first-timers/index.html
+      - name: Commit result
+        run: |
+          git config user.name 'Kris Kidd'
+          git config user.email 'k2oddworks@gmail.com'
+          git add guides/best-shows-for-first-timers/index.html
+          git diff --cached --quiet || git commit -m 'Add real show photography to First-Timers guide'
+          git push
