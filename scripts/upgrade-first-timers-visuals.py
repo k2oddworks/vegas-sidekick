@@ -18,3 +18,4 @@ if old3 not in s: raise SystemExit('quick cards not found')
 s=s.replace(old3,new3,1)
 p.write_text(s,encoding='utf-8')
 print('First-Timers visual upgrade applied')
+# trigger
