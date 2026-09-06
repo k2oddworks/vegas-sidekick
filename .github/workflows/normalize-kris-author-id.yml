@@ -1,0 +1,32 @@
+name: Normalize Kris author identity
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/normalize-kris-author-id.yml']
+permissions:
+  contents: write
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/normalize-kris-author-id.py
+      - name: Validate Kris entity
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('about/kris-kidd/index.html').read_text()
+          assert 'https://vegassidekick.com/about/kris-kidd/#kris' in p
+          assert 'https://www.linkedin.com/in/kris-kidd-009abb54' in p
+          a=Path('news/activate-town-square-opens-october-3/index.html').read_text()
+          assert '"author":{"@type":"Person","@id":"https://vegassidekick.com/about/kris-kidd/#kris","name":"Kris Kidd"' in a
+          print('Kris identity graph validated')
+          PY
+      - name: Commit normalization
+        run: |
+          git config user.name "Vegas Sidekick Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add news guides shows
+          git diff --cached --quiet && exit 0
+          git commit -m "Normalize Kris Kidd author entity across content"
+          git push origin main
