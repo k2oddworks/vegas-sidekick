@@ -1,50 +1,14 @@
 from pathlib import Path
-
-p=Path('guides/best-cheap-vegas-shows/index.html')
-s=p.read_text(encoding='utf-8')
-
-# Hero: turn existing single-column wrap into text + real-photo collage.
-s=s.replace('.g-hero .wrap{position:relative;z-index:2}', '.g-hero .wrap{position:relative;z-index:2;max-width:1180px}.g-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,.92fr);gap:42px;align-items:center}.g-hero-copy{min-width:0}.g-visuals{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:170px 170px;gap:10px;transform:rotate(-1deg)}.g-shot{position:relative;overflow:hidden;border-radius:18px;border:1px solid rgba(255,255,255,.24);box-shadow:0 18px 50px rgba(0,0,0,.25);background:#261147}.g-shot:first-child{grid-column:1/3}.g-shot img{width:100%;height:100%;object-fit:cover;display:block}.g-shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(13,5,27,.72))}.g-shot-label{position:absolute;left:12px;bottom:10px;z-index:2;font-family:var(--font-display);font-size:.78rem;font-weight:800;color:#fff}.g-shot-price{position:absolute;right:10px;top:10px;z-index:2;background:var(--pink);color:#fff;border-radius:999px;padding:5px 9px;font-family:var(--font-display);font-size:.72rem;font-weight:800}.g-shot:hover img{transform:scale(1.035)}.g-shot img{transition:transform .35s ease}')
-
-needle='</style>'
-css='''\n  .qa-photo{width:100%;height:118px;object-fit:cover;display:block;border-radius:12px 12px 0 0;margin:-1px -1px 10px;width:calc(100% + 2px)}\n  .benchmark-top3 a{overflow:hidden}\n  @media(max-width:820px){.g-hero-grid{grid-template-columns:1fr;gap:28px}.g-visuals{grid-template-rows:150px 150px;transform:none}.g-hero{padding-top:34px}.g-hero .wrap{max-width:860px}}\n  @media(max-width:520px){.g-visuals{grid-template-rows:130px 130px;gap:8px}.g-shot{border-radius:14px}.g-shot-label{font-size:.68rem}.qa-photo{height:105px}}\n  @media(prefers-reduced-motion:reduce){.g-shot img{transition:none}.g-shot:hover img{transform:none}}\n'''
-s=s.replace(needle,css+needle,1)
-
-hero_start='<div class="g-hero">'
-if hero_start not in s: hero_start='<section class="g-hero">'
-pos=s.find(hero_start)
-if pos<0: raise SystemExit('hero not found')
-wrap=s.find('<div class="wrap">',pos)
-if wrap<0: raise SystemExit('hero wrap not found')
-insert_at=wrap+len('<div class="wrap">')
-s=s[:insert_at]+'<div class="g-hero-grid"><div class="g-hero-copy">'+s[insert_at:]
-meta=s.find('class="g-meta"',insert_at)
-if meta<0: raise SystemExit('g-meta not found')
-marker='All under <b>$50</b>'
-mi=s.find(marker,meta)
-if mi<0: raise SystemExit('last meta marker not found')
-meta_close=s.find('</div>',mi)
-collage='''</div><div class="g-visuals" aria-label="Top cheap Vegas show picks">
-<a class="g-shot" href="/shows/comedy/jimmy-kimmels-comedy-club/"><img src="/images/jimmy-kimmels-comedy-club-hero.webp" alt="Jimmy Kimmel's Comedy Club in Las Vegas"><span class="g-shot-price">From $27</span><span class="g-shot-label">#1 Jimmy Kimmel's Comedy Club</span></a>
-<a class="g-shot" href="/shows/comedy/marc-savard-comedy-hypnosis/"><img src="/images/marc-savard-comedy-hypnosis-hero.jpg" alt="Marc Savard Comedy Hypnosis in Las Vegas"><span class="g-shot-price">From $28</span><span class="g-shot-label">#2 Marc Savard</span></a>
-<a class="g-shot" href="/shows/magic/allstars-of-magic/"><img src="/images/allstars-of-magic-hero.jpg" alt="Allstars of Magic in Las Vegas"><span class="g-shot-price">From $31</span><span class="g-shot-label">#3 Allstars of Magic</span></a>
-</div></div>'''
-s=s[:meta_close+6]+collage+s[meta_close+6:]
-
-repls={
-'<a href="/shows/comedy/jimmy-kimmels-comedy-club/">':'<a href="/shows/comedy/jimmy-kimmels-comedy-club/"><img class="qa-photo" src="/images/jimmy-kimmels-comedy-club-hero.webp" alt="Jimmy Kimmel’s Comedy Club">',
-'<a href="/shows/comedy/marc-savard-comedy-hypnosis/">':'<a href="/shows/comedy/marc-savard-comedy-hypnosis/"><img class="qa-photo" src="/images/marc-savard-comedy-hypnosis-hero.jpg" alt="Marc Savard Comedy Hypnosis">',
-'<a href="/shows/magic/allstars-of-magic/">':'<a href="/shows/magic/allstars-of-magic/"><img class="qa-photo" src="/images/allstars-of-magic-hero.jpg" alt="Allstars of Magic">'
-}
-top=s.find('benchmark-top3')
-if top<0: raise SystemExit('benchmark-top3 not found')
-for old,new in repls.items():
-    i=s.find(old,top)
-    if i<0: raise SystemExit('top3 link not found '+old)
-    s=s[:i]+new+s[i+len(old):]
-
-assert s.count('class="g-shot"')==3
-assert s.count('class="qa-photo"')==3
-p.write_text(s,encoding='utf-8')
-print('Cheap guide visual upgrade applied')
-# trigger workflow
+p=Path('guides/best-cheap-vegas-shows/index.html'); s=p.read_text(encoding='utf-8')
+css='''<style id="cheap-guide-photo-upgrade">.g-hero .wrap{max-width:1180px}.g-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,.92fr);gap:42px;align-items:center}.g-hero-copy{min-width:0}.g-visuals{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:176px 176px;gap:10px;transform:rotate(-1deg)}.g-shot{position:relative;overflow:hidden;border-radius:18px;border:1px solid rgba(255,255,255,.24);box-shadow:0 18px 50px rgba(0,0,0,.25);background:#261147}.g-shot:first-child{grid-column:1/3}.g-shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}.g-shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(13,5,27,.78))}.g-shot-label{position:absolute;left:12px;bottom:10px;z-index:2;font-family:var(--font-display);font-size:.76rem;font-weight:800;color:#fff}.g-shot-price{position:absolute;right:10px;top:10px;z-index:2;background:var(--pink);color:#fff;border-radius:999px;padding:5px 9px;font-family:var(--font-display);font-size:.72rem;font-weight:800}.g-shot:hover img{transform:scale(1.035)}.guide-mini a{padding:0 0 14px;overflow:hidden}.guide-mini a small,.guide-mini a strong,.guide-mini a .mini-detail{margin-left:14px;margin-right:14px}.qa-photo{width:100%;height:112px;object-fit:cover;display:block;margin-bottom:12px}.mini-detail{display:block;font-size:.82rem;color:#5d566a;line-height:1.35;margin-top:5px}@media(max-width:820px){.g-hero-grid{grid-template-columns:1fr;gap:26px}.g-visuals{grid-template-rows:148px 148px;transform:none}.g-hero{padding-top:34px}}@media(max-width:520px){.g-visuals{grid-template-rows:124px 124px;gap:8px}.g-shot{border-radius:14px}.g-shot-label{font-size:.66rem}.qa-photo{height:120px}}@media(prefers-reduced-motion:reduce){.g-shot img{transition:none}.g-shot:hover img{transform:none}}</style>'''
+s=s.replace('</head>',css+'</head>',1)
+start=s.index('<header class="g-hero"><div class="wrap">'); end=s.index('</header>',start)+9
+old=s[start:end]
+if 'The Best <span class="accent">Cheap</span> Vegas Shows' not in old: raise SystemExit('Unexpected hero; refusing edit')
+hero='''<header class="g-hero"><div class="wrap"><div class="g-hero-grid"><div class="g-hero-copy"><span class="g-eyebrow">🌵 Vegas On A Budget</span><h1>The Best <span class="accent">Cheap</span> Vegas Shows</h1><p class="g-sub">27 genuinely good shows under $50 — ranked cheapest first. No nosebleeds, no regrets, no shows we wouldn't send our own friends to.</p><div class="g-meta"><span class="kris-byline"><img src="/images/kris-kidd.webp" alt="Kris Kidd" width="28" height="28">By <a href="/about/kris-kidd/">Kris Kidd</a></span><span>Updated <b>Aug 2026</b></span><span><b>27</b> shows</span><span>From <b>$27</b></span><span>All under <b>$50</b></span></div></div><div class="g-visuals" aria-label="Photos of the top three cheap Vegas show picks"><a class="g-shot" href="/shows/comedy/jimmy-kimmels-comedy-club/"><img src="/images/jimmy-kimmels-comedy-club-hero.webp" alt="Jimmy Kimmel's Comedy Club in Las Vegas"><span class="g-shot-price">From $27</span><span class="g-shot-label">#1 Jimmy Kimmel's Comedy Club</span></a><a class="g-shot" href="/shows/comedy/marc-savard-comedy-hypnosis/"><img src="/images/marc-savard-comedy-hypnosis-hero.jpg" alt="Marc Savard Comedy Hypnosis in Las Vegas"><span class="g-shot-price">From $28</span><span class="g-shot-label">#2 Marc Savard</span></a><a class="g-shot" href="/shows/magic/allstars-of-magic/"><img src="/images/allstars-of-magic-hero.jpg" alt="Allstars of Magic in Las Vegas"><span class="g-shot-price">From $31</span><span class="g-shot-label">#3 Allstars of Magic</span></a></div></div></div></header>'''
+s=s[:start]+hero+s[end:]
+mini_start=s.index('<div class="guide-mini">'); mini_end=s.index('</div></div></section>',mini_start)
+mini='''<div class="guide-mini"><a href="/shows/comedy/jimmy-kimmels-comedy-club/"><img class="qa-photo" src="/images/jimmy-kimmels-comedy-club-hero.webp" alt="Jimmy Kimmel's Comedy Club"><small>#1 pick</small><strong>Jimmy Kimmel's Comedy Club</strong><span class="mini-detail">The LINQ Promenade · $27</span></a><a href="/shows/comedy/marc-savard-comedy-hypnosis/"><img class="qa-photo" src="/images/marc-savard-comedy-hypnosis-hero.jpg" alt="Marc Savard Comedy Hypnosis"><small>#2 pick</small><strong>Marc Savard Comedy Hypnosis</strong><span class="mini-detail">Nathan Burton Theater · Showcase Mall · $28</span></a><a href="/shows/magic/allstars-of-magic/"><img class="qa-photo" src="/images/allstars-of-magic-hero.jpg" alt="Allstars of Magic"><small>#3 pick</small><strong>Allstars of Magic</strong><span class="mini-detail">V Theater · Planet Hollywood · $31</span></a></div>'''
+s=s[:mini_start]+mini+s[mini_end:]
+assert s.count('class="g-shot"')==3 and s.count('class="qa-photo"')==3
+p.write_text(s,encoding='utf-8'); print('Cheap Shows photo rebuild applied')
