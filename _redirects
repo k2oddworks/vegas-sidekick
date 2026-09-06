@@ -38,3 +38,9 @@
 # Old private pages consolidated into the HQ hub
 /brand-bible/* /hq/ 301
 /build-log/* /hq/ 301
+
+
+# Carrot Top v3 promoted to the established show URL
+/preview/carrot-top-v3 /shows/comedy/carrot-top/ 301
+/preview/carrot-top-v3/ /shows/comedy/carrot-top/ 301
+/preview/carrot-top-v3/index.html /shows/comedy/carrot-top/ 301
