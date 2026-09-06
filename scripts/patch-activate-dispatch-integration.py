@@ -24,9 +24,8 @@ s = re.sub(
 # Byline: author avatar + published date only. dateModified stays in schema.
 byline_old = 'By <a href="/about/kris-kidd/">Kris Kidd</a> · Published September 2, 2026 · Updated September 5, 2026'
 byline_new = '<span class="author-inline"><img src="/images/kris-kidd-avatar.jpg" alt="Kris Kidd" width="30" height="30">By <a href="/about/kris-kidd/">Kris Kidd</a></span> · Published September 2, 2026'
-s = s.replace(byline_old, byline_new)
-# Cover any additional plain Kris bylines on this page.
-s = re.sub(r'(?<!author-inline">)By <a href="/about/kris-kidd/">Kris Kidd</a>', '<span class="author-inline"><img src="/images/kris-kidd-avatar.jpg" alt="Kris Kidd" width="30" height="30">By <a href="/about/kris-kidd/">Kris Kidd</a></span>', s)
+if 'class="author-inline"' not in s:
+    s = s.replace(byline_old, byline_new, 1)
 
 # Author image in NewsArticle JSON-LD.
 s = s.replace('"author":{"@type":"Person","name":"Kris Kidd","url":"https://vegassidekick.com/about/kris-kidd/"}', '"author":{"@type":"Person","name":"Kris Kidd","url":"https://vegassidekick.com/about/kris-kidd/","image":"https://vegassidekick.com/images/kris-kidd-avatar.jpg"}')
@@ -84,7 +83,7 @@ js = '''
 })();
 </script>
 '''
-if "dispatchEmailForm');" not in s:
+if "const form=document.getElementById('dispatchEmailForm');" not in s:
     s = s.replace('</body>', js + '</body>', 1)
 
 article.write_text(s, encoding='utf-8')
@@ -95,7 +94,7 @@ t = idx.read_text(encoding='utf-8')
 old = '<span class="featured-author">By Kris Kidd</span>'
 new = '<span class="featured-author featured-author-with-avatar"><img src="/images/kris-kidd-avatar.jpg" alt="Kris Kidd" width="26" height="26">By Kris Kidd</span>'
 t = t.replace(old, new, 1)
-if '.featured-author-with-avatar' not in t:
+if '.featured-author-with-avatar{' not in t:
     t = t.replace('</style>', '.featured-author-with-avatar{display:inline-flex;align-items:center;gap:7px}.featured-author-with-avatar img{width:26px;height:26px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.13)}\n</style>', 1)
 idx.write_text(t, encoding='utf-8')
 
