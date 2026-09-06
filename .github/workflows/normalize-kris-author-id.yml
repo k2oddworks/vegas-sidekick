@@ -11,16 +11,35 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python3 scripts/normalize-kris-author-id.py
-      - name: Validate Kris entity
+      - name: Validate Kris authorship system
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          p=Path('about/kris-kidd/index.html').read_text()
-          assert 'https://vegassidekick.com/about/kris-kidd/#kris' in p
+          import re
+          person='https://vegassidekick.com/about/kris-kidd/#kris'
+          profile='https://vegassidekick.com/about/kris-kidd/'
+          image='https://vegassidekick.com/images/kris-kidd.webp'
+          p=Path('about/kris-kidd/index.html').read_text(encoding='utf-8')
+          assert person in p
           assert 'https://www.linkedin.com/in/kris-kidd-009abb54' in p
-          a=Path('news/activate-town-square-opens-october-3/index.html').read_text()
-          assert '"author":{"@type":"Person","@id":"https://vegassidekick.com/about/kris-kidd/#kris","name":"Kris Kidd"' in a
-          print('Kris identity graph validated')
+          authored=0
+          avatar_byline=0
+          for folder in ['news','guides','shows']:
+              for f in Path(folder).rglob('*.html'):
+                  s=f.read_text(encoding='utf-8')
+                  if 'Kris Kidd' not in s:
+                      continue
+                  if '"author"' in s and person in s:
+                      authored += 1
+                  if 'class="kris-byline"' in s or 'class="author-inline"' in s or 'class="expert-box"' in s:
+                      avatar_byline += 1
+                  assert '<a href="/about/">Kris Kidd</a>' not in s, f
+                  for m in re.finditer(r'"author"\s*:\s*\{(?=[^{}]{0,800}"name"\s*:\s*"Kris Kidd")[^{}]*\}', s, re.S):
+                      obj=m.group(0)
+                      assert person in obj, f
+                      assert profile in obj, f
+                      assert image in obj, f
+          print(f'Validated {authored} authored pages; {avatar_byline} pages with visible Kris author treatment')
           PY
       - name: Commit normalization
         run: |
@@ -28,5 +47,5 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add news guides shows
           git diff --cached --quiet && exit 0
-          git commit -m "Normalize Kris Kidd author entity across content"
+          git commit -m "Standardize Kris Kidd authorship sitewide"
           git push origin main
