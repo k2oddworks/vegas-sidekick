@@ -15,8 +15,8 @@ jobs:
       - name: Validate changes
         run: |
           grep -q '/images/o-hero.webp' shows/cirque/mystere/index.html
-          grep -q "transform:rotate(180deg)" shows/cirque/mystere/index.html
-          grep -q "transform:rotate(180deg)" shows/music/vegas-the-show/index.html
+          grep -q 'Match Carrot Top FAQ icon motion' shows/cirque/mystere/index.html
+          grep -q 'Match Carrot Top FAQ icon motion' shows/music/vegas-the-show/index.html
       - name: Commit fixes
         run: |
           git config user.name "Vegas Sidekick Bot"
