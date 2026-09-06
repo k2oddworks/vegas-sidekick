@@ -1,0 +1,44 @@
+name: Standardize show SEO
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/standardize-show-seo.yml']
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply SEO standardization
+        run: python3 scripts/standardize-show-seo.py
+      - name: Validate target metadata and JSON-LD
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,re
+          for p in [Path('shows/music/vegas-the-show/index.html'), Path('shows/cirque/mystere/index.html')]:
+              s=p.read_text(encoding='utf-8')
+              required=[
+                  '<meta name="robots" content="index,follow,max-image-preview:large">',
+                  '<meta property="og:site_name" content="Vegas Sidekick">',
+                  '<meta property="og:image:alt"',
+                  '<meta name="twitter:image"'
+              ]
+              for token in required:
+                  assert token in s, f'{p}: missing {token}'
+              blocks=re.findall(r'<script type="application/ld\+json">(.*?)</script>',s,re.S)
+              assert blocks, f'{p}: no JSON-LD'
+              for block in blocks: json.loads(block)
+          print('Target metadata and JSON-LD parse cleanly.')
+          PY
+      - name: Run repository structured-data audit
+        run: python3 scripts/audit-event-schema.py
+      - name: Commit standardization
+        run: |
+          git config user.name "Vegas Sidekick Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add shows/music/vegas-the-show/index.html shows/cirque/mystere/index.html SHOW-BUILDER-PROMPT.md
+          git diff --cached --quiet && exit 0
+          git commit -m "Standardize show SEO metadata benchmark"
+          git push origin main
