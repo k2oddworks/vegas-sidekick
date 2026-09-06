@@ -169,7 +169,12 @@
 .kris-byline img{width:28px!important;height:28px!important;border-radius:50%;object-fit:cover;flex:0 0 28px;border:2px solid rgba(255,255,255,.75);box-shadow:0 2px 8px rgba(0,0,0,.14)}
 .kris-byline a{text-decoration:underline;text-underline-offset:3px}
 </style>
-</head>
+<style id="guide-benchmark-v2">
+:root{--gb-ink:#171225;--gb-muted:#6c6883;--gb-purple:#6d28d9;--gb-pink:#ff2e7e;--gb-lime:#c6f22e;--gb-soft:#f6f3fb;--gb-line:#e8e3f0}
+.guide-sticky{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--gb-line);overflow:auto;white-space:nowrap}.guide-sticky .wrap{display:flex;gap:20px;padding-top:12px;padding-bottom:12px;font-size:12px;font-weight:800}.guide-quick{margin:34px 0 26px;padding:26px;border-radius:22px;background:linear-gradient(135deg,#efe9ff,#fff0f6);border:1px solid #ddd2f6}.guide-quick .k{font-size:11px;font-weight:800;color:var(--gb-purple);letter-spacing:.12em;text-transform:uppercase}.guide-quick h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);line-height:1.05;margin:9px 0}.guide-quick p{margin:0;color:#4d4658}.guide-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}.guide-mini a{display:block;background:#fff;border:1px solid var(--gb-line);border-radius:14px;padding:14px}.guide-mini small{display:block;font-size:10px;font-weight:800;color:var(--gb-purple);text-transform:uppercase}.guide-mini strong{display:block;margin-top:5px}.guide-compare-wrap{margin:24px 0 34px;overflow:auto}.guide-compare{width:100%;border-collapse:collapse;font-size:13px;min-width:620px}.guide-compare th,.guide-compare td{text-align:left;padding:12px;border-bottom:1px solid var(--gb-line)}.guide-compare th{font-size:10px;color:var(--gb-muted);text-transform:uppercase;letter-spacing:.06em}.guide-method{margin:42px 0;padding:26px;border-radius:20px;background:#150a22;color:#fff}.guide-method h2{color:#fff;margin-top:0}.guide-method p{color:#d7cce0;margin-bottom:0}.guide-email-note{margin:26px 0;padding:22px;border-radius:18px;background:linear-gradient(135deg,#6d28d9,#ff2e7e);color:#fff}.guide-email-note strong{font-family:'Plus Jakarta Sans',sans-serif;display:block;font-size:1.2rem;margin-bottom:5px}.guide-email-note p{margin:0;color:#fff}.guide-related{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}.guide-related a{background:var(--gb-soft);border:1px solid var(--gb-line);border-radius:15px;padding:17px;font-weight:800}.card,.rank-card{transition:transform .2s,box-shadow .2s,border-color .2s}.card:hover,.rank-card:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(23,18,37,.1);border-color:#cbb9ef}
+@media(max-width:720px){.guide-mini,.guide-related{grid-template-columns:1fr}.guide-quick{padding:21px}.guide-sticky .wrap{width:max-content}.card{border-radius:20px!important}}
+@media(prefers-reduced-motion:reduce){.card,.rank-card{transition:none!important}.card:hover,.rank-card:hover{transform:none}}
+</style></head>
 <body>
 <div id="vs-header"></div>
 <div id="vs-progress"></div>
@@ -186,9 +191,9 @@
     <span>From <b>$35</b></span>
     <span><b>18+</b> most shows</span>
   </div>
-</div></header>
+</div></header><nav class="guide-sticky"><div class="wrap"><a href="#quick-answer">Quick answer</a><a href="#compare">Compare</a><a href="#ranking">Full ranking</a><a href="#faq">FAQ</a></div></nav>
 
-<main><div class="wrap">
+<main><div class="wrap"><section id="quick-answer"><div class="guide-quick"><div class="k">🌵 The quick answer</div><h2>Magic Mike Live is my #1 pick here.</h2><p>90 minutes of world-class choreography and live music, created and directed by Channing Tatum in a purpose-built theater. The biggest production budget of any male revue on the Strip.</p><div class="guide-mini"><a href="/shows/adult/magic-mike-live/"><small>#1 pick</small><strong>Magic Mike Live</strong>MAGIC MIKE LIVE Theater · SAHARA Las Vegas · $71</a><a href="/shows/adult/atomic-saloon/"><small>#2 pick</small><strong>Atomic Saloon Show</strong>Waterfall Atrium, Level 2M · The Venetian · $90</a><a href="/shows/adult/x-burlesque/"><small>#3 pick</small><strong>X Burlesque</strong>Bugsy's Cabaret · Flamingo Las Vegas · $82</a></div></div></section><section id="compare"><h2>Compare the top picks.</h2><div class="guide-compare-wrap"><table class="guide-compare"><thead><tr><th>Rank</th><th>Show</th><th>From</th><th>Venue</th><th>Best fit</th></tr></thead><tbody><tr><td>#1</td><td><strong>Magic Mike Live</strong></td><td>$71</td><td>MAGIC MIKE LIVE Theater · SAHARA Las Vegas</td><td>Headliner · Male Revue</td></tr><tr><td>#2</td><td><strong>Atomic Saloon Show</strong></td><td>$90</td><td>Waterfall Atrium, Level 2M · The Venetian</td><td>Most Theatrical · Wild West Variety</td></tr><tr><td>#3</td><td><strong>X Burlesque</strong></td><td>$82</td><td>Bugsy's Cabaret · Flamingo Las Vegas</td><td>Award-Winning · Female Revue</td></tr><tr><td>#4</td><td><strong>Chippendales</strong></td><td>$76</td><td>Chippendales Theatre · Planet Hollywood</td><td>Vegas Institution · Male Revue</td></tr><tr><td>#5</td><td><strong>Thunder From Down Under</strong></td><td>$70</td><td>Thunderland Theater · Excalibur</td><td>Bachelorette Favorite · Male Revue</td></tr></tbody></table></div></section><div id="ranking"></div>
   <p class="lede">"Adult" in Vegas covers a lot more ground than most first-timers expect — male revues, female burlesque, and a couple of shows that don't fit either box.</p>
   <p class="intro">We ranked every adult show in our catalog — the biggest productions first, then the specialists and the best-value picks. Every price is the real <b>"from" price</b> through Vegas Sidekick — no membership, no account, no hidden fees. Nearly all require guests to be 18+; we flag the one exception below.</p>
 
@@ -371,7 +376,7 @@
       <a class="btn btn-ghost" href="/guides/">More Guides →</a>
     </div>
   </div>
-</div></main>
+</div><section class="guide-method"><h2>How I make this ranking.</h2><p>The order is based on fit for this specific guide, not who has the biggest ad budget. I weigh the show itself, price, audience fit, venue context and the downside I would tell a friend before they bought.</p></section><div class="guide-email-note"><strong>Want the useful Vegas updates?</strong><p>Email not required. Want occasional Vegas updates? Join our list.</p></div></main>
 
 <div id="vs-footer"></div>
 <script>

@@ -185,7 +185,12 @@
 .kris-byline img{width:28px!important;height:28px!important;border-radius:50%;object-fit:cover;flex:0 0 28px;border:2px solid rgba(255,255,255,.75);box-shadow:0 2px 8px rgba(0,0,0,.14)}
 .kris-byline a{text-decoration:underline;text-underline-offset:3px}
 </style>
-</head>
+<style id="guide-benchmark-v2">
+:root{--gb-ink:#171225;--gb-muted:#6c6883;--gb-purple:#6d28d9;--gb-pink:#ff2e7e;--gb-lime:#c6f22e;--gb-soft:#f6f3fb;--gb-line:#e8e3f0}
+.guide-sticky{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--gb-line);overflow:auto;white-space:nowrap}.guide-sticky .wrap{display:flex;gap:20px;padding-top:12px;padding-bottom:12px;font-size:12px;font-weight:800}.guide-quick{margin:34px 0 26px;padding:26px;border-radius:22px;background:linear-gradient(135deg,#efe9ff,#fff0f6);border:1px solid #ddd2f6}.guide-quick .k{font-size:11px;font-weight:800;color:var(--gb-purple);letter-spacing:.12em;text-transform:uppercase}.guide-quick h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);line-height:1.05;margin:9px 0}.guide-quick p{margin:0;color:#4d4658}.guide-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}.guide-mini a{display:block;background:#fff;border:1px solid var(--gb-line);border-radius:14px;padding:14px}.guide-mini small{display:block;font-size:10px;font-weight:800;color:var(--gb-purple);text-transform:uppercase}.guide-mini strong{display:block;margin-top:5px}.guide-compare-wrap{margin:24px 0 34px;overflow:auto}.guide-compare{width:100%;border-collapse:collapse;font-size:13px;min-width:620px}.guide-compare th,.guide-compare td{text-align:left;padding:12px;border-bottom:1px solid var(--gb-line)}.guide-compare th{font-size:10px;color:var(--gb-muted);text-transform:uppercase;letter-spacing:.06em}.guide-method{margin:42px 0;padding:26px;border-radius:20px;background:#150a22;color:#fff}.guide-method h2{color:#fff;margin-top:0}.guide-method p{color:#d7cce0;margin-bottom:0}.guide-email-note{margin:26px 0;padding:22px;border-radius:18px;background:linear-gradient(135deg,#6d28d9,#ff2e7e);color:#fff}.guide-email-note strong{font-family:'Plus Jakarta Sans',sans-serif;display:block;font-size:1.2rem;margin-bottom:5px}.guide-email-note p{margin:0;color:#fff}.guide-related{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}.guide-related a{background:var(--gb-soft);border:1px solid var(--gb-line);border-radius:15px;padding:17px;font-weight:800}.card,.rank-card{transition:transform .2s,box-shadow .2s,border-color .2s}.card:hover,.rank-card:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(23,18,37,.1);border-color:#cbb9ef}
+@media(max-width:720px){.guide-mini,.guide-related{grid-template-columns:1fr}.guide-quick{padding:21px}.guide-sticky .wrap{width:max-content}.card{border-radius:20px!important}}
+@media(prefers-reduced-motion:reduce){.card,.rank-card{transition:none!important}.card:hover,.rank-card:hover{transform:none}}
+</style></head>
 <body>
 <div id="vs-header"></div>
 <div id="vs-progress"></div>
@@ -202,9 +207,9 @@
     <span>From <b>$56</b></span>
     <span><b>5</b> different Strip theaters</span>
   </div>
-</div></header>
+</div></header><nav class="guide-sticky"><div class="wrap"><a href="#quick-answer">Quick answer</a><a href="#compare">Compare</a><a href="#ranking">Full ranking</a><a href="#faq">FAQ</a></div></nav>
 
-<main><div class="wrap">
+<main><div class="wrap"><section id="quick-answer"><div class="guide-quick"><div class="k">🌵 The quick answer</div><h2>&quot;O&quot; is my #1 pick here.</h2><p>The one to see if you only see one. Performed in, on and above a 1.5-million-gallon pool that transforms from solid stage to deep water in seconds — synchronized swimmers, high divers, aerialists. Twenty-five years on and nothing else in Vegas touches it for pure artistry. Our pick for the best Cirque show in Las Vegas.</p><div class="guide-mini"><a href="/shows/cirque/o/"><small>#1 pick</small><strong>&quot;O&quot;</strong>O Theatre · Bellagio · $156</a><a href="/shows/cirque/michael-jackson-one/"><small>#2 pick</small><strong>Michael Jackson ONE</strong>Mandalay Bay Theatre · $115</a><a href="/shows/cirque/ka/"><small>#3 pick</small><strong>KÀ</strong>KÀ Theatre · MGM Grand · $80</a></div></div></section><section id="compare"><h2>Compare the top picks.</h2><div class="guide-compare-wrap"><table class="guide-compare"><thead><tr><th>Rank</th><th>Show</th><th>From</th><th>Venue</th><th>Best fit</th></tr></thead><tbody><tr><td>#1</td><td><strong>&quot;O&quot;</strong></td><td>$156</td><td>O Theatre · Bellagio</td><td>The Icon · Aquatic Masterpiece</td></tr><tr><td>#2</td><td><strong>Michael Jackson ONE</strong></td><td>$115</td><td>Mandalay Bay Theatre</td><td>Crowd-Pleaser · Music &amp; Energy</td></tr><tr><td>#3</td><td><strong>KÀ</strong></td><td>$80</td><td>KÀ Theatre · MGM Grand</td><td>The Epic · Story-Driven</td></tr><tr><td>#4</td><td><strong>Mystère</strong></td><td>$84</td><td>Mystère Theatre · Treasure Island</td><td>The Original · Best for Families</td></tr><tr><td>#5</td><td><strong>Mad Apple</strong></td><td>$56</td><td>New York-New York Theater</td><td>Newest · Party &amp; Variety</td></tr></tbody></table></div></section><div id="ranking"></div>
   <p class="lede">No city on Earth has more Cirque du Soleil than Las Vegas — five resident productions, each in a theater built specifically for it, each a completely different animal. The hard part isn't finding one. It's picking which one.</p>
   <p class="intro">So here's every Cirque show in town, ranked — not by ticket price, but by who should actually see each one. A water masterpiece, a Michael Jackson dance party, a martial-arts epic, the all-ages original, and a New York variety bash. Every price is the real <b>"from" price</b> through Vegas Sidekick — no membership, no account, no hidden fees. Here's how to choose.</p>
 
@@ -308,7 +313,7 @@
       <a class="btn btn-ghost" href="/guides/">More Guides →</a>
     </div>
   </div>
-</div></main>
+</div><section class="guide-method"><h2>How I make this ranking.</h2><p>The order is based on fit for this specific guide, not who has the biggest ad budget. I weigh the show itself, price, audience fit, venue context and the downside I would tell a friend before they bought.</p></section><div class="guide-email-note"><strong>Want the useful Vegas updates?</strong><p>Email not required. Want occasional Vegas updates? Join our list.</p></div></main>
 
 <div id="vs-footer"></div>
 <script>
