@@ -60,10 +60,12 @@ for path in ROOT.rglob('*.html'):
     soup=BeautifulSoup(text,'html.parser')
     touched=False
     for a in list(soup.find_all('a',href=TARGET)):
+        if getattr(a,'attrs',None) is None:
+            continue
         rem=find_removal(a)
         if rem is not None and getattr(rem,'name',None) not in ('html','body'):
             rem.decompose(); touched=True
-        else:
+        elif getattr(a,'attrs',None) is not None:
             a['href']=NEWS
             label=a.get_text(' ',strip=True).lower()
             if label.startswith(('get tickets','see mad apple','book','check tickets')):
