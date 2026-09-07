@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'scripts/rebuild-marco-solis-dispatch.py'
+      - 'scripts/trigger-marco-solis-rebuild.txt'
 jobs:
   rebuild:
     runs-on: ubuntu-latest
