@@ -1,5 +1,5 @@
 // Vegas Sidekick — Shared Header Component
-// v14 — priority mobile actions + tinted category navigation + desktop Shows dropdown/search
+// v15 — priority navigation + canonical show runtime loader
 (function () {
   'use strict';
 
@@ -99,187 +99,99 @@
 .nav-cta{display:inline-flex;align-items:center;background:#ff2e7e;color:#fff!important;font:700 .9rem 'Plus Jakarta Sans',sans-serif;text-decoration:none;padding:10px 20px;border-radius:100px;box-shadow:0 8px 20px rgba(255,46,126,.28);transition:.18s;white-space:nowrap}
 .nav-cta:hover{background:#ff1f72;transform:translateY(-2px)}
 .nav-mobile-menu{display:none;background:none;border:0;color:#fff;font-size:1.55rem;cursor:pointer;padding:4px 7px;line-height:1}
-
-.nav-dropdown-wrap{position:relative}
-.nav-dropdown{position:absolute;left:0;top:calc(100% + 10px);width:560px;padding:12px;background:rgba(20,8,40,.98);border:1px solid rgba(255,255,255,.11);border-radius:16px;box-shadow:0 22px 55px rgba(5,2,12,.38);opacity:0;visibility:hidden;transform:translateY(-8px);transition:.18s;z-index:240}
-.nav-dropdown.open{opacity:1;visibility:visible;transform:none}
-.nav-dropdown-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.nav-dropdown a{display:flex;align-items:center;gap:11px;color:#fff;text-decoration:none;padding:12px;border-radius:11px;transition:.16s;min-width:0}
-.nav-dropdown a:hover{background:rgba(255,255,255,.075)}
-.nav-dropdown a b{display:block;font:700 .88rem 'Plus Jakarta Sans',sans-serif}
-.nav-dropdown a small{display:block;color:#a99db5;font-size:.72rem;margin-top:2px}
-.nav-dot{width:9px;height:9px;border-radius:50%;flex:0 0 9px;box-shadow:0 0 0 5px rgba(255,255,255,.04)}
-.dot-pink{background:#ff2e7e}.dot-purple{background:#8b5cf6}.dot-blue{background:#4f8df7}.dot-teal{background:#16c6c3}.dot-gold{background:#f3b93f}.dot-sky{background:#52b7f6}.dot-rose{background:#f06292}.dot-lime{background:#c6f22e}
-.dropdown-all{border:1px solid rgba(198,242,46,.18);background:rgba(198,242,46,.055)}
-.dropdown-arrow{margin-left:auto;color:#c6f22e;font-size:1.15rem}
-
-.nav-search-wrap{position:relative}
-.nav-search-btn{display:grid;place-items:center;width:38px;height:38px;border:1px solid rgba(255,255,255,.12);border-radius:50%;background:rgba(255,255,255,.06);color:#fff;cursor:pointer;font-size:1rem;transition:.18s}
-.nav-search-btn:hover,.nav-search-btn[aria-expanded="true"]{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.24)}
-.nav-search-popover{position:absolute;right:0;top:calc(100% + 11px);width:340px;display:flex;gap:7px;padding:10px;background:#190a30;border:1px solid rgba(255,255,255,.12);border-radius:13px;box-shadow:0 18px 45px rgba(5,2,12,.35);opacity:0;visibility:hidden;transform:translateY(-6px);transition:.18s}
-.nav-search-popover.open{opacity:1;visibility:visible;transform:none}
-.nav-search-popover input{flex:1;min-width:0;border:1px solid #e5deeb;border-radius:9px;padding:10px 12px;font:500 .88rem Inter,sans-serif;outline:none;color:#171225;background:#fff}
-.nav-search-popover input:focus{box-shadow:0 0 0 3px rgba(198,242,46,.2);border-color:#c6f22e}
-.nav-search-popover button{border:0;border-radius:9px;background:#ff2e7e;color:#fff;font:700 .82rem 'Plus Jakarta Sans',sans-serif;padding:0 13px;cursor:pointer}
-
-.nav-overlay{display:none;position:fixed;inset:0;background:rgba(6,3,14,.62);z-index:250;backdrop-filter:blur(2px)}
-.nav-overlay.visible{display:block}
-.nav-mobile-drawer{display:none;position:fixed;top:0;right:0;width:min(390px,91vw);height:100dvh;z-index:300;flex-direction:column;padding:18px 20px 28px;transform:translateX(100%);transition:transform .28s ease;overflow-y:auto;background:linear-gradient(180deg,#1c0a3a 0%,#12061f 100%);border-left:1px solid rgba(198,242,46,.14);box-shadow:-12px 0 40px rgba(10,4,26,.55)}
-.nav-mobile-drawer.open{transform:none}
-.drawer-x{align-self:flex-end;background:none;border:0;color:#fff;font-size:1.85rem;line-height:1;cursor:pointer;padding:2px 6px;margin:0 0 8px}
-.drawer-search{display:flex;gap:7px;margin-bottom:14px}
-.drawer-search input{flex:1;min-width:0;border:0;border-radius:11px;padding:13px 14px;font:500 1rem Inter,sans-serif;outline:none;color:#171225;background:#fff}
-.drawer-search button{flex:0 0 54px;border:0;border-radius:11px;background:#ff2e7e;color:#fff;font-size:1.1rem;cursor:pointer}
-.drawer-priority{display:grid;gap:9px;margin-bottom:21px}
-.drawer-primary{display:flex;align-items:center;gap:9px;border-radius:11px;padding:14px 15px;color:#fff!important;text-decoration:none;font:800 .94rem 'Plus Jakarta Sans',sans-serif;letter-spacing:.015em;box-shadow:0 7px 20px rgba(0,0,0,.14);transition:.18s}
-.drawer-primary:hover{transform:translateY(-1px);filter:brightness(1.06)}
-.drawer-primary b{margin-left:auto;font-size:1.1rem}.primary-all{background:#ff2e7e}.primary-deals{background:#7c3aed;border-left:3px solid #c6f22e}.primary-guides{background:#3b82f6}
-.drawer-section-label{color:#a99db5;font:700 .66rem 'Plus Jakarta Sans',sans-serif;text-transform:uppercase;letter-spacing:.14em;margin:0 3px 8px}
-.drawer-categories{display:grid;gap:7px}
-.drawer-categories a{--accent:#fff;--tint:rgba(255,255,255,.05);display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.92);text-decoration:none;font:700 .88rem 'Plus Jakarta Sans',sans-serif;letter-spacing:.025em;padding:12px 12px;border:1px solid rgba(255,255,255,.07);border-left:3px solid var(--accent);border-radius:10px;background:var(--tint);transition:.16s}
-.drawer-categories a:hover{transform:translateX(2px);border-color:rgba(255,255,255,.15)}
-.cat-icon{display:grid;place-items:center;width:23px;color:var(--accent);font-size:.92rem}.cat-arrow{margin-left:auto;color:rgba(255,255,255,.45)}
-.cat-comedy{--accent:#ff5a91!important;--tint:rgba(255,46,126,.09)!important}.cat-magic{--accent:#a879ff!important;--tint:rgba(124,58,237,.1)!important}.cat-cirque{--accent:#6b9cff!important;--tint:rgba(59,130,246,.09)!important}.cat-music{--accent:#39d1cb!important;--tint:rgba(15,181,201,.09)!important}.cat-spectacular{--accent:#f4bd4c!important;--tint:rgba(244,189,76,.08)!important}.cat-family{--accent:#66c8ff!important;--tint:rgba(82,183,246,.09)!important}.cat-adult{--accent:#f47da3!important;--tint:rgba(240,98,146,.09)!important}
-.drawer-divider{height:1px;background:rgba(255,255,255,.11);margin:17px 0 12px}
-.drawer-dispatch{display:flex;align-items:center;gap:11px;color:#fff!important;text-decoration:none;padding:13px 12px;border:1px solid rgba(15,181,201,.2);border-left:3px solid #0fb5c9;border-radius:10px;background:rgba(15,181,201,.09)}
-.drawer-dispatch>span:first-child{font-size:1rem}.drawer-dispatch b{display:block;font:800 .88rem 'Plus Jakarta Sans',sans-serif}.drawer-dispatch small{display:block;color:#9fcbd0;font-size:.68rem;margin-top:2px}.drawer-dispatch .cat-arrow{margin-left:auto}
-
-@media(max-width:980px){
-  .vs-announce{display:none}
-  .nav-desktop,.nav-search-wrap{display:none}
-  .vs-nav-row{padding:0 20px;height:54px;gap:13px}
-  .nav-mobile-menu{display:block}
-  .nav-mobile-drawer{display:flex}
-  .nav-cta{padding:9px 16px;font-size:.85rem}
-}
-@media(max-width:460px){.nav-logo{font-size:1.12rem}.nav-cta{display:none}.vs-nav-row{padding:0 15px}}
-@media(prefers-reduced-motion:reduce){.nav-dropdown,.nav-search-popover,.nav-mobile-drawer,.drawer-primary,.drawer-categories a,.nav-cta{transition:none!important}}
+.nav-dropdown-wrap{position:relative}.nav-dropdown{position:absolute;left:0;top:calc(100% + 10px);width:560px;padding:12px;background:rgba(20,8,40,.98);border:1px solid rgba(255,255,255,.11);border-radius:16px;box-shadow:0 22px 55px rgba(5,2,12,.38);opacity:0;visibility:hidden;transform:translateY(-8px);transition:.18s;z-index:240}.nav-dropdown.open{opacity:1;visibility:visible;transform:none}.nav-dropdown-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}.nav-dropdown a{display:flex;align-items:center;gap:11px;color:#fff;text-decoration:none;padding:12px;border-radius:11px;transition:.16s;min-width:0}.nav-dropdown a:hover{background:rgba(255,255,255,.075)}.nav-dropdown a b{display:block;font:700 .88rem 'Plus Jakarta Sans',sans-serif}.nav-dropdown a small{display:block;color:#a99db5;font-size:.72rem;margin-top:2px}.nav-dot{width:9px;height:9px;border-radius:50%;flex:0 0 9px;box-shadow:0 0 0 5px rgba(255,255,255,.04)}.dot-pink{background:#ff2e7e}.dot-purple{background:#8b5cf6}.dot-blue{background:#4f8df7}.dot-teal{background:#16c6c3}.dot-gold{background:#f3b93f}.dot-sky{background:#52b7f6}.dot-rose{background:#f06292}.dot-lime{background:#c6f22e}.dropdown-all{border:1px solid rgba(198,242,46,.18);background:rgba(198,242,46,.055)}.dropdown-arrow{margin-left:auto;color:#c6f22e;font-size:1.15rem}
+.nav-search-wrap{position:relative}.nav-search-btn{display:grid;place-items:center;width:38px;height:38px;border:1px solid rgba(255,255,255,.12);border-radius:50%;background:rgba(255,255,255,.06);color:#fff;cursor:pointer;font-size:1rem;transition:.18s}.nav-search-btn:hover,.nav-search-btn[aria-expanded="true"]{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.24)}.nav-search-popover{position:absolute;right:0;top:calc(100% + 11px);width:340px;display:flex;gap:7px;padding:10px;background:#190a30;border:1px solid rgba(255,255,255,.12);border-radius:13px;box-shadow:0 18px 45px rgba(5,2,12,.35);opacity:0;visibility:hidden;transform:translateY(-6px);transition:.18s}.nav-search-popover.open{opacity:1;visibility:visible;transform:none}.nav-search-popover input{flex:1;min-width:0;border:1px solid #e5deeb;border-radius:9px;padding:10px 12px;font:500 .88rem Inter,sans-serif;outline:none;color:#171225;background:#fff}.nav-search-popover input:focus{box-shadow:0 0 0 3px rgba(198,242,46,.2);border-color:#c6f22e}.nav-search-popover button{border:0;border-radius:9px;background:#ff2e7e;color:#fff;font:700 .82rem 'Plus Jakarta Sans',sans-serif;padding:0 13px;cursor:pointer}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(6,3,14,.62);z-index:250;backdrop-filter:blur(2px)}.nav-overlay.visible{display:block}.nav-mobile-drawer{display:none;position:fixed;top:0;right:0;width:min(390px,91vw);height:100dvh;z-index:300;flex-direction:column;padding:18px 20px 28px;transform:translateX(100%);transition:transform .28s ease;overflow-y:auto;background:linear-gradient(180deg,#1c0a3a 0%,#12061f 100%);border-left:1px solid rgba(198,242,46,.14);box-shadow:-12px 0 40px rgba(10,4,26,.55)}.nav-mobile-drawer.open{transform:none}.drawer-x{align-self:flex-end;background:none;border:0;color:#fff;font-size:1.85rem;line-height:1;cursor:pointer;padding:2px 6px;margin:0 0 8px}.drawer-search{display:flex;gap:7px;margin-bottom:14px}.drawer-search input{flex:1;min-width:0;border:0;border-radius:11px;padding:13px 14px;font:500 1rem Inter,sans-serif;outline:none;color:#171225;background:#fff}.drawer-search button{flex:0 0 54px;border:0;border-radius:11px;background:#ff2e7e;color:#fff;font-size:1.1rem;cursor:pointer}.drawer-priority{display:grid;gap:9px;margin-bottom:21px}.drawer-primary{display:flex;align-items:center;gap:9px;border-radius:11px;padding:14px 15px;color:#fff!important;text-decoration:none;font:800 .94rem 'Plus Jakarta Sans',sans-serif;letter-spacing:.015em;box-shadow:0 7px 20px rgba(0,0,0,.14);transition:.18s}.drawer-primary:hover{transform:translateY(-1px);filter:brightness(1.06)}.drawer-primary b{margin-left:auto;font-size:1.1rem}.primary-all{background:#ff2e7e}.primary-deals{background:#7c3aed;border-left:3px solid #c6f22e}.primary-guides{background:#3b82f6}.drawer-section-label{color:#a99db5;font:700 .66rem 'Plus Jakarta Sans',sans-serif;text-transform:uppercase;letter-spacing:.14em;margin:0 3px 8px}.drawer-categories{display:grid;gap:5px}.drawer-categories a,.drawer-dispatch{display:flex;align-items:center;gap:11px;padding:12px 13px;border-radius:10px;text-decoration:none;color:#f7f3ff;font:700 .88rem Inter,sans-serif;transition:.16s}.drawer-categories a:hover,.drawer-dispatch:hover{background:rgba(255,255,255,.07)}.cat-icon{width:27px;text-align:center;font-size:1rem}.cat-arrow{margin-left:auto;color:#a99db5}.cat-comedy .cat-icon{color:#ff6a9f}.cat-magic .cat-icon{color:#a987ff}.cat-cirque .cat-icon{color:#6ca7ff}.cat-music .cat-icon{color:#35d8d2}.cat-spectacular .cat-icon{color:#ffd063}.cat-family .cat-icon{color:#7ed4ff}.cat-adult .cat-icon{color:#ff82ac}.drawer-divider{height:1px;background:rgba(255,255,255,.1);margin:16px 0 10px}.drawer-dispatch{align-items:flex-start;border:1px solid rgba(15,181,201,.15);background:rgba(15,181,201,.055)}.drawer-dispatch>span:first-child{font-size:1rem}.drawer-dispatch b{display:block;color:#8feaf2}.drawer-dispatch small{display:block;color:#a99db5;font-size:.7rem;margin-top:2px;font-weight:500}
+@media(max-width:980px){.nav-desktop{display:none}.nav-mobile-menu{display:block}.nav-mobile-drawer{display:flex}.vs-nav-row{height:54px;padding:0 17px;gap:12px}.nav-cta{padding:9px 14px;font-size:.82rem}.nav-search-wrap{display:none}.vs-announce{font-size:.72rem;padding:7px 12px}.nav-logo{font-size:1.12rem}}
 </style>`;
 
-  const target = document.getElementById('vs-header');
-  if (!target) return;
-  target.innerHTML = styles + html;
-
-  if (!document.getElementById('vs-fontlink')) {
-    const fontLink = document.createElement('link');
-    fontLink.id = 'vs-fontlink';
-    fontLink.rel = 'stylesheet';
-    fontLink.href = 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap';
-    document.head.appendChild(fontLink);
+  const mount = document.getElementById('vs-header');
+  if (mount) {
+    mount.insertAdjacentHTML('beforebegin', styles);
+    mount.innerHTML = html;
+  } else {
+    document.body.insertAdjacentHTML('afterbegin', styles + html);
   }
-
-  // Keep favicon consistent without shipping a large inline image in every header request.
-  (function () {
-    let favicon = document.querySelector("link[rel~='icon']");
-    if (!favicon) {
-      favicon = document.createElement('link');
-      favicon.rel = 'icon';
-      document.head.appendChild(favicon);
-    }
-    favicon.type = 'image/png';
-    favicon.href = '/favicon.png';
-  })();
 
   window.vsToggleMenu = function () {
     const drawer = document.getElementById('vsMobileDrawer');
     const overlay = document.getElementById('vsNavOverlay');
-    const button = document.getElementById('vsMobileMenuButton');
-    if (!drawer || !overlay) return;
+    const btn = document.getElementById('vsMobileMenuButton');
+    if (!drawer || !overlay || !btn) return;
     const opening = !drawer.classList.contains('open');
     drawer.classList.toggle('open', opening);
     overlay.classList.toggle('visible', opening);
     drawer.setAttribute('aria-hidden', opening ? 'false' : 'true');
-    if (button) {
-      button.setAttribute('aria-expanded', opening ? 'true' : 'false');
-      button.setAttribute('aria-label', opening ? 'Close menu' : 'Open menu');
-    }
-    document.documentElement.style.overflow = opening ? 'hidden' : '';
-    if (opening) setTimeout(function () { const input = document.getElementById('vsDrawerSearch'); if (input) input.focus({preventScroll:true}); }, 120);
+    btn.setAttribute('aria-expanded', opening ? 'true' : 'false');
   };
 
-  window.vsMobileSearch = function (e) {
-    if (e) e.preventDefault();
-    const input = document.getElementById('vsDrawerSearch');
-    const q = input ? input.value.trim() : '';
-    window.location.href = '/search/' + (q ? '?q=' + encodeURIComponent(q) : '');
+  window.vsToggleShowsDropdown = function (event) {
+    if (event) event.stopPropagation();
+    const menu = document.getElementById('vsShowsMenu');
+    const btn = document.getElementById('vsShowsButton');
+    if (!menu || !btn) return;
+    const open = !menu.classList.contains('open');
+    menu.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+
+  window.vsToggleDesktopSearch = function (event) {
+    if (event) event.stopPropagation();
+    const form = document.getElementById('vsDesktopSearch');
+    const btn = document.getElementById('vsDesktopSearchButton');
+    if (!form || !btn) return;
+    const open = !form.classList.contains('open');
+    form.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) setTimeout(() => document.getElementById('vsDesktopSearchInput')?.focus(), 20);
+  };
+
+  window.vsDesktopSearch = function () {
+    const q = document.getElementById('vsDesktopSearchInput')?.value.trim();
+    if (q) location.href = '/search/?q=' + encodeURIComponent(q);
     return false;
   };
 
-  window.vsDesktopSearch = function (e) {
-    if (e) e.preventDefault();
-    const input = document.getElementById('vsDesktopSearchInput');
-    const q = input ? input.value.trim() : '';
-    window.location.href = '/search/' + (q ? '?q=' + encodeURIComponent(q) : '');
+  window.vsMobileSearch = function () {
+    const q = document.getElementById('vsDrawerSearch')?.value.trim();
+    if (q) location.href = '/search/?q=' + encodeURIComponent(q);
     return false;
-  };
-
-  window.vsToggleShowsDropdown = function (e) {
-    if (e) e.stopPropagation();
-    const menu = document.getElementById('vsShowsMenu');
-    const button = document.getElementById('vsShowsButton');
-    const search = document.getElementById('vsDesktopSearch');
-    const searchButton = document.getElementById('vsDesktopSearchButton');
-    if (!menu || !button) return;
-    const opening = !menu.classList.contains('open');
-    menu.classList.toggle('open', opening);
-    button.setAttribute('aria-expanded', opening ? 'true' : 'false');
-    if (search) search.classList.remove('open');
-    if (searchButton) searchButton.setAttribute('aria-expanded', 'false');
-  };
-
-  window.vsToggleDesktopSearch = function (e) {
-    if (e) e.stopPropagation();
-    const search = document.getElementById('vsDesktopSearch');
-    const button = document.getElementById('vsDesktopSearchButton');
-    const menu = document.getElementById('vsShowsMenu');
-    const showsButton = document.getElementById('vsShowsButton');
-    if (!search || !button) return;
-    const opening = !search.classList.contains('open');
-    search.classList.toggle('open', opening);
-    button.setAttribute('aria-expanded', opening ? 'true' : 'false');
-    if (menu) menu.classList.remove('open');
-    if (showsButton) showsButton.setAttribute('aria-expanded', 'false');
-    if (opening) setTimeout(function () { const input = document.getElementById('vsDesktopSearchInput'); if (input) input.focus(); }, 60);
   };
 
   document.addEventListener('click', function (e) {
-    const menu = document.getElementById('vsShowsMenu');
-    const showsButton = document.getElementById('vsShowsButton');
-    const search = document.getElementById('vsDesktopSearch');
-    const searchButton = document.getElementById('vsDesktopSearchButton');
-    if (menu && !menu.contains(e.target) && e.target !== showsButton) {
-      menu.classList.remove('open');
-      if (showsButton) showsButton.setAttribute('aria-expanded', 'false');
+    const dropdown = document.getElementById('vsShowsMenu');
+    const dropdownWrap = document.querySelector('.nav-dropdown-wrap');
+    if (dropdown?.classList.contains('open') && !dropdownWrap?.contains(e.target)) {
+      dropdown.classList.remove('open');
+      document.getElementById('vsShowsButton')?.setAttribute('aria-expanded', 'false');
     }
-    if (search && !search.contains(e.target) && e.target !== searchButton) {
+    const search = document.getElementById('vsDesktopSearch');
+    const searchWrap = document.querySelector('.nav-search-wrap');
+    if (search?.classList.contains('open') && !searchWrap?.contains(e.target)) {
       search.classList.remove('open');
-      if (searchButton) searchButton.setAttribute('aria-expanded', 'false');
+      document.getElementById('vsDesktopSearchButton')?.setAttribute('aria-expanded', 'false');
     }
   });
 
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
     const drawer = document.getElementById('vsMobileDrawer');
-    if (drawer && drawer.classList.contains('open')) window.vsToggleMenu();
-    const menu = document.getElementById('vsShowsMenu');
-    const showsButton = document.getElementById('vsShowsButton');
-    const search = document.getElementById('vsDesktopSearch');
-    const searchButton = document.getElementById('vsDesktopSearchButton');
-    if (menu) menu.classList.remove('open');
-    if (search) search.classList.remove('open');
-    if (showsButton) showsButton.setAttribute('aria-expanded', 'false');
-    if (searchButton) searchButton.setAttribute('aria-expanded', 'false');
+    if (drawer?.classList.contains('open')) window.vsToggleMenu();
+    document.getElementById('vsShowsMenu')?.classList.remove('open');
+    document.getElementById('vsShowsButton')?.setAttribute('aria-expanded', 'false');
+    document.getElementById('vsDesktopSearch')?.classList.remove('open');
+    document.getElementById('vsDesktopSearchButton')?.setAttribute('aria-expanded', 'false');
   });
 
-  // Google Analytics — injected once via shared header.
-  if (!document.querySelector('script[src*="googletagmanager.com/gtag/js?id=G-BM6QGF7B4Y"]')) {
-    const gtagScript = document.createElement('script');
-    gtagScript.async = true;
-    gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-BM6QGF7B4Y';
-    document.head.appendChild(gtagScript);
+  // Every show-detail page mounts the shared header. Load the canonical interaction
+  // runtime here so benchmark pages and legacy templates get the same fact count-up,
+  // schedule/FAQ behavior and fallback utility modules. Category indexes are excluded.
+  const showDetail = /^\/shows\/(adult|cirque|comedy|family|magic|music|spectaculars)\/[^/]+\/?$/.test(location.pathname);
+  if (showDetail && !document.querySelector('script[data-vs-show-runtime]')) {
+    const runtime = document.createElement('script');
+    runtime.src = '/components/show-page-runtime.js?v=2';
+    runtime.defer = true;
+    runtime.dataset.vsShowRuntime = '1';
+    document.body.appendChild(runtime);
   }
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
-  window.gtag('js', new Date());
-  window.gtag('config', 'G-BM6QGF7B4Y');
 })();
