@@ -5,13 +5,12 @@
   "slug": "carrot-top",
   "canonical_path": "/shows/comedy/carrot-top/",
   "status": "active",
-  "categories": [
-    "comedy"
-  ],
+  "categories": ["comedy"],
   "runtime": {
     "minutes": 75,
+    "minutes_source": "authoritative",
     "intermission": false,
-    "source": "authoritative"
+    "intermission_source": "repo"
   },
   "pricing": {
     "currency": "USD",
@@ -52,18 +51,9 @@
   "media": {
     "hero_image": "/images/carrot-top-show-2.jpg",
     "gallery": [
-      {
-        "src": "/images/carrot-top-show-2.jpg",
-        "alt": "Carrot Top performing with a prop at the Atrium Showroom"
-      },
-      {
-        "src": "/images/carrot-top-show-3.jpg",
-        "alt": "Carrot Top performing in a cowboy hat with a horse prop at Luxor"
-      },
-      {
-        "src": "/images/carrot-top-hero.jpg",
-        "alt": "Carrot Top on stage at Luxor Las Vegas"
-      }
+      {"src": "/images/carrot-top-show-2.jpg", "alt": "Carrot Top performing with a prop at the Atrium Showroom"},
+      {"src": "/images/carrot-top-show-3.jpg", "alt": "Carrot Top performing in a cowboy hat with a horse prop at Luxor"},
+      {"src": "/images/carrot-top-hero.jpg", "alt": "Carrot Top on stage at Luxor Las Vegas"}
     ],
     "official_trailer": {
       "provider": "YouTube",
@@ -89,10 +79,7 @@
   "structured_data": {
     "primary_type": "EventSeries",
     "name": "Carrot Top at Luxor Las Vegas",
-    "performer": {
-      "type": "Person",
-      "name": "Carrot Top"
-    },
+    "performer": {"type": "Person", "name": "Carrot Top"},
     "offer": {
       "price": 62,
       "price_currency": "USD",
@@ -101,14 +88,16 @@
     "source": "repo_normalized"
   },
   "relationships": {
-    "related_shows": [
+    "related_shows_confirmed": [
       "/shows/comedy/tape-face/",
       "/shows/comedy/brad-garretts-comedy-club/"
     ],
-    "venue_pages": [
-      "/venues/excalibur-luxor-mandalay-bay/"
-    ],
-    "guide_appearances": [],
+    "related_shows_normalization_status": "partial_current_page_scan",
+    "venue_pages": ["/venues/excalibur-luxor-mandalay-bay/"],
+    "guide_appearances": {
+      "confirmed": [],
+      "normalization_status": "pending_full_guide_scan"
+    },
     "internal_links": {
       "contextual_outbound_count": 6,
       "contextual_inbound_count": 7,
@@ -136,7 +125,7 @@
       "pricing",
       "schedule",
       "age_policy",
-      "runtime",
+      "runtime.minutes",
       "venue.hotel",
       "venue.showroom",
       "ticketing.affiliate_url",
@@ -144,6 +133,7 @@
     ],
     "repo_derived_fields": [
       "categories",
+      "runtime.intermission",
       "descriptions",
       "media.hero_image",
       "media.gallery",
