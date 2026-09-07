@@ -87,6 +87,13 @@
     },
     "source": "repo_normalized"
   },
+  "sync": {
+    "age_policy": {
+      "enabled": true,
+      "faq_question": "Is Carrot Top appropriate for teenagers?",
+      "editorial_suffix": "Expect adult humor; this is not a show for younger children."
+    }
+  },
   "relationships": {
     "related_shows_confirmed": [
       "/shows/comedy/tape-face/",
@@ -142,6 +149,6 @@
       "relationships",
       "freshness.display_label"
     ],
-    "notes": "Pilot source-of-truth record for the Vegas Sidekick structured show data system. This file does not yet generate the live page; the next phase is wiring Carrot Top page outputs to this record and validating parity before expanding to other shows."
+    "notes": "Pilot source-of-truth record for the Vegas Sidekick structured show data system. Deterministic page facts are synced by scripts/sync-show-from-data.py; presentation hints under sync are narrow opt-ins and do not make editorial content data-owned."
   }
 }
