@@ -1,0 +1,137 @@
+name: Test Mobile Hero Images
+
+on:
+  push:
+    branches:
+      - ux/mobile-hero-images
+    paths:
+      - .github/workflows/test-mobile-hero-images.yml
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ux/mobile-hero-images
+
+      - name: Add mobile hero preferences to structured show records
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          prefs = {
+            'carrot-top': {'fit':'cover','position':'50% 22%'},
+            'vegas-the-show': {'fit':'contain','position':'center center'},
+            'mystere': {'fit':'cover','position':'center center'},
+            'wizard-of-oz': {'fit':'contain','position':'center center'},
+          }
+          for slug, pref in prefs.items():
+              p=Path(f'data/shows/{slug}.json')
+              d=json.loads(p.read_text())
+              d.setdefault('media', {})['mobile_hero'] = pref
+              auth=d.setdefault('provenance', {}).setdefault('authoritative_fields', [])
+              if 'media.mobile_hero' not in auth:
+                  auth.append('media.mobile_hero')
+              p.write_text(json.dumps(d, ensure_ascii=False, indent=2)+'\n')
+          PY
+
+      - name: Extend generic show sync for mobile hero treatment
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('scripts/sync-show-from-data.py')
+          s=p.read_text()
+          marker='''def sync_trailer(text: str, record: dict[str, Any], changes: list[str]) -> str:\n'''
+          helper='''def sync_mobile_hero(text: str, record: dict[str, Any], changes: list[str]) -> str:\n    mobile = ((record.get("media") or {}).get("mobile_hero") or {})\n    if not mobile:\n        return text\n    fit = mobile.get("fit", "cover")\n    position = mobile.get("position", "center center")\n    if fit not in {"cover", "contain"}:\n        raise SyncError(f"{record['slug']}: media.mobile_hero.fit must be cover or contain")\n    attrs = f' data-mobile-fit="{fit}" style="--mobile-hero-position:{position}"'\n    pattern = r'<div class="hero-media"(?: data-mobile-fit="[^"]+")?(?: style="--mobile-hero-position:[^"]+")?>'\n    new = replace_once(text, pattern, f'<div class="hero-media"{attrs}>', "mobile hero container")\n    if new != text:\n        changes.append("media.mobile_hero")\n    return new\n\n\n'''
+          if helper not in s:
+              if marker not in s: raise SystemExit('sync_trailer marker not found')
+              s=s.replace(marker, helper+marker, 1)
+          call='''    text = sync_explicit_visible_rules(text, record, changes)\n    text = sync_faq_schema(text, record, changes)\n    text = sync_trailer(text, record, changes)\n'''
+          if call in s:
+              s=s.replace(call, '''    text = sync_explicit_visible_rules(text, record, changes)\n    text = sync_faq_schema(text, record, changes)\n    text = sync_mobile_hero(text, record, changes)\n    text = sync_trailer(text, record, changes)\n''', 1)
+          else:
+              call2='''    text = sync_explicit_visible_rules(text, record, changes)\n    text = sync_trailer(text, record, changes)\n'''
+              if call2 not in s: raise SystemExit('sync call target not found')
+              s=s.replace(call2, '''    text = sync_explicit_visible_rules(text, record, changes)\n    text = sync_mobile_hero(text, record, changes)\n    text = sync_trailer(text, record, changes)\n''', 1)
+          p.write_text(s)
+          PY
+
+      - name: Add shared mobile hero CSS
+        run: |
+          cat >> assets/show-canonical.css <<'CSS'
+
+          /* mobile hero image framing */
+          @media(max-width:800px){
+            .hero-media{height:clamp(285px,72vw,360px);min-height:0;background:linear-gradient(180deg,#17082e,#2c0b4e)}
+            .hero-media img{height:100%;width:100%;object-position:var(--mobile-hero-position,center center)}
+            .hero-media[data-mobile-fit="contain"] img{object-fit:contain}
+            .hero-media[data-mobile-fit="cover"] img{object-fit:cover}
+            .hero-media[data-mobile-fit="contain"]:after{background:linear-gradient(0deg,#2c0b4e 0,rgba(44,11,78,.72) 8%,transparent 28%)}
+          }
+          CSS
+
+      - name: Sync structured pilot pages
+        run: |
+          python3 scripts/sync-show-from-data.py carrot-top
+          python3 scripts/sync-show-from-data.py vegas-the-show
+          python3 scripts/sync-show-from-data.py mystere
+          python3 scripts/sync-show-from-data.py wizard-of-oz
+
+      - name: Add O mobile hero pilot treatment
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('shows/cirque/o/index.html')
+          s=p.read_text()
+          old='<div class="hero-media"><img src="/images/o-hero.jpg"'
+          new='<div class="hero-media" data-mobile-fit="contain" style="--mobile-hero-position:center center"><img src="/images/o-hero.jpg"'
+          if old not in s and new not in s: raise SystemExit('O hero target not found')
+          if old in s: s=s.replace(old,new,1)
+          p.write_text(s)
+          PY
+
+      - name: Verify hero treatments
+        run: |
+          grep -q 'data-mobile-fit="contain"' shows/spectaculars/wizard-of-oz/index.html
+          grep -q 'data-mobile-fit="contain"' shows/production/vegas-the-show/index.html
+          grep -q 'data-mobile-fit="contain"' shows/cirque/o/index.html
+          grep -q 'data-mobile-fit="cover"' shows/cirque/mystere/index.html
+          grep -q 'data-mobile-fit="cover"' shows/comedy/carrot-top/index.html
+          grep -q 'height:clamp(285px,72vw,360px)' assets/show-canonical.css
+
+      - name: Confirm idempotence for structured pages
+        run: |
+          cp shows/comedy/carrot-top/index.html /tmp/carrot.html
+          cp shows/production/vegas-the-show/index.html /tmp/vegas.html
+          cp shows/cirque/mystere/index.html /tmp/mystere.html
+          cp shows/spectaculars/wizard-of-oz/index.html /tmp/wizard.html
+          python3 scripts/sync-show-from-data.py carrot-top
+          python3 scripts/sync-show-from-data.py vegas-the-show
+          python3 scripts/sync-show-from-data.py mystere
+          python3 scripts/sync-show-from-data.py wizard-of-oz
+          diff -u /tmp/carrot.html shows/comedy/carrot-top/index.html
+          diff -u /tmp/vegas.html shows/production/vegas-the-show/index.html
+          diff -u /tmp/mystere.html shows/cirque/mystere/index.html
+          diff -u /tmp/wizard.html shows/spectaculars/wizard-of-oz/index.html
+
+      - name: Run site audits
+        run: |
+          python3 scripts/audit-event-schema.py
+          python3 scripts/audit-serp-metadata.py
+          python3 scripts/audit-content-link-hygiene.py
+          python3 scripts/audit-internal-links.py
+
+      - name: Commit durable changes
+        run: |
+          git checkout -- docs/internal-link-audit.md || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/show-canonical.css scripts/sync-show-from-data.py data/shows/carrot-top.json data/shows/vegas-the-show.json data/shows/mystere.json data/shows/wizard-of-oz.json shows/comedy/carrot-top/index.html shows/production/vegas-the-show/index.html shows/cirque/mystere/index.html shows/spectaculars/wizard-of-oz/index.html shows/cirque/o/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Add responsive mobile hero image treatments"
+            git push origin HEAD:ux/mobile-hero-images
+          fi
