@@ -1,5 +1,5 @@
 // Vegas Sidekick — Shared Footer Component
-// v12 — SEO/internal-link polish, worker-only email capture, Spike sparkle Easter egg, category pilot loader
+// v13 — footer polish + worker email capture + Spike sparkle + shared Category V2 loader
 (function () {
   'use strict';
 
@@ -160,7 +160,7 @@
     if (error) { error.classList.remove('visible'); error.textContent = ''; }
     if (btn) { btn.disabled = true; btn.textContent = 'Joining…'; }
     try {
-      const response = await fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})});
+      const response = await fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email})});
       if (!response.ok) throw new Error('subscribe failed');
       if (form) form.style.display = 'none';
       if (success) success.classList.add('visible');
@@ -175,7 +175,7 @@
     if (document.getElementById('vs-deal-overlay')) return;
     const STORAGE_KEY = 'vs_deal_alert_captured';
     if (localStorage.getItem(STORAGE_KEY)) return;
-    const overlayHTML = `
+    document.body.insertAdjacentHTML('beforeend', `
       <div id="vs-deal-overlay" role="dialog" aria-modal="true" aria-label="Vegas deal alerts">
         <div class="vs-deal-backdrop"></div>
         <div class="vs-deal-card">
@@ -190,18 +190,20 @@
           <div class="vs-deal-tagline">Show changes, openings and useful Vegas deals.</div>
           <button class="vs-deal-skip" type="button" onclick="vsDealClose()">No thanks</button>
         </div>
-      </div>`;
-    document.body.insertAdjacentHTML('beforeend',overlayHTML);
+      </div>`);
     const backdrop = document.querySelector('#vs-deal-overlay .vs-deal-backdrop');
-    if (backdrop) backdrop.addEventListener('click',window.vsDealClose);
-    document.addEventListener('click',function(e){
+    if (backdrop) backdrop.addEventListener('click', window.vsDealClose);
+    document.addEventListener('click', function (e) {
       if (localStorage.getItem(STORAGE_KEY)) return;
       const link = e.target.closest && e.target.closest('a[href*="spotlight.vegas"]');
       if (!link) return;
       e.preventDefault();
-      window.open(link.href,'_blank','noopener,noreferrer');
-      setTimeout(function(){const overlay=document.getElementById('vs-deal-overlay');if(overlay)overlay.classList.add('visible');},180);
-    },true);
+      window.open(link.href, '_blank', 'noopener,noreferrer');
+      setTimeout(function () {
+        const overlay = document.getElementById('vs-deal-overlay');
+        if (overlay) overlay.classList.add('visible');
+      }, 180);
+    }, true);
   }
 
   window.vsDealClose = function () {
@@ -213,34 +215,40 @@
     const input = document.getElementById('vsDealInput');
     const val = input ? input.value.trim() : '';
     if (!val || !val.includes('@') || !val.includes('.')) {
-      if (input) { input.style.borderColor='#ff2e7e'; setTimeout(function(){input.style.borderColor='';},1600); }
+      if (input) { input.style.borderColor = '#ff2e7e'; setTimeout(function(){ input.style.borderColor = ''; }, 1600); }
       return;
     }
     try {
       const response = await fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:val})});
       if (!response.ok) throw new Error('subscribe failed');
       localStorage.setItem('vs_deal_alert_captured','1');
-      const form=document.getElementById('vsDealForm');
-      const success=document.getElementById('vsDealSuccess');
-      if(form)form.style.display='none';
-      if(success)success.classList.add('visible');
+      const form = document.getElementById('vsDealForm');
+      const success = document.getElementById('vsDealSuccess');
+      if (form) form.style.display = 'none';
+      if (success) success.classList.add('visible');
       setTimeout(window.vsDealClose,2200);
-    } catch(err) {
-      if (input) { input.style.borderColor='#ff2e7e'; }
+    } catch (err) {
+      if (input) input.style.borderColor = '#ff2e7e';
     }
   };
 
   function loadPageEnhancements() {
-    if (location.pathname !== '/shows/adult/' || document.querySelector('script[data-vs-adult-v2]')) return;
+    const categoryPaths = new Set([
+      '/shows/', '/shows/comedy/', '/shows/magic/', '/shows/cirque/',
+      '/shows/music/', '/shows/spectaculars/', '/shows/family/', '/shows/adult/'
+    ]);
+    if (!categoryPaths.has(location.pathname) || document.querySelector('script[data-vs-category-v2]')) return;
     const script = document.createElement('script');
-    script.src = '/components/category-adult-v2.js?v=1';
-    script.dataset.vsAdultV2 = '1';
+    script.src = '/components/category-v2.js?v=1';
+    script.dataset.vsCategoryV2 = '1';
     document.body.appendChild(script);
   }
 
   if (!document.getElementById('vs-fontlink')) {
     const font = document.createElement('link');
-    font.id='vs-fontlink';font.rel='stylesheet';font.href='https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap';
+    font.id = 'vs-fontlink';
+    font.rel = 'stylesheet';
+    font.href = 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap';
     document.head.appendChild(font);
   }
 
@@ -249,6 +257,6 @@
     loadPageEnhancements();
   }
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',boot);
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 })();
