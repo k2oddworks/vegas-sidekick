@@ -25,6 +25,45 @@
 (function () {
   "use strict";
 
+  /* Homepage is the last legacy page with its own inline nav. Replace that
+     chrome with the shared site header so / matches every interior page. */
+  function installSharedHomepageHeader() {
+    if (location.pathname !== "/" || document.getElementById("vs-header")) return;
+
+    var legacy = [
+      document.querySelector(".announce"),
+      document.querySelector("header.site"),
+      document.getElementById("scrim"),
+      document.getElementById("drawer")
+    ];
+    legacy.forEach(function (el) { if (el && el.parentNode) el.parentNode.removeChild(el); });
+
+    var mount = document.createElement("div");
+    mount.id = "vs-header";
+
+    var spacer = document.createElement("div");
+    spacer.id = "vs-home-header-spacer";
+
+    var progress = document.getElementById("progress-bar");
+    if (progress && progress.parentNode) {
+      progress.parentNode.insertBefore(mount, progress.nextSibling);
+      progress.parentNode.insertBefore(spacer, mount.nextSibling);
+    } else {
+      document.body.insertBefore(spacer, document.body.firstChild);
+      document.body.insertBefore(mount, spacer);
+    }
+
+    var style = document.createElement("style");
+    style.textContent = "#vs-home-header-spacer{height:88px}@media(max-width:980px){#vs-home-header-spacer{height:54px}}";
+    document.head.appendChild(style);
+
+    var s = document.createElement("script");
+    s.src = "/components/header.js?v=14";
+    document.body.appendChild(s);
+  }
+
+  installSharedHomepageHeader();
+
   var CAT_COLOR = {
     comedy: "#ff2e7e", magic: "#7c3aed", cirque: "#0fb5c9", music: "#3b82f6",
     adult: "#c6f22e", family: "#0fb5c9", spectaculars: "#0fb5c9"
@@ -64,9 +103,9 @@
     var e = node.querySelector(".also-price, .sc-price, .pr, .c-price, .price");
     if (!e || !s.pd) return;
     var b = e.querySelector("b, strong");
-    if (b) { b.textContent = s.pd; return; }        // "from <b>$66</b>" — swap the figure only
+    if (b) { b.textContent = s.pd; return; }
     if (/\$\s*[\d,]+/.test(e.textContent)) {
-      e.textContent = e.textContent.replace(/\$\s*[\d,]+/, s.pd);   // "From $122" -> "From $66"
+      e.textContent = e.textContent.replace(/\$\s*[\d,]+/, s.pd);
     } else {
       e.textContent = "From " + s.pd;
     }
@@ -86,7 +125,7 @@
     if (node.tagName === "A") node.setAttribute("href", s.url);
 
     var src = node.querySelector("source");
-    if (src && src.parentNode) src.parentNode.removeChild(src);   // drop <picture> sources
+    if (src && src.parentNode) src.parentNode.removeChild(src);
     var img = node.querySelector("img");
     if (img) {
       img.removeAttribute("srcset");
@@ -144,10 +183,10 @@
     if (o.preferCat === "auto") o.preferCat = catOf(self);
 
     var tpl = grid.firstElementChild;
-    if (!tpl) return;                              // nothing to clone — leave the page alone
+    if (!tpl) return;
 
     var picks = choose(o);
-    if (picks.length < (o.count || 3)) return;      // not enough data — keep the static cards
+    if (picks.length < (o.count || 3)) return;
 
     var frag = document.createDocumentFragment();
     picks.forEach(function (s) {
@@ -160,7 +199,7 @@
   }
 
   function run() {
-    if (!window.VS_SHOWS || !window.VS_SHOWS.length) return;   // fallback cards stay
+    if (!window.VS_SHOWS || !window.VS_SHOWS.length) return;
     var grids = document.querySelectorAll("[data-vs-picks]");
     for (var i = 0; i < grids.length; i++) {
       try { fill(grids[i]); } catch (e) { /* leave the static cards in place */ }
