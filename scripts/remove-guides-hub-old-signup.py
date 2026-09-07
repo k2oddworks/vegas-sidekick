@@ -6,3 +6,4 @@ assert old in s, 'old signup card not found'
 s=s.replace(old,'',1)
 assert 'Want the Vegas stuff worth knowing?' not in s
 p.write_text(s)
+# one-time cleanup
