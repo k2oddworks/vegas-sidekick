@@ -38,18 +38,14 @@ def main():
     text = replace_once(text, r'<meta property="og:title" content="[^"]*"\s*/?>', f'<meta property="og:title" content="{og_title}" />', "og title")
     text = replace_once(text, r'<meta property="og:description" content="[^"]*"\s*/?>', f'<meta property="og:description" content="{og_desc}" />', "og description")
 
-    # All Carrot Top ticket CTAs use the single approved affiliate URL.
     text = re.sub(r'https://spotlight\.vegas/shows/comedy/carrot-top/ref/vegassidekick', affiliate, text)
 
-    # Current visible price surfaces.
-    text = replace_once(text, r'(class="check">)Starting at \$\d+\.', rf'\1Starting at ${price}.', "hero price note")
-    text = replace_once(text, r'(<div class="price"><small>From</small>\s*)\$\d+', rf'\1${price}', "hero price")
+    text = replace_once(text, r'(class="check">)Starting at \$\d+\.', rf'\g<1>Starting at ${price}.', "hero price note")
+    text = replace_once(text, r'(<div class="price"><small>From</small>\s*)\$\d+', rf'\g<1>${price}', "hero price")
 
-    # Venue/runtime facts. Editorial language around them remains untouched.
     text = text.replace("Luxor · Atrium Showroom, 3900 S Las Vegas Blvd", f"{hotel.replace(' Hotel','')} · {showroom}, 3900 S Las Vegas Blvd")
     text = re.sub(r'About \d+ minutes, no intermission', f'About {runtime} minutes, no intermission', text, count=1)
 
-    # Weekly schedule cards are generated from the structured schedule.
     perf = {x["day"]: x["time"] for x in schedule["performances"]}
     abbreviations = {"Monday":"Mon","Tuesday":"Tue","Wednesday":"Wed","Thursday":"Thu","Friday":"Fri","Saturday":"Sat","Sunday":"Sun"}
     def fmt_time(t):
@@ -60,20 +56,17 @@ def main():
     for day, abbr in abbreviations.items():
         value = fmt_time(perf[day]) if day in perf else "Dark"
         pattern = rf'(<div class="day[^>]*"><strong>{abbr}</strong><span>).*?(</span></div>)'
-        text = replace_once(text, pattern, rf'\1{value}\2', f"{day} schedule")
+        text = replace_once(text, pattern, rf'\g<1>{value}\g<2>', f"{day} schedule")
 
-    # Normalize the explicit age-policy answer only; don't touch editorial age commentary elsewhere.
     text, age_count = re.subn(r'The minimum age is 16\.[^<]*', age, text, count=1)
     if age_count != 1:
         raise SystemExit(f"Expected exactly one explicit age-policy sentence; found {age_count}")
 
-    # Approved trailer ID controls thumbnail/embed references.
     text = re.sub(r'i\.ytimg\.com/vi/[A-Za-z0-9_-]+/', f'i.ytimg.com/vi/{trailer_id}/', text)
     text = re.sub(r'youtube(?:-nocookie)?\.com/embed/[A-Za-z0-9_-]+', f'youtube-nocookie.com/embed/{trailer_id}', text)
 
-    # EventSeries offer data comes from the record.
-    text = re.sub(r'("price"\s*:\s*)"?\d+(?:\.\d+)?"?', rf'\1"{price}"', text, count=1)
-    text = re.sub(r'("url"\s*:\s*")https://spotlight\.vegas/shows/comedy/carrot-top/ref/vegassidekick(")', rf'\1{affiliate}\2', text, count=1)
+    text = re.sub(r'("price"\s*:\s*)"?\d+(?:\.\d+)?"?', rf'\g<1>"{price}"', text, count=1)
+    text = re.sub(r'("url"\s*:\s*")https://spotlight\.vegas/shows/comedy/carrot-top/ref/vegassidekick(")', rf'\g<1>{affiliate}\g<2>', text, count=1)
 
     if text == original:
         print("Carrot Top page already matches structured data; no page changes needed.")
