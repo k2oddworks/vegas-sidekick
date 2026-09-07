@@ -857,7 +857,7 @@ const statObs = new IntersectionObserver(entries => {
     let start = null;
     function step(ts) {
       if (!start) start = ts;
-      const progress = Math.min((ts - start) / 1200, 1);
+      const progress = Math.min((ts - start) / 720, 1);
       const ease = 1 - Math.pow(1 - progress, 3);
       el.textContent = Math.round(ease * target) + (el.dataset.prefix === undefined && target === 25 ? '+' : '');
       if (progress < 1) requestAnimationFrame(step);
