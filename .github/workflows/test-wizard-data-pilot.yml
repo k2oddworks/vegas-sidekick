@@ -1,0 +1,60 @@
+name: Test Wizard Data Pilot
+
+on:
+  push:
+    branches:
+      - data/wizard-of-oz-record
+    paths:
+      - data/shows/wizard-of-oz.json
+      - .github/workflows/test-wizard-data-pilot.yml
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data/wizard-of-oz-record
+      - name: Sync dry run
+        run: python3 scripts/sync-show-from-data.py wizard-of-oz --dry-run
+      - name: Verify variable schedule record
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('data/shows/wizard-of-oz.json').read_text())
+          assert d['schedule']['type']=='variable'
+          assert d['schedule']['booking_page_is_authoritative'] is True
+          assert d['pricing']['from_price']==123
+          assert d['pricing']['regular_price']==123
+          assert d['pricing']['discounted'] is False
+          assert d['operational_restrictions']['late_seating']['permitted'] is False
+          assert d['age_policy']['minimum_age']==6
+          assert d['media']['official_trailer'] is None
+          print('Wizard variable schedule and restrictions verified')
+          PY
+      - name: Confirm variable schedule does not invent weekly EventSchedule
+        run: |
+          python3 scripts/sync-show-from-data.py wizard-of-oz
+          python3 - <<'PY'
+          import json,re
+          from pathlib import Path
+          text=Path('shows/spectaculars/wizard-of-oz/index.html').read_text()
+          blocks=re.findall(r'<script type="application/ld\+json">(.*?)</script>', text, re.S)
+          series=[json.loads(x.strip()) for x in blocks if json.loads(x.strip()).get('@type')=='EventSeries'][0]
+          assert 'eventSchedule' not in series
+          assert series['offers']['price']==123
+          print('No fabricated recurring schedule added to EventSeries')
+          PY
+      - name: Prior-show regressions
+        run: |
+          python3 scripts/sync-show-from-data.py carrot-top --dry-run
+          python3 scripts/sync-show-from-data.py vegas-the-show --dry-run
+          python3 scripts/sync-show-from-data.py mystere --dry-run
+      - run: python3 scripts/audit-event-schema.py
+      - run: python3 scripts/audit-serp-metadata.py
+      - run: python3 scripts/audit-content-link-hygiene.py
+      - run: python3 scripts/audit-internal-links.py
