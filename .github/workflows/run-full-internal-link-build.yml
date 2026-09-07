@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - scripts/full-internal-link-build.py
+      - scripts/run-full-internal-link-build.py
       - .github/workflows/run-full-internal-link-build.yml
 
 permissions:
@@ -16,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Apply curated internal links
-        run: python3 scripts/full-internal-link-build.py
+        run: python3 scripts/run-full-internal-link-build.py
       - name: Audit internal link graph
         run: python3 scripts/audit-internal-links.py
       - name: Audit event schema
