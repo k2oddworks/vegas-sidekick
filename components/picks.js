@@ -62,7 +62,26 @@
     document.body.appendChild(s);
   }
 
+  /* The homepage also carried an older hard-coded footer. Swap it for the
+     shared component so footer SEO, links and signup behavior stay in sync. */
+  function installSharedHomepageFooter() {
+    if (location.pathname !== "/" || document.getElementById("vs-footer")) return;
+    var legacyFooter = document.querySelector("footer");
+    if (!legacyFooter || !legacyFooter.parentNode) return;
+
+    var mount = document.createElement("div");
+    mount.id = "vs-footer";
+    legacyFooter.parentNode.replaceChild(mount, legacyFooter);
+
+    if (!document.querySelector('script[src*="/components/footer.js"]')) {
+      var s = document.createElement("script");
+      s.src = "/components/footer.js?v=11";
+      document.body.appendChild(s);
+    }
+  }
+
   installSharedHomepageHeader();
+  installSharedHomepageFooter();
 
   var CAT_COLOR = {
     comedy: "#ff2e7e", magic: "#7c3aed", cirque: "#0fb5c9", music: "#3b82f6",
