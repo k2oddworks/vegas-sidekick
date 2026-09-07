@@ -49,7 +49,8 @@ CATEGORY_META = {
 }
 
 GENERIC_FILES = [
-    "shows/index.html", "shows/adult/index.html", "shows/cirque/index.html",
+    "about/index.html", "shows/index.html", "shows/adult/index.html", "shows/cirque/index.html",
+    "shows/comedy/index.html", "shows/family/index.html", "shows/magic/index.html", "shows/music/index.html", "shows/spectaculars/index.html",
     "guides/best-adult-shows/index.html", "guides/best-cheap-vegas-shows/index.html",
     "guides/best-cirque-shows/index.html", "guides/best-magic-shows/index.html",
     "guides/best-shows-for-families/index.html", "guides/best-tribute-shows/index.html",
@@ -67,9 +68,10 @@ def main():
     for rel,rules in EXACT.items():
         p=ROOT/rel
         if not p.exists(): continue
-        text=p.read_text(encoding='utf-8')
-        new=text
+        text=p.read_text(encoding='utf-8'); new=text
         for old,repl in rules: new=new.replace(old,repl)
+        if rel.endswith('matt-rife-stay-golden-dolby-live-december-4/index.html'):
+            new=re.sub(r'[^"\']*presale starts May 12\. General on sale May 15\.', 'Matt Rife brings the Stay Golden World Tour to Dolby Live on December 4, 2026. See the Las Vegas date, venue details and what to know before buying.', new, flags=re.I)
         if new!=text:
             p.write_text(new,encoding='utf-8'); changed.append(rel)
     for rel,desc in CATEGORY_META.items():
@@ -81,8 +83,7 @@ def main():
     for rel in GENERIC_FILES:
         p=ROOT/rel
         if not p.exists(): continue
-        text=p.read_text(encoding='utf-8')
-        new=text
+        text=p.read_text(encoding='utf-8'); new=text
         new=re.sub(r'\bzero hidden fees\b', 'clear ticket details', new, flags=re.I)
         new=re.sub(r'\bno hidden fees\b', 'clear ticket details', new, flags=re.I)
         new=re.sub(r'\binstant delivery\b', 'current show details', new, flags=re.I)
