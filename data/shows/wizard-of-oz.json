@@ -101,6 +101,25 @@
     },
     "source": "repo_normalized"
   },
+  "sync": {
+    "faq_fact_rules": [
+      {
+        "schema_question": "Can I bring young kids?",
+        "visible_question": "Can I bring young kids?",
+        "text_source": "age_policy.rule"
+      },
+      {
+        "schema_question": "What if I'm sensitive to motion or sensory effects?",
+        "visible_question": "What if I&#x27;m sensitive to motion or sensory effects?",
+        "text_source": "operational_restrictions.immersive_effects.medical_advisory"
+      },
+      {
+        "schema_question": "Is there late seating?",
+        "visible_question": "Is there late seating?",
+        "text_source": "operational_restrictions.late_seating.rule"
+      }
+    ]
+  },
   "freshness": {
     "display_label": "Last updated September 2026",
     "record_verified_on": "2026-09-07",
@@ -130,6 +149,7 @@
       "media.gallery",
       "seo",
       "structured_data",
+      "sync",
       "freshness.display_label"
     ],
     "notes": "Fourth source-of-truth pilot. Tests intentionally variable scheduling plus operational and immersive-experience restrictions. Price is confirmed at $123 with no discount; regular price equals the Vegas Sidekick price."
