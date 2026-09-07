@@ -1,0 +1,44 @@
+name: Run Carrot Top Data Test
+
+on:
+  push:
+    branches:
+      - data/carrot-top-wire-test
+    paths:
+      - data/shows/carrot-top.json
+      - scripts/sync-carrot-top-from-data.py
+      - .github/workflows/run-carrot-top-data-test.yml
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data/carrot-top-wire-test
+      - name: Sync Carrot Top from structured data
+        run: python3 scripts/sync-carrot-top-from-data.py
+      - name: Validate Event schema
+        run: python3 scripts/audit-event-schema.py
+      - name: Validate SERP metadata
+        run: python3 scripts/audit-serp-metadata.py
+      - name: Validate content and local links
+        run: python3 scripts/audit-content-link-hygiene.py
+      - name: Validate internal-link graph
+        run: python3 scripts/audit-internal-links.py
+      - name: Show Carrot Top diff
+        run: git diff -- shows/comedy/carrot-top/index.html
+      - name: Commit generated page if changed
+        run: |
+          if git diff --quiet; then
+            echo "No generated page changes needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add shows/comedy/carrot-top/index.html docs/internal-link-audit.md
+          git commit -m "Sync Carrot Top page from structured data"
+          git push origin HEAD:data/carrot-top-wire-test
