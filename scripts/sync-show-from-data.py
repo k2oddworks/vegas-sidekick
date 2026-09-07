@@ -119,6 +119,50 @@ def format_time_compact(value: str) -> str:
     return display.replace(":00 ", " ")
 
 
+def grouped_performances(schedule: dict[str, Any]) -> dict[str, list[str]]:
+    grouped: dict[str, list[str]] = {}
+    for item in schedule.get("performances") or []:
+        day = item.get("day")
+        time = item.get("time")
+        if not day or not time:
+            raise SyncError("schedule performances require day and time")
+        grouped.setdefault(day, [])
+        if time not in grouped[day]:
+            grouped[day].append(time)
+    for day in grouped:
+        grouped[day].sort()
+    return grouped
+
+
+def format_times_compact(values: list[str], html: bool = False) -> str:
+    if not values:
+        return ""
+    displays = [format_time_compact(value) for value in values]
+    if len(displays) == 1:
+        return displays[0]
+    suffixes = [value.rsplit(" ", 1)[-1] for value in displays]
+    if len(set(suffixes)) == 1:
+        suffix = suffixes[0]
+        stripped = [value[:-(len(suffix) + 1)] for value in displays]
+        joiner = " &amp; " if html else " & "
+        return joiner.join(stripped) + f" {suffix}"
+    joiner = " &amp; " if html else " & "
+    return joiner.join(displays)
+
+
+def schedule_objects(schedule: dict[str, Any]) -> list[dict[str, Any]]:
+    grouped = grouped_performances(schedule)
+    by_times: dict[tuple[str, ...], list[str]] = {}
+    for day, times in grouped.items():
+        by_times.setdefault(tuple(times), []).append(day)
+    objects: list[dict[str, Any]] = []
+    for times, days in by_times.items():
+        schema_days = [f"https://schema.org/{day}" for day in DAY_ABBR if day in days]
+        for showtime in times:
+            objects.append({"@type": "Schedule", "byDay": schema_days, "startTime": showtime})
+    return objects
+
+
 def sync_seo(text: str, record: dict[str, Any], changes: list[str]) -> str:
     seo = record.get("seo") or {}
     mappings = [
@@ -202,11 +246,11 @@ def sync_schedule_cards(text: str, record: dict[str, Any], changes: list[str]) -
     if not performances and not dark_days:
         return text
 
-    perf_by_day = {item["day"]: item["time"] for item in performances}
+    perf_by_day = grouped_performances(schedule)
     updated = 0
     for day, abbr in DAY_ABBR.items():
         if day in perf_by_day:
-            value = format_time(perf_by_day[day])
+            value = format_times_compact(perf_by_day[day], html=True)
         elif day in dark_days:
             value = "Dark"
         else:
@@ -309,12 +353,10 @@ def sync_eventseries(text: str, record: dict[str, Any], changes: list[str]) -> s
     schedule = effective_schedule(record)
     performances = schedule.get("performances") or []
 
-    days = [item["day"] for item in performances]
-    times = sorted({item["time"] for item in performances})
-    if len(times) > 1:
-        # EventSchedule only has one startTime in the current canonical pages.
-        # Do not silently collapse multiple showtimes into incorrect schema.
-        raise SyncError(f"{record['slug']}: EventSeries sync does not yet support multiple weekly start times")
+    grouped = grouped_performances(schedule)
+    days = list(grouped)
+    times = sorted({showtime for values in grouped.values() for showtime in values})
+    schedules = schedule_objects(schedule)
 
     blocks = list(re.finditer(r'(<script type="application/ld\+json">)(.*?)(</script>)', text, re.S))
     replacements: list[tuple[int, int, str]] = []
@@ -345,12 +387,8 @@ def sync_eventseries(text: str, record: dict[str, Any], changes: list[str]) -> s
             elif venue.get("showroom") and venue.get("hotel"):
                 location["name"] = f"{venue['showroom']} at {venue['hotel']}"
 
-        event_schedule = obj.get("eventSchedule")
-        if isinstance(event_schedule, dict):
-            if days and "byDay" in event_schedule:
-                event_schedule["byDay"] = [f"https://schema.org/{day}" for day in days]
-            if times and "startTime" in event_schedule:
-                event_schedule["startTime"] = times[0]
+        if schedules:
+            obj["eventSchedule"] = schedules[0] if len(schedules) == 1 else schedules
 
         rendered = "\n" + json.dumps(obj, ensure_ascii=False, indent=2) + "\n"
         replacements.append((match.start(2), match.end(2), rendered))
