@@ -1,0 +1,40 @@
+name: Operations Bootstrap
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/labels.yml'
+      - '.github/workflows/operations-bootstrap.yml'
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  labels:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sync operations labels
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          try:
+              import yaml
+          except ImportError:
+              raise SystemExit('PyYAML is required on the runner')
+          repo='${{ github.repository }}'
+          data=yaml.safe_load(Path('.github/labels.yml').read_text())
+          for label in data['labels']:
+              name=label['name']; color=label['color']; desc=label.get('description','')
+              check=subprocess.run(['gh','api',f'repos/{repo}/labels/{name}'],capture_output=True,text=True)
+              if check.returncode == 0:
+                  subprocess.run(['gh','api','--method','PATCH',f'repos/{repo}/labels/{name}','-f',f'new_name={name}','-f',f'color={color}','-f',f'description={desc}'],check=True)
+              else:
+                  subprocess.run(['gh','api','--method','POST',f'repos/{repo}/labels','-f',f'name={name}','-f',f'color={color}','-f',f'description={desc}'],check=True)
+          PY
