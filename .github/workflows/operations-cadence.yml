@@ -1,0 +1,169 @@
+name: Vegas Sidekick Operations Cadence
+
+on:
+  workflow_dispatch:
+    inputs:
+      cycle:
+        description: Cycle to create
+        required: true
+        type: choice
+        options: [weekly, twice-monthly, monthly, quarterly]
+  schedule:
+    - cron: '0 15 * * 1'
+    - cron: '15 15 1,15 * *'
+    - cron: '30 15 1 * *'
+    - cron: '45 15 1 1,4,7,10 *'
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  create-review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Resolve cycle
+        id: cycle
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            cycle='${{ inputs.cycle }}'
+          else
+            minute='${{ github.event.schedule }}'
+            case "$minute" in
+              '0 15 * * 1') cycle='weekly' ;;
+              '15 15 1,15 * *') cycle='twice-monthly' ;;
+              '30 15 1 * *') cycle='monthly' ;;
+              '45 15 1 1,4,7,10 *') cycle='quarterly' ;;
+              *) exit 1 ;;
+            esac
+          fi
+          echo "cycle=$cycle" >> "$GITHUB_OUTPUT"
+
+      - name: Create review issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          CYCLE: ${{ steps.cycle.outputs.cycle }}
+        shell: bash
+        run: |
+          stamp=$(date -u +%Y-%m-%d)
+          case "$CYCLE" in
+            weekly)
+              title="[P1] Weekly revenue + growth review — $stamp"
+              labels='P1 Revenue,seo,conversion'
+              body=$(cat <<'EOF'
+          ## Priority order
+          Clear P0 first. Then work the highest-value P1 opportunity, advance one P2 item, and use remaining capacity on P3.
+
+          ## Revenue
+          - [ ] Review ticket CTA clicks and CTR
+          - [ ] Compare mobile vs desktop CTA CTR
+          - [ ] Review guide → show, category → show, and related-show clicks
+          - [ ] Flag strong-traffic / weak-conversion pages
+
+          ## Search
+          - [ ] Review rankings 4–15
+          - [ ] Review high-impression / weak-CTR pages
+          - [ ] Review meaningful traffic/ranking declines
+          - [ ] Ignore low-value noise
+
+          ## Growth
+          - [ ] Publish or materially advance one Guide, Dispatch, comparison, or venue item
+          - [ ] Internal-link newly published content into relevant existing pages
+          - [ ] Check newly announced shows when verified information is available
+
+          ## Media
+          - [ ] Improve media only on priority pages, not alphabetically
+
+          ## Pass
+          Record the chosen P1 diagnosis and the P2 item advanced. Do not redesign pages without a measured reason.
+          EOF
+          )
+              ;;
+            twice-monthly)
+              title="[P0] Twice-monthly active show accuracy sweep — $stamp"
+              labels='P0 Accuracy,price,schedule,schema'
+              body=$(cat <<'EOF'
+          ## Verify every active show
+          - [ ] Still running
+          - [ ] Correct venue
+          - [ ] Correct starting price
+          - [ ] Correct schedule and dark days
+          - [ ] Correct age rules
+          - [ ] Correct verified Spotlight affiliate URL
+          - [ ] Active catalog presence correct
+          - [ ] Event/EventSeries schema correct
+          - [ ] Guide claims still accurate
+          - [ ] Category membership still appropriate
+          - [ ] Venue-page references still accurate
+
+          ## Then run
+          - [ ] `python3 scripts/audit-event-schema.py`
+          - [ ] Affiliate URL consistency check
+          - [ ] Price consistency check
+          - [ ] Catalog / closure leakage check
+          - [ ] Guide stale-claim check
+
+          ## Rules
+          Detection may be automated. Factual correction requires a verified source of truth. One changed show should create one parent issue listing every affected file/surface.
+          EOF
+          )
+              ;;
+            monthly)
+              title="[P1] Monthly Vegas Sidekick business review — $stamp"
+              labels='P1 Revenue,seo,conversion'
+              body=$(cat <<'EOF'
+          ## Acquisition
+          - [ ] Organic clicks, impressions, CTR, average position
+          - [ ] Rankings 4–15 opportunities
+          - [ ] Top gaining and declining pages
+
+          ## Commercial
+          - [ ] Ticket CTA clicks and CTR
+          - [ ] Mobile vs desktop CTA CTR
+          - [ ] Affiliate bookings/revenue
+          - [ ] Revenue per 1,000 organic sessions when available
+
+          ## Content + health
+          - [ ] Guides / Dispatch / comparison / venue work shipped
+          - [ ] P0 issues discovered vs unresolved
+          - [ ] Schema failures, broken links, orphan pages
+          - [ ] Update maintenance-debt score
+          - [ ] Refresh media audit and reprioritize by traffic/revenue opportunity
+
+          ## Decide
+          Pick the next month's highest-value search, conversion, venue/comparison, and media targets.
+          EOF
+          )
+              ;;
+            quarterly)
+              title="[P2] Quarterly portfolio + 90-day roadmap review — $stamp"
+              labels='P2 Growth,seo'
+              body=$(cat <<'EOF'
+          ## Answer five questions
+          1. What is making money?
+          2. What is almost working?
+          3. What is decaying?
+          4. What is missing?
+          5. What should we stop doing?
+
+          ## Deep review
+          - [ ] Refresh highest-value show pages and guides
+          - [ ] Review FAQs, seating advice, media, internal links, snippets
+          - [ ] Core Web Vitals / performance review
+          - [ ] Closure hygiene and stale-claim review
+          - [ ] Backlink/off-site SEO review
+          - [ ] Reassess category, venue, comparison, and topic gaps
+          - [ ] Publish the next 90-day roadmap
+          EOF
+          )
+              ;;
+          esac
+
+          # Avoid duplicate open cycle issues with the exact same title.
+          if gh issue list --repo "$REPO" --state open --search "in:title \"$title\"" --json title --jq '.[].title' | grep -Fxq "$title"; then
+            echo "Issue already exists: $title"
+            exit 0
+          fi
+          gh issue create --repo "$REPO" --title "$title" --label "$labels" --body "$body"
