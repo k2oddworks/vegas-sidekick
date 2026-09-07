@@ -1,0 +1,50 @@
+labels:
+  - name: P0 Accuracy
+    color: B60205
+    description: Customer-facing factual or booking issue; fix before new editorial work.
+  - name: P1 Revenue
+    color: D93F0B
+    description: Conversion, ticket-click, or near-term revenue opportunity.
+  - name: P2 Growth
+    color: FBCA04
+    description: SEO/content growth work.
+  - name: P3 Enhancement
+    color: 0E8A16
+    description: Media, UX, and polish work after higher priorities are clear.
+  - name: Needs Kris
+    color: 5319E7
+    description: Requires Kris editorial/business judgment.
+  - name: Ready to Ship
+    color: 1D76DB
+    description: Implementation complete and ready for merge/deploy verification.
+  - name: Verify Live
+    color: 0052CC
+    description: On main; public deployment still needs independent verification.
+  - name: show
+    color: C5DEF5
+  - name: guide
+    color: C5DEF5
+  - name: dispatch
+    color: C5DEF5
+  - name: venue
+    color: C5DEF5
+  - name: comparison
+    color: C5DEF5
+  - name: seo
+    color: BFDADC
+  - name: schema
+    color: BFDADC
+  - name: media
+    color: BFDADC
+  - name: internal-links
+    color: BFDADC
+  - name: conversion
+    color: BFDADC
+  - name: automation
+    color: BFDADC
+  - name: closure
+    color: F9D0C4
+  - name: price
+    color: F9D0C4
+  - name: schedule
+    color: F9D0C4

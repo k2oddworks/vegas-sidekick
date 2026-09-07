@@ -1,0 +1,40 @@
+name: Operations Bootstrap
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/labels.yml'
+      - '.github/workflows/operations-bootstrap.yml'
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  labels:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sync operations labels
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          ruby <<'RUBY'
+          require 'yaml'
+          require 'open3'
+          repo = ENV.fetch('REPO')
+          YAML.load_file('.github/labels.yml').fetch('labels').each do |label|
+            name = label.fetch('name')
+            color = label.fetch('color')
+            desc = label.fetch('description', '')
+            _, _, status = Open3.capture3('gh', 'api', "repos/#{repo}/labels/#{name}")
+            if status.success?
+              system('gh','api','--method','PATCH',"repos/#{repo}/labels/#{name}",'-f',"new_name=#{name}",'-f',"color=#{color}",'-f',"description=#{desc}", exception: true)
+            else
+              system('gh','api','--method','POST',"repos/#{repo}/labels",'-f',"name=#{name}",'-f',"color=#{color}",'-f',"description=#{desc}", exception: true)
+            end
+          end
+          RUBY

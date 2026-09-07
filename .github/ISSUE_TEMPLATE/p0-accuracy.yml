@@ -1,0 +1,51 @@
+name: P0 Accuracy
+about: Customer-facing factual, booking, closure, price, schedule, venue, age-policy, or schema issue.
+title: "[P0] "
+labels: ["P0 Accuracy"]
+body:
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Issue type
+      options: [Closure, Price, Schedule, Venue, Age policy, Booking URL, Schema, Catalog leakage, Guide claim, Other]
+    validations: {required: true}
+  - type: input
+    id: page
+    attributes:
+      label: Show or page
+      placeholder: Carrot Top — /shows/comedy/carrot-top/
+    validations: {required: true}
+  - type: textarea
+    id: detected
+    attributes:
+      label: Detected mismatch
+      description: Record every conflicting value/location. Do not guess the correct value.
+    validations: {required: true}
+  - type: textarea
+    id: source
+    attributes:
+      label: Verified source of truth
+      description: Link or note the verified source. If unresolved, say unresolved and add Needs Kris.
+    validations: {required: true}
+  - type: textarea
+    id: files
+    attributes:
+      label: Files/surfaces affected
+      placeholder: Show page, search index, category page, guide, venue page, schema...
+    validations: {required: true}
+  - type: textarea
+    id: action
+    attributes:
+      label: Required action
+    validations: {required: true}
+  - type: textarea
+    id: pass
+    attributes:
+      label: Pass condition
+      value: |
+        - [ ] All affected references agree with the verified source of truth
+        - [ ] Booking URL is verified if touched
+        - [ ] Event/EventSeries schema audit passes for active shows
+        - [ ] No stale guide/category/venue claim remains
+        - [ ] Public deployment is independently verified before calling this live
+    validations: {required: true}
