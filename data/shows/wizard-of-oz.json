@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "record_type": "show",
+  "name": "The Wizard of Oz at Sphere",
+  "slug": "wizard-of-oz",
+  "canonical_path": "/shows/spectaculars/wizard-of-oz/",
+  "status": "active",
+  "categories": ["spectaculars"],
+  "runtime": {
+    "minutes": 75,
+    "minutes_source": "authoritative"
+  },
+  "pricing": {
+    "currency": "USD",
+    "from_price": 123,
+    "regular_price": 123,
+    "discounted": false,
+    "source": "authoritative"
+  },
+  "schedule": {
+    "timezone": "America/Los_Angeles",
+    "type": "variable",
+    "display": "Days and times vary. Check the booking page for current showtimes.",
+    "booking_page_is_authoritative": true,
+    "source": "authoritative"
+  },
+  "age_policy": {
+    "minimum_age": 6,
+    "rule": "The Wizard of Oz at Sphere is intended for guests aged 6+. All guests, regardless of age, require a ticket.",
+    "ticket_required_for_all_guests": true,
+    "source": "authoritative"
+  },
+  "venue": {
+    "hotel": null,
+    "property_area": null,
+    "showroom": "Sphere",
+    "street_address": "255 Sands Ave",
+    "city": "Las Vegas",
+    "state": "NV",
+    "postal_code": "89169",
+    "schema_location_name": "Sphere",
+    "source": "authoritative_with_repo_address_normalization"
+  },
+  "ticketing": {
+    "affiliate_url": "https://spotlight.vegas/shows/production/the-wizard-of-oz-at-sphere/ref/vegassidekick",
+    "affiliate_provider": "Spotlight.vegas",
+    "source": "repo_derived_needs_authoritative_confirmation"
+  },
+  "operational_restrictions": {
+    "late_seating": {
+      "permitted": false,
+      "rule": "There is no late seating permitted for this event.",
+      "source": "authoritative"
+    },
+    "immersive_effects": {
+      "present": true,
+      "elements_may_include": [
+        "seat haptics",
+        "movement sensations",
+        "flashing lights",
+        "intense lighting",
+        "visual effects",
+        "loud noises",
+        "falling objects",
+        "flying objects",
+        "projectiles",
+        "pyrotechnics",
+        "fog",
+        "scent",
+        "mist",
+        "wind"
+      ],
+      "medical_advisory": "This immersive experience may include seat haptics, movement sensations, flashing lights, intense lighting, visual effects, loud noises, falling and flying objects, projectiles, pyrotechnics, and atmospheric simulations such as fog, scent, mist and wind. These elements may aggravate certain medical or physical conditions. Guests should consider any history of discomfort or physical symptoms from such elements. Anyone with concerns, including guests who are pregnant, should consult a physician before attending.",
+      "source": "authoritative"
+    }
+  },
+  "media": {
+    "hero_image": "/images/wizard-of-oz-hero.webp",
+    "gallery": [
+      {"src": "/images/wizard-of-oz-hero.webp", "alt": "The Wizard of Oz at Sphere Las Vegas show photo"},
+      {"src": "/images/wizard-of-oz-2.webp", "alt": "The Wizard of Oz at Sphere Las Vegas show photo"},
+      {"src": "/images/wizard-of-oz-3.webp", "alt": "The Wizard of Oz at Sphere Las Vegas show photo"}
+    ],
+    "official_trailer": null,
+    "source": "repo_with_authoritative_no_trailer"
+  },
+  "seo": {
+    "title": "The Wizard of Oz at Sphere Vegas Tickets from $123 | Show Guide",
+    "meta_description": "The Wizard of Oz at Sphere is a large-scale stage production in Las Vegas. Tickets from $123. See showtimes, seats and whether this big-stage show fits your night.",
+    "canonical_url": "https://vegassidekick.com/shows/spectaculars/wizard-of-oz/",
+    "og_title": "The Wizard of Oz at Sphere Tickets & Show Guide | Vegas Sidekick",
+    "source": "repo"
+  },
+  "structured_data": {
+    "primary_type": "EventSeries",
+    "name": "The Wizard of Oz at Sphere",
+    "offer": {
+      "price": 123,
+      "price_currency": "USD",
+      "url": "https://spotlight.vegas/shows/production/the-wizard-of-oz-at-sphere/ref/vegassidekick"
+    },
+    "source": "repo_normalized"
+  },
+  "sync": {
+    "faq_fact_rules": [
+      {
+        "schema_question": "Can I bring young kids?",
+        "visible_question": "Can I bring young kids?",
+        "text_source": "age_policy.rule"
+      },
+      {
+        "schema_question": "What if I'm sensitive to motion or sensory effects?",
+        "visible_question": "What if I&#x27;m sensitive to motion or sensory effects?",
+        "text_source": "operational_restrictions.immersive_effects.medical_advisory"
+      },
+      {
+        "schema_question": "Is there late seating?",
+        "visible_question": "Is there late seating?",
+        "text_source": "operational_restrictions.late_seating.rule"
+      }
+    ]
+  },
+  "freshness": {
+    "display_label": "Last updated September 2026",
+    "record_verified_on": "2026-09-07",
+    "pricing_verified_on": "2026-09-07",
+    "schedule_verified_on": "2026-09-07",
+    "age_policy_verified_on": "2026-09-07",
+    "venue_verified_on": "2026-09-07",
+    "restrictions_verified_on": "2026-09-07",
+    "trailer_verified_on": "2026-09-07",
+    "affiliate_url_verified_on": null
+  },
+  "provenance": {
+    "authoritative_fields": [
+      "pricing",
+      "schedule",
+      "age_policy",
+      "runtime.minutes",
+      "venue.showroom",
+      "venue.street_address",
+      "operational_restrictions",
+      "media.official_trailer"
+    ],
+    "repo_derived_fields": [
+      "categories",
+      "ticketing.affiliate_url",
+      "media.hero_image",
+      "media.gallery",
+      "seo",
+      "structured_data",
+      "sync",
+      "freshness.display_label"
+    ],
+    "notes": "Fourth source-of-truth pilot. Tests intentionally variable scheduling plus operational and immersive-experience restrictions. Price is confirmed at $123 with no discount; regular price equals the Vegas Sidekick price."
+  }
+}
