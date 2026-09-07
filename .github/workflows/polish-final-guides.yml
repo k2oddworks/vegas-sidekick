@@ -1,0 +1,23 @@
+name: Polish Final Guides
+on:
+  push:
+    paths:
+      - 'scripts/polish-final-guides.py'
+jobs:
+  polish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/polish-final-guides.py
+      - name: Commit polish
+        run: |
+          git config user.name 'Kris Kidd'
+          git config user.email 'k2oddworks@gmail.com'
+          git add guides/best-*/index.html
+          git diff --cached --quiet || git commit -m 'Polish final guide updates'
+          git push
