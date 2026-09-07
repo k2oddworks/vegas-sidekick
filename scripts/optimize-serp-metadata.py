@@ -19,53 +19,84 @@ CLOSED = {
 
 TITLE_VARIANTS = {
     "magic": [
-        "{name} Las Vegas Tickets{price} | Seats & Showtimes",
-        "{name} Tickets{price} | Vegas Magic Show Guide",
-        "{name} Las Vegas Show: Tickets{price} & Seat Guide",
-        "{name} Vegas Tickets{price} | What to Know",
+        "{name}{market} Tickets{price} | Seat Guide",
+        "{name}{market} Tickets{price} | Showtimes",
+        "{name}{market} Show | Tickets{price} & Seats",
+        "{name} Vegas Tickets{price} | Magic Guide",
     ],
     "comedy": [
-        "{name} Las Vegas Tickets{price} | Showtimes & Seats",
-        "{name} Vegas Tickets{price} | Comedy Show Guide",
-        "{name} Las Vegas Show: Tickets{price} & What to Know",
-        "{name} Tickets{price} | Vegas Comedy Guide",
+        "{name}{market} Tickets{price} | Showtimes",
+        "{name} Vegas Tickets{price} | Comedy Guide",
+        "{name}{market} Show | Tickets{price} & Seats",
+        "{name}{market} Tickets{price} | What to Know",
     ],
     "cirque": [
-        "{name} Vegas Tickets{price} | Seats & Showtimes",
-        "{name} Las Vegas Tickets{price} | Cirque Show Guide",
-        "{name} Vegas Show: Tickets{price} & Seat Guide",
-        "{name} Tickets{price} | Las Vegas Cirque Guide",
+        "{name} Vegas Tickets{price} | Seat Guide",
+        "{name}{market} Tickets{price} | Showtimes",
+        "{name} Vegas Show | Tickets{price} & Seats",
+        "{name}{market} Tickets{price} | Cirque Guide",
     ],
     "adult": [
-        "{name} Las Vegas Tickets{price} | Show Guide",
-        "{name} Vegas Tickets{price} | Seats & What to Know",
-        "{name} Las Vegas Show: Tickets{price} & Guide",
-        "{name} Tickets{price} | Vegas Adult Show Guide",
+        "{name}{market} Tickets{price} | Show Guide",
+        "{name} Vegas Tickets{price} | Seats & Info",
+        "{name}{market} Show | Tickets{price} & Guide",
+        "{name}{market} Tickets{price} | What to Know",
     ],
     "family": [
-        "{name} Las Vegas Tickets{price} | Family Show Guide",
-        "{name} Vegas Tickets{price} | Showtimes & Seats",
-        "{name} Las Vegas Show: Tickets{price} & What to Know",
-        "{name} Tickets{price} | Vegas Family Guide",
+        "{name}{market} Tickets{price} | Family Guide",
+        "{name} Vegas Tickets{price} | Showtimes",
+        "{name}{market} Show | Tickets{price} & Seats",
+        "{name}{market} Tickets{price} | Family Info",
     ],
     "music": [
-        "{name} Las Vegas Tickets{price} | Showtimes & Seats",
-        "{name} Vegas Tickets{price} | Music & Variety Guide",
-        "{name} Las Vegas Show: Tickets{price} & Seat Guide",
-        "{name} Tickets{price} | Vegas Show Guide",
+        "{name}{market} Tickets{price} | Showtimes",
+        "{name} Vegas Tickets{price} | Show Guide",
+        "{name}{market} Show | Tickets{price} & Seats",
+        "{name}{market} Tickets{price} | Seat Guide",
     ],
     "spectaculars": [
-        "{name} Las Vegas Tickets{price} | Showtimes & Seats",
-        "{name} Vegas Tickets{price} | Spectacular Show Guide",
-        "{name} Las Vegas Show: Tickets{price} & Seat Guide",
-        "{name} Tickets{price} | Vegas Spectacular Guide",
+        "{name}{market} Tickets{price} | Showtimes",
+        "{name} Vegas Tickets{price} | Show Guide",
+        "{name}{market} Show | Tickets{price} & Seats",
+        "{name}{market} Tickets{price} | Seat Guide",
     ],
 }
 
-GENERIC_DESC_BITS = (
-    "See photos, our interactive seat guide, showtimes, FAQ and the honest fit before you book.",
-    "See photos, seat guide, showtimes, FAQ and the honest fit before you book.",
-)
+CATEGORY_FALLBACK = {
+    "magic": "live magic show",
+    "comedy": "live comedy show",
+    "cirque": "Cirque-style production",
+    "adult": "adult Las Vegas show",
+    "family": "family-friendly Las Vegas show",
+    "music": "live music and variety show",
+    "spectaculars": "large-scale Las Vegas production",
+}
+
+DESCRIPTORS = [
+    ("mentalism", "mentalism show"),
+    ("mind-reading", "mind-reading show"),
+    ("mind reading", "mind-reading show"),
+    ("hypnosis", "hypnosis show"),
+    ("stand-up", "stand-up comedy show"),
+    ("stand up", "stand-up comedy show"),
+    ("burlesque", "burlesque show"),
+    ("male revue", "male revue"),
+    ("topless", "adult revue"),
+    ("tribute", "tribute show"),
+    ("joust", "live jousting dinner show"),
+    ("robot", "live robot-combat show"),
+    ("dinner", "dinner show"),
+    ("close-up magic", "close-up magic show"),
+    ("illusion", "illusion show"),
+    ("magic", "magic show"),
+    ("percussion", "visual music and percussion show"),
+    ("dance", "dance production"),
+    ("aquatic", "aquatic stage production"),
+    ("water", "water-based stage spectacular"),
+    ("acrobat", "acrobatic production"),
+    ("comedy", "comedy show"),
+    ("variety", "variety show"),
+]
 
 
 def clean(value: str) -> str:
@@ -120,68 +151,62 @@ def event_venue(event: dict):
 
 
 def current_description(text: str) -> str:
-    m = re.search(r'<meta\s+name=["\']description["\']\s+content=["\'](.*?)["\']\s*/?>', text, re.I | re.S)
-    if not m:
-        m = re.search(r'<meta\s+content=["\'](.*?)["\']\s+name=["\']description["\']\s*/?>', text, re.I | re.S)
-    return clean(m.group(1)) if m else ""
+    for pat in (
+        r'<meta\s+name=["\']description["\']\s+content=["\'](.*?)["\']\s*/?>',
+        r'<meta\s+content=["\'](.*?)["\']\s+name=["\']description["\']\s*/?>',
+    ):
+        m = re.search(pat, text, re.I | re.S)
+        if m:
+            return clean(m.group(1))
+    return ""
 
 
-def unique_lead(desc: str) -> str:
-    value = desc
-    for bit in GENERIC_DESC_BITS:
-        value = value.replace(bit, "")
-    value = re.sub(r'\s*Tickets from \$[0-9.]+\.?', '', value, flags=re.I).strip()
-    sentences = re.split(r'(?<=[.!?])\s+', value)
-    if sentences and len(sentences[0]) >= 40:
-        return sentences[0].strip()
-    return value.strip()
+def descriptor(desc: str, category: str) -> str:
+    low = desc.lower()
+    for needle, label in DESCRIPTORS:
+        if needle in low:
+            return label
+    return CATEGORY_FALLBACK.get(category, "Las Vegas show")
 
 
 def title_for(name: str, category: str, price: str, rel: str) -> str:
     variants = TITLE_VARIANTS.get(category, TITLE_VARIANTS["music"])
     index = int(hashlib.sha1(rel.encode()).hexdigest()[:8], 16) % len(variants)
     price_token = f" from ${price}" if price else ""
-    title = variants[index].format(name=name, price=price_token)
-    # Preserve the key query terms if a long act name makes the preferred variant unwieldy.
+    market = "" if "las vegas" in name.lower() else " Las Vegas"
+    title = variants[index].format(name=name, market=market, price=price_token)
     if len(title) > 68:
-        title = f"{name} Las Vegas Tickets{price_token}"
-    if len(title) <= 58:
+        title = f"{name}{market} Tickets{price_token}"
+    if len(title) > 68:
+        title = f"{name} Tickets{price_token}"
+    if len(title) <= 50:
         title += " | Vegas Sidekick"
     return title
 
 
 def description_for(name: str, category: str, price: str, venue: str, old: str, rel: str) -> str:
-    lead = unique_lead(old)
-    facts = []
+    kind = descriptor(old, category)
+    intro = f"{name} is a {kind} in Las Vegas."
+    if "las vegas" in name.lower():
+        intro = f"{name} is a {kind}."
+    fact_parts = []
     if price:
-        facts.append(f"Tickets from ${price}")
+        fact_parts.append(f"Tickets from ${price}")
     if venue:
-        facts.append(f"at {venue}")
-    fact_line = " ".join(facts)
+        fact_parts.append(f"at {venue}")
+    fact = " ".join(fact_parts) + "." if fact_parts else ""
     endings = {
-        "magic": ["Compare showtimes, seating and whether this magic show fits your night.", "See the seat guide, schedule and who this Vegas magic show suits best."],
+        "magic": ["Compare showtimes, seating and whether the magic style fits your night.", "See the schedule, seat guide and who this magic show suits best."],
         "comedy": ["Check showtimes, seating and whether the comedy style fits your group.", "See the schedule, seat guide and what kind of comedy night to expect."],
-        "cirque": ["Compare showtimes, seating and the tradeoffs before choosing your Cirque night.", "See the schedule, seat guide and what to expect from this Vegas production."],
+        "cirque": ["Compare showtimes, seating and the tradeoffs before choosing your Cirque night.", "See the schedule, seat guide and what to expect from the production."],
         "adult": ["Check showtimes, seating and the honest fit before choosing your night.", "See the schedule, seat guide and what kind of adult Vegas show this is."],
         "family": ["See showtimes, seating and whether it works for your family before booking.", "Check the schedule, seat guide and family fit before choosing your night."],
         "music": ["Check showtimes, seating and what kind of Vegas performance to expect.", "See the schedule, seat guide and whether this show fits your night."],
-        "spectaculars": ["Compare showtimes, seating and what the production is actually like.", "See the schedule, seat guide and whether this big-stage Vegas show fits your night."],
+        "spectaculars": ["Compare showtimes, seating and what the production is actually like.", "See the schedule, seat guide and whether this big-stage show fits your night."],
     }
     pool = endings.get(category, endings["music"])
-    ending = pool[int(hashlib.sha1((rel+"desc").encode()).hexdigest()[:8], 16) % len(pool)]
-    parts = []
-    if lead:
-        parts.append(lead)
-    if fact_line:
-        parts.append(fact_line + ".")
-    parts.append(ending)
-    desc = " ".join(parts)
-    # If source copy is verbose, keep the most valuable unique sentence plus facts/intent.
-    if len(desc) > 180 and lead:
-        max_lead = max(60, 180 - len(" ".join(parts[1:])) - 1)
-        clipped = lead[:max_lead].rsplit(" ", 1)[0].rstrip(" ,;:-")
-        desc = f"{clipped}. " + " ".join(parts[1:])
-    return desc
+    ending = pool[int(hashlib.sha1((rel + "desc").encode()).hexdigest()[:8], 16) % len(pool)]
+    return " ".join(x for x in (intro, fact, ending) if x)
 
 
 def replace_meta(text: str, title: str, desc: str) -> str:
