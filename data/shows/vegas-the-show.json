@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "record_type": "show",
+  "name": "VEGAS! The Show",
+  "slug": "vegas-the-show",
+  "canonical_path": "/shows/music/vegas-the-show/",
+  "status": "active",
+  "categories": ["music"],
+  "runtime": {
+    "minutes": 75,
+    "minutes_source": "authoritative",
+    "intermission": false,
+    "intermission_source": "repo"
+  },
+  "pricing": {
+    "currency": "USD",
+    "from_price": 63,
+    "regular_price": 101,
+    "source": "authoritative"
+  },
+  "schedule": {
+    "timezone": "America/Los_Angeles",
+    "phases": [
+      {
+        "effective_from": null,
+        "effective_through": "2026-09-20",
+        "performances": [
+          {"day": "Monday", "time": "19:00"},
+          {"day": "Tuesday", "time": "19:00"},
+          {"day": "Wednesday", "time": "19:00"},
+          {"day": "Thursday", "time": "19:00"},
+          {"day": "Friday", "time": "19:00"},
+          {"day": "Saturday", "time": "19:00"}
+        ],
+        "dark_days": ["Sunday"],
+        "display": "Monday-Saturday at 7:00 PM; dark Sunday"
+      },
+      {
+        "effective_from": "2026-09-21",
+        "effective_through": null,
+        "performances": [
+          {"day": "Monday", "time": "17:30"},
+          {"day": "Tuesday", "time": "17:30"},
+          {"day": "Wednesday", "time": "17:30"},
+          {"day": "Thursday", "time": "17:30"},
+          {"day": "Friday", "time": "17:30"},
+          {"day": "Saturday", "time": "17:30"}
+        ],
+        "dark_days": ["Sunday"],
+        "display": "Monday-Saturday at 5:30 PM; dark Sunday"
+      }
+    ],
+    "source": "authoritative"
+  },
+  "age_policy": {
+    "minimum_age": null,
+    "rule": "No age restriction.",
+    "source": "authoritative"
+  },
+  "venue": {
+    "hotel": "Planet Hollywood Resort",
+    "property_area": "Miracle Mile Shops",
+    "showroom": "Saxe Theater",
+    "schema_location_name": "Saxe Theater at Miracle Mile Shops",
+    "venue_hub_path": "/venues/planet-hollywood/",
+    "source": "authoritative_with_repo_relationship"
+  },
+  "ticketing": {
+    "affiliate_url": "https://spotlight.vegas/shows/production/vegas-the-show/ref/vegassidekick/",
+    "affiliate_provider": "Spotlight.vegas",
+    "source": "authoritative"
+  },
+  "media": {
+    "hero_image": "/images/vegas-the-show-hero.webp",
+    "gallery": [
+      {"src": "/images/vegas-the-show-hero.webp", "alt": "VEGAS! The Show at Saxe Theater Las Vegas"}
+    ],
+    "official_trailer": null,
+    "source": "repo_with_authoritative_no_trailer"
+  },
+  "descriptions": {
+    "meta": "VEGAS! The Show is a live music and variety show in Las Vegas. Tickets from $63. Check showtimes, seating and what kind of Vegas performance to expect.",
+    "open_graph": "From $63 for 75 minutes of showgirls, live music and old-school Las Vegas spectacle at Saxe Theater.",
+    "source": "repo"
+  },
+  "seo": {
+    "title": "VEGAS! The Show Las Vegas Tickets from $63 | Showtimes",
+    "meta_description": "VEGAS! The Show is a live music and variety show in Las Vegas. Tickets from $63. Check showtimes, seating and what kind of Vegas performance to expect.",
+    "canonical_url": "https://vegassidekick.com/shows/music/vegas-the-show/",
+    "og_title": "VEGAS! The Show Tickets & Show Guide | Vegas Sidekick",
+    "og_description": "From $63 for 75 minutes of showgirls, live music and old-school Las Vegas spectacle at Saxe Theater.",
+    "og_image": "https://vegassidekick.com/images/vegas-the-show-hero.webp",
+    "source": "repo"
+  },
+  "structured_data": {
+    "primary_type": "EventSeries",
+    "name": "VEGAS! The Show",
+    "performer": {"type": "PerformingGroup", "name": "VEGAS! The Show"},
+    "offer": {
+      "price": 63,
+      "price_currency": "USD",
+      "url": "https://spotlight.vegas/shows/production/vegas-the-show/ref/vegassidekick/"
+    },
+    "source": "repo_normalized"
+  },
+  "sync": {
+    "schedule_text_rules": [
+      {
+        "label": "hero schedule chip",
+        "pattern": "(<span class=\"chip\">)(?:\\d{1,2}(?::\\d{2})? [AP]M)(</span><span class=\"chip\">Saxe Theater</span>)",
+        "replacement": "\\g<1>{time_compact}\\g<2>"
+      },
+      {
+        "label": "typical start fact",
+        "pattern": "(<div class=\"fact\"><strong>)(?:\\d{1,2}(?::\\d{2})? [AP]M)(</strong><span>Typical start</span></div>)",
+        "replacement": "\\g<1>{time_compact}\\g<2>"
+      },
+      {
+        "label": "practical angle sentence",
+        "pattern": "<p>A \\d{1,2}(?::\\d{2})? [AP]M start and 75-minute runtime leave plenty of night afterward\\.</p>",
+        "replacement": "<p>A {time_compact} start and 75-minute runtime leave plenty of night afterward.</p>"
+      },
+      {
+        "label": "schedule intro",
+        "pattern": "<p class=\"lede\">The typical schedule is Monday through Saturday at \\d{1,2}(?::\\d{2})? [AP]M, with Sunday dark\\. Tap an active day to open the live booking page and check the dates currently available\\.</p>",
+        "replacement": "<p class=\"lede\">The typical schedule is Monday through Saturday at {time_compact}, with Sunday dark. Tap an active day to open the live booking page and check the dates currently available.</p>"
+      }
+    ]
+  },
+  "relationships": {
+    "venue_pages": ["/venues/planet-hollywood/"],
+    "guide_appearances": {
+      "confirmed": ["/guides/best-shows-for-first-timers/"],
+      "notes": "VEGAS! The Show is currently ranked #1 on the First-Timers guide.",
+      "normalization_status": "partial_confirmed"
+    },
+    "source": "repo"
+  },
+  "freshness": {
+    "display_label": "Last updated September 2026",
+    "record_verified_on": "2026-09-07",
+    "pricing_verified_on": "2026-09-07",
+    "schedule_verified_on": "2026-09-07",
+    "age_policy_verified_on": "2026-09-07",
+    "venue_verified_on": "2026-09-07",
+    "affiliate_url_verified_on": "2026-09-07",
+    "trailer_verified_on": "2026-09-07"
+  },
+  "provenance": {
+    "authoritative_fields": [
+      "pricing",
+      "schedule",
+      "age_policy",
+      "runtime.minutes",
+      "venue.hotel",
+      "venue.property_area",
+      "venue.showroom",
+      "venue.schema_location_name",
+      "ticketing.affiliate_url",
+      "media.official_trailer"
+    ],
+    "repo_derived_fields": [
+      "categories",
+      "runtime.intermission",
+      "descriptions",
+      "media.hero_image",
+      "seo",
+      "structured_data",
+      "sync",
+      "relationships",
+      "freshness.display_label"
+    ],
+    "notes": "Second source-of-truth pilot record. Introduces dated schedule phases so the September 21, 2026 move from 7:00 PM to 5:30 PM is preserved explicitly instead of overwriting the current schedule."
+  }
+}
