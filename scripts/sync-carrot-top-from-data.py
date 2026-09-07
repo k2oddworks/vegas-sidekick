@@ -21,7 +21,6 @@ def main():
     original = text
 
     price = d["pricing"]["from_price"]
-    regular = d["pricing"]["regular_price"]
     runtime = d["runtime"]["minutes"]
     affiliate = d["ticketing"]["affiliate_url"]
     hotel = d["venue"]["hotel"]
@@ -30,7 +29,6 @@ def main():
     trailer_id = d["media"]["official_trailer"]["video_id"]
     schedule = d["schedule"]
 
-    # Metadata / social copy: factual values sourced from data, editorial wording preserved.
     title = f"Carrot Top at Luxor Las Vegas Tickets from ${price} | What to Know"
     meta = f"Carrot Top at Luxor Las Vegas is a live comedy show. Tickets from ${price} at {showroom} at Luxor. Check showtimes, seating and whether the comedy style fits your group."
     og_title = f"Carrot Top Las Vegas — Tickets From ${price}"
@@ -40,45 +38,40 @@ def main():
     text = replace_once(text, r'<meta property="og:title" content="[^"]*"\s*/?>', f'<meta property="og:title" content="{og_title}" />', "og title")
     text = replace_once(text, r'<meta property="og:description" content="[^"]*"\s*/?>', f'<meta property="og:description" content="{og_desc}" />', "og description")
 
-    # Affiliate URLs: all Carrot Top ticket CTAs use the authoritative URL.
+    # All Carrot Top ticket CTAs use the single approved affiliate URL.
     text = re.sub(r'https://spotlight\.vegas/shows/comedy/carrot-top/ref/vegassidekick', affiliate, text)
 
-    # High-confidence visible facts.
+    # Current visible price surfaces.
     text = replace_once(text, r'(class="check">)Starting at \$\d+\.', rf'\1Starting at ${price}.', "hero price note")
-    text = replace_once(text, r'(<div class="price"><small>Tickets from</small>)\$\d+', rf'\1${price}', "hero price")
-    text = text.replace("75 minutes", f"{runtime} minutes")
-    text = text.replace("About 75 minutes, no intermission", f"About {runtime} minutes, no intermission")
-    text = text.replace("Luxor · Atrium Showroom, 3900 S Las Vegas Blvd", f"{hotel.replace(' Hotel','')} · {showroom}, 3900 S Las Vegas Blvd")
+    text = replace_once(text, r'(<div class="price"><small>From</small>\s*)\$\d+', rf'\1${price}', "hero price")
 
-    # Schedule cards are rewritten from the structured weekly schedule.
+    # Venue/runtime facts. Editorial language around them remains untouched.
+    text = text.replace("Luxor · Atrium Showroom, 3900 S Las Vegas Blvd", f"{hotel.replace(' Hotel','')} · {showroom}, 3900 S Las Vegas Blvd")
+    text = re.sub(r'About \d+ minutes, no intermission', f'About {runtime} minutes, no intermission', text, count=1)
+
+    # Weekly schedule cards are generated from the structured schedule.
     perf = {x["day"]: x["time"] for x in schedule["performances"]}
+    abbreviations = {"Monday":"Mon","Tuesday":"Tue","Wednesday":"Wed","Thursday":"Thu","Friday":"Fri","Saturday":"Sat","Sunday":"Sun"}
     def fmt_time(t):
         h, m = map(int, t.split(':'))
         suffix = 'AM' if h < 12 else 'PM'
-        hh = h if 1 <= h <= 12 else h-12 if h > 12 else 12
+        hh = h if 1 <= h <= 12 else h - 12 if h > 12 else 12
         return f"{hh}:{m:02d} {suffix}" if m else f"{hh} {suffix}"
-    for day in ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]:
-        if day in perf:
-            display = fmt_time(perf[day])
-            pattern = rf'(<div class="day[^>]*"><strong>{day[:3]}</strong><span>).*?(</span></div>)'
-            text = replace_once(text, pattern, rf'\1{display}\2', f"{day} schedule")
-        else:
-            pattern = rf'(<div class="day[^>]*"><strong>{day[:3]}</strong><span>).*?(</span></div>)'
-            text = replace_once(text, pattern, rf'\1Dark\2', f"{day} dark day")
+    for day, abbr in abbreviations.items():
+        value = fmt_time(perf[day]) if day in perf else "Dark"
+        pattern = rf'(<div class="day[^>]*"><strong>{abbr}</strong><span>).*?(</span></div>)'
+        text = replace_once(text, pattern, rf'\1{value}\2', f"{day} schedule")
 
-    # Age FAQ/body: normalize only the explicit age-policy sentence.
-    text = re.sub(
-        r'The minimum age is 16\.[^<]*',
-        age,
-        text,
-        count=1,
-    )
+    # Normalize the explicit age-policy answer only; don't touch editorial age commentary elsewhere.
+    text, age_count = re.subn(r'The minimum age is 16\.[^<]*', age, text, count=1)
+    if age_count != 1:
+        raise SystemExit(f"Expected exactly one explicit age-policy sentence; found {age_count}")
 
-    # Trailer ID / thumbnail / embed references.
+    # Approved trailer ID controls thumbnail/embed references.
     text = re.sub(r'i\.ytimg\.com/vi/[A-Za-z0-9_-]+/', f'i.ytimg.com/vi/{trailer_id}/', text)
     text = re.sub(r'youtube(?:-nocookie)?\.com/embed/[A-Za-z0-9_-]+', f'youtube-nocookie.com/embed/{trailer_id}', text)
 
-    # EventSeries offer values: price and affiliate URL come from the record.
+    # EventSeries offer data comes from the record.
     text = re.sub(r'("price"\s*:\s*)"?\d+(?:\.\d+)?"?', rf'\1"{price}"', text, count=1)
     text = re.sub(r'("url"\s*:\s*")https://spotlight\.vegas/shows/comedy/carrot-top/ref/vegassidekick(")', rf'\1{affiliate}\2', text, count=1)
 
