@@ -99,18 +99,19 @@ def main():
         h, m = map(int, t.split(':'))
         suffix = 'AM' if h < 12 else 'PM'
         hh = h if 1 <= h <= 12 else h - 12 if h > 12 else 12
-        return f"{hh}:{m:02d} {suffix}" if m else f"{hh} {suffix}"
+        return f"{hh}:{m:02d} {suffix}"
     for day, abbr in abbreviations.items():
         value = fmt_time(perf[day]) if day in perf else "Dark"
         pattern = rf'(<div class="day[^>]*"><strong>{abbr}</strong><span>).*?(</span></div>)'
         text = replace_once(text, pattern, rf'\g<1>{value}\g<2>', f"{day} schedule")
 
-    text, age_count = re.subn(r'(<p>)The minimum age is 16\.[^<]*(</p>)', rf'\g<1>{age}\g<2>', text, count=1)
+    age_visible = age + " Expect adult humor; this is not a show for younger children."
+    text, age_count = re.subn(r'(<p>)(?:The minimum age is 16\.|Guests must be 16 years of age or older\.)[^<]*(</p>)', rf'\g<1>{age_visible}\g<2>', text, count=1)
     if age_count != 1:
         raise SystemExit(f"Expected exactly one visible age-policy paragraph; found {age_count}")
 
     text = re.sub(r'i\.ytimg\.com/vi/[A-Za-z0-9_-]+/', f'i.ytimg.com/vi/{trailer_id}/', text)
-    text = re.sub(r'youtube(?:-nocookie)?\.com/embed/[A-Za-z0-9_-]+', f'youtube-nocookie.com/embed/{trailer_id}', text)
+    text = re.sub(r'(youtube(?:-nocookie)?\.com/embed/)[A-Za-z0-9_-]+', rf'\g<1>{trailer_id}', text)
 
     text = sync_eventseries(text, d)
 
