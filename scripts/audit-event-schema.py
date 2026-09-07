@@ -11,6 +11,7 @@ import re, json, glob, sys
 
 CLOSED_ARCHIVE_EXCEPTIONS = {
     'shows/cirque/mad-apple/index.html',
+    'shows/magic/david-goldrake/index.html',
 }
 
 def extract_json_ld_blocks(content):
