@@ -1,0 +1,29 @@
+name: Finalize Guide System
+on:
+  push:
+    paths:
+      - 'scripts/finalize-guide-system.py'
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply guide system
+        run: python scripts/finalize-guide-system.py
+      - name: Validate guide outputs
+        run: |
+          ! grep -RniE 'Mad Apple|mad-apple' guides/best-*/index.html
+          grep -Rl 'guide-newsletter-form' guides/best-*/index.html | wc -l | grep -q '^8$'
+          grep -Rl 'brevo-subscribe.vegassidekickcom.workers.dev' guides/best-*/index.html | wc -l | grep -q '^8$'
+      - name: Commit guide rollout
+        run: |
+          git config user.name 'Kris Kidd'
+          git config user.email 'k2oddworks@gmail.com'
+          git add guides/best-*/index.html
+          git diff --cached --quiet || git commit -m 'Finish guide visual and newsletter system'
+          git push
