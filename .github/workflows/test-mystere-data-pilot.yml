@@ -1,0 +1,113 @@
+name: Test Mystere Data Pilot
+
+on:
+  push:
+    branches:
+      - data/mystere-record
+    paths:
+      - data/shows/mystere.json
+      - .github/workflows/test-mystere-data-pilot.yml
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data/mystere-record
+
+      - name: Extend generic engine for multiple daily showtimes
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('scripts/sync-show-from-data.py')
+          s = p.read_text()
+
+          marker = '''def sync_seo(text: str, record: dict[str, Any], changes: list[str]) -> str:\n'''
+          helper = '''def grouped_performances(schedule: dict[str, Any]) -> dict[str, list[str]]:\n    grouped: dict[str, list[str]] = {}\n    for item in schedule.get("performances") or []:\n        day = item.get("day")\n        time = item.get("time")\n        if not day or not time:\n            raise SyncError("schedule performances require day and time")\n        grouped.setdefault(day, [])\n        if time not in grouped[day]:\n            grouped[day].append(time)\n    for day in grouped:\n        grouped[day].sort()\n    return grouped\n\n\ndef format_times_compact(values: list[str], html: bool = False) -> str:\n    if not values:\n        return ""\n    displays = [format_time_compact(value) for value in values]\n    if len(displays) == 1:\n        return displays[0]\n    suffixes = [value.rsplit(" ", 1)[-1] for value in displays]\n    if len(set(suffixes)) == 1:\n        suffix = suffixes[0]\n        stripped = [value[:-(len(suffix) + 1)] for value in displays]\n        joiner = " &amp; " if html else " & "\n        return joiner.join(stripped) + f" {suffix}"\n    joiner = " &amp; " if html else " & "\n    return joiner.join(displays)\n\n\ndef schedule_objects(schedule: dict[str, Any]) -> list[dict[str, Any]]:\n    grouped = grouped_performances(schedule)\n    by_times: dict[tuple[str, ...], list[str]] = {}\n    for day, times in grouped.items():\n        by_times.setdefault(tuple(times), []).append(day)\n    objects: list[dict[str, Any]] = []\n    for times, days in by_times.items():\n        schema_days = [f"https://schema.org/{day}" for day in DAY_ABBR if day in days]\n        for showtime in times:\n            objects.append({"@type": "Schedule", "byDay": schema_days, "startTime": showtime})\n    return objects\n\n\n'''
+          if helper not in s:
+              if marker not in s: raise SystemExit('helper marker not found')
+              s = s.replace(marker, helper + marker, 1)
+
+          old_cards = '''    perf_by_day = {item["day"]: item["time"] for item in performances}\n    updated = 0\n    for day, abbr in DAY_ABBR.items():\n        if day in perf_by_day:\n            value = format_time(perf_by_day[day])\n        elif day in dark_days:\n            value = "Dark"\n        else:\n            continue\n'''
+          new_cards = '''    perf_by_day = grouped_performances(schedule)\n    updated = 0\n    for day, abbr in DAY_ABBR.items():\n        if day in perf_by_day:\n            value = format_times_compact(perf_by_day[day], html=True)\n        elif day in dark_days:\n            value = "Dark"\n        else:\n            continue\n'''
+          if old_cards not in s: raise SystemExit('schedule card target not found')
+          s = s.replace(old_cards, new_cards, 1)
+
+          old_event = '''    days = [item["day"] for item in performances]\n    times = sorted({item["time"] for item in performances})\n    if len(times) > 1:\n        # EventSchedule only has one startTime in the current canonical pages.\n        # Do not silently collapse multiple showtimes into incorrect schema.\n        raise SyncError(f"{record['slug']}: EventSeries sync does not yet support multiple weekly start times")\n'''
+          new_event = '''    grouped = grouped_performances(schedule)\n    days = list(grouped)\n    times = sorted({showtime for values in grouped.values() for showtime in values})\n    schedules = schedule_objects(schedule)\n'''
+          if old_event not in s: raise SystemExit('event schedule guard target not found')
+          s = s.replace(old_event, new_event, 1)
+
+          old_schema = '''        event_schedule = obj.get("eventSchedule")\n        if isinstance(event_schedule, dict):\n            if days and "byDay" in event_schedule:\n                event_schedule["byDay"] = [f"https://schema.org/{day}" for day in days]\n            if times and "startTime" in event_schedule:\n                event_schedule["startTime"] = times[0]\n'''
+          new_schema = '''        if schedules:\n            obj["eventSchedule"] = schedules[0] if len(schedules) == 1 else schedules\n'''
+          if old_schema not in s: raise SystemExit('event schema target not found')
+          s = s.replace(old_schema, new_schema, 1)
+
+          p.write_text(s)
+          PY
+
+      - name: Sync Mystere from record
+        run: python3 scripts/sync-show-from-data.py mystere
+
+      - name: Verify customer-facing weekly schedule
+        run: |
+          grep -q '<strong>Mon</strong><span>6:30 &amp; 9 PM</span>' shows/cirque/mystere/index.html
+          grep -q '<strong>Tue</strong><span>6:30 &amp; 9 PM</span>' shows/cirque/mystere/index.html
+          grep -q '<strong>Wed</strong><span>Dark</span>' shows/cirque/mystere/index.html
+          grep -q '<strong>Thu</strong><span>Dark</span>' shows/cirque/mystere/index.html
+          grep -q '<strong>Fri</strong><span>6:30 &amp; 9 PM</span>' shows/cirque/mystere/index.html
+          grep -q '<strong>Sat</strong><span>6:30 &amp; 9 PM</span>' shows/cirque/mystere/index.html
+          grep -q '<strong>Sun</strong><span>6:30 &amp; 9 PM</span>' shows/cirque/mystere/index.html
+
+      - name: Verify both showtimes in EventSeries
+        run: |
+          python3 - <<'PY'
+          import json, re
+          from pathlib import Path
+          text = Path('shows/cirque/mystere/index.html').read_text()
+          blocks = re.findall(r'<script type="application/ld\\+json">(.*?)</script>', text, re.S)
+          series = [json.loads(x.strip()) for x in blocks if json.loads(x.strip()).get('@type') == 'EventSeries'][0]
+          schedules = series['eventSchedule']
+          assert isinstance(schedules, list) and len(schedules) == 2, schedules
+          assert {x['startTime'] for x in schedules} == {'18:30','21:00'}
+          expected = {'https://schema.org/Monday','https://schema.org/Tuesday','https://schema.org/Friday','https://schema.org/Saturday','https://schema.org/Sunday'}
+          assert all(set(x['byDay']) == expected for x in schedules)
+          assert series['offers']['url'] == 'https://spotlight.vegas/shows/cirque-du-soleil/mystere/ref/vegassidekick'
+          assert series['offers']['price'] == 84
+          print('Mystere EventSeries preserves both recurring showtimes')
+          PY
+
+      - name: Confirm idempotence
+        run: |
+          cp shows/cirque/mystere/index.html /tmp/mystere.html
+          python3 scripts/sync-show-from-data.py mystere
+          diff -u /tmp/mystere.html shows/cirque/mystere/index.html
+
+      - name: Prior-show regressions
+        run: |
+          python3 scripts/sync-show-from-data.py carrot-top --dry-run
+          python3 scripts/sync-show-from-data.py vegas-the-show --dry-run
+
+      - name: Validate Event schema
+        run: python3 scripts/audit-event-schema.py
+      - name: Validate SERP metadata
+        run: python3 scripts/audit-serp-metadata.py
+      - name: Validate content and links
+        run: python3 scripts/audit-content-link-hygiene.py
+      - name: Validate internal links
+        run: python3 scripts/audit-internal-links.py
+
+      - name: Commit durable pilot changes
+        run: |
+          git checkout -- docs/internal-link-audit.md || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/sync-show-from-data.py shows/cirque/mystere/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Support multiple daily showtimes in show sync"
+            git push origin HEAD:data/mystere-record
+          fi
