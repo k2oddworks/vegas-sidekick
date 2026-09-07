@@ -1,5 +1,5 @@
 // Vegas Sidekick — Shared Footer Component
-// v14 — footer polish + worker email capture + bigger Spike sparkle Easter egg + shared Category V2 loader
+// v15 — footer polish + worker email capture + bigger Spike sparkle Easter egg + shared Category V2 loader
 (function () {
   'use strict';
 
@@ -259,6 +259,13 @@
     const script = document.createElement('script');
     script.src = '/components/category-v2.js?v=1';
     script.dataset.vsCategoryV2 = '1';
+    script.onload = function () {
+      if (document.querySelector('script[data-vs-category-v2-post]')) return;
+      const post = document.createElement('script');
+      post.src = '/components/category-v2-post.js?v=1';
+      post.dataset.vsCategoryV2Post = '1';
+      document.body.appendChild(post);
+    };
     document.body.appendChild(script);
   }
 
