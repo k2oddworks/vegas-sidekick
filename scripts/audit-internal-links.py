@@ -27,12 +27,6 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / "docs" / "internal-link-audit.md"
 
-SKIP_TAGS = {"header", "footer", "nav", "script", "style", "noscript"}
-SKIP_CLASS_TOKENS = {
-    "site-header", "site-footer", "header", "footer", "sticky-nav", "subnav",
-    "breadcrumb", "crumb", "mobile-drawer", "drawer", "global-nav"
-}
-
 THRESHOLDS = {
     "show": (3, 2),
     "guide": (4, 2),
@@ -44,7 +38,6 @@ THRESHOLDS = {
 
 def classify(path: Path) -> str | None:
     rel = path.relative_to(ROOT).as_posix()
-    parts = rel.split("/")
     if re.fullmatch(r"shows/[^/]+/[^/]+/index\.html", rel):
         return "show"
     if re.fullmatch(r"guides/[^/]+/index\.html", rel):
@@ -77,6 +70,31 @@ def title_for(path: Path, text: str) -> str:
     return path.parent.name.replace("-", " ").title()
 
 
+def contextual_html(text: str) -> str:
+    """Remove broad chrome regions before extracting links.
+
+    The site injects much of its shared header/footer at runtime, but pages also
+    contain breadcrumbs/sticky nav. Removing these blocks keeps the report focused
+    on useful contextual relationships rather than global navigation volume.
+    """
+    cleaned = text
+    for tag in ("header", "footer", "nav", "script", "style", "noscript"):
+        cleaned = re.sub(
+            rf"<{tag}\b[^>]*>.*?</{tag}>",
+            " ",
+            cleaned,
+            flags=re.I | re.S,
+        )
+    # Remove common div-based global chrome if present in source HTML.
+    cleaned = re.sub(
+        r'<div\b[^>]*(?:id|class)=["\'][^"\']*(?:site-header|site-footer|mobile-drawer|global-nav)[^"\']*["\'][^>]*>.*?</div>',
+        " ",
+        cleaned,
+        flags=re.I | re.S,
+    )
+    return cleaned
+
+
 def normalize_local_href(href: str) -> str | None:
     href = (href or "").strip()
     if not href or href.startswith(("#", "mailto:", "tel:", "javascript:")):
@@ -105,39 +123,27 @@ class LinkParser(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.links: list[tuple[str, str]] = []
-        self.skip_depth = 0
         self.anchor_href: str | None = None
         self.anchor_text: list[str] = []
-        self.anchor_skipped = False
 
     def handle_starttag(self, tag, attrs):
+        if tag != "a":
+            return
         attrs_dict = dict(attrs)
-        classes = set((attrs_dict.get("class") or "").split())
-        should_skip = tag in SKIP_TAGS or bool(classes & SKIP_CLASS_TOKENS)
-        if should_skip:
-            self.skip_depth += 1
-        elif self.skip_depth:
-            self.skip_depth += 1
-
-        if tag == "a":
-            self.anchor_href = attrs_dict.get("href")
-            self.anchor_text = []
-            self.anchor_skipped = self.skip_depth > 0
+        self.anchor_href = attrs_dict.get("href")
+        self.anchor_text = []
 
     def handle_data(self, data):
         if self.anchor_href is not None:
             self.anchor_text.append(data)
 
     def handle_endtag(self, tag):
-        if tag == "a" and self.anchor_href is not None:
-            if not self.anchor_skipped:
-                text = re.sub(r"\s+", " ", " ".join(self.anchor_text)).strip()
-                self.links.append((self.anchor_href, text))
-            self.anchor_href = None
-            self.anchor_text = []
-            self.anchor_skipped = False
-        if self.skip_depth:
-            self.skip_depth -= 1
+        if tag != "a" or self.anchor_href is None:
+            return
+        text = re.sub(r"\s+", " ", " ".join(self.anchor_text)).strip()
+        self.links.append((self.anchor_href, text))
+        self.anchor_href = None
+        self.anchor_text = []
 
 
 def main() -> None:
@@ -145,10 +151,12 @@ def main() -> None:
     existing = {p.relative_to(ROOT).as_posix() for p in html_files}
 
     pages: dict[str, dict] = {}
+    raw_links: dict[str, list[tuple[str, str]]] = defaultdict(list)
     broken: list[tuple[str, str, str]] = []
     graph_out: dict[str, set[str]] = defaultdict(set)
-    anchors: dict[tuple[str, str], list[str]] = defaultdict(list)
 
+    # Build the complete tracked-page inventory before resolving edges so file
+    # traversal order cannot affect whether a target is recognized.
     for path in html_files:
         kind = classify(path)
         if not kind:
@@ -162,10 +170,15 @@ def main() -> None:
         }
         parser = LinkParser()
         try:
-            parser.feed(text)
+            parser.feed(contextual_html(text))
         except Exception:
             pass
-        for href, anchor in parser.links:
+        raw_links[rel] = parser.links
+
+    tracked = set(pages)
+
+    for rel, links in raw_links.items():
+        for href, anchor in links:
             target = normalize_local_href(href)
             if not target:
                 continue
@@ -174,16 +187,8 @@ def main() -> None:
                 continue
             if target == rel:
                 continue
-            if target in pages or classify(ROOT / target):
+            if target in tracked:
                 graph_out[rel].add(target)
-                if anchor:
-                    anchors[(rel, target)].append(anchor)
-
-    # Some targets are discovered before they are entered in pages. Build full page
-    # inventory first, then filter graph edges to tracked page families.
-    tracked = set(pages)
-    for src in list(graph_out):
-        graph_out[src] = {dst for dst in graph_out[src] if dst in tracked}
 
     inbound: dict[str, set[str]] = defaultdict(set)
     for src, targets in graph_out.items():
@@ -249,7 +254,13 @@ def main() -> None:
     else:
         out.append("| — | — | No pages below current review thresholds |")
 
-    out += ["", "## Full graph inventory", "", "| Type | Page | Contextual outbound | Contextual inbound | Review |", "|---|---|---:|---:|:---:|"]
+    out += [
+        "",
+        "## Full graph inventory",
+        "",
+        "| Type | Page | Contextual outbound | Contextual inbound | Review |",
+        "|---|---|---:|---:|:---:|",
+    ]
     for kind, title, rel, out_count, in_count, review in rows:
         out.append(f"| {kind.title()} | [{title}](/{rel.removesuffix('index.html')}) | {out_count} | {in_count} | {'Yes' if review else '—'} |")
 
