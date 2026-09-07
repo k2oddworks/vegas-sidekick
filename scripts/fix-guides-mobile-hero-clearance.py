@@ -7,3 +7,4 @@ assert old in s, 'expected mobile hero rule not found'
 s=s.replace(old,new,1)
 assert new in s
 p.write_text(s)
+# one-time mobile clearance fix
