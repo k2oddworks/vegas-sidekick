@@ -15,6 +15,53 @@ def replace_once(text, pattern, repl, label, flags=0):
     return new
 
 
+def sync_eventseries(text, d):
+    blocks = list(re.finditer(r'(<script type="application/ld\+json">)(.*?)(</script>)', text, re.S))
+    changed = 0
+    offset = 0
+    perf = d["schedule"]["performances"]
+    days = [x["day"] for x in perf]
+    times = sorted({x["time"] for x in perf})
+    if len(times) != 1:
+        raise SystemExit("Carrot Top pilot expects one weekly showtime across active days")
+
+    for match in blocks:
+        raw = match.group(2).strip()
+        try:
+            obj = json.loads(raw)
+        except json.JSONDecodeError:
+            continue
+        if obj.get("@type") != "EventSeries":
+            continue
+
+        offers = obj.setdefault("offers", {"@type": "Offer"})
+        offers["price"] = d["pricing"]["from_price"]
+        offers["priceCurrency"] = d["pricing"]["currency"]
+        offers["url"] = d["ticketing"]["affiliate_url"]
+
+        location = obj.get("location")
+        if isinstance(location, dict):
+            location["name"] = f'{d["venue"]["showroom"]} at {d["venue"]["hotel"]}'
+
+        event_schedule = obj.get("eventSchedule")
+        if isinstance(event_schedule, dict):
+            if "byDay" in event_schedule:
+                event_schedule["byDay"] = [f"https://schema.org/{day}" for day in days]
+            if "startTime" in event_schedule:
+                event_schedule["startTime"] = times[0]
+
+        rendered = "\n" + json.dumps(obj, ensure_ascii=False, indent=2) + "\n"
+        start = match.start(2) + offset
+        end = match.end(2) + offset
+        text = text[:start] + rendered + text[end:]
+        offset += len(rendered) - (match.end(2) - match.start(2))
+        changed += 1
+
+    if changed != 1:
+        raise SystemExit(f"Expected exactly one EventSeries block; found {changed}")
+    return text
+
+
 def main():
     d = json.loads(DATA.read_text(encoding="utf-8"))
     text = PAGE.read_text(encoding="utf-8")
@@ -65,8 +112,7 @@ def main():
     text = re.sub(r'i\.ytimg\.com/vi/[A-Za-z0-9_-]+/', f'i.ytimg.com/vi/{trailer_id}/', text)
     text = re.sub(r'youtube(?:-nocookie)?\.com/embed/[A-Za-z0-9_-]+', f'youtube-nocookie.com/embed/{trailer_id}', text)
 
-    text = re.sub(r'("price"\s*:\s*)"?\d+(?:\.\d+)?"?', rf'\g<1>"{price}"', text, count=1)
-    text = re.sub(r'("url"\s*:\s*")https://spotlight\.vegas/shows/comedy/carrot-top/ref/vegassidekick(")', rf'\g<1>{affiliate}\g<2>', text, count=1)
+    text = sync_eventseries(text, d)
 
     if text == original:
         print("Carrot Top page already matches structured data; no page changes needed.")
