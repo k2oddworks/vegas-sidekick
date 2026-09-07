@@ -6,3 +6,4 @@ new="@media(max-width:760px){.hero{padding:78px 0 48px}.start,.grid{grid-templat
 assert old in s, 'mobile hero rule not found'
 s=s.replace(old,new,1)
 p.write_text(s)
+# trigger mobile clearance fix
