@@ -33,11 +33,14 @@ THRESHOLDS = {
     "dispatch": (2, 1),
     "venue": (3, 2),
     "category": (3, 2),
+    "hub": (3, 0),
 }
 
 
 def classify(path: Path) -> str | None:
     rel = path.relative_to(ROOT).as_posix()
+    if rel in {"index.html", "guides/index.html", "news/index.html", "venues/index.html"}:
+        return "hub"
     if re.fullmatch(r"shows/[^/]+/[^/]+/index\.html", rel):
         return "show"
     if re.fullmatch(r"guides/[^/]+/index\.html", rel):
@@ -226,14 +229,14 @@ def main() -> None:
     out = [
         "# Vegas Sidekick Internal Link Audit",
         "",
-        "Generated from contextual links in the current checkout. Global header/footer/navigation links are excluded where detectable. Thresholds are review signals, not permission for automated link insertion.",
+        "Generated from contextual links in the current checkout. Global header/footer/navigation links are excluded where detectable. Editorial index pages are counted as real internal-link hubs. Thresholds are review signals, not permission for automated link insertion.",
         "",
         "## Summary",
         "",
         "| Page family | Pages | Review candidates |",
         "|---|---:|---:|",
     ]
-    for kind in ("show", "guide", "dispatch", "venue", "category"):
+    for kind in ("show", "guide", "dispatch", "venue", "category", "hub"):
         out.append(f"| {kind.title()} | {summary[kind]} | {weak_summary[kind]} |")
 
     out += [
@@ -281,6 +284,7 @@ def main() -> None:
         "",
         "- A low count is a **review flag**, not an instruction to manufacture links.",
         "- A high count is not automatically good; relevance still wins.",
+        "- Homepage and editorial indexes count as hubs because they provide real crawl/discovery paths.",
         "- Closed show archives are counted in the graph but exempt from active-show thresholds.",
         "- The audit should be paired with Search Console/conversion data when choosing which opportunities to fix first.",
         "",
