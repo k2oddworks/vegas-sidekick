@@ -5,7 +5,9 @@
   "slug": "vegas-the-show",
   "canonical_path": "/shows/music/vegas-the-show/",
   "status": "active",
-  "categories": ["music"],
+  "categories": [
+    "music"
+  ],
   "runtime": {
     "minutes": 75,
     "minutes_source": "authoritative",
@@ -25,28 +27,68 @@
         "effective_from": null,
         "effective_through": "2026-09-20",
         "performances": [
-          {"day": "Monday", "time": "19:00"},
-          {"day": "Tuesday", "time": "19:00"},
-          {"day": "Wednesday", "time": "19:00"},
-          {"day": "Thursday", "time": "19:00"},
-          {"day": "Friday", "time": "19:00"},
-          {"day": "Saturday", "time": "19:00"}
+          {
+            "day": "Monday",
+            "time": "19:00"
+          },
+          {
+            "day": "Tuesday",
+            "time": "19:00"
+          },
+          {
+            "day": "Wednesday",
+            "time": "19:00"
+          },
+          {
+            "day": "Thursday",
+            "time": "19:00"
+          },
+          {
+            "day": "Friday",
+            "time": "19:00"
+          },
+          {
+            "day": "Saturday",
+            "time": "19:00"
+          }
         ],
-        "dark_days": ["Sunday"],
+        "dark_days": [
+          "Sunday"
+        ],
         "display": "Monday-Saturday at 7:00 PM; dark Sunday"
       },
       {
         "effective_from": "2026-09-21",
         "effective_through": null,
         "performances": [
-          {"day": "Monday", "time": "17:30"},
-          {"day": "Tuesday", "time": "17:30"},
-          {"day": "Wednesday", "time": "17:30"},
-          {"day": "Thursday", "time": "17:30"},
-          {"day": "Friday", "time": "17:30"},
-          {"day": "Saturday", "time": "17:30"}
+          {
+            "day": "Monday",
+            "time": "17:30"
+          },
+          {
+            "day": "Tuesday",
+            "time": "17:30"
+          },
+          {
+            "day": "Wednesday",
+            "time": "17:30"
+          },
+          {
+            "day": "Thursday",
+            "time": "17:30"
+          },
+          {
+            "day": "Friday",
+            "time": "17:30"
+          },
+          {
+            "day": "Saturday",
+            "time": "17:30"
+          }
         ],
-        "dark_days": ["Sunday"],
+        "dark_days": [
+          "Sunday"
+        ],
         "display": "Monday-Saturday at 5:30 PM; dark Sunday"
       }
     ],
@@ -73,10 +115,17 @@
   "media": {
     "hero_image": "/images/vegas-the-show-hero.webp",
     "gallery": [
-      {"src": "/images/vegas-the-show-hero.webp", "alt": "VEGAS! The Show at Saxe Theater Las Vegas"}
+      {
+        "src": "/images/vegas-the-show-hero.webp",
+        "alt": "VEGAS! The Show at Saxe Theater Las Vegas"
+      }
     ],
     "official_trailer": null,
-    "source": "repo_with_authoritative_no_trailer"
+    "source": "repo_with_authoritative_no_trailer",
+    "mobile_hero": {
+      "fit": "contain",
+      "position": "center center"
+    }
   },
   "descriptions": {
     "meta": "VEGAS! The Show is a live music and variety show in Las Vegas. Tickets from $63. Check showtimes, seating and what kind of Vegas performance to expect.",
@@ -95,7 +144,10 @@
   "structured_data": {
     "primary_type": "EventSeries",
     "name": "VEGAS! The Show",
-    "performer": {"type": "PerformingGroup", "name": "VEGAS! The Show"},
+    "performer": {
+      "type": "PerformingGroup",
+      "name": "VEGAS! The Show"
+    },
     "offer": {
       "price": 63,
       "price_currency": "USD",
@@ -128,9 +180,13 @@
     ]
   },
   "relationships": {
-    "venue_pages": ["/venues/planet-hollywood/"],
+    "venue_pages": [
+      "/venues/planet-hollywood/"
+    ],
     "guide_appearances": {
-      "confirmed": ["/guides/best-shows-for-first-timers/"],
+      "confirmed": [
+        "/guides/best-shows-for-first-timers/"
+      ],
       "notes": "VEGAS! The Show is currently ranked #1 on the First-Timers guide.",
       "normalization_status": "partial_confirmed"
     },
@@ -157,7 +213,8 @@
       "venue.showroom",
       "venue.schema_location_name",
       "ticketing.affiliate_url",
-      "media.official_trailer"
+      "media.official_trailer",
+      "media.mobile_hero"
     ],
     "repo_derived_fields": [
       "categories",

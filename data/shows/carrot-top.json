@@ -5,7 +5,9 @@
   "slug": "carrot-top",
   "canonical_path": "/shows/comedy/carrot-top/",
   "status": "active",
-  "categories": ["comedy"],
+  "categories": [
+    "comedy"
+  ],
   "runtime": {
     "minutes": 75,
     "minutes_source": "authoritative",
@@ -21,14 +23,34 @@
   "schedule": {
     "timezone": "America/Los_Angeles",
     "performances": [
-      {"day": "Monday", "time": "20:00"},
-      {"day": "Tuesday", "time": "20:00"},
-      {"day": "Wednesday", "time": "20:00"},
-      {"day": "Thursday", "time": "20:00"},
-      {"day": "Friday", "time": "20:00"},
-      {"day": "Saturday", "time": "20:00"}
+      {
+        "day": "Monday",
+        "time": "20:00"
+      },
+      {
+        "day": "Tuesday",
+        "time": "20:00"
+      },
+      {
+        "day": "Wednesday",
+        "time": "20:00"
+      },
+      {
+        "day": "Thursday",
+        "time": "20:00"
+      },
+      {
+        "day": "Friday",
+        "time": "20:00"
+      },
+      {
+        "day": "Saturday",
+        "time": "20:00"
+      }
     ],
-    "dark_days": ["Sunday"],
+    "dark_days": [
+      "Sunday"
+    ],
     "display": "Monday-Saturday at 8 PM; dark Sunday",
     "source": "authoritative"
   },
@@ -51,15 +73,28 @@
   "media": {
     "hero_image": "/images/carrot-top-show-2.jpg",
     "gallery": [
-      {"src": "/images/carrot-top-show-2.jpg", "alt": "Carrot Top performing with a prop at the Atrium Showroom"},
-      {"src": "/images/carrot-top-show-3.jpg", "alt": "Carrot Top performing in a cowboy hat with a horse prop at Luxor"},
-      {"src": "/images/carrot-top-hero.jpg", "alt": "Carrot Top on stage at Luxor Las Vegas"}
+      {
+        "src": "/images/carrot-top-show-2.jpg",
+        "alt": "Carrot Top performing with a prop at the Atrium Showroom"
+      },
+      {
+        "src": "/images/carrot-top-show-3.jpg",
+        "alt": "Carrot Top performing in a cowboy hat with a horse prop at Luxor"
+      },
+      {
+        "src": "/images/carrot-top-hero.jpg",
+        "alt": "Carrot Top on stage at Luxor Las Vegas"
+      }
     ],
     "official_trailer": {
       "provider": "YouTube",
       "url": "https://youtu.be/XRdqvnCZe-A?si=OmYJy6MwjF7IgZfB",
       "video_id": "XRdqvnCZe-A",
       "source": "authoritative"
+    },
+    "mobile_hero": {
+      "fit": "cover",
+      "position": "50% 22%"
     }
   },
   "descriptions": {
@@ -79,7 +114,10 @@
   "structured_data": {
     "primary_type": "EventSeries",
     "name": "Carrot Top at Luxor Las Vegas",
-    "performer": {"type": "Person", "name": "Carrot Top"},
+    "performer": {
+      "type": "Person",
+      "name": "Carrot Top"
+    },
     "offer": {
       "price": 62,
       "price_currency": "USD",
@@ -100,7 +138,9 @@
       "/shows/comedy/brad-garretts-comedy-club/"
     ],
     "related_shows_normalization_status": "partial_current_page_scan",
-    "venue_pages": ["/venues/excalibur-luxor-mandalay-bay/"],
+    "venue_pages": [
+      "/venues/excalibur-luxor-mandalay-bay/"
+    ],
     "guide_appearances": {
       "confirmed": [],
       "normalization_status": "pending_full_guide_scan"
@@ -136,7 +176,8 @@
       "venue.hotel",
       "venue.showroom",
       "ticketing.affiliate_url",
-      "media.official_trailer"
+      "media.official_trailer",
+      "media.mobile_hero"
     ],
     "repo_derived_fields": [
       "categories",
