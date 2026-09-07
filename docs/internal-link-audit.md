@@ -7,14 +7,14 @@ Generated from contextual links in the current checkout. Global header/footer/na
 | Page family | Pages | Review candidates |
 |---|---:|---:|
 | Show | 73 | 0 |
-| Guide | 8 | 1 |
+| Guide | 8 | 0 |
 | Dispatch | 23 | 0 |
 | Venue | 8 | 0 |
 | Category | 8 | 0 |
 | Hub | 4 | 0 |
 
 - Broken contextual local targets found: **0**
-- Total review candidates: **1**
+- Total review candidates: **0**
 
 ## Highest-priority linking opportunities
 
@@ -22,7 +22,7 @@ Pages with the weakest combined contextual support appear first. Review relevanc
 
 | Type | Page | Issue |
 |---|---|---|
-| Guide | [Best Tribute Shows in Vegas 2026: All 14 Ranked](/guides/best-tribute-shows/) | inbound 1/2 |
+| — | — | No pages below current review thresholds |
 
 ## Full graph inventory
 
@@ -60,10 +60,10 @@ Pages with the weakest combined contextual support appear first. Review relevanc
 | Dispatch | [Soda Stereo ECOS at Dolby Live September 13, 2026](/news/soda-stereo-ecos-september-13/) | 3 | 1 | — |
 | Dispatch | [Tumua at The Palazzo Theatre October 9, 2026](/news/tumua-das-how-tour-venetian-october-9/) | 3 | 1 | — |
 | Guide | [Best Adult Shows in Vegas 2026: All 11 Ranked](/guides/best-adult-shows/) | 16 | 2 | — |
-| Guide | [Best Cheap Vegas Shows 2026: 27 Great Shows Under $50](/guides/best-cheap-vegas-shows/) | 33 | 7 | — |
+| Guide | [Best Cheap Vegas Shows 2026: 27 Great Shows Under $50](/guides/best-cheap-vegas-shows/) | 34 | 7 | — |
 | Guide | [Best Cirque du Soleil Shows in Vegas 2026: All 4 Ranked](/guides/best-cirque-shows/) | 10 | 6 | — |
 | Guide | [Best Magic Shows in Vegas 2026: All 11 Ranked by a Local](/guides/best-magic-shows/) | 16 | 18 | — |
-| Guide | [Best Tribute Shows in Vegas 2026: All 14 Ranked](/guides/best-tribute-shows/) | 21 | 1 | Yes |
+| Guide | [Best Tribute Shows in Vegas 2026: All 14 Ranked](/guides/best-tribute-shows/) | 21 | 2 | — |
 | Guide | [Best Vegas Date-Night Shows 2026: 10 Picks](/guides/best-shows-for-couples/) | 15 | 5 | — |
 | Guide | [Best Vegas Shows for Families 2026: 12 Kid-Friendly Picks](/guides/best-shows-for-families/) | 17 | 11 | — |
 | Guide | [Best Vegas Shows for First-Timers 2026: 12 Can't-Miss Picks](/guides/best-shows-for-first-timers/) | 16 | 14 | — |
