@@ -295,6 +295,22 @@ def sync_schedule_cards(text: str, record: dict[str, Any], changes: list[str]) -
     return text
 
 
+def sync_mobile_hero(text: str, record: dict[str, Any], changes: list[str]) -> str:
+    mobile = ((record.get("media") or {}).get("mobile_hero") or {})
+    if not mobile:
+        return text
+    fit = mobile.get("fit", "cover")
+    position = mobile.get("position", "center center")
+    if fit not in {"cover", "contain"}:
+        raise SyncError(f"{record['slug']}: media.mobile_hero.fit must be cover or contain")
+    attrs = f' data-mobile-fit="{fit}" style="--mobile-hero-position:{position}"'
+    pattern = r'<div class="hero-media"(?: data-mobile-fit="[^"]+")?(?: style="--mobile-hero-position:[^"]+")?>'
+    new = replace_once(text, pattern, f'<div class="hero-media"{attrs}>', "mobile hero container")
+    if new != text:
+        changes.append("media.mobile_hero")
+    return new
+
+
 def sync_trailer(text: str, record: dict[str, Any], changes: list[str]) -> str:
     trailer = ((record.get("media") or {}).get("official_trailer") or {})
     video_id = trailer.get("video_id")
@@ -487,6 +503,7 @@ def sync_one(data_path: Path, dry_run: bool = False) -> tuple[Path, list[str]]:
     text = sync_schedule_cards(text, record, changes)
     text = sync_explicit_visible_rules(text, record, changes)
     text = sync_faq_schema(text, record, changes)
+    text = sync_mobile_hero(text, record, changes)
     text = sync_trailer(text, record, changes)
     text = sync_eventseries(text, record, changes)
 

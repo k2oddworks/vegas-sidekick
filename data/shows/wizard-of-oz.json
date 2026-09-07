@@ -5,7 +5,9 @@
   "slug": "wizard-of-oz",
   "canonical_path": "/shows/spectaculars/wizard-of-oz/",
   "status": "active",
-  "categories": ["spectaculars"],
+  "categories": [
+    "spectaculars"
+  ],
   "runtime": {
     "minutes": 75,
     "minutes_source": "authoritative"
@@ -77,12 +79,25 @@
   "media": {
     "hero_image": "/images/wizard-of-oz-hero.webp",
     "gallery": [
-      {"src": "/images/wizard-of-oz-hero.webp", "alt": "The Wizard of Oz at Sphere Las Vegas show photo"},
-      {"src": "/images/wizard-of-oz-2.webp", "alt": "The Wizard of Oz at Sphere Las Vegas show photo"},
-      {"src": "/images/wizard-of-oz-3.webp", "alt": "The Wizard of Oz at Sphere Las Vegas show photo"}
+      {
+        "src": "/images/wizard-of-oz-hero.webp",
+        "alt": "The Wizard of Oz at Sphere Las Vegas show photo"
+      },
+      {
+        "src": "/images/wizard-of-oz-2.webp",
+        "alt": "The Wizard of Oz at Sphere Las Vegas show photo"
+      },
+      {
+        "src": "/images/wizard-of-oz-3.webp",
+        "alt": "The Wizard of Oz at Sphere Las Vegas show photo"
+      }
     ],
     "official_trailer": null,
-    "source": "repo_with_authoritative_no_trailer"
+    "source": "repo_with_authoritative_no_trailer",
+    "mobile_hero": {
+      "fit": "contain",
+      "position": "center center"
+    }
   },
   "seo": {
     "title": "The Wizard of Oz at Sphere Vegas Tickets from $123 | Show Guide",
@@ -140,7 +155,8 @@
       "venue.showroom",
       "venue.street_address",
       "operational_restrictions",
-      "media.official_trailer"
+      "media.official_trailer",
+      "media.mobile_hero"
     ],
     "repo_derived_fields": [
       "categories",
