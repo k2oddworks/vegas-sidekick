@@ -15,6 +15,7 @@ narrow visible-copy rule under `sync`.
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import re
 import sys
@@ -163,6 +164,15 @@ def schedule_objects(schedule: dict[str, Any]) -> list[dict[str, Any]]:
     return objects
 
 
+def value_at_path(record: dict[str, Any], path: str) -> Any:
+    value: Any = record
+    for part in path.split("."):
+        if not isinstance(value, dict) or part not in value:
+            raise SyncError(f"{record['slug']}: missing data path {path}")
+        value = value[part]
+    return value
+
+
 def sync_seo(text: str, record: dict[str, Any], changes: list[str]) -> str:
     seo = record.get("seo") or {}
     mappings = [
@@ -241,6 +251,16 @@ def sync_standard_visible_facts(text: str, record: dict[str, Any], changes: list
 
 def sync_schedule_cards(text: str, record: dict[str, Any], changes: list[str]) -> str:
     schedule = effective_schedule(record)
+    if schedule.get("type") == "variable":
+        replacement = ('<div class="schedule"><div class="day" style="grid-column:1/-1">'
+                       '<strong>Days &amp; times vary</strong><span>Check times on booking page</span>'
+                       '</div></div>')
+        pattern = r'<div class="schedule">.*?</div>(?=<a class="later-date-cta")'
+        updated, found = replace_if_present(text, pattern, replacement, "variable schedule grid", re.S)
+        if found and updated != text:
+            changes.append("schedule.variable")
+        return updated
+
     performances = schedule.get("performances") or []
     dark_days = set(schedule.get("dark_days") or [])
     if not performances and not dark_days:
@@ -321,6 +341,20 @@ def sync_explicit_visible_rules(text: str, record: dict[str, Any], changes: list
                 changes.append(f"schedule text: {label}")
             text = new
 
+    faq_rules = sync.get("faq_fact_rules") or []
+    for rule in faq_rules:
+        visible_question = rule.get("visible_question") or rule.get("schema_question")
+        source = rule.get("text_source")
+        if not visible_question or not source:
+            raise SyncError(f"{record['slug']}: faq_fact_rules require visible_question/schema_question and text_source")
+        value = str(value_at_path(record, source))
+        rendered = html.escape(value, quote=False)
+        pattern = rf'(<details><summary>{re.escape(visible_question)}</summary><div>).*?(</div></details>)'
+        new = replace_once(text, pattern, rf'\g<1>{rendered}\g<2>', f"FAQ {visible_question}", re.S)
+        if new != text:
+            changes.append(f"faq fact: {rule.get('schema_question') or visible_question}")
+        text = new
+
     age_rule = sync.get("age_policy") or {}
     if age_rule.get("enabled"):
         policy = (record.get("age_policy") or {}).get("rule")
@@ -339,6 +373,40 @@ def sync_explicit_visible_rules(text: str, record: dict[str, Any], changes: list
         text = new
 
     return text
+
+
+def sync_faq_schema(text: str, record: dict[str, Any], changes: list[str]) -> str:
+    rules = ((record.get("sync") or {}).get("faq_fact_rules") or [])
+    if not rules:
+        return text
+    blocks = list(re.finditer(r'(<script type="application/ld\+json">)(.*?)(</script>)', text, re.S))
+    replacements: list[tuple[int, int, str]] = []
+    for match in blocks:
+        try:
+            obj = json.loads(match.group(2).strip())
+        except json.JSONDecodeError:
+            continue
+        if obj.get("@type") != "FAQPage":
+            continue
+        questions = {item.get("name"): item for item in obj.get("mainEntity") or [] if isinstance(item, dict)}
+        for rule in rules:
+            question = rule.get("schema_question")
+            source = rule.get("text_source")
+            if not question or not source or question not in questions:
+                raise SyncError(f"{record['slug']}: FAQPage missing configured question {question!r}")
+            answer = questions[question].get("acceptedAnswer")
+            if not isinstance(answer, dict):
+                raise SyncError(f"{record['slug']}: FAQ question {question!r} missing acceptedAnswer")
+            answer["text"] = str(value_at_path(record, source))
+        rendered = "\n" + json.dumps(obj, ensure_ascii=False, indent=2) + "\n"
+        replacements.append((match.start(2), match.end(2), rendered))
+    if len(replacements) != 1:
+        raise SyncError(f"{record['slug']}: expected exactly one FAQPage JSON-LD block; found {len(replacements)}")
+    start, end, rendered = replacements[0]
+    new = text[:start] + rendered + text[end:]
+    if new != text:
+        changes.append("structured_data.FAQPage factual answers")
+    return new
 
 
 def sync_eventseries(text: str, record: dict[str, Any], changes: list[str]) -> str:
@@ -418,6 +486,7 @@ def sync_one(data_path: Path, dry_run: bool = False) -> tuple[Path, list[str]]:
     text = sync_standard_visible_facts(text, record, changes)
     text = sync_schedule_cards(text, record, changes)
     text = sync_explicit_visible_rules(text, record, changes)
+    text = sync_faq_schema(text, record, changes)
     text = sync_trailer(text, record, changes)
     text = sync_eventseries(text, record, changes)
 
