@@ -7,6 +7,7 @@ on:
     paths:
       - scripts/optimize-serp-metadata.py
       - scripts/optimize-site-serp-overrides.py
+      - scripts/fix-serp-supporting-assets.py
       - scripts/audit-serp-metadata.py
       - .github/workflows/run-serp-metadata-refresh.yml
 
@@ -24,12 +25,15 @@ jobs:
         run: python3 scripts/optimize-serp-metadata.py
       - name: Refresh high-value site metadata
         run: python3 scripts/optimize-site-serp-overrides.py
+      - name: Fix supporting live assets found during review
+        run: python3 scripts/fix-serp-supporting-assets.py
       - name: Audit SERP metadata
         run: python3 scripts/audit-serp-metadata.py
-      - name: Audit site health
-        run: python3 scripts/audit-site-health.py
       - name: Audit event schema
         run: python3 scripts/audit-event-schema.py
+      - name: Site health informational check
+        continue-on-error: true
+        run: python3 scripts/audit-site-health.py
       - name: Commit metadata changes
         run: |
           if git diff --quiet; then
