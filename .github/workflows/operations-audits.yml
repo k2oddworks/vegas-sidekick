@@ -1,0 +1,80 @@
+name: Vegas Sidekick Operations Audits
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 14 * * 0'
+  push:
+    branches: [main]
+    paths:
+      - 'shows/**'
+      - 'guides/**'
+      - 'news/**'
+      - 'scripts/audit-*.py'
+      - '.github/workflows/operations-audits.yml'
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  schema:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Event/EventSeries schema gate
+        id: audit
+        continue-on-error: true
+        run: python3 scripts/audit-event-schema.py 2>&1 | tee /tmp/schema-audit.txt
+      - name: Open or update P0 issue on failure
+        if: steps.audit.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          title='[P0] Automated Event schema audit failing'
+          body=$(printf 'Automated schema gate failed on `%s`.\n\n```text\n%s\n```\n\nFix active-show failures before new editorial work. Closed archive exceptions belong in the audit script explicitly.' "${GITHUB_SHA}" "$(tail -n 120 /tmp/schema-audit.txt)")
+          existing=$(gh issue list --repo "$REPO" --state open --search "in:title \"$title\"" --json number,title --jq ".[] | select(.title == \"$title\") | .number" | head -1)
+          if [[ -n "$existing" ]]; then
+            gh issue comment "$existing" --repo "$REPO" --body "$body"
+          else
+            gh issue create --repo "$REPO" --title "$title" --label 'P0 Accuracy,schema,automation' --body "$body"
+          fi
+          exit 1
+
+  site-health:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Static site health gate
+        id: health
+        continue-on-error: true
+        run: python3 scripts/audit-site-health.py 2>&1 | tee /tmp/site-health.txt
+      - name: Open or update technical issue on hard failure
+        if: steps.health.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          title='[P0] Automated site health audit has hard failures'
+          body=$(printf 'Static health gate failed on `%s`.\n\n```text\n%s\n```\n\nResolve hard failures first. Warnings are review signals, not automatic rewrite authority.' "${GITHUB_SHA}" "$(tail -n 160 /tmp/site-health.txt)")
+          existing=$(gh issue list --repo "$REPO" --state open --search "in:title \"$title\"" --json number,title --jq ".[] | select(.title == \"$title\") | .number" | head -1)
+          if [[ -n "$existing" ]]; then
+            gh issue comment "$existing" --repo "$REPO" --body "$body"
+          else
+            gh issue create --repo "$REPO" --title "$title" --label 'P0 Accuracy,seo,automation' --body "$body"
+          fi
+          exit 1
+
+  media-inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate current media inventory
+        run: python3 scripts/audit-show-media.py
+      - name: Upload media audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: show-media-audit
+          path: docs/show-media-audit-2026-09-07.md
+          retention-days: 30
