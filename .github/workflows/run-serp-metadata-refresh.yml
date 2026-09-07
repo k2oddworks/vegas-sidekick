@@ -1,0 +1,40 @@
+name: Run SERP Metadata Refresh
+
+on:
+  push:
+    branches:
+      - seo/serp-metadata-refresh
+    paths:
+      - scripts/optimize-serp-metadata.py
+      - scripts/audit-serp-metadata.py
+      - .github/workflows/run-serp-metadata-refresh.yml
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: seo/serp-metadata-refresh
+      - name: Refresh show metadata
+        run: python3 scripts/optimize-serp-metadata.py
+      - name: Audit SERP metadata
+        run: python3 scripts/audit-serp-metadata.py
+      - name: Audit site health
+        run: python3 scripts/audit-site-health.py
+      - name: Audit event schema
+        run: python3 scripts/audit-event-schema.py
+      - name: Commit metadata changes
+        run: |
+          if git diff --quiet; then
+            echo "No metadata changes needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add shows
+          git commit -m "Refresh unique show SERP metadata"
+          git push origin HEAD:seo/serp-metadata-refresh
