@@ -1,0 +1,49 @@
+name: Patch canonical generator safeguards
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/patch-canonical-generator-idempotence.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch generator and repair O
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path('scripts/canonicalize-show-pages.py')
+          s=p.read_text(encoding='utf-8')
+          old='''        if base and not (st == base or st.startswith(base + "-")) and not st.startswith(slug):\n            continue\n'''
+          new='''        if base:\n            if not (st == base or st.startswith(base + "-")):\n                continue\n        elif not (st == slug or st.startswith(slug + "-")):\n            continue\n'''
+          if old not in s: raise SystemExit('image guard not found')
+          s=s.replace(old,new,1)
+          old='''        "paras": substantial_paragraphs(text),\n'''
+          new='''        "paras": [] if 'data-canonical-layout=' in text else substantial_paragraphs(text),\n'''
+          if old not in s: raise SystemExit('paragraph guard not found')
+          p.write_text(s.replace(old,new,1),encoding='utf-8')
+        
+          # Repair O immediately using the fixed generator.
+          import subprocess
+          subprocess.run(['python3','scripts/canonicalize-show-pages.py','shows/cirque/o/index.html'],check=True)
+      - name: Validate schema except known closed archive
+        shell: bash
+        run: |
+          set +e
+          python3 scripts/audit-event-schema.py > /tmp/audit.txt 2>&1
+          code=$?
+          cat /tmp/audit.txt
+          if [ $code -eq 0 ]; then exit 0; fi
+          issues=$(grep -E '^shows/.+:' /tmp/audit.txt || true)
+          if [ "$issues" = "shows/cirque/mad-apple/index.html: NO Event/EventSeries JSON-LD found" ]; then exit 0; fi
+          exit $code
+      - name: Commit generator fix
+        run: |
+          git config user.name "Vegas Sidekick Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add scripts/canonicalize-show-pages.py shows/cirque/o/index.html
+          git commit -m "Fix canonical generator image matching and reruns"
+          git push origin HEAD:main
