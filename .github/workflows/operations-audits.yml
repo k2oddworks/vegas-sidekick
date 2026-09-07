@@ -11,6 +11,7 @@ on:
       - 'guides/**'
       - 'news/**'
       - 'venues/**'
+      - '_redirects'
       - 'scripts/audit-*.py'
       - '.github/workflows/operations-audits.yml'
 
@@ -36,11 +37,7 @@ jobs:
           title='[P0] Automated Event schema audit failing'
           body=$(printf 'Automated schema gate failed on `%s`.\n\n```text\n%s\n```\n\nFix active-show failures before new editorial work. Closed archive exceptions belong in the audit script explicitly.' "${GITHUB_SHA}" "$(tail -n 120 /tmp/schema-audit.txt)")
           existing=$(gh issue list --repo "$REPO" --state open --search "in:title \"$title\"" --json number,title --jq ".[] | select(.title == \"$title\") | .number" | head -1)
-          if [[ -n "$existing" ]]; then
-            gh issue comment "$existing" --repo "$REPO" --body "$body"
-          else
-            gh issue create --repo "$REPO" --title "$title" --label 'P0 Accuracy,schema,automation' --body "$body"
-          fi
+          if [[ -n "$existing" ]]; then gh issue comment "$existing" --repo "$REPO" --body "$body"; else gh issue create --repo "$REPO" --title "$title" --label 'P0 Accuracy,schema,automation' --body "$body"; fi
           exit 1
 
   site-health:
@@ -60,11 +57,7 @@ jobs:
           title='[P0] Automated site health audit has hard failures'
           body=$(printf 'Static health gate failed on `%s`.\n\n```text\n%s\n```\n\nResolve hard failures first. Warnings are review signals, not automatic rewrite authority.' "${GITHUB_SHA}" "$(tail -n 160 /tmp/site-health.txt)")
           existing=$(gh issue list --repo "$REPO" --state open --search "in:title \"$title\"" --json number,title --jq ".[] | select(.title == \"$title\") | .number" | head -1)
-          if [[ -n "$existing" ]]; then
-            gh issue comment "$existing" --repo "$REPO" --body "$body"
-          else
-            gh issue create --repo "$REPO" --title "$title" --label 'P0 Accuracy,seo,automation' --body "$body"
-          fi
+          if [[ -n "$existing" ]]; then gh issue comment "$existing" --repo "$REPO" --body "$body"; else gh issue create --repo "$REPO" --title "$title" --label 'P0 Accuracy,seo,automation' --body "$body"; fi
           exit 1
 
   serp-metadata:
@@ -84,11 +77,27 @@ jobs:
           title='[P2] SERP metadata audit needs attention'
           body=$(printf 'SERP metadata audit failed on `%s`.\n\n```text\n%s\n```\n\nReview duplicate or missing titles/descriptions before mass rewriting. Preserve page intent and verified facts.' "${GITHUB_SHA}" "$(tail -n 160 /tmp/serp-metadata.txt)")
           existing=$(gh issue list --repo "$REPO" --state open --search "in:title \"$title\"" --json number,title --jq ".[] | select(.title == \"$title\") | .number" | head -1)
-          if [[ -n "$existing" ]]; then
-            gh issue comment "$existing" --repo "$REPO" --body "$body"
-          else
-            gh issue create --repo "$REPO" --title "$title" --label 'P2 Growth,seo,automation' --body "$body"
-          fi
+          if [[ -n "$existing" ]]; then gh issue comment "$existing" --repo "$REPO" --body "$body"; else gh issue create --repo "$REPO" --title "$title" --label 'P2 Growth,seo,automation' --body "$body"; fi
+          exit 1
+
+  content-link-hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Stale copy, local URL and redirect hygiene gate
+        id: hygiene
+        continue-on-error: true
+        run: python3 scripts/audit-content-link-hygiene.py 2>&1 | tee /tmp/content-link-hygiene.txt
+      - name: Open or update hygiene issue on failure
+        if: steps.hygiene.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          title='[P2] Content and internal URL hygiene needs attention'
+          body=$(printf 'Canonical content/link hygiene audit failed on `%s`.\n\n```text\n%s\n```\n\nFix dead local URLs and links to redirect sources first. Review stale urgency, presale and freshness copy without inventing replacement facts.' "${GITHUB_SHA}" "$(tail -n 180 /tmp/content-link-hygiene.txt)")
+          existing=$(gh issue list --repo "$REPO" --state open --search "in:title \"$title\"" --json number,title --jq ".[] | select(.title == \"$title\") | .number" | head -1)
+          if [[ -n "$existing" ]]; then gh issue comment "$existing" --repo "$REPO" --body "$body"; else gh issue create --repo "$REPO" --title "$title" --label 'P2 Growth,seo,internal-links,automation' --body "$body"; fi
           exit 1
 
   internal-linking:
