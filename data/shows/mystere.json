@@ -16,7 +16,7 @@
     "currency": "USD",
     "from_price": 84,
     "regular_price": null,
-    "source": "repo_derived_needs_authoritative_confirmation"
+    "source": "authoritative"
   },
   "schedule": {
     "timezone": "America/Los_Angeles",
@@ -102,10 +102,11 @@
     "venue_verified_on": "2026-09-07",
     "affiliate_url_verified_on": "2026-09-07",
     "trailer_verified_on": "2026-09-07",
-    "pricing_verified_on": null
+    "pricing_verified_on": "2026-09-07"
   },
   "provenance": {
     "authoritative_fields": [
+      "pricing",
       "schedule",
       "age_policy",
       "runtime.minutes",
@@ -115,7 +116,6 @@
       "media.official_trailer"
     ],
     "repo_derived_fields": [
-      "pricing",
       "categories",
       "runtime.intermission",
       "descriptions",
@@ -126,6 +126,6 @@
       "relationships",
       "freshness.display_label"
     ],
-    "notes": "Third source-of-truth pilot. Tests multiple performances per day. Current $84 from-price is preserved from the repo but is not authoritative until explicitly confirmed."
+    "notes": "Third source-of-truth pilot. Tests multiple performances per day. The $84 from-price was explicitly confirmed as authoritative on 2026-09-07."
   }
 }
