@@ -18,6 +18,7 @@ import argparse
 import json
 import re
 import sys
+from datetime import date
 from pathlib import Path
 from typing import Any
 
@@ -89,6 +90,28 @@ def format_time(value: str) -> str:
     suffix = "AM" if hour < 12 else "PM"
     display_hour = hour if 1 <= hour <= 12 else hour - 12 if hour > 12 else 12
     return f"{display_hour}:{minute:02d} {suffix}"
+
+
+def effective_schedule(record: dict[str, Any], on_date: date | None = None) -> dict[str, Any]:
+    schedule = record.get("schedule") or {}
+    phases = schedule.get("phases") or []
+    if not phases:
+        return schedule
+
+    today = on_date or date.today()
+    matches = []
+    for phase in phases:
+        start_raw = phase.get("effective_from")
+        end_raw = phase.get("effective_through")
+        start = date.fromisoformat(start_raw) if start_raw else None
+        end = date.fromisoformat(end_raw) if end_raw else None
+        if (start is None or today >= start) and (end is None or today <= end):
+            matches.append(phase)
+    if len(matches) != 1:
+        raise SyncError(f"{record['slug']}: expected exactly one effective schedule phase for {today.isoformat()}; found {len(matches)}")
+    active = dict(schedule)
+    active.update(matches[0])
+    return active
 
 
 def sync_seo(text: str, record: dict[str, Any], changes: list[str]) -> str:
@@ -168,7 +191,7 @@ def sync_standard_visible_facts(text: str, record: dict[str, Any], changes: list
 
 
 def sync_schedule_cards(text: str, record: dict[str, Any], changes: list[str]) -> str:
-    schedule = record.get("schedule") or {}
+    schedule = effective_schedule(record)
     performances = schedule.get("performances") or []
     dark_days = set(schedule.get("dark_days") or [])
     if not performances and not dark_days:
@@ -183,12 +206,21 @@ def sync_schedule_cards(text: str, record: dict[str, Any], changes: list[str]) -
             value = "Dark"
         else:
             continue
-        pattern = rf'(<div class="day[^>]*"><strong>{abbr}</strong><span>).*?(</span></div>)'
-        new, found = replace_if_present(text, pattern, rf'\g<1>{value}\g<2>', f"{day} schedule card")
-        if found:
-            if new != text:
-                updated += 1
-            text = new
+        patterns = [
+            rf'(<div class="day[^>]*"><strong>{abbr}</strong><span>).*?(</span></div>)',
+            rf'(<div class="day[^>]*>\s*<a[^>]*>\s*<strong>{abbr}</strong><span>).*?(</span>)',
+        ]
+        found_any = False
+        for pattern in patterns:
+            new, found = replace_if_present(text, pattern, rf'\g<1>{value}\g<2>', f"{day} schedule card")
+            if found:
+                found_any = True
+                if new != text:
+                    updated += 1
+                text = new
+                break
+        if not found_any:
+            continue
     if updated:
         changes.append(f"schedule cards ({updated})")
     return text
@@ -247,7 +279,7 @@ def sync_eventseries(text: str, record: dict[str, Any], changes: list[str]) -> s
     pricing = record.get("pricing") or {}
     ticketing = record.get("ticketing") or {}
     venue = record.get("venue") or {}
-    schedule = record.get("schedule") or {}
+    schedule = effective_schedule(record)
     performances = schedule.get("performances") or []
 
     days = [item["day"] for item in performances]
@@ -280,8 +312,11 @@ def sync_eventseries(text: str, record: dict[str, Any], changes: list[str]) -> s
             offers["url"] = ticketing["affiliate_url"]
 
         location = obj.get("location")
-        if isinstance(location, dict) and venue.get("showroom") and venue.get("hotel"):
-            location["name"] = f"{venue['showroom']} at {venue['hotel']}"
+        if isinstance(location, dict):
+            if venue.get("schema_location_name"):
+                location["name"] = venue["schema_location_name"]
+            elif venue.get("showroom") and venue.get("hotel"):
+                location["name"] = f"{venue['showroom']} at {venue['hotel']}"
 
         event_schedule = obj.get("eventSchedule")
         if isinstance(event_schedule, dict):
