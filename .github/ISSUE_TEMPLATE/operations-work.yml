@@ -1,0 +1,52 @@
+name: Operations Work
+about: Revenue, growth, enhancement, technical, media, or internal-linking work.
+title: "[OPS] "
+body:
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options: [P1 Revenue, P2 Growth, P3 Enhancement]
+    validations: {required: true}
+  - type: dropdown
+    id: work_type
+    attributes:
+      label: Work type
+      options: [Conversion, SEO, Guide, Dispatch, Venue, Comparison, Media, Internal linking, Technical health, Automation, Other]
+    validations: {required: true}
+  - type: input
+    id: page
+    attributes:
+      label: Page / query / workstream
+    validations: {required: true}
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence / trigger
+      description: Search Console signal, conversion data, audit output, content opportunity, or explicit business need.
+    validations: {required: true}
+  - type: textarea
+    id: diagnosis
+    attributes:
+      label: Diagnosis
+      description: For revenue work use one: traffic problem / SERP problem / recommendation problem / CTA problem / product-information problem / not worth touching yet.
+  - type: textarea
+    id: action
+    attributes:
+      label: Proposed action
+    validations: {required: true}
+  - type: textarea
+    id: pass
+    attributes:
+      label: Pass condition
+      description: State the measurable or observable condition that closes this issue.
+    validations: {required: true}
+  - type: checkboxes
+    id: guardrails
+    attributes:
+      label: Guardrails
+      options:
+        - label: No unverified price, schedule, venue, age rule, affiliate URL, trailer, urgency, or fee claim is being introduced.
+          required: true
+        - label: Material editorial/business judgment is flagged for Kris instead of automated.
+          required: true
