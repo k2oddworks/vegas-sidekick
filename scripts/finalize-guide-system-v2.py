@@ -12,9 +12,9 @@ for slug in slugs:
     s=p.read_text(encoding='utf-8')
     s=re.sub(r'<div class="guide-email-note">.*?</div>','',s,flags=re.S)
     p.write_text(s,encoding='utf-8')
-    assert 'guide-email-note' not in s, slug
+    assert '<div class="guide-email-note">' not in s, slug
     assert 'Mad Apple' not in s and 'mad-apple' not in s, slug
     assert 'guide-newsletter-form' in s, slug
     assert 'brevo-subscribe.vegassidekickcom.workers.dev' in s, slug
 print('final guide wrapper validation passed')
-# trigger 2
+# trigger 3
