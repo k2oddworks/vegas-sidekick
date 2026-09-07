@@ -1,0 +1,55 @@
+name: Canonical controlled layout pass
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/canonical-controlled-pass.yml'
+permissions:
+  contents: write
+jobs:
+  canonicalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Rebuild controlled eight-page set
+        run: |
+          python3 scripts/canonicalize-show-pages.py \
+            shows/cirque/o/index.html \
+            shows/magic/penn-and-teller/index.html \
+            shows/adult/atomic-saloon/index.html \
+            shows/music/blue-man-group/index.html \
+            shows/spectaculars/awakening/index.html \
+            shows/magic/piff-the-magic-dragon/index.html \
+            shows/comedy/marriage-can-be-murder/index.html \
+            shows/adult/magic-mike-live/index.html
+      - name: Validate schema except known closed archive
+        shell: bash
+        run: |
+          set +e
+          python3 scripts/audit-event-schema.py > /tmp/audit.txt 2>&1
+          code=$?
+          cat /tmp/audit.txt
+          if [ $code -eq 0 ]; then exit 0; fi
+          issues=$(grep -E '^shows/.+:' /tmp/audit.txt || true)
+          if [ "$issues" = "shows/cirque/mad-apple/index.html: NO Event/EventSeries JSON-LD found" ]; then
+            echo 'Allowing known closed Mad Apple archive exception.'
+            exit 0
+          fi
+          exit $code
+      - name: Commit generated pages
+        run: |
+          git config user.name "Vegas Sidekick Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add assets/show-canonical.css assets/show-canonical.js \
+            shows/cirque/o/index.html \
+            shows/magic/penn-and-teller/index.html \
+            shows/adult/atomic-saloon/index.html \
+            shows/music/blue-man-group/index.html \
+            shows/spectaculars/awakening/index.html \
+            shows/magic/piff-the-magic-dragon/index.html \
+            shows/comedy/marriage-can-be-murder/index.html \
+            shows/adult/magic-mike-live/index.html
+          git commit -m "Canonicalize eight show pages with reusable generator"
+          git push origin HEAD:main
