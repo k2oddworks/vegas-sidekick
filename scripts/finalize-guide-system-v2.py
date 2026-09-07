@@ -17,3 +17,4 @@ for slug in slugs:
     assert 'guide-newsletter-form' in s, slug
     assert 'brevo-subscribe.vegassidekickcom.workers.dev' in s, slug
 print('final guide wrapper validation passed')
+# trigger 2
