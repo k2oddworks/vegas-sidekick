@@ -71,7 +71,7 @@ def main():
         text=p.read_text(encoding='utf-8'); new=text
         for old,repl in rules: new=new.replace(old,repl)
         if rel.endswith('matt-rife-stay-golden-dolby-live-december-4/index.html'):
-            new=re.sub(r'[^"\']*presale starts May 12\. General on sale May 15\.', 'Matt Rife brings the Stay Golden World Tour to Dolby Live on December 4, 2026. See the Las Vegas date, venue details and what to know before buying.', new, flags=re.I)
+            new=re.sub(r'Citi presale starts May 12\.\s*General on sale May 15\.', 'See current ticket details before buying.', new, flags=re.I)
         if new!=text:
             p.write_text(new,encoding='utf-8'); changed.append(rel)
     for rel,desc in CATEGORY_META.items():
