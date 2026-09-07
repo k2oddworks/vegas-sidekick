@@ -97,7 +97,7 @@ jobs:
       - name: Verify hero treatments
         run: |
           grep -q 'data-mobile-fit="contain"' shows/spectaculars/wizard-of-oz/index.html
-          grep -q 'data-mobile-fit="contain"' shows/production/vegas-the-show/index.html
+          grep -q 'data-mobile-fit="contain"' shows/music/vegas-the-show/index.html
           grep -q 'data-mobile-fit="contain"' shows/cirque/o/index.html
           grep -q 'data-mobile-fit="cover"' shows/cirque/mystere/index.html
           grep -q 'data-mobile-fit="cover"' shows/comedy/carrot-top/index.html
@@ -106,7 +106,7 @@ jobs:
       - name: Confirm idempotence for structured pages
         run: |
           cp shows/comedy/carrot-top/index.html /tmp/carrot.html
-          cp shows/production/vegas-the-show/index.html /tmp/vegas.html
+          cp shows/music/vegas-the-show/index.html /tmp/vegas.html
           cp shows/cirque/mystere/index.html /tmp/mystere.html
           cp shows/spectaculars/wizard-of-oz/index.html /tmp/wizard.html
           python3 scripts/sync-show-from-data.py carrot-top
@@ -114,7 +114,7 @@ jobs:
           python3 scripts/sync-show-from-data.py mystere
           python3 scripts/sync-show-from-data.py wizard-of-oz
           diff -u /tmp/carrot.html shows/comedy/carrot-top/index.html
-          diff -u /tmp/vegas.html shows/production/vegas-the-show/index.html
+          diff -u /tmp/vegas.html shows/music/vegas-the-show/index.html
           diff -u /tmp/mystere.html shows/cirque/mystere/index.html
           diff -u /tmp/wizard.html shows/spectaculars/wizard-of-oz/index.html
 
@@ -130,7 +130,7 @@ jobs:
           git checkout -- docs/internal-link-audit.md || true
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/show-canonical.css scripts/sync-show-from-data.py data/shows/carrot-top.json data/shows/vegas-the-show.json data/shows/mystere.json data/shows/wizard-of-oz.json shows/comedy/carrot-top/index.html shows/production/vegas-the-show/index.html shows/cirque/mystere/index.html shows/spectaculars/wizard-of-oz/index.html shows/cirque/o/index.html
+          git add assets/show-canonical.css scripts/sync-show-from-data.py data/shows/carrot-top.json data/shows/vegas-the-show.json data/shows/mystere.json data/shows/wizard-of-oz.json shows/comedy/carrot-top/index.html shows/music/vegas-the-show/index.html shows/cirque/mystere/index.html shows/spectaculars/wizard-of-oz/index.html shows/cirque/o/index.html
           if ! git diff --cached --quiet; then
             git commit -m "Add responsive mobile hero image treatments"
             git push origin HEAD:ux/mobile-hero-images
