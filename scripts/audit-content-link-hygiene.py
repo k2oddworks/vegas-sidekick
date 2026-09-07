@@ -7,7 +7,8 @@ ROOT = Path(__file__).resolve().parents[1]
 INDEX_ROOTS = ["index.html","about","affiliate-disclosure","contact","guides","news","privacy","search","shows","terms","venues","vegas-sign"]
 BANNED = [
     "no hidden fees","zero hidden fees","secure booking","instant delivery","selling fast",
-    "prices may increase","prices may rise","book early","booking early","selling out","sell out",
+    "prices may increase","prices may rise","book early","booking early","fills fast on weekends",
+    "prime seats sell out","before they sell out",
 ]
 STALE_SALE = ["presale starts","presale begins","general on sale","on-sale starts","on sale starts"]
 SKIP_LINK_PREFIX = ("mailto:","tel:","javascript:","data:","#")
@@ -58,7 +59,8 @@ def local_target(url):
 def main():
     broken=[]; redirected=[]; stale=[]; olddates=[]
     redirs=redirects()
-    for p,rel,text in pages():
+    current=pages()
+    for p,rel,text in current:
         low=text.lower()
         for phrase in BANNED:
             if phrase in low:
@@ -76,7 +78,7 @@ def main():
             target=local_target(url)
             if target is not None and not target.exists():
                 broken.append((rel,url))
-    print(f'Canonical pages checked: {len(pages())}')
+    print(f'Canonical pages checked: {len(current)}')
     print(f'Stale/banned copy hits: {len(stale)}')
     print(f'Old Last updated notes: {len(olddates)}')
     print(f'Internal links hitting redirects: {len(redirected)}')
@@ -85,6 +87,6 @@ def main():
         if rows:
             print('\n'+title)
             for row in rows: print('-', ' | '.join(row))
-    return 1 if broken else 0
+    return 1 if (broken or stale or olddates or redirected) else 0
 
 if __name__=='__main__': sys.exit(main())
