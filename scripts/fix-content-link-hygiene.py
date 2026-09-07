@@ -7,18 +7,14 @@ MATT_DESC="Matt Rife brings the Stay Golden World Tour to Dolby Live on December
 
 EXACT = {
     "news/matt-rife-stay-golden-dolby-live-december-4/index.html": [
-        ("Concert announcements, presale reminders, and deals — before they sell out.",
-         "Concert announcements, show updates and useful Vegas ticketing context."),
+        ("Concert announcements, presale reminders, and deals — before they sell out.", "Concert announcements, show updates and useful Vegas ticketing context."),
+        ("Citi presale starts May 12. General on sale May 15.", "See current ticket details before buying."),
     ],
     "news/best-vegas-shows-for-first-timers/index.html": [
-        ("Cirque Mystère fills fast on weekends. VEGAS! The Show and V have better walk-up availability, but prime seats sell out. Mid-week is the easiest window.",
-         "Weekend and prime-seat availability can be tighter. Mid-week is usually the easiest window if your dates are flexible."),
+        ("Cirque Mystère fills fast on weekends. VEGAS! The Show and V have better walk-up availability, but prime seats sell out. Mid-week is the easiest window.", "Weekend and prime-seat availability can be tighter. Mid-week is usually the easiest window if your dates are flexible."),
         ("Book at Least a Few Days Out", "Check Your Date Before You Go"),
     ],
-    "guides/best-cheap-vegas-shows/index.html": [
-        ("The Strip's longest-running topless revue — 25+ years and still selling out. Slick production, live vocals, and a wallet-friendly way to do a grown-up night out. 18+.",
-         "The Strip's longest-running topless revue — 25+ years and still running. Slick production, live vocals, and a wallet-friendly way to do a grown-up night out. 18+."),
-    ],
+    "guides/best-cheap-vegas-shows/index.html": [("The Strip's longest-running topless revue — 25+ years and still selling out. Slick production, live vocals, and a wallet-friendly way to do a grown-up night out. 18+.", "The Strip's longest-running topless revue — 25+ years and still running. Slick production, live vocals, and a wallet-friendly way to do a grown-up night out. 18+.")],
     "news/bini-signals-world-tour-august-8/index.html": [("selling fast", "on the schedule"),("Selling fast", "On the schedule")],
     "shows/cirque/index.html": [("five of its shows still run here simultaneously", "four of its shows still run here simultaneously")],
     "affiliate-disclosure/index.html": [("Last updated: April 2026", "Last updated: September 2026")],
@@ -33,12 +29,11 @@ CATEGORY_META = {
     "shows/family/index.html": "Browse family-friendly Las Vegas shows including Tournament of Kings and more. Compare current prices, age fit, schedules and practical details for your group.",
     "shows/spectaculars/index.html": "Browse large-scale Las Vegas productions including The Wizard of Oz at Sphere and Awakening. Compare current prices, schedules and what each spectacle is actually like.",
 }
+GENERIC_FILES=["about/index.html","shows/index.html","shows/adult/index.html","shows/cirque/index.html","shows/comedy/index.html","shows/family/index.html","shows/magic/index.html","shows/music/index.html","shows/spectaculars/index.html","guides/best-adult-shows/index.html","guides/best-cheap-vegas-shows/index.html","guides/best-cirque-shows/index.html","guides/best-magic-shows/index.html","guides/best-shows-for-families/index.html","guides/best-tribute-shows/index.html"]
 
-GENERIC_FILES = ["about/index.html","shows/index.html","shows/adult/index.html","shows/cirque/index.html","shows/comedy/index.html","shows/family/index.html","shows/magic/index.html","shows/music/index.html","shows/spectaculars/index.html","guides/best-adult-shows/index.html","guides/best-cheap-vegas-shows/index.html","guides/best-cirque-shows/index.html","guides/best-magic-shows/index.html","guides/best-shows-for-families/index.html","guides/best-tribute-shows/index.html"]
-
-def set_meta(text, desc):
+def set_meta(text,desc):
     encoded=desc.replace('&','&amp;').replace('"','&quot;')
-    return re.sub(r'<meta\s+name=["\']description["\']\s+content=["\'].*?["\']\s*/?>', f'<meta name="description" content="{encoded}">', text, count=1, flags=re.I|re.S)
+    return re.sub(r'<meta\s+name=["\']description["\']\s+content=["\'].*?["\']\s*/?>',f'<meta name="description" content="{encoded}">',text,count=1,flags=re.I|re.S)
 
 def main():
     changed=[]
@@ -49,8 +44,8 @@ def main():
         for old,repl in rules: new=new.replace(old,repl)
         if rel.endswith('matt-rife-stay-golden-dolby-live-december-4/index.html'):
             enc=MATT_DESC.replace('&','&amp;').replace('"','&quot;')
-            new=re.sub(r'<meta\s+property=["\']og:description["\']\s+content=["\'].*?["\']\s*/?>', f'<meta property="og:description" content="{enc}">', new, count=1, flags=re.I|re.S)
-            new=re.sub(r'<meta\s+name=["\']twitter:description["\']\s+content=["\'].*?["\']\s*/?>', f'<meta name="twitter:description" content="{enc}">', new, count=1, flags=re.I|re.S)
+            new=re.sub(r'<meta\s+property="og:description"\s+content="[^"]*">',f'<meta property="og:description" content="{enc}">',new,count=1,flags=re.I)
+            new=re.sub(r'<meta\s+name="twitter:description"\s+content="[^"]*">',f'<meta name="twitter:description" content="{enc}">',new,count=1,flags=re.I)
         if new!=text: p.write_text(new,encoding='utf-8'); changed.append(rel)
     for rel,desc in CATEGORY_META.items():
         p=ROOT/rel
@@ -67,5 +62,4 @@ def main():
         if new!=text: p.write_text(new,encoding='utf-8'); changed.append(rel)
     print('Changed files:',len(set(changed)))
     for rel in sorted(set(changed)): print('-',rel)
-
 if __name__=='__main__': main()
