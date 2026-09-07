@@ -103,6 +103,30 @@
     },
     "source": "repo_normalized"
   },
+  "sync": {
+    "schedule_text_rules": [
+      {
+        "label": "hero schedule chip",
+        "pattern": "(<span class=\"chip\">)(?:\\d{1,2}(?::\\d{2})? [AP]M)(</span><span class=\"chip\">Saxe Theater</span>)",
+        "replacement": "\\g<1>{time_compact}\\g<2>"
+      },
+      {
+        "label": "typical start fact",
+        "pattern": "(<div class=\"fact\"><strong>)(?:\\d{1,2}(?::\\d{2})? [AP]M)(</strong><span>Typical start</span></div>)",
+        "replacement": "\\g<1>{time_compact}\\g<2>"
+      },
+      {
+        "label": "practical angle sentence",
+        "pattern": "<p>A \\d{1,2}(?::\\d{2})? [AP]M start and 75-minute runtime leave plenty of night afterward\\.</p>",
+        "replacement": "<p>A {time_compact} start and 75-minute runtime leave plenty of night afterward.</p>"
+      },
+      {
+        "label": "schedule intro",
+        "pattern": "<p class=\"lede\">The typical schedule is Monday through Saturday at \\d{1,2}(?::\\d{2})? [AP]M, with Sunday dark\\. Tap an active day to open the live booking page and check the dates currently available\\.</p>",
+        "replacement": "<p class=\"lede\">The typical schedule is Monday through Saturday at {time_compact}, with Sunday dark. Tap an active day to open the live booking page and check the dates currently available.</p>"
+      }
+    ]
+  },
   "relationships": {
     "venue_pages": ["/venues/planet-hollywood/"],
     "guide_appearances": {
@@ -142,6 +166,7 @@
       "media.hero_image",
       "seo",
       "structured_data",
+      "sync",
       "relationships",
       "freshness.display_label"
     ],
