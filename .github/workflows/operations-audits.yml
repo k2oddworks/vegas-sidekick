@@ -10,6 +10,7 @@ on:
       - 'shows/**'
       - 'guides/**'
       - 'news/**'
+      - 'venues/**'
       - 'scripts/audit-*.py'
       - '.github/workflows/operations-audits.yml'
 
@@ -65,6 +66,19 @@ jobs:
             gh issue create --repo "$REPO" --title "$title" --label 'P0 Accuracy,seo,automation' --body "$body"
           fi
           exit 1
+
+  internal-linking:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate contextual internal-link graph
+        run: python3 scripts/audit-internal-links.py
+      - name: Upload internal-link audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: internal-link-audit
+          path: docs/internal-link-audit.md
+          retention-days: 30
 
   media-inventory:
     runs-on: ubuntu-latest
