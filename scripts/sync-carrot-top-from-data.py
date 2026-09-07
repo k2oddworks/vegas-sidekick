@@ -111,7 +111,7 @@ def main():
         raise SystemExit(f"Expected exactly one visible age-policy paragraph; found {age_count}")
 
     text = re.sub(r'i\.ytimg\.com/vi/[A-Za-z0-9_-]+/', f'i.ytimg.com/vi/{trailer_id}/', text)
-    text = re.sub(r'(youtube(?:-nocookie)?\.com/embed/)[A-Za-z0-9_-]+', rf'\g<1>{trailer_id}', text)
+    text = re.sub(r'https://www\.youtube(?:-nocookie)?\.com/embed/[A-Za-z0-9_-]+', f'https://www.youtube.com/embed/{trailer_id}', text)
 
     text = sync_eventseries(text, d)
 
