@@ -1,0 +1,31 @@
+name: Rewrite Couples Date Night
+on:
+  push:
+    paths:
+      - 'scripts/rewrite-couples-date-night.py'
+jobs:
+  rewrite:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Rewrite Couples guide
+        run: python scripts/rewrite-couples-date-night.py
+      - name: Validate output
+        run: |
+          grep -q 'Best Vegas Date-Night Shows 2026: 10 Picks' guides/best-shows-for-couples/index.html
+          grep -q 'Zombie Burlesque is my #1 date-night pick.' guides/best-shows-for-couples/index.html
+          grep -q 'Now You See Me LIVE' guides/best-shows-for-couples/index.html
+          ! grep -qiE 'Mad Apple|mad-apple|now-closed Cirque' guides/best-shows-for-couples/index.html
+          test "$(grep -o '<article class="card">' guides/best-shows-for-couples/index.html | wc -l)" -eq 10
+      - name: Commit rewrite
+        run: |
+          git config user.name 'Kris Kidd'
+          git config user.email 'k2oddworks@gmail.com'
+          git add guides/best-shows-for-couples/index.html
+          git diff --cached --quiet || git commit -m 'Rewrite Couples guide as Vegas date-night ranking'
+          git push
