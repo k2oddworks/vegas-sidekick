@@ -21,43 +21,43 @@ TITLE_VARIANTS = {
     "magic": [
         "{name}{market} Tickets{price} | Seat Guide",
         "{name}{market} Tickets{price} | Showtimes",
-        "{name}{market} Show | Tickets{price} & Seats",
+        "{name}{market} Tickets{price} | Magic Seats & Guide",
         "{name} Vegas Tickets{price} | Magic Guide",
     ],
     "comedy": [
         "{name}{market} Tickets{price} | Showtimes",
         "{name} Vegas Tickets{price} | Comedy Guide",
-        "{name}{market} Show | Tickets{price} & Seats",
+        "{name}{market} Tickets{price} | Comedy Seats & Guide",
         "{name}{market} Tickets{price} | What to Know",
     ],
     "cirque": [
         "{name} Vegas Tickets{price} | Seat Guide",
         "{name}{market} Tickets{price} | Showtimes",
-        "{name} Vegas Show | Tickets{price} & Seats",
+        "{name} Vegas Tickets{price} | Cirque Seats & Guide",
         "{name}{market} Tickets{price} | Cirque Guide",
     ],
     "adult": [
         "{name}{market} Tickets{price} | Show Guide",
         "{name} Vegas Tickets{price} | Seats & Info",
-        "{name}{market} Show | Tickets{price} & Guide",
+        "{name}{market} Tickets{price} | Adult Seats & Guide",
         "{name}{market} Tickets{price} | What to Know",
     ],
     "family": [
         "{name}{market} Tickets{price} | Family Guide",
         "{name} Vegas Tickets{price} | Showtimes",
-        "{name}{market} Show | Tickets{price} & Seats",
+        "{name}{market} Tickets{price} | Family Seats & Guide",
         "{name}{market} Tickets{price} | Family Info",
     ],
     "music": [
         "{name}{market} Tickets{price} | Showtimes",
         "{name} Vegas Tickets{price} | Show Guide",
-        "{name}{market} Show | Tickets{price} & Seats",
+        "{name}{market} Tickets{price} | Music Seats & Guide",
         "{name}{market} Tickets{price} | Seat Guide",
     ],
     "spectaculars": [
         "{name}{market} Tickets{price} | Showtimes",
         "{name} Vegas Tickets{price} | Show Guide",
-        "{name}{market} Show | Tickets{price} & Seats",
+        "{name}{market} Tickets{price} | Spectacle Seats & Guide",
         "{name}{market} Tickets{price} | Seat Guide",
     ],
 }
@@ -66,37 +66,47 @@ CATEGORY_FALLBACK = {
     "magic": "live magic show",
     "comedy": "live comedy show",
     "cirque": "Cirque-style production",
-    "adult": "adult Las Vegas show",
-    "family": "family-friendly Las Vegas show",
+    "adult": "adult show",
+    "family": "family-friendly show",
     "music": "live music and variety show",
-    "spectaculars": "large-scale Las Vegas production",
+    "spectaculars": "large-scale stage production",
 }
 
-DESCRIPTORS = [
-    ("mentalism", "mentalism show"),
-    ("mind-reading", "mind-reading show"),
-    ("mind reading", "mind-reading show"),
-    ("hypnosis", "hypnosis show"),
-    ("stand-up", "stand-up comedy show"),
-    ("stand up", "stand-up comedy show"),
-    ("burlesque", "burlesque show"),
-    ("male revue", "male revue"),
-    ("topless", "adult revue"),
-    ("tribute", "tribute show"),
-    ("joust", "live jousting dinner show"),
-    ("robot", "live robot-combat show"),
-    ("dinner", "dinner show"),
-    ("close-up magic", "close-up magic show"),
-    ("illusion", "illusion show"),
-    ("magic", "magic show"),
-    ("percussion", "visual music and percussion show"),
-    ("dance", "dance production"),
-    ("aquatic", "aquatic stage production"),
-    ("water", "water-based stage spectacular"),
-    ("acrobat", "acrobatic production"),
-    ("comedy", "comedy show"),
-    ("variety", "variety show"),
-]
+CATEGORY_DESCRIPTORS = {
+    "magic": [
+        ("mentalism", "mentalism show"), ("mind-reading", "mind-reading show"),
+        ("mind reading", "mind-reading show"), ("hypnosis", "hypnosis show"),
+        ("close-up magic", "close-up magic show"), ("illusion", "illusion show"),
+        ("magic", "magic show"),
+    ],
+    "comedy": [
+        ("hypnosis", "comedy hypnosis show"), ("stand-up", "stand-up comedy show"),
+        ("stand up", "stand-up comedy show"), ("dinner", "comedy dinner show"),
+        ("comedy", "comedy show"),
+    ],
+    "cirque": [
+        ("aquatic", "aquatic Cirque production"), ("water", "water-based Cirque production"),
+        ("acrobat", "acrobatic Cirque production"), ("cirque", "Cirque du Soleil production"),
+    ],
+    "adult": [
+        ("male revue", "male revue"), ("burlesque", "burlesque show"),
+        ("topless", "adult revue"), ("adult", "adult show"),
+    ],
+    "family": [
+        ("robot", "live robot-combat show"), ("joust", "live jousting dinner show"),
+        ("variety", "family variety show"), ("magic", "family magic show"),
+        ("family", "family-friendly show"),
+    ],
+    "music": [
+        ("tribute", "tribute show"), ("percussion", "visual music and percussion show"),
+        ("dance", "dance production"), ("music", "live music show"),
+    ],
+    "spectaculars": [
+        ("aquatic", "aquatic stage spectacular"), ("water", "water-based stage spectacular"),
+        ("acrobat", "acrobatic production"), ("spectacular", "stage spectacular"),
+        ("production", "large-scale stage production"),
+    ],
+}
 
 
 def clean(value: str) -> str:
@@ -146,7 +156,8 @@ def event_price(event: dict):
 def event_venue(event: dict):
     loc = event.get("location")
     if isinstance(loc, dict) and loc.get("name"):
-        return clean(str(loc["name"]))
+        value = clean(str(loc["name"]))
+        return value if len(value) <= 48 else ""
     return ""
 
 
@@ -163,10 +174,14 @@ def current_description(text: str) -> str:
 
 def descriptor(desc: str, category: str) -> str:
     low = desc.lower()
-    for needle, label in DESCRIPTORS:
+    for needle, label in CATEGORY_DESCRIPTORS.get(category, []):
         if needle in low:
             return label
     return CATEGORY_FALLBACK.get(category, "Las Vegas show")
+
+
+def article_for(phrase: str) -> str:
+    return "an" if phrase[:1].lower() in "aeiou" else "a"
 
 
 def title_for(name: str, category: str, price: str, rel: str) -> str:
@@ -186,9 +201,11 @@ def title_for(name: str, category: str, price: str, rel: str) -> str:
 
 def description_for(name: str, category: str, price: str, venue: str, old: str, rel: str) -> str:
     kind = descriptor(old, category)
-    intro = f"{name} is a {kind} in Las Vegas."
+    article = article_for(kind)
     if "las vegas" in name.lower():
-        intro = f"{name} is a {kind}."
+        intro = f"{name} is {article} {kind}."
+    else:
+        intro = f"{name} is {article} {kind} in Las Vegas."
     fact_parts = []
     if price:
         fact_parts.append(f"Tickets from ${price}")
@@ -196,17 +213,21 @@ def description_for(name: str, category: str, price: str, venue: str, old: str, 
         fact_parts.append(f"at {venue}")
     fact = " ".join(fact_parts) + "." if fact_parts else ""
     endings = {
-        "magic": ["Compare showtimes, seating and whether the magic style fits your night.", "See the schedule, seat guide and who this magic show suits best."],
-        "comedy": ["Check showtimes, seating and whether the comedy style fits your group.", "See the schedule, seat guide and what kind of comedy night to expect."],
-        "cirque": ["Compare showtimes, seating and the tradeoffs before choosing your Cirque night.", "See the schedule, seat guide and what to expect from the production."],
-        "adult": ["Check showtimes, seating and the honest fit before choosing your night.", "See the schedule, seat guide and what kind of adult Vegas show this is."],
-        "family": ["See showtimes, seating and whether it works for your family before booking.", "Check the schedule, seat guide and family fit before choosing your night."],
-        "music": ["Check showtimes, seating and what kind of Vegas performance to expect.", "See the schedule, seat guide and whether this show fits your night."],
-        "spectaculars": ["Compare showtimes, seating and what the production is actually like.", "See the schedule, seat guide and whether this big-stage show fits your night."],
+        "magic": ["Compare showtimes, seating and whether the magic style fits your night.", "See showtimes, seats and who this magic show suits best."],
+        "comedy": ["Check showtimes, seating and whether the comedy style fits your group.", "See showtimes, seats and what kind of comedy night to expect."],
+        "cirque": ["Compare showtimes, seating and the tradeoffs before choosing your Cirque night.", "See showtimes, seats and what to expect from the production."],
+        "adult": ["Check showtimes, seating and the honest fit before choosing your night.", "See showtimes, seats and what kind of adult Vegas show this is."],
+        "family": ["See showtimes, seating and whether it works for your family before booking.", "Check showtimes, seats and family fit before choosing your night."],
+        "music": ["Check showtimes, seating and what kind of Vegas performance to expect.", "See showtimes, seats and whether this show fits your night."],
+        "spectaculars": ["Compare showtimes, seating and what the production is actually like.", "See showtimes, seats and whether this big-stage show fits your night."],
     }
     pool = endings.get(category, endings["music"])
     ending = pool[int(hashlib.sha1((rel + "desc").encode()).hexdigest()[:8], 16) % len(pool)]
-    return " ".join(x for x in (intro, fact, ending) if x)
+    desc = " ".join(x for x in (intro, fact, ending) if x)
+    if len(desc) > 185 and venue:
+        fact = f"Tickets from ${price}." if price else ""
+        desc = " ".join(x for x in (intro, fact, ending) if x)
+    return desc
 
 
 def replace_meta(text: str, title: str, desc: str) -> str:
