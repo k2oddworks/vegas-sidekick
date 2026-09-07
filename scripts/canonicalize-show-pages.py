@@ -406,7 +406,10 @@ def image_candidates(text: str, ev: dict, slug: str):
         if not local.exists():
             continue
         st = re.sub(r'\.(?:jpe?g|png|webp|avif)$', '', local.name, flags=re.I)
-        if base and not (st == base or st.startswith(base + "-")) and not st.startswith(slug):
+        if base:
+            if not (st == base or st.startswith(base + "-")):
+                continue
+        elif not (st == slug or st.startswith(slug + "-")):
             continue
         low = st.lower()
         if any(x in low for x in ("-og", "thumb", "video-poster", "video-thumb", "logo", "seat-map", "seating-chart", "-map")):
@@ -590,7 +593,7 @@ def page_context(path: Path):
         "offer": offer, "price": price, "canonical": canonical, "venue": venue, "runtime": runtime,
         "age": age, "smap": smap, "imgs": imgs, "video": vid, "headline": headline,
         "dek": dek, "kicker": kicker, "take": take, "good": good, "think": think,
-        "paras": substantial_paragraphs(text),
+        "paras": [] if 'data-canonical-layout=' in text else substantial_paragraphs(text),
     }
 
 
