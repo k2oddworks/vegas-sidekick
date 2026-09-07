@@ -5,450 +5,104 @@
   <link rel="icon" href="/favicon.png" type="image/png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vegas Dispatch — Las Vegas Show News, Concerts & Insider Tips | Vegas Sidekick</title>
-  <meta name="description" content="Vegas Dispatch is your insider feed for Las Vegas entertainment: breaking concert news, show announcements, and ticket tips from the people who live here.">
+  <meta name="description" content="Vegas Dispatch is your insider feed for Las Vegas entertainment: current concert news, show announcements and useful Vegas event updates from people who live here.">
   <link rel="canonical" href="https://vegassidekick.com/news/">
-
   <meta property="og:type" content="website">
   <meta property="og:title" content="Vegas Dispatch — Las Vegas Show News & Insider Tips">
-  <meta property="og:description" content="Vegas Dispatch is your insider feed for Las Vegas entertainment: breaking concert news, show announcements, and ticket tips from the people who live here.">
-  <meta property="og:image" content="https://vegassidekick.com/images/news/matt-rife-stay-golden-las-vegas.jpg">
+  <meta property="og:description" content="Current Las Vegas entertainment news, concert announcements and useful event updates from Vegas Sidekick.">
+  <meta property="og:image" content="https://vegassidekick.com/images/news/activate-town-square-hero.webp">
   <meta property="og:url" content="https://vegassidekick.com/news/">
   <meta property="og:site_name" content="Vegas Sidekick">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "name": "Vegas Dispatch",
-    "description": "Las Vegas entertainment news, concert announcements, and insider tips from Vegas Sidekick.",
-    "url": "https://vegassidekick.com/news/",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Vegas Sidekick",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://vegassidekick.com/images/logo-pill-alt.png"
-      }
-    }
-  }
-  </script>
-
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Vegas Dispatch","description":"Las Vegas entertainment news, concert announcements and insider tips from Vegas Sidekick.","url":"https://vegassidekick.com/news/","publisher":{"@type":"Organization","name":"Vegas Sidekick","logo":{"@type":"ImageObject","url":"https://vegassidekick.com/images/logo-pill-alt.png"}}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <style>
-
-  :root {
-    --ink:#171225; --bg:#ffffff; --soft:#f5f4fb; --line:#ece9f6; --muted:#6c6883;
-    --blue:#3b82f6; --blue-dk:#2563eb; --pink:#ff2e7e; --lime:#c6f22e; --purple:#7c3aed; --teal:#0fb5c9;
-    --font-display:'Plus Jakarta Sans',sans-serif; --font-body:'Inter',sans-serif;
-    --radius:18px;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  a{color:inherit;text-decoration:none}
-  img{max-width:100%}
-
-  .n-hero{background:linear-gradient(160deg,#1c0a3a 0%,#2b0f5c 55%,#12061f 100%);color:#fff;padding:64px 24px 48px;text-align:center}
-  .n-hero-eyebrow{display:inline-block;font-family:var(--font-display);font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:14px}
-  .n-hero h1{font-family:var(--font-display);font-weight:800;font-size:clamp(2.2rem,6vw,3.4rem);letter-spacing:-.01em;margin-bottom:14px}
-  .n-hero h1 span{color:var(--pink)}
-  .n-hero p{font-family:var(--font-body);font-size:1.08rem;color:rgba(255,255,255,.75);max-width:560px;margin:0 auto}
-
-  .n-filter{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);padding:14px 24px;overflow-x:auto;white-space:nowrap}
-  .n-filter-inner{display:flex;gap:8px;max-width:1100px;margin:0 auto;align-items:center}
-  .n-filter-label{font-family:var(--font-display);font-weight:700;font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-right:6px;flex-shrink:0}
-  .filter-btn{font-family:var(--font-display);font-weight:700;font-size:.85rem;color:var(--muted);background:var(--soft);border:1px solid var(--line);border-radius:100px;padding:8px 16px;cursor:pointer;flex-shrink:0;transition:.15s}
-  .filter-btn:hover{background:#ece9f6}
-  .filter-btn.active{background:var(--blue);border-color:var(--blue);color:#fff}
-
-  .n-wrap{max-width:1100px;margin:0 auto;padding:44px 24px 64px}
-
-  .featured-article{display:grid;grid-template-columns:1.1fr .9fr;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-bottom:48px;box-shadow:0 10px 30px rgba(23,18,37,.06);transition:.2s}
-  .featured-article:hover{box-shadow:0 16px 40px rgba(23,18,37,.1)}
-  .featured-article-img{position:relative;min-height:280px}
-  .featured-article-img img{width:100%;height:100%;object-fit:cover;display:block}
-  .featured-badge{position:absolute;top:16px;left:16px;background:var(--pink);color:#fff;font-family:var(--font-display);font-weight:700;font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;padding:6px 14px;border-radius:100px}
-  .featured-article-body{padding:32px;display:flex;flex-direction:column;justify-content:center}
-  .featured-meta{display:flex;gap:12px;align-items:center;margin-bottom:12px}
-  .featured-tag{font-family:var(--font-display);font-weight:700;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);background:var(--soft);border-radius:100px;padding:5px 12px}
-  .featured-date{font-family:var(--font-body);font-size:.82rem;color:var(--muted)}
-  .featured-article-body h2{font-family:var(--font-display);font-weight:800;font-size:1.6rem;line-height:1.2;color:var(--ink);margin-bottom:12px}
-  .featured-article-body p{font-family:var(--font-body);font-size:.98rem;color:var(--muted);line-height:1.6;margin-bottom:18px}
-  .featured-footer{display:flex;justify-content:space-between;align-items:center}
-  .featured-author{font-family:var(--font-body);font-size:.86rem;color:var(--muted);font-weight:600}
-  .read-more-link{font-family:var(--font-display);font-weight:700;font-size:.86rem;color:var(--blue)}
-  .featured-article:hover .read-more-link{color:var(--blue-dk)}
-
-  .grid-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px}
-  .grid-title{font-family:var(--font-display);font-weight:800;font-size:1.3rem;color:var(--ink)}
-  #article-count{font-family:var(--font-body);font-size:.86rem;color:var(--muted)}
-
-  .articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .article-card{display:block;border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.2s;background:#fff}
-  .article-card:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(23,18,37,.1)}
-  .article-card-img{height:170px;overflow:hidden}
-  .article-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:.3s}
-  .article-card:hover .article-card-img img{transform:scale(1.05)}
-  .article-card-body{padding:18px 20px}
-  .article-card-meta{display:flex;gap:10px;align-items:center;margin-bottom:8px}
-  .article-tag{font-family:var(--font-display);font-weight:700;font-size:.64rem;letter-spacing:.05em;text-transform:uppercase;color:var(--purple);background:var(--soft);border-radius:100px;padding:4px 11px}
-  .article-date{font-family:var(--font-body);font-size:.76rem;color:var(--muted)}
-  .article-card-title{font-family:var(--font-display);font-weight:700;font-size:1rem;line-height:1.35;color:var(--ink)}
-
-  .no-results{display:none;text-align:center;padding:60px 20px;font-family:var(--font-body);color:var(--muted)}
-
-  @media (max-width:900px){
-    .featured-article{grid-template-columns:1fr}
-    .articles-grid{grid-template-columns:repeat(2,1fr)}
-  }
-  @media (max-width:600px){
-    .articles-grid{grid-template-columns:1fr}
-    .n-hero{padding:48px 20px 36px}
-  }
-
-  .featured-author-with-avatar{display:inline-flex;align-items:center;gap:7px}.featured-author-with-avatar img{width:26px;height:26px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.13)}
-</style>
+    :root{--ink:#171225;--bg:#fff;--soft:#f5f4fb;--line:#ece9f6;--muted:#6c6883;--blue:#3b82f6;--blue-dk:#2563eb;--pink:#ff2e7e;--lime:#c6f22e;--purple:#7c3aed;--teal:#0fb5c9;--display:'Plus Jakarta Sans',sans-serif;--body:'Inter',sans-serif;--radius:18px}
+    *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}a{color:inherit;text-decoration:none}img{max-width:100%}
+    .n-hero{background:linear-gradient(160deg,#1c0a3a 0%,#2b0f5c 55%,#12061f 100%);color:#fff;padding:118px 24px 48px;text-align:center}.n-hero-eyebrow{display:inline-block;font-family:var(--display);font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:14px}.n-hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,6vw,3.4rem);letter-spacing:-.02em;margin-bottom:14px}.n-hero h1 span{color:var(--pink)}.n-hero p{font-size:1.08rem;color:rgba(255,255,255,.75);max-width:590px;margin:auto}
+    .n-filter{position:sticky;top:54px;z-index:50;background:#fff;border-bottom:1px solid var(--line);padding:14px 24px;overflow-x:auto;white-space:nowrap}.n-filter-inner{display:flex;gap:8px;max-width:1100px;margin:auto;align-items:center}.n-filter-label{font-family:var(--display);font-weight:700;font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-right:6px;flex-shrink:0}.filter-btn{font-family:var(--display);font-weight:700;font-size:.85rem;color:var(--muted);background:var(--soft);border:1px solid var(--line);border-radius:100px;padding:8px 16px;cursor:pointer;flex-shrink:0;transition:.15s}.filter-btn:hover{background:#ece9f6}.filter-btn.active{background:var(--blue);border-color:var(--blue);color:#fff}
+    .n-wrap{max-width:1100px;margin:auto;padding:44px 24px 72px}.featured-article{display:grid;grid-template-columns:1.1fr .9fr;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-bottom:48px;box-shadow:0 10px 30px rgba(23,18,37,.06);transition:.2s}.featured-article:hover{box-shadow:0 16px 40px rgba(23,18,37,.1)}.featured-article-img{position:relative;min-height:300px}.featured-article-img img{width:100%;height:100%;object-fit:cover;display:block}.featured-badge{position:absolute;top:16px;left:16px;background:var(--pink);color:#fff;font-family:var(--display);font-weight:700;font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;padding:6px 14px;border-radius:100px}.featured-article-body{padding:32px;display:flex;flex-direction:column;justify-content:center}.featured-meta{display:flex;gap:12px;align-items:center;margin-bottom:12px}.featured-tag,.article-tag{font-family:var(--display);font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--purple);background:var(--soft);border-radius:100px}.featured-tag{font-size:.68rem;padding:5px 12px}.featured-date{font-size:.82rem;color:var(--muted)}.featured-article h2{font-family:var(--display);font-weight:800;font-size:1.65rem;line-height:1.18;margin-bottom:12px}.featured-article p{font-size:.98rem;color:var(--muted);margin-bottom:18px}.featured-footer{display:flex;justify-content:space-between;align-items:center;gap:16px}.featured-author{display:inline-flex;align-items:center;gap:7px;font-size:.86rem;color:var(--muted);font-weight:600}.featured-author img{width:26px;height:26px;border-radius:50%;object-fit:cover}.read-more-link{font-family:var(--display);font-weight:700;font-size:.86rem;color:var(--blue)}
+    .grid-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px}.grid-title{font-family:var(--display);font-weight:800;font-size:1.3rem}#article-count{font-size:.86rem;color:var(--muted)}.articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.article-card{display:block;border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.2s;background:#fff}.article-card:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(23,18,37,.1)}.article-card-img{height:170px;overflow:hidden}.article-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:.3s}.article-card:hover img{transform:scale(1.04)}.article-card-body{padding:18px 20px}.article-card-meta{display:flex;gap:10px;align-items:center;margin-bottom:8px}.article-tag{font-size:.64rem;padding:4px 11px}.article-date{font-size:.76rem;color:var(--muted)}.article-card-title{font-family:var(--display);font-weight:700;font-size:1rem;line-height:1.35}.article-card[hidden]{display:none!important}.no-results{display:none;grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted)}
+    .more-wrap{display:flex;justify-content:center;padding-top:34px}.more-btn{display:inline-flex;align-items:center;gap:10px;border:1px solid #d8d0e3;background:#fff;color:var(--ink);border-radius:100px;padding:14px 24px;font-family:var(--display);font-weight:800;font-size:.92rem;cursor:pointer;box-shadow:0 8px 22px rgba(23,18,37,.06);transition:.18s}.more-btn:hover{transform:translateY(-2px);border-color:var(--purple);box-shadow:0 12px 28px rgba(23,18,37,.1)}.more-btn .arrow{font-size:1.08rem;transition:transform .2s}.more-btn.is-open .arrow{transform:rotate(180deg)}
+    @media(max-width:980px){.n-hero{padding-top:102px}.n-filter{top:54px}}@media(max-width:900px){.featured-article{grid-template-columns:1fr}.articles-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.articles-grid{grid-template-columns:1fr}.n-hero{padding:92px 20px 36px}.featured-article-body{padding:24px}.featured-footer{align-items:flex-start;flex-direction:column}.n-wrap{padding-left:18px;padding-right:18px}.more-btn{width:100%;justify-content:center}}
+  </style>
 </head>
 <body>
-
 <div id="vs-header"></div>
-
-<header class="n-hero">
-  <span class="n-hero-eyebrow">🌵 Vegas Sidekick</span>
-  <h1>Vegas <span>Dispatch</span></h1>
-  <p>Las Vegas show news, concert announcements, and insider tips — from people who actually live here.</p>
-</header>
-
-<div class="n-filter">
-  <div class="n-filter-inner">
-    <span class="n-filter-label">Filter:</span>
-    <button class="filter-btn active" data-category="all">All</button>
-    <button class="filter-btn" data-category="concerts">Concerts</button>
-    <button class="filter-btn" data-category="rock">Rock</button>
-    <button class="filter-btn" data-category="latin">Latin</button>
-    <button class="filter-btn" data-category="news">News</button>
-    <button class="filter-btn" data-category="tips">Tips &amp; Guides</button>
-    <button class="filter-btn" data-category="comedy">Comedy</button>
-  </div>
-</div>
-
+<header class="n-hero"><span class="n-hero-eyebrow">🌵 Vegas Sidekick</span><h1>Vegas <span>Dispatch</span></h1><p>Las Vegas show news, concert announcements and the stuff worth knowing before you make plans.</p></header>
+<div class="n-filter"><div class="n-filter-inner"><span class="n-filter-label">Filter:</span><button class="filter-btn active" data-category="all">All</button><button class="filter-btn" data-category="concerts">Concerts</button><button class="filter-btn" data-category="rock">Rock</button><button class="filter-btn" data-category="latin">Latin</button><button class="filter-btn" data-category="country">Country</button><button class="filter-btn" data-category="comedy">Comedy</button><button class="filter-btn" data-category="news">News</button><button class="filter-btn" data-category="industry">Industry</button><button class="filter-btn" data-category="tips">Tips &amp; Guides</button></div></div>
 <main class="n-wrap" id="articles-section">
-
-  <a href="/news/activate-town-square-opens-october-3/" class="featured-article" data-category="news" id="featured-article">
-    <div class="featured-article-img">
-      <img src="/images/news/activate-town-square-hero.webp" alt="Guests competing on a lit-up interactive game floor inside Activate" loading="eager">
-      <span class="featured-badge">Latest</span>
-    </div>
-    <div class="featured-article-body">
-      <div class="featured-meta">
-        <span class="featured-tag">News</span>
-        <span class="featured-date">September 2, 2026</span>
-      </div>
-      <h2>Activate Opens at Town Square — October 3</h2>
-      <p>The live-action gaming brand's first Nevada location lands Saturday, Oct. 3, with 14 game rooms with dozens of active-game combinations — built for groups who'd rather compete than sit through another buffet or slot machine.</p>
-      <div class="featured-footer">
-        <span class="featured-author featured-author-with-avatar"><img src="/images/kris-kidd.webp" alt="Kris Kidd" width="26" height="26">By Kris Kidd</span>
-        <span class="read-more-link">Read Article &rarr;</span>
-      </div>
-    </div>
-  </a>
-
-  <div class="grid-header">
-    <span class="grid-title">All Stories</span>
-    <span id="article-count"></span>
-  </div>
-
+  <a href="/news/activate-town-square-opens-october-3/" class="featured-article" data-category="news" id="featured-article"><div class="featured-article-img"><img src="/images/news/activate-town-square-hero.webp" alt="Guests competing on a lit-up interactive game floor inside Activate" loading="eager"><span class="featured-badge">Featured</span></div><div class="featured-article-body"><div class="featured-meta"><span class="featured-tag">News</span><span class="featured-date">September 2, 2026</span></div><h2>Activate Opens at Town Square October 3</h2><p>Fourteen game rooms, active games for ages 6+ and a format built for groups who would rather compete than sit through another passive attraction.</p><div class="featured-footer"><span class="featured-author"><img src="/images/kris-kidd.webp" alt="Kris Kidd">By Kris Kidd</span><span class="read-more-link">Read Article →</span></div></div></a>
+  <div class="grid-header"><span class="grid-title">What matters now</span><span id="article-count"></span></div>
   <div class="articles-grid" id="articles-grid">
-      <a href="/news/donny-osmond-extends-harrahs-residency-through-2027/" class="article-card" data-category="news">
-        <div class="article-card-img"><img src="/images/news/donny-osmond-harrahs-2027-hero.webp" alt="Donny Osmond at Harrah's Showroom, Harrah's Las Vegas" loading="lazy"></div>
-        <div class="article-card-body">
-          <div class="article-card-meta">
-            <span class="article-tag">News</span>
-            <span class="article-date">August 29, 2026</span>
-          </div>
-          <h3 class="article-card-title">Donny Osmond Extends His Harrah's Residency Through 2027</h3>
-        </div>
-      </a>
+    <a href="/news/donny-osmond-extends-harrahs-residency-through-2027/" class="article-card" data-category="news"><div class="article-card-img"><img src="/images/news/donny-osmond-harrahs-2027-hero.webp" alt="Donny Osmond at Harrah's Showroom" loading="lazy"></div><div class="article-card-body"><div class="article-card-meta"><span class="article-tag">News</span><span class="article-date">Aug. 29, 2026</span></div><h3 class="article-card-title">Donny Osmond Extends His Harrah's Residency Through June 2027</h3></div></a>
+    <a href="/news/eagles-sphere-additional-shows-2026/" class="article-card" data-category="concerts"><div class="article-card-img"><img src="/images/news/eagles-sphere-inside-route66.png" alt="Eagles production visuals inside Sphere Las Vegas" loading="lazy"></div><div class="article-card-body"><div class="article-card-meta"><span class="article-tag">Concerts</span><span class="article-date">Updated Sept. 2026</span></div><h3 class="article-card-title">Eagles Return to Sphere — Residency Dates Now Run Through January 2027</h3></div></a>
+    <a href="/news/jo-koy-live-colosseum-caesars-palace-september-19/" class="article-card" data-category="comedy"><div class="article-card-img"><img src="/images/news/jo-koy-live-colosseum-caesars-palace-september-19.webp" alt="Jo Koy Live at The Colosseum at Caesars Palace" loading="lazy"></div><div class="article-card-body"><div class="article-card-meta"><span class="article-tag">Comedy</span><span class="article-date">Sept. 19</span></div><h3 class="article-card-title">Jo Koy Live at The Colosseum — September 19</h3></div></a>
+    <a href="/news/for-king-country-pearl-palms-october-8/" class="article-card" data-category="concerts"><div class="article-card-img"><img src="/images/news/for-king-country-pearl-palms-october-8.webp" alt="for KING + COUNTRY at The Pearl at Palms" loading="lazy"></div><div class="article-card-body"><div class="article-card-meta"><span class="article-tag">Concerts</span><span class="article-date">Oct. 8</span></div><h3 class="article-card-title">for KING + COUNTRY at The Pearl — October 8</h3></div></a>
+    <a href="/news/tumua-das-how-tour-venetian-october-9/" class="article-card" data-category="comedy"><div class="article-card-img"><img src="/images/news/tumua-das-how-tour-venetian-october-9.webp" alt="Tumua at The Venetian Las Vegas" loading="lazy"></div><div class="article-card-body"><div class="article-card-meta"><span class="article-tag">Comedy</span><span class="article-date">Oct. 9</span></div><h3 class="article-card-title">Tumua Brings the Das' How Tour to The Venetian — October 9</h3></div></a>
+    <a href="/news/jay-silent-bob-save-vegas-october-16/" class="article-card" data-category="comedy"><div class="article-card-img"><img src="/images/news/jay-silent-bob-save-vegas-poster.jpg" alt="Jay and Silent Bob Save Vegas poster" loading="lazy"></div><div class="article-card-body"><div class="article-card-meta"><span class="article-tag">Comedy</span><span class="article-date">Oct. 16</span></div><h3 class="article-card-title">Jay &amp; Silent Bob Save Vegas! at The Venetian — October 16</h3></div></a>
+    <a href="/news/lewis-black-live-venetian-october-30/" class="article-card" data-category="comedy"><div class="article-card-img"><img src="/images/news/lewis-black-live-venetian-october-30.webp" alt="Lewis Black Live at The Palazzo Theatre" loading="lazy"></div><div class="article-card-body"><div class="article-card-meta"><span class="article-tag">Comedy</span><span class="article-date">Oct. 30</span></div><h3 class="article-card-title">Lewis Black Lands at The Palazzo Theatre on Halloween Weekend</h3></div></a>
+    <a href="/news/smashing-pumpkins-rats-in-a-cage-tour-mgm-grand-october-30/" class="article-card" data-category="rock"><div class="article-card-img"><img src="/images/news/smashing-pumpkins-rats-in-a-cage-tour-mgm-grand-october-30.webp" alt="The Smashing Pumpkins Rats in a Cage Tour at MGM Grand" loading="lazy"></div><div class="article-card-body"><div class="article-card-meta"><span class="article-tag">Rock</span><span class="article-date">Oct. 30</span></div><h3 class="article-card-title">Smashing Pumpkins Bring Rats in a Cage to MGM Grand — October 30</h3></div></a>
+    <a href="/news/daughtry-20-years-unplugged-pearl-palms-november-7/" class="article-card" data-category="rock"><div class="article-card-img"><img src="/images/news/daughtry-20-years-unplugged-pearl-palms-november-7.webp" alt="Daughtry 20 Years Unplugged at The Pearl at Palms" loading="lazy"></div><div class="article-card-body"><div class="article-card-meta"><span class="article-tag">Rock</span><span class="article-date">Nov. 7</span></div><h3 class="article-card-title">Daughtry — 20 Years Unplugged at The Pearl, November 7</h3></div></a>
 
-      <a href="/news/activate-town-square-opens-october-3/" class="article-card" data-category="news">
-        <div class="article-card-img"><img src="/images/news/activate-town-square-hero.webp" alt="Guests competing on a lit-up interactive game floor inside Activate" loading="lazy"></div>
-        <div class="article-card-body">
-          <div class="article-card-meta">
-            <span class="article-tag">News</span>
-            <span class="article-date">September 2, 2026</span>
-          </div>
-          <h3 class="article-card-title">Activate Opens at Town Square — October 3</h3>
-        </div>
-      </a>
-
-      <a href="/news/mad-apple-closing-september-5/" class="article-card" data-category="news">
-        <div class="article-card-img"><img src="/images/news/mad-apple-closing-september-5.webp" alt="Mad Apple by Cirque du Soleil performers under dramatic stage lighting at New York-New York" loading="lazy"></div>
-        <div class="article-card-body">
-          <div class="article-card-meta">
-            <span class="article-tag">News</span>
-            <span class="article-date">August 20, 2026</span>
-          </div>
-          <h3 class="article-card-title">Mad Apple Is Closing — Last Show Is September 5</h3>
-        </div>
-      </a>
-
-      <a href="/news/backstreet-boys-f1-afterparty-sphere-november-21/" class="article-card" data-category="concerts">
-        <div class="article-card-img"><img src="/images/news/backstreet-boys-f1-afterparty-sphere-november-21.webp" alt="Sphere Las Vegas at night with F1 circuit — Backstreet Boys F1 Afterparty November 21 2026" loading="lazy"></div>
-        <div class="article-card-body">
-          <div class="article-card-meta">
-            <span class="article-tag">Concerts</span>
-            <span class="article-date">July 17, 2026</span>
-          </div>
-          <h3 class="article-card-title">Backstreet Boys to Headline Official F1® Afterparty at Sphere — November 21</h3>
-        </div>
-      </a>
-
-      <a href="/news/best-vegas-shows-for-first-timers/" class="article-card" data-category="tips">
-        <div class="article-card-img"><img src="/images/news/best-vegas-shows-for-first-timers.webp" alt="Best Las Vegas shows for first-time visitors guide — VEGAS! The Show, Cirque Mystère, V Ultimate Variety Show" loading="lazy"></div>
-        <div class="article-card-body">
-          <div class="article-card-meta">
-            <span class="article-tag">Tips & Guides</span>
-            <span class="article-date">June 30, 2026</span>
-          </div>
-          <h3 class="article-card-title">Best Vegas Shows for First-Timers: 3 Can't-Miss Picks</h3>
-        </div>
-      </a>
-
-      <a href="/news/jo-koy-live-colosseum-caesars-palace-september-19/" class="article-card" data-category="comedy">
-        <div class="article-card-img"><img src="/images/news/jo-koy-live-colosseum-caesars-palace-september-19.webp" alt="Jo Koy Live — The Colosseum at Caesars Palace Las Vegas, September 19 2026" loading="lazy"></div>
-        <div class="article-card-body">
-          <div class="article-card-meta">
-            <span class="article-tag">Comedy</span>
-            <span class="article-date">June 16, 2026</span>
-          </div>
-          <h3 class="article-card-title">Jo Koy Live — The Colosseum at Caesars Palace, Sept. 19</h3>
-        </div>
-      </a>
-
-      <a href="/news/daughtry-20-years-unplugged-pearl-palms-november-7/" class="article-card" data-category="rock">
-        <div class="article-card-img"><img src="/images/news/daughtry-20-years-unplugged-pearl-palms-november-7.webp" alt="Daughtry 20 Years Unplugged — The Pearl at Palms, Nov. 7, 2026" loading="lazy"></div>
-        <div class="article-card-body">
-          <div class="article-card-meta">
-            <span class="article-tag">Rock Music</span>
-            <span class="article-date">June 16, 2026</span>
-          </div>
-          <h3 class="article-card-title">Daughtry — 20 Years Unplugged, Nov. 7</h3>
-        </div>
-      </a>
-
-      <a href="/news/alicia-villarreal-bendita-locura-pearl-palms-november-28/" class="article-card" data-category="latin">
-        <div class="article-card-img"><img src="/images/news/alicia-villarreal-bendita-locura-pearl-palms-november-28.webp" alt="Alicia Villarreal Bendita Locura Tour — The Pearl Concert Theater at Palms Casino Resort, November 28 2026" loading="lazy"></div>
-        <div class="article-card-body">
-          <div class="article-card-meta">
-            <span class="article-tag">Latin</span>
-            <span class="article-date">June 15, 2026</span>
-          </div>
-          <h3 class="article-card-title">Alicia Villarreal — Bendita Locura Tour, The Pearl at Palms, Nov. 28</h3>
-        </div>
-      </a>
-
-      <a href="/news/lewis-black-live-venetian-october-30/" class="article-card" data-category="comedy">
-        <div class="article-card-img"><img src="/images/news/lewis-black-live-venetian-october-30.webp" alt="Lewis Black Live — The Palazzo Theatre at The Venetian, October 30 2026" loading="lazy"></div>
-        <div class="article-card-body">
-          <div class="article-card-meta">
-            <span class="article-tag">Comedy</span>
-            <span class="article-date">May 19, 2026</span>
-          </div>
-          <h3 class="article-card-title">Lewis Black Live — The Palazzo Theatre, Oct. 30 (Halloween)</h3>
-        </div>
-      </a>
-
-      <a href="/news/new-shows-announced-may-19-2026/" class="article-card" data-category="concerts">
-        <div class="article-card-img"><img src="https://res.cloudinary.com/vegassidekick/image/upload/v1779152147/jnac3wlupyinitqusnm1.jpg" alt="Five New Las Vegas Shows Announced — May 2026" loading="lazy"></div>
-        <div class="article-card-body">
-          <div class="article-card-meta">
-            <span class="article-tag">Roundup</span>
-            <span class="article-date">May 19, 2026</span>
-          </div>
-          <h3 class="article-card-title">Five New Shows Announced — El Buki, SP, Tumua, fK+C, Clay Walker</h3>
-        </div>
-      </a>
-
-      <a href="/news/marco-antonio-solis-tour-gratitud-dolby-live-september-11/" class="article-card" data-category="latin">
-        <div class="article-card-img"><img src="/images/news/marco-antonio-solis-tour-gratitud-dolby-live-september-11.webp" alt="Marco Antonio Solís — Tour Gratitud 2026, Dolby Live at Park MGM" loading="lazy"></div>
-        <div class="article-card-body">
-          <div class="article-card-meta">
-            <span class="article-tag">Latin</span>
-            <span class="article-date">May 19, 2026</span>
-          </div>
-          <h3 class="article-card-title">Marco Antonio Solís — Tour Gratitud 2026, Dolby Live, Sept. 11 & 12</h3>
-        </div>
-      </a>
-
-      <a href="/news/tumua-das-how-tour-venetian-october-9/" class="article-card" data-category="comedy">
-        <div class="article-card-img"><img src="/images/news/tumua-das-how-tour-venetian-october-9.webp" alt="Tumua — The Venetian Resort Las Vegas, October 9 2026" loading="lazy"></div>
-        <div class="article-card-body">
-          <div class="article-card-meta">
-            <span class="article-tag">Comedy</span>
-            <span class="article-date">May 18, 2026</span>
-          </div>
-          <h3 class="article-card-title">Tumua — Das' How Tour, The Venetian, Oct. 9</h3>
-        </div>
-      </a>
-
-      <a href="/news/clay-walker-venetian-december-5/" class="article-card" data-category="country">
-        <div class="article-card-img"><img src="/images/news/clay-walker-venetian-december-5.webp" alt="Clay Walker — The Venetian Resort Las Vegas, December 5 2026" loading="lazy"></div>
-        <div class="article-card-body">
-          <div class="article-card-meta">
-            <span class="article-tag">Country</span>
-            <span class="article-date">May 18, 2026</span>
-          </div>
-          <h3 class="article-card-title">Clay Walker — The Venetian Theatre, Dec. 5 (NFR Weekend)</h3>
-        </div>
-      </a>
-
-      <a href="/news/for-king-country-pearl-palms-october-8/" class="article-card" data-category="concerts">
-        <div class="article-card-img"><img src="/images/news/for-king-country-pearl-palms-october-8.webp" alt="for KING + COUNTRY — The Pearl at Palms Casino Resort, October 8 2026" loading="lazy"></div>
-        <div class="article-card-body">
-          <div class="article-card-meta">
-            <span class="article-tag">Concerts</span>
-            <span class="article-date">May 18, 2026</span>
-          </div>
-          <h3 class="article-card-title">for KING + COUNTRY — The Pearl at Palms, Oct. 8</h3>
-        </div>
-      </a>
-
-      <a href="/news/smashing-pumpkins-rats-in-a-cage-tour-mgm-grand-october-30/" class="article-card" data-category="concerts">
-        <div class="article-card-img"><img src="/images/news/smashing-pumpkins-rats-in-a-cage-tour-mgm-grand-october-30.webp" alt="The Smashing Pumpkins — Rats in a Cage Tour, MGM Grand Garden Arena October 30 2026" loading="lazy"></div>
-        <div class="article-card-body">
-          <div class="article-card-meta">
-            <span class="article-tag">Concerts</span>
-            <span class="article-date">May 18, 2026</span>
-          </div>
-          <h3 class="article-card-title">Smashing Pumpkins — Rats in a Cage Tour, MGM Grand, Oct. 30</h3>
-        </div>
-      </a>
-
-      <a href="/news/new-shows-announced-may-14-2026/" class="article-card" data-category="concerts">
-        <div class="article-card-img"><img src="/images/news/new-shows-announced-may-14-2026.webp" alt="New Las Vegas shows announced week of May 14, 2026 — Eagles, KATSEYE, Matt Rife and more" loading="lazy"></div>
-        <div class="article-card-body">
-          <div class="article-card-meta">
-            <span class="article-tag">Concerts</span>
-            <span class="article-date">May 14, 2026</span>
-          </div>
-          <h3 class="article-card-title">New Shows Announced This Week — Eagles at Sphere, KATSEYE, Matt Rife & More</h3>
-        </div>
-      </a>
-
-      <a href="/news/blue-dot-fever-what-it-means-for-vegas/" class="article-card" data-category="industry">
-        <div class="article-card-img"><img src="/images/news/blue-dot-fever-what-it-means-for-vegas.webp" alt="Concert arena seating chart with hundreds of available blue dots — blue dot fever in the live music industry" loading="lazy"></div>
-        <div class="article-card-body">
-          <div class="article-card-meta">
-            <span class="article-tag">Industry</span>
-            <span class="article-date">May 10, 2026</span>
-          </div>
-          <h3 class="article-card-title">Blue Dot Fever: What Concert Tour Cancellations Mean for Vegas Visitors</h3>
-        </div>
-      </a>
-
-      <a href="/news/live-nation-las-vegas-listings-update-may-2026/" class="article-card" data-category="concerts">
-        <div class="article-card-img"><img src="/images/news/live-nation-may-2026-arena.png" alt="Packed stadium arena at a major Las Vegas Live Nation concert" loading="lazy"></div>
-        <div class="article-card-body">
-          <div class="article-card-meta">
-            <span class="article-tag">Concerts</span>
-            <span class="article-date">May 7, 2026</span>
-          </div>
-          <h3 class="article-card-title">Live Nation Las Vegas: Major New Show Announcements — May 7, 2026</h3>
-        </div>
-      </a>
-
-      <a href="/news/jay-silent-bob-save-vegas-october-16/" class="article-card" data-category="comedy">
-        <div class="article-card-img"><img src="/images/news/jay-silent-bob-save-vegas-poster.jpg" alt="Jay and Silent Bob Save Vegas! official poster — Kevin Smith and Jason Mewes at The Palazzo Theatre at The Venetian, October 16, 2026" loading="lazy"></div>
-        <div class="article-card-body">
-          <div class="article-card-meta">
-            <span class="article-tag">Comedy</span>
-            <span class="article-date">May 5, 2026</span>
-          </div>
-          <h3 class="article-card-title">Jay & Silent Bob Save Vegas! Comes to The Venetian on October 16</h3>
-        </div>
-      </a>
-
-      <a href="/news/eagles-sphere-additional-shows-2026/" class="article-card" data-category="concerts">
-        <div class="article-card-img"><img src="/images/news/eagles-sphere-dates-2026.png" alt="Official Eagles Sphere Las Vegas announcement graphic for six new 2026 dates — September 18 and 19, November 12, 14, 27 and 28" loading="lazy"></div>
-        <div class="article-card-body">
-          <div class="article-card-meta">
-            <span class="article-tag">Concerts</span>
-            <span class="article-date">May 5, 2026</span>
-          </div>
-          <h3 class="article-card-title">Eagles Add Six More Sphere Shows — 64 Total Dates Now Confirmed</h3>
-        </div>
-      </a>
-
-      <a href="/news/soda-stereo-ecos-september-13/" class="article-card" data-category="concerts">
-        <div class="article-card-img"><img src="/images/news/soda-stereo-ecos-poster.jpg" alt="Soda Stereo ECOS Tour official Las Vegas poster — September 13 at Dolby Live at Park MGM" loading="lazy"></div>
-        <div class="article-card-body">
-          <div class="article-card-meta">
-            <span class="article-tag">Concerts</span>
-            <span class="article-date">May 4, 2026</span>
-          </div>
-          <h3 class="article-card-title">Soda Stereo's ECOS Comes to Las Vegas — Dolby Live at Park MGM, September 13</h3>
-        </div>
-      </a>
-
-      <a href="/news/bini-signals-world-tour-august-8/" class="article-card" data-category="concerts">
-        <div class="article-card-img"><img src="/images/news/bini-signals-world-tour-poster.jpg" alt="BINI Signals World Tour 2026 official Las Vegas show poster" loading="lazy"></div>
-        <div class="article-card-body">
-          <div class="article-card-meta">
-            <span class="article-tag">Concerts</span>
-            <span class="article-date">April 25, 2026</span>
-          </div>
-          <h3 class="article-card-title">BINI Brings Coachella Breakout to Vegas — Signals World Tour Hits Planet Hollywood August 8</h3>
-        </div>
-      </a>
-
-      <div class="no-results" id="no-results">No stories in this category yet. Check back soon.</div>
+    <a href="/news/backstreet-boys-f1-afterparty-sphere-november-21/" class="article-card" data-category="concerts"><div class="article-card-img"><img src="/images/news/backstreet-boys-f1-afterparty-sphere-november-21.webp" alt="Backstreet Boys F1 Afterparty at Sphere" loading="lazy"></div><div class="article-card-body"><div class="article-card-meta"><span class="article-tag">Concerts</span><span class="article-date">Nov. 21</span></div><h3 class="article-card-title">Backstreet Boys Headline the Official F1 Afterparty at Sphere — November 21</h3></div></a>
+    <a href="/news/alicia-villarreal-bendita-locura-pearl-palms-november-28/" class="article-card" data-category="latin"><div class="article-card-img"><img src="/images/news/alicia-villarreal-bendita-locura-pearl-palms-november-28-0.webp" alt="Alicia Villarreal Bendita Locura Tour artwork" loading="lazy"></div><div class="article-card-body"><div class="article-card-meta"><span class="article-tag">Latin</span><span class="article-date">Nov. 28</span></div><h3 class="article-card-title">Alicia Villarreal Brings Bendita Locura to The Pearl — November 28</h3></div></a>
+    <a href="/news/clay-walker-venetian-december-5/" class="article-card" data-category="country"><div class="article-card-img"><img src="/images/news/clay-walker-venetian-december-5.webp" alt="Clay Walker at The Venetian Las Vegas" loading="lazy"></div><div class="article-card-body"><div class="article-card-meta"><span class="article-tag">Country</span><span class="article-date">Dec. 5</span></div><h3 class="article-card-title">Clay Walker at The Venetian Theatre — NFR Weekend, December 5</h3></div></a>
+    <a href="/news/mad-apple-closing-september-5/" class="article-card" data-category="news"><div class="article-card-img"><img src="/images/news/mad-apple-closing-september-5.webp" alt="Mad Apple performers at New York-New York" loading="lazy"></div><div class="article-card-body"><div class="article-card-meta"><span class="article-tag">Archive</span><span class="article-date">Sept. 5, 2026</span></div><h3 class="article-card-title">Mad Apple Has Closed — Final Show Was September 5</h3></div></a>
+    <a href="/news/marco-antonio-solis-tour-gratitud-dolby-live-september-11/" class="article-card" data-category="latin"><div class="article-card-img"><img src="/images/news/marco-antonio-solis-tour-gratitud-dolby-live-september-11.webp" alt="Marco Antonio Solís Tour Gratitud at Dolby Live" loading="lazy"></div><div class="article-card-body"><div class="article-card-meta"><span class="article-tag">Latin</span><span class="article-date">Sept. 11–12</span></div><h3 class="article-card-title">Marco Antonio Solís — Tour Gratitud at Dolby Live</h3></div></a>
+    <a href="/news/soda-stereo-ecos-september-13/" class="article-card" data-category="concerts"><div class="article-card-img"><img src="/images/news/soda-stereo-ecos-poster.jpg" alt="Soda Stereo ECOS Las Vegas poster" loading="lazy"></div><div class="article-card-body"><div class="article-card-meta"><span class="article-tag">Concerts</span><span class="article-date">Sept. 13</span></div><h3 class="article-card-title">Soda Stereo's ECOS at Dolby Live — September 13</h3></div></a>
+    <a href="/news/best-vegas-shows-for-first-timers/" class="article-card" data-category="tips"><div class="article-card-img"><img src="/images/news/best-vegas-shows-for-first-timers.webp" alt="Best Vegas shows for first-time visitors" loading="lazy"></div><div class="article-card-body"><div class="article-card-meta"><span class="article-tag">Guide</span><span class="article-date">June 2026</span></div><h3 class="article-card-title">Best Vegas Shows for First-Timers: 3 Can't-Miss Picks</h3></div></a>
+    <a href="/news/new-shows-announced-may-19-2026/" class="article-card" data-category="concerts"><div class="article-card-img"><img src="https://res.cloudinary.com/vegassidekick/image/upload/v1779152147/jnac3wlupyinitqusnm1.jpg" alt="Five Las Vegas show announcements from May 2026" loading="lazy"></div><div class="article-card-body"><div class="article-card-meta"><span class="article-tag">Archive</span><span class="article-date">May 19</span></div><h3 class="article-card-title">Five Las Vegas Show Announcements From May 19, 2026</h3></div></a>
+    <a href="/news/new-shows-announced-may-14-2026/" class="article-card" data-category="concerts"><div class="article-card-img"><img src="/images/news/new-shows-announced-may-14-2026.webp" alt="Las Vegas show announcements from May 14, 2026" loading="lazy"></div><div class="article-card-body"><div class="article-card-meta"><span class="article-tag">Archive</span><span class="article-date">May 14</span></div><h3 class="article-card-title">The Week Eagles, KATSEYE, Matt Rife and More Hit the Vegas Calendar</h3></div></a>
+    <a href="/news/blue-dot-fever-what-it-means-for-vegas/" class="article-card" data-category="industry"><div class="article-card-img"><img src="/images/news/blue-dot-fever-what-it-means-for-vegas.webp" alt="Concert seating map with available seats" loading="lazy"></div><div class="article-card-body"><div class="article-card-meta"><span class="article-tag">Industry</span><span class="article-date">May 10</span></div><h3 class="article-card-title">Blue Dot Fever: What a Soft Seat Map Actually Tells You</h3></div></a>
+    <a href="/news/live-nation-las-vegas-listings-update-may-2026/" class="article-card" data-category="concerts"><div class="article-card-img"><img src="/images/news/live-nation-may-2026-arena.png" alt="Packed arena at a Las Vegas concert" loading="lazy"></div><div class="article-card-body"><div class="article-card-meta"><span class="article-tag">Archive</span><span class="article-date">May 7</span></div><h3 class="article-card-title">The May 7 Live Nation Las Vegas Announcement Wave</h3></div></a>
+    <a href="/news/bini-signals-world-tour-august-8/" class="article-card" data-category="concerts"><div class="article-card-img"><img src="/images/news/bini-signals-world-tour-poster.jpg" alt="BINI Signals World Tour Las Vegas poster" loading="lazy"></div><div class="article-card-body"><div class="article-card-meta"><span class="article-tag">Archive</span><span class="article-date">Aug. 8</span></div><h3 class="article-card-title">BINI's Signals World Tour Stop at Planet Hollywood — Archive</h3></div></a>
+    <div class="no-results" id="no-results">No stories in this category yet.</div>
   </div>
-
+  <div class="more-wrap"><button class="more-btn" id="more-dispatch" type="button" aria-controls="articles-grid" aria-expanded="false"><span class="more-label">More Vegas Dispatch</span><span class="arrow" aria-hidden="true">↓</span></button></div>
 </main>
-
 <div id="vs-footer"></div>
 <script src="/components/header.js?v=13"></script>
 <script src="/components/footer.js?v=10"></script>
 <script>
-  (function() {
-    var buttons = document.querySelectorAll('.filter-btn');
-    var cards = document.querySelectorAll('.article-card[data-category]');
-    var featured = document.getElementById('featured-article');
-    var noResults = document.getElementById('no-results');
-    var countEl = document.getElementById('article-count');
+(function(){
+  var PAGE_SIZE=9;
+  var buttons=Array.from(document.querySelectorAll('.filter-btn'));
+  var cards=Array.from(document.querySelectorAll('.article-card[data-category]'));
+  var featured=document.getElementById('featured-article');
+  var noResults=document.getElementById('no-results');
+  var countEl=document.getElementById('article-count');
+  var moreBtn=document.getElementById('more-dispatch');
+  var moreLabel=moreBtn.querySelector('.more-label');
+  var currentCategory='all';
+  var visibleLimit=PAGE_SIZE;
 
-    function filterArticles(category) {
-      var visible = 0;
+  function matchingCards(){return cards.filter(function(card){return currentCategory==='all'||card.dataset.category===currentCategory;});}
+  function render(){
+    var matches=matchingCards();
+    cards.forEach(function(card){card.hidden=true;});
+    matches.slice(0,visibleLimit).forEach(function(card){card.hidden=false;});
+    var featuredMatches=!featured||currentCategory==='all'||featured.dataset.category===currentCategory;
+    if(featured) featured.style.display=featuredMatches?'':'none';
+    noResults.style.display=matches.length===0?'block':'none';
+    countEl.textContent=matches.length===1?'1 story':matches.length+' stories';
+    if(matches.length<=PAGE_SIZE){moreBtn.style.display='none';return;}
+    moreBtn.style.display='inline-flex';
+    if(visibleLimit>=matches.length){moreLabel.textContent='Show fewer';moreBtn.classList.add('is-open');moreBtn.setAttribute('aria-expanded','true');}
+    else{moreLabel.textContent='More Vegas Dispatch';moreBtn.classList.remove('is-open');moreBtn.setAttribute('aria-expanded','false');}
+  }
 
-      if (featured) {
-        var show = category === 'all' || featured.dataset.category === category;
-        featured.style.display = show ? '' : 'none';
-      }
+  moreBtn.addEventListener('click',function(){
+    var matches=matchingCards();
+    if(visibleLimit>=matches.length){visibleLimit=PAGE_SIZE;document.getElementById('articles-section').scrollIntoView({behavior:'smooth',block:'start'});}
+    else{visibleLimit=Math.min(visibleLimit+PAGE_SIZE,matches.length);}
+    render();
+  });
 
-      cards.forEach(function(card) {
-        var match = category === 'all' || card.dataset.category === category;
-        card.style.display = match ? '' : 'none';
-        if (match) visible++;
-      });
-
-      noResults.style.display = visible === 0 ? 'block' : 'none';
-      countEl.textContent = visible === 1 ? '1 story' : visible + ' stories';
-    }
-
-    buttons.forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        buttons.forEach(function(b) { b.classList.remove('active'); });
-        btn.classList.add('active');
-        filterArticles(btn.dataset.category);
-      });
-    });
-
-    filterArticles('all');
-  })();
+  buttons.forEach(function(btn){btn.addEventListener('click',function(){buttons.forEach(function(b){b.classList.remove('active');});btn.classList.add('active');currentCategory=btn.dataset.category;visibleLimit=PAGE_SIZE;render();});});
+  render();
+})();
 </script>
-
 </body>
 </html>
