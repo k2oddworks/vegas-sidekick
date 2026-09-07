@@ -147,7 +147,7 @@ def sync_affiliate_urls(text: str, record: dict[str, Any], changes: list[str]) -
     # Restrict replacement to Vegas Sidekick Spotlight referral URLs. This avoids
     # rewriting unrelated external links or editorial citations.
     slug = re.escape(str(record["slug"]))
-    pattern = rf'https://spotlight\.vegas/shows/[^"\s<>]+/{slug}/ref/vegassidekick'
+    pattern = rf'https://spotlight\.vegas/shows/[^"\s<>]+/{slug}/ref/vegassidekick/*'
     new, count = re.subn(pattern, affiliate, text)
     if count:
         changes.append(f"ticketing.affiliate_url ({count} surface{'s' if count != 1 else ''})")
