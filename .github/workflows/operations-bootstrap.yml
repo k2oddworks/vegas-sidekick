@@ -20,21 +20,21 @@ jobs:
       - name: Sync operations labels
         env:
           GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
         run: |
-          python3 - <<'PY'
-          import json, subprocess
-          from pathlib import Path
-          try:
-              import yaml
-          except ImportError:
-              raise SystemExit('PyYAML is required on the runner')
-          repo='${{ github.repository }}'
-          data=yaml.safe_load(Path('.github/labels.yml').read_text())
-          for label in data['labels']:
-              name=label['name']; color=label['color']; desc=label.get('description','')
-              check=subprocess.run(['gh','api',f'repos/{repo}/labels/{name}'],capture_output=True,text=True)
-              if check.returncode == 0:
-                  subprocess.run(['gh','api','--method','PATCH',f'repos/{repo}/labels/{name}','-f',f'new_name={name}','-f',f'color={color}','-f',f'description={desc}'],check=True)
-              else:
-                  subprocess.run(['gh','api','--method','POST',f'repos/{repo}/labels','-f',f'name={name}','-f',f'color={color}','-f',f'description={desc}'],check=True)
-          PY
+          ruby <<'RUBY'
+          require 'yaml'
+          require 'open3'
+          repo = ENV.fetch('REPO')
+          YAML.load_file('.github/labels.yml').fetch('labels').each do |label|
+            name = label.fetch('name')
+            color = label.fetch('color')
+            desc = label.fetch('description', '')
+            _, _, status = Open3.capture3('gh', 'api', "repos/#{repo}/labels/#{name}")
+            if status.success?
+              system('gh','api','--method','PATCH',"repos/#{repo}/labels/#{name}",'-f',"new_name=#{name}",'-f',"color=#{color}",'-f',"description=#{desc}", exception: true)
+            else
+              system('gh','api','--method','POST',"repos/#{repo}/labels",'-f',"name=#{name}",'-f',"color=#{color}",'-f',"description=#{desc}", exception: true)
+            end
+          end
+          RUBY
