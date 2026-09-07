@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'scripts/rewrite-couples-date-night.py'
+      - 'scripts/rewrite-couples-date-night.trigger'
 jobs:
   rewrite:
     runs-on: ubuntu-latest
