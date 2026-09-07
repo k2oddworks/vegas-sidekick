@@ -6,6 +6,7 @@ on:
       - seo/serp-metadata-refresh
     paths:
       - scripts/optimize-serp-metadata.py
+      - scripts/optimize-site-serp-overrides.py
       - scripts/audit-serp-metadata.py
       - .github/workflows/run-serp-metadata-refresh.yml
 
@@ -21,6 +22,8 @@ jobs:
           ref: seo/serp-metadata-refresh
       - name: Refresh show metadata
         run: python3 scripts/optimize-serp-metadata.py
+      - name: Refresh high-value site metadata
+        run: python3 scripts/optimize-site-serp-overrides.py
       - name: Audit SERP metadata
         run: python3 scripts/audit-serp-metadata.py
       - name: Audit site health
@@ -35,6 +38,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add shows
-          git commit -m "Refresh unique show SERP metadata"
+          git add shows guides news venues about vegas-sign
+          git commit -m "Refresh unique site SERP metadata"
           git push origin HEAD:seo/serp-metadata-refresh
