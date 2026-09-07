@@ -1,0 +1,23 @@
+name: Run Content Link Hygiene
+
+on:
+  push:
+    branches:
+      - seo/stale-copy-link-hygiene
+    paths:
+      - scripts/audit-content-link-hygiene.py
+      - scripts/fix-content-link-hygiene.py
+      - .github/workflows/run-content-link-hygiene.yml
+
+permissions:
+  contents: write
+
+jobs:
+  hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: seo/stale-copy-link-hygiene
+      - name: Audit content and links
+        run: python3 scripts/audit-content-link-hygiene.py
