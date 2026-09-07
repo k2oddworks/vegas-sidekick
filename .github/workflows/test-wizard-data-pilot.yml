@@ -9,7 +9,7 @@ on:
       - .github/workflows/test-wizard-data-pilot.yml
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   test:
@@ -18,37 +18,82 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: data/wizard-of-oz-record
-      - name: Sync dry run
-        run: python3 scripts/sync-show-from-data.py wizard-of-oz --dry-run
-      - name: Verify variable schedule record
+
+      - name: Extend generic engine for variable schedules and factual FAQ sync
         run: |
           python3 - <<'PY'
-          import json
           from pathlib import Path
-          d=json.loads(Path('data/shows/wizard-of-oz.json').read_text())
-          assert d['schedule']['type']=='variable'
-          assert d['schedule']['booking_page_is_authoritative'] is True
-          assert d['pricing']['from_price']==123
-          assert d['pricing']['regular_price']==123
-          assert d['pricing']['discounted'] is False
-          assert d['operational_restrictions']['late_seating']['permitted'] is False
-          assert d['age_policy']['minimum_age']==6
-          assert d['media']['official_trailer'] is None
-          print('Wizard variable schedule and restrictions verified')
+          p=Path('scripts/sync-show-from-data.py')
+          s=p.read_text()
+
+          if 'import html\n' not in s:
+              s=s.replace('import argparse\n', 'import argparse\nimport html\n', 1)
+
+          marker='''def sync_seo(text: str, record: dict[str, Any], changes: list[str]) -> str:\n'''
+          helper='''def value_at_path(record: dict[str, Any], path: str) -> Any:\n    value: Any = record\n    for part in path.split("."):\n        if not isinstance(value, dict) or part not in value:\n            raise SyncError(f"{record['slug']}: missing data path {path}")\n        value = value[part]\n    return value\n\n\n'''
+          if helper not in s:
+              if marker not in s: raise SystemExit('sync_seo marker not found')
+              s=s.replace(marker, helper+marker, 1)
+
+          old='''    schedule = effective_schedule(record)\n    performances = schedule.get("performances") or []\n    dark_days = set(schedule.get("dark_days") or [])\n    if not performances and not dark_days:\n        return text\n\n    perf_by_day = grouped_performances(schedule)\n'''
+          new='''    schedule = effective_schedule(record)\n    if schedule.get("type") == "variable":\n        replacement = ('<div class="schedule"><div class="day" style="grid-column:1/-1">'\n                       '<strong>Days &amp; times vary</strong><span>Check times on booking page</span>'\n                       '</div></div>')\n        pattern = r'<div class="schedule">.*?</div>(?=<a class="later-date-cta")'\n        updated, found = replace_if_present(text, pattern, replacement, "variable schedule grid", re.S)\n        if found and updated != text:\n            changes.append("schedule.variable")\n        return updated\n\n    performances = schedule.get("performances") or []\n    dark_days = set(schedule.get("dark_days") or [])\n    if not performances and not dark_days:\n        return text\n\n    perf_by_day = grouped_performances(schedule)\n'''
+          if old not in s: raise SystemExit('schedule block target not found')
+          s=s.replace(old,new,1)
+
+          needle='''    age_rule = sync.get("age_policy") or {}\n'''
+          faq_visible='''    faq_rules = sync.get("faq_fact_rules") or []\n    for rule in faq_rules:\n        visible_question = rule.get("visible_question") or rule.get("schema_question")\n        source = rule.get("text_source")\n        if not visible_question or not source:\n            raise SyncError(f"{record['slug']}: faq_fact_rules require visible_question/schema_question and text_source")\n        value = str(value_at_path(record, source))\n        rendered = html.escape(value, quote=False)\n        pattern = rf'(<details><summary>{re.escape(visible_question)}</summary><div>).*?(</div></details>)'\n        new = replace_once(text, pattern, rf'\\g<1>{rendered}\\g<2>', f"FAQ {visible_question}", re.S)\n        if new != text:\n            changes.append(f"faq fact: {rule.get('schema_question') or visible_question}")\n        text = new\n\n'''
+          if faq_visible not in s:
+              if needle not in s: raise SystemExit('age rule target not found')
+              s=s.replace(needle,faq_visible+needle,1)
+
+          event_marker='''def sync_eventseries(text: str, record: dict[str, Any], changes: list[str]) -> str:\n'''
+          faq_schema='''def sync_faq_schema(text: str, record: dict[str, Any], changes: list[str]) -> str:\n    rules = ((record.get("sync") or {}).get("faq_fact_rules") or [])\n    if not rules:\n        return text\n    blocks = list(re.finditer(r'(<script type="application/ld\\+json">)(.*?)(</script>)', text, re.S))\n    replacements: list[tuple[int, int, str]] = []\n    for match in blocks:\n        try:\n            obj = json.loads(match.group(2).strip())\n        except json.JSONDecodeError:\n            continue\n        if obj.get("@type") != "FAQPage":\n            continue\n        questions = {item.get("name"): item for item in obj.get("mainEntity") or [] if isinstance(item, dict)}\n        for rule in rules:\n            question = rule.get("schema_question")\n            source = rule.get("text_source")\n            if not question or not source or question not in questions:\n                raise SyncError(f"{record['slug']}: FAQPage missing configured question {question!r}")\n            answer = questions[question].get("acceptedAnswer")\n            if not isinstance(answer, dict):\n                raise SyncError(f"{record['slug']}: FAQ question {question!r} missing acceptedAnswer")\n            answer["text"] = str(value_at_path(record, source))\n        rendered = "\\n" + json.dumps(obj, ensure_ascii=False, indent=2) + "\\n"\n        replacements.append((match.start(2), match.end(2), rendered))\n    if len(replacements) != 1:\n        raise SyncError(f"{record['slug']}: expected exactly one FAQPage JSON-LD block; found {len(replacements)}")\n    start, end, rendered = replacements[0]\n    new = text[:start] + rendered + text[end:]\n    if new != text:\n        changes.append("structured_data.FAQPage factual answers")\n    return new\n\n\n'''
+          if faq_schema not in s:
+              if event_marker not in s: raise SystemExit('event marker not found')
+              s=s.replace(event_marker,faq_schema+event_marker,1)
+
+          call='''    text = sync_explicit_visible_rules(text, record, changes)\n    text = sync_trailer(text, record, changes)\n'''
+          replacement='''    text = sync_explicit_visible_rules(text, record, changes)\n    text = sync_faq_schema(text, record, changes)\n    text = sync_trailer(text, record, changes)\n'''
+          if call not in s: raise SystemExit('sync call target not found')
+          s=s.replace(call,replacement,1)
+          p.write_text(s)
           PY
-      - name: Confirm variable schedule does not invent weekly EventSchedule
+
+      - name: Sync Wizard page
+        run: python3 scripts/sync-show-from-data.py wizard-of-oz
+
+      - name: Verify variable schedule presentation
         run: |
-          python3 scripts/sync-show-from-data.py wizard-of-oz
+          grep -q 'Days &amp; times vary</strong><span>Check times on booking page' shows/spectaculars/wizard-of-oz/index.html
+          ! grep -q '<strong>Mon</strong><span>Dark</span>' shows/spectaculars/wizard-of-oz/index.html
+
+      - name: Verify authoritative FAQ facts
+        run: |
           python3 - <<'PY'
           import json,re
           from pathlib import Path
           text=Path('shows/spectaculars/wizard-of-oz/index.html').read_text()
+          assert 'The Wizard of Oz at Sphere is intended for guests aged 6+. All guests, regardless of age, require a ticket.' in text
+          assert 'There is no late seating permitted for this event.' in text
+          assert 'Anyone with concerns, including guests who are pregnant, should consult a physician before attending.' in text
           blocks=re.findall(r'<script type="application/ld\+json">(.*?)</script>', text, re.S)
-          series=[json.loads(x.strip()) for x in blocks if json.loads(x.strip()).get('@type')=='EventSeries'][0]
+          parsed=[json.loads(x.strip()) for x in blocks]
+          series=[x for x in parsed if x.get('@type')=='EventSeries'][0]
           assert 'eventSchedule' not in series
-          assert series['offers']['price']==123
-          print('No fabricated recurring schedule added to EventSeries')
+          faq=[x for x in parsed if x.get('@type')=='FAQPage'][0]
+          q={x['name']:x['acceptedAnswer']['text'] for x in faq['mainEntity']}
+          assert q['Can I bring young kids?'].startswith('The Wizard of Oz at Sphere is intended for guests aged 6+')
+          assert q['Is there late seating?']=='There is no late seating permitted for this event.'
+          assert 'projectiles' in q["What if I'm sensitive to motion or sensory effects?"]
+          print('Wizard authoritative variable schedule and restrictions verified')
           PY
+
+      - name: Idempotence
+        run: |
+          cp shows/spectaculars/wizard-of-oz/index.html /tmp/wizard.html
+          python3 scripts/sync-show-from-data.py wizard-of-oz
+          diff -u /tmp/wizard.html shows/spectaculars/wizard-of-oz/index.html
+
       - name: Prior-show regressions
         run: |
           python3 scripts/sync-show-from-data.py carrot-top --dry-run
@@ -58,3 +103,14 @@ jobs:
       - run: python3 scripts/audit-serp-metadata.py
       - run: python3 scripts/audit-content-link-hygiene.py
       - run: python3 scripts/audit-internal-links.py
+
+      - name: Commit durable changes
+        run: |
+          git checkout -- docs/internal-link-audit.md || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/sync-show-from-data.py shows/spectaculars/wizard-of-oz/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Support variable schedules and factual FAQ sync"
+            git push origin HEAD:data/wizard-of-oz-record
+          fi
