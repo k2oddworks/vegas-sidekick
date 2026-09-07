@@ -67,6 +67,30 @@ jobs:
           fi
           exit 1
 
+  serp-metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Title and meta-description quality gate
+        id: serp
+        continue-on-error: true
+        run: python3 scripts/audit-serp-metadata.py 2>&1 | tee /tmp/serp-metadata.txt
+      - name: Open or update SEO issue on failure
+        if: steps.serp.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          title='[P2] SERP metadata audit needs attention'
+          body=$(printf 'SERP metadata audit failed on `%s`.\n\n```text\n%s\n```\n\nReview duplicate or missing titles/descriptions before mass rewriting. Preserve page intent and verified facts.' "${GITHUB_SHA}" "$(tail -n 160 /tmp/serp-metadata.txt)")
+          existing=$(gh issue list --repo "$REPO" --state open --search "in:title \"$title\"" --json number,title --jq ".[] | select(.title == \"$title\") | .number" | head -1)
+          if [[ -n "$existing" ]]; then
+            gh issue comment "$existing" --repo "$REPO" --body "$body"
+          else
+            gh issue create --repo "$REPO" --title "$title" --label 'P2 Growth,seo,automation' --body "$body"
+          fi
+          exit 1
+
   internal-linking:
     runs-on: ubuntu-latest
     steps:
