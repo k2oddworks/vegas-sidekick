@@ -9,6 +9,10 @@ EXACT = {
     "news/matt-rife-stay-golden-dolby-live-december-4/index.html": [
         ("Concert announcements, presale reminders, and deals — before they sell out.", "Concert announcements, show updates and useful Vegas ticketing context."),
         ("Citi presale starts May 12. General on sale May 15.", "See current ticket details before buying."),
+        ('<p>Citi is the official card of the Stay Golden Tour. Citi cardmembers have access to presale tickets starting today, <strong>Tuesday May 12 at 10 a.m. PT</strong> through <strong>Thursday May 14 at 11:59 p.m. PT</strong> via the Citi Entertainment program. Details at <a href="https://www.citientertainment.com" rel="noopener noreferrer" style="color: var(--orange);" target="_blank">citientertainment.com</a>.</p>', '<p>The original presale window has passed. Check the current ticket listing for December 4 availability and pricing.</p>'),
+        ('<p>Additional presales will run through the week. General on sale begins <strong>Friday, May 15 at 10 a.m. PT</strong> at Ticketmaster.</p>', '<p>The December 4 event is now past its original on-sale window; use the current ticket listing for up-to-date availability.</p>'),
+        ('<div class="ticket-cta-date"><strong>Citi Presale:</strong> May 12–14 · citientertainment.com</div>', '<div class="ticket-cta-date"><strong>Ticket status:</strong> Original presale window has ended</div>'),
+        ('<div class="ticket-cta-date"><strong>General On Sale:</strong> May 15, 10 a.m. PT</div>', '<div class="ticket-cta-date"><strong>Event date:</strong> December 4, 2026 · 8 p.m. PT</div>'),
     ],
     "news/best-vegas-shows-for-first-timers/index.html": [
         ("Cirque Mystère fills fast on weekends. VEGAS! The Show and V have better walk-up availability, but prime seats sell out. Mid-week is the easiest window.", "Weekend and prime-seat availability can be tighter. Mid-week is usually the easiest window if your dates are flexible."),
