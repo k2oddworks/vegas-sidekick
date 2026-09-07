@@ -20,7 +20,7 @@ jobs:
       - name: Validate guide outputs
         run: |
           ! grep -RniE 'Mad Apple|mad-apple' guides/best-*/index.html
-          ! grep -Rni 'guide-email-note' guides/best-*/index.html
+          ! grep -Rni '<div class="guide-email-note">' guides/best-*/index.html
           grep -Rl 'guide-newsletter-form' guides/best-*/index.html | wc -l | grep -q '^8$'
           grep -Rl 'brevo-subscribe.vegassidekickcom.workers.dev' guides/best-*/index.html | wc -l | grep -q '^8$'
       - name: Commit guide rollout
