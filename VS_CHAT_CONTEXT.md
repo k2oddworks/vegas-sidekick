@@ -11,7 +11,7 @@ Vegas Sidekick (`vegassidekick.com`) is a static affiliate site for Las Vegas sh
 
 **Taglines:** "Biggest Shows. Real Discounts. No BS." (primary) · "Vegas Without The Trauma." (alternate)  
 **Mascot:** Spike (a character with multiple image assets: spike-wink.png, spike-point.png, etc.)  
-**Trust brand:** "Sidekick Standards" — no fake timers, no fake reviews, no hidden fees, no email walls.  
+**Trust brand:** "Sidekick Standards" — no fake timers, no fake reviews, clear ticket details, no email walls.  
 **Email list brand:** "Spike's Insider List" (Brevo, List ID: 2, ~4,200 subscribers per copy)
 
 ---

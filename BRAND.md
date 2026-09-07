@@ -8,7 +8,7 @@ conventions, the price-change and show-closing checklists, JSON-LD requirements.
 doc deliberately does not repeat it. When the two touch the same subject, CLAUDE.md
 wins on mechanics, BRAND.md wins on wording.
 
-*Accurate as of 2026-08-27.*
+*Accurate as of 2026-09-07.*
 
 ---
 
@@ -38,8 +38,8 @@ will tell you which ones are worth it and which are not.
 
 **The promise, verbatim from the site:**
 
-> Handpicked Las Vegas show tickets at legit discounts. No membership, no hidden fees,
-> no markup games. Your Vegas insider — guaranteed.
+> Independent Las Vegas show recommendations, practical ticket guidance and honest tradeoffs.
+> Your Vegas insider without the sales-floor nonsense.
 
 **The homepage headline:** *More Vegas. Less "how much?"*
 
@@ -125,8 +125,7 @@ one fact that justifies it. No throat-clearing.
    just "it's popular," cut the superlative.
 4. **Say the downside.** Off-Strip, late start, no intermission, tight seats, 18+ —
    these get said out loud. It is the single cheapest way to be believed.
-5. **No fake urgency.** "Selling fast" only if it is. "Prices may increase closer to
-   show date" is true and is as far as we go.
+5. **No generic urgency or scarcity.** Do not use phrases like "selling fast," "prices may increase," or countdown-style pressure unless a current, verifiable fact specifically requires it. Prefer the useful fact: current price, showtime, dark day, availability status or closure date.
 6. **Second person, present tense.** "You're out by 9:15 with the whole night ahead."
 7. **Contractions always.** "You'll," "it's," "don't."
 8. **Em dashes are fine.** They're part of the rhythm. Don't overuse them in one graf.

@@ -431,9 +431,8 @@ setInterval(() => goSlide((slideIdx + 1) % slides.length), 5000);
 
 ## Urgency Copy — Locked
 
-✅ **Allowed:** "Prices may increase closer to show date"
-❌ **Never:** "Prices increase closer to show date" — removing "may" makes it a false claim
-❌ **Never:** Fake countdown timers, fake social proof, fabricated scarcity, made-up reviews
+❌ **Never use generic urgency:** "selling fast," "prices may increase," "book early," fake countdowns, fake social proof, fabricated scarcity, or made-up reviews.
+✅ **Use current facts instead:** price, date, showtime, dark days, verified availability status, closure/extension status, and practical seat guidance.
 
 ---
 
@@ -468,9 +467,9 @@ Copy these exactly — wording is locked. Never name the ticketing partner anywh
 
 ```html
 <div class="trust-grid fade-up">
-  <div class="trust-card"><div class="trust-icon">🔒</div><div class="trust-title">Secure Booking</div><div class="trust-body">Every transaction uses secure, encrypted checkout. Your payment information is always protected.</div></div>
+  <div class="trust-card"><div class="trust-icon">🎟️</div><div class="trust-title">Useful Ticket Details</div><div class="trust-body">Show the current price, schedule, venue and practical booking context without unsupported checkout claims.</div></div>
   <div class="trust-card"><div class="trust-icon">⚡</div><div class="trust-title">Instant Delivery</div><div class="trust-body">Tickets arrive by email immediately after purchase. No will-call, no waiting.</div></div>
-  <div class="trust-card"><div class="trust-icon">✅</div><div class="trust-title">No Hidden Fees</div><div class="trust-body">The price you see is the price you pay. Nothing added at checkout.</div></div>
+  <div class="trust-card"><div class="trust-icon">🌵</div><div class="trust-title">Honest Tradeoffs</div><div class="trust-body">Say who the show fits, what to know first and one real downside when it matters.</div></div>
   <div class="trust-card"><div class="trust-icon">🎫</div><div class="trust-title">No Account Required</div><div class="trust-body">Buy without creating an account. Fast, clean, tickets straight to your inbox.</div></div>
 </div>
 ```
@@ -867,4 +866,4 @@ A correctly built show page:
 
 ---
 
-*Last updated: 2026-05-31*
+*Last updated: 2026-09-07*
