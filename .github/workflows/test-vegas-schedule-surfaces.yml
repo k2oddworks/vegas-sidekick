@@ -1,0 +1,81 @@
+name: Test VEGAS Schedule Surfaces
+
+on:
+  push:
+    branches:
+      - data/vegas-the-show-record
+    paths:
+      - data/shows/vegas-the-show.json
+      - .github/workflows/test-vegas-schedule-surfaces.yml
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data/vegas-the-show-record
+      - name: Add schedule-dependent text surfaces to generic engine
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('scripts/sync-show-from-data.py')
+          s=p.read_text()
+          marker='''def sync_seo(text: str, record: dict[str, Any], changes: list[str]) -> str:\n'''
+          helper='''def format_time_compact(value: str) -> str:\n    display = format_time(value)\n    return display.replace(":00 ", " ")\n\n\n'''
+          if helper not in s:
+              s=s.replace(marker, helper+marker)
+          needle='''    age_rule = sync.get("age_policy") or {}\n'''
+          insert='''    schedule_rules = sync.get("schedule_text_rules") or []\n    if schedule_rules:\n        schedule = effective_schedule(record)\n        times = sorted({item["time"] for item in schedule.get("performances") or []})\n        if len(times) != 1:\n            raise SyncError(f"{record['slug']}: schedule_text_rules require exactly one active showtime")\n        tokens = {\n            "time_compact": format_time_compact(times[0]),\n            "time_display": format_time(times[0]),\n        }\n        for rule in schedule_rules:\n            label = rule.get("label") or "schedule text rule"\n            pattern = rule.get("pattern")\n            replacement = rule.get("replacement")\n            if not pattern or replacement is None:\n                raise SyncError(f"{record['slug']}: {label} requires pattern and replacement")\n            rendered = replacement.format(**tokens)\n            new = replace_once(text, pattern, rendered, label)\n            if new != text:\n                changes.append(f"schedule text: {label}")\n            text = new\n\n'''
+          if insert not in s:
+              if needle not in s: raise SystemExit('age rule marker not found')
+              s=s.replace(needle, insert+needle, 1)
+          p.write_text(s)
+          PY
+      - name: Sync current VEGAS page
+        run: python3 scripts/sync-show-from-data.py vegas-the-show
+      - name: Verify future customer-facing schedule surfaces
+        run: |
+          python3 - <<'PY'
+          import copy, importlib.util
+          from pathlib import Path
+          spec=importlib.util.spec_from_file_location('syncshow','scripts/sync-show-from-data.py')
+          mod=importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
+          record=mod.load_record(Path('data/shows/vegas-the-show.json'))
+          future=copy.deepcopy(record)
+          phase=record['schedule']['phases'][1]
+          future['schedule']={**phase, 'timezone':record['schedule']['timezone']}
+          text=Path('shows/music/vegas-the-show/index.html').read_text()
+          changes=[]
+          out=mod.sync_schedule_cards(text,future,changes)
+          out=mod.sync_explicit_visible_rules(out,future,changes)
+          assert '<span class="chip">5:30 PM</span>' in out
+          assert '<strong>5:30 PM</strong><span>Typical start</span>' in out
+          assert 'A 5:30 PM start and 75-minute runtime' in out
+          assert 'Monday through Saturday at 5:30 PM, with Sunday dark' in out
+          assert out.count('<span>5:30 PM</span>') >= 6
+          print('Future 5:30 PM customer-facing surfaces verified')
+          PY
+      - name: Verify current page remains 7 PM where designed
+        run: |
+          grep -q '<span class="chip">7 PM</span>' shows/music/vegas-the-show/index.html
+          grep -q '<strong>7 PM</strong><span>Typical start</span>' shows/music/vegas-the-show/index.html
+      - name: Carrot Top regression
+        run: python3 scripts/sync-show-from-data.py carrot-top --dry-run
+      - run: python3 scripts/audit-event-schema.py
+      - run: python3 scripts/audit-serp-metadata.py
+      - run: python3 scripts/audit-content-link-hygiene.py
+      - run: python3 scripts/audit-internal-links.py
+      - name: Commit durable changes
+        run: |
+          git checkout -- docs/internal-link-audit.md || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/sync-show-from-data.py shows/music/vegas-the-show/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Sync dated schedule text surfaces"
+            git push origin HEAD:data/vegas-the-show-record
+          fi
