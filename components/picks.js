@@ -7,7 +7,7 @@
   if(/^\/shows\/(comedy|magic|cirque|music|spectaculars|family|adult)\/[^/]+\/?$/.test(location.pathname)){
     if(!document.querySelector('script[src*="show-canonical-runtime.js"]')){
       var rt=document.createElement('script');
-      rt.src='/components/show-canonical-runtime.js?v=1';
+      rt.src='/components/show-canonical-runtime.js?v=2';
       rt.defer=true;
       document.head.appendChild(rt);
     }
