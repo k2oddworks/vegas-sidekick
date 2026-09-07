@@ -1,0 +1,35 @@
+name: Apply Internal Link Overrides
+
+on:
+  push:
+    branches:
+      - seo/mind2mind-internal-links
+    paths:
+      - scripts/apply-internal-link-overrides.py
+      - .github/workflows/apply-internal-link-overrides.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: seo/mind2mind-internal-links
+      - name: Apply deliberate related-show links
+        run: python3 scripts/apply-internal-link-overrides.py
+      - name: Verify internal-link graph
+        run: python3 scripts/audit-internal-links.py
+      - name: Commit generated page changes
+        run: |
+          if git diff --quiet; then
+            echo "No page changes needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add shows/magic/the-mentalist/index.html shows/magic/colin-cloud/index.html docs/internal-link-audit.md
+          git commit -m "Add MIND2MIND related-show links"
+          git push origin HEAD:seo/mind2mind-internal-links
