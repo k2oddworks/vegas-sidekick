@@ -7,6 +7,7 @@ on:
     paths:
       - scripts/audit-content-link-hygiene.py
       - scripts/fix-content-link-hygiene.py
+      - scripts/fix-stale-source-rules.py
       - .github/workflows/run-content-link-hygiene.yml
 
 permissions:
@@ -19,8 +20,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: seo/stale-copy-link-hygiene
-      - name: Clean stale copy
+      - name: Clean stale customer copy
         run: python3 scripts/fix-content-link-hygiene.py
+      - name: Align source rules
+        run: python3 scripts/fix-stale-source-rules.py
       - name: Audit content and links
         run: python3 scripts/audit-content-link-hygiene.py
       - name: Validate schema
@@ -35,6 +38,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add about affiliate-disclosure guides news shows terms
+          git add about affiliate-disclosure guides news shows terms BRAND.md SHOW-BUILDER-PROMPT.md VS_CHAT_CONTEXT.md
           git commit -m "Clean stale copy and internal link hygiene"
           git push origin HEAD:seo/stale-copy-link-hygiene
