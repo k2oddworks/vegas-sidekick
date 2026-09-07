@@ -34,8 +34,10 @@ KEEP_AS_BUILT = {
 }
 
 BANNED_COPY = (
-    "no hidden fees", "zero hidden fees", "no fees", "secure booking", "instant delivery",
-    "selling fast", "prices may increase", "ticket partner", "spotlight.vegas"
+    "no hidden fees", "zero hidden fees", "no fees", "no surprise fees", "no added fees",
+    "secure booking", "instant delivery", "selling fast", "prices may increase",
+    "booking early", "book early", "selling out", "sell out", "fills first",
+    "price shown is the price you pay", "no surprises — ever", "ticket partner", "spotlight.vegas"
 )
 
 AUTHOR = {
@@ -496,7 +498,7 @@ def faq_clean(faq: dict, price, runtime, venue, smap, name):
     entities = []
     for q in faq.get("mainEntity", []):
         blob = json.dumps(q).lower()
-        if any(b in blob for b in BANNED_COPY):
+        if any(b in blob for b in BANNED_COPY) or re.search(r'\b(?:fee|fees)\b', blob):
             continue
         entities.append(q)
     # Guarantee useful visible/schema FAQs if a legacy page was sparse.
