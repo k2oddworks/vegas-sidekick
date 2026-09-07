@@ -30,3 +30,4 @@ assert 'now-closed Cirque' not in s
 assert 'five resident Cirque' not in s
 assert 'The five Cirque' not in s
 print('final guide polish validated')
+# trigger
