@@ -1,5 +1,5 @@
 // Vegas Sidekick — Shared Footer Component
-// v11 — SEO/internal-link polish, worker-only email capture, Spike sparkle Easter egg
+// v12 — SEO/internal-link polish, worker-only email capture, Spike sparkle Easter egg, category pilot loader
 (function () {
   'use strict';
 
@@ -230,12 +230,25 @@
     }
   };
 
+  function loadPageEnhancements() {
+    if (location.pathname !== '/shows/adult/' || document.querySelector('script[data-vs-adult-v2]')) return;
+    const script = document.createElement('script');
+    script.src = '/components/category-adult-v2.js?v=1';
+    script.dataset.vsAdultV2 = '1';
+    document.body.appendChild(script);
+  }
+
   if (!document.getElementById('vs-fontlink')) {
     const font = document.createElement('link');
     font.id='vs-fontlink';font.rel='stylesheet';font.href='https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap';
     document.head.appendChild(font);
   }
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',mountFooter);
-  else mountFooter();
+  function boot() {
+    mountFooter();
+    loadPageEnhancements();
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',boot);
+  else boot();
 })();
