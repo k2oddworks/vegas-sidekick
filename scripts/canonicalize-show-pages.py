@@ -634,7 +634,7 @@ def render(path: Path, ctx: dict):
     ticker_unit = "".join(f'<span class="ticker-item">{htmllib.escape(x)}</span><span class="ticker-sep">✦</span>' for x in feats)
     gallery_cls = f"gallery-{max(1, min(len(imgs), 4))}"
     gallery = "".join(f'<button type="button" aria-label="Open {htmllib.escape(headline)} photo"><img src="{im}" alt="{htmllib.escape(headline)} Las Vegas show photo" loading="lazy"></button>' for im in imgs)
-    photo_note = "" if len(imgs) >= 5 else f'<p class="media-note">We currently have {len(imgs)} verified show-specific photo{"" if len(imgs)==1 else "s"} in the repo. We do not duplicate images just to fill the gallery.</p>'
+    photo_note = ""
     video_html = ""
     if vid:
         video_html = f'<div class="video-wrap"><button class="video-preview" type="button" data-video-id="{vid}" aria-label="Play official {htmllib.escape(headline)} video"><img src="{hero}" alt=""><span>▶ Watch official preview</span></button></div>'
