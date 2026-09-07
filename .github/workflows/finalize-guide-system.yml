@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'scripts/finalize-guide-system.py'
+      - 'scripts/finalize-guide-system.trigger'
 jobs:
   update:
     runs-on: ubuntu-latest
