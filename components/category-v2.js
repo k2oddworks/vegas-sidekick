@@ -12,12 +12,12 @@
       metaTitle:'Las Vegas Shows 2026 | Compare Shows & Starting Prices | Vegas Sidekick',
       meta:'Compare Las Vegas shows across comedy, magic, Cirque, music, spectaculars, family and adult entertainment. See venues, starting prices and useful context before you choose.',
       sub:'Comedy, magic, Cirque, music, family shows, adult shows and big spectacles. Narrow the vibe first, then compare venue and starting price.',
-      intro:'Vegas has too many shows to shop by logo alone. Start with the kind of night you want, use the filters to narrow the field, then open the individual show page for seating, schedule and the tradeoffs worth knowing.',
+      intro:'Vegas has too many shows to shop by logo alone. Start with the kind of night you want, use the category pages to narrow the field, then open the individual show page for seating, schedule and the tradeoffs worth knowing.',
       thirdNum:'7', thirdLabel:'Show categories',
       guideKicker:'QUICK WAY TO START', guideTitle:'Pick the kind of Vegas night you want first.', guideCopy:'Category first. Price second. That keeps a giant list of shows from turning into homework.',
-      choices:[['Big visual night','Start with Cirque or Spectaculars if scale and production are the point.'],['Personality-driven night','Comedy, magic and music usually put the performer closer to the center of the experience.'],['Planning for a group','Family and All Shows filters make it easier to compare age fit, venue and budget together.']],
+      choices:[['Big visual night','Start with Cirque or Spectaculars if scale and production are the point.'],['Personality-driven night','Comedy, magic and music usually put the performer closer to the center of the experience.'],['Planning for a group','Family and All Shows make it easier to compare age fit, venue and budget together.']],
       bottomTitle:'How to use the all-shows page',
-      bottomCopy:'Use the category filters to get from “everything in Vegas” to a short list that actually fits your night. Starting price is useful for comparison, but the individual show page is where schedule, venue, age guidance and seating context belong.',
+      bottomCopy:'Use the category links to move from “everything in Vegas” to the canonical category page that fits your night. Starting price is useful for comparison, but the individual show page is where schedule, venue, age guidance and seating context belong.',
       take:'The fastest way to make a bad Vegas decision is to compare 40 unrelated shows at once. Pick the experience first. Once you are comparing similar nights, the price differences actually mean something.'
     },
     '/shows/comedy/': {
@@ -145,16 +145,13 @@
     .v2-hero-media img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
     .v2-hero-media:after{content:'';position:absolute;inset:auto 0 0;height:42%;background:linear-gradient(transparent,rgba(12,4,22,.72));pointer-events:none}
     .v2-hero-caption{position:absolute;z-index:2;left:12px;right:12px;bottom:10px;color:#fff;font:700 .7rem 'Plus Jakarta Sans',sans-serif;text-shadow:0 1px 10px rgba(0,0,0,.6)}
-
     .cat-nav-bar{border-bottom:1px solid #ece9f6;padding:10px 24px;background:rgba(255,255,255,.96)}
     .cat-nav-bar-inner{max-width:1200px}
     .cat-nav-link{font-family:'Inter',sans-serif;font-size:.76rem;letter-spacing:0;border:1px solid #e8e4f0;background:#f7f6fb}
     .cat-nav-link.current{background:#281047;border-color:#281047}
-
     .cat-intro{padding:28px 24px 22px;background:#fff;border-bottom:0}
     .cat-intro-inner{max-width:900px}
     .cat-intro p{font-size:.98rem;line-height:1.72;color:#49415b}
-
     .v2-guide{max-width:1200px;margin:0 auto;padding:10px 24px 22px}
     .v2-guide-inner{background:linear-gradient(110deg,#fff,#faf8ff);border:1px solid #e8e3f0;border-radius:16px;padding:20px;box-shadow:0 8px 28px rgba(41,16,71,.055)}
     .v2-guide-kicker{font:800 .68rem 'Plus Jakarta Sans',sans-serif;color:var(--v2-accent);text-transform:uppercase;letter-spacing:.12em;margin-bottom:7px}
@@ -164,13 +161,11 @@
     .v2-choice{padding:13px 14px;border-radius:11px;background:#f7f4fb;border:1px solid #ebe6f1}
     .v2-choice b{display:block;font:700 .83rem 'Plus Jakarta Sans',sans-serif;color:#28163c;margin-bottom:4px}
     .v2-choice span{display:block;color:#71677b;font-size:.76rem;line-height:1.45}
-
     .filter-bar{position:sticky;top:88px;margin:0;background:transparent;border:0;box-shadow:none;padding:10px 24px;z-index:100}
     .filter-bar-inner{max-width:1200px;background:#fff;border:1px solid #e8e4ef;border-radius:14px;padding:9px 10px;box-shadow:0 6px 20px rgba(39,17,61,.07)}
     .filter-btn,.sort-btn{font-family:'Inter',sans-serif;font-size:.76rem;letter-spacing:0;padding:7px 13px}
     .filter-btn.active:not([class*="fb-"]),.sort-btn.active{background:#281047!important;border-color:#281047!important;color:#fff!important}
     .show-count-wrap{font-family:'Inter',sans-serif;font-size:.7rem;color:#82798b}
-
     .grid-wrap{padding:12px 24px 54px}
     .show-grid{gap:16px}
     .show-card{border:1px solid #e6e2eb;border-radius:15px;box-shadow:0 5px 18px rgba(36,19,51,.055)}
@@ -188,7 +183,6 @@
     .card-cta{background:#3b82f6!important;border-radius:9px;text-transform:none;letter-spacing:0;font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;padding:11px 10px}
     .card-cta:hover{background:#2563eb!important}
     .card-age-badge,.card-cat-tag{background:rgba(25,10,45,.88);border:1px solid rgba(255,255,255,.24);font-size:.54rem;border-radius:6px}
-
     .cat-desc{display:none!important}
     .v2-bottom{background:#fff;border-top:1px solid #ece8f0;padding:48px 24px 60px}
     .v2-bottom-inner{max-width:900px;margin:0 auto}
@@ -200,34 +194,9 @@
     .v2-links{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
     .v2-links a{padding:9px 13px;border-radius:9px;text-decoration:none;font:700 .76rem 'Plus Jakarta Sans',sans-serif;border:1px solid #e3dce9;background:#faf8fc;color:#28163c}
     .v2-links a:hover{border-color:var(--v2-accent);color:var(--v2-accent)}
-
     @media(max-width:940px){.filter-bar{top:54px}}
-    @media(max-width:700px){
-      .cat-hero{padding:72px 18px 34px}
-      .v2-hero-media{display:block}
-      .cat-badge{font-size:.62rem;margin-bottom:12px}
-      .cat-headline{font-size:clamp(2.35rem,11.5vw,3.45rem);line-height:1;max-width:none;margin-bottom:14px}
-      .cat-sub{font-size:.94rem;line-height:1.58;margin-bottom:20px}
-      .cat-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-      .cat-stat{min-width:0;padding:10px 10px}
-      .cat-stat-num{font-size:1rem}.cat-stat-lbl{font-size:.58rem}
-      .cat-nav-bar{padding:9px 14px}
-      .cat-intro{padding:24px 20px 18px}
-      .cat-intro p{font-size:.92rem;line-height:1.68}
-      .v2-guide{padding:8px 14px 20px}.v2-guide-inner{padding:18px 16px}
-      .v2-choices{grid-template-columns:1fr}
-      .filter-bar{padding:8px 12px}.filter-bar-inner{padding:8px;border-radius:12px}
-      .grid-wrap{padding:8px 14px 38px}
-      .v2-bottom{padding:38px 20px 50px}
-    }
-    @media(max-width:520px){
-      .show-grid{gap:0}
-      .show-card{border-radius:0;box-shadow:none;border-left:0;border-right:0;background:transparent}
-      .show-card:hover{box-shadow:none}
-      .card-body{padding:0}
-      .card-name{font-size:1.08rem}
-      .card-price{font-size:1.55rem!important}
-    }
+    @media(max-width:700px){.cat-hero{padding:72px 18px 34px}.v2-hero-media{display:block}.cat-badge{font-size:.62rem;margin-bottom:12px}.cat-headline{font-size:clamp(2.35rem,11.5vw,3.45rem);line-height:1;max-width:none;margin-bottom:14px}.cat-sub{font-size:.94rem;line-height:1.58;margin-bottom:20px}.cat-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.cat-stat{min-width:0;padding:10px 10px}.cat-stat-num{font-size:1rem}.cat-stat-lbl{font-size:.58rem}.cat-nav-bar{padding:9px 14px}.cat-intro{padding:24px 20px 18px}.cat-intro p{font-size:.92rem;line-height:1.68}.v2-guide{padding:8px 14px 20px}.v2-guide-inner{padding:18px 16px}.v2-choices{grid-template-columns:1fr}.filter-bar{padding:8px 12px}.filter-bar-inner{padding:8px;border-radius:12px}.grid-wrap{padding:8px 14px 38px}.v2-bottom{padding:38px 20px 50px}}
+    @media(max-width:520px){.show-grid{gap:0}.show-card{border-radius:0;box-shadow:none;border-left:0;border-right:0;background:transparent}.show-card:hover{box-shadow:none}.card-body{padding:0}.card-name{font-size:1.08rem}.card-price{font-size:1.55rem!important}}
     @media(prefers-reduced-motion:reduce){.cat-badge-dot{animation:none}}
   `;
   document.head.appendChild(styles);
@@ -241,6 +210,30 @@
 
   const intro = document.querySelector('.cat-intro p');
   if (intro) intro.textContent = cfg.intro;
+
+  if (PATH === '/shows/') {
+    const categoryUrls = {
+      all:'/shows/', comedy:'/shows/comedy/', magic:'/shows/magic/', cirque:'/shows/cirque/',
+      music:'/shows/music/', spectaculars:'/shows/spectaculars/', family:'/shows/family/', adult:'/shows/adult/'
+    };
+    const filterWrap = document.getElementById('cat-filter-btns');
+    if (filterWrap) {
+      const row = filterWrap.closest('.filter-row');
+      const label = row && row.querySelector('.filter-label');
+      if (label) label.textContent = 'Browse category';
+      filterWrap.addEventListener('click', function (e) {
+        const btn = e.target.closest('button');
+        if (!btn || !filterWrap.contains(btn)) return;
+        const match = Array.from(btn.classList).find(c => c.indexOf('fb-') === 0);
+        const key = match ? match.replace('fb-','').replace('specs','spectaculars') : null;
+        const url = key && categoryUrls[key];
+        if (!url) return;
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        window.location.href = url;
+      }, true);
+    }
+  }
 
   function getCards() { return Array.from(document.querySelectorAll('#show-grid .show-card, .show-grid .show-card')); }
   function priceValues(cards) {
