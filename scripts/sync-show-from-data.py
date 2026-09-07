@@ -114,6 +114,11 @@ def effective_schedule(record: dict[str, Any], on_date: date | None = None) -> d
     return active
 
 
+def format_time_compact(value: str) -> str:
+    display = format_time(value)
+    return display.replace(":00 ", " ")
+
+
 def sync_seo(text: str, record: dict[str, Any], changes: list[str]) -> str:
     seo = record.get("seo") or {}
     mappings = [
@@ -249,6 +254,28 @@ def sync_explicit_visible_rules(text: str, record: dict[str, Any], changes: list
     explicit and auditable in the source-of-truth record.
     """
     sync = record.get("sync") or {}
+
+    schedule_rules = sync.get("schedule_text_rules") or []
+    if schedule_rules:
+        schedule = effective_schedule(record)
+        times = sorted({item["time"] for item in schedule.get("performances") or []})
+        if len(times) != 1:
+            raise SyncError(f"{record['slug']}: schedule_text_rules require exactly one active showtime")
+        tokens = {
+            "time_compact": format_time_compact(times[0]),
+            "time_display": format_time(times[0]),
+        }
+        for rule in schedule_rules:
+            label = rule.get("label") or "schedule text rule"
+            pattern = rule.get("pattern")
+            replacement = rule.get("replacement")
+            if not pattern or replacement is None:
+                raise SyncError(f"{record['slug']}: {label} requires pattern and replacement")
+            rendered = replacement.format(**tokens)
+            new = replace_once(text, pattern, rendered, label)
+            if new != text:
+                changes.append(f"schedule text: {label}")
+            text = new
 
     age_rule = sync.get("age_policy") or {}
     if age_rule.get("enabled"):
