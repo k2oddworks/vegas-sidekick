@@ -1,0 +1,34 @@
+name: Rebuild Dispatch Batch 3
+on:
+  push:
+    paths:
+      - 'scripts/rebuild-dispatch-batch-3.py'
+      - 'scripts/trigger-dispatch-batch-3.txt'
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/rebuild-dispatch-batch-3.py
+      - name: Validate
+        run: |
+          for f in news/soda-stereo-ecos-september-13/index.html news/jo-koy-live-colosseum-caesars-palace-september-19/index.html news/backstreet-boys-f1-afterparty-sphere-november-21/index.html; do
+            grep -q "Kris's take" "$f"
+            grep -q 'brevo-subscribe.vegassidekickcom.workers.dev' "$f"
+            grep -q 'FAQPage' "$f"
+            grep -q 'dateModified":"2026-09-06' "$f"
+          done
+          grep -q 'valid race ticket is required' news/backstreet-boys-f1-afterparty-sphere-november-21/index.html
+          grep -q 'doors at 7 PM' news/soda-stereo-ecos-september-13/index.html
+      - name: Commit
+        run: |
+          git config user.name 'Kris Kidd'
+          git config user.email 'k2oddworks@gmail.com'
+          git add news/soda-stereo-ecos-september-13/index.html news/jo-koy-live-colosseum-caesars-palace-september-19/index.html news/backstreet-boys-f1-afterparty-sphere-november-21/index.html
+          git diff --cached --quiet || git commit -m 'Rebuild three Vegas Dispatch articles'
+          git push
