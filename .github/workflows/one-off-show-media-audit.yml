@@ -1,0 +1,111 @@
+name: One-off show media audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/one-off-show-media-audit.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Build current show media audit
+        shell: python
+        run: |
+          from pathlib import Path
+          import re, html
+
+          cats = ['adult','cirque','comedy','family','magic','music','spectaculars']
+          rows = []
+          for cat in cats:
+              for page in sorted((Path('shows')/cat).glob('*/index.html')):
+                  text = page.read_text(encoding='utf-8', errors='replace')
+                  slug = page.parent.name
+                  title_m = re.search(r'<title>(.*?)</title>', text, re.I|re.S)
+                  title = html.unescape(re.sub(r'<[^>]+>', '', title_m.group(1)).strip()) if title_m else slug
+                  title = re.split(r'\s+(?:Tickets|Las Vegas Tickets|\|)', title, maxsplit=1)[0].strip(' "') or slug
+
+                  # Infer the show's image prefix from OG image first, then schema/first show image.
+                  og = re.search(r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\'][^"\']*/images/([^"\']+)', text, re.I)
+                  if not og:
+                      og = re.search(r'/images/([^"\']+)', text, re.I)
+                  hero = og.group(1).split('?')[0] if og else ''
+                  stem = re.sub(r'\.(?:jpe?g|png|webp|avif)$', '', hero, flags=re.I)
+                  base = re.sub(r'-(?:hero|og)$', '', stem, flags=re.I)
+                  if base == stem:
+                      base = re.sub(r'-[123]$', '', base)
+
+                  refs = re.findall(r'/images/([^"\'<>?]+\.(?:jpe?g|png|webp|avif))', text, re.I)
+                  semantic = set()
+                  for ref in refs:
+                      st = re.sub(r'\.(?:jpe?g|png|webp|avif)$', '', ref, flags=re.I)
+                      if not base or not (st == base or st.startswith(base+'-')):
+                          continue
+                      low = st.lower()
+                      if any(x in low for x in ['-og','-thumb','thumbnail','video-poster','video-thumb','-logo','-seat-map','seating-chart','-map']):
+                          continue
+                      semantic.add(st.lower())
+                  photos = len(semantic)
+
+                  vids = set(re.findall(r'youtube\.com/embed/([A-Za-z0-9_-]{6,})', text, re.I))
+                  vids.update(re.findall(r'data-video-id=["\']([A-Za-z0-9_-]{6,})', text, re.I))
+                  video = bool(vids)
+                  rows.append((cat, slug, title, photos, video, ', '.join(sorted(vids))))
+
+          out = []
+          out.append('# Vegas Sidekick Show Media Audit — 2026-09-07')
+          out.append('')
+          out.append('Generated from the current `main` checkout. Photo counts are unique show-specific image references on each page; JPG/WebP versions of the same named asset count once. Related-show images, OG images, thumbnails, maps and seating graphics are excluded.')
+          out.append('')
+          out.append(f'- Show-detail pages audited: **{len(rows)}**')
+          out.append(f'- Pages with fewer than 5 show photos: **{sum(r[3] < 5 for r in rows)}**')
+          out.append(f'- Pages with an embedded/runtime YouTube video: **{sum(r[4] for r in rows)}**')
+          out.append(f'- Pages without a YouTube video: **{sum(not r[4] for r in rows)}**')
+          out.append('')
+          out.append('## Full inventory')
+          out.append('')
+          out.append('| Category | Show | Photos | Video | Video ID(s) |')
+          out.append('|---|---|---:|:---:|---|')
+          for cat, slug, title, photos, video, vids in rows:
+              out.append(f'| {cat.title()} | {title.replace("|","/")} | {photos} | {"Yes" if video else "No"} | {vids or "—"} |')
+          out.append('')
+          out.append('## Fewer than 5 photos')
+          out.append('')
+          for cat in cats:
+              vals = [r for r in rows if r[0] == cat and r[3] < 5]
+              if vals:
+                  out.append(f'### {cat.title()}')
+                  out.extend(f'- {r[2]} — {r[3]}' for r in vals)
+                  out.append('')
+          out.append('## No video')
+          out.append('')
+          for cat in cats:
+              vals = [r for r in rows if r[0] == cat and not r[4]]
+              if vals:
+                  out.append(f'### {cat.title()}')
+                  out.extend(f'- {r[2]}' for r in vals)
+                  out.append('')
+          Path('docs/show-media-audit-2026-09-07.md').write_text('\n'.join(out)+'\n', encoding='utf-8')
+      - name: Run JSON-LD audit
+        run: |
+          set +e
+          python3 scripts/audit-event-schema.py > /tmp/jsonld-audit.txt 2>&1
+          code=$?
+          echo "JSON-LD audit exit code: $code"
+          cat /tmp/jsonld-audit.txt
+          exit 0
+      - name: Remove one-off workflow and commit report
+        run: |
+          rm .github/workflows/one-off-show-media-audit.yml
+          git config user.name "Vegas Sidekick Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/show-media-audit-2026-09-07.md .github/workflows/one-off-show-media-audit.yml
+          git commit -m "Add current show media audit"
+          git push origin HEAD:main
