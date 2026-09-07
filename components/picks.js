@@ -1,17 +1,6 @@
-/* Vegas Sidekick — rotating show cards + canonical show runtime loader */
+/* Vegas Sidekick — rotating show cards */
 (function(){
   'use strict';
-
-  /* All show-detail pages already mount picks.js. Use that existing dependency
-     to load the shared interaction layer without duplicating it in 68 files. */
-  if(/^\/shows\/(comedy|magic|cirque|music|spectaculars|family|adult)\/[^/]+\/?$/.test(location.pathname)){
-    if(!document.querySelector('script[src*="show-canonical-runtime.js"]')){
-      var rt=document.createElement('script');
-      rt.src='/components/show-canonical-runtime.js?v=2';
-      rt.defer=true;
-      document.head.appendChild(rt);
-    }
-  }
 
   var CAT_COLOR={comedy:'#ff2e7e',magic:'#7c3aed',cirque:'#0fb5c9',music:'#3b82f6',adult:'#c6f22e',family:'#0fb5c9',spectaculars:'#0fb5c9'};
   var CAT_LABEL={comedy:'Comedy',magic:'Magic',cirque:'Cirque',music:'Music',adult:'Adult',family:'Family',spectaculars:'Spectaculars'};
