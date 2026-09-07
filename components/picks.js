@@ -1,4 +1,4 @@
-/* Vegas Sidekick — rotating show cards */
+/* Vegas Sidekick — rotating show cards + legacy show-runtime fallback */
 (function(){
   'use strict';
 
@@ -33,6 +33,18 @@
     var tpl=grid.firstElementChild;if(!tpl)return;var picks=choose(o);if(picks.length<(o.count||3))return;
     var frag=document.createDocumentFragment();picks.forEach(function(s){var node=tpl.cloneNode(true);apply(node,s);frag.appendChild(node)});grid.innerHTML='';grid.appendChild(frag)
   }
-  function run(){if(!window.VS_SHOWS||!window.VS_SHOWS.length)return;document.querySelectorAll('[data-vs-picks]').forEach(function(grid){try{fill(grid)}catch(e){}})}
+  function ensureRuntime(){
+    if(!/^\/shows\/(adult|cirque|comedy|family|magic|music|spectaculars)\/[^/]+\/?$/.test(location.pathname))return;
+    if(document.querySelector('script[data-vs-show-runtime]'))return;
+    var s=document.createElement('script');
+    s.src='/components/show-canonical-runtime.js?v=2';
+    s.async=false;
+    s.setAttribute('data-vs-show-runtime','1');
+    document.body.appendChild(s);
+  }
+  function run(){
+    if(window.VS_SHOWS&&window.VS_SHOWS.length){document.querySelectorAll('[data-vs-picks]').forEach(function(grid){try{fill(grid)}catch(e){}})}
+    ensureRuntime();
+  }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
 })();
