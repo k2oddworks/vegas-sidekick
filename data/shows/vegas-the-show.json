@@ -61,6 +61,7 @@
     "hotel": "Planet Hollywood Resort",
     "property_area": "Miracle Mile Shops",
     "showroom": "Saxe Theater",
+    "schema_location_name": "Saxe Theater at Miracle Mile Shops",
     "venue_hub_path": "/venues/planet-hollywood/",
     "source": "authoritative_with_repo_relationship"
   },
@@ -130,6 +131,7 @@
       "venue.hotel",
       "venue.property_area",
       "venue.showroom",
+      "venue.schema_location_name",
       "ticketing.affiliate_url",
       "media.official_trailer"
     ],
