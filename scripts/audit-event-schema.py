@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
 """
-Audits every show page's Event/EventSeries JSON-LD for the fields Google
-Search Console validates (offers.price/priceCurrency/availability/url/validFrom,
-organizer.name/url, top-level name/description/image/url/eventStatus/
-organizer/location/offers/performer, plus startDate/endDate for Event type).
+Audits active show pages' Event/EventSeries JSON-LD for the fields Google
+Search Console validates. Closed archive pages listed in CLOSED_ARCHIVE_EXCEPTIONS
+are reported as intentional skips, not schema failures.
 
 Usage: python3 scripts/audit-event-schema.py
-Run from the repo root. Exits non-zero if any page has issues.
+Run from the repo root. Exits non-zero if any active page has issues.
 """
 import re, json, glob, sys
+
+CLOSED_ARCHIVE_EXCEPTIONS = {
+    'shows/cirque/mad-apple/index.html',
+}
 
 def extract_json_ld_blocks(content):
     blocks = []
@@ -28,12 +31,17 @@ REQUIRED_ORGANIZER = ['name','url']
 def audit():
     files = sorted(glob.glob('shows/*/*/index.html'))
     total_issues = 0
+    skipped = 0
 
     for f in files:
+        if f in CLOSED_ARCHIVE_EXCEPTIONS:
+            print(f"{f}: SKIP intentional closed archive")
+            skipped += 1
+            continue
+
         content = open(f, encoding='utf-8').read()
         blocks = extract_json_ld_blocks(content)
 
-        # Check every block parses as valid JSON (catches stray braces etc.)
         for b in blocks:
             try:
                 json.loads(b)
@@ -80,9 +88,10 @@ def audit():
                 print(f'{f}: INVALID price format: {price!r} (should be a bare number, no "$")')
                 total_issues += 1
 
-    print(f"\nChecked {len(files)} show pages.")
+    active_checked = len(files) - skipped
+    print(f"\nChecked {active_checked} active show pages; skipped {skipped} closed archive(s).")
     if total_issues == 0:
-        print("All clean.")
+        print("All active show schema clean.")
     else:
         print(f"{total_issues} issue(s) found.")
     return total_issues
