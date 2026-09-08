@@ -1,0 +1,195 @@
+name: Run Warm Amber Ticket CTA Rollout
+
+on:
+  push:
+    branches: [ux/warm-amber-ticket-ctas]
+    paths: [.github/workflows/run-warm-amber-ticket-ctas.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  rollout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ux/warm-amber-ticket-ctas
+          fetch-depth: 0
+
+      - name: Create shared Warm Amber ticket CTA style and tag customer-facing ticket buttons
+        run: |
+          cat > assets/ticket-cta.css <<'CSS'
+          /* Vegas Sidekick primary ticket action — Warm Amber. Brand pink remains an accent color. */
+          .vs-ticket-primary{
+            background:#FFB000!important;
+            background-image:none!important;
+            color:#171225!important;
+            border-color:#FFD166!important;
+            box-shadow:0 8px 22px rgba(255,176,0,.23),0 0 0 1px rgba(255,255,255,.16)!important;
+            text-shadow:none!important;
+          }
+          .vs-ticket-primary:hover{
+            background:#F4A900!important;
+            color:#171225!important;
+            filter:brightness(1.02)!important;
+          }
+          .vs-ticket-primary:active{
+            background:#E89F00!important;
+            color:#171225!important;
+          }
+          .vs-ticket-primary:focus-visible{
+            outline:3px solid rgba(255,209,102,.72)!important;
+            outline-offset:3px;
+          }
+          CSS
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          roots = [Path('.'), Path('shows'), Path('guides'), Path('news'), Path('venues')]
+          skip_parts = {'preview','logo-sample','archive','docs','node_modules','.git'}
+          files=[]
+          for p in Path('.').rglob('*.html'):
+              if any(part in skip_parts for part in p.parts):
+                  continue
+              files.append(p)
+
+          anchor_re = re.compile(r'<a\b([^>]*)>(.*?)</a>', re.I|re.S)
+          class_re = re.compile(r'\bclass="([^"]*)"', re.I)
+          strip_tags = lambda s: re.sub(r'<[^>]+>', ' ', s)
+          cta_class = re.compile(r'(?:^|[-_ ])(?:cta|btn|button|hero|final|mob|mobile|sticky|buy|book|ticket|sb|zone)(?:$|[-_ ])', re.I)
+          ticket_text = re.compile(r'\b(?:get|see|check|view|find|book|buy|select|shop)?\s*tickets?\b|\btickets?\s*(?:now|→|$)', re.I)
+          changed=[]; tagged=0
+          for p in files:
+              s=p.read_text(errors='ignore')
+              original=s
+              def repl(m):
+                  nonlocal_dummy = None
+                  attrs, inner = m.group(1), m.group(2)
+                  text=' '.join(strip_tags(inner).split())
+                  cm=class_re.search(attrs)
+                  classes=cm.group(1).split() if cm else []
+                  looks_button=bool(cm and (cta_class.search(' '.join(classes)) or any(c in {'cta','primary','primary-btn'} for c in classes)))
+                  looks_ticket=bool(ticket_text.search(text))
+                  if not (looks_button and looks_ticket):
+                      return m.group(0)
+                  if 'vs-ticket-primary' not in classes:
+                      classes.append('vs-ticket-primary')
+                      newclass='class="'+' '.join(classes)+'"'
+                      newattrs=class_re.sub(newclass, attrs, count=1)
+                      globals()['tagged_count'] = globals().get('tagged_count',0)+1
+                  else:
+                      newattrs=attrs
+                  return '<a'+newattrs+'>'+inner+'</a>'
+              s=anchor_re.sub(repl,s)
+              if s!=original:
+                  if '/assets/ticket-cta.css' not in s:
+                      link='<link rel="stylesheet" href="/assets/ticket-cta.css">'
+                      if '</head>' in s:
+                          s=s.replace('</head>',link+'</head>',1)
+                      else:
+                          raise SystemExit(f'No </head> in changed page: {p}')
+                  p.write_text(s)
+                  changed.append(str(p))
+          print(f'Customer-facing pages changed: {len(changed)}')
+          print(f'Primary ticket anchors tagged: {globals().get("tagged_count",0)}')
+          for x in changed: print(x)
+          PY
+
+      - name: Make generators and source docs inherit Warm Amber
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          # Canonical generator: every generated .cta ticket action receives the dedicated class.
+          p=Path('scripts/canonicalize-show-pages.py')
+          if p.exists():
+              s=p.read_text()
+              s=s.replace('class="cta" href="{ticket}"', 'class="cta vs-ticket-primary" href="{ticket}"')
+              if '/assets/ticket-cta.css' not in s and 'show-canonical.css' in s:
+                  s=s.replace('<link rel="stylesheet" href="/assets/show-canonical.css">', '<link rel="stylesheet" href="/assets/show-canonical.css"><link rel="stylesheet" href="/assets/ticket-cta.css">')
+              p.write_text(s)
+
+          replacements = {
+            'BRAND.md': [
+              ('**The CTA is blue.** Pink is a highlight, not a button.', '**The primary ticket CTA is Warm Amber (`#FFB000`) with dark text.** Pink stays a brand/highlight color, not the purchase-action color.'),
+              ('orange fill', 'Warm Amber (`#FFB000`) fill'),
+            ],
+            'SHOW-BUILDER-PROMPT.md': [
+              ('**Orange is always used for ALL CTA buttons**', '**Warm Amber (`#FFB000`) is always used for ALL primary ticket CTA buttons**'),
+              ('navy text on orange fill', 'dark text on Warm Amber (`#FFB000`) fill'),
+            ],
+            'CLAUDE.md': [
+              ('navy text on orange fill', 'dark text on Warm Amber (`#FFB000`) fill'),
+            ],
+          }
+          for name,repls in replacements.items():
+              p=Path(name)
+              if not p.exists(): continue
+              s=p.read_text()
+              for a,b in repls: s=s.replace(a,b)
+              p.write_text(s)
+          PY
+
+      - name: Add reusable ticket CTA color audit
+        run: |
+          cat > scripts/audit-ticket-cta-color.py <<'PY'
+          #!/usr/bin/env python3
+          from pathlib import Path
+          import re,sys
+          skip={'preview','logo-sample','archive','docs','node_modules','.git'}
+          anchor_re=re.compile(r'<a\b([^>]*)>(.*?)</a>',re.I|re.S)
+          class_re=re.compile(r'\bclass="([^"]*)"',re.I)
+          strip=lambda s:re.sub(r'<[^>]+>',' ',s)
+          cta_class=re.compile(r'(?:^|[-_ ])(?:cta|btn|button|hero|final|mob|mobile|sticky|buy|book|ticket|sb|zone)(?:$|[-_ ])',re.I)
+          ticket_text=re.compile(r'\b(?:get|see|check|view|find|book|buy|select|shop)?\s*tickets?\b|\btickets?\s*(?:now|→|$)',re.I)
+          issues=[]; checked=0; tagged=0
+          for p in Path('.').rglob('*.html'):
+              if any(part in skip for part in p.parts): continue
+              s=p.read_text(errors='ignore')
+              page_has=False
+              for m in anchor_re.finditer(s):
+                  attrs,inner=m.groups(); cm=class_re.search(attrs)
+                  if not cm: continue
+                  classes=cm.group(1).split(); text=' '.join(strip(inner).split())
+                  if not (cta_class.search(' '.join(classes)) and ticket_text.search(text)): continue
+                  checked+=1; page_has=True
+                  if 'vs-ticket-primary' not in classes:
+                      issues.append(f'{p}: ticket CTA missing vs-ticket-primary: {text[:90]}')
+                  else: tagged+=1
+              if page_has and '/assets/ticket-cta.css' not in s:
+                  issues.append(f'{p}: ticket CTA page missing /assets/ticket-cta.css')
+          css=Path('assets/ticket-cta.css')
+          if not css.exists(): issues.append('assets/ticket-cta.css missing')
+          else:
+              c=css.read_text().lower()
+              if '#ffb000' not in c: issues.append('Warm Amber #FFB000 missing from ticket CTA stylesheet')
+              if 'color:#171225' not in c.replace(' ',''): issues.append('Expected dark ticket CTA text color missing')
+          print(f'Primary ticket CTA anchors checked: {checked}; correctly tagged: {tagged}')
+          if issues:
+              print('\n'.join(issues)); sys.exit(1)
+          print('All detected primary ticket CTAs use the Warm Amber shared treatment.')
+          PY
+          chmod +x scripts/audit-ticket-cta-color.py
+
+      - name: Validate rollout
+        run: |
+          python3 scripts/audit-ticket-cta-color.py
+          python3 scripts/audit-mobile-show-heroes.py
+          python3 scripts/audit-event-schema.py
+          python3 scripts/audit-serp-metadata.py
+          python3 scripts/audit-content-link-hygiene.py
+          python3 scripts/audit-internal-links.py
+
+      - name: Commit rollout
+        run: |
+          git checkout -- docs/internal-link-audit.md || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/ticket-cta.css scripts/audit-ticket-cta-color.py scripts/canonicalize-show-pages.py BRAND.md SHOW-BUILDER-PROMPT.md CLAUDE.md '*.html' shows guides news venues || true
+          if ! git diff --cached --quiet; then
+            git commit -m "Use Warm Amber for primary ticket CTAs sitewide"
+            git push origin HEAD:ux/warm-amber-ticket-ctas
+          fi
