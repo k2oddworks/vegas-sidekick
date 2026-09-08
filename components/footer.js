@@ -1,4 +1,4 @@
-// Vegas Sidekick — Shared Footer Loader v18
+// Vegas Sidekick — Shared Footer Loader v19
 // Keeps the approved footer implementation in footer-core.js,
 // loads canonical show runtime only on individual show pages,
 // and loads the isolated Walk the Strip spectacle layer only on its game route.
@@ -17,7 +17,12 @@
     add('/components/show-canonical-runtime.js?v=2','data-vs-show-runtime');
   }
   if(/^\/play\/walk-the-strip\/?$/.test(location.pathname)){
+    // The legacy game is still preserved in the page as a fallback/core reference.
+    // Suppress its first RAF registration so it does not burn CPU drawing a detached canvas.
+    var nativeRAF=window.requestAnimationFrame;
+    window.requestAnimationFrame=function(){ return 0; };
     add('/play/walk-the-strip/v2-shim.js?v=1','data-vs-walk-strip-shim');
     add('/play/walk-the-strip/v2.js?v=2','data-vs-walk-strip-v2');
+    document.addEventListener('DOMContentLoaded',function(){ window.requestAnimationFrame=nativeRAF; },{once:true});
   }
 })();
