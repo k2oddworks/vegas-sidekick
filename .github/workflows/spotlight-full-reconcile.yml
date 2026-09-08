@@ -7,6 +7,7 @@ on:
       - '.github/workflows/spotlight-full-reconcile.yml'
       - 'scripts/reconcile-spotlight.py'
       - 'scripts/refine-spotlight-reconciliation.py'
+      - 'scripts/finalize-spotlight-reconciliation.py'
 
 permissions:
   contents: write
@@ -18,12 +19,16 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: data/spotlight-full-reconcile
+          fetch-depth: 0
+      - name: Fetch main for cross-site comparison
+        run: git fetch origin main
       - name: Install scraper dependencies
         run: pip install requests beautifulsoup4
       - name: Reconcile Spotlight facts and sync customer pages
         run: |
           python3 scripts/reconcile-spotlight.py
           python3 scripts/refine-spotlight-reconciliation.py
+          python3 scripts/finalize-spotlight-reconciliation.py
       - name: Run Vegas Sidekick audits
         run: |
           python3 scripts/audit-event-schema.py
@@ -38,8 +43,8 @@ jobs:
           git checkout -- docs/internal-link-audit.md || true
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/show-database.json docs/spotlight-reconciliation-2026-09-08.md shows
+          git add data/show-database.json docs/spotlight-reconciliation-2026-09-08.md shows guides venues index.html
           if ! git diff --cached --quiet; then
-            git commit -m "Refine Spotlight show reconciliation"
+            git commit -m "Finalize Spotlight show reconciliation"
             git push origin HEAD:data/spotlight-full-reconcile
           fi
