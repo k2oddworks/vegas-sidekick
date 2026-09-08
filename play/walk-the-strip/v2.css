@@ -1,0 +1,103 @@
+/* Walk the Strip v2 — spectacle layer */
+:root{
+  --wts-night:#070814;
+  --wts-violet:#24103f;
+  --wts-pink:#ff2e7e;
+  --wts-amber:#ffb000;
+  --wts-cyan:#19d3e6;
+  --wts-lime:#c6f22e;
+  --wts-paper:#fff7fb;
+  --wts-dim:#b7abc4;
+}
+body{
+  background:
+    radial-gradient(900px 520px at 50% 6%,rgba(255,46,126,.13),transparent 62%),
+    radial-gradient(700px 500px at 15% 28%,rgba(25,211,230,.08),transparent 68%),
+    linear-gradient(180deg,#12051f 0%,#080811 52%,#05060d 100%);
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.45;
+  background-image:
+    radial-gradient(circle at 20% 10%,rgba(255,255,255,.48) 0 1px,transparent 1.5px),
+    radial-gradient(circle at 73% 24%,rgba(255,255,255,.4) 0 1px,transparent 1.5px),
+    radial-gradient(circle at 36% 44%,rgba(255,255,255,.25) 0 1px,transparent 1.5px),
+    radial-gradient(circle at 90% 60%,rgba(255,255,255,.22) 0 1px,transparent 1.5px);
+  background-size:160px 140px,220px 180px,260px 210px,300px 260px;
+  animation:wtsStars 18s linear infinite;
+}
+@keyframes wtsStars{to{transform:translateY(30px)}}
+body>header{max-width:650px;padding-top:22px}
+body>header h1{font-size:clamp(42px,10vw,68px);text-shadow:0 0 30px rgba(255,46,126,.22)}
+body>header h1 .accent{color:var(--wts-pink);text-shadow:0 0 18px rgba(255,46,126,.55)}
+body>header .tagline{color:#c7b9d3}
+.hud{max-width:650px;padding:12px 20px 10px;gap:10px}
+.hud>div{padding:9px 12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);border-radius:12px;min-width:0;backdrop-filter:blur(8px)}
+.hud .crossings{color:var(--wts-cyan)}
+.hud .lives{color:var(--wts-amber);letter-spacing:1px}
+.sound-toggle{border-color:rgba(255,176,0,.45);color:var(--wts-amber);border-radius:999px;padding:3px 12px}
+.sound-toggle.on{background:var(--wts-amber);border-color:var(--wts-amber);color:#171225}
+#wrap{max-width:650px;padding:0 12px 12px}
+#wrap:before{
+  content:"";position:absolute;inset:-18px -6px -16px;z-index:-1;border-radius:28px;
+  background:radial-gradient(closest-side,rgba(255,46,126,.12),transparent 72%);
+  filter:blur(12px);
+}
+canvas#game{
+  border:1px solid rgba(255,255,255,.16)!important;
+  border-radius:20px!important;
+  box-shadow:
+    0 0 0 1px rgba(255,46,126,.12),
+    0 0 44px rgba(255,46,126,.12),
+    0 0 80px rgba(25,211,230,.08),
+    0 28px 70px rgba(0,0,0,.55)!important;
+  background:#05060d!important;
+}
+#overlay{
+  inset:0 12px 12px!important;
+  border-radius:20px!important;
+  background:
+    linear-gradient(180deg,rgba(8,4,18,.64),rgba(8,4,18,.90)),
+    radial-gradient(circle at 50% 18%,rgba(255,46,126,.28),transparent 45%)!important;
+  backdrop-filter:blur(5px);
+  border:1px solid rgba(255,255,255,.08);
+}
+#overlay:before{
+  content:"VEGAS SIDEKICK · BREAK ROOM";
+  font:800 10px 'Barlow Condensed',sans-serif;letter-spacing:.22em;color:var(--wts-cyan);
+}
+#overlay h2{font-size:clamp(40px,8vw,64px)!important;color:#fff!important;text-shadow:0 0 26px rgba(255,46,126,.55)}
+#overlay .hint{color:var(--wts-amber)!important;font-weight:800}
+#overlay .quote{color:#c7bbd0!important}
+#startBtn{background:var(--wts-amber)!important;color:#171225!important;border-radius:999px!important;min-width:190px;box-shadow:0 10px 30px rgba(255,176,0,.25)}
+.share-btn{border-radius:999px!important;border-color:rgba(255,255,255,.25)!important}
+.controls-hint{color:#a99db5;padding:11px 16px 6px}
+#dpad{display:none!important}
+#wts-joystick{
+  position:fixed;width:112px;height:112px;border-radius:50%;pointer-events:none;z-index:9999;
+  border:1px solid rgba(255,255,255,.22);background:rgba(12,7,24,.58);backdrop-filter:blur(10px);
+  box-shadow:0 0 30px rgba(25,211,230,.18);transform:translate(-50%,-50%) scale(.85);opacity:0;transition:opacity .12s,transform .12s;
+}
+#wts-joystick.visible{opacity:1;transform:translate(-50%,-50%) scale(1)}
+#wts-joystick:before{content:"";position:absolute;inset:19px;border-radius:50%;border:1px solid rgba(255,176,0,.22)}
+#wts-stick{position:absolute;left:50%;top:50%;width:44px;height:44px;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(circle at 35% 30%,#fff3c7,#ffb000 48%,#aa6500);box-shadow:0 0 22px rgba(255,176,0,.45)}
+#wts-toast{
+  position:fixed;left:50%;top:110px;z-index:9998;transform:translate(-50%,-12px);opacity:0;pointer-events:none;
+  padding:9px 14px;border-radius:999px;background:rgba(10,6,20,.88);border:1px solid rgba(255,255,255,.14);color:#fff;
+  font:800 12px 'Barlow Condensed',sans-serif;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 10px 34px rgba(0,0,0,.3);transition:.2s;
+}
+#wts-toast.show{opacity:1;transform:translate(-50%,0)}
+.credit{color:#8e8298;padding-top:7px}
+@media(max-width:700px){
+  body{padding-top:72px!important}
+  body>header{padding:12px 12px 4px}
+  .hud{font-size:18px;padding:8px 12px 8px;gap:6px}
+  .hud>div{padding:7px 8px;border-radius:10px}
+  .hud .label{font-size:8px;letter-spacing:.12em}
+  .sound-toggle{font-size:15px;padding:2px 9px}
+  #wrap{padding:0 7px 8px}
+  #overlay{inset:0 7px 8px!important;padding:20px!important;gap:11px!important}
+  #overlay p{font-size:12px!important;line-height:1.55!important}
+  canvas#game{border-radius:16px!important}
+  .controls-hint{font-size:9px;letter-spacing:.1em;padding-top:8px}
+}
+@media(prefers-reduced-motion:reduce){body:before{animation:none!important}}
