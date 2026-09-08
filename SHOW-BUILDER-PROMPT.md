@@ -867,3 +867,7 @@ A correctly built show page:
 ---
 
 *Last updated: 2026-09-07*
+
+
+### Decision-card standard (September 2026)
+Use **Good fit**, **Think twice**, and **Booking tip** for the three-card buyer decision aid. The copy must be useful on its own and specific to the show when possible. Never use the retired labels **Book it if…**, **Know this first**, or **Best practical angle**. Preserve stronger custom decision modules on benchmark pages rather than flattening them.

@@ -772,3 +772,16 @@ When choosing between clever automation and trustworthy operations, choose trust
 When choosing between more copy and clearer information, choose clearer information.
 
 When data conflicts, do not guess.
+
+
+---
+
+## Show Decision Cards
+
+The customer-facing three-card decision aid uses these labels:
+
+- **Good fit** — who the show is genuinely a match for.
+- **Think twice** — one honest mismatch, tradeoff, or reason to choose another category.
+- **Booking tip** — a concrete seat, timing, or booking action.
+
+Do not use the old labels `Book it if…`, `Know this first`, or `Best practical angle`. Do not fill these cards with generic category filler when a useful show-specific point is available. If there is no defensible booking tip, use a verified planning action rather than inventing seat advice. Existing custom/benchmark decision modules that are more detailed should not be flattened just to match the generic card format.
