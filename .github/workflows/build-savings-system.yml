@@ -1,6 +1,11 @@
 name: Build Savings System
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/implement-savings-system.py'
+      - '.github/workflows/build-savings-system.yml'
 permissions:
   contents: write
 jobs:
@@ -8,20 +13,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python3 scripts/implement-savings-system.py
-      - run: |
+      - name: Build savings system
+        run: python3 scripts/implement-savings-system.py
+      - name: Validate site
+        run: |
           python3 scripts/audit-event-schema.py
           python3 scripts/audit-content-link-hygiene.py
           python3 scripts/audit-internal-links.py
           python3 scripts/audit-mobile-show-heroes.py
           python3 scripts/audit-catalog-js-syntax.py
           python3 scripts/audit-show-decision-copy.py
-      - run: |
+      - name: Commit generated savings surfaces
+        run: |
           git checkout -- docs/internal-link-audit.md || true
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/show-database.json assets/show-canonical.css shows admin/show-database || true
+          git add data/show-database.json assets/show-savings.css assets/catalog-savings.css assets/catalog-savings.js shows
           if ! git diff --cached --quiet; then
-            git commit -m "Add Vegas Sidekick savings system"
+            git commit -m "Build Vegas Sidekick savings surfaces"
             git push
           fi
