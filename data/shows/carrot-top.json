@@ -93,8 +93,8 @@
       "source": "authoritative"
     },
     "mobile_hero": {
-      "fit": "cover",
-      "position": "50% 22%"
+      "fit": "safe",
+      "position": "center center"
     }
   },
   "descriptions": {

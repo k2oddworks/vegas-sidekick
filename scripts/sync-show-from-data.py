@@ -301,10 +301,12 @@ def sync_mobile_hero(text: str, record: dict[str, Any], changes: list[str]) -> s
         return text
     fit = mobile.get("fit", "cover")
     position = mobile.get("position", "center center")
-    if fit not in {"cover", "contain"}:
-        raise SyncError(f"{record['slug']}: media.mobile_hero.fit must be cover or contain")
-    attrs = f' data-mobile-fit="{fit}" style="--mobile-hero-position:{position}"'
-    pattern = r'<div class="hero-media"(?: data-mobile-fit="[^"]+")?(?: style="--mobile-hero-position:[^"]+")?>'
+    if fit not in {"cover", "contain", "safe"}:
+        raise SyncError(f"{record['slug']}: media.mobile_hero.fit must be cover, contain or safe")
+    hero_src = ((record.get("media") or {}).get("hero_image") or "")
+    bg = f";--mobile-hero-image:url('{hero_src}')" if fit == "safe" and hero_src else ""
+    attrs = f' data-mobile-fit="{fit}" style="--mobile-hero-position:{position}{bg}"'
+    pattern = r'<div class="hero-media"[^>]*>'
     new = replace_once(text, pattern, f'<div class="hero-media"{attrs}>', "mobile hero container")
     if new != text:
         changes.append("media.mobile_hero")
