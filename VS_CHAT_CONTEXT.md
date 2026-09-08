@@ -785,3 +785,27 @@ The customer-facing three-card decision aid uses these labels:
 - **Booking tip** — a concrete seat, timing, or booking action.
 
 Do not use the old labels `Book it if…`, `Know this first`, or `Best practical angle`. Do not fill these cards with generic category filler when a useful show-specific point is available. If there is no defensible booking tip, use a verified planning action rather than inventing seat advice. Existing custom/benchmark decision modules that are more detailed should not be flattened just to match the generic card format.
+
+
+---
+
+## Savings / Discount System — September 2026
+
+Savings are a first-class Vegas Sidekick conversion feature, but only when they are based on a verified regular/list price.
+
+### Rules
+
+- `data/show-database.json` owns `our_price` and `regular_price`.
+- `savings_amount`, `savings_percent`, and `is_deal` are **derived fields**. Never hand-enter the savings math.
+- A show qualifies for customer-facing deal treatment only when `regular_price > our_price` by at least **$5**.
+- If the difference is under $5, the regular price is missing, or the regular price is not trustworthy, show the normal ticket price without a deal badge.
+- Warm Amber is the customer-facing value/deal language while pink remains brand/accent.
+- Preferred presentation: current price + struck-through regular price + **Save $X**. Dollar savings lead; percentage savings is secondary.
+- Do not use countdowns, fake urgency, inflated comparison prices, or claims of exclusivity unless explicitly verified.
+- Current discounted inventory lives at `/shows/deals/`.
+- Catalogs can show deal badges and sort by **Biggest Savings**; `/shows/` also has a Deals filter.
+- The Show Database UI calculates Savings $ / Savings % automatically as prices are edited.
+- `scripts/audit-savings-system.py` is the permanent consistency guard.
+- `.github/workflows/savings-audit.yml` runs the recurring savings safeguard.
+
+The September 8 implementation found 54 of 71 active shows meeting the $5 threshold after the Spotlight reconciliation. Treat that count as time-sensitive; the rule and calculation are permanent, the count is not.

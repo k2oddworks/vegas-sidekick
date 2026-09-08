@@ -871,3 +871,21 @@ A correctly built show page:
 
 ### Decision-card standard (September 2026)
 Use **Good fit** and **Booking tip** as the core buyer decision aid. **Think twice** is optional and should appear only when there is a real, show-specific downside, mismatch, or tradeoff. Never add it just to fill a third card. Never use the retired labels **Book it if…**, **Know this first**, or **Best practical angle**. Preserve stronger custom decision modules on benchmark pages rather than flattening them.
+
+
+---
+
+## Ticket Savings / Deal Treatment
+
+When the Show Database contains both a verified Vegas Sidekick price and a verified regular/list price, calculate savings rather than writing a discount manually.
+
+- Minimum customer-facing deal threshold: **$5**.
+- `savings_amount = regular_price - our_price`.
+- `savings_percent = round(savings_amount / regular_price * 100)`.
+- Lead with **Save $X**; percentage savings is secondary.
+- Show the regular price struck through only when the comparison is current and defensible.
+- If no valid regular price exists, do not imply a discount.
+- Never use fake scarcity, countdowns, or “limited time” language unless independently verified.
+- Warm Amber (`#FFB000`) is the sitewide visual language for primary ticket actions and deal/value emphasis. Pink remains brand/accent.
+- Reuse `assets/show-savings.css` and the existing savings system instead of creating page-specific deal styling.
+- Run `python3 scripts/audit-savings-system.py` when show pricing or savings surfaces change.
