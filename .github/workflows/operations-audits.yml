@@ -159,3 +159,10 @@ jobs:
           existing=$(gh issue list --repo "$REPO" --state open --search "in:title \"$title\"" --json number,title --jq ".[] | select(.title == \"$title\") | .number" | head -1)
           if [[ -n "$existing" ]]; then gh issue comment "$existing" --repo "$REPO" --body "$body"; else gh issue create --repo "$REPO" --title "$title" --label 'P0 Accuracy,automation' --body "$body"; fi
           exit 1
+
+  show-decision-copy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit show decision-card copy
+        run: python3 scripts/audit-show-decision-copy.py
