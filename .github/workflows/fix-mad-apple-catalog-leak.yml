@@ -1,7 +1,10 @@
 name: Fix Mad Apple Catalog Leak
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/fix-mad-apple-catalog-leak.yml'
 
 permissions:
   contents: write
@@ -21,12 +24,9 @@ jobs:
           for p in sorted(Path('shows').glob('*/index.html')):
               s=p.read_text()
               original=s
-              # Remove active catalog JS object for the closed Mad Apple show.
               s=re.sub(r"^\s*\{[^\n]*slug:'mad-apple'[^\n]*\},\s*\n?",'',s,flags=re.M)
-              # Main all-shows catalog has a hard-coded initial count.
               if p.as_posix()=='shows/index.html':
                   s=s.replace('id="show-count">32</strong> shows','id="show-count">31</strong> shows')
-              # Remove stale active-Cirque marketing copy if still present.
               if p.as_posix()=='shows/cirque/index.html':
                   s=s.replace('"O" to Mad Apple — five Cirque du Soleil shows, one city.', 'Four current Cirque du Soleil productions, one city.')
                   s=s.replace('"O" to Mad Apple — five Cirque du Soleil shows', 'Four current Cirque du Soleil productions')
@@ -44,18 +44,13 @@ jobs:
           from pathlib import Path
           import re,sys
 
-          closed = {
-              'mad-apple': 'shows/cirque/mad-apple/index.html',
-              'david-goldrake': 'shows/magic/david-goldrake/index.html',
-          }
+          closed = {'mad-apple','david-goldrake'}
           issues=[]
-          # Active catalog hubs only; archive pages themselves are intentionally preserved.
           catalogs=[Path('shows/index.html'), *sorted(Path('shows').glob('*/index.html'))]
           for p in catalogs:
               if not p.exists(): continue
               text=p.read_text(errors='ignore')
-              for slug,archive in closed.items():
-                  # Flag active JS catalog entries, not historical prose links.
+              for slug in closed:
                   if re.search(r"\{[^\n]*slug:'"+re.escape(slug)+r"'[^\n]*\}",text):
                       issues.append(f'{p}: closed show {slug} remains in active catalog data')
           print(f'Active catalog hubs checked: {len(catalogs)}')
