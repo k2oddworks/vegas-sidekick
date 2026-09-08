@@ -14,3 +14,11 @@
   .hero-media[data-mobile-fit="cover"] img{object-fit:cover}
   .hero-media[data-mobile-fit="contain"]:after{background:linear-gradient(0deg,#2c0b4e 0,rgba(44,11,78,.72) 8%,transparent 28%)}
 }
+
+/* Catalog-wide mobile hero safe fit: whole artwork over a softened fill. */
+@media(max-width:800px){
+  .hero-media[data-mobile-fit="safe"]{position:relative;isolation:isolate;overflow:hidden;background:#17082e}
+  .hero-media[data-mobile-fit="safe"]::before{content:"";position:absolute;inset:-18px;z-index:0;background-image:var(--mobile-hero-image);background-size:cover;background-position:var(--mobile-hero-position,center center);filter:blur(18px) brightness(.48) saturate(.9);transform:scale(1.08)}
+  .hero-media[data-mobile-fit="safe"] img{position:relative;z-index:1;object-fit:contain!important;object-position:var(--mobile-hero-position,center center)}
+  .hero-media[data-mobile-fit="safe"]::after{z-index:2;background:linear-gradient(0deg,#2c0b4e 0,rgba(44,11,78,.55) 10%,transparent 30%)}
+}

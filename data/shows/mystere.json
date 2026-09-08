@@ -106,7 +106,7 @@
     "official_trailer": null,
     "source": "repo_with_authoritative_no_trailer",
     "mobile_hero": {
-      "fit": "cover",
+      "fit": "safe",
       "position": "center center"
     }
   },
