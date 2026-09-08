@@ -15,6 +15,18 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build savings system
         run: python3 scripts/implement-savings-system.py
+      - name: Add static Deals page link
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('shows/index.html'); t=p.read_text()
+          if '/shows/deals/' not in t:
+              needle='<button class="filter-btn vs-deals-btn" onclick="vsDealsFilter(this)">🔥 Deals</button>'
+              repl=needle+'<a class="filter-btn vs-deals-btn" href="/shows/deals/">All Deals →</a>'
+              if needle in t: t=t.replace(needle,repl,1)
+              else: t=t.replace('</main>','<div style="max-width:1200px;margin:0 auto 36px;padding:0 24px"><a href="/shows/deals/" style="font-weight:800;color:#8a5c00">Browse all current ticket deals →</a></div></main>',1)
+              p.write_text(t)
+          PY
       - name: Validate site
         run: |
           python3 scripts/audit-event-schema.py
@@ -23,6 +35,7 @@ jobs:
           python3 scripts/audit-mobile-show-heroes.py
           python3 scripts/audit-catalog-js-syntax.py
           python3 scripts/audit-show-decision-copy.py
+          python3 scripts/audit-savings-system.py
       - name: Commit generated savings surfaces
         run: |
           git checkout -- docs/internal-link-audit.md || true
@@ -30,6 +43,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/show-database.json assets/show-savings.css assets/catalog-savings.css assets/catalog-savings.js shows
           if ! git diff --cached --quiet; then
-            git commit -m "Build Vegas Sidekick savings surfaces"
+            git commit -m "Finalize Vegas Sidekick savings surfaces"
             git push
           fi
