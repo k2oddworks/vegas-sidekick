@@ -1,0 +1,27 @@
+name: Build Savings System
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/implement-savings-system.py
+      - run: |
+          python3 scripts/audit-event-schema.py
+          python3 scripts/audit-content-link-hygiene.py
+          python3 scripts/audit-internal-links.py
+          python3 scripts/audit-mobile-show-heroes.py
+          python3 scripts/audit-catalog-js-syntax.py
+          python3 scripts/audit-show-decision-copy.py
+      - run: |
+          git checkout -- docs/internal-link-audit.md || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/show-database.json assets/show-canonical.css shows admin/show-database || true
+          if ! git diff --cached --quiet; then
+            git commit -m "Add Vegas Sidekick savings system"
+            git push
+          fi
