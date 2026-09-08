@@ -11,7 +11,7 @@
       "our_price": 122,
       "regular_price": null,
       "runtime_minutes": 80,
-      "age_summary": "Must be 18 years of age or older. Everyone must have a ticket to enter the event.",
+      "age_summary": "18+",
       "venue": "Spiegeltent – Caesars Palace",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Wed, Thu, Sun · 7 PM & 9 PM; Fri, Sat · 7 PM & 9 PM & 11 PM",
@@ -74,7 +74,8 @@
           "Sunday – 7:00pm & 9:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/production/absinthe/",
-        "affiliate_url": "https://spotlight.vegas/shows/production/absinthe/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/production/absinthe/ref/vegassidekick",
+        "age_label": "18+"
       }
     },
     {
@@ -83,12 +84,12 @@
       "category": "music",
       "status": "active",
       "our_price": 40,
-      "regular_price": null,
+      "regular_price": 100,
       "runtime_minutes": 75,
       "age_summary": "All ages",
       "venue": "Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",
       "showroom": "",
-      "schedule_summary": "Tue, Wed, Thu, Sat, Sun · Times vary",
+      "schedule_summary": "Tue, Wed, Thu, Sat, Sun · 7:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/tribute/all-motown/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/all-motown/",
@@ -99,19 +100,29 @@
       "spotlight": {
         "name": "All Motown Las Vegas",
         "our_price": 40,
-        "regular_price": null,
+        "regular_price": 100,
         "location": "Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",
         "runtime_minutes": 75,
         "age_rule": "All ages",
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater.",
         "schedule_days": {
-          "Tuesday": [],
-          "Wednesday": [],
-          "Thursday": [],
-          "Saturday": [],
-          "Sunday": []
+          "Tuesday": [
+            "7:30 PM"
+          ],
+          "Wednesday": [
+            "7:30 PM"
+          ],
+          "Thursday": [
+            "7:30 PM"
+          ],
+          "Saturday": [
+            "7:30 PM"
+          ],
+          "Sunday": [
+            "7:30 PM"
+          ]
         },
-        "schedule_summary": "Tue, Wed, Thu, Sat, Sun · Times vary",
+        "schedule_summary": "Tue, Wed, Thu, Sat, Sun · 7:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Tuesday - 7:30",
@@ -121,7 +132,8 @@
           "Sunday - 7:30"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/tribute/all-motown/",
-        "affiliate_url": "https://spotlight.vegas/shows/tribute/all-motown/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/tribute/all-motown/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -130,9 +142,9 @@
       "category": "music",
       "status": "active",
       "our_price": 47,
-      "regular_price": null,
+      "regular_price": 115,
       "runtime_minutes": 75,
-      "age_summary": "No age restrictions Children under the age of 2 do not require a ticket but must sit on parents lap for the duration of the show",
+      "age_summary": "All ages",
       "venue": "Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 6 PM",
@@ -146,7 +158,7 @@
       "spotlight": {
         "name": "All Shook Up Las Vegas",
         "our_price": 47,
-        "regular_price": null,
+        "regular_price": 115,
         "location": "Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",
         "runtime_minutes": 75,
         "age_rule": "No age restrictions Children under the age of 2 do not require a ticket but must sit on parents lap for the duration of the show",
@@ -186,7 +198,8 @@
           "Sunday - 6:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/tribute/all-shook-up/",
-        "affiliate_url": "https://spotlight.vegas/shows/tribute/all-shook-up/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/tribute/all-shook-up/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -195,9 +208,9 @@
       "category": "magic",
       "status": "active",
       "our_price": 31,
-      "regular_price": null,
+      "regular_price": 38,
       "runtime_minutes": 60,
-      "age_summary": "No age restrictions. Lap sitting is allowed for children ages 2 and under.",
+      "age_summary": "All ages",
       "venue": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
       "schedule_summary": "Tue, Thu, Sat · 4 PM",
@@ -211,7 +224,7 @@
       "spotlight": {
         "name": "Allstars of Magic",
         "our_price": 31,
-        "regular_price": null,
+        "regular_price": 38,
         "location": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
         "runtime_minutes": 60,
         "age_rule": "No age restrictions. Lap sitting is allowed for children ages 2 and under.",
@@ -235,7 +248,8 @@
           "Saturday – 4:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/allstars-of-magic/",
-        "affiliate_url": "https://spotlight.vegas/shows/magic/allstars-of-magic/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/magic/allstars-of-magic/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -244,9 +258,9 @@
       "category": "spectaculars",
       "status": "active",
       "our_price": 40,
-      "regular_price": null,
+      "regular_price": 100,
       "runtime_minutes": 75,
-      "age_summary": "Recommended for ages 5+. But All Ages are Welcome.",
+      "age_summary": "All ages",
       "venue": "Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",
       "showroom": "",
       "schedule_summary": "Sat, Sun · 4 PM",
@@ -260,7 +274,7 @@
       "spotlight": {
         "name": "America The Show",
         "our_price": 40,
-        "regular_price": null,
+        "regular_price": 100,
         "location": "Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",
         "runtime_minutes": 75,
         "age_rule": "Recommended for ages 5+. But All Ages are Welcome.",
@@ -280,7 +294,8 @@
           "Sunday - 4:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/tribute/america-the-show/",
-        "affiliate_url": "https://spotlight.vegas/shows/tribute/america-the-show/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/tribute/america-the-show/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -291,7 +306,7 @@
       "our_price": 40,
       "regular_price": null,
       "runtime_minutes": 65,
-      "age_summary": "Recommended 18+, but no age restriction enforced",
+      "age_summary": "All ages",
       "venue": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
       "schedule_summary": "Wed, Thu, Fri, Sat · 7 PM",
@@ -333,7 +348,8 @@
           "Saturday – 7:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/an-r-rated-magic-show/",
-        "affiliate_url": "https://spotlight.vegas/shows/magic/an-r-rated-magic-show/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/magic/an-r-rated-magic-show/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -342,9 +358,9 @@
       "category": "adult",
       "status": "active",
       "our_price": 90,
-      "regular_price": null,
+      "regular_price": 100,
       "runtime_minutes": 75,
-      "age_summary": "Must be 18 years of age or older",
+      "age_summary": "18+",
       "venue": "Waterfall Atrium Level 2M - Venetian",
       "showroom": "",
       "schedule_summary": "Tue, Fri, Sat · 7:30 PM & 9:30 PM; Wed, Thu · 7:30 PM",
@@ -358,7 +374,7 @@
       "spotlight": {
         "name": "Atomic Saloon Show",
         "our_price": 90,
-        "regular_price": null,
+        "regular_price": 100,
         "location": "Waterfall Atrium Level 2M - Venetian",
         "runtime_minutes": 75,
         "age_rule": "Must be 18 years of age or older",
@@ -394,7 +410,8 @@
           "2027 dates move to 7:00pm & 9:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/adult/atomic-saloon/",
-        "affiliate_url": "https://spotlight.vegas/shows/adult/atomic-saloon/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/adult/atomic-saloon/ref/vegassidekick",
+        "age_label": "18+"
       }
     },
     {
@@ -403,9 +420,9 @@
       "category": "spectaculars",
       "status": "active",
       "our_price": 92,
-      "regular_price": null,
+      "regular_price": 121,
       "runtime_minutes": 80,
-      "age_summary": "Everyone must be 5 years of age or older to attend the event.",
+      "age_summary": "5+",
       "venue": "Awakening Theater - Wynn Las Vegas",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Fri, Sat · 6:30 PM & 9 PM; Sun · 4 PM & 6 PM",
@@ -419,7 +436,7 @@
       "spotlight": {
         "name": "Awakening",
         "our_price": 92,
-        "regular_price": null,
+        "regular_price": 121,
         "location": "Awakening Theater - Wynn Las Vegas",
         "runtime_minutes": 80,
         "age_rule": "Everyone must be 5 years of age or older to attend the event.",
@@ -457,7 +474,8 @@
           "Final performances, now through October 10"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/production/awakening/",
-        "affiliate_url": "https://spotlight.vegas/shows/production/awakening/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/production/awakening/ref/vegassidekick",
+        "age_label": "5+"
       }
     },
     {
@@ -468,7 +486,7 @@
       "our_price": 55,
       "regular_price": null,
       "runtime_minutes": 75,
-      "age_summary": "No age restriction. Toddlers 2 and under may enter for free so long as they sit on a lap.",
+      "age_summary": "All ages",
       "venue": "BattleBots Arena - 4165 Koval Lane",
       "showroom": "",
       "schedule_summary": "Wed, Thu, Fri · 6 PM; Sat, Sun · 2 PM",
@@ -514,7 +532,8 @@
           "Sunday - 2:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/production/battlebots/",
-        "affiliate_url": "https://spotlight.vegas/shows/production/battlebots/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/production/battlebots/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -523,9 +542,9 @@
       "category": "music",
       "status": "active",
       "our_price": 65,
-      "regular_price": null,
+      "regular_price": 92,
       "runtime_minutes": 90,
-      "age_summary": "Recommended Age: 3 years and older Children under the age of 3 are permitted and do not require a paid ticket if they are sitting on a parent’s lap. Children aged 4 and above will continue to require a paid ticket for admission.",
+      "age_summary": "3+",
       "venue": "Blue Man Theater - Luxor Hotel",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 5 PM & 8 PM",
@@ -539,7 +558,7 @@
       "spotlight": {
         "name": "Blue Man Group Las Vegas",
         "our_price": 65,
-        "regular_price": null,
+        "regular_price": 92,
         "location": "Blue Man Theater - Luxor Hotel",
         "runtime_minutes": 90,
         "age_rule": "Recommended Age: 3 years and older Children under the age of 3 are permitted and do not require a paid ticket if they are sitting on a parent’s lap. Children aged 4 and above will continue to require a paid ticket for admission.",
@@ -587,7 +606,8 @@
           "Dates & Times may vary."
         ],
         "spotlight_url": "https://spotlight.vegas/shows/production/blue-man-group/",
-        "affiliate_url": "https://spotlight.vegas/shows/production/blue-man-group/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/production/blue-man-group/ref/vegassidekick",
+        "age_label": "3+"
       }
     },
     {
@@ -596,9 +616,9 @@
       "category": "comedy",
       "status": "active",
       "our_price": 44,
-      "regular_price": null,
+      "regular_price": 51,
       "runtime_minutes": 90,
-      "age_summary": "Must be 18 years of age or older. Guests under the age of 18 are NOT permitted.",
+      "age_summary": "18+",
       "venue": "The District - MGM Grand",
       "showroom": "",
       "schedule_summary": "Nightly – 8:00pm · Seating · Seating will be assigned upon arrival and will be best available within the zone purchased.",
@@ -612,7 +632,7 @@
       "spotlight": {
         "name": "Brad Garrett's Comedy Club",
         "our_price": 44,
-        "regular_price": null,
+        "regular_price": 51,
         "location": "The District - MGM Grand",
         "runtime_minutes": 90,
         "age_rule": "Must be 18 years of age or older. Guests under the age of 18 are NOT permitted.",
@@ -626,7 +646,8 @@
           "Seating will be assigned upon arrival and will be best available within the zone purchased."
         ],
         "spotlight_url": "https://spotlight.vegas/shows/comedy/brad-garretts-comedy-club/",
-        "affiliate_url": "https://spotlight.vegas/shows/comedy/brad-garretts-comedy-club/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/comedy/brad-garretts-comedy-club/ref/vegassidekick",
+        "age_label": "18+"
       }
     },
     {
@@ -635,9 +656,9 @@
       "category": "comedy",
       "status": "active",
       "our_price": 62,
-      "regular_price": null,
+      "regular_price": 68,
       "runtime_minutes": 75,
-      "age_summary": "Must be 16 years of age or older. Guests 18 years of age and under must be accompanied by an adult 21+.",
+      "age_summary": "16+",
       "venue": "Atrium Theater - Luxor Hotel",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat · 8 PM",
@@ -651,7 +672,7 @@
       "spotlight": {
         "name": "Carrot Top",
         "our_price": 62,
-        "regular_price": null,
+        "regular_price": 68,
         "location": "Atrium Theater - Luxor Hotel",
         "runtime_minutes": 75,
         "age_rule": "Must be 16 years of age or older. Guests 18 years of age and under must be accompanied by an adult 21+.",
@@ -687,7 +708,8 @@
           "Saturday - 8:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/comedy/carrot-top/",
-        "affiliate_url": "https://spotlight.vegas/shows/comedy/carrot-top/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/comedy/carrot-top/ref/vegassidekick",
+        "age_label": "16+"
       }
     },
     {
@@ -696,9 +718,9 @@
       "category": "adult",
       "status": "active",
       "our_price": 76,
-      "regular_price": null,
+      "regular_price": 87,
       "runtime_minutes": 90,
-      "age_summary": "Must be 18 years of age or older.",
+      "age_summary": "18+",
       "venue": "Chippendales Theatre - Planet Hollywood",
       "showroom": "",
       "schedule_summary": "Tue, Wed, Thu, Sun · 8 PM; Fri, Sat · 8 PM & 10 PM",
@@ -712,7 +734,7 @@
       "spotlight": {
         "name": "Chippendales Las Vegas",
         "our_price": 76,
-        "regular_price": null,
+        "regular_price": 87,
         "location": "Chippendales Theatre - Planet Hollywood",
         "runtime_minutes": 90,
         "age_rule": "Must be 18 years of age or older.",
@@ -750,7 +772,8 @@
           "Sunday - 8:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/adult/chippendales/",
-        "affiliate_url": "https://spotlight.vegas/shows/adult/chippendales/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/adult/chippendales/ref/vegassidekick",
+        "age_label": "18+"
       }
     },
     {
@@ -759,9 +782,9 @@
       "category": "magic",
       "status": "active",
       "our_price": 57,
-      "regular_price": null,
+      "regular_price": 75,
       "runtime_minutes": 90,
-      "age_summary": "Ages 10+. All customers require a ticket regardless of age.",
+      "age_summary": "10+",
       "venue": "Harrah's Cabaret - Harrah’s Las Vegas",
       "showroom": "",
       "schedule_summary": "Tue, Wed, Thu, Fri, Sat · 7 PM",
@@ -775,7 +798,7 @@
       "spotlight": {
         "name": "Colin Cloud Mastermind",
         "our_price": 57,
-        "regular_price": null,
+        "regular_price": 75,
         "location": "Harrah's Cabaret - Harrah’s Las Vegas",
         "runtime_minutes": 90,
         "age_rule": "Ages 10+. All customers require a ticket regardless of age.",
@@ -807,7 +830,8 @@
           "Saturday - 7:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/colin-cloud/",
-        "affiliate_url": "https://spotlight.vegas/shows/magic/colin-cloud/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/magic/colin-cloud/ref/vegassidekick",
+        "age_label": "10+"
       }
     },
     {
@@ -816,9 +840,9 @@
       "category": "comedy",
       "status": "active",
       "our_price": 38,
-      "regular_price": null,
+      "regular_price": 44,
       "runtime_minutes": 90,
-      "age_summary": "All guests must be 18 years of age or older. No children allowed.",
+      "age_summary": "18+",
       "venue": "Comedy Cellar - Rio Hotel",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 7 PM & 9:30 PM",
@@ -832,7 +856,7 @@
       "spotlight": {
         "name": "Comedy Cellar Las Vegas",
         "our_price": 38,
-        "regular_price": null,
+        "regular_price": 44,
         "location": "Comedy Cellar - Rio Hotel",
         "runtime_minutes": 90,
         "age_rule": "All guests must be 18 years of age or older. No children allowed.",
@@ -879,7 +903,8 @@
           "Sunday – 7:00pm & 9:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/comedy/comedy-cellar/",
-        "affiliate_url": "https://spotlight.vegas/shows/comedy/comedy-cellar/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/comedy/comedy-cellar/ref/vegassidekick",
+        "age_label": "18+"
       }
     },
     {
@@ -890,7 +915,7 @@
       "our_price": 110,
       "regular_price": null,
       "runtime_minutes": 75,
-      "age_summary": "Recommended for ages 10 and up due to mature content. Everyone must have a ticket to enter the event. Guests 18 years of age and under must be accompanied by an adult.",
+      "age_summary": "Recommended for ages 10 and up due to mature content. Everyo",
       "venue": "Criss Angel Theater – Planet Hollywood",
       "showroom": "",
       "schedule_summary": "Wed, Thu, Fri, Sat, Sun · 7 PM",
@@ -936,7 +961,8 @@
           "Sunday – 7:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/criss-angel/",
-        "affiliate_url": "https://spotlight.vegas/shows/magic/criss-angel/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/magic/criss-angel/ref/vegassidekick",
+        "age_label": "Recommended for ages 10 and up due to mature content. Everyo"
       }
     },
     {
@@ -947,7 +973,7 @@
       "our_price": 95,
       "regular_price": null,
       "runtime_minutes": 90,
-      "age_summary": "No age restrictions",
+      "age_summary": "All ages",
       "venue": "Harrah's Showroom - Harrah’s Las Vegas",
       "showroom": "",
       "schedule_summary": "Tue, Wed, Thu, Fri, Sat · 7:30 PM",
@@ -993,7 +1019,8 @@
           "Saturday - 7:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/music/donny-osmond/",
-        "affiliate_url": "https://spotlight.vegas/shows/music/donny-osmond/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/music/donny-osmond/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -1002,9 +1029,9 @@
       "category": "adult",
       "status": "active",
       "our_price": 40,
-      "regular_price": null,
+      "regular_price": 47,
       "runtime_minutes": 75,
-      "age_summary": "All guests must be 18 years of age or older. No children allowed.",
+      "age_summary": "18+",
       "venue": "Atrium Theater - Luxor Hotel",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat · 10:30 PM; Sun · 7 PM & 9:30 PM",
@@ -1018,7 +1045,7 @@
       "spotlight": {
         "name": "Fantasy Las Vegas",
         "our_price": 40,
-        "regular_price": null,
+        "regular_price": 47,
         "location": "Atrium Theater - Luxor Hotel",
         "runtime_minutes": 75,
         "age_rule": "All guests must be 18 years of age or older. No children allowed.",
@@ -1065,7 +1092,8 @@
           "November 16-18"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/adult/fantasy/",
-        "affiliate_url": "https://spotlight.vegas/shows/adult/fantasy/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/adult/fantasy/ref/vegassidekick",
+        "age_label": "18+"
       }
     },
     {
@@ -1074,9 +1102,9 @@
       "category": "music",
       "status": "active",
       "our_price": 62,
-      "regular_price": null,
+      "regular_price": 74,
       "runtime_minutes": 70,
-      "age_summary": "Ages 5+. Ages 5-17 must be accompanied by adult 21 or older.",
+      "age_summary": "5+",
       "venue": "The STRAT Theater",
       "showroom": "",
       "schedule_summary": "Tue, Wed, Thu, Fri, Sat, Sun · 7 PM",
@@ -1090,7 +1118,7 @@
       "spotlight": {
         "name": "Ikons of Rock",
         "our_price": 62,
-        "regular_price": null,
+        "regular_price": 74,
         "location": "The STRAT Theater",
         "runtime_minutes": 70,
         "age_rule": "Ages 5+. Ages 5-17 must be accompanied by adult 21 or older.",
@@ -1126,7 +1154,8 @@
           "Sunday - 7:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/tribute/ikons-of-rock-hard-rock/",
-        "affiliate_url": "https://spotlight.vegas/shows/tribute/ikons-of-rock-hard-rock/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/tribute/ikons-of-rock-hard-rock/ref/vegassidekick",
+        "age_label": "5+"
       }
     },
     {
@@ -1135,9 +1164,9 @@
       "category": "music",
       "status": "active",
       "our_price": 70,
-      "regular_price": null,
+      "regular_price": 78,
       "runtime_minutes": 75,
-      "age_summary": "Recommended for all ages; 4 and older must have a ticket, 3 and under can be admitted as a lap seat. Under 18 MUST be accompanied by an adult.",
+      "age_summary": "All ages",
       "venue": "Jabbawockeez Theater - MGM Grand",
       "showroom": "",
       "schedule_summary": "Mon, Wed, Thu, Fri, Sat, Sun · 5:30 PM & 8 PM",
@@ -1151,7 +1180,7 @@
       "spotlight": {
         "name": "Jabbawockeez",
         "our_price": 70,
-        "regular_price": null,
+        "regular_price": 78,
         "location": "Jabbawockeez Theater - MGM Grand",
         "runtime_minutes": 75,
         "age_rule": "Recommended for all ages; 4 and older must have a ticket, 3 and under can be admitted as a lap seat. Under 18 MUST be accompanied by an adult.",
@@ -1193,7 +1222,8 @@
           "Sunday – 5:30pm & 8:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/production/jabbawockeez/",
-        "affiliate_url": "https://spotlight.vegas/shows/production/jabbawockeez/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/production/jabbawockeez/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -1204,7 +1234,7 @@
       "our_price": 27,
       "regular_price": null,
       "runtime_minutes": 75,
-      "age_summary": "All guests must be 18 years of age or older. No children allowed.",
+      "age_summary": "18+",
       "venue": "Jimmy Kimmel Comedy Club - The LINQ Promenade",
       "showroom": "",
       "schedule_summary": "Dates & times vary · check booking page",
@@ -1230,7 +1260,8 @@
           "Dates & Times Vary"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/comedy/jimmy-kimmels-comedy-club/",
-        "affiliate_url": "https://spotlight.vegas/shows/comedy/jimmy-kimmels-comedy-club/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/comedy/jimmy-kimmels-comedy-club/ref/vegassidekick",
+        "age_label": "18+"
       }
     },
     {
@@ -1239,7 +1270,7 @@
       "category": "music",
       "status": "active",
       "our_price": 40,
-      "regular_price": null,
+      "regular_price": 100,
       "runtime_minutes": 75,
       "age_summary": "No age restricitions",
       "venue": "Athena Showroom - Alexis Park Resort, 375 E Harmon Ave",
@@ -1255,7 +1286,7 @@
       "spotlight": {
         "name": "King of Diamonds - The Neil Diamond Tribute",
         "our_price": 40,
-        "regular_price": null,
+        "regular_price": 100,
         "location": "Athena Showroom - Alexis Park Resort, 375 E Harmon Ave",
         "runtime_minutes": 75,
         "age_rule": "No age restricitions",
@@ -1283,7 +1314,8 @@
           "Sunday - 9:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/tribute/neil-diamond/",
-        "affiliate_url": "https://spotlight.vegas/shows/tribute/neil-diamond/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/tribute/neil-diamond/ref/vegassidekick",
+        "age_label": "No age restricitions"
       }
     },
     {
@@ -1292,9 +1324,9 @@
       "category": "cirque",
       "status": "active",
       "our_price": 80,
-      "regular_price": null,
+      "regular_price": 118,
       "runtime_minutes": 90,
-      "age_summary": "Everyone must be 3 years of age or older to attend the event. Guests under the age of 18 must be accompanied by an adult.",
+      "age_summary": "3+",
       "venue": "KÀ Theatre – MGM Grand",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Wed · 6 PM & 8:30 PM; Sat, Sun · 4:30 PM & 7 PM",
@@ -1308,7 +1340,7 @@
       "spotlight": {
         "name": "KÀ by Cirque du Soleil",
         "our_price": 80,
-        "regular_price": null,
+        "regular_price": 118,
         "location": "KÀ Theatre – MGM Grand",
         "runtime_minutes": 90,
         "age_rule": "Everyone must be 3 years of age or older to attend the event. Guests under the age of 18 must be accompanied by an adult.",
@@ -1345,7 +1377,8 @@
           "Sunday - 4:30pm & 7:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/cirque-du-soleil/ka/",
-        "affiliate_url": "https://spotlight.vegas/shows/cirque-du-soleil/ka/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/cirque-du-soleil/ka/ref/vegassidekick",
+        "age_label": "3+"
       }
     },
     {
@@ -1354,9 +1387,9 @@
       "category": "comedy",
       "status": "active",
       "our_price": 35,
-      "regular_price": null,
+      "regular_price": 59,
       "runtime_minutes": 75,
-      "age_summary": "Ages 15+ - Ages 15-17 must be accompanied by a guardian.",
+      "age_summary": "15+",
       "venue": "Dragon Room - The STRAT",
       "showroom": "",
       "schedule_summary": "Nightly · Happy Hour Variety Show – 6:00pm · Touring Comics – 8:00pm",
@@ -1370,7 +1403,7 @@
       "spotlight": {
         "name": "LA Comedy Club",
         "our_price": 35,
-        "regular_price": null,
+        "regular_price": 59,
         "location": "Dragon Room - The STRAT",
         "runtime_minutes": 75,
         "age_rule": "Ages 15+ - Ages 15-17 must be accompanied by a guardian.",
@@ -1385,7 +1418,8 @@
           "Bret Ernst (Tuesday/Wednesday) Butch Bradley (Thursday – Monday) – 10:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/comedy/la-comedy-club/",
-        "affiliate_url": "https://spotlight.vegas/shows/comedy/la-comedy-club/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/comedy/la-comedy-club/ref/vegassidekick",
+        "age_label": "15+"
       }
     },
     {
@@ -1393,13 +1427,13 @@
       "name": "Las Vegas LIVE Comedy Club",
       "category": "comedy",
       "status": "active",
-      "our_price": 29,
-      "regular_price": null,
+      "our_price": 122,
+      "regular_price": 178,
       "runtime_minutes": 75,
-      "age_summary": "Must be 16 years of age or older",
+      "age_summary": "16+",
       "venue": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
-      "schedule_summary": "Mon · 9 PM; Tue, Wed, Thu, Fri, Sat, Sun · Times vary",
+      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 9 PM",
       "ticket_url": "https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/comedy/las-vegas-live-comedy-club/",
@@ -1409,8 +1443,8 @@
       "notes": "",
       "spotlight": {
         "name": "Las Vegas Live Comedy Club",
-        "our_price": 29,
-        "regular_price": null,
+        "our_price": 122,
+        "regular_price": 178,
         "location": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
         "runtime_minutes": 75,
         "age_rule": "Must be 16 years of age or older",
@@ -1419,14 +1453,26 @@
           "Monday": [
             "9 PM"
           ],
-          "Tuesday": [],
-          "Wednesday": [],
-          "Thursday": [],
-          "Friday": [],
-          "Saturday": [],
-          "Sunday": []
+          "Tuesday": [
+            "9 PM"
+          ],
+          "Wednesday": [
+            "9 PM"
+          ],
+          "Thursday": [
+            "9 PM"
+          ],
+          "Friday": [
+            "9 PM"
+          ],
+          "Saturday": [
+            "9 PM"
+          ],
+          "Sunday": [
+            "9 PM"
+          ]
         },
-        "schedule_summary": "Mon · 9 PM; Tue, Wed, Thu, Fri, Sat, Sun · Times vary",
+        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 9 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 9:00pm",
@@ -1438,7 +1484,8 @@
           "Sunday - 9:00"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/",
-        "affiliate_url": "https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick",
+        "age_label": "16+"
       }
     },
     {
@@ -1449,7 +1496,7 @@
       "our_price": 32,
       "regular_price": null,
       "runtime_minutes": 70,
-      "age_summary": "Must be 18 years of age or older with valid ID",
+      "age_summary": "18+",
       "venue": "Laugh Factory at Horseshoe Las Vegas.",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Wed · 6:30 PM & 8:30 PM; Thu, Fri, Sat, Sun · 8:30 PM & 10:30 PM",
@@ -1510,7 +1557,8 @@
           "Sunday - 8:30pm & 10:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/comedy/laugh-factory/",
-        "affiliate_url": "https://spotlight.vegas/shows/comedy/laugh-factory/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/comedy/laugh-factory/ref/vegassidekick",
+        "age_label": "18+"
       }
     },
     {
@@ -1519,9 +1567,9 @@
       "category": "magic",
       "status": "active",
       "our_price": 50,
-      "regular_price": null,
+      "regular_price": 61,
       "runtime_minutes": 70,
-      "age_summary": "Guests must be 5 years of age and older. Under 18 must be accompanied by an adult.",
+      "age_summary": "5+",
       "venue": "Thunderland Theater- Excalibur",
       "showroom": "",
       "schedule_summary": "Tue, Wed, Thu, Fri, Sat · 3 PM",
@@ -1535,7 +1583,7 @@
       "spotlight": {
         "name": "Mac King",
         "our_price": 50,
-        "regular_price": null,
+        "regular_price": 61,
         "location": "Thunderland Theater- Excalibur",
         "runtime_minutes": 70,
         "age_rule": "Guests must be 5 years of age and older. Under 18 must be accompanied by an adult.",
@@ -1567,7 +1615,8 @@
           "Saturday – 3:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/mac-king/",
-        "affiliate_url": "https://spotlight.vegas/shows/magic/mac-king/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/magic/mac-king/ref/vegassidekick",
+        "age_label": "5+"
       }
     },
     {
@@ -1576,9 +1625,9 @@
       "category": "adult",
       "status": "active",
       "our_price": 58,
-      "regular_price": null,
+      "regular_price": 87,
       "runtime_minutes": 90,
-      "age_summary": "All guests must be at least 18 years old to attend the show and at least 21 years old to consume alcohol.  A valid photo ID is required upon entry.  No children or minors permitted.",
+      "age_summary": "All guests must be at least 18 years old to attend the show ",
       "venue": "MAGIC MIKE LIVE Theater - SAHARA Las Vegas",
       "showroom": "",
       "schedule_summary": "Dates & times vary · check booking page",
@@ -1592,7 +1641,7 @@
       "spotlight": {
         "name": "Magic Mike Las Vegas",
         "our_price": 58,
-        "regular_price": null,
+        "regular_price": 87,
         "location": "MAGIC MIKE LIVE Theater - SAHARA Las Vegas",
         "runtime_minutes": 90,
         "age_rule": "All guests must be at least 18 years old to attend the show and at least 21 years old to consume alcohol.  A valid photo ID is required upon entry.  No children or minors permitted.",
@@ -1604,7 +1653,8 @@
           "Dates & Time Vary"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/adult/magic-mike-live/",
-        "affiliate_url": "https://spotlight.vegas/shows/adult/magic-mike-live/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/adult/magic-mike-live/ref/vegassidekick",
+        "age_label": "All guests must be at least 18 years old to attend the show "
       }
     },
     {
@@ -1613,9 +1663,9 @@
       "category": "comedy",
       "status": "active",
       "our_price": 28,
-      "regular_price": null,
+      "regular_price": 55,
       "runtime_minutes": 70,
-      "age_summary": "No age restrictions. Lap sitting is allowed for children ages 2 and under.",
+      "age_summary": "All ages",
       "venue": "Nathan Burton Theater - Showcase Mall",
       "showroom": "",
       "schedule_summary": "Mon, Wed, Fri, Sat, Sun · 7 PM",
@@ -1629,7 +1679,7 @@
       "spotlight": {
         "name": "Marc Savard Comedy Hypnosis",
         "our_price": 28,
-        "regular_price": null,
+        "regular_price": 55,
         "location": "Nathan Burton Theater - Showcase Mall",
         "runtime_minutes": 70,
         "age_rule": "No age restrictions. Lap sitting is allowed for children ages 2 and under.",
@@ -1661,7 +1711,8 @@
           "Sunday – 7:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/comedy/marc-savard-comedy-hypnosis/",
-        "affiliate_url": "https://spotlight.vegas/shows/comedy/marc-savard-comedy-hypnosis/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/comedy/marc-savard-comedy-hypnosis/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -1670,9 +1721,9 @@
       "category": "comedy",
       "status": "active",
       "our_price": 95,
-      "regular_price": null,
+      "regular_price": 109,
       "runtime_minutes": null,
-      "age_summary": "Recommended for ages 8+",
+      "age_summary": "8+",
       "venue": "Rio Hotel & Casino - 3700 W Flamingo Rd",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Thu, Fri, Sat · 7 PM; Sun · Times vary",
@@ -1686,7 +1737,7 @@
       "spotlight": {
         "name": "Marriage Can Be Murder - Dinner Show",
         "our_price": 95,
-        "regular_price": null,
+        "regular_price": 109,
         "location": "Rio Hotel & Casino - 3700 W Flamingo Rd",
         "runtime_minutes": null,
         "age_rule": "Recommended for ages 8+",
@@ -1720,7 +1771,8 @@
           "Sunday - 7:00pmpm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/comedy/marriage-can-be-murder/",
-        "affiliate_url": "https://spotlight.vegas/shows/comedy/marriage-can-be-murder/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/comedy/marriage-can-be-murder/ref/vegassidekick",
+        "age_label": "8+"
       }
     },
     {
@@ -1731,7 +1783,7 @@
       "our_price": 57,
       "regular_price": null,
       "runtime_minutes": 90,
-      "age_summary": "Must be 5 years of age or older. Everyone must have a ticket to enter the event. Guests 18 years of age and under must be accompanied by an adult.",
+      "age_summary": "5+",
       "venue": "Mat Franco Theater - The LINQ Hotel",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 7 PM",
@@ -1791,7 +1843,8 @@
           "Sunday – 7:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/mat-franco/",
-        "affiliate_url": "https://spotlight.vegas/shows/magic/mat-franco/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/magic/mat-franco/ref/vegassidekick",
+        "age_label": "5+"
       }
     },
     {
@@ -1800,9 +1853,9 @@
       "category": "cirque",
       "status": "active",
       "our_price": 115,
-      "regular_price": null,
+      "regular_price": 163,
       "runtime_minutes": 90,
-      "age_summary": "Everyone must be 5 years of age or older to attend the event.",
+      "age_summary": "5+",
       "venue": "Mandalay Bay Theatre – The Mandalay Bay Hotel",
       "showroom": "",
       "schedule_summary": "Mon, Thu, Fri, Sat, Sun · 7 PM & 9:30 PM",
@@ -1816,7 +1869,7 @@
       "spotlight": {
         "name": "Michael Jackson ONE by Cirque du Soleil",
         "our_price": 115,
-        "regular_price": null,
+        "regular_price": 163,
         "location": "Mandalay Bay Theatre – The Mandalay Bay Hotel",
         "runtime_minutes": 90,
         "age_rule": "Everyone must be 5 years of age or older to attend the event.",
@@ -1853,7 +1906,8 @@
           "Sunday - 7:00pm & 9:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/cirque-du-soleil/michael-jackson-one/",
-        "affiliate_url": "https://spotlight.vegas/shows/cirque-du-soleil/michael-jackson-one/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/cirque-du-soleil/michael-jackson-one/ref/vegassidekick",
+        "age_label": "5+"
       }
     },
     {
@@ -1864,7 +1918,7 @@
       "our_price": 82,
       "regular_price": null,
       "runtime_minutes": 75,
-      "age_summary": "Must be 12 years of age or older, and accompanied by an adult.",
+      "age_summary": "12+",
       "venue": "Azul Lounge - Fontainebleau Las Vegas",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Sun · 7 PM; Fri, Sat · 7 PM & 9:30 PM",
@@ -1912,7 +1966,8 @@
           "Sunday - 7:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/mind2mind/",
-        "affiliate_url": "https://spotlight.vegas/shows/magic/mind2mind/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/magic/mind2mind/ref/vegassidekick",
+        "age_label": "12+"
       }
     },
     {
@@ -1921,9 +1976,9 @@
       "category": "music",
       "status": "active",
       "our_price": 54,
-      "regular_price": null,
+      "regular_price": 90,
       "runtime_minutes": 70,
-      "age_summary": "5 + ages with an adult. All patrons require a ticket regardless of age.",
+      "age_summary": "5 + ages with an adult. All patrons require a ticket regardl",
       "venue": "Saxe Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 7 PM",
@@ -1937,7 +1992,7 @@
       "spotlight": {
         "name": "MJ Live At Planet Hollywood",
         "our_price": 54,
-        "regular_price": null,
+        "regular_price": 90,
         "location": "Saxe Theater - Miracle Mile Shops - Planet Hollywood Hotel",
         "runtime_minutes": 70,
         "age_rule": "5 + ages with an adult. All patrons require a ticket regardless of age.",
@@ -1977,7 +2032,8 @@
           "Sunday - 7:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/tribute/mj-live-at-planet-hollywood/",
-        "affiliate_url": "https://spotlight.vegas/shows/tribute/mj-live-at-planet-hollywood/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/tribute/mj-live-at-planet-hollywood/ref/vegassidekick",
+        "age_label": "5 + ages with an adult. All patrons require a ticket regardl"
       }
     },
     {
@@ -1986,9 +2042,9 @@
       "category": "music",
       "status": "active",
       "our_price": 65,
-      "regular_price": null,
+      "regular_price": 100,
       "runtime_minutes": 30,
-      "age_summary": "Must be 21 years of age or older.",
+      "age_summary": "21+",
       "venue": "Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",
       "showroom": "",
       "schedule_summary": "Sun · 11 AM",
@@ -2002,7 +2058,7 @@
       "spotlight": {
         "name": "Motown Brunch",
         "our_price": 65,
-        "regular_price": null,
+        "regular_price": 100,
         "location": "Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",
         "runtime_minutes": null,
         "age_rule": "Must be 21 years of age or older.",
@@ -2018,7 +2074,8 @@
           "Sunday - 11:00am"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/music/motown-brunch/",
-        "affiliate_url": "https://spotlight.vegas/shows/music/motown-brunch/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/music/motown-brunch/ref/vegassidekick",
+        "age_label": "21+"
       }
     },
     {
@@ -2029,7 +2086,7 @@
       "our_price": 84,
       "regular_price": null,
       "runtime_minutes": 90,
-      "age_summary": "No age restrictions",
+      "age_summary": "All ages",
       "venue": "Mystère Theatre – TI Hotel",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Fri, Sat, Sun · 6:30 PM & 9 PM",
@@ -2080,7 +2137,8 @@
           "Sunday - 6:30pm & 9:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/cirque-du-soleil/mystere/",
-        "affiliate_url": "https://spotlight.vegas/shows/cirque-du-soleil/mystere/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/cirque-du-soleil/mystere/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -2091,7 +2149,7 @@
       "our_price": 32,
       "regular_price": null,
       "runtime_minutes": 70,
-      "age_summary": "No age restrictions. Lap sitting is allowed for children ages 2 and under.",
+      "age_summary": "All ages",
       "venue": "Nathan Burton Theater - Showcase Mall",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 4 PM",
@@ -2148,7 +2206,8 @@
           "December 19th-31st - Times vary from 12:00pm, 2:00pm, 4:00pm & 6:00pm. Please double check times."
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/nathan-burton-comedy-magic/",
-        "affiliate_url": "https://spotlight.vegas/shows/magic/nathan-burton-comedy-magic/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/magic/nathan-burton-comedy-magic/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -2159,7 +2218,7 @@
       "our_price": 72,
       "regular_price": null,
       "runtime_minutes": 45,
-      "age_summary": "Guest must be 5 years of age or older to attend. Under eighteen 18 years of age must be accompanied by an adult.",
+      "age_summary": "5+",
       "venue": "MGM Grand Theater - MGM Grand",
       "showroom": "",
       "schedule_summary": "Days Vary - 4:00pm, 7:00pm, & 9:30pm",
@@ -2185,7 +2244,8 @@
           "Days Vary - 4:00pm, 7:00pm, & 9:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/now-you-see-me-live/",
-        "affiliate_url": "https://spotlight.vegas/shows/magic/now-you-see-me-live/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/magic/now-you-see-me-live/ref/vegassidekick",
+        "age_label": "5+"
       }
     },
     {
@@ -2194,9 +2254,9 @@
       "category": "cirque",
       "status": "active",
       "our_price": 156,
-      "regular_price": null,
+      "regular_price": 179,
       "runtime_minutes": 90,
-      "age_summary": "Everyone must be 5 years of age or older to attend the event.",
+      "age_summary": "5+",
       "venue": "O Theatre – Bellagio",
       "showroom": "",
       "schedule_summary": "Wed, Thu, Fri, Sat, Sun · 6:30 PM & 9 PM",
@@ -2210,7 +2270,7 @@
       "spotlight": {
         "name": "O by Cirque du Soleil",
         "our_price": 156,
-        "regular_price": null,
+        "regular_price": 179,
         "location": "O Theatre – Bellagio",
         "runtime_minutes": 90,
         "age_rule": "Everyone must be 5 years of age or older to attend the event.",
@@ -2247,7 +2307,8 @@
           "Sunday - 6:30pm & 9:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/cirque-du-soleil/o/",
-        "affiliate_url": "https://spotlight.vegas/shows/cirque-du-soleil/o/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/cirque-du-soleil/o/ref/vegassidekick",
+        "age_label": "5+"
       }
     },
     {
@@ -2256,9 +2317,9 @@
       "category": "magic",
       "status": "active",
       "our_price": 31,
-      "regular_price": null,
+      "regular_price": 79,
       "runtime_minutes": 75,
-      "age_summary": "Must be 5 years of age or older. Everyone must have a ticket to enter the event. Guests 18 years of age and under must be accompanied by an adult.",
+      "age_summary": "5+",
       "venue": "Laugh Factory at Horseshoe Las Vegas.",
       "showroom": "",
       "schedule_summary": "Mon, Wed, Fri, Sat · 4 PM",
@@ -2272,7 +2333,7 @@
       "spotlight": {
         "name": "Paranormal Las Vegas",
         "our_price": 31,
-        "regular_price": null,
+        "regular_price": 79,
         "location": "Laugh Factory at Horseshoe Las Vegas.",
         "runtime_minutes": 75,
         "age_rule": "Must be 5 years of age or older. Everyone must have a ticket to enter the event. Guests 18 years of age and under must be accompanied by an adult.",
@@ -2300,7 +2361,8 @@
           "Saturday - 4:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/paranormal/",
-        "affiliate_url": "https://spotlight.vegas/shows/magic/paranormal/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/magic/paranormal/ref/vegassidekick",
+        "age_label": "5+"
       }
     },
     {
@@ -2309,9 +2371,9 @@
       "category": "magic",
       "status": "active",
       "our_price": 66,
-      "regular_price": null,
+      "regular_price": 107,
       "runtime_minutes": 90,
-      "age_summary": "Must be 5 years of age or older.",
+      "age_summary": "5+",
       "venue": "Penn & Teller Theater - Rio Hotel",
       "showroom": "",
       "schedule_summary": "Thu, Fri, Sat, Sun · 8 PM",
@@ -2325,7 +2387,7 @@
       "spotlight": {
         "name": "Penn & Teller Las Vegas",
         "our_price": 66,
-        "regular_price": null,
+        "regular_price": 107,
         "location": "Penn & Teller Theater - Rio Hotel",
         "runtime_minutes": 90,
         "age_rule": "Must be 5 years of age or older.",
@@ -2353,7 +2415,8 @@
           "Sunday - 8:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/penn-and-teller/",
-        "affiliate_url": "https://spotlight.vegas/shows/magic/penn-and-teller/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/magic/penn-and-teller/ref/vegassidekick",
+        "age_label": "5+"
       }
     },
     {
@@ -2362,9 +2425,9 @@
       "category": "music",
       "status": "active",
       "our_price": 49,
-      "regular_price": null,
+      "regular_price": 115,
       "runtime_minutes": 75,
-      "age_summary": "No Age Restrictions",
+      "age_summary": "All ages",
       "venue": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 6:30 PM",
@@ -2378,7 +2441,7 @@
       "spotlight": {
         "name": "Piano Man Las Vegas",
         "our_price": 49,
-        "regular_price": null,
+        "regular_price": 115,
         "location": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
         "runtime_minutes": 75,
         "age_rule": "No Age Restrictions",
@@ -2418,7 +2481,8 @@
           "Sunday - 6:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/tribute/piano-man/",
-        "affiliate_url": "https://spotlight.vegas/shows/tribute/piano-man/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/tribute/piano-man/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -2427,9 +2491,9 @@
       "category": "magic",
       "status": "active",
       "our_price": 45,
-      "regular_price": null,
+      "regular_price": 70,
       "runtime_minutes": 75,
-      "age_summary": "Must be 8 years of age or older. Everyone must have a ticket to enter the event. Guests 18 years of age and under must be accompanied by an adult.",
+      "age_summary": "8+",
       "venue": "Flamingo Showroom – Flamingo",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Wed, Thu, Sat, Sun · 7 PM",
@@ -2443,7 +2507,7 @@
       "spotlight": {
         "name": "Piff The Magic Dragon",
         "our_price": 45,
-        "regular_price": null,
+        "regular_price": 70,
         "location": "Flamingo Showroom – Flamingo",
         "runtime_minutes": 75,
         "age_rule": "Must be 8 years of age or older. Everyone must have a ticket to enter the event. Guests 18 years of age and under must be accompanied by an adult.",
@@ -2479,7 +2543,8 @@
           "Sunday – 7:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/piff-the-magic-dragon/",
-        "affiliate_url": "https://spotlight.vegas/shows/magic/piff-the-magic-dragon/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/magic/piff-the-magic-dragon/ref/vegassidekick",
+        "age_label": "8+"
       }
     },
     {
@@ -2488,9 +2553,9 @@
       "category": "comedy",
       "status": "active",
       "our_price": 34,
-      "regular_price": null,
+      "regular_price": 40,
       "runtime_minutes": 60,
-      "age_summary": "No age restrictions. Lap sitting is allowed for children ages 2 and under.",
+      "age_summary": "All ages",
       "venue": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
       "schedule_summary": "Tue, Wed, Thu, Fri, Sat · 2:30 PM",
@@ -2504,7 +2569,7 @@
       "spotlight": {
         "name": "Popovich Comedy Pet Theater",
         "our_price": 34,
-        "regular_price": null,
+        "regular_price": 40,
         "location": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
         "runtime_minutes": 60,
         "age_rule": "No age restrictions. Lap sitting is allowed for children ages 2 and under.",
@@ -2536,7 +2601,8 @@
           "Saturday – 2:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/comedy/popovich-comedy-pet-theater/",
-        "affiliate_url": "https://spotlight.vegas/shows/comedy/popovich-comedy-pet-theater/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/comedy/popovich-comedy-pet-theater/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -2545,9 +2611,9 @@
       "category": "music",
       "status": "active",
       "our_price": 51,
-      "regular_price": null,
+      "regular_price": 95,
       "runtime_minutes": 75,
-      "age_summary": "Must be 16 years of age or older.",
+      "age_summary": "16+",
       "venue": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
       "schedule_summary": "Tue, Thu, Sat · 8:30 PM",
@@ -2561,7 +2627,7 @@
       "spotlight": {
         "name": "Purple Reign Las Vegas",
         "our_price": 51,
-        "regular_price": null,
+        "regular_price": 95,
         "location": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
         "runtime_minutes": 75,
         "age_rule": "Must be 16 years of age or older.",
@@ -2585,7 +2651,8 @@
           "Saturday - 8:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/tribute/purple-reign/",
-        "affiliate_url": "https://spotlight.vegas/shows/tribute/purple-reign/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/tribute/purple-reign/ref/vegassidekick",
+        "age_label": "16+"
       }
     },
     {
@@ -2594,9 +2661,9 @@
       "category": "music",
       "status": "active",
       "our_price": 40,
-      "regular_price": null,
+      "regular_price": 49,
       "runtime_minutes": 65,
-      "age_summary": "No Age Restriction",
+      "age_summary": "All ages",
       "venue": "Pegasus Showroom - Alexis Park Resort, 375 E Harmon Ave",
       "showroom": "",
       "schedule_summary": "Fri, Sat, Sun · 7 PM",
@@ -2610,7 +2677,7 @@
       "spotlight": {
         "name": "Queen Selena",
         "our_price": 40,
-        "regular_price": null,
+        "regular_price": 49,
         "location": "Pegasus Showroom - Alexis Park Resort, 375 E Harmon Ave",
         "runtime_minutes": 65,
         "age_rule": "No Age Restriction",
@@ -2634,7 +2701,8 @@
           "Sunday - 7:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/tribute/queen-selena/",
-        "affiliate_url": "https://spotlight.vegas/shows/tribute/queen-selena/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/tribute/queen-selena/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -2643,9 +2711,9 @@
       "category": "adult",
       "status": "active",
       "our_price": 54,
-      "regular_price": null,
+      "regular_price": 86,
       "runtime_minutes": 85,
-      "age_summary": "Must be 18 years of age or older",
+      "age_summary": "18+",
       "venue": "The STRAT Theater",
       "showroom": "",
       "schedule_summary": "Tue, Wed, Thu, Sun · 9 PM; Fri, Sat · 8 PM & 10 PM",
@@ -2659,7 +2727,7 @@
       "spotlight": {
         "name": "Rouge Las Vegas",
         "our_price": 54,
-        "regular_price": null,
+        "regular_price": 86,
         "location": "The STRAT Theater",
         "runtime_minutes": 85,
         "age_rule": "Must be 18 years of age or older",
@@ -2697,7 +2765,8 @@
           "Sunday – 9:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/adult/rouge/",
-        "affiliate_url": "https://spotlight.vegas/shows/adult/rouge/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/adult/rouge/ref/vegassidekick",
+        "age_label": "18+"
       }
     },
     {
@@ -2706,9 +2775,9 @@
       "category": "music",
       "status": "active",
       "our_price": 80,
-      "regular_price": null,
+      "regular_price": 102,
       "runtime_minutes": 90,
-      "age_summary": "No age restrictions",
+      "age_summary": "All ages",
       "venue": "Flamingo Showroom - Flamingo",
       "showroom": "",
       "schedule_summary": "Mon, Thu, Sat, Sun · 9:30 PM; Fri · 7 PM & 9:30 PM",
@@ -2722,7 +2791,7 @@
       "spotlight": {
         "name": "RuPaul's Drag Race LIVE!",
         "our_price": 80,
-        "regular_price": null,
+        "regular_price": 102,
         "location": "Flamingo Showroom - Flamingo",
         "runtime_minutes": 90,
         "age_rule": "No age restrictions",
@@ -2755,7 +2824,8 @@
           "Sunday - 9:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/production/rupauls-drag-race-live/",
-        "affiliate_url": "https://spotlight.vegas/shows/production/rupauls-drag-race-live/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/production/rupauls-drag-race-live/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -2764,7 +2834,7 @@
       "category": "magic",
       "status": "active",
       "our_price": 67,
-      "regular_price": null,
+      "regular_price": 102,
       "runtime_minutes": 90,
       "age_summary": "No children ages 4 and under",
       "venue": "Palazzo Theatre - Palazzo Hotel",
@@ -2780,7 +2850,7 @@
       "spotlight": {
         "name": "Shin Lim Las Vegas",
         "our_price": 67,
-        "regular_price": null,
+        "regular_price": 102,
         "location": "Palazzo Theatre - Palazzo Hotel",
         "runtime_minutes": 90,
         "age_rule": "No children ages 4 and under",
@@ -2813,7 +2883,8 @@
           "December 25th-31st shows- 4:30pm & 7:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/shin-lim/",
-        "affiliate_url": "https://spotlight.vegas/shows/magic/shin-lim/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/magic/shin-lim/ref/vegassidekick",
+        "age_label": "No children ages 4 and under"
       }
     },
     {
@@ -2822,9 +2893,9 @@
       "category": "music",
       "status": "active",
       "our_price": 40,
-      "regular_price": null,
+      "regular_price": 49,
       "runtime_minutes": 65,
-      "age_summary": "No age restriction",
+      "age_summary": "All ages",
       "venue": "Alexis Steakhouse - Alexis Park Resort Hotel",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Wed, Fri, Sat, Sun · 8 PM",
@@ -2838,7 +2909,7 @@
       "spotlight": {
         "name": "Sinatra Live! Starring Michael Sinatra",
         "our_price": 40,
-        "regular_price": null,
+        "regular_price": 49,
         "location": "Alexis Steakhouse - Alexis Park Resort Hotel",
         "runtime_minutes": 65,
         "age_rule": "No age restriction",
@@ -2874,7 +2945,8 @@
           "Sunday - 8:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/tribute/sinatra-live/",
-        "affiliate_url": "https://spotlight.vegas/shows/tribute/sinatra-live/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/tribute/sinatra-live/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -2883,7 +2955,7 @@
       "category": "music",
       "status": "active",
       "our_price": 40,
-      "regular_price": null,
+      "regular_price": 49,
       "runtime_minutes": 90,
       "age_summary": "All ages",
       "venue": "Pegasus Showroom - Alexis Park Resort, 375 E Harmon Ave",
@@ -2899,7 +2971,7 @@
       "spotlight": {
         "name": "Sir Elton",
         "our_price": 40,
-        "regular_price": null,
+        "regular_price": 49,
         "location": "Pegasus Showroom - Alexis Park Resort, 375 E Harmon Ave",
         "runtime_minutes": 90,
         "age_rule": "",
@@ -2919,7 +2991,8 @@
           "Tuesday - 7:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/tribute/sir-elton/",
-        "affiliate_url": "https://spotlight.vegas/shows/tribute/sir-elton/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/tribute/sir-elton/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -2928,9 +3001,9 @@
       "category": "comedy",
       "status": "active",
       "our_price": 58,
-      "regular_price": null,
+      "regular_price": 72,
       "runtime_minutes": 85,
-      "age_summary": "16 years and over. Guest under the 18 must be accompanied by an adult.",
+      "age_summary": "16 years and over. Guest under the 18 must be accompanied by",
       "venue": "The Underground Theater - MGM Grand",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Thu, Fri, Sat, Sun · 9:30 PM; Wed · 8 PM",
@@ -2944,7 +3017,7 @@
       "spotlight": {
         "name": "Steve Falcon Las Vegas",
         "our_price": 58,
-        "regular_price": null,
+        "regular_price": 72,
         "location": "The Underground Theater - MGM Grand",
         "runtime_minutes": 85,
         "age_rule": "16 years and over. Guest under the 18 must be accompanied by an adult.",
@@ -2984,7 +3057,8 @@
           "Saturday - 9:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/comedy/steve-falcons-comedy-hypnosis-hour/",
-        "affiliate_url": "https://spotlight.vegas/shows/comedy/steve-falcons-comedy-hypnosis-hour/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/comedy/steve-falcons-comedy-hypnosis-hour/ref/vegassidekick",
+        "age_label": "16 years and over. Guest under the 18 must be accompanied by"
       }
     },
     {
@@ -2993,9 +3067,9 @@
       "category": "comedy",
       "status": "active",
       "our_price": 57,
-      "regular_price": null,
+      "regular_price": 98,
       "runtime_minutes": 75,
-      "age_summary": "All Ages. 3 and older must purchase a ticket, 2 and under can be admitted as a lap seat.",
+      "age_summary": "All ages",
       "venue": "The Underground Theater - MGM Grand",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Thu, Fri, Sat, Sun · 7:30 PM",
@@ -3009,7 +3083,7 @@
       "spotlight": {
         "name": "Tape Face Las Vegas",
         "our_price": 57,
-        "regular_price": null,
+        "regular_price": 98,
         "location": "The Underground Theater - MGM Grand",
         "runtime_minutes": 75,
         "age_rule": "All Ages. 3 and older must purchase a ticket, 2 and under can be admitted as a lap seat.",
@@ -3045,7 +3119,8 @@
           "Sunday – 7:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/comedy/tape-face/",
-        "affiliate_url": "https://spotlight.vegas/shows/comedy/tape-face/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/comedy/tape-face/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -3054,9 +3129,9 @@
       "category": "music",
       "status": "active",
       "our_price": 36,
-      "regular_price": null,
+      "regular_price": 40,
       "runtime_minutes": 70,
-      "age_summary": "Must be 5 years of age or older. Everyone must have a ticket to enter the event. Guests 18 years of age and under must be accompanied by an adult.",
+      "age_summary": "5+",
       "venue": "Thunderland Theater- Excalibur",
       "showroom": "",
       "schedule_summary": "Monday 6:00pm · Tuesday 6:00pm · Wednesday 6:00pm",
@@ -3070,7 +3145,7 @@
       "spotlight": {
         "name": "The Australian Bee Gees Las Vegas",
         "our_price": 36,
-        "regular_price": null,
+        "regular_price": 40,
         "location": "Thunderland Theater- Excalibur",
         "runtime_minutes": 70,
         "age_rule": "Must be 5 years of age or older. Everyone must have a ticket to enter the event. Guests 18 years of age and under must be accompanied by an adult.",
@@ -3087,7 +3162,8 @@
           "Sunday 6:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/tribute/the-australian-bee-gees/",
-        "affiliate_url": "https://spotlight.vegas/shows/tribute/the-australian-bee-gees/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/tribute/the-australian-bee-gees/ref/vegassidekick",
+        "age_label": "5+"
       }
     },
     {
@@ -3096,7 +3172,7 @@
       "category": "magic",
       "status": "active",
       "our_price": 37,
-      "regular_price": null,
+      "regular_price": 47,
       "runtime_minutes": 75,
       "age_summary": "Recommended guest age is 5+ years of age or older.",
       "venue": "The Magicians Room",
@@ -3112,7 +3188,7 @@
       "spotlight": {
         "name": "The Conjurors - Secret Wonders",
         "our_price": 37,
-        "regular_price": null,
+        "regular_price": 47,
         "location": "The Magicians Room",
         "runtime_minutes": 75,
         "age_rule": "Recommended guest age is 5+ years of age or older.",
@@ -3144,7 +3220,8 @@
           "Sunday - 6:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/the-conjurors/",
-        "affiliate_url": "https://spotlight.vegas/shows/magic/the-conjurors/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/magic/the-conjurors/ref/vegassidekick",
+        "age_label": "Recommended guest age is 5+ years of age or older."
       }
     },
     {
@@ -3153,9 +3230,9 @@
       "category": "adult",
       "status": "active",
       "our_price": 35,
-      "regular_price": null,
+      "regular_price": 43,
       "runtime_minutes": 45,
-      "age_summary": "Must be 18 years of age or older.",
+      "age_summary": "18+",
       "venue": "Empire Strips Back Theater - Rio Hotel",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Wed, Thu · 8 PM; Fri, Sat · 7 PM & 9:30 PM; Sun · 7 PM",
@@ -3169,7 +3246,7 @@
       "spotlight": {
         "name": "The Empire Strips Back",
         "our_price": 35,
-        "regular_price": null,
+        "regular_price": 43,
         "location": "Empire Strips Back Theater - Rio Hotel",
         "runtime_minutes": null,
         "age_rule": "Must be 18 years of age or older.",
@@ -3211,7 +3288,8 @@
           "Sunday - 7:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/burlesque/empire-strips-back/",
-        "affiliate_url": "https://spotlight.vegas/shows/burlesque/empire-strips-back/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/burlesque/empire-strips-back/ref/vegassidekick",
+        "age_label": "18+"
       }
     },
     {
@@ -3268,7 +3346,8 @@
           "Saturday - 2:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/music/the-king-comes-home/",
-        "affiliate_url": "https://spotlight.vegas/shows/music/the-king-comes-home/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/music/the-king-comes-home/ref/vegassidekick",
+        "age_label": "5+"
       }
     },
     {
@@ -3277,9 +3356,9 @@
       "category": "magic",
       "status": "active",
       "our_price": 40,
-      "regular_price": null,
+      "regular_price": 90,
       "runtime_minutes": 75,
-      "age_summary": "All ages are welcome. Recommended for ages 16 and up.",
+      "age_summary": "All ages",
       "venue": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Thu, Fri, Sat, Sun · 7:30 PM",
@@ -3293,7 +3372,7 @@
       "spotlight": {
         "name": "The Mentalist",
         "our_price": 40,
-        "regular_price": null,
+        "regular_price": 90,
         "location": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
         "runtime_minutes": 75,
         "age_rule": "All ages are welcome. Recommended for ages 16 and up.",
@@ -3329,7 +3408,8 @@
           "Sunday - 7:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/the-mentalist/",
-        "affiliate_url": "https://spotlight.vegas/shows/magic/the-mentalist/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/magic/the-mentalist/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -3340,7 +3420,7 @@
       "our_price": 92,
       "regular_price": null,
       "runtime_minutes": 75,
-      "age_summary": "All guests must be 12 years of age or older.",
+      "age_summary": "12+",
       "venue": "Copa Room - Tuscany Suites & Casino",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Wed, Thu, Fri · 7:30 PM",
@@ -3386,7 +3466,8 @@
           "Friday - 7:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/tribute/the-rat-pack-is-back/",
-        "affiliate_url": "https://spotlight.vegas/shows/tribute/the-rat-pack-is-back/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/tribute/the-rat-pack-is-back/ref/vegassidekick",
+        "age_label": "12+"
       }
     },
     {
@@ -3397,7 +3478,7 @@
       "our_price": 123,
       "regular_price": null,
       "runtime_minutes": 75,
-      "age_summary": "The Wizard of Oz at Sphere is intended for guests aged 6+. All guests, regardless of age, require a ticket.",
+      "age_summary": "The Wizard of Oz at Sphere is intended for guests aged 6+. A",
       "venue": "Sphere - 255 Sands Ave",
       "showroom": "",
       "schedule_summary": "Dates & times vary · check booking page",
@@ -3425,7 +3506,8 @@
           "Event content, dates, times, prices, and availability subject to change. Tickets are non-refundable."
         ],
         "spotlight_url": "https://spotlight.vegas/shows/production/the-wizard-of-oz-at-sphere/",
-        "affiliate_url": "https://spotlight.vegas/shows/production/the-wizard-of-oz-at-sphere/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/production/the-wizard-of-oz-at-sphere/ref/vegassidekick",
+        "age_label": "The Wizard of Oz at Sphere is intended for guests aged 6+. A"
       }
     },
     {
@@ -3434,9 +3516,9 @@
       "category": "adult",
       "status": "active",
       "our_price": 70,
-      "regular_price": null,
+      "regular_price": 99,
       "runtime_minutes": 70,
-      "age_summary": "All guests must be 18 years of age or older. No children allowed.",
+      "age_summary": "18+",
       "venue": "Thunderland Theater – Excalibur Hotel",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 8 PM",
@@ -3450,7 +3532,7 @@
       "spotlight": {
         "name": "Thunder From Down Under",
         "our_price": 70,
-        "regular_price": null,
+        "regular_price": 99,
         "location": "Thunderland Theater – Excalibur Hotel",
         "runtime_minutes": 70,
         "age_rule": "All guests must be 18 years of age or older. No children allowed.",
@@ -3490,7 +3572,8 @@
           "Sunday - 8:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/adult/thunder-from-down-under/",
-        "affiliate_url": "https://spotlight.vegas/shows/adult/thunder-from-down-under/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/adult/thunder-from-down-under/ref/vegassidekick",
+        "age_label": "18+"
       }
     },
     {
@@ -3499,9 +3582,9 @@
       "category": "family",
       "status": "active",
       "our_price": 74,
-      "regular_price": null,
+      "regular_price": 88,
       "runtime_minutes": 75,
-      "age_summary": "No age restrictions. Children 3 years and under may attend without needing a ticket and must sit on an adult’s lap and share the adult’s meal. Guests 4 years of age and older must have their own ticket. Guests under 16 must be accompanied by an adult.",
+      "age_summary": "All ages",
       "venue": "King Arthur’s Arena – Excalibur Hotel",
       "showroom": "",
       "schedule_summary": "Mon, Thu, Fri, Sat, Sun · 6 PM & 8:30 PM",
@@ -3515,7 +3598,7 @@
       "spotlight": {
         "name": "Tournament of Kings",
         "our_price": 74,
-        "regular_price": null,
+        "regular_price": 88,
         "location": "King Arthur’s Arena – Excalibur Hotel",
         "runtime_minutes": 75,
         "age_rule": "No age restrictions. Children 3 years and under may attend without needing a ticket and must sit on an adult’s lap and share the adult’s meal. Guests 4 years of age and older must have their own ticket. Guests under 16 must be accompanied by an adult.",
@@ -3552,7 +3635,8 @@
           "Sunday - 6:00pm & 8:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/production/tournament-of-kings/",
-        "affiliate_url": "https://spotlight.vegas/shows/production/tournament-of-kings/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/production/tournament-of-kings/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -3561,9 +3645,9 @@
       "category": "family",
       "status": "active",
       "our_price": 46,
-      "regular_price": null,
+      "regular_price": 101,
       "runtime_minutes": 75,
-      "age_summary": "No age restrictions. Lap sitting is allowed for children ages 2 and under.",
+      "age_summary": "All ages",
       "venue": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 7 PM",
@@ -3577,7 +3661,7 @@
       "spotlight": {
         "name": "V - The Ultimate Variety Show",
         "our_price": 46,
-        "regular_price": null,
+        "regular_price": 101,
         "location": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
         "runtime_minutes": 75,
         "age_rule": "No age restrictions. Lap sitting is allowed for children ages 2 and under.",
@@ -3618,7 +3702,8 @@
           "*5:30pm on select dates"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/production/v-the-ultimate-variety-show/",
-        "affiliate_url": "https://spotlight.vegas/shows/production/v-the-ultimate-variety-show/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/production/v-the-ultimate-variety-show/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -3627,9 +3712,9 @@
       "category": "music",
       "status": "active",
       "our_price": 63,
-      "regular_price": null,
+      "regular_price": 101,
       "runtime_minutes": 75,
-      "age_summary": "No age restrictions.",
+      "age_summary": "All ages",
       "venue": "Saxe Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat · 7 PM",
@@ -3643,7 +3728,7 @@
       "spotlight": {
         "name": "Vegas! The Show",
         "our_price": 63,
-        "regular_price": null,
+        "regular_price": 101,
         "location": "Saxe Theater - Miracle Mile Shops - Planet Hollywood Hotel",
         "runtime_minutes": 75,
         "age_rule": "No age restrictions.",
@@ -3680,7 +3765,8 @@
           "On September 21, 2026, show will move to 5:30pm."
         ],
         "spotlight_url": "https://spotlight.vegas/shows/production/vegas-the-show/",
-        "affiliate_url": "https://spotlight.vegas/shows/production/vegas-the-show/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/production/vegas-the-show/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -3689,9 +3775,9 @@
       "category": "music",
       "status": "active",
       "our_price": 40,
-      "regular_price": null,
+      "regular_price": 100,
       "runtime_minutes": 80,
-      "age_summary": "Recommended for ages 5+. But All Ages are Welcome.",
+      "age_summary": "All ages",
       "venue": "The Siren Poolside - Alexis Park Resort, 375 E Harmon Ave",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Sun · 6:30 PM",
@@ -3705,7 +3791,7 @@
       "spotlight": {
         "name": "Wastin' Away Las Vegas",
         "our_price": 40,
-        "regular_price": null,
+        "regular_price": 100,
         "location": "The Siren Poolside - Alexis Park Resort, 375 E Harmon Ave",
         "runtime_minutes": 80,
         "age_rule": "Recommended for ages 5+. But All Ages are Welcome.",
@@ -3729,7 +3815,8 @@
           "Tuesday - 6:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/music/wastin-away/",
-        "affiliate_url": "https://spotlight.vegas/shows/music/wastin-away/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/music/wastin-away/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -3738,9 +3825,9 @@
       "category": "music",
       "status": "active",
       "our_price": 84,
-      "regular_price": null,
+      "regular_price": 121,
       "runtime_minutes": 80,
-      "age_summary": "Everyone must be 5 years of age or older to attend the event.",
+      "age_summary": "5+",
       "venue": "Bugsys Cabaret - Flamingo Hotel",
       "showroom": "",
       "schedule_summary": "Mon, Wed, Sat · 7 PM",
@@ -3754,7 +3841,7 @@
       "spotlight": {
         "name": "Wayne Newton Las Vegas",
         "our_price": 84,
-        "regular_price": null,
+        "regular_price": 121,
         "location": "Bugsys Cabaret - Flamingo Hotel",
         "runtime_minutes": 80,
         "age_rule": "Everyone must be 5 years of age or older to attend the event.",
@@ -3778,7 +3865,8 @@
           "Saturday - 7:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/music/wayne-newton/",
-        "affiliate_url": "https://spotlight.vegas/shows/music/wayne-newton/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/music/wayne-newton/ref/vegassidekick",
+        "age_label": "5+"
       }
     },
     {
@@ -3787,9 +3875,9 @@
       "category": "spectaculars",
       "status": "active",
       "our_price": 51,
-      "regular_price": null,
+      "regular_price": 58,
       "runtime_minutes": 90,
-      "age_summary": "Appropriate for all ages. Recommended for ages 3 and up. All patrons must have a ticket, regardless of age. Infants under 1 year old can be held on the lap of a paying ticket holder.",
+      "age_summary": "All ages",
       "venue": "Rio Showroom - Rio Hotel",
       "showroom": "",
       "schedule_summary": "Dates & times vary · check booking page",
@@ -3803,7 +3891,7 @@
       "spotlight": {
         "name": "WOW - The Vegas Spectacular",
         "our_price": 51,
-        "regular_price": null,
+        "regular_price": 58,
         "location": "Rio Showroom - Rio Hotel",
         "runtime_minutes": 90,
         "age_rule": "Appropriate for all ages. Recommended for ages 3 and up. All patrons must have a ticket, regardless of age. Infants under 1 year old can be held on the lap of a paying ticket holder.",
@@ -3821,7 +3909,8 @@
           "Sunday"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/production/wow-the-vegas-spectacular/",
-        "affiliate_url": "https://spotlight.vegas/shows/production/wow-the-vegas-spectacular/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/production/wow-the-vegas-spectacular/ref/vegassidekick",
+        "age_label": "All ages"
       }
     },
     {
@@ -3830,9 +3919,9 @@
       "category": "adult",
       "status": "active",
       "our_price": 82,
-      "regular_price": null,
+      "regular_price": 90,
       "runtime_minutes": 75,
-      "age_summary": "All guests must be 18 years of age or older. No children allowed.",
+      "age_summary": "18+",
       "venue": "Bugsy's Cabaret - Flamingo Hotel",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Wed, Thu · 10 PM; Fri, Sat · 7 PM & 10 PM",
@@ -3846,7 +3935,7 @@
       "spotlight": {
         "name": "X Burlesque",
         "our_price": 82,
-        "regular_price": null,
+        "regular_price": 90,
         "location": "Bugsy's Cabaret - Flamingo Hotel",
         "runtime_minutes": 75,
         "age_rule": "All guests must be 18 years of age or older. No children allowed.",
@@ -3884,7 +3973,8 @@
           "Saturday - 7:00pm & 10:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/adult/x-burlesque/",
-        "affiliate_url": "https://spotlight.vegas/shows/adult/x-burlesque/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/adult/x-burlesque/ref/vegassidekick",
+        "age_label": "18+"
       }
     },
     {
@@ -3893,9 +3983,9 @@
       "category": "adult",
       "status": "active",
       "our_price": 65,
-      "regular_price": null,
+      "regular_price": 68,
       "runtime_minutes": 90,
-      "age_summary": "All guests must be 18 years of age or older. Everyone must have a ticket to enter the event. No children allowed.",
+      "age_summary": "18+",
       "venue": "Harrah’s Cabaret – Harrah’s",
       "showroom": "",
       "schedule_summary": "Mon, Thu, Fri, Sat, Sun · 10 PM",
@@ -3909,7 +3999,7 @@
       "spotlight": {
         "name": "X Country Las Vegas",
         "our_price": 65,
-        "regular_price": null,
+        "regular_price": 68,
         "location": "Harrah’s Cabaret – Harrah’s",
         "runtime_minutes": 90,
         "age_rule": "All guests must be 18 years of age or older. Everyone must have a ticket to enter the event. No children allowed.",
@@ -3941,7 +4031,8 @@
           "Sunday – 10:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/adult/x-country/",
-        "affiliate_url": "https://spotlight.vegas/shows/adult/x-country/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/adult/x-country/ref/vegassidekick",
+        "age_label": "18+"
       }
     },
     {
@@ -3950,9 +4041,9 @@
       "category": "adult",
       "status": "active",
       "our_price": 57,
-      "regular_price": null,
+      "regular_price": 68,
       "runtime_minutes": 70,
-      "age_summary": "Must be 18 years of age or older. Everyone must have a ticket to enter the event.",
+      "age_summary": "18+",
       "venue": "X Rocks Theatre - Horseshoe Las Vegas",
       "showroom": "",
       "schedule_summary": "Mon, Thu, Sat · 9:30 PM",
@@ -3966,7 +4057,7 @@
       "spotlight": {
         "name": "X Rocks",
         "our_price": 57,
-        "regular_price": null,
+        "regular_price": 68,
         "location": "X Rocks Theatre - Horseshoe Las Vegas",
         "runtime_minutes": 70,
         "age_rule": "Must be 18 years of age or older. Everyone must have a ticket to enter the event.",
@@ -3990,7 +4081,8 @@
           "Saturday - 9:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/adult/x-rocks/",
-        "affiliate_url": "https://spotlight.vegas/shows/adult/x-rocks/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/adult/x-rocks/ref/vegassidekick",
+        "age_label": "18+"
       }
     },
     {
@@ -3999,9 +4091,9 @@
       "category": "adult",
       "status": "active",
       "our_price": 51,
-      "regular_price": null,
+      "regular_price": 110,
       "runtime_minutes": 75,
-      "age_summary": "Must be 16 years of age or older.",
+      "age_summary": "16+",
       "venue": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat · 8 PM",
@@ -4015,7 +4107,7 @@
       "spotlight": {
         "name": "Zombie Burlesque",
         "our_price": 51,
-        "regular_price": null,
+        "regular_price": 110,
         "location": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
         "runtime_minutes": 75,
         "age_rule": "Must be 16 years of age or older.",
@@ -4051,7 +4143,8 @@
           "Saturday - 8:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/adult/zombie-burlesque/",
-        "affiliate_url": "https://spotlight.vegas/shows/adult/zombie-burlesque/ref/vegassidekick"
+        "affiliate_url": "https://spotlight.vegas/shows/adult/zombie-burlesque/ref/vegassidekick",
+        "age_label": "16+"
       }
     },
     {
