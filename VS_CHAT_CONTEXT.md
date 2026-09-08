@@ -1,414 +1,774 @@
-# VS_CHAT_CONTEXT.md — Vegas Sidekick Internal Briefing
+# VS_CHAT_CONTEXT.md — Vegas Sidekick Living Project Context
 
-**As of:** June 9, 2026  
-**Purpose:** Give an AI assistant with no codebase access a complete, accurate picture of the project state.
+**As of:** September 8, 2026  
+**Purpose:** Living source of project context, decisions, operating rules, architecture, and lessons learned for ChatGPT/Codex or any future AI collaborator working on Vegas Sidekick.
 
----
-
-## What This Site Is
-
-Vegas Sidekick (`vegassidekick.com`) is a static affiliate site for Las Vegas show ticket discovery. Revenue model: affiliate commissions via Spotlight.Vegas ticket links. No e-commerce, no user accounts, no backend. The founder is **Kris Kidd**, who lives in Las Vegas.
-
-**Taglines:** "Biggest Shows. Real Discounts. No BS." (primary) · "Vegas Without The Trauma." (alternate)  
-**Mascot:** Spike (a character with multiple image assets: spike-wink.png, spike-point.png, etc.)  
-**Trust brand:** "Sidekick Standards" — no fake timers, no fake reviews, clear ticket details, no email walls.  
-**Email list brand:** "Spike's Insider List" (Brevo, List ID: 2, ~4,200 subscribers per copy)
+> This file is not the coding-agent instruction file. `AGENTS.md` should eventually contain concise execution rules for coding agents. This file records what Vegas Sidekick is, how it currently works, what has already been decided, and the context needed to avoid repeating old mistakes.
 
 ---
 
-## Tech Stack
+## 1. What Vegas Sidekick Is
 
-| Layer | What's Used |
-|---|---|
-| Hosting | Cloudflare Pages (static), auto-deploys on push to `main` |
-| Serverless | Cloudflare Workers (`functions/api/auth.js`) |
-| CMS | Decap CMS v3 at `/admin/` (GitHub-backed) |
-| Search | Algolia InstantSearch v4, index `vegas_shows` |
-| Email | Brevo via Cloudflare Worker endpoint |
-| Auth | GitHub OAuth (CMS admin only) |
-| Analytics | GA4 (`G-BM6QGF7B4Y`) — behavioral; Cloudflare Pages — raw traffic (dashboard, no code) |
-| Affiliate | Spotlight.Vegas (`ref/vegassidekick`) |
-| Image CDN | Cloudinary (`dvhunpinz`) — OG/social images only |
-| Fonts | Google Fonts: Bebas Neue, Barlow, Barlow Condensed, IBM Plex Mono |
+Vegas Sidekick (`vegassidekick.com`) is a Las Vegas show-discovery and ticket-affiliate site. The business helps visitors choose Vegas shows, compare options, understand tradeoffs, and hand off ticket purchases through Spotlight.Vegas affiliate links.
 
-**No npm, no build step, no bundler.** All third-party libs load from CDN. CSS lives inline in `<style>` blocks in each HTML file — no shared stylesheet.
+Founder / Chief Experience Officer: **Kris Kidd**.
 
----
+Mascot: **Spike**, a saguaro cactus wearing gold aviators.
 
-## Deploy & Push Workflow
+The site should feel like advice from a knowledgeable Vegas local who works in tickets, not a generic tourism portal or ticket marketplace.
 
-- **Deploy:** Push to `main` → Cloudflare Pages auto-deploys. No build commands.
-- **Git push is blocked** in the remote Claude Code environment (proxy returns 403). File pushes go through the GitHub MCP API instead — see CLAUDE.md for the Python snippet.
-- After every MCP push, sync local: `git fetch origin main && git reset --hard origin/main`
-- Cloudflare Worker deploys separately via Cloudflare dashboard (apart from the Cloudflare Pages static deploy).
+### Revenue model
+
+Primary revenue comes from affiliate commissions on Spotlight.Vegas ticket links using the Vegas Sidekick referral path:
+
+`/ref/vegassidekick`
+
+Never invent, guess, or fabricate an affiliate URL. If the correct ticket URL is not known or verifiable, flag it.
 
 ---
 
-## Repository Structure (Complete)
+## 2. Brand Voice — Non-Negotiable
 
-```
-vegas-sidekick/
-├── admin/
-│   ├── index.html              # Decap CMS UI
-│   └── config.yml              # CMS field definitions (News collection)
-├── components/
-│   ├── header.js               # Site nav — injected into #vs-header
-│   └── footer.js               # Email signup + footer links — injected into #vs-footer
-├── functions/
-│   └── api/
-│       └── auth.js             # GitHub OAuth handler (Cloudflare Worker)
-├── images/                     # All static images (logos, heroes, mascot, news/)
-│   └── news/                   # CMS-managed article images
-├── shows/
-│   ├── index.html              # "All Shows" listing page
-│   ├── adult/                  # 4 show pages
-│   ├── cirque/                 # 5 show pages
-│   ├── comedy/                 # 10 show pages
-│   ├── family/                 # 3 show pages
-│   ├── magic/                  # 9 show pages
-│   ├── music/                  # 4 show pages
-│   └── spectaculars/           # 3 show pages
-├── news/
-│   ├── index.html              # Vegas Dispatch archive/grid
-│   └── {slug}/index.html       # 15 individual articles
-├── search/
-│   └── index.html              # Algolia search UI
-├── about/
-│   ├── index.html              # About Vegas Sidekick
-│   └── kris-kidd/index.html    # Kris Kidd bio page
-├── contact/
-│   └── index.html
-├── privacy/
-│   └── index.html
-├── terms/
-│   └── index.html
-├── affiliate-disclosure/
-│   └── index.html
-├── mom/                        # Password-protected surprise page
-├── preview/                    # Password-protected redesign preview
-├── index.html                  # Homepage
-├── 404.html
-├── sitemap.xml
-├── _redirects                  # Cloudflare Pages routing (5 rules)
-├── CLAUDE.md                   # Full developer guide (read this first)
-└── SHOW-BUILDER-PROMPT.md      # Show page creation guide + canonical template reference
-```
+The governing brand reference is the **Vegas Sidekick Brand Bible**, especially Section 3 Voice & Tone and its Do/Don't guidance.
+
+### One-Line Test
+
+Before shipping customer-facing copy, ask:
+
+> **Would a Vegas local who works in tickets actually say this to a friend?**
+
+### Voice characteristics
+
+- direct
+- useful
+- warm
+- practical
+- numbers-first when relevant
+- dry humor when natural
+- comfortable stating downsides
+- never PR-sounding
+- never generic travel fluff
+
+### Never invent firsthand experience
+
+Do not write that Kris attended, saw, sat in, tested, experienced, or personally witnessed something unless Kris explicitly said so.
+
+### Avoid unsupported urgency and trust theater
+
+Do not use claims such as:
+
+- “Selling fast”
+- “Prices may increase”
+- “Book early” unless tied to a real, verified reason
+- “No hidden fees”
+- “Zero hidden fees”
+- “Secure booking”
+- “Instant delivery”
+
+Do not add fake countdowns, fake scarcity, fake review signals, or generic conversion-pressure copy.
+
+### Freshness wording
+
+Prefer concise freshness such as:
+
+**Last updated September 2026**
+
+Avoid repetitive customer-facing “price checked on...” language unless the date itself adds value.
 
 ---
 
-## Design System
+## 3. Repository and Deployment
 
-### Colors (CSS Custom Properties)
-```css
---navy:   #0A1628   /* Primary background */
---blue:   #1A6BFF   /* Secondary accent, links */
---orange: #FF6B2B   /* Primary CTA buttons */
---white:  #FFFFFF
-```
-Each show page also defines `--show` and `--show-lt` for per-show accent colors (e.g., crimson for V, gold for Jabbawockeez).
+GitHub repository:
 
-### Typography
-- Headlines: **Bebas Neue**
-- Body: **Barlow** (400/600/700)
-- Labels/callouts: **Barlow Condensed** (700/800)
-- Mono/meta: **IBM Plex Mono** (show pages only)
+`k2oddworks/vegas-sidekick`
 
-### Breakpoints
-- Desktop → Tablet: `900px`
-- Tablet → Mobile: `480px`
+Default branch:
 
-### Visual Language
-- Dark navy theme throughout
-- Orange for primary CTAs, Blue for secondary
-- Starfield background (CSS radial-gradient)
-- Glassmorphism cards (`backdrop-filter: blur`)
-- Animations: `fadeUp`, `fadeIn`, `float`, `ctaPulse`, `shimmer` (on CTA buttons)
-- `@media (prefers-reduced-motion: reduce)` disables Ken Burns + ticker animations
+`main`
+
+The site is a largely static site deployed through Cloudflare.
+
+### Critical deployment lesson
+
+There is/has been a GitHub Actions workflow named similarly to **Deploy to Cloudflare Workers** that can report failure while the actual site changes still deploy successfully through the site's normal Cloudflare path.
+
+**Never conclude that production is not live solely because that GitHub Actions workflow failed.**
+
+When reporting work:
+
+- “merged to `main`” is safe when verified
+- “going through the normal deployment path” is safe
+- only claim something is actually live after independently verifying production when that verification matters
 
 ---
 
-## Components (Reusable)
+## 4. Current Show-Page System
 
-### `components/header.js`
-Injected into `<div id="vs-header"></div>`. Includes site nav, logo, mobile hamburger drawer. Requires the placeholder div at top of `<body>` and the script at bottom of `<body>`.
+The current canonical show-page system uses:
 
-**Nav links (desktop):** Comedy · Magic · Cirque · Music · Spectaculars · Family · Dispatch · All Shows  
-**Nav links (mobile-only):** Adult Shows  
-**Global function:** `vsToggleMenu()`  
-**Also injects:** Google Analytics GA4 tag, July 4th weekend countdown banner (conditional, date-aware)
+- `vegas-the-show-TEMPLATE.html` as the canonical structural starting point
+- `absinthe-BENCHMARK.html` as a feature / interaction benchmark
+- `scripts/canonicalize-show-pages.py`
+- `assets/show-canonical.css`
+- `assets/show-canonical.js`
 
-### `components/footer.js`
-Injected into `<div id="vs-footer"></div>`. Email signup form + link columns + Sidekick Standards trust strip.
+Do not redesign show pages from scratch when adding or rebuilding a show. Reuse the established system.
 
-**Email integration:** POSTs to `https://brevo-subscribe.vegassidekickcom.workers.dev`  
-**Brevo List ID:** `2`  
-**Global function:** `vsSubmitEmail()`  
-**Also fires:** Post-affiliate-click email overlay (triggered when user clicks any `spotlight.vegas` link)
+### Standard customer-facing section flow
 
-**Footer link columns:**
-- *Shows:* Comedy · Magic · Cirque & Acrobatic · Music & Variety · Spectaculars · Family · Adult · Search All
-- *Vegas Sidekick:* Dispatch · About · About Kris Kidd · Contact · Affiliate Disclosure · Privacy · Terms
+Current canonical show pages generally use:
 
----
+1. Hero
+2. Four-part quick facts
+3. Ticker
+4. Sticky section navigation
+5. Quick Take
+6. Photos
+7. Interactive seat guide where useful
+8. Good Fit / Think Twice
+9. Seven-day schedule grid or appropriate variable-schedule treatment
+10. FAQ
+11. Related shows
+12. Next useful click
+13. Author / freshness / disclosure
+14. Final CTA
+15. Mobile sticky ticket bar
 
-## Show Pages — Full Inventory (38 Total)
+### Structured data
 
-### Template & Standard
+For active shows:
 
-**Canonical template:** `shows/family/v-the-ultimate-variety-show/index.html` — this is the reference for all new show pages. Copy it, don't use older pages.
+- use appropriate `Event` / `EventSeries` schema
+- `offers.price` must be a **bare number**, never `$62`
+- do not fabricate schedules that cannot be safely represented
+- closed archives should not carry active Event/EventSeries schema
 
-**Affiliate link format:** `https://spotlight.vegas/shows/{spotlight-category}/{spotlight-slug}/ref/vegassidekick`
-
-> Note: The Spotlight category in the URL often differs from the VS site category. See mapping below.
-
----
-
-### COMEDY (10 shows)
-
-| VS Slug | Spotlight URL |
-|---|---|
-| `comedy/carrot-top` | `comedy/carrot-top` |
-| `comedy/brad-garretts-comedy-club` | `comedy/brad-garretts-comedy-club` |
-| `comedy/comedy-cellar` | `comedy/comedy-cellar` |
-| `comedy/la-comedy-club` | `comedy/la-comedy-club` |
-| `comedy/las-vegas-live-comedy-club` | `comedy/las-vegas-live-comedy-club` |
-| `comedy/laugh-factory` | `comedy/laugh-factory` |
-| `comedy/marc-savard-comedy-hypnosis` | `comedy/marc-savard-comedy-hypnosis` |
-| `comedy/marriage-can-be-murder` | `comedy/marriage-can-be-murder` |
-| `comedy/popovich-comedy-pet-theater` | `comedy/popovich-comedy-pet-theater` |
-| `comedy/tape-face` | `comedy/tape-face` |
-
-### MAGIC (9 shows)
-
-| VS Slug | Spotlight URL |
-|---|---|
-| `magic/allstars-of-magic` | `magic/allstars-of-magic` |
-| `magic/colin-cloud` | `magic/colin-cloud` |
-| `magic/criss-angel` | `magic/criss-angel` |
-| `magic/mac-king` | `magic/mac-king` |
-| `magic/mat-franco` | `magic/mat-franco` |
-| `magic/nathan-burton-comedy-magic` | `magic/nathan-burton-comedy-magic` |
-| `magic/penn-and-teller` | `magic/penn-and-teller` |
-| `magic/shin-lim` | `magic/shin-lim` |
-| `magic/the-mentalist` | `magic/the-mentalist` |
-
-### CIRQUE (5 shows) — Spotlight category: `cirque-du-soleil`
-
-| VS Slug | Spotlight URL |
-|---|---|
-| `cirque/ka` | `cirque-du-soleil/ka` |
-| `cirque/mad-apple` | `cirque-du-soleil/mad-apple` |
-| `cirque/michael-jackson-one` | `cirque-du-soleil/michael-jackson-one` |
-| `cirque/mystere` | `cirque-du-soleil/mystere` |
-| `cirque/o` | `cirque-du-soleil/o` |
-
-### MUSIC (4 shows) — Mixed Spotlight categories
-
-| VS Slug | Spotlight URL |
-|---|---|
-| `music/blue-man-group` | `production/blue-man-group` |
-| `music/jabbawockeez` | `production/jabbawockeez` |
-| `music/rupauls-drag-race-live` | `production/rupauls-drag-race-live` |
-| `music/vegas-the-show` | `music/vegas-the-show` |
-
-### FAMILY (3 shows)
-
-| VS Slug | Spotlight URL |
-|---|---|
-| `family/battlebots-destruct-a-thon` | `production/battlebots` |
-| `family/tournament-of-kings` | `production/tournament-of-kings` |
-| `family/v-the-ultimate-variety-show` | `family/v-the-ultimate-variety-show` |
-
-### ADULT (4 shows)
-
-| VS Slug | Spotlight URL |
-|---|---|
-| `adult/absinthe` | `production/absinthe` |
-| `adult/magic-mike-live` | `adult/magic-mike-live` |
-| `adult/rouge` | `adult/rouge` |
-| `adult/thunder-from-down-under` | `adult/thunder-from-down-under` |
-
-### SPECTACULARS (3 shows)
-
-| VS Slug | Spotlight URL |
-|---|---|
-| `spectaculars/awakening` | `production/awakening` |
-| `spectaculars/wizard-of-oz` | `production/the-wizard-of-oz-at-sphere` |
-| `spectaculars/wow-the-vegas-spectacular` | `production/wow-the-vegas-spectacular` |
+Use the repo’s schema audit before shipping changes that affect show facts.
 
 ---
 
-## Show Page Structure (Canonical "Sidekick Build" Template)
+## 5. Ticket CTA Design Decision
 
-Every show page built on the canonical template includes these sections in order:
+As of September 8, 2026, the sitewide **primary ticket-purchase CTA color is Warm Amber**.
 
-1. **Dual scroll progress bars** — one fixed top, one in sidebar
-2. **Hero section** — breadcrumb + Ken Burns image slider (3 images, 16:9, 5s auto-advance) + venue/title block + price strip
-3. **Scrolling ticker** — show-color background, repeating facts/quotes
-4. **Stats strip** — count-up animation via IntersectionObserver + requestAnimationFrame
-5. **Two-column layout:** `main.main-content` (left) + `aside.sidebar` (right, sticky, navy bg)
-6. **Mobile sticky buy bar** — fixed bottom, hidden on desktop
-7. Main content sections:
-   - `.seen-widget` — "Have you seen this show?" yes/no engagement widget
-   - `.trust-grid` — 4 trust cards (secure booking, instant delivery, no fees, no account)
-   - About section with `.spike-callout` (show-color left-border callout, Spike's take)
-   - `.email-signup` — accent bar + inline Brevo email form
-   - `.details-grid` — 3-col icon cards (venue, schedule, duration, age, etc.)
-   - `.expect-grid` — 2-col "What to Expect" cards
-   - `.seating-section` — interactive SVG seating chart + `.zone-popup` + `.seat-accord` (accordion zones)
-   - `.faq-list` — accordion FAQ (+ icon toggle)
-   - `.also-grid` — 3 "You Might Also Like" show cards (hardcoded, not dynamic)
-   - `.final-cta` — dark gradient CTA card inside `<main>` (with ambient orbs), not full-width
+Core treatment:
 
-**Sidebar** (sticky, right column): price display, CTA button, show details, trust badges, email signup
+- fill: `#FFB000`
+- text: near-black / dark charcoal (`#171225` currently used)
+- pink remains a Vegas Sidekick brand/accent color
 
-**Show accent colors:** `--show` and `--show-lt` CSS vars per page drive all accent elements (ticker bg, callout border, stat highlights, etc.)
+The Warm Amber rollout covered primary ticket actions sitewide. Do **not** globally replace pink branding, newsletter treatments, decorative accents, or logo colors.
 
-**Seating chart:** Interactive SVG, clickable zones call `selectZone('id')`, populates `.zone-popup` below with zone name, description, and optional "Sweet Spot" badge (the Sidekick's recommended zone).
-
-**Image slider:** Ken Burns pan/zoom animations on hero images, 3-image carousel, pauses on interaction.
+A recurring audit exists to help prevent primary ticket buttons from drifting back to inconsistent colors.
 
 ---
 
-## News / Vegas Dispatch
+## 6. Mobile Hero System
 
-**15 published articles** in `/news/{slug}/index.html`
+A full active-show mobile hero audit was completed across **71 active show pages**.
 
-| Slug | Headline | Date |
-|---|---|---|
-| `bini-signals-world-tour-august-8` | BINI Brings Coachella Breakout to Vegas — Aug 8 | 2026-04-25 |
-| `soda-stereo-ecos-september-13` | Soda Stereo ECOS — Dolby Live, Sept 13 | 2026-05-04 |
-| `eagles-sphere-additional-shows-2026` | Eagles Add Six More Sphere Shows — 64 Dates | 2026-05-05 |
-| `jay-silent-bob-save-vegas-october-16` | Jay & Silent Bob Save Vegas! — The Venetian, Oct 16 | 2026-05-05 |
-| `live-nation-las-vegas-listings-update-may-2026` | Live Nation LV: Major New Announcements — May 7 | 2026-05-07 |
-| `matt-rife-stay-golden-dolby-live-december-4` | Matt Rife Stay Golden — Dolby Live, Dec 4 | 2026-05-12 |
-| `blue-dot-fever-what-it-means-for-vegas` | Blue Dot Fever: What Concert Cancellations Mean for Vegas | 2026-05-10 |
-| `new-shows-announced-may-14-2026` | New Shows: Eagles, KATSEYE, Matt Rife & More | 2026-05-14 |
-| `tumua-das-how-tour-venetian-october-9` | Tumua — Das' How Tour, The Venetian, Oct 9 | 2026-05-18 |
-| `for-king-country-pearl-palms-october-8` | for KING + COUNTRY — The Pearl at Palms, Oct 8 | 2026-05-18 |
-| `clay-walker-venetian-december-5` | Clay Walker — The Venetian, NFR Weekend, Dec 5 | 2026-05-18 |
-| `smashing-pumpkins-rats-in-a-cage-tour-mgm-grand-october-30` | Smashing Pumpkins — MGM Grand, Oct 30 | 2026-05-18 |
-| `lewis-black-live-venetian-october-30` | Lewis Black Live — The Venetian, Oct 30 | 2026-05-19 |
-| `marco-antonio-solis-tour-gratitud-dolby-live-september-11` | Marco Antonio Solís — Dolby Live, Sept 11–12 | 2026-05-19 |
-| `new-shows-announced-may-19-2026` | Five New Shows Announced — May 2026 | 2026-05-19 |
+### Problem solved
 
-**Article structure:** JSON-LD `NewsArticle` schema, breadcrumb nav, hero image, OG/Twitter meta, Brevo email form, author: Kris Kidd.
+A universal `object-fit: cover` treatment was cropping wide promotional artwork, including titles, logos, and performers.
 
-**Publishing workflow (4 files per article):**
-1. Create `news/{slug}/index.html`
-2. Update `news/index.html` — promote new article to featured, add to grid
-3. Update `index.html` — Vegas Dispatch section (3-card grid)
-4. Update `sitemap.xml`
+### Current default
 
-**OG images:** Must be real hosted URLs (Cloudinary) — data URLs don't work for social crawlers. Kris uploads via Cloudinary mobile, pastes URL back for `og:image` / `twitter:image` tags.
+The preferred mobile hero mode is **safe**:
 
----
+- full hero artwork remains visible with `object-fit: contain`
+- the same image fills the surrounding frame as a softened / darkened blurred background
+- per-show focal positioning remains available
+- desktop hero behavior remains separate
 
-## CMS (Decap, `/admin/`)
+Data-backed records may express this concept as:
 
-- Backend: GitHub, repo `VegasSidekick/vegas-sidekick`, branch `main`
-- Auth: GitHub OAuth via Cloudflare Worker at `/api/auth`
-- Media: `images/news/` (public: `/images/news/`)
-- Collection: **News Articles**
-  - Fields: title, date, category (select), image, image_credit, description, body (markdown), ticket_url, ticket_price, show_date, venue
-
----
-
-## External Services & Keys
-
-| Service | Key/ID | Notes |
-|---|---|---|
-| Algolia | App ID: `E402SBJE6D` | Search-only key in `search/index.html` |
-| Brevo | API Key in `footer.js` | List ID `2`, restricted scope |
-| Brevo Worker | `https://brevo-subscribe.vegassidekickcom.workers.dev` | Used for all email signups |
-| GitHub OAuth | Client ID: `Ov23lit31UqvtSuPp7tJ` | Client secret in Cloudflare env var only |
-| GA4 | `G-BM6QGF7B4Y` | Injected via header.js — behavioral analytics |
-| Cloudflare Analytics | (dashboard) | Built into Cloudflare Pages — raw traffic, no code required |
-| Cloudinary | Cloud: `dvhunpinz`, API Key: `966995363786296` | Secret in `.cloudinary` (gitignored) |
-| Spotlight.Vegas | Ref code: `vegassidekick` | Affiliate ticket partner |
-
-**Image upload constraint:** Binary images cannot be pushed via the MCP API (corrupts files). Embedded page images use WebP data URLs. OG/social images use Cloudinary URLs. Binary image uploads go through the GitHub web UI.
-
----
-
-## Image Handling
-
-**Embedded images (in-page):**
-1. Convert: `cwebp -q 70 photo.jpg -o photo.webp`
-2. Data URL: `python3 -c "import base64; print('data:image/webp;base64,' + base64.b64encode(open('photo.webp','rb').read()).decode())" > dataurl.txt`
-3. Use as `src` attribute inline
-
-**Size targets:**
-- Card thumbnails: `-q 65`, target <60KB binary (~80KB as data URL)
-- Article heroes: `-q 75`, target <100KB binary (~133KB as data URL)
-- MCP payload limit: ~500KB per push — keep HTML file under this
-
-**OG images:** Cloudinary-hosted, real URL. Kris uploads, pastes URL, Claude updates `og:image` / `twitter:image` meta.
-
----
-
-## Page Template Rules
-
-Every page must have:
-```html
-<body>
-<div id="vs-header"></div>   <!-- header injection point -->
-<!-- page content -->
-<div id="vs-footer"></div>   <!-- footer injection point -->
-<script src="/components/header.js"></script>
-<script src="/components/footer.js"></script>
-</body>
+```json
+"mobile_hero": {
+  "fit": "safe",
+  "position": "center center"
+}
 ```
 
-Image paths are **root-relative** (`/images/filename.jpg`) — pages live in subdirectories.
+### Current global mobile refinement
+
+The latest global safe-mode treatment intentionally:
+
+- avoids a heavy “card in a box” look
+- uses restrained rounded corners
+- uses subtle shadow / outline
+- keeps enough cushion around artwork
+- does not shrink wide promotional art too aggressively
+
+The global default is considered **finished** unless a real recurring problem emerges. Fix individual odd aspect-ratio shows through per-show focal positioning rather than endlessly retuning the global system.
+
+Permanent audit:
+
+`scripts/audit-mobile-show-heroes.py`
 
 ---
 
-## Known Gaps & Open Items
+## 7. Show Database — New Operational Direction
 
-1. **Algolia index not auto-synced** — adding a show page doesn't update the search index. Must be manually populated via Algolia dashboard or API.
-2. **No category landing pages** — `/shows/comedy/`, `/shows/magic/`, etc. don't exist as curated pages; those URL paths would 404 unless Cloudflare Pages routing or `shows/index.html` handles them. Header nav links to them — worth verifying these routes.
-3. **`also-grid` show cards are hardcoded** — "You Might Also Like" on each show page points to 3 hand-picked shows. Not dynamic.
-4. **SVG seating charts are per-page** — each show has a custom hand-drawn SVG. Not pulled from any shared source.
-5. **Ticker content is hardcoded** — show-specific, must be updated manually per page.
-6. **No pagination on news index** — at some point `/news/index.html` will need it (currently 15 articles).
-7. **Sitemap requires manual updates** — new pages must be added by hand.
+The project is moving away from one JSON file per show toward a **Vegas Sidekick Show Database**.
+
+### Why
+
+The goal is not merely clean developer architecture. The goal is a business-friendly operational source of truth that Kris or a future owner can inspect and edit in one place.
+
+### Current master dataset
+
+`data/show-database.json`
+
+A spreadsheet-style internal interface exists at:
+
+`/admin/show-database/`
+
+The interface has been merged to `main`.
+
+### V1 interface capabilities
+
+The current Show Database UI includes concepts such as:
+
+- spreadsheet-style table
+- search
+- filters
+- sorting
+- Active / Closed / Needs Review views
+- multi-row selection
+- bulk editing concepts
+- show detail drawer
+- local draft persistence
+- JSON export
+- live-page link
+
+### Important limitation
+
+Direct secure **Save to GitHub / update the live site** is not yet considered safely connected.
+
+The existing admin GitHub OAuth implementation was found to contain a credential embedded in repo code. Do **not** build new write capabilities on that authentication path without securing it first.
+
+### Desired long-term Show Database behavior
+
+The database should become the operational control center for:
+
+- show status
+- Vegas Sidekick price
+- regular/list price
+- schedule
+- dark days
+- venue / showroom
+- runtime
+- age guidance
+- ticket URL
+- media
+- trailer
+- restrictions
+- verification date and source
+
+It should **not casually overwrite editorial judgment**, including:
+
+- Kris’s Take
+- Good Fit / Think Twice
+- rankings
+- guide inclusion
+- editorial verdicts
+- subjective recommendations
+
+### Verification states
+
+A useful long-term pattern is to distinguish:
+
+- verified by Kris
+- verified from Spotlight
+- stale / old verification
+- unverified
+- conflicting source
+
+The prior per-show JSON pilot established the value of provenance. Preserve that lesson in the Show Database architecture.
 
 ---
 
-## Naming Conventions
+## 8. Spotlight as Operational Ticketing Source
 
-| Thing | Convention | Example |
-|---|---|---|
-| Show page URLs | kebab-case | `carrot-top`, `michael-jackson-one` |
-| CSS classes | BEM-adjacent | `show-card`, `btn-primary`, `show-sidebar` |
-| CSS custom properties | `--kebab-case` | `--navy`, `--orange`, `--show` |
-| Image files | kebab-case with descriptors | `carrot-top-hero.jpg`, `spike-wink.png` |
-| Component functions | `vs` prefix camelCase | `vsToggleMenu()`, `vsSubmitEmail()` |
-| Branch names | `claude/feature-desc-<id>` | `claude/show-page-buildout-abc123` |
-| Commit messages | Imperative, scoped | `Add Michael Jackson ONE show page` |
+As of September 8, 2026, Spotlight’s public show pages are used as an operational source for current ticketing facts where Spotlight explicitly publishes them.
+
+Facts suitable for reconciliation include:
+
+- current Vegas Sidekick starting price
+- regular/list price when shown
+- schedule
+- dark days
+- multiple showtimes
+- venue / showroom
+- runtime
+- age guidance
+- canonical Spotlight ticket URL
+
+### How reconciliation works
+
+The system can read Spotlight’s **public HTML pages** without a private API:
+
+1. start from a known Spotlight show URL
+2. request the public page
+3. parse labeled page fields
+4. normalize them into Vegas Sidekick data
+5. compare with current site values
+6. update only fields that are safe to own
+
+This is web-page parsing, not private API access.
+
+### Important caution
+
+Spotlight HTML is presentation markup, not a stable machine API. Its formatting can vary, for example:
+
+- `2 hours` vs `120 minutes`
+- schedules with omitted AM/PM
+- multiple prices rendered compactly
+- changes in markup
+
+Therefore:
+
+- never blindly trust raw scraper output
+- normalize and validate
+- do not bypass authentication, CAPTCHAs, blocks, or other access controls
+- keep request frequency reasonable
+
+### September 8 reconciliation
+
+A full reconciliation matched **71/71 active shows** to Spotlight product pages with zero fetch failures during that run.
+
+The pass updated the Show Database and customer-facing factual surfaces, including price/schedule/runtime/age/venue where available, and propagated changed prices to linked customer pages.
+
+The broader lesson matters more than the exact counts: **the Show Database should be reconciled against the actual ticketing source before being treated as authoritative.**
 
 ---
 
-## Git State (as of audit)
+## 9. Catalog JavaScript Failure — Important Lesson
 
-- **Primary branch:** `main` (Cloudflare Pages auto-deploys)
-- **Active feature branch:** `claude/vegas-sidekick-audit-4naacg`
-- **Recent work:** Canonical show template established (`v-the-ultimate-variety-show`), WOW page added, "Sweet Spot" badge system formalized, SHOW-BUILDER-PROMPT.md updated
+After the Spotlight reconciliation, the root `/shows/` page displayed **0 shows** while category pages appeared mostly normal.
+
+### Root cause
+
+Venue names containing apostrophes were inserted into single-quoted JavaScript object literals without safe escaping, breaking the entire catalog array.
+
+Affected examples included:
+
+- X Burlesque / Bugsy’s Cabaret
+- Tournament of Kings / King Arthur’s Arena
+
+A single malformed record can cause the entire browser-side grid to fail and show zero results even when the HTML document itself loads.
+
+### Permanent rule
+
+Any process that writes data into JavaScript literals must **serialize safely**. Do not construct JS data with naive string interpolation.
+
+Permanent safeguard:
+
+`scripts/audit-catalog-js-syntax.py`
+
+The Operations workflow now includes catalog JavaScript syntax checking so this class of failure is treated as a P0 accuracy issue.
 
 ---
 
-## What's Built vs. What's Not
+## 10. Active vs Closed Shows
 
-| Built & Reusable | Not Yet Built |
-|---|---|
-| 38 show pages (Sidekick Build template) | Category landing pages |
-| Shared header/footer components | Auto-Algolia sync |
-| Decap CMS for news | Dynamic "also-grid" (related shows) |
-| Vegas Dispatch (15 articles + index) | Pagination on news index |
-| Algolia search UI (needs index population) | Any server-rendered features |
-| Email capture (footer + show pages + post-click overlay) | |
-| SVG seating charts (per show, custom) | |
-| Brevo email worker | |
-| GitHub OAuth for CMS | |
-| Sitemap (manual) | |
+Closed show pages should generally **remain online as archives**.
+
+### Closure policy
+
+When a show closes:
+
+- remove it from active catalogs
+- remove active ticket CTAs
+- remove active Event/EventSeries schema
+- add appropriate closure treatment
+- keep the canonical URL/page alive
+- update guides and related modules where necessary
+- do not delete the page merely because the show closed
+
+Known closed archives include:
+
+- Mad Apple
+- David Goldrake’s current Vegas run
+
+Mad Apple previously leaked back into `/shows/` after its archive page had already been correctly closed. A permanent audit now checks for closed shows remaining in active catalog data.
+
+Permanent safeguard:
+
+`scripts/audit-closed-show-catalog-leaks.py`
+
+---
+
+## 11. Internal Linking System
+
+Vegas Sidekick now has a deliberate internal-linking baseline rather than ad hoc link insertion.
+
+### Philosophy
+
+- contextual, not confetti
+- links should help the visitor choose the next useful page
+- do not invent relationships
+- do not change categories merely to satisfy a link target
+- do not automate rankings or subjective recommendations
+
+Current reusable tooling includes:
+
+- `scripts/full-internal-link-build.py`
+- `scripts/run-full-internal-link-build.py`
+- `scripts/audit-internal-links.py`
+
+A prior completed baseline brought tracked show, guide, Dispatch, venue, category, and hub pages to zero internal-link review candidates and zero broken contextual targets at that time.
+
+New content should preserve this standard.
+
+---
+
+## 12. SERP Metadata System
+
+A deterministic metadata cleanup was completed across canonical/indexable pages to reduce duplicate formulaic titles and weak descriptions.
+
+Reusable tooling includes:
+
+- `scripts/optimize-serp-metadata.py`
+- `scripts/optimize-site-serp-overrides.py`
+- `scripts/audit-serp-metadata.py`
+
+Goals:
+
+- unique enough to stand apart from competing pages
+- factual
+- category-aware
+- useful for CTR
+- no templated spam feel
+
+Do not mass-rewrite metadata without preserving page intent and verified facts.
+
+---
+
+## 13. Content / Link Hygiene
+
+Reusable audit:
+
+`scripts/audit-content-link-hygiene.py`
+
+It checks for issues such as:
+
+- banned / stale urgency copy
+- stale presale / on-sale language
+- old freshness wording
+- internal links pointing to redirect sources
+- broken local href/src targets
+
+Do not reintroduce retired wording simply because an older template or source document contains it.
+
+---
+
+## 14. Operations System
+
+Priority order:
+
+- **P0 Accuracy**
+- **P1 Revenue**
+- **P2 Growth**
+- **P3 Enhancement**
+
+Known P0 accuracy problems take precedence over discretionary P3 polish.
+
+### Current recurring Operations audits
+
+`.github/workflows/operations-audits.yml`
+
+Current categories include:
+
+- Event/EventSeries schema
+- site health
+- SERP metadata
+- content/link hygiene
+- internal linking
+- media inventory
+- mobile show heroes
+- closed-show catalog leakage
+- ticket CTA consistency
+- catalog JavaScript syntax
+
+### Automation philosophy
+
+Fully deterministic checks can enforce mechanical rules.
+
+Examples:
+
+- broken paths/images
+- malformed schema
+- bad numeric price format
+- duplicate metadata
+- closed-show leakage
+- syntax errors
+- missing hero treatment
+
+Human judgment remains required for:
+
+- rankings
+- Kris’s Take
+- Good Fit / Think Twice
+- guide inclusion
+- subjective editorial copy
+- disputed source facts
+- whether a third-party claim is trustworthy
+
+---
+
+## 15. Media Rules
+
+Use real existing photography and show/event assets.
+
+Do not generate fake event imagery for actual show pages.
+
+Do not duplicate the same photo merely to hit an image count.
+
+Do not expose internal notes such as “needs five photos” or asset-count commentary to customers.
+
+Video trailers:
+
+- official YouTube embeds only
+- never guess a video
+- never re-host a guessed trailer
+
+A media audit exists at:
+
+`scripts/audit-show-media.py`
+
+There are still many active shows with relatively thin show-specific image inventories. Treat media work as opportunity-based rather than a requirement to force an arbitrary count everywhere.
+
+---
+
+## 16. Guides
+
+Guides are not disposable SEO listicles. They should help a visitor make a decision.
+
+Current principles:
+
+- rankings must be intentional
+- factual claims must stay synced with show status and price changes
+- if a ranked show closes, remove or contextualize it appropriately
+- “cheapest,” “from $X,” and similar claims require maintenance
+- internal links should lead naturally into relevant show pages
+
+VEGAS! The Show is currently intended as the #1 recommendation on the first-timers guide.
+
+Newsletter signup:
+
+- mid-article signup is preferred when it fits the reader flow
+- avoid an awkward text CTA disconnected from the actual signup form
+
+---
+
+## 17. Vegas Dispatch
+
+The current Dispatch benchmark is the **Activate Town Square** article treatment.
+
+For Dispatch rebuilds:
+
+- prioritize upcoming/current stories before archival material
+- preserve and verify actual reporting
+- use real assets
+- strong mobile hero
+- quick facts where useful
+- ticker
+- sticky section navigation
+- scannable structure
+- mid-article Spike newsletter signup
+- useful internal links
+- Kris Kidd avatar/byline
+- appropriate NewsArticle/Breadcrumb/FAQ schema
+
+### Kris’s Take
+
+Include **🌵 Kris’s take** only when there is a meaningful editorial observation.
+
+It may be drafted in Kris’s voice using known Vegas/ticket/event context, but must not invent firsthand attendance or personal experience.
+
+Remove stale presale/on-sale language and unsupported urgency.
+
+---
+
+## 18. Show Facts — Never Guess
+
+For any show, do not invent:
+
+- price
+- regular/list price
+- Spotlight affiliate URL
+- schedule
+- dark days
+- dated schedule phases
+- age rule
+- runtime
+- venue / showroom
+- show status
+- trailer
+
+When a fact is uncertain, stale, or conflicting, surface the uncertainty instead of filling the gap with a plausible guess.
+
+---
+
+## 19. Past Structured-Data Pilot — Lessons to Keep
+
+Before the Show Database pivot, four per-show JSON pilots were built for:
+
+- Carrot Top
+- VEGAS! The Show
+- Mystère
+- The Wizard of Oz at Sphere
+
+Those individual JSON files were later deliberately deleted when the project shifted toward the master Show Database.
+
+The old files are no longer the architecture, but the pilot taught several useful lessons:
+
+- schedule structures must support dated phases
+- schedules may contain multiple showtimes per day
+- some shows genuinely have variable schedules
+- structured data and visible copy need separate safe render paths
+- provenance matters
+- customer-visible text should not be modified with broad regex that can corrupt JSON-LD
+- schema should refuse unsafe schedule representation rather than inventing one
+
+Preserve these lessons in future database/sync work.
+
+---
+
+## 20. Current Notable Show Facts / Edge Cases
+
+These are examples of why the data model needs to support more than a simple weekly schedule:
+
+### VEGAS! The Show
+
+Had a verified dated schedule transition in September 2026, demonstrating the need for schedule phases rather than one permanent weekly time.
+
+### Mystère
+
+Uses multiple showtimes on active days and dark days on others.
+
+### Wizard of Oz at Sphere
+
+Uses a variable schedule and has meaningful age/ticket/sensory restrictions. Do not fabricate a weekly recurring EventSchedule for a genuinely variable booking calendar.
+
+### MJ Live
+
+Has had venue/date transition behavior that may require dated product/venue phases rather than treating one location as simply “wrong.”
+
+---
+
+## 21. Customer-Facing Catalogs
+
+The root all-shows page is:
+
+`/shows/`
+
+Category catalogs live beneath the show category routes.
+
+Because catalog arrays are browser-side JavaScript, validate JavaScript syntax after automated factual propagation.
+
+Category pages may use separate arrays from the root catalog, so one page working does **not** prove all catalogs are healthy.
+
+---
+
+## 22. Admin / Authentication
+
+The existing `/admin/` system uses GitHub-backed administration / Decap-related infrastructure.
+
+A security issue was identified in the existing OAuth worker implementation: a credential appears embedded directly in repository code.
+
+Until fixed:
+
+- do not extend that exact auth path for new sensitive write features
+- do not assume the current Show Database can safely commit production changes from the browser
+- secure authentication before wiring database edits directly to GitHub/main
+
+---
+
+## 23. Working Style With Kris
+
+For meaningful repo/site work, explain the proposed approach before making broad changes unless Kris has already clearly authorized the implementation.
+
+Clear implementation authorization includes language such as:
+
+- “do it”
+- “go for it”
+- “make it live”
+- “push to live”
+- “build it”
+- “go ahead”
+- a direct explicit request to create/rebuild/update
+
+Kris prefers quality over rushing customer-facing work and wants ideas stress-tested rather than automatically agreed with.
+
+When reporting technical work, explain the practical effect in plain English.
+
+---
+
+## 24. High-Value Next Directions
+
+Do not automatically begin these without authorization, but current strategic directions include:
+
+- finish secure persistence for the Show Database
+- make the Show Database the true operational source of show facts
+- add safe reconciliation/change-review against Spotlight
+- conversion audit and measurement
+- Search Console opportunity engine
+- venue hub strengthening
+- media improvements on priority shows
+- continue guide ecosystem development
+- maintain Dispatch quality and freshness
+
+For mobile heroes, prefer spot-checking unusual aspect ratios and adjusting per-show focal positions rather than redesigning the global treatment again.
+
+---
+
+## 25. File Roles Going Forward
+
+### `VS_CHAT_CONTEXT.md`
+
+This file.
+
+Use it as the **living project memory / current-state briefing**.
+
+Update it when a decision materially changes how Vegas Sidekick should be built or operated.
+
+Examples worth recording:
+
+- architecture changes
+- permanent design decisions
+- new source-of-truth rules
+- deployment lessons
+- closed-show handling
+- major recurring audits
+- important failure modes
+- editorial rules
+
+Do not clutter it with every commit or tiny one-off visual tweak.
+
+### `AGENTS.md` — future
+
+Should contain concise, execution-oriented instructions for AI coding agents:
+
+- what to read first
+- commands/audits to run
+- forbidden guesses
+- deployment/branch rules
+- canonical templates
+- safe editing practices
+
+Keep agent instructions separate from this broader project context.
+
+---
+
+## 26. Final Rule
+
+Vegas Sidekick should become **more accurate, easier to operate, and easier for a future owner to understand over time**.
+
+When choosing between clever automation and trustworthy operations, choose trustworthy operations.
+
+When choosing between more copy and clearer information, choose clearer information.
+
+When data conflicts, do not guess.
