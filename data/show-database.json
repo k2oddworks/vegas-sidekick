@@ -76,7 +76,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/production/absinthe/",
         "affiliate_url": "https://spotlight.vegas/shows/production/absinthe/ref/vegassidekick",
         "age_label": "18+"
-      }
+      },
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
     },
     {
       "slug": "all-motown",
@@ -134,7 +137,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/tribute/all-motown/",
         "affiliate_url": "https://spotlight.vegas/shows/tribute/all-motown/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": 60,
+      "savings_percent": 60,
+      "is_deal": true
     },
     {
       "slug": "all-shook-up",
@@ -200,7 +206,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/tribute/all-shook-up/",
         "affiliate_url": "https://spotlight.vegas/shows/tribute/all-shook-up/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": 68,
+      "savings_percent": 59,
+      "is_deal": true
     },
     {
       "slug": "allstars-of-magic",
@@ -250,7 +259,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/magic/allstars-of-magic/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/allstars-of-magic/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": 7,
+      "savings_percent": 18,
+      "is_deal": true
     },
     {
       "slug": "america-the-show",
@@ -296,7 +308,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/tribute/america-the-show/",
         "affiliate_url": "https://spotlight.vegas/shows/tribute/america-the-show/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": 60,
+      "savings_percent": 60,
+      "is_deal": true
     },
     {
       "slug": "an-r-rated-magic-show",
@@ -350,7 +365,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/magic/an-r-rated-magic-show/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/an-r-rated-magic-show/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
     },
     {
       "slug": "atomic-saloon",
@@ -412,7 +430,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/adult/atomic-saloon/",
         "affiliate_url": "https://spotlight.vegas/shows/adult/atomic-saloon/ref/vegassidekick",
         "age_label": "18+"
-      }
+      },
+      "savings_amount": 10,
+      "savings_percent": 10,
+      "is_deal": true
     },
     {
       "slug": "awakening",
@@ -476,7 +497,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/production/awakening/",
         "affiliate_url": "https://spotlight.vegas/shows/production/awakening/ref/vegassidekick",
         "age_label": "5+"
-      }
+      },
+      "savings_amount": 29,
+      "savings_percent": 24,
+      "is_deal": true
     },
     {
       "slug": "battlebots-destruct-a-thon",
@@ -534,7 +558,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/production/battlebots/",
         "affiliate_url": "https://spotlight.vegas/shows/production/battlebots/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
     },
     {
       "slug": "blue-man-group",
@@ -608,7 +635,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/production/blue-man-group/",
         "affiliate_url": "https://spotlight.vegas/shows/production/blue-man-group/ref/vegassidekick",
         "age_label": "3+"
-      }
+      },
+      "savings_amount": 27,
+      "savings_percent": 29,
+      "is_deal": true
     },
     {
       "slug": "brad-garretts-comedy-club",
@@ -648,7 +678,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/comedy/brad-garretts-comedy-club/",
         "affiliate_url": "https://spotlight.vegas/shows/comedy/brad-garretts-comedy-club/ref/vegassidekick",
         "age_label": "18+"
-      }
+      },
+      "savings_amount": 7,
+      "savings_percent": 14,
+      "is_deal": true
     },
     {
       "slug": "carrot-top",
@@ -710,7 +743,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/comedy/carrot-top/",
         "affiliate_url": "https://spotlight.vegas/shows/comedy/carrot-top/ref/vegassidekick",
         "age_label": "16+"
-      }
+      },
+      "savings_amount": 6,
+      "savings_percent": 9,
+      "is_deal": true
     },
     {
       "slug": "chippendales",
@@ -774,7 +810,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/adult/chippendales/",
         "affiliate_url": "https://spotlight.vegas/shows/adult/chippendales/ref/vegassidekick",
         "age_label": "18+"
-      }
+      },
+      "savings_amount": 11,
+      "savings_percent": 13,
+      "is_deal": true
     },
     {
       "slug": "colin-cloud",
@@ -832,7 +871,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/magic/colin-cloud/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/colin-cloud/ref/vegassidekick",
         "age_label": "10+"
-      }
+      },
+      "savings_amount": 18,
+      "savings_percent": 24,
+      "is_deal": true
     },
     {
       "slug": "comedy-cellar",
@@ -905,7 +947,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/comedy/comedy-cellar/",
         "affiliate_url": "https://spotlight.vegas/shows/comedy/comedy-cellar/ref/vegassidekick",
         "age_label": "18+"
-      }
+      },
+      "savings_amount": 6,
+      "savings_percent": 14,
+      "is_deal": true
     },
     {
       "slug": "criss-angel",
@@ -963,7 +1008,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/magic/criss-angel/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/criss-angel/ref/vegassidekick",
         "age_label": "Recommended for ages 10 and up due to mature content. Everyo"
-      }
+      },
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
     },
     {
       "slug": "donny-osmond",
@@ -1021,7 +1069,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/music/donny-osmond/",
         "affiliate_url": "https://spotlight.vegas/shows/music/donny-osmond/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
     },
     {
       "slug": "fantasy",
@@ -1094,7 +1145,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/adult/fantasy/",
         "affiliate_url": "https://spotlight.vegas/shows/adult/fantasy/ref/vegassidekick",
         "age_label": "18+"
-      }
+      },
+      "savings_amount": 7,
+      "savings_percent": 15,
+      "is_deal": true
     },
     {
       "slug": "ikons-of-rock",
@@ -1156,7 +1210,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/tribute/ikons-of-rock-hard-rock/",
         "affiliate_url": "https://spotlight.vegas/shows/tribute/ikons-of-rock-hard-rock/ref/vegassidekick",
         "age_label": "5+"
-      }
+      },
+      "savings_amount": 12,
+      "savings_percent": 16,
+      "is_deal": true
     },
     {
       "slug": "jabbawockeez",
@@ -1224,7 +1281,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/production/jabbawockeez/",
         "affiliate_url": "https://spotlight.vegas/shows/production/jabbawockeez/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": 8,
+      "savings_percent": 10,
+      "is_deal": true
     },
     {
       "slug": "jimmy-kimmels-comedy-club",
@@ -1262,7 +1322,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/comedy/jimmy-kimmels-comedy-club/",
         "affiliate_url": "https://spotlight.vegas/shows/comedy/jimmy-kimmels-comedy-club/ref/vegassidekick",
         "age_label": "18+"
-      }
+      },
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
     },
     {
       "slug": "king-of-diamonds",
@@ -1316,7 +1379,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/tribute/neil-diamond/",
         "affiliate_url": "https://spotlight.vegas/shows/tribute/neil-diamond/ref/vegassidekick",
         "age_label": "No age restricitions"
-      }
+      },
+      "savings_amount": 60,
+      "savings_percent": 60,
+      "is_deal": true
     },
     {
       "slug": "ka",
@@ -1379,7 +1445,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/cirque-du-soleil/ka/",
         "affiliate_url": "https://spotlight.vegas/shows/cirque-du-soleil/ka/ref/vegassidekick",
         "age_label": "3+"
-      }
+      },
+      "savings_amount": 38,
+      "savings_percent": 32,
+      "is_deal": true
     },
     {
       "slug": "la-comedy-club",
@@ -1420,7 +1489,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/comedy/la-comedy-club/",
         "affiliate_url": "https://spotlight.vegas/shows/comedy/la-comedy-club/ref/vegassidekick",
         "age_label": "15+"
-      }
+      },
+      "savings_amount": 24,
+      "savings_percent": 41,
+      "is_deal": true
     },
     {
       "slug": "las-vegas-live-comedy-club",
@@ -1486,7 +1558,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/",
         "affiliate_url": "https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick",
         "age_label": "16+"
-      }
+      },
+      "savings_amount": 56,
+      "savings_percent": 31,
+      "is_deal": true
     },
     {
       "slug": "laugh-factory",
@@ -1559,7 +1634,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/comedy/laugh-factory/",
         "affiliate_url": "https://spotlight.vegas/shows/comedy/laugh-factory/ref/vegassidekick",
         "age_label": "18+"
-      }
+      },
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
     },
     {
       "slug": "mac-king",
@@ -1617,7 +1695,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/magic/mac-king/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/mac-king/ref/vegassidekick",
         "age_label": "5+"
-      }
+      },
+      "savings_amount": 11,
+      "savings_percent": 18,
+      "is_deal": true
     },
     {
       "slug": "magic-mike-live",
@@ -1655,7 +1736,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/adult/magic-mike-live/",
         "affiliate_url": "https://spotlight.vegas/shows/adult/magic-mike-live/ref/vegassidekick",
         "age_label": "All guests must be at least 18 years old to attend the show "
-      }
+      },
+      "savings_amount": 29,
+      "savings_percent": 33,
+      "is_deal": true
     },
     {
       "slug": "marc-savard-comedy-hypnosis",
@@ -1713,7 +1797,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/comedy/marc-savard-comedy-hypnosis/",
         "affiliate_url": "https://spotlight.vegas/shows/comedy/marc-savard-comedy-hypnosis/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": 27,
+      "savings_percent": 49,
+      "is_deal": true
     },
     {
       "slug": "marriage-can-be-murder",
@@ -1773,7 +1860,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/comedy/marriage-can-be-murder/",
         "affiliate_url": "https://spotlight.vegas/shows/comedy/marriage-can-be-murder/ref/vegassidekick",
         "age_label": "8+"
-      }
+      },
+      "savings_amount": 14,
+      "savings_percent": 13,
+      "is_deal": true
     },
     {
       "slug": "mat-franco",
@@ -1845,7 +1935,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/magic/mat-franco/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/mat-franco/ref/vegassidekick",
         "age_label": "5+"
-      }
+      },
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
     },
     {
       "slug": "michael-jackson-one",
@@ -1908,7 +2001,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/cirque-du-soleil/michael-jackson-one/",
         "affiliate_url": "https://spotlight.vegas/shows/cirque-du-soleil/michael-jackson-one/ref/vegassidekick",
         "age_label": "5+"
-      }
+      },
+      "savings_amount": 48,
+      "savings_percent": 29,
+      "is_deal": true
     },
     {
       "slug": "mind2mind",
@@ -1968,7 +2064,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/magic/mind2mind/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/mind2mind/ref/vegassidekick",
         "age_label": "12+"
-      }
+      },
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
     },
     {
       "slug": "mj-live",
@@ -2034,7 +2133,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/tribute/mj-live-at-planet-hollywood/",
         "affiliate_url": "https://spotlight.vegas/shows/tribute/mj-live-at-planet-hollywood/ref/vegassidekick",
         "age_label": "5 + ages with an adult. All patrons require a ticket regardl"
-      }
+      },
+      "savings_amount": 36,
+      "savings_percent": 40,
+      "is_deal": true
     },
     {
       "slug": "motown-brunch",
@@ -2076,7 +2178,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/music/motown-brunch/",
         "affiliate_url": "https://spotlight.vegas/shows/music/motown-brunch/ref/vegassidekick",
         "age_label": "21+"
-      }
+      },
+      "savings_amount": 35,
+      "savings_percent": 35,
+      "is_deal": true
     },
     {
       "slug": "mystere",
@@ -2139,7 +2244,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/cirque-du-soleil/mystere/",
         "affiliate_url": "https://spotlight.vegas/shows/cirque-du-soleil/mystere/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
     },
     {
       "slug": "nathan-burton-comedy-magic",
@@ -2208,7 +2316,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/magic/nathan-burton-comedy-magic/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/nathan-burton-comedy-magic/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
     },
     {
       "slug": "now-you-see-me-live",
@@ -2246,7 +2357,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/magic/now-you-see-me-live/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/now-you-see-me-live/ref/vegassidekick",
         "age_label": "5+"
-      }
+      },
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
     },
     {
       "slug": "o",
@@ -2309,7 +2423,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/cirque-du-soleil/o/",
         "affiliate_url": "https://spotlight.vegas/shows/cirque-du-soleil/o/ref/vegassidekick",
         "age_label": "5+"
-      }
+      },
+      "savings_amount": 23,
+      "savings_percent": 13,
+      "is_deal": true
     },
     {
       "slug": "paranormal",
@@ -2363,7 +2480,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/magic/paranormal/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/paranormal/ref/vegassidekick",
         "age_label": "5+"
-      }
+      },
+      "savings_amount": 48,
+      "savings_percent": 61,
+      "is_deal": true
     },
     {
       "slug": "penn-and-teller",
@@ -2417,7 +2537,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/magic/penn-and-teller/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/penn-and-teller/ref/vegassidekick",
         "age_label": "5+"
-      }
+      },
+      "savings_amount": 41,
+      "savings_percent": 38,
+      "is_deal": true
     },
     {
       "slug": "piano-man",
@@ -2483,7 +2606,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/tribute/piano-man/",
         "affiliate_url": "https://spotlight.vegas/shows/tribute/piano-man/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": 66,
+      "savings_percent": 57,
+      "is_deal": true
     },
     {
       "slug": "piff-the-magic-dragon",
@@ -2545,7 +2671,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/magic/piff-the-magic-dragon/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/piff-the-magic-dragon/ref/vegassidekick",
         "age_label": "8+"
-      }
+      },
+      "savings_amount": 25,
+      "savings_percent": 36,
+      "is_deal": true
     },
     {
       "slug": "popovich-comedy-pet-theater",
@@ -2603,7 +2732,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/comedy/popovich-comedy-pet-theater/",
         "affiliate_url": "https://spotlight.vegas/shows/comedy/popovich-comedy-pet-theater/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": 6,
+      "savings_percent": 15,
+      "is_deal": true
     },
     {
       "slug": "purple-reign",
@@ -2653,7 +2785,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/tribute/purple-reign/",
         "affiliate_url": "https://spotlight.vegas/shows/tribute/purple-reign/ref/vegassidekick",
         "age_label": "16+"
-      }
+      },
+      "savings_amount": 44,
+      "savings_percent": 46,
+      "is_deal": true
     },
     {
       "slug": "queen-selena",
@@ -2703,7 +2838,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/tribute/queen-selena/",
         "affiliate_url": "https://spotlight.vegas/shows/tribute/queen-selena/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": 9,
+      "savings_percent": 18,
+      "is_deal": true
     },
     {
       "slug": "rouge",
@@ -2767,7 +2905,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/adult/rouge/",
         "affiliate_url": "https://spotlight.vegas/shows/adult/rouge/ref/vegassidekick",
         "age_label": "18+"
-      }
+      },
+      "savings_amount": 32,
+      "savings_percent": 37,
+      "is_deal": true
     },
     {
       "slug": "rupauls-drag-race-live",
@@ -2826,7 +2967,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/production/rupauls-drag-race-live/",
         "affiliate_url": "https://spotlight.vegas/shows/production/rupauls-drag-race-live/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": 22,
+      "savings_percent": 22,
+      "is_deal": true
     },
     {
       "slug": "shin-lim",
@@ -2885,7 +3029,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/magic/shin-lim/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/shin-lim/ref/vegassidekick",
         "age_label": "No children ages 4 and under"
-      }
+      },
+      "savings_amount": 35,
+      "savings_percent": 34,
+      "is_deal": true
     },
     {
       "slug": "sinatra-live",
@@ -2947,7 +3094,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/tribute/sinatra-live/",
         "affiliate_url": "https://spotlight.vegas/shows/tribute/sinatra-live/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": 9,
+      "savings_percent": 18,
+      "is_deal": true
     },
     {
       "slug": "sir-elton",
@@ -2993,7 +3143,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/tribute/sir-elton/",
         "affiliate_url": "https://spotlight.vegas/shows/tribute/sir-elton/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": 9,
+      "savings_percent": 18,
+      "is_deal": true
     },
     {
       "slug": "steve-falcons-comedy-hypnosis-hour",
@@ -3059,7 +3212,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/comedy/steve-falcons-comedy-hypnosis-hour/",
         "affiliate_url": "https://spotlight.vegas/shows/comedy/steve-falcons-comedy-hypnosis-hour/ref/vegassidekick",
         "age_label": "16 years and over. Guest under the 18 must be accompanied by"
-      }
+      },
+      "savings_amount": 14,
+      "savings_percent": 19,
+      "is_deal": true
     },
     {
       "slug": "tape-face",
@@ -3121,7 +3277,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/comedy/tape-face/",
         "affiliate_url": "https://spotlight.vegas/shows/comedy/tape-face/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": 41,
+      "savings_percent": 42,
+      "is_deal": true
     },
     {
       "slug": "australian-bee-gees",
@@ -3164,7 +3323,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/tribute/the-australian-bee-gees/",
         "affiliate_url": "https://spotlight.vegas/shows/tribute/the-australian-bee-gees/ref/vegassidekick",
         "age_label": "5+"
-      }
+      },
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
     },
     {
       "slug": "the-conjurors",
@@ -3222,7 +3384,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/magic/the-conjurors/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/the-conjurors/ref/vegassidekick",
         "age_label": "Recommended guest age is 5+ years of age or older."
-      }
+      },
+      "savings_amount": 10,
+      "savings_percent": 21,
+      "is_deal": true
     },
     {
       "slug": "empire-strips-back",
@@ -3290,7 +3455,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/burlesque/empire-strips-back/",
         "affiliate_url": "https://spotlight.vegas/shows/burlesque/empire-strips-back/ref/vegassidekick",
         "age_label": "18+"
-      }
+      },
+      "savings_amount": 8,
+      "savings_percent": 19,
+      "is_deal": true
     },
     {
       "slug": "the-king-comes-home",
@@ -3348,7 +3516,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/music/the-king-comes-home/",
         "affiliate_url": "https://spotlight.vegas/shows/music/the-king-comes-home/ref/vegassidekick",
         "age_label": "5+"
-      }
+      },
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
     },
     {
       "slug": "the-mentalist",
@@ -3410,7 +3581,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/magic/the-mentalist/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/the-mentalist/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": 50,
+      "savings_percent": 56,
+      "is_deal": true
     },
     {
       "slug": "rat-pack-is-back",
@@ -3468,7 +3642,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/tribute/the-rat-pack-is-back/",
         "affiliate_url": "https://spotlight.vegas/shows/tribute/the-rat-pack-is-back/ref/vegassidekick",
         "age_label": "12+"
-      }
+      },
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
     },
     {
       "slug": "wizard-of-oz",
@@ -3508,7 +3685,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/production/the-wizard-of-oz-at-sphere/",
         "affiliate_url": "https://spotlight.vegas/shows/production/the-wizard-of-oz-at-sphere/ref/vegassidekick",
         "age_label": "The Wizard of Oz at Sphere is intended for guests aged 6+. A"
-      }
+      },
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
     },
     {
       "slug": "thunder-from-down-under",
@@ -3574,7 +3754,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/adult/thunder-from-down-under/",
         "affiliate_url": "https://spotlight.vegas/shows/adult/thunder-from-down-under/ref/vegassidekick",
         "age_label": "18+"
-      }
+      },
+      "savings_amount": 29,
+      "savings_percent": 29,
+      "is_deal": true
     },
     {
       "slug": "tournament-of-kings",
@@ -3637,7 +3820,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/production/tournament-of-kings/",
         "affiliate_url": "https://spotlight.vegas/shows/production/tournament-of-kings/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": 14,
+      "savings_percent": 16,
+      "is_deal": true
     },
     {
       "slug": "v-the-ultimate-variety-show",
@@ -3704,7 +3890,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/production/v-the-ultimate-variety-show/",
         "affiliate_url": "https://spotlight.vegas/shows/production/v-the-ultimate-variety-show/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": 55,
+      "savings_percent": 54,
+      "is_deal": true
     },
     {
       "slug": "vegas-the-show",
@@ -3767,7 +3956,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/production/vegas-the-show/",
         "affiliate_url": "https://spotlight.vegas/shows/production/vegas-the-show/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": 38,
+      "savings_percent": 38,
+      "is_deal": true
     },
     {
       "slug": "wastin-away",
@@ -3817,7 +4009,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/music/wastin-away/",
         "affiliate_url": "https://spotlight.vegas/shows/music/wastin-away/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": 60,
+      "savings_percent": 60,
+      "is_deal": true
     },
     {
       "slug": "wayne-newton",
@@ -3867,7 +4062,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/music/wayne-newton/",
         "affiliate_url": "https://spotlight.vegas/shows/music/wayne-newton/ref/vegassidekick",
         "age_label": "5+"
-      }
+      },
+      "savings_amount": 37,
+      "savings_percent": 31,
+      "is_deal": true
     },
     {
       "slug": "wow-the-vegas-spectacular",
@@ -3911,7 +4109,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/production/wow-the-vegas-spectacular/",
         "affiliate_url": "https://spotlight.vegas/shows/production/wow-the-vegas-spectacular/ref/vegassidekick",
         "age_label": "All ages"
-      }
+      },
+      "savings_amount": 7,
+      "savings_percent": 12,
+      "is_deal": true
     },
     {
       "slug": "x-burlesque",
@@ -3975,7 +4176,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/adult/x-burlesque/",
         "affiliate_url": "https://spotlight.vegas/shows/adult/x-burlesque/ref/vegassidekick",
         "age_label": "18+"
-      }
+      },
+      "savings_amount": 8,
+      "savings_percent": 9,
+      "is_deal": true
     },
     {
       "slug": "x-country",
@@ -4033,7 +4237,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/adult/x-country/",
         "affiliate_url": "https://spotlight.vegas/shows/adult/x-country/ref/vegassidekick",
         "age_label": "18+"
-      }
+      },
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
     },
     {
       "slug": "x-rocks",
@@ -4083,7 +4290,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/adult/x-rocks/",
         "affiliate_url": "https://spotlight.vegas/shows/adult/x-rocks/ref/vegassidekick",
         "age_label": "18+"
-      }
+      },
+      "savings_amount": 11,
+      "savings_percent": 16,
+      "is_deal": true
     },
     {
       "slug": "zombie-burlesque",
@@ -4145,7 +4355,10 @@
         "spotlight_url": "https://spotlight.vegas/shows/adult/zombie-burlesque/",
         "affiliate_url": "https://spotlight.vegas/shows/adult/zombie-burlesque/ref/vegassidekick",
         "age_label": "16+"
-      }
+      },
+      "savings_amount": 59,
+      "savings_percent": 54,
+      "is_deal": true
     },
     {
       "slug": "david-goldrake",
@@ -4165,7 +4378,10 @@
       "verified_on": "",
       "freshness_label": "",
       "verification": "needs_review",
-      "notes": ""
+      "notes": "",
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
     },
     {
       "slug": "mad-apple",
@@ -4185,8 +4401,12 @@
       "verified_on": "",
       "freshness_label": "",
       "verification": "needs_review",
-      "notes": ""
+      "notes": "",
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
     }
   ],
-  "spotlight_reconciled_on": "2026-09-08"
+  "spotlight_reconciled_on": "2026-09-08",
+  "deal_threshold_dollars": 5
 }

@@ -304,7 +304,7 @@
 .card-price { color: var(--primary) !important; }
 .sort-btn.active, .filter-btn.active:not([class*="fb-"]) { background: var(--navy) !important; color: #fff !important; border-color: var(--navy) !important; }
 </style>
-</head>
+<link rel="stylesheet" href="/assets/catalog-savings.css"></head>
 <body>
 <div id="vs-header"></div>
 
@@ -343,7 +343,7 @@
     <div class="filter-btns">
       <button class="filter-btn active" onclick="setSort('order',this)">🌵 Sidekick Order</button>
       <button class="filter-btn" onclick="setSort('name',this)">A – Z</button>
-      <button class="filter-btn" onclick="setSort('price',this)">Price: Low → High</button>
+      <button class="filter-btn" onclick="setSort('price',this)">Price: Low → High</button><button class="filter-btn sort-btn" onclick="vsSavingsSort(this)">Biggest Savings</button>
     </div>
     <div class="show-count-wrap">Showing <strong id="show-count">10</strong> shows</div>
   </div>
@@ -556,5 +556,5 @@ document.addEventListener('click', function (e) {
   if (link) window.location.href = link.getAttribute('href');
 });
 </script>
-</body>
+<script src="/assets/catalog-savings.js"></script></body>
 </html>
