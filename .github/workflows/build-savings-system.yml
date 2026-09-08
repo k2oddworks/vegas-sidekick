@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/implement-savings-system.py'
+      - 'scripts/fix-savings-edge-cases.py'
       - '.github/workflows/build-savings-system.yml'
 permissions:
   contents: write
@@ -14,19 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build savings system
-        run: python3 scripts/implement-savings-system.py
-      - name: Add static Deals page link
         run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          p=Path('shows/index.html'); t=p.read_text()
-          if '/shows/deals/' not in t:
-              needle='<button class="filter-btn vs-deals-btn" onclick="vsDealsFilter(this)">🔥 Deals</button>'
-              repl=needle+'<a class="filter-btn vs-deals-btn" href="/shows/deals/">All Deals →</a>'
-              if needle in t: t=t.replace(needle,repl,1)
-              else: t=t.replace('</main>','<div style="max-width:1200px;margin:0 auto 36px;padding:0 24px"><a href="/shows/deals/" style="font-weight:800;color:#8a5c00">Browse all current ticket deals →</a></div></main>',1)
-              p.write_text(t)
-          PY
+          python3 scripts/implement-savings-system.py
+          python3 scripts/fix-savings-edge-cases.py
       - name: Validate site
         run: |
           python3 scripts/audit-event-schema.py
