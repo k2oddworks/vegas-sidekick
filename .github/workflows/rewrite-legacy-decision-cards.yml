@@ -1,0 +1,38 @@
+name: Rewrite Legacy Show Decision Cards
+
+on:
+  push:
+    branches: [fix/show-decision-cards]
+    paths:
+      - 'scripts/rewrite-legacy-decision-cards.py'
+      - '.github/workflows/rewrite-legacy-decision-cards.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  rewrite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/show-decision-cards
+      - name: Rewrite legacy decision cards
+        run: python3 scripts/rewrite-legacy-decision-cards.py
+      - name: Validate site
+        run: |
+          python3 scripts/audit-event-schema.py
+          python3 scripts/audit-content-link-hygiene.py
+          python3 scripts/audit-internal-links.py
+          python3 scripts/audit-mobile-show-heroes.py
+          python3 scripts/audit-catalog-js-syntax.py
+      - name: Commit rewritten show pages
+        run: |
+          git checkout -- docs/internal-link-audit.md || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add shows/*/*/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Replace legacy show decision cards"
+            git push origin HEAD:fix/show-decision-cards
+          fi
