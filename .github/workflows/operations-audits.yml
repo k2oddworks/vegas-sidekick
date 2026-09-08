@@ -125,3 +125,10 @@ jobs:
           name: show-media-audit
           path: docs/show-media-audit-2026-09-07.md
           retention-days: 30
+
+  mobile-show-heroes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit mobile show hero framing
+        run: python3 scripts/audit-mobile-show-heroes.py
