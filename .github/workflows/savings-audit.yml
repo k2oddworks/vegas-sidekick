@@ -1,0 +1,26 @@
+name: Vegas Sidekick Savings Audit
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '20 14 * * 0'
+  push:
+    branches: [main]
+    paths:
+      - 'data/show-database.json'
+      - 'shows/**'
+      - 'assets/show-savings.css'
+      - 'assets/catalog-savings.css'
+      - 'assets/catalog-savings.js'
+      - 'scripts/audit-savings-system.py'
+
+permissions:
+  contents: read
+
+jobs:
+  savings-system:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit show savings calculations and customer-facing surfaces
+        run: python3 scripts/audit-savings-system.py
