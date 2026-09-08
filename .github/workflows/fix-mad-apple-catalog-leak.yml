@@ -21,7 +21,9 @@ jobs:
           import re
 
           changed=[]
-          for p in sorted(Path('shows').glob('*/index.html')):
+          catalogs=[Path('shows/index.html'), *sorted(Path('shows').glob('*/index.html'))]
+          for p in catalogs:
+              if not p.exists(): continue
               s=p.read_text()
               original=s
               s=re.sub(r"^\s*\{[^\n]*slug:'mad-apple'[^\n]*\},\s*\n?",'',s,flags=re.M)
