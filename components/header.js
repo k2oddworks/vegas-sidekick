@@ -1,11 +1,11 @@
 // Vegas Sidekick — Shared Header Component
-// v14 — priority mobile actions + tinted category navigation + desktop Shows dropdown/search
+// v15 — route Deals to live savings hub + Warm Amber value treatment
 (function () {
   'use strict';
 
   const html = `
 <nav id="vs-nav" aria-label="Primary navigation">
-  <div class="vs-announce">&#127917; Your Vegas adventure costs less here &mdash; <span>save up to 55% on select shows</span></div>
+  <div class="vs-announce">&#127917; Real Vegas show savings, when the numbers support them &mdash; <span>compare current deals</span></div>
   <div class="vs-nav-row">
     <a class="nav-logo" href="/" aria-label="Vegas Sidekick home">vegas <span class="sk">sidekick</span></a>
 
@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      <a class="nav-text-link nav-deals" href="/guides/best-cheap-vegas-shows/">Deals</a>
+      <a class="nav-text-link nav-deals" href="/shows/deals/">Deals</a>
       <a class="nav-text-link nav-guides" href="/guides/">Guides</a>
       <a class="nav-text-link nav-dispatch" href="/news/">Vegas Dispatch</a>
     </div>
@@ -57,7 +57,7 @@
 
   <div class="drawer-priority" aria-label="Popular destinations">
     <a href="/shows/" class="drawer-primary primary-all"><span>&#127915;</span> All Shows <b>&#8594;</b></a>
-    <a href="/guides/best-cheap-vegas-shows/" class="drawer-primary primary-deals"><span>&#127797;</span> Deals Under $50</a>
+    <a href="/shows/deals/" class="drawer-primary primary-deals"><span>&#128176;</span> Current Show Deals</a>
     <a href="/guides/" class="drawer-primary primary-guides"><span>&#128214;</span> Guides</a>
   </div>
 
@@ -83,7 +83,7 @@
 #vs-nav *,.nav-mobile-drawer *{box-sizing:border-box}
 .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 .vs-announce{background:#12061f;color:#efe9ff;text-align:center;font-size:.8rem;font-weight:500;line-height:1;padding:8px 16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.vs-announce span{color:#c6f22e;font-weight:700}
+.vs-announce span{color:#FFB000;font-weight:700}
 .vs-nav-row{position:relative;display:flex;align-items:center;gap:20px;height:56px;padding:0 40px;background:rgba(20,8,40,.94);backdrop-filter:saturate(160%) blur(14px)}
 .vs-nav-row::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,#ff2e7e 0%,#7c3aed 42%,#0fb5c9 70%,#c6f22e 100%);opacity:.95}
 .nav-logo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.26rem;letter-spacing:-.03em;text-decoration:none;color:#fff;white-space:nowrap}
@@ -94,7 +94,7 @@
 .nav-chevron{font-size:.9rem;line-height:1;transform:translateY(-1px);transition:transform .18s}
 .nav-link-btn[aria-expanded="true"] .nav-chevron{transform:rotate(180deg) translateY(1px)}
 .nav-text-link:hover,.nav-link-btn:hover,.nav-link-btn[aria-expanded="true"]{color:#fff;background:rgba(255,255,255,.08)}
-.nav-deals:hover{background:rgba(124,58,237,.2);color:#e9ddff}.nav-guides:hover{background:rgba(59,130,246,.18);color:#dceaff}.nav-dispatch:hover{background:rgba(15,181,201,.18);color:#d9fbff}
+.nav-deals:hover{background:rgba(255,176,0,.16);color:#ffd46f}.nav-guides:hover{background:rgba(59,130,246,.18);color:#dceaff}.nav-dispatch:hover{background:rgba(15,181,201,.18);color:#d9fbff}
 .nav-spacer{flex:1}
 .nav-cta{display:inline-flex;align-items:center;background:#ff2e7e;color:#fff!important;font:700 .9rem 'Plus Jakarta Sans',sans-serif;text-decoration:none;padding:10px 20px;border-radius:100px;box-shadow:0 8px 20px rgba(255,46,126,.28);transition:.18s;white-space:nowrap}
 .nav-cta:hover{background:#ff1f72;transform:translateY(-2px)}
@@ -133,7 +133,7 @@
 .drawer-priority{display:grid;gap:9px;margin-bottom:21px}
 .drawer-primary{display:flex;align-items:center;gap:9px;border-radius:11px;padding:14px 15px;color:#fff!important;text-decoration:none;font:800 .94rem 'Plus Jakarta Sans',sans-serif;letter-spacing:.015em;box-shadow:0 7px 20px rgba(0,0,0,.14);transition:.18s}
 .drawer-primary:hover{transform:translateY(-1px);filter:brightness(1.06)}
-.drawer-primary b{margin-left:auto;font-size:1.1rem}.primary-all{background:#ff2e7e}.primary-deals{background:#7c3aed;border-left:3px solid #c6f22e}.primary-guides{background:#3b82f6}
+.drawer-primary b{margin-left:auto;font-size:1.1rem}.primary-all{background:#ff2e7e}.primary-deals{background:#FFB000!important;color:#171225!important;border-left:3px solid #ffd46f}.primary-guides{background:#3b82f6}
 .drawer-section-label{color:#a99db5;font:700 .66rem 'Plus Jakarta Sans',sans-serif;text-transform:uppercase;letter-spacing:.14em;margin:0 3px 8px}
 .drawer-categories{display:grid;gap:7px}
 .drawer-categories a{--accent:#fff;--tint:rgba(255,255,255,.05);display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.92);text-decoration:none;font:700 .88rem 'Plus Jakarta Sans',sans-serif;letter-spacing:.025em;padding:12px 12px;border:1px solid rgba(255,255,255,.07);border-left:3px solid var(--accent);border-radius:10px;background:var(--tint);transition:.16s}
