@@ -139,3 +139,23 @@ jobs:
       - uses: actions/checkout@v4
       - name: Audit closed shows in active catalogs
         run: python3 scripts/audit-closed-show-catalog-leaks.py
+
+  catalog-js-syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit show catalog JavaScript syntax
+        id: catalogjs
+        continue-on-error: true
+        run: python3 scripts/audit-catalog-js-syntax.py 2>&1 | tee /tmp/catalog-js-syntax.txt
+      - name: Open or update P0 catalog issue on failure
+        if: steps.catalogjs.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          title='[P0] Show catalog JavaScript is broken'
+          body=$(printf 'A show catalog contains invalid inline JavaScript on `%s`. This can zero an entire customer-facing show grid.\n\n```text\n%s\n```' "${GITHUB_SHA}" "$(tail -n 140 /tmp/catalog-js-syntax.txt)")
+          existing=$(gh issue list --repo "$REPO" --state open --search "in:title \"$title\"" --json number,title --jq ".[] | select(.title == \"$title\") | .number" | head -1)
+          if [[ -n "$existing" ]]; then gh issue comment "$existing" --repo "$REPO" --body "$body"; else gh issue create --repo "$REPO" --title "$title" --label 'P0 Accuracy,automation' --body "$body"; fi
+          exit 1
