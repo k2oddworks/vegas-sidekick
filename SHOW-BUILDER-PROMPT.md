@@ -138,7 +138,7 @@ The show accent is used on:
 - `.t-check` icons in sidebar
 - email signup bar background
 
-**Orange is always used for ALL CTA buttons** (`.hero-cta`, `.sb-cta`, `.mob-cta`, `.final-cta-btn`, `.zone-popup-cta`). Never put the show color on a buy button.
+**Warm Amber (`#FFB000`) is always used for ALL primary ticket CTA buttons** (`.hero-cta`, `.sb-cta`, `.mob-cta`, `.final-cta-btn`, `.zone-popup-cta`). Never put the show color on a buy button.
 
 ### Ticker text color
 - If `--show` is light/bright (yellow, cyan, light gold): use `color: var(--navy)` on ticker text

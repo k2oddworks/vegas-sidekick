@@ -1,0 +1,22 @@
+/* Vegas Sidekick primary ticket action — Warm Amber. Brand pink remains an accent color. */
+.vs-ticket-primary{
+  background:#FFB000!important;
+  background-image:none!important;
+  color:#171225!important;
+  border-color:#FFD166!important;
+  box-shadow:0 8px 22px rgba(255,176,0,.23),0 0 0 1px rgba(255,255,255,.16)!important;
+  text-shadow:none!important;
+}
+.vs-ticket-primary:hover{
+  background:#F4A900!important;
+  color:#171225!important;
+  filter:brightness(1.02)!important;
+}
+.vs-ticket-primary:active{
+  background:#E89F00!important;
+  color:#171225!important;
+}
+.vs-ticket-primary:focus-visible{
+  outline:3px solid rgba(255,209,102,.72)!important;
+  outline-offset:3px;
+}

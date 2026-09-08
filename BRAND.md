@@ -173,7 +173,7 @@ section labels. Scroll-reveal `fadeUp` via `IntersectionObserver`, Ken Burns her
 sliders, `pulseGlowCta` on primary buttons. Breakpoints: 900px tablet, 480px mobile.
 Every page must honour `prefers-reduced-motion`.
 
-**The CTA is blue.** Pink is a highlight, not a button.
+**The primary ticket CTA is Warm Amber (`#FFB000`) with dark text.** Pink stays a brand/highlight color, not the purchase-action color.
 
 ---
 
