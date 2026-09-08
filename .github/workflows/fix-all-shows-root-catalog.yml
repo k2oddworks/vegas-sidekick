@@ -1,0 +1,36 @@
+name: Fix All Shows Root Catalog
+
+on:
+  push:
+    branches: [fix/all-shows-root-catalog]
+    paths:
+      - 'scripts/fix-all-shows-root-catalog.py'
+      - '.github/workflows/fix-all-shows-root-catalog.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/all-shows-root-catalog
+      - name: Repair root catalog and syntax check catalogs
+        run: python3 scripts/fix-all-shows-root-catalog.py
+      - name: Run core audits
+        run: |
+          python3 scripts/audit-closed-show-catalog-leaks.py
+          python3 scripts/audit-content-link-hygiene.py
+          python3 scripts/audit-internal-links.py
+      - name: Commit fix
+        run: |
+          git checkout -- docs/internal-link-audit.md || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add shows/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Fix all-shows root catalog JavaScript"
+            git push origin HEAD:fix/all-shows-root-catalog
+          fi
