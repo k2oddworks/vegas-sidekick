@@ -25,11 +25,11 @@ jobs:
           print(f'{len(imgs)} deal images; {len(bad)} bad fallbacks')
           if bad: raise SystemExit(bad)
           PY
-      - name: Commit repaired Deals page
+      - name: Commit repaired Deals page and durable resolver
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add shows/deals/index.html
+          git add shows/deals/index.html scripts/implement-savings-system.py
           if ! git diff --cached --quiet; then
             git commit -m "Use real show images on Deals page"
             git push
