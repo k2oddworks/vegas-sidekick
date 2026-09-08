@@ -1,0 +1,72 @@
+name: Run Mobile Hero Frame Refinement
+
+on:
+  push:
+    branches: [ux/mobile-hero-frame-cushion]
+    paths: [.github/workflows/run-mobile-hero-frame-refinement.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  refine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ux/mobile-hero-frame-cushion
+          fetch-depth: 0
+
+      - name: Add framed safe-fit mobile hero treatment
+        run: |
+          cat >> assets/show-canonical.css <<'CSS'
+
+          /* Mobile safe-fit refinement: balanced cushion and a more intentional photo frame. */
+          @media(max-width:800px){
+            .hero-media[data-mobile-fit="safe"]{
+              height:420px!important;
+              min-height:420px!important;
+              padding:20px 14px 24px;
+              background:linear-gradient(180deg,rgba(80,31,111,.72),rgba(31,8,55,.9));
+              box-shadow:inset 0 1px 0 rgba(255,255,255,.12),inset 0 -1px 0 rgba(255,255,255,.07);
+            }
+            .hero-media[data-mobile-fit="safe"]::before{
+              inset:-12px;
+              filter:blur(20px) brightness(.38) saturate(.95);
+              opacity:.9;
+            }
+            .hero-media[data-mobile-fit="safe"] img{
+              width:100%;
+              height:100%;
+              object-fit:contain!important;
+              object-position:var(--mobile-hero-position,center center);
+              border-radius:14px;
+              box-shadow:0 0 0 1px rgba(255,255,255,.14),0 12px 28px rgba(0,0,0,.28);
+              transform:translateY(2px);
+            }
+            .hero-media[data-mobile-fit="safe"]::after{
+              inset:0;
+              background:linear-gradient(0deg,#2c0b4e 0,rgba(44,11,78,.38) 9%,transparent 25%);
+              pointer-events:none;
+            }
+          }
+          CSS
+
+      - name: Validate hero and site audits
+        run: |
+          python3 scripts/audit-mobile-show-heroes.py
+          python3 scripts/audit-event-schema.py
+          python3 scripts/audit-serp-metadata.py
+          python3 scripts/audit-content-link-hygiene.py
+          python3 scripts/audit-internal-links.py
+
+      - name: Commit refinement
+        run: |
+          git checkout -- docs/internal-link-audit.md || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/show-canonical.css
+          if ! git diff --cached --quiet; then
+            git commit -m "Refine mobile hero framing and cushion"
+            git push origin HEAD:ux/mobile-hero-frame-cushion
+          fi
