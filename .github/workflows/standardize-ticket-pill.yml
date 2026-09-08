@@ -2,7 +2,9 @@ name: Standardize Ticket Pill
 on:
   push:
     branches: [main]
-    paths: ['.github/workflows/standardize-ticket-pill.yml']
+    paths:
+      - 'scripts/apply-option1-ticket-layout.py'
+      - '.github/workflows/standardize-ticket-pill.yml'
 permissions:
   contents: write
 jobs:
@@ -10,56 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Standardize Option 1 ticket layout
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          import re, json
-
-          root=Path('.')
-          css=(root/'assets/show-savings.css').read_text()
-          assert 'border-radius:999px' in css and '.vs-deal-note{display:none!important}' in css
-
-          # Remove the redundant white explanatory deal boxes from active show HTML.
-          db=json.loads((root/'data/show-database.json').read_text())
-          touched=0
-          for r in db.get('records',[]):
-              if r.get('status')!='active' or not r.get('page_path'): continue
-              p=root/r['page_path'].strip('/')/'index.html'
-              if not p.exists(): continue
-              t=p.read_text()
-              nt=re.sub(r'<div class="vs-deal-note">.*?</div>','',t,flags=re.S)
-              if nt!=t:
-                  p.write_text(nt); touched+=1
-
-          # Keep the savings generator aligned with the approved Option 1 layout.
-          p=root/'scripts/implement-savings-system.py'; t=p.read_text()
-          new_css="""(ROOT/'assets/show-savings.css').write_text('''/* Vegas Sidekick savings system */
-.vs-deal-line{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:7px}.vs-regular-price{color:#8b8295;text-decoration:line-through;font:700 .78rem/1.2 Inter,sans-serif}.vs-save-badge{display:inline-flex;align-items:center;border-radius:999px;background:#fff1b8;color:#4c3200;border:1px solid rgba(255,176,0,.5);font:800 .72rem/1 'Plus Jakarta Sans',sans-serif;padding:6px 9px}.vs-deal-note{display:none!important}.mobile-cta .vs-mobile-save,.mobile-bar .vs-mobile-save,.sticky-cta .vs-mobile-save{display:block;color:#9a6800;font:800 .67rem/1.15 'Plus Jakarta Sans',sans-serif;margin-top:2px}
-@media(max-width:800px){.buybox{display:grid!important;grid-template-columns:auto minmax(0,1fr)!important;align-items:end!important;gap:10px 16px!important;padding:18px!important}.buybox>.price{grid-column:1!important;grid-row:1!important;align-self:end!important;margin:0!important}.buybox>.vs-deal-line{grid-column:2!important;grid-row:1!important;align-self:end!important;margin:0 0 5px!important}.buybox>.cta,.buybox>.hero-cta,.buybox>a.vs-ticket-primary{grid-column:1/-1!important;width:100%!important;min-height:54px!important;margin:2px 0 0!important;padding:14px 22px!important;border-radius:999px!important;justify-content:center!important;text-align:center!important;white-space:nowrap!important}.buybox>div:first-child{grid-column:1/-1!important;display:grid!important;grid-template-columns:auto minmax(0,1fr)!important;align-items:end!important;gap:8px 16px!important;width:100%!important}.buybox>div:first-child>.price{grid-column:1!important;margin:0!important}.buybox>div:first-child>.vs-deal-line{grid-column:2!important;margin:0 0 4px!important;align-self:end!important}.buybox>div:first-child>.updated,.buybox>div:first-child>.save{grid-column:1/-1!important;margin-top:0!important}.price-row{display:grid!important;grid-template-columns:auto minmax(0,1fr)!important;align-items:end!important;gap:10px 16px!important;width:100%!important}.price-row>.price{grid-column:1!important;margin:0!important}.price-row>.vs-deal-line{grid-column:2!important;margin:0 0 5px!important;align-self:end!important}.price-row>.ticket,.price-row>a.vs-ticket-primary{grid-column:1/-1!important;width:100%!important;min-height:54px!important;padding:14px 22px!important;border-radius:999px!important;justify-content:center!important;text-align:center!important;white-space:nowrap!important}.vs-save-badge{font-size:.68rem;padding:5px 8px}}
-''')"""
-          t,n=re.subn(r"\(ROOT/'assets/show-savings\.css'\)\.write_text\('''.*?'''\)",new_css,t,count=1,flags=re.S)
-          if n!=1: raise SystemExit('Could not update generated savings CSS block')
-          t=re.sub(r"\n\s*note=f'<div class=\"vs-deal-note\".*?\n",'\n',t,count=1)
-          t=t.replace("            # place explanatory note after buybox, before updated line\n            text=text.replace('</div><div class=\"updated\">','</div>'+note+'<div class=\"updated\">',1)\n",'')
-          t=t.replace("lambda m:m.group(1)+line+note","lambda m:m.group(1)+line")
-          p.write_text(t)
-
-          # Keep custom benchmark edge-case generator from restoring the white note.
-          p=root/'scripts/fix-savings-edge-cases.py'; t=p.read_text()
-          t=re.sub(r"\n\s*note=f'<div class=\"vs-deal-note\".*?\n",'\n',t)
-          t=t.replace('+line+note','+line').replace('+note+line','+line')
-          p.write_text(t)
-
-          # Document the approved treatment.
-          p=root/'VS_CHAT_CONTEXT.md'; t=p.read_text()
-          marker='### Approved mobile ticket purchase layout — Option 1'
-          if marker not in t:
-              t += '''\n\n### Approved mobile ticket purchase layout — Option 1\n\nAs of September 8, 2026, show-page hero ticket purchase modules use the Option 1 treatment on mobile:\n\n- show facts/chips remain immediately above the purchase area\n- current price, struck-through regular price, and `Save $X` are grouped compactly\n- the primary Warm Amber `Get Tickets →` action is a full-width **rounded pill**, not a tall rectangular block\n- do not repeat the same savings math in a separate white `Sidekick deal` explanation box\n- custom benchmark pages must visually match the same treatment even when their underlying hero markup differs\n- the mobile sticky bottom CTA remains compact and separate from the hero purchase module\n'''
-              p.write_text(t)
-
-          print(f'Removed redundant deal note from {touched} active show pages.')
-          PY
+      - name: Apply Option 1 ticket layout
+        run: python3 scripts/apply-option1-ticket-layout.py
       - name: Run safeguards
         run: |
           python3 scripts/audit-savings-system.py
@@ -72,7 +26,7 @@ jobs:
           git checkout -- docs/internal-link-audit.md || true
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add shows scripts/implement-savings-system.py scripts/fix-savings-edge-cases.py VS_CHAT_CONTEXT.md
+          git add assets/show-savings.css shows scripts/implement-savings-system.py scripts/fix-savings-edge-cases.py VS_CHAT_CONTEXT.md
           if ! git diff --cached --quiet; then
             git commit -m "Standardize show ticket modules to Option 1 pill layout"
             git push
