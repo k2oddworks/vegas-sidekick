@@ -190,7 +190,7 @@ This is the standard template for all new show pages — locked in as the refere
 - `--show` / `--show-lt` CSS vars drive the show's accent color (e.g. gold for Jabba, crimson for V)
 - Ticker: show-color background; text color white (dark shows) or navy (light shows like gold)
 - `@media (prefers-reduced-motion: reduce)` disables Ken Burns + ticker animations
-- All primary "Get Tickets" CTA buttons (`.hero-cta`, `.sb-cta`, `.mob-cta`, `.final-cta-btn`) share one locked-in treatment: navy text on orange fill, soft light-blue neon border + matching glow (`rgba(96,165,250,...)`), pulsing glow-ring animation (`pulseGlowCta` — animated `box-shadow`, no extra wrapper markup needed), the existing shimmer sweep, and a light-blue bobbing 🎟️ ticket emoji (`.cta-ticket`, hue-rotated + drop-shadow glow, `bobTicket` animation) in place of the plain arrow
+- All primary "Get Tickets" CTA buttons (`.hero-cta`, `.sb-cta`, `.mob-cta`, `.final-cta-btn`) share one locked-in treatment: dark text on Warm Amber (`#FFB000`) fill, soft light-blue neon border + matching glow (`rgba(96,165,250,...)`), pulsing glow-ring animation (`pulseGlowCta` — animated `box-shadow`, no extra wrapper markup needed), the existing shimmer sweep, and a light-blue bobbing 🎟️ ticket emoji (`.cta-ticket`, hue-rotated + drop-shadow glow, `bobTicket` animation) in place of the plain arrow
 
 The seating chart is an interactive SVG — clickable zones call `selectZone('id')`, which populates a `.zone-popup` panel below with zone name, description, and optional Sweet Spot badge.
 
