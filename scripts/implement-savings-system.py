@@ -83,7 +83,13 @@ for p in catalogs:
 def hero_for(r):
     p=ROOT/r['page_path'].strip('/')/'index.html'
     if p.exists():
-        t=p.read_text(errors='ignore');m=re.search(r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\'](?:https://vegassidekick\.com)?([^"\']+)',t,re.I)
+        t=p.read_text(errors='ignore')
+        for tag in re.findall(r'<meta\b[^>]*>',t,flags=re.I):
+            attrs=dict((k.lower(),html.unescape(v)) for k,v in re.findall(r'([\w:-]+)=["\']([^"\']*)["\']',tag))
+            if attrs.get('property')=='og:image' or attrs.get('name')=='twitter:image':
+                src=re.sub(r'^https://vegassidekick\.com','',attrs.get('content',''))
+                if src.startswith('/'):return src
+        m=re.search(r'<div class="hero-media"[^>]*>.*?<img[^>]+src=["\']([^"\']+)',t,re.I|re.S)
         if m:return m.group(1)
     return '/favicon.png'
 deals=sorted([r for r in active if calc(r)],key=lambda r:(-r['savings_amount'],r['our_price'],r['name']))
