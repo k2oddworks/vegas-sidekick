@@ -809,3 +809,15 @@ Savings are a first-class Vegas Sidekick conversion feature, but only when they 
 - `.github/workflows/savings-audit.yml` runs the recurring savings safeguard.
 
 The September 8 implementation found 54 of 71 active shows meeting the $5 threshold after the Spotlight reconciliation. Treat that count as time-sensitive; the rule and calculation are permanent, the count is not.
+
+
+### Approved mobile ticket purchase layout — Option 1
+
+As of September 8, 2026, show-page hero ticket purchase modules use the Option 1 treatment on mobile:
+
+- show facts/chips remain immediately above the purchase area
+- current price, struck-through regular price, and `Save $X` are grouped compactly
+- the primary Warm Amber `Get Tickets →` action is a full-width **rounded pill**, not a tall rectangular block
+- do not repeat the same savings math in a separate white `Sidekick deal` explanation box
+- custom benchmark pages must visually match the same treatment even when their underlying hero markup differs
+- the mobile sticky bottom CTA remains compact and separate from the hero purchase module

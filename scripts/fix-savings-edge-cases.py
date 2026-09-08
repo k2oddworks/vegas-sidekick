@@ -18,7 +18,6 @@ def inject_nested(slug,path):
     p=ROOT/path;t=p.read_text()
     if 'vs-save-badge' in t:return
     line=f'<div class="vs-deal-line"><span class="vs-regular-price">Regular {reg}</span><span class="vs-save-badge">Save {save}</span></div>'
-    note=f'<div class="vs-deal-note">🌵 <strong>Sidekick deal:</strong> {our} is {save} below the listed regular price of {reg}.</div>'
     # Custom benchmark buyboxes wrap price in an extra div.
     pat=rf'(<div class="buybox">\s*<div>\s*<div class="price"><small>[^<]*</small>{re.escape(our)}</div>)'
     t,n=re.subn(pat,lambda m:m.group(1)+line,t,count=1,flags=re.S|re.I)
@@ -35,7 +34,6 @@ def inject_ka():
     p=ROOT/'shows/cirque/ka/index.html';t=p.read_text()
     if 'vs-save-badge' not in t:
         line=f'<div class="vs-deal-line"><span class="vs-regular-price">Regular {reg}</span><span class="vs-save-badge">Save {save}</span></div>'
-        note=f'<div class="vs-deal-note">🌵 <strong>Sidekick deal:</strong> {our} is {save} below the listed regular price of {reg}.</div>'
         pat=rf'(<div class="price"><small>[^<]*</small><strong>{re.escape(our)}</strong></div>)'
         t,n=re.subn(pat,lambda m:m.group(1)+line,t,count=1,flags=re.I)
         if n:t=t.replace(line,line+note,1)
