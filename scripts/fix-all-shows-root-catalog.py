@@ -7,11 +7,16 @@ import tempfile
 ROOT = Path(__file__).resolve().parents[1]
 page = ROOT / 'shows' / 'index.html'
 text = page.read_text(encoding='utf-8')
-old = "venue:\"Bugsy's Cabaret - Flamingo Hotel\"s Cabaret · Flamingo Las Vegas'"
-new = "venue:\"Bugsy's Cabaret · Flamingo Las Vegas\""
-if old not in text:
-    raise SystemExit('Expected malformed X Burlesque venue string not found')
-text = text.replace(old, new, 1)
+
+replacements = {
+    "venue:\"Bugsy's Cabaret - Flamingo Hotel\"s Cabaret · Flamingo Las Vegas'": "venue:\"Bugsy's Cabaret · Flamingo Las Vegas\"",
+    "venue:'King Arthur’s Arena – Excalibur Hotel's Arena · Excalibur'": "venue:\"King Arthur’s Arena · Excalibur\"",
+}
+for old, new in replacements.items():
+    if old not in text:
+        raise SystemExit(f'Expected malformed catalog string not found: {old}')
+    text = text.replace(old, new, 1)
+
 page.write_text(text, encoding='utf-8')
 
 # Syntax-check inline JS on all catalog pages so one broken record cannot zero a whole grid.
@@ -21,7 +26,7 @@ for path in paths:
     html = path.read_text(encoding='utf-8')
     for i, match in enumerate(re.finditer(r'<script(?:\s[^>]*)?>(.*?)</script>', html, re.S | re.I), 1):
         code = match.group(1).strip()
-        if not code or code.startswith('{') or 'application/ld+json' in match.group(0)[:200]:
+        if not code or 'application/ld+json' in match.group(0)[:200]:
             continue
         with tempfile.NamedTemporaryFile('w', suffix='.js', delete=False, encoding='utf-8') as fh:
             fh.write(code)
