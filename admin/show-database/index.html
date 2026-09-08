@@ -26,86 +26,26 @@
       </div>
     </header>
 
-    <section class="security-note">
-      <strong>V1 editing mode:</strong> edits are saved to this browser as a draft. GitHub publishing stays disabled until the existing OAuth path is secured.
-    </section>
-
+    <section class="security-note"><strong>V1 editing mode:</strong> edits are saved to this browser as a draft. GitHub publishing stays disabled until the existing OAuth path is secured.</section>
     <section class="stats" id="stats"></section>
-
     <section class="toolbar">
-      <div class="search-wrap">
-        <span>⌕</span>
-        <input id="search" type="search" placeholder="Search show, venue, showroom…" autocomplete="off">
-      </div>
+      <div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Search show, venue, showroom…" autocomplete="off"></div>
       <div class="filters" id="status-filters">
-        <button class="filter active" data-filter="all">All</button>
-        <button class="filter" data-filter="active">Active</button>
-        <button class="filter" data-filter="needs_review">Needs Review</button>
-        <button class="filter" data-filter="closed">Closed</button>
+        <button class="filter active" data-filter="all">All</button><button class="filter" data-filter="active">Active</button><button class="filter" data-filter="needs_review">Needs Review</button><button class="filter" data-filter="closed">Closed</button>
       </div>
       <select id="category-filter" class="select"><option value="all">All categories</option></select>
       <button class="btn ghost" id="discard-btn">Discard draft</button>
     </section>
+    <section class="bulkbar" id="bulkbar" hidden><strong><span id="selected-count">0</span> selected</strong><select id="bulk-status" class="select compact"><option value="">Change status…</option><option value="active">Active</option><option value="closed">Closed</option><option value="needs_review">Needs Review</option></select><input id="bulk-verified" class="input compact" type="date" aria-label="Bulk verification date"><button class="btn secondary" id="bulk-verified-btn">Set verified date</button><button class="btn ghost" id="clear-selection">Clear</button></section>
 
-    <section class="bulkbar" id="bulkbar" hidden>
-      <strong><span id="selected-count">0</span> selected</strong>
-      <select id="bulk-status" class="select compact">
-        <option value="">Change status…</option>
-        <option value="active">Active</option>
-        <option value="closed">Closed</option>
-        <option value="needs_review">Needs Review</option>
-      </select>
-      <input id="bulk-verified" class="input compact" type="date" aria-label="Bulk verification date">
-      <button class="btn secondary" id="bulk-verified-btn">Set verified date</button>
-      <button class="btn ghost" id="clear-selection">Clear</button>
-    </section>
-
-    <main class="table-card">
-      <div class="table-scroll">
-        <table>
-          <thead>
-            <tr>
-              <th class="check-col"><input type="checkbox" id="select-all" aria-label="Select all visible rows"></th>
-              <th class="sticky-name sortable" data-sort="name">Show</th>
-              <th class="sortable" data-sort="status">Status</th>
-              <th class="num sortable" data-sort="our_price">Our Price</th>
-              <th class="num sortable" data-sort="regular_price">Regular</th>
-              <th class="sortable" data-sort="venue">Venue</th>
-              <th>Showroom</th>
-              <th class="num sortable" data-sort="runtime_minutes">Runtime</th>
-              <th>Age</th>
-              <th class="wide">Schedule</th>
-              <th>Ticket URL</th>
-              <th class="sortable" data-sort="verified_on">Verified</th>
-              <th>Review</th>
-            </tr>
-          </thead>
-          <tbody id="show-rows"></tbody>
-        </table>
-      </div>
-      <div class="empty" id="empty" hidden>No shows match those filters.</div>
-    </main>
+    <main class="table-card"><div class="table-scroll"><table><thead><tr>
+      <th class="check-col"><input type="checkbox" id="select-all" aria-label="Select all visible rows"></th>
+      <th class="sticky-name sortable" data-sort="name">Show</th><th class="sortable" data-sort="status">Status</th>
+      <th class="num sortable" data-sort="our_price">Our Price</th><th class="num sortable" data-sort="regular_price">Regular</th>
+      <th class="num sortable" data-sort="savings_amount">Savings $</th><th class="num sortable" data-sort="savings_percent">Savings %</th>
+      <th class="sortable" data-sort="venue">Venue</th><th>Showroom</th><th class="num sortable" data-sort="runtime_minutes">Runtime</th><th>Age</th><th class="wide">Schedule</th><th>Ticket URL</th><th class="sortable" data-sort="verified_on">Verified</th><th>Review</th>
+    </tr></thead><tbody id="show-rows"></tbody></table></div><div class="empty" id="empty" hidden>No shows match those filters.</div></main>
   </div>
-
-  <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
-  <aside class="drawer" id="drawer" aria-hidden="true">
-    <div class="drawer-head">
-      <div>
-        <div class="eyebrow" id="drawer-category">Show</div>
-        <h2 id="drawer-title">Show details</h2>
-      </div>
-      <button class="icon-btn" id="drawer-close" aria-label="Close">✕</button>
-    </div>
-    <div class="drawer-body" id="drawer-body"></div>
-  </aside>
-
-  <template id="field-template">
-    <label class="field">
-      <span class="field-label"></span>
-      <input class="field-input">
-    </label>
-  </template>
-
-  <script src="/admin/show-database/app.js?v=1"></script>
-</body>
-</html>
+  <div class="drawer-backdrop" id="drawer-backdrop" hidden></div><aside class="drawer" id="drawer" aria-hidden="true"><div class="drawer-head"><div><div class="eyebrow" id="drawer-category">Show</div><h2 id="drawer-title">Show details</h2></div><button class="icon-btn" id="drawer-close" aria-label="Close">✕</button></div><div class="drawer-body" id="drawer-body"></div></aside>
+  <script src="/admin/show-database/app.js?v=2"></script>
+</body></html>
