@@ -27,12 +27,13 @@ jobs:
           python3 scripts/audit-internal-links.py
           python3 scripts/audit-mobile-show-heroes.py
           python3 scripts/audit-catalog-js-syntax.py
-      - name: Commit permanent changes
+      - name: Commit permanent non-workflow changes
         run: |
           git checkout -- docs/internal-link-audit.md || true
+          git checkout -- .github/workflows/operations-audits.yml || true
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scripts/canonicalize-show-pages.py VS_CHAT_CONTEXT.md SHOW-BUILDER-PROMPT.md .github/workflows/operations-audits.yml
+          git add scripts/canonicalize-show-pages.py VS_CHAT_CONTEXT.md SHOW-BUILDER-PROMPT.md
           if ! git diff --cached --quiet; then
             git commit -m "Standardize show decision-card system"
             git push origin HEAD:fix/show-decision-cards
