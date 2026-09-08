@@ -870,4 +870,4 @@ A correctly built show page:
 
 
 ### Decision-card standard (September 2026)
-Use **Good fit**, **Think twice**, and **Booking tip** for the three-card buyer decision aid. The copy must be useful on its own and specific to the show when possible. Never use the retired labels **Book it if…**, **Know this first**, or **Best practical angle**. Preserve stronger custom decision modules on benchmark pages rather than flattening them.
+Use **Good fit** and **Booking tip** as the core buyer decision aid. **Think twice** is optional and should appear only when there is a real, show-specific downside, mismatch, or tradeoff. Never add it just to fill a third card. Never use the retired labels **Book it if…**, **Know this first**, or **Best practical angle**. Preserve stronger custom decision modules on benchmark pages rather than flattening them.
