@@ -1,0 +1,46 @@
+name: Bootstrap Show Database V1
+
+on:
+  push:
+    branches: [admin/show-database-v1]
+    paths:
+      - '.github/workflows/bootstrap-show-database-v1.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admin/show-database-v1
+      - name: Build master show database
+        run: python3 scripts/bootstrap-show-database.py
+      - name: Validate database and admin screen
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('data/show-database.json')
+          data=json.loads(p.read_text())
+          records=data.get('records',[])
+          assert len(records) >= 70, f'Expected 70+ show records, got {len(records)}'
+          slugs=[r['slug'] for r in records]
+          assert len(slugs)==len(set(slugs)), 'Duplicate show slugs'
+          assert any(r['slug']=='carrot-top' and r['our_price']==62 for r in records)
+          assert any(r['slug']=='mad-apple' and r['status']=='closed' for r in records)
+          assert Path('admin/show-database/index.html').exists()
+          assert Path('admin/show-database/app.js').exists()
+          print(f'Validated {len(records)} show records')
+          PY
+      - name: Commit master dataset
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/show-database.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Bootstrap master Show Database dataset"
+            git push origin HEAD:admin/show-database-v1
+          fi
