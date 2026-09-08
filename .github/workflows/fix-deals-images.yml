@@ -1,0 +1,36 @@
+name: Fix Deals Images
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/fix-deals-images.py'
+      - '.github/workflows/fix-deals-images.yml'
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Repair deals card images
+        run: python3 scripts/fix-deals-images.py
+      - name: Validate image paths
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          t=Path('shows/deals/index.html').read_text()
+          imgs=re.findall(r'<div class="deal-img"><img src="([^"]+)"',t)
+          bad=[x for x in imgs if x=='/favicon.png' or not x.startswith('/')]
+          print(f'{len(imgs)} deal images; {len(bad)} bad fallbacks')
+          if bad: raise SystemExit(bad)
+          PY
+      - name: Commit repaired Deals page
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add shows/deals/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Use real show images on Deals page"
+            git push
+          fi
