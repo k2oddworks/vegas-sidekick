@@ -132,3 +132,10 @@ jobs:
       - uses: actions/checkout@v4
       - name: Audit mobile show hero framing
         run: python3 scripts/audit-mobile-show-heroes.py
+
+  closed-show-catalog-leaks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit closed shows in active catalogs
+        run: python3 scripts/audit-closed-show-catalog-leaks.py
