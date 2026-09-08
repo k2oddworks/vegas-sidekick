@@ -20,3 +20,98 @@
   outline:3px solid rgba(255,209,102,.72)!important;
   outline-offset:3px;
 }
+
+/* Approved mobile purchase treatment: value row + full-width amber pill, no outer card. */
+@media(max-width:800px){
+  body .buybox{
+    display:grid!important;
+    grid-template-columns:auto minmax(0,1fr)!important;
+    align-items:end!important;
+    gap:9px 14px!important;
+    width:100%!important;
+    max-width:none!important;
+    padding:4px 0 0!important;
+    margin-top:22px!important;
+    background:transparent!important;
+    background-image:none!important;
+    border:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+  }
+  body .buybox>.price{
+    grid-column:1!important;
+    grid-row:1!important;
+    margin:0!important;
+  }
+  body .buybox>.vs-deal-line{
+    grid-column:2!important;
+    grid-row:1!important;
+    align-self:end!important;
+    margin:0 0 5px!important;
+  }
+  body .buybox>div:first-child{
+    grid-column:1/-1!important;
+    display:grid!important;
+    grid-template-columns:auto minmax(0,1fr)!important;
+    align-items:end!important;
+    gap:5px 14px!important;
+    width:100%!important;
+  }
+  body .buybox>div:first-child>.price{grid-column:1!important;margin:0!important}
+  body .buybox>div:first-child>.vs-deal-line{grid-column:2!important;margin:0 0 5px!important;align-self:end!important}
+  body .buybox .save{display:none!important}
+  body .buybox>div:first-child>.updated{grid-column:1/-1!important;margin:0!important}
+  body .buybox>.cta,
+  body .buybox>.hero-cta,
+  body .buybox>a.vs-ticket-primary{
+    grid-column:1/-1!important;
+    width:100%!important;
+    min-height:54px!important;
+    margin:3px 0 0!important;
+    padding:14px 22px!important;
+    border-radius:999px!important;
+    justify-content:center!important;
+    text-align:center!important;
+    white-space:nowrap!important;
+  }
+  body .price-row{
+    display:grid!important;
+    grid-template-columns:auto minmax(0,1fr)!important;
+    align-items:end!important;
+    gap:9px 14px!important;
+    width:100%!important;
+    padding:4px 0 0!important;
+    background:transparent!important;
+    border:0!important;
+    box-shadow:none!important;
+  }
+  body .price-row>.price{grid-column:1!important;margin:0!important}
+  body .price-row>.vs-deal-line{grid-column:2!important;margin:0 0 5px!important;align-self:end!important}
+  body .price-row>.ticket,
+  body .price-row>a.vs-ticket-primary{
+    grid-column:1/-1!important;
+    width:100%!important;
+    min-height:54px!important;
+    margin-top:3px!important;
+    padding:14px 22px!important;
+    border-radius:999px!important;
+    justify-content:center!important;
+    text-align:center!important;
+    white-space:nowrap!important;
+  }
+
+  /* Keep every bottom mobile ticket action in the same Warm Amber language. */
+  body a.mob-cta,
+  body .mobile-cta a,
+  body .mobile-bar a,
+  body .sticky-cta a,
+  body .mobile-buybar a{
+    background:#FFB000!important;
+    background-image:none!important;
+    color:#171225!important;
+    border-color:#FFD166!important;
+    border-radius:18px!important;
+    box-shadow:0 8px 22px rgba(255,176,0,.23),0 0 0 1px rgba(255,255,255,.16)!important;
+    text-shadow:none!important;
+  }
+}
