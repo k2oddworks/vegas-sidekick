@@ -1,0 +1,1 @@
+Catalog JavaScript syntax is now audited as a P0 Operations safeguard after the September 8, 2026 root show-grid failure.
