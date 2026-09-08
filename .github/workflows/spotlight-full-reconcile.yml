@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/spotlight-full-reconcile.yml'
       - 'scripts/reconcile-spotlight.py'
+      - 'scripts/refine-spotlight-reconciliation.py'
 
 permissions:
   contents: write
@@ -20,7 +21,9 @@ jobs:
       - name: Install scraper dependencies
         run: pip install requests beautifulsoup4
       - name: Reconcile Spotlight facts and sync customer pages
-        run: python3 scripts/reconcile-spotlight.py
+        run: |
+          python3 scripts/reconcile-spotlight.py
+          python3 scripts/refine-spotlight-reconciliation.py
       - name: Run Vegas Sidekick audits
         run: |
           python3 scripts/audit-event-schema.py
@@ -28,7 +31,7 @@ jobs:
           python3 scripts/audit-content-link-hygiene.py
           python3 scripts/audit-mobile-show-heroes.py
           python3 scripts/audit-closed-show-catalog-leaks.py
-          python3 scripts/audit-ticket-cta-colors.py || true
+          if [ -f scripts/audit-ticket-cta-colors.py ]; then python3 scripts/audit-ticket-cta-colors.py; fi
           python3 scripts/audit-internal-links.py
       - name: Commit reconciled data and pages
         run: |
@@ -37,6 +40,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/show-database.json docs/spotlight-reconciliation-2026-09-08.md shows
           if ! git diff --cached --quiet; then
-            git commit -m "Reconcile show facts with Spotlight"
+            git commit -m "Refine Spotlight show reconciliation"
             git push origin HEAD:data/spotlight-full-reconcile
           fi
