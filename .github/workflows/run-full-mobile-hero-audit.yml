@@ -80,12 +80,21 @@ jobs:
           s = p.read_text()
           s = s.replace('if fit not in {"cover", "contain"}:', 'if fit not in {"cover", "contain", "safe"}:')
           s = s.replace('media.mobile_hero.fit must be cover or contain', 'media.mobile_hero.fit must be cover, contain or safe')
-          old = '''    attrs = f' data-mobile-fit="{fit}" style="--mobile-hero-position:{position}"'\n'''
-          new = '''    hero_src = ((record.get("media") or {}).get("hero_image") or "")\n    bg = f";--mobile-hero-image:url('{hero_src}')" if fit == "safe" and hero_src else ""\n    attrs = f' data-mobile-fit="{fit}" style="--mobile-hero-position:{position}{bg}"'\n'''
-          if old in s:
-              s = s.replace(old, new, 1)
+
+          old_attrs = '''    attrs = f' data-mobile-fit="{fit}" style="--mobile-hero-position:{position}"'\n'''
+          new_attrs = '''    hero_src = ((record.get("media") or {}).get("hero_image") or "")\n    bg = f";--mobile-hero-image:url('{hero_src}')" if fit == "safe" and hero_src else ""\n    attrs = f' data-mobile-fit="{fit}" style="--mobile-hero-position:{position}{bg}"'\n'''
+          if old_attrs in s:
+              s = s.replace(old_attrs, new_attrs, 1)
           elif '--mobile-hero-image:' not in s:
               raise SystemExit('sync_mobile_hero attrs block not found')
+
+          old_pattern = '''    pattern = r'<div class="hero-media"(?: data-mobile-fit="[^\"]+")?(?: style="--mobile-hero-position:[^\"]+")?>'\n'''
+          new_pattern = '''    pattern = r'<div class="hero-media"[^>]*>'\n'''
+          if old_pattern in s:
+              s = s.replace(old_pattern, new_pattern, 1)
+          elif '''pattern = r'<div class="hero-media"[^>]*>' ''' not in s:
+              # Handle exact current source if escaping differs.
+              s = s.replace('    pattern = r\'<div class="hero-media"(?: data-mobile-fit="[^\"]+")?(?: style="--mobile-hero-position:[^\"]+")?>\'\n', '    pattern = r\'<div class="hero-media"[^>]*>\'\n', 1)
           p.write_text(s)
           PY
 
