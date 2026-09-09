@@ -2,11 +2,17 @@
 
 Paste this entire document at the start of a new chat session before requesting a new show page.
 
+> **CURRENT BENCHMARK OVERRIDE — September 9, 2026**
+>
+> `shows/magic/nathan-burton-comedy-magic/index.html` and `SHOW-PAGE-BENCHMARK.md` now govern active show-page UX and copy. Older V Theater / Carrot Top / Absinthe examples in this long prompt are legacy implementation references only. If anything below conflicts with the Nathan benchmark, **Nathan wins**.
+>
+> Key current rules: no formal downside/Think twice modules; Good to know only for real useful facts; Booking tip is optional and actionable only; no customer-facing “tradeoff”; no interaction/participation claims unless Kris explicitly confirms them; use Start time/Start times; prefer “See available dates & times”; use one visible “Show info confirmed Month YYYY” freshness line near the author card; galleries support arrows/keyboard/swipe; seating charts are room-based, geometrically faithful, slab-row when exact seat counts are unnecessary, and mobile tap feedback must appear immediately in view.
+
 ---
 
 ## What This Project Is
 
-Vegas Sidekick (`vegassidekick.com`) is a **static HTML website** for Las Vegas show ticket discovery and affiliate booking. No build system, no npm, no framework — pure HTML/CSS/JS files deployed via Cloudflare Pages on push to `main`.
+Vegas Sidekick (`vegassidekick.com`) is a **static HTML website** for Las Vegas show ticket discovery and affiliate booking. No build system, no npm, no framework — pure HTML/CSS/JS files deployed through the current Cloudflare production path from `main`.
 
 **Revenue model:** Affiliate commissions via ticket links in the format:
 ```
@@ -19,8 +25,8 @@ https://spotlight.vegas/shows/{category-slug}/{show-slug}/ref/vegassidekick
 
 ## Repository
 
-- **Repo:** `VegasSidekick/vegas-sidekick` on GitHub
-- **Deploy branch:** `main` — Cloudflare Pages auto-deploys on push
+- **Repo:** `k2oddworks/vegas-sidekick` on GitHub
+- **Deploy branch:** `main` — production branch; verify the public site before claiming a deploy is live
 - **Feature branches:** `claude/feature-description-<id>` for AI-assisted work
 - **Git push** works normally from this environment
 
@@ -28,7 +34,7 @@ https://spotlight.vegas/shows/{category-slug}/{show-slug}/ref/vegassidekick
 
 ## Canonical Show Page Template
 
-**Canonical reference:** `shows/family/v-the-ultimate-variety-show/index.html`
+**Canonical reference / current model:** `shows/magic/nathan-burton-comedy-magic/index.html`
 
 This is the **"Sidekick Build"** — the current standard for all new show pages. Copy it, do not use older pages. Key features:
 
@@ -57,9 +63,9 @@ Main content sections order (inside `<main>`):
 
 ---
 
-## Current Show-Page Benchmark — Carrot Top
+## Current Show-Page Benchmark — Nathan Burton
 
-**Current benchmark/model:** `shows/comedy/carrot-top/index.html`. For new show pages and major rebuilds, use Carrot Top as the interaction, conversion, motion, mobile UX, and SEO metadata benchmark. Preserve each show's own personality; reuse the system, not the skin.
+**Current benchmark/model:** `shows/magic/nathan-burton-comedy-magic/index.html`. For new show pages and major rebuilds, use Nathan Burton as the interaction, conversion, mobile UX, gallery, seating, copy-framing, and SEO benchmark. Read `SHOW-PAGE-BENCHMARK.md` first. Preserve each show's own personality and facts; reuse the system, not Nathan-specific copy.
 
 ### Required SEO metadata package
 Every rebuilt show page must include all of the following:
@@ -250,7 +256,7 @@ There are two distinct recommendation labels. **They are not interchangeable. Ne
 ### 🪑 Sweet Spot — Seating Advice (every page)
 Identifies the single best seating category for value, sightlines, or experience. This is **practical seating advice**, not an endorsement of the show itself.
 
-- **Every show page gets exactly one Sweet Spot callout** — no exceptions
+- Use a **Sweet Spot** badge only when there is a defensible seating recommendation. The physical zone keeps a real location name (for example, Center section); Sweet Spot / Our Pick is a recommendation label, not the zone name.
 - Appears in the seat accordion as a highlighted row with a "🪑 Sweet Spot" badge
 - Appears in the zone popup when that zone is selected (`pick: true` in `ZONES`)
 - Can be mentioned in the seating section prose ("For most visitors, [Zone] is the sweet spot")

@@ -1,6 +1,6 @@
 # VS_CHAT_CONTEXT.md — Vegas Sidekick Living Project Context
 
-**As of:** September 8, 2026  
+**As of:** September 9, 2026
 **Purpose:** Living source of project context, decisions, operating rules, architecture, and lessons learned for ChatGPT/Codex or any future AI collaborator working on Vegas Sidekick.
 
 > This file is not the coding-agent instruction file. `AGENTS.md` should eventually contain concise execution rules for coding agents. This file records what Vegas Sidekick is, how it currently works, what has already been decided, and the context needed to avoid repeating old mistakes.
@@ -9,7 +9,7 @@
 
 ## 1. What Vegas Sidekick Is
 
-Vegas Sidekick (`vegassidekick.com`) is a Las Vegas show-discovery and ticket-affiliate site. The business helps visitors choose Vegas shows, compare options, understand tradeoffs, and hand off ticket purchases through Spotlight.Vegas affiliate links.
+Vegas Sidekick (`vegassidekick.com`) is a Las Vegas show-discovery and ticket-affiliate site. The business helps visitors choose Vegas shows, compare options, understand differences and value, and hand off ticket purchases through Spotlight.Vegas affiliate links.
 
 Founder / Chief Experience Officer: **Kris Kidd**.
 
@@ -69,9 +69,9 @@ Do not add fake countdowns, fake scarcity, fake review signals, or generic conve
 
 ### Freshness wording
 
-Prefer concise freshness such as:
+Prefer one concise visible freshness signal near the Kris author card:
 
-**Last updated September 2026**
+**Show info confirmed September 2026**
 
 Avoid repetitive customer-facing “price checked on...” language unless the date itself adds value.
 
@@ -107,11 +107,14 @@ When reporting work:
 
 The current canonical show-page system uses:
 
-- `vegas-the-show-TEMPLATE.html` as the canonical structural starting point
-- `absinthe-BENCHMARK.html` as a feature / interaction benchmark
-- `scripts/canonicalize-show-pages.py`
+- `shows/magic/nathan-burton-comedy-magic/index.html` as the current show-page benchmark / model
+- `SHOW-PAGE-BENCHMARK.md` as the governing detailed UX / copy / seating specification
+- `AGENTS.md` as the concise coding-agent execution guide
+- `scripts/canonicalize-show-pages.py` where still applicable
 - `assets/show-canonical.css`
 - `assets/show-canonical.js`
+
+Older `vegas-the-show-TEMPLATE.html`, `absinthe-BENCHMARK.html`, Carrot Top, and V Theater examples are legacy references only when they do not conflict with the Nathan Burton benchmark.
 
 Do not redesign show pages from scratch when adding or rebuilding a show. Reuse the established system.
 
@@ -134,6 +137,30 @@ Current canonical show pages generally use:
 13. Author / freshness / disclosure
 14. Final CTA
 15. Mobile sticky ticket bar
+
+
+
+### Nathan Burton benchmark decisions — locked September 9, 2026
+
+Nathan Burton is the new model for active show product pages. The important decisions are system-level, not Nathan-specific facts:
+
+- Keep honesty positive. Do not use recurring **Think twice / downside / honest downside** sections.
+- **Good to know** is optional and only for real useful facts; never relabel rejection copy.
+- **Good Fit** should be positive and compact; do not strand one small card in a huge desktop side rail.
+- **Kris’s take** should reinforce a useful reason to choose the show, not inject generic doubt or tell the customer they may want a different category.
+- Do not use **tradeoff** in customer-facing copy. Explain what each option offers.
+- Do not describe a show or seat as interactive, in the action, likely to be selected, etc. unless Kris explicitly confirms it.
+- **Booking tip** is optional. Keep it only when it gives a concrete show-specific action; remove generic filler.
+- Use **Start time / Start times**, never “Typical start.”
+- Prefer **See available dates & times →** for schedule inventory links.
+- Preferred price line: **Tickets start at $X. Other price points may be available.**
+- Keep one visible freshness signal near the author card: **Show info confirmed Month YYYY**. Exact dates remain in structured metadata.
+- Do not narrate obvious UI behavior (for example, telling users to look at photos).
+- Photo lightboxes should support desktop previous/next, keyboard arrows, mobile swipe, and image count. Odd-aspect images must not break desktop gallery layout.
+- Seating charts are **room-based reusable layouts**: preserve real geometry, reuse one room across shows, use row slabs when exact seat counts are unnecessary, keep physical zone names separate from Sweet Spot / Our Pick labels, and show mobile tap feedback immediately in view.
+- Do not add generic seating disclaimers. Add a warning only when there is a real unusual limitation the customer needs to know.
+- Useful seating layouts may also generate a matching static gallery chart from the same geometry/data.
+- Nathan Burton Theater reusable implementation lives in `data/seat-layouts/nathan-burton-theater.json`, `assets/seat-layouts/nathan-burton-theater.css`, `assets/seat-layouts/nathan-burton-theater.js`, and `images/nathan-burton-theater-seating-chart.svg`.
 
 ### Structured data
 

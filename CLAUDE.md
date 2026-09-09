@@ -1,3 +1,9 @@
+> **SHOW-PAGE PRECEDENCE UPDATE — September 9, 2026**
+>
+> For active show-page work, `shows/magic/nathan-burton-comedy-magic/index.html` is the current model and `SHOW-PAGE-BENCHMARK.md` is the governing detailed specification. Read `AGENTS.md` first. Any older V Theater, Absinthe, Carrot Top, or prior show-builder guidance in this file is legacy reference only when it does not conflict with the Nathan Burton benchmark.
+>
+> In particular: no formal downside/Think twice framing; Good to know only for real useful facts; no customer-facing “tradeoff”; no unconfirmed interaction/participation language; Booking tip optional/actionable only; Start time/Start times; one “Show info confirmed Month YYYY” freshness line; modern gallery navigation; and room-based geometrically faithful seating charts with immediate mobile tap feedback.
+
 # CLAUDE.md — Vegas Sidekick Codebase Guide
 
 ## Project Overview

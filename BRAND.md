@@ -350,3 +350,17 @@ If it sounds like a brochure, a press release, or an affiliate blog, it isn't re
 ### Dispatch mobile hero standard
 
 On mobile, Vegas Dispatch article heroes should not consume a full screen before the reader reaches the story. Cap editorial hero height at roughly 360–430px depending on viewport, keep the headline and byline visible over the image, and use `object-fit: cover` / deliberate `object-position` cropping. Desktop can retain the larger cinematic treatment.
+
+---
+
+## Show-page decision framing — September 2026
+
+These are brand/voice rules, not merely layout preferences:
+
+- Be candid without manufacturing objections. Do not use recurring **Think twice**, **downside**, or **honest downside** modules.
+- **Good to know** is for a genuine fact the buyer should know. If there is no useful fact, omit the card.
+- **Kris’s take** should make the customer more confident and informed about why the show is a good choice; do not use it to plant generic doubt.
+- Avoid **tradeoff** in customer-facing copy. Describe the positive value or viewing experience each option offers.
+- Do not imply audience interaction, participation, being selected, or being “in the action” unless Kris has explicitly confirmed that fact for that show.
+- Do not narrate obvious interface behavior. Let good UI explain itself.
+- Fewer useful cards are better than filler cards written to satisfy a template.
