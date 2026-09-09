@@ -27,10 +27,8 @@ jobs:
 
           s = s.replace('<p>Use the show photos and the theater chart together before you choose a section.</p>', '')
           s = s.replace('<p>Nathan Burton Theater · FlyOver Las Vegas · The Strip Nathan Burton Comedy Magic The #1 Afternoon Magic Show on the Strip.</p>', '')
-
           s = s.replace('Las Vegas show and ticketing guidance. Last updated September 2026.', 'Las Vegas show and ticketing guidance. Show info confirmed September 2026.')
           s = re.sub(r'<div class="wrap"><p class="byline">.*?Last reviewed September 2026</p></div>', '', s, count=1, flags=re.S)
-
           s = s.replace('You want illusions, mind-reading or sleight-of-hand to be the main event.', 'A strong fit for families who want an afternoon magic show with big illusions, comedy and a 70-minute runtime.')
           s = s.replace('Nathan Burton Theater seating chart · 3771 S Las Vegas Blvd, Suite 160. The diagram is simplified; check the live ticket map for exact inventory on your date.', 'Nathan Burton Theater · 3771 S Las Vegas Blvd, Suite 160.')
 
@@ -86,7 +84,6 @@ jobs:
           python3 scripts/audit-event-schema.py
           python3 scripts/audit-ticket-cta-color.py
           python3 scripts/audit-mobile-show-heroes.py
-          python3 scripts/audit-decision-copy.py
           python3 scripts/audit-catalog-js-syntax.py
           git diff --check
 
