@@ -1,0 +1,47 @@
+name: Rebuild Wizard of Oz to Current Benchmark
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/rebuild-wizard-of-oz-benchmark.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Rebuild Wizard of Oz page and Sphere seating system
+        run: python3 .github/tmp/rebuild-wizard-of-oz.py
+      - name: Run show-page audits
+        run: |
+          python3 scripts/audit-event-schema.py
+          python3 scripts/audit-ticket-cta-color.py
+          python3 scripts/audit-mobile-show-heroes.py
+          python3 scripts/audit-catalog-js-syntax.py
+          python3 scripts/audit-content-link-hygiene.py
+          node --check assets/seat-layouts/sphere-las-vegas.js
+          git diff --check
+      - name: Commit tested rebuild to main
+        run: |
+          git config user.name 'Vegas Sidekick Operations'
+          git config user.email 'operations@vegassidekick.com'
+          git rm -f .github/workflows/rebuild-wizard-of-oz-benchmark.yml .github/tmp/rebuild-wizard-of-oz.py
+          git add shows/spectaculars/wizard-of-oz/index.html \
+                  data/show-database.json \
+                  shows/spectaculars/index.html \
+                  shows/family/index.html \
+                  data/seat-layouts/sphere-las-vegas.json \
+                  assets/seat-layouts/sphere-las-vegas.css \
+                  assets/seat-layouts/sphere-las-vegas.js \
+                  images/sphere-las-vegas-seating-chart.svg \
+                  sitemap.xml
+          git diff --cached --check
+          git commit -m 'Rebuild Wizard of Oz to current benchmark'
+          git push origin HEAD:main
