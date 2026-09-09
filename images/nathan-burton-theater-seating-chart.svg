@@ -26,16 +26,16 @@
 <rect x="300" y="1002" width="600" height="32" rx="9" fill="#12c7b1" stroke="#fff" stroke-opacity=".25"/>
 <rect x="300" y="1047" width="600" height="32" rx="9" fill="#12c7b1" stroke="#fff" stroke-opacity=".25"/>
 <rect x="300" y="1092" width="600" height="32" rx="9" fill="#12c7b1" stroke="#fff" stroke-opacity=".25"/>
-<rect x="75" y="362" width="190" height="62" rx="16" fill="#100a17" stroke="#ff2e7e" stroke-width="2"/>
+<rect x="75" y="362" width="220" height="62" rx="16" fill="#100a17" stroke="#ff2e7e" stroke-width="2"/>
 <text x="95" y="400" fill="#ff2e7e" font-family="Arial,sans-serif" font-size="24" font-weight="700">Front sides</text>
-<rect x="910" y="357" width="190" height="62" rx="16" fill="#100a17" stroke="#ff2e7e" stroke-width="2"/>
+<rect x="910" y="357" width="220" height="62" rx="16" fill="#100a17" stroke="#ff2e7e" stroke-width="2"/>
 <text x="930" y="395" fill="#ff2e7e" font-family="Arial,sans-serif" font-size="24" font-weight="700">Front center</text>
-<rect x="70" y="592" width="190" height="62" rx="16" fill="#100a17" stroke="#8d3cff" stroke-width="2"/>
-<text x="90" y="630" fill="#8d3cff" font-family="Arial,sans-serif" font-size="24" font-weight="700">Sweet spot</text>
-<rect x="910" y="862" width="190" height="62" rx="16" fill="#100a17" stroke="#ffb000" stroke-width="2"/>
-<text x="930" y="900" fill="#ffb000" font-family="Arial,sans-serif" font-size="24" font-weight="700">Good value</text>
-<rect x="70" y="1082" width="190" height="62" rx="16" fill="#100a17" stroke="#12c7b1" stroke-width="2"/>
-<text x="90" y="1120" fill="#12c7b1" font-family="Arial,sans-serif" font-size="24" font-weight="700">Rear section</text>
+<rect x="70" y="592" width="220" height="62" rx="16" fill="#100a17" stroke="#8d3cff" stroke-width="2"/>
+<text x="90" y="630" fill="#8d3cff" font-family="Arial,sans-serif" font-size="24" font-weight="700">Center section</text>
+<rect x="910" y="862" width="220" height="62" rx="16" fill="#100a17" stroke="#ffb000" stroke-width="2"/>
+<text x="930" y="900" fill="#ffb000" font-family="Arial,sans-serif" font-size="24" font-weight="700">Value center</text>
+<rect x="70" y="1082" width="220" height="62" rx="16" fill="#100a17" stroke="#12c7b1" stroke-width="2"/>
+<text x="90" y="1120" fill="#12c7b1" font-family="Arial,sans-serif" font-size="24" font-weight="700">Rear center</text>
 <rect x="420" y="1210" width="360" height="48" rx="24" fill="#ffb000"/>
 <text x="600" y="1242" text-anchor="middle" fill="#171225" font-family="Arial,sans-serif" font-size="20" font-weight="900" letter-spacing="3">OUR PICK · SWEET SPOT</text>
 <text x="600" y="1330" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="32" font-weight="800">Nathan Burton Theater</text>
