@@ -1,0 +1,124 @@
+name: Fix Booking Tip Semantics
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-booking-tip-semantics.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Remove generic Booking tip cards and fix generator
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          from html import unescape
+
+          CLOSED={'shows/cirque/mad-apple/index.html','shows/magic/david-goldrake/index.html'}
+          GENERIC={
+              'A balanced view that keeps you close to the room energy without putting you directly inside every audience-interaction moment.',
+              'The easiest all-around view for full-stage compositions, aerial work and the production’s largest visual moments.',
+              'Close enough to read expressions and crowd work without making the closest possible row the whole point.',
+              'A straightforward family default: clear view, easy sightlines and enough distance to see the full stage.',
+              'The safest balance for reading hands, props and full-stage illusions without being too far from the performer.',
+              'A balanced view of the performers and full stage without giving up too much proximity.',
+              'Start with Center-middle. The safest choice for reading the production as a whole instead of chasing the closest possible row.',
+          }
+          card_re=re.compile(
+              r'<div class="[^"]*decision-card[^"]*"[^>]*>\s*<h3>Booking tip</h3>(.*?)</div>',
+              re.I|re.S,
+          )
+          changed=[]
+          removed=[]
+          kept=[]
+
+          for p in sorted(Path('shows').glob('*/*/index.html')):
+              rel=p.as_posix()
+              if rel in CLOSED:
+                  continue
+              s=p.read_text(encoding='utf-8',errors='ignore')
+              before=s
+
+              def repl(m):
+                  txt=re.sub(r'<[^>]+>',' ',m.group(1))
+                  txt=unescape(re.sub(r'\s+',' ',txt)).strip()
+                  if txt in GENERIC:
+                      removed.append((rel,txt))
+                      return ''
+                  kept.append((rel,txt))
+                  return m.group(0)
+
+              s=card_re.sub(repl,s)
+              if s!=before:
+                  p.write_text(s,encoding='utf-8')
+                  changed.append(rel)
+
+          p=Path('scripts/canonicalize-show-pages.py')
+          s=p.read_text(encoding='utf-8')
+          before=s
+
+          ctx_old='        "dek": dek, "kicker": kicker, "take": take, "good": good, "think": think,\n'
+          ctx_new='        "dek": dek, "kicker": kicker, "take": take, "good": good, "think": think,\n        "booking_tip": manual.get("booking_tip"),\n'
+          if '"booking_tip": manual.get("booking_tip")' not in s:
+              if ctx_old not in s:
+                  raise SystemExit('generator context insertion target not found')
+              s=s.replace(ctx_old,ctx_new,1)
+
+          setup_old='    mobile = f\'<div class="mobile-bar"><div class="mobile-progress" id="mobileProgress"></div><div class="mobile-inner"><div class="mobile-price"><small>FROM</small>{price_display}</div><a class="cta vs-ticket-primary" href="{ticket}" target="_blank" rel="noopener sponsored">Get Tickets →</a></div></div>\'\n'
+          setup_new='    booking_tip = ctx.get("booking_tip")\n    booking_tip_card = f\'<div class="decision-card"><h3>Booking tip</h3><p>{htmllib.escape(booking_tip)}</p></div>\' if booking_tip else ""\n'+setup_old
+          if 'booking_tip_card =' not in s:
+              if setup_old not in s:
+                  raise SystemExit('generator booking tip setup target not found')
+              s=s.replace(setup_old,setup_new,1)
+
+          card_old='<div class="decision-card"><h3>Booking tip</h3><p>{htmllib.escape(s0[2])}</p></div>'
+          if card_old in s:
+              s=s.replace(card_old,'{booking_tip_card}',1)
+          elif '{booking_tip_card}' not in s:
+              raise SystemExit('generator booking tip render target not found')
+
+          if s!=before:
+              p.write_text(s,encoding='utf-8')
+              changed.append(p.as_posix())
+
+          print(f'GENERIC_REMOVED={len(removed)}')
+          print(f'USEFUL_KEPT={len(kept)}')
+          for rel,txt in kept:
+              print(f'KEPT :: {rel} :: {txt}')
+          print(f'CHANGED_FILES={len(changed)}')
+          PY
+
+      - name: Validate decision semantics
+        run: python3 scripts/audit-show-decision-copy.py
+
+      - name: Validate Event schema
+        run: python3 scripts/audit-event-schema.py
+
+      - name: Validate ticket CTAs
+        run: python3 scripts/audit-ticket-cta-color.py
+
+      - name: Validate mobile heroes
+        run: python3 scripts/audit-mobile-show-heroes.py
+
+      - name: Validate catalog JavaScript
+        run: python3 scripts/audit-catalog-js-syntax.py
+
+      - name: Check whitespace
+        run: git diff --check
+
+      - name: Commit cleanup
+        run: |
+          git config user.name 'Vegas Sidekick Operations'
+          git config user.email 'operations@vegassidekick.com'
+          git add shows scripts/canonicalize-show-pages.py
+          git commit -m 'Remove generic Booking tip filler'
+          git push origin HEAD:main
