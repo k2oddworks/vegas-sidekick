@@ -338,10 +338,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vegassidekick.com/shows/comedy/marc-savard-comedy-hypnosis/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-08-11</lastmod>
+    \g<1>2026-09-09\g<2>
       <image:image>
       <image:loc>https://vegassidekick.com/images/marc-savard-comedy-hypnosis-hero.jpg</image:loc>
     </image:image>

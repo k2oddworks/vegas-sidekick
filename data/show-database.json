@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-09-08",
+  "updated_on": "2026-09-09",
   "source": "Vegas Sidekick Show Database",
   "records": [
     {
@@ -1756,10 +1756,10 @@
       "ticket_url": "https://spotlight.vegas/shows/comedy/marc-savard-comedy-hypnosis/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/comedy/marc-savard-comedy-hypnosis/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-09-09",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
-      "notes": "",
+      "notes": "Schedule explicitly confirmed variable by Kris on 2026-09-09; do not restore a fixed 7 PM pattern.",
       "spotlight": {
         "name": "Marc Savard Comedy Hypnosis",
         "our_price": 28,
@@ -1768,32 +1768,10 @@
         "runtime_minutes": 70,
         "age_rule": "No age restrictions. Lap sitting is allowed for children ages 2 and under.",
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater.",
-        "schedule_days": {
-          "Monday": [
-            "7 PM"
-          ],
-          "Wednesday": [
-            "7 PM"
-          ],
-          "Friday": [
-            "7 PM"
-          ],
-          "Saturday": [
-            "7 PM"
-          ],
-          "Sunday": [
-            "7 PM"
-          ]
-        },
+        "schedule_days": {},
         "schedule_summary": "Times vary · Check live calendar",
-        "schedule_variable": false,
-        "schedule_raw": [
-          "Monday – 7:00pm",
-          "Wednesday – 7:00pm",
-          "Friday – 7:00pm",
-          "Saturday – 7:00pm",
-          "Sunday – 7:00pm"
-        ],
+        "schedule_variable": true,
+        "schedule_raw": [],
         "spotlight_url": "https://spotlight.vegas/shows/comedy/marc-savard-comedy-hypnosis/",
         "affiliate_url": "https://spotlight.vegas/shows/comedy/marc-savard-comedy-hypnosis/ref/vegassidekick",
         "age_label": "All ages"

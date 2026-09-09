@@ -18,6 +18,17 @@ REPORT_PATH = ROOT / "docs" / "spotlight-reconciliation-2026-09-08.md"
 DAY_ORDER = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 DAY_ABBR = {d: d[:3] for d in DAY_ORDER}
 
+# Explicit editorial/source-of-truth overrides for schedules that cannot safely be
+# represented by the current public Spotlight markup. Do not remove without re-verifying.
+MANUAL_SCHEDULE_OVERRIDES = {
+    "marc-savard-comedy-hypnosis": {
+        "schedule_days": {},
+        "schedule_summary": "Times vary · Check live calendar",
+        "schedule_variable": True,
+        "schedule_raw": [],
+    },
+}
+
 
 def money_values(text: str) -> list[int]:
     vals = []
@@ -436,6 +447,9 @@ def main() -> int:
             continue
         try:
             spot = scrape_product(session, url)
+            manual_schedule = MANUAL_SCHEDULE_OVERRIDES.get(rec.get("slug"))
+            if manual_schedule:
+                spot.update(manual_schedule)
         except Exception as exc:
             rec["verification"] = "needs_review"
             report.append(f"- ❌ **{rec['name']}** — Spotlight fetch failed: {exc}")
