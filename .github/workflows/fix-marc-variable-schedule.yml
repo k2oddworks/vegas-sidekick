@@ -48,3 +48,5 @@ jobs:
           git add data/show-database.json
           git commit -m 'Mark Marc Savard schedule as variable'
           git push origin HEAD:main
+
+# trigger
