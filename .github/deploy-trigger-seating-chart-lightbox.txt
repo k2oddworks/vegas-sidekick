@@ -1,0 +1,1 @@
+Temporary production deploy trigger for the seating-chart SVG lightbox repair.
