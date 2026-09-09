@@ -19,6 +19,7 @@ jobs:
           python3 scripts/finalize-o-rebuild.py
       - name: O regression checks
         run: |
+          python3 -m pip install beautifulsoup4
           node --check assets/seat-layouts/o-theatre-bellagio.js
           python3 scripts/audit-o-rebuild.py
       - name: Repository audits
