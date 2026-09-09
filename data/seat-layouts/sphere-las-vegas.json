@@ -1,0 +1,337 @@
+{
+  "version": 1,
+  "venue": "Sphere",
+  "address": "255 Sands Ave, Las Vegas, NV 89169",
+  "viewBox": "0 0 620 780",
+  "screen": {
+    "x": 35,
+    "y": 178,
+    "width": 88,
+    "height": 424,
+    "rx": 44,
+    "label_x": 79,
+    "label_y": 390
+  },
+  "overhang_labels": [
+    {
+      "x": 170,
+      "y": 88,
+      "text": "OVERHANG"
+    },
+    {
+      "x": 170,
+      "y": 706,
+      "text": "OVERHANG"
+    }
+  ],
+  "sections": [
+    {
+      "id": "210",
+      "label": "210",
+      "level": "200",
+      "path": "M 208.8 156.3 A 250 250 0 0 1 262.5 184.6 L 219.8 246.2 A 175 175 0 0 0 182.1 226.4 Z",
+      "label_x": 219.0,
+      "label_y": 202.0,
+      "color": "#ff2e7e",
+      "our_pick": false,
+      "badge": "Closer view",
+      "description": "Section 210 is in the 200 level, closer to the screen. Pick this level when you want the screen to feel especially large in your field of view."
+    },
+    {
+      "id": "209",
+      "label": "209",
+      "level": "200",
+      "path": "M 268.2 188.7 A 250 250 0 0 1 312.4 230.3 L 254.7 278.2 A 175 175 0 0 0 223.7 249.1 Z",
+      "label_x": 265.8,
+      "label_y": 235.4,
+      "color": "#ff2e7e",
+      "our_pick": false,
+      "badge": "Closer view",
+      "description": "Section 209 is in the 200 level, closer to the screen. Pick this level when you want the screen to feel especially large in your field of view."
+    },
+    {
+      "id": "208",
+      "label": "208",
+      "level": "200",
+      "path": "M 316.8 235.8 A 250 250 0 0 1 348.1 287.8 L 279.7 318.4 A 175 175 0 0 0 257.7 282.0 Z",
+      "label_x": 301.9,
+      "label_y": 280.2,
+      "color": "#ff2e7e",
+      "our_pick": false,
+      "badge": "Closer view",
+      "description": "Section 208 is in the 200 level, closer to the screen. Pick this level when you want the screen to feel especially large in your field of view."
+    },
+    {
+      "id": "207",
+      "label": "207",
+      "level": "200",
+      "path": "M 350.9 294.2 A 250 250 0 0 1 367.2 352.7 L 293.0 363.9 A 175 175 0 0 0 281.6 322.9 Z",
+      "label_x": 324.7,
+      "label_y": 333.0,
+      "color": "#ff2e7e",
+      "our_pick": false,
+      "badge": "Closer view",
+      "description": "Section 207 is in the 200 level, closer to the screen. Pick this level when you want the screen to feel especially large in your field of view."
+    },
+    {
+      "id": "206",
+      "label": "206",
+      "level": "200",
+      "path": "M 368.1 359.6 A 250 250 0 0 1 368.1 420.4 L 293.7 411.3 A 175 175 0 0 0 293.7 368.7 Z",
+      "label_x": 332.5,
+      "label_y": 390.0,
+      "color": "#ff2e7e",
+      "our_pick": false,
+      "badge": "Closer view",
+      "description": "Section 206 is in the 200 level, closer to the screen. Pick this level when you want the screen to feel especially large in your field of view."
+    },
+    {
+      "id": "205",
+      "label": "205",
+      "level": "200",
+      "path": "M 367.2 427.3 A 250 250 0 0 1 350.9 485.8 L 281.6 457.1 A 175 175 0 0 0 293.0 416.1 Z",
+      "label_x": 324.7,
+      "label_y": 447.0,
+      "color": "#ff2e7e",
+      "our_pick": false,
+      "badge": "Closer view",
+      "description": "Section 205 is in the 200 level, closer to the screen. Pick this level when you want the screen to feel especially large in your field of view."
+    },
+    {
+      "id": "204",
+      "label": "204",
+      "level": "200",
+      "path": "M 348.1 492.2 A 250 250 0 0 1 316.8 544.2 L 257.7 498.0 A 175 175 0 0 0 279.7 461.6 Z",
+      "label_x": 301.9,
+      "label_y": 499.8,
+      "color": "#ff2e7e",
+      "our_pick": false,
+      "badge": "Closer view",
+      "description": "Section 204 is in the 200 level, closer to the screen. Pick this level when you want the screen to feel especially large in your field of view."
+    },
+    {
+      "id": "203",
+      "label": "203",
+      "level": "200",
+      "path": "M 312.4 549.7 A 250 250 0 0 1 268.2 591.3 L 223.7 530.9 A 175 175 0 0 0 254.7 501.8 Z",
+      "label_x": 265.8,
+      "label_y": 544.6,
+      "color": "#ff2e7e",
+      "our_pick": false,
+      "badge": "Closer view",
+      "description": "Section 203 is in the 200 level, closer to the screen. Pick this level when you want the screen to feel especially large in your field of view."
+    },
+    {
+      "id": "202",
+      "label": "202",
+      "level": "200",
+      "path": "M 262.5 595.4 A 250 250 0 0 1 208.8 623.7 L 182.1 553.6 A 175 175 0 0 0 219.8 533.8 Z",
+      "label_x": 219.0,
+      "label_y": 578.0,
+      "color": "#ff2e7e",
+      "our_pick": false,
+      "badge": "Closer view",
+      "description": "Section 202 is in the 200 level, closer to the screen. Pick this level when you want the screen to feel especially large in your field of view."
+    },
+    {
+      "id": "310",
+      "label": "310",
+      "level": "300",
+      "path": "M 244.3 62.8 A 350 350 0 0 1 319.5 102.4 L 269.4 174.7 A 262 262 0 0 0 213.0 145.1 Z",
+      "label_x": 262.6,
+      "label_y": 119.3,
+      "color": "#8d3cff",
+      "our_pick": true,
+      "badge": "Sweet spot",
+      "description": "Section 310 is in the 300 level \u2014 Vegas Sidekick\u2019s Sweet Spot / Our Pick for The Wizard of Oz at Sphere. It sits in the middle band of the seating bowl for a strong overall read of the giant screen."
+    },
+    {
+      "id": "309",
+      "label": "309",
+      "level": "300",
+      "path": "M 327.5 108.1 A 350 350 0 0 1 389.3 166.5 L 321.6 222.7 A 262 262 0 0 0 275.3 179.0 Z",
+      "label_x": 330.0,
+      "label_y": 167.4,
+      "color": "#8d3cff",
+      "our_pick": true,
+      "badge": "Sweet spot",
+      "description": "Section 309 is in the 300 level \u2014 Vegas Sidekick\u2019s Sweet Spot / Our Pick for The Wizard of Oz at Sphere. It sits in the middle band of the seating bowl for a strong overall read of the giant screen."
+    },
+    {
+      "id": "308",
+      "label": "308",
+      "level": "300",
+      "path": "M 395.5 174.1 A 350 350 0 0 1 439.4 246.9 L 359.1 282.9 A 262 262 0 0 0 326.2 228.4 Z",
+      "label_x": 382.0,
+      "label_y": 231.9,
+      "color": "#8d3cff",
+      "our_pick": true,
+      "badge": "Sweet spot",
+      "description": "Section 308 is in the 300 level \u2014 Vegas Sidekick\u2019s Sweet Spot / Our Pick for The Wizard of Oz at Sphere. It sits in the middle band of the seating bowl for a strong overall read of the giant screen."
+    },
+    {
+      "id": "307",
+      "label": "307",
+      "level": "300",
+      "path": "M 443.3 255.9 A 350 350 0 0 1 466.1 337.8 L 379.1 350.9 A 262 262 0 0 0 362.0 289.6 Z",
+      "label_x": 414.8,
+      "label_y": 307.9,
+      "color": "#8d3cff",
+      "our_pick": true,
+      "badge": "Sweet spot",
+      "description": "Section 307 is in the 300 level \u2014 Vegas Sidekick\u2019s Sweet Spot / Our Pick for The Wizard of Oz at Sphere. It sits in the middle band of the seating bowl for a strong overall read of the giant screen."
+    },
+    {
+      "id": "306",
+      "label": "306",
+      "level": "300",
+      "path": "M 467.4 347.5 A 350 350 0 0 1 467.4 432.5 L 380.1 421.8 A 262 262 0 0 0 380.1 358.2 Z",
+      "label_x": 426.0,
+      "label_y": 390.0,
+      "color": "#8d3cff",
+      "our_pick": true,
+      "badge": "Sweet spot",
+      "description": "Section 306 is in the 300 level \u2014 Vegas Sidekick\u2019s Sweet Spot / Our Pick for The Wizard of Oz at Sphere. It sits in the middle band of the seating bowl for a strong overall read of the giant screen."
+    },
+    {
+      "id": "305",
+      "label": "305",
+      "level": "300",
+      "path": "M 466.1 442.2 A 350 350 0 0 1 443.3 524.1 L 362.0 490.4 A 262 262 0 0 0 379.1 429.1 Z",
+      "label_x": 414.8,
+      "label_y": 472.1,
+      "color": "#8d3cff",
+      "our_pick": true,
+      "badge": "Sweet spot",
+      "description": "Section 305 is in the 300 level \u2014 Vegas Sidekick\u2019s Sweet Spot / Our Pick for The Wizard of Oz at Sphere. It sits in the middle band of the seating bowl for a strong overall read of the giant screen."
+    },
+    {
+      "id": "304",
+      "label": "304",
+      "level": "300",
+      "path": "M 439.4 533.1 A 350 350 0 0 1 395.5 605.9 L 326.2 551.6 A 262 262 0 0 0 359.1 497.1 Z",
+      "label_x": 382.0,
+      "label_y": 548.1,
+      "color": "#8d3cff",
+      "our_pick": true,
+      "badge": "Sweet spot",
+      "description": "Section 304 is in the 300 level \u2014 Vegas Sidekick\u2019s Sweet Spot / Our Pick for The Wizard of Oz at Sphere. It sits in the middle band of the seating bowl for a strong overall read of the giant screen."
+    },
+    {
+      "id": "303",
+      "label": "303",
+      "level": "300",
+      "path": "M 389.3 613.5 A 350 350 0 0 1 327.5 671.9 L 275.3 601.0 A 262 262 0 0 0 321.6 557.3 Z",
+      "label_x": 330.0,
+      "label_y": 612.6,
+      "color": "#8d3cff",
+      "our_pick": true,
+      "badge": "Sweet spot",
+      "description": "Section 303 is in the 300 level \u2014 Vegas Sidekick\u2019s Sweet Spot / Our Pick for The Wizard of Oz at Sphere. It sits in the middle band of the seating bowl for a strong overall read of the giant screen."
+    },
+    {
+      "id": "302",
+      "label": "302",
+      "level": "300",
+      "path": "M 319.5 677.6 A 350 350 0 0 1 244.3 717.2 L 213.0 634.9 A 262 262 0 0 0 269.4 605.3 Z",
+      "label_x": 262.6,
+      "label_y": 660.7,
+      "color": "#8d3cff",
+      "our_pick": true,
+      "badge": "Sweet spot",
+      "description": "Section 302 is in the 300 level \u2014 Vegas Sidekick\u2019s Sweet Spot / Our Pick for The Wizard of Oz at Sphere. It sits in the middle band of the seating bowl for a strong overall read of the giant screen."
+    },
+    {
+      "id": "409",
+      "label": "409",
+      "level": "400",
+      "path": "M 306.7 -14.0 A 445 445 0 0 1 418.1 59.6 L 362.5 121.2 A 362 362 0 0 0 271.8 61.4 Z",
+      "label_x": 342.3,
+      "label_y": 53.2,
+      "color": "#12c7b1",
+      "our_pick": false,
+      "badge": "Wider view",
+      "description": "Section 409 is in the 400 level, higher in the bowl. It gives you a wider overall look at the Sphere screen and the full visual composition."
+    },
+    {
+      "id": "408",
+      "label": "408",
+      "level": "400",
+      "path": "M 427.2 68.0 A 445 445 0 0 1 508.9 173.7 L 436.3 214.0 A 362 362 0 0 0 369.9 128.1 Z",
+      "label_x": 439.2,
+      "label_y": 143.2,
+      "color": "#12c7b1",
+      "our_pick": false,
+      "badge": "Wider view",
+      "description": "Section 408 is in the 400 level, higher in the bowl. It gives you a wider overall look at the Sphere screen and the full visual composition."
+    },
+    {
+      "id": "407",
+      "label": "407",
+      "level": "400",
+      "path": "M 514.8 184.6 A 445 445 0 0 1 557.9 311.0 L 476.2 325.7 A 362 362 0 0 0 441.1 222.9 Z",
+      "label_x": 501.8,
+      "label_y": 259.6,
+      "color": "#12c7b1",
+      "our_pick": false,
+      "badge": "Wider view",
+      "description": "Section 407 is in the 400 level, higher in the bowl. It gives you a wider overall look at the Sphere screen and the full visual composition."
+    },
+    {
+      "id": "406",
+      "label": "406",
+      "level": "400",
+      "path": "M 560.0 323.2 A 445 445 0 0 1 560.0 456.8 L 477.9 444.3 A 362 362 0 0 0 477.9 335.7 Z",
+      "label_x": 523.5,
+      "label_y": 390.0,
+      "color": "#12c7b1",
+      "our_pick": false,
+      "badge": "Wider view",
+      "description": "Section 406 is in the 400 level, higher in the bowl. It gives you a wider overall look at the Sphere screen and the full visual composition."
+    },
+    {
+      "id": "405",
+      "label": "405",
+      "level": "400",
+      "path": "M 557.9 469.0 A 445 445 0 0 1 514.8 595.4 L 441.1 557.1 A 362 362 0 0 0 476.2 454.3 Z",
+      "label_x": 501.8,
+      "label_y": 520.4,
+      "color": "#12c7b1",
+      "our_pick": false,
+      "badge": "Wider view",
+      "description": "Section 405 is in the 400 level, higher in the bowl. It gives you a wider overall look at the Sphere screen and the full visual composition."
+    },
+    {
+      "id": "404",
+      "label": "404",
+      "level": "400",
+      "path": "M 508.9 606.3 A 445 445 0 0 1 427.2 712.0 L 369.9 651.9 A 362 362 0 0 0 436.3 566.0 Z",
+      "label_x": 439.2,
+      "label_y": 636.8,
+      "color": "#12c7b1",
+      "our_pick": false,
+      "badge": "Wider view",
+      "description": "Section 404 is in the 400 level, higher in the bowl. It gives you a wider overall look at the Sphere screen and the full visual composition."
+    },
+    {
+      "id": "403",
+      "label": "403",
+      "level": "400",
+      "path": "M 418.1 720.4 A 445 445 0 0 1 306.7 794.0 L 271.8 718.6 A 362 362 0 0 0 362.5 658.8 Z",
+      "label_x": 342.3,
+      "label_y": 726.8,
+      "color": "#12c7b1",
+      "our_pick": false,
+      "badge": "Wider view",
+      "description": "Section 403 is in the 400 level, higher in the bowl. It gives you a wider overall look at the Sphere screen and the full visual composition."
+    }
+  ],
+  "default_section": "306",
+  "recommendation": {
+    "label": "Sweet Spot / Our Pick",
+    "levels": [
+      "300"
+    ],
+    "copy": "Any seat in the 300 level is the Vegas Sidekick sweet spot for The Wizard of Oz at Sphere."
+  }
+}
