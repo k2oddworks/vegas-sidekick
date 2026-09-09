@@ -21,8 +21,6 @@ jobs:
           python3 - <<'PY'
           from pathlib import Path
 
-          # SHOW-BUILDER-PROMPT.md: preserve useful legacy implementation detail,
-          # but make the current benchmark/preference hierarchy explicit.
           p = Path('SHOW-BUILDER-PROMPT.md')
           s = p.read_text(encoding='utf-8')
           s = s.replace('`VegasSidekick/vegas-sidekick`', '`k2oddworks/vegas-sidekick`')
@@ -38,9 +36,9 @@ jobs:
               s = s.replace(marker, marker + notice, 1)
           p.write_text(s, encoding='utf-8')
 
-          # VS_CHAT_CONTEXT.md: update living context and add the decisions learned from Nathan.
           p = Path('VS_CHAT_CONTEXT.md')
           s = p.read_text(encoding='utf-8')
+          s = s.replace('**As of:** September 8, 2026  ', '**As of:** September 9, 2026')
           s = s.replace('**As of:** September 8, 2026', '**As of:** September 9, 2026')
           s = s.replace('compare options, understand tradeoffs, and hand off ticket purchases', 'compare options, understand differences and value, and hand off ticket purchases')
           s = s.replace('Prefer concise freshness such as:\n\n**Last updated September 2026**', 'Prefer one concise visible freshness signal near the Kris author card:\n\n**Show info confirmed September 2026**')
@@ -51,10 +49,8 @@ jobs:
           if '### Nathan Burton benchmark decisions — locked September 9, 2026' not in s:
               anchor = '### Structured data\n'
               s = s.replace(anchor, section + '\n' + anchor, 1)
-          p.write_text(s, encoding='utf-8')
+          p.write_text(s.rstrip() + '\n', encoding='utf-8')
 
-          # CLAUDE.md is legacy but still present; add a precedence notice instead of trying to
-          # surgically rewrite every old implementation example.
           p = Path('CLAUDE.md')
           s = p.read_text(encoding='utf-8')
           notice = '''> **SHOW-PAGE PRECEDENCE UPDATE — September 9, 2026**\n>\n> For active show-page work, `shows/magic/nathan-burton-comedy-magic/index.html` is the current model and `SHOW-PAGE-BENCHMARK.md` is the governing detailed specification. Read `AGENTS.md` first. Any older V Theater, Absinthe, Carrot Top, or prior show-builder guidance in this file is legacy reference only when it does not conflict with the Nathan Burton benchmark.\n>\n> In particular: no formal downside/Think twice framing; Good to know only for real useful facts; no customer-facing “tradeoff”; no unconfirmed interaction/participation language; Booking tip optional/actionable only; Start time/Start times; one “Show info confirmed Month YYYY” freshness line; modern gallery navigation; and room-based geometrically faithful seating charts with immediate mobile tap feedback.\n\n'''
@@ -62,13 +58,12 @@ jobs:
               s = notice + s
           p.write_text(s, encoding='utf-8')
 
-          # BRAND.md: append the conversion/editorial framing rules that are brand-level decisions.
           p = Path('BRAND.md')
           s = p.read_text(encoding='utf-8')
           block = '''\n\n---\n\n## Show-page decision framing — September 2026\n\nThese are brand/voice rules, not merely layout preferences:\n\n- Be candid without manufacturing objections. Do not use recurring **Think twice**, **downside**, or **honest downside** modules.\n- **Good to know** is for a genuine fact the buyer should know. If there is no useful fact, omit the card.\n- **Kris’s take** should make the customer more confident and informed about why the show is a good choice; do not use it to plant generic doubt.\n- Avoid **tradeoff** in customer-facing copy. Describe the positive value or viewing experience each option offers.\n- Do not imply audience interaction, participation, being selected, or being “in the action” unless Kris has explicitly confirmed that fact for that show.\n- Do not narrate obvious interface behavior. Let good UI explain itself.\n- Fewer useful cards are better than filler cards written to satisfy a template.\n'''
           if '## Show-page decision framing — September 2026' not in s:
-              s = s.rstrip() + block + '\n'
-          p.write_text(s, encoding='utf-8')
+              s = s.rstrip() + block
+          p.write_text(s.rstrip() + '\n', encoding='utf-8')
           PY
 
       - name: Validate documentation changes
