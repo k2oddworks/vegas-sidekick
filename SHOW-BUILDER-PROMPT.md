@@ -870,7 +870,7 @@ A correctly built show page:
 
 
 ### Decision-card standard (September 2026)
-Use **Good fit** and **Booking tip** as the core buyer decision aid. **Good to know** is optional and should appear only when there is useful, show-specific context, a mismatch, or a meaningful tradeoff. Never add it just to fill a third card. Never use the retired labels **Book it if…**, **Know this first**, or **Best practical angle**. Preserve stronger custom decision modules on benchmark pages rather than flattening them.
+Use **Good fit** as the core buyer decision aid. **Booking tip** and **Good to know** are optional. Add a Booking tip only when there is a concrete, show-specific seat, timing, arrival, value, or planning action. Add Good to know only when there is useful, show-specific context or a meaningful tradeoff. Omit either card rather than filling space with generic advice. Never use the retired labels **Book it if…**, **Know this first**, or **Best practical angle**. Preserve stronger custom decision modules on benchmark pages rather than flattening them.
 
 
 ---

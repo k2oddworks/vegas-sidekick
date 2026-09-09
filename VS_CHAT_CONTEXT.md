@@ -784,7 +784,7 @@ The customer-facing three-card decision aid uses these labels:
 - **Good to know** — optional; include only for useful, show-specific context, a mismatch, or a meaningful tradeoff. Omit it rather than use category filler.
 - **Booking tip** — a concrete seat, timing, or booking action.
 
-Do not use the old labels `Book it if…`, `Know this first`, or `Best practical angle`. Do not fill these cards with generic category filler when a useful show-specific point is available. If there is no defensible booking tip, use a verified planning action rather than inventing seat advice. Existing custom/benchmark decision modules that are more detailed should not be flattened just to match the generic card format.
+Do not use the old labels `Book it if…`, `Know this first`, or `Best practical angle`. Do not fill these cards with generic category filler when a useful show-specific point is available. If there is no genuinely useful, show-specific Booking tip, omit the card entirely rather than inventing or recycling seat or planning advice. Existing custom/benchmark decision modules that are more detailed should not be flattened just to match the generic card format.
 
 
 ---
