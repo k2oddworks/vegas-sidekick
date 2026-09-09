@@ -3,9 +3,10 @@
 
 September 2026 standard:
 - Use Good fit for buyer fit.
-- Use Good to know for useful caveats/context when needed.
+- Use Good to know only for useful, show-specific facts/caveats/context.
 - Use Booking tip for a concrete planning action.
 - Do not use formal "Think twice" or "downside" framing.
+- Do not relabel rejection/mismatch copy as "Good to know".
 """
 from pathlib import Path
 import re
@@ -17,6 +18,27 @@ RETIRED_LABELS = (
     'Book it if...',
     'Know this first',
     'Best practical angle',
+)
+
+GOOD_TO_KNOW_REJECTION = re.compile(
+    r'\byou need\b|'
+    r'\byou actually want\b|'
+    r'\byou are actually shopping\b|'
+    r'\byou are really (?:shopping|looking)\b|'
+    r'\byou prefer\b|'
+    r'\byou would rather\b|'
+    r'\byou specifically want\b|'
+    r'\byou dislike\b|'
+    r'\byou are choosing\b|'
+    r'\byour group specifically wants\b|'
+    r'\ba different show category\b|'
+    r'\byou want (?:a|an|the)\b',
+    re.I,
+)
+GOOD_TO_KNOW_CARD = re.compile(
+    r'<div class="[^"]*(?:decision-card|fit-card)[^"]*"[^>]*>'
+    r'\s*<h3>Good to know</h3>(.*?)</div>',
+    re.I | re.S,
 )
 
 issues = []
@@ -44,9 +66,19 @@ for path in sorted(ROOT.rglob('*.html')):
     if re.search(r'\bdownsides?\b', text, re.I):
         issues.append(f"{rel}: retired 'downside' framing remains")
 
+    # Catch the regression where old "don't buy this if..." content gets a
+    # friendlier heading without becoming useful buyer context.
+    for match in GOOD_TO_KNOW_CARD.finditer(text):
+        body = re.sub(r'<[^>]+>', ' ', match.group(1))
+        body = re.sub(r'\s+', ' ', body).strip()
+        if GOOD_TO_KNOW_REJECTION.search(body):
+            issues.append(
+                f'{rel}: Good to know contains rejection/mismatch copy instead of useful context: {body}'
+            )
+
 print(f'Checked {checked} live customer-facing HTML pages for decision-copy regressions.')
 if issues:
     print('\n'.join(issues))
     sys.exit(1)
 
-print("Decision-copy framing is current: Good fit / Good to know / Booking tip; no retired negative labels found.")
+print('Decision-copy framing and Good to know semantics are clean.')
