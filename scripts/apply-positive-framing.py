@@ -88,6 +88,9 @@ def clean_customer_html(text: str) -> str:
     # Prose should stay candid, just without a dedicated negative command.
     text = re.sub(r"\bThink twice only if\b", "It may be a weaker fit if", text, flags=re.I)
     text = re.sub(r"\bThink twice if\b", "It may be a weaker fit if", text, flags=re.I)
+    # Catch any remaining command-style phrase. This does not touch ordinary
+    # uses such as "never the same show twice" because the words are not adjacent.
+    text = re.sub(r"\bThink twice\b", "Good to know", text, flags=re.I)
     text = re.sub(r"\bdownside(s)?\b", lambda m: "tradeoffs" if m.group(1) else "tradeoff", text, flags=re.I)
 
     # Cleanup a couple phrases created by the generic tradeoff replacement.
