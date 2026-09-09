@@ -30,10 +30,15 @@ for zid in ['front-center','sweet-spot','good-value','rear-section']:
         parts.append(f'<rect x="{x}" y="{current}" width="{w}" height="{row_h}" rx="9" fill="{z["color"]}" stroke="#fff" stroke-opacity=".25"/>')
         current += row_h+gap
     current += 14
-# zone labels
-labels=[('Front sides',95,400,side['color']),('Front center',930,395,zones['front-center']['color']),('Sweet spot',90,630,zones['sweet-spot']['color']),('Good value',930,900,zones['good-value']['color']),('Rear section',90,1120,zones['rear-section']['color'])]
+labels=[
+    (zones['front-sides']['label'],95,400,zones['front-sides']['color']),
+    (zones['front-center']['label'],930,395,zones['front-center']['color']),
+    (zones['sweet-spot']['label'],90,630,zones['sweet-spot']['color']),
+    (zones['good-value']['label'],930,900,zones['good-value']['color']),
+    (zones['rear-section']['label'],90,1120,zones['rear-section']['color'])
+]
 for label,lx,ly,c in labels:
-    parts.append(f'<rect x="{lx-20}" y="{ly-38}" width="190" height="62" rx="16" fill="#100a17" stroke="{c}" stroke-width="2"/>')
+    parts.append(f'<rect x="{lx-20}" y="{ly-38}" width="220" height="62" rx="16" fill="#100a17" stroke="{c}" stroke-width="2"/>')
     parts.append(f'<text x="{lx}" y="{ly}" fill="{c}" font-family="Arial,sans-serif" font-size="24" font-weight="700">{html.escape(label)}</text>')
 parts += [
     '<rect x="420" y="1210" width="360" height="48" rx="24" fill="#ffb000"/>',
