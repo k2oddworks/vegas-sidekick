@@ -1,0 +1,43 @@
+name: Fix Seating Chart Lightbox
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-seating-chart-lightbox.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Repair SVG lightbox sizing
+        run: python3 .github/tmp/fix-svg-lightbox.py
+
+      - name: Run regression checks
+        run: |
+          python3 scripts/audit-content-link-hygiene.py
+          git diff --check
+          python3 - <<'PY'
+          from pathlib import Path
+          for p in [Path('images/carrot-top-atrium-showroom-seating-chart.svg'), Path('images/sphere-las-vegas-seating-chart.svg')]:
+              root=p.read_text(encoding='utf-8').split('>',1)[0]
+              assert ' width=' in root and ' height=' in root, p
+          print('Both seating chart SVGs have intrinsic dimensions')
+          PY
+
+      - name: Commit repair to main
+        run: |
+          git config user.name 'Vegas Sidekick Operations'
+          git config user.email 'operations@vegassidekick.com'
+          git rm -f .github/workflows/fix-seating-chart-lightbox.yml .github/tmp/fix-svg-lightbox.py
+          git add assets/show-canonical.css images/carrot-top-atrium-showroom-seating-chart.svg images/sphere-las-vegas-seating-chart.svg
+          git diff --cached --check
+          git commit -m 'Fix seating chart SVG lightboxes on mobile'
+          git push origin HEAD:main
