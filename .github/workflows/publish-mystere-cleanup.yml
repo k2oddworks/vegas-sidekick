@@ -1,0 +1,24 @@
+name: Clean Mystere Publish Trigger
+
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-mystere-cleanup.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Remove one-time publish trigger
+        run: |
+          git config user.name 'Vegas Sidekick Operations'
+          git config user.email 'operations@vegassidekick.com'
+          git rm -f .github/workflows/publish-mystere-cleanup.yml
+          git commit -m 'Remove Mystere publish trigger'
+          git push origin HEAD:main
