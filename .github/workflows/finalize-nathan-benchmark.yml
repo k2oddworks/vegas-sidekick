@@ -25,36 +25,19 @@ jobs:
           page = Path('shows/magic/nathan-burton-comedy-magic/index.html')
           s = page.read_text(encoding='utf-8')
 
-          # Remove interface narration / leaked source copy.
           s = s.replace('<p>Use the show photos and the theater chart together before you choose a section.</p>', '')
           s = s.replace('<p>Nathan Burton Theater · FlyOver Las Vegas · The Strip Nathan Burton Comedy Magic The #1 Afternoon Magic Show on the Strip.</p>', '')
 
-          # Keep one clear freshness signal in the author card.
           s = s.replace('Las Vegas show and ticketing guidance. Last updated September 2026.', 'Las Vegas show and ticketing guidance. Show info confirmed September 2026.')
-          s = s.replace('Last updated September 2026.', 'Show info confirmed September 2026.')
-          needle = 'Last reviewed September 2026'
-          idx = s.find(needle)
-          if idx != -1:
-              start = s.rfind('<div class="byline"', 0, idx)
-              end = s.find('</div>', idx)
-              if start != -1 and end != -1 and idx - start < 1400:
-                  s = s[:start] + s[end+6:]
-              else:
-                  s = re.sub(r'<(?:p|div)[^>]*>.*?Reviewed by.*?Last reviewed September 2026.*?</(?:p|div)>', '', s, count=1, flags=re.I|re.S)
+          s = re.sub(r'<div class="wrap"><p class="byline">.*?Last reviewed September 2026</p></div>', '', s, count=1, flags=re.S)
 
-          # Positive compact fit language.
           s = s.replace('You want illusions, mind-reading or sleight-of-hand to be the main event.', 'A strong fit for families who want an afternoon magic show with big illusions, comedy and a 70-minute runtime.')
-
-          # Keep the useful chart caption without defensive inventory language.
           s = s.replace('Nathan Burton Theater seating chart · 3771 S Las Vegas Blvd, Suite 160. The diagram is simplified; check the live ticket map for exact inventory on your date.', 'Nathan Burton Theater · 3771 S Las Vegas Blvd, Suite 160.')
 
-          # Make the ticker genuinely seamless by duplicating the moving set.
           m = re.search(r'(<div class="ticker-track">)(<div class="ticker-set">.*?</div>)(</div>)', s, flags=re.S)
           if m and m.group(0).count('class="ticker-set"') == 1:
               s = s[:m.start()] + m.group(1) + m.group(2) + m.group(2) + m.group(3) + s[m.end():]
 
-          # Nathan-only desktop polish: retain the mobile hero, improve desktop focal crop/bleed,
-          # and collapse the orphaned Good fit rail into a compact full-width card.
           style = '''<style id="nathan-benchmark-final">
           @media (min-width:801px){
             .hero-grid{grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);overflow:visible}
@@ -72,21 +55,20 @@ jobs:
           if 'id="nathan-benchmark-final"' not in s:
               s = s.replace('</head>', style + '</head>', 1)
 
-          # Sanity checks for exactly the problems this pass is meant to remove.
-          if 'Show info confirmed September 2026' not in s:
-              raise SystemExit('Freshness copy was not installed')
-          if 'Last reviewed September 2026' in s:
-              raise SystemExit('Duplicate reviewed line remains')
-          if '#1 Afternoon Magic Show on the Strip' in s:
-              raise SystemExit('Leaked #1 source copy remains')
-          if 'Use the show photos and the theater chart together' in s:
-              raise SystemExit('Photo instruction remains')
-          if s.count('class="ticker-set"') < 2:
-              raise SystemExit('Ticker was not duplicated')
+          checks = {
+              'freshness copy': 'Show info confirmed September 2026' in s,
+              'duplicate review removed': 'Last reviewed September 2026' not in s,
+              'leaked source removed': '#1 Afternoon Magic Show on the Strip' not in s,
+              'photo instruction removed': 'Use the show photos and the theater chart together' not in s,
+              'seamless ticker': s.count('class="ticker-set"') >= 2,
+              'desktop polish': 'id="nathan-benchmark-final"' in s,
+          }
+          bad=[name for name,ok in checks.items() if not ok]
+          if bad:
+              raise SystemExit('Nathan checks failed: '+', '.join(bad))
 
           page.write_text(s, encoding='utf-8')
 
-          # Remove the defensive note from the generated gallery seating chart too.
           gen = Path('scripts/generate-seat-layout-assets.py')
           g = gen.read_text(encoding='utf-8')
           g = re.sub(r"\n\s*'<text x=\"600\" y=\"1435\"[^\n]*Simplified seating chart[^\n]*", '', g)
