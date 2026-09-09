@@ -1,0 +1,76 @@
+name: Fix Single Fit Layout
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-single-fit-layout.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fix custom single-card decision layouts
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          targets = [
+              Path('shows/cirque/ka/index.html'),
+              Path('shows/magic/mat-franco/index.html'),
+          ]
+          changed=[]
+          for p in targets:
+              s=p.read_text(encoding='utf-8')
+              before=s
+              marker='.decision{display:grid;grid-template-columns:1fr 1fr;gap:18px}'
+              if marker not in s:
+                  raise SystemExit(f'CSS decision target missing in {p}')
+              if '.decision.solo{' not in s:
+                  s=s.replace(marker, marker+'.decision.solo{grid-template-columns:1fr;max-width:760px}', 1)
+
+              # There is now exactly one decision card on these custom pages.
+              fit_start=s.find('id="fit"')
+              if fit_start < 0:
+                  raise SystemExit(f'fit section missing in {p}')
+              fit_end=s.find('</section>', fit_start)
+              sec=s[fit_start:fit_end]
+              if '<div class="decision">' not in sec:
+                  raise SystemExit(f'decision wrapper missing in fit section: {p}')
+              sec=sec.replace('<div class="decision">','<div class="decision solo">',1)
+              s=s[:fit_start]+sec+s[fit_end:]
+
+              if s!=before:
+                  p.write_text(s,encoding='utf-8')
+                  changed.append(str(p))
+          print('Changed:', ', '.join(changed))
+          PY
+
+      - name: Validate decision semantics
+        run: python3 scripts/audit-show-decision-copy.py
+
+      - name: Validate Event schema
+        run: python3 scripts/audit-event-schema.py
+
+      - name: Validate ticket CTAs
+        run: python3 scripts/audit-ticket-cta-color.py
+
+      - name: Validate mobile heroes
+        run: python3 scripts/audit-mobile-show-heroes.py
+
+      - name: Check whitespace
+        run: git diff --check
+
+      - name: Commit layout fix
+        run: |
+          git config user.name 'Vegas Sidekick Operations'
+          git config user.email 'operations@vegassidekick.com'
+          git add shows/cirque/ka/index.html shows/magic/mat-franco/index.html
+          git commit -m 'Polish single-card show fit layouts'
+          git push origin HEAD:main
