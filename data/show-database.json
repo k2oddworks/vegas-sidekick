@@ -1752,7 +1752,7 @@
       "age_summary": "All ages",
       "venue": "Nathan Burton Theater - Showcase Mall",
       "showroom": "",
-      "schedule_summary": "Mon, Wed, Fri, Sat, Sun · 7 PM",
+      "schedule_summary": "Times vary · Check live calendar",
       "ticket_url": "https://spotlight.vegas/shows/comedy/marc-savard-comedy-hypnosis/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/comedy/marc-savard-comedy-hypnosis/",
@@ -1785,7 +1785,7 @@
             "7 PM"
           ]
         },
-        "schedule_summary": "Mon, Wed, Fri, Sat, Sun · 7 PM",
+        "schedule_summary": "Times vary · Check live calendar",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday – 7:00pm",

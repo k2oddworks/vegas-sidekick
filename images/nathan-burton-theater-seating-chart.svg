@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#140923"/><stop offset="1" stop-color="#07070c"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="1200" height="1500" rx="42" fill="url(#bg)"/>
+<text x="70" y="75" fill="#fff" font-family="Arial,sans-serif" font-size="42" font-weight="800">vegas <tspan fill="#ff2e7e">sidekick</tspan></text>
+<text x="72" y="112" fill="#d9d1df" font-family="Arial,sans-serif" font-size="17" letter-spacing="5">SHOWS • TICKETS • GOOD TIMES</text>
+<path d="M330 165 H870 V255 Q600 310 330 255 Z" fill="#121116" stroke="#ffb000" stroke-width="4" filter="url(#glow)"/>
+<text x="600" y="235" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="10">STAGE</text>
+<rect x="165" y="330" width="115" height="38" rx="8" fill="#ff2e7e" stroke="#fff" stroke-opacity=".35" transform="rotate(-18 222 349)"/>
+<rect x="165" y="392" width="115" height="38" rx="8" fill="#ff2e7e" stroke="#fff" stroke-opacity=".35" transform="rotate(-18 222 411)"/>
+<rect x="915" y="330" width="115" height="38" rx="8" fill="#ff2e7e" stroke="#fff" stroke-opacity=".35" transform="rotate(18 972 349)"/>
+<rect x="915" y="392" width="115" height="38" rx="8" fill="#ff2e7e" stroke="#fff" stroke-opacity=".35" transform="rotate(18 972 411)"/>
+<rect x="300" y="330" width="600" height="32" rx="9" fill="#ff2e7e" stroke="#fff" stroke-opacity=".25"/>
+<rect x="300" y="375" width="600" height="32" rx="9" fill="#ff2e7e" stroke="#fff" stroke-opacity=".25"/>
+<rect x="300" y="420" width="600" height="32" rx="9" fill="#ff2e7e" stroke="#fff" stroke-opacity=".25"/>
+<rect x="300" y="479" width="600" height="32" rx="9" fill="#8d3cff" stroke="#fff" stroke-opacity=".25"/>
+<rect x="300" y="524" width="600" height="32" rx="9" fill="#8d3cff" stroke="#fff" stroke-opacity=".25"/>
+<rect x="300" y="569" width="600" height="32" rx="9" fill="#8d3cff" stroke="#fff" stroke-opacity=".25"/>
+<rect x="300" y="614" width="600" height="32" rx="9" fill="#8d3cff" stroke="#fff" stroke-opacity=".25"/>
+<rect x="300" y="659" width="600" height="32" rx="9" fill="#8d3cff" stroke="#fff" stroke-opacity=".25"/>
+<rect x="300" y="718" width="600" height="32" rx="9" fill="#ffb000" stroke="#fff" stroke-opacity=".25"/>
+<rect x="300" y="763" width="600" height="32" rx="9" fill="#ffb000" stroke="#fff" stroke-opacity=".25"/>
+<rect x="300" y="808" width="600" height="32" rx="9" fill="#ffb000" stroke="#fff" stroke-opacity=".25"/>
+<rect x="300" y="853" width="600" height="32" rx="9" fill="#ffb000" stroke="#fff" stroke-opacity=".25"/>
+<rect x="300" y="898" width="600" height="32" rx="9" fill="#ffb000" stroke="#fff" stroke-opacity=".25"/>
+<rect x="300" y="957" width="600" height="32" rx="9" fill="#12c7b1" stroke="#fff" stroke-opacity=".25"/>
+<rect x="300" y="1002" width="600" height="32" rx="9" fill="#12c7b1" stroke="#fff" stroke-opacity=".25"/>
+<rect x="300" y="1047" width="600" height="32" rx="9" fill="#12c7b1" stroke="#fff" stroke-opacity=".25"/>
+<rect x="300" y="1092" width="600" height="32" rx="9" fill="#12c7b1" stroke="#fff" stroke-opacity=".25"/>
+<rect x="75" y="362" width="190" height="62" rx="16" fill="#100a17" stroke="#ff2e7e" stroke-width="2"/>
+<text x="95" y="400" fill="#ff2e7e" font-family="Arial,sans-serif" font-size="24" font-weight="700">Front sides</text>
+<rect x="910" y="357" width="190" height="62" rx="16" fill="#100a17" stroke="#ff2e7e" stroke-width="2"/>
+<text x="930" y="395" fill="#ff2e7e" font-family="Arial,sans-serif" font-size="24" font-weight="700">Front center</text>
+<rect x="70" y="592" width="190" height="62" rx="16" fill="#100a17" stroke="#8d3cff" stroke-width="2"/>
+<text x="90" y="630" fill="#8d3cff" font-family="Arial,sans-serif" font-size="24" font-weight="700">Sweet spot</text>
+<rect x="910" y="862" width="190" height="62" rx="16" fill="#100a17" stroke="#ffb000" stroke-width="2"/>
+<text x="930" y="900" fill="#ffb000" font-family="Arial,sans-serif" font-size="24" font-weight="700">Good value</text>
+<rect x="70" y="1082" width="190" height="62" rx="16" fill="#100a17" stroke="#12c7b1" stroke-width="2"/>
+<text x="90" y="1120" fill="#12c7b1" font-family="Arial,sans-serif" font-size="24" font-weight="700">Rear section</text>
+<rect x="420" y="1210" width="360" height="48" rx="24" fill="#ffb000"/>
+<text x="600" y="1242" text-anchor="middle" fill="#171225" font-family="Arial,sans-serif" font-size="20" font-weight="900" letter-spacing="3">OUR PICK · SWEET SPOT</text>
+<text x="600" y="1330" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="32" font-weight="800">Nathan Burton Theater</text>
+<text x="600" y="1372" text-anchor="middle" fill="#d7cedd" font-family="Arial,sans-serif" font-size="21">3771 S Las Vegas Blvd, Suite 160, Las Vegas, NV 89109</text>
+<text x="600" y="1435" text-anchor="middle" fill="#8f8597" font-family="Arial,sans-serif" font-size="17">Simplified seating chart · exact seat inventory varies by performance</text>
+</svg>

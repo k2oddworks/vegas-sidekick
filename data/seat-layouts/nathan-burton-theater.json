@@ -1,0 +1,49 @@
+{
+  "id": "nathan-burton-theater",
+  "venue": "Nathan Burton Theater",
+  "address": "3771 S Las Vegas Blvd, Suite 160, Las Vegas, NV 89109",
+  "disclaimer": "Simplified seating chart for reference only. Use the live ticket map for exact row and seat inventory on your date.",
+  "zones": [
+    {
+      "id": "front-sides",
+      "label": "Front sides",
+      "rows": 2,
+      "placement": "sides",
+      "color": "#ff2e7e",
+      "description": "Two rows on each side, very close to the stage with an angled view."
+    },
+    {
+      "id": "front-center",
+      "label": "Front center",
+      "rows": 3,
+      "placement": "center",
+      "color": "#ff2e7e",
+      "description": "The closest straight-on section. Best when seeing smaller details up close matters most."
+    },
+    {
+      "id": "sweet-spot",
+      "label": "Sweet spot",
+      "rows": 5,
+      "placement": "center",
+      "color": "#8d3cff",
+      "our_pick": true,
+      "description": "Our pick. Close enough for detail while keeping the full stage easy to read."
+    },
+    {
+      "id": "good-value",
+      "label": "Good value",
+      "rows": 5,
+      "placement": "center",
+      "color": "#ffb000",
+      "description": "Farther back and still straight-on. Worth checking when the price gap from the middle is meaningful."
+    },
+    {
+      "id": "rear-section",
+      "label": "Rear section",
+      "rows": 4,
+      "placement": "center",
+      "color": "#12c7b1",
+      "description": "The farthest straight-on section. Best when keeping the ticket price down matters most."
+    }
+  ]
+}
