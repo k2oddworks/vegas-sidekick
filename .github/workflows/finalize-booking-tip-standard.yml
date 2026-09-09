@@ -1,0 +1,64 @@
+name: Finalize Booking Tip Standard
+
+on:
+  push:
+    paths:
+      - '.github/workflows/finalize-booking-tip-standard.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Update operating rules
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          replacements = {
+              Path('VS_CHAT_CONTEXT.md'): [
+                  (
+                      'If there is no defensible booking tip, use a verified planning action rather than inventing seat advice.',
+                      'If there is no genuinely useful, show-specific Booking tip, omit the card entirely rather than inventing or recycling seat or planning advice.'
+                  ),
+              ],
+              Path('SHOW-BUILDER-PROMPT.md'): [
+                  (
+                      'Use **Good fit** and **Booking tip** as the core buyer decision aid. **Good to know** is optional and should appear only when there is useful, show-specific context, a mismatch, or a meaningful tradeoff. Never add it just to fill a third card.',
+                      'Use **Good fit** as the core buyer decision aid. **Booking tip** and **Good to know** are optional. Add a Booking tip only when there is a concrete, show-specific seat, timing, arrival, value, or planning action. Add Good to know only when there is useful, show-specific context or a meaningful tradeoff. Omit either card rather than filling space with generic advice.'
+                  ),
+              ],
+          }
+          changed=[]
+          for p,pairs in replacements.items():
+              s=p.read_text(encoding='utf-8')
+              before=s
+              for old,new in pairs:
+                  if old not in s:
+                      raise SystemExit(f'rule text not found in {p}: {old}')
+                  s=s.replace(old,new,1)
+              if s!=before:
+                  p.write_text(s,encoding='utf-8')
+                  changed.append(str(p))
+          print('Changed:', ', '.join(changed))
+          PY
+
+      - name: Validate decision copy semantics
+        run: python3 scripts/audit-show-decision-copy.py
+
+      - name: Check whitespace
+        run: git diff --check
+
+      - name: Commit rules
+        run: |
+          git config user.name 'Vegas Sidekick Operations'
+          git config user.email 'operations@vegassidekick.com'
+          git add VS_CHAT_CONTEXT.md SHOW-BUILDER-PROMPT.md
+          git commit -m 'Make Booking tips optional and actionable'
+          git push origin HEAD:main
