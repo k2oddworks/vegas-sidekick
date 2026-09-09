@@ -2,7 +2,6 @@
   "id": "nathan-burton-theater",
   "venue": "Nathan Burton Theater",
   "address": "3771 S Las Vegas Blvd, Suite 160, Las Vegas, NV 89109",
-  "disclaimer": "Simplified seating chart for reference only. Use the live ticket map for exact row and seat inventory on your date.",
   "zones": [
     {
       "id": "front-sides",
