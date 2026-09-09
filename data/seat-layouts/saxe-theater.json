@@ -1,0 +1,110 @@
+{
+  "id": "saxe-theater",
+  "venue": "Saxe Theater • Miracle Mile • Planet Hollywood",
+  "address": "3663 S Las Vegas Blvd, Las Vegas, NV 89109",
+  "viewBox": "0 0 1000 860",
+  "room_outline": "M42 92 L180 18 L560 208 L575 355 Q760 345 952 468 L862 770 H252 L205 602 L78 505 L42 330 Z",
+  "stage": {
+    "path": "M255 760 Q500 650 745 760 L745 805 H255 Z",
+    "label_x": 500,
+    "label_y": 752
+  },
+  "zones": [
+    {
+      "id": "vip-center",
+      "label": "VIP Center",
+      "badge": "Sweet spot",
+      "our_pick": true,
+      "color": "#8d3cff",
+      "paths": [
+        "M390 455 L710 485 L640 700 Q505 668 370 700 Z"
+      ],
+      "labels": [
+        {
+          "x": 525,
+          "y": 575,
+          "lines": [
+            "VIP",
+            "CENTER",
+            "A–L"
+          ]
+        }
+      ],
+      "description": "Our pick. VIP Center gives you the straightest look at the wide stage while keeping the full choreography and costumes easy to take in."
+    },
+    {
+      "id": "vip-sides",
+      "label": "VIP Sides",
+      "badge": "Sweet spot",
+      "our_pick": true,
+      "color": "#ff2e7e",
+      "paths": [
+        "M198 515 L345 455 L382 690 L275 728 Z",
+        "M725 490 L870 535 L826 724 L655 700 Z"
+      ],
+      "labels": [
+        {
+          "x": 290,
+          "y": 595,
+          "lines": [
+            "VIP",
+            "SIDE",
+            "A–K"
+          ]
+        },
+        {
+          "x": 785,
+          "y": 600,
+          "lines": [
+            "VIP",
+            "SIDE",
+            "A–J"
+          ]
+        }
+      ],
+      "description": "Also part of our sweet spot. The two VIP Side blocks keep you close to the stage with an angled look across the production."
+    },
+    {
+      "id": "middle",
+      "label": "Middle",
+      "badge": "Wider view",
+      "our_pick": false,
+      "color": "#12c7b1",
+      "paths": [
+        "M92 290 L365 164 L536 248 L530 392 L180 472 Z"
+      ],
+      "labels": [
+        {
+          "x": 318,
+          "y": 320,
+          "lines": [
+            "MIDDLE",
+            "M–S"
+          ]
+        }
+      ],
+      "description": "A farther-back section with a wider overall perspective on the stage. A solid option when you want more of the full room in one view."
+    },
+    {
+      "id": "rear",
+      "label": "Rear",
+      "badge": "Full-room view",
+      "our_pick": false,
+      "color": "#64748b",
+      "paths": [
+        "M70 104 L180 36 L365 136 L112 258 Z"
+      ],
+      "labels": [
+        {
+          "x": 192,
+          "y": 145,
+          "lines": [
+            "REAR",
+            "T–X"
+          ]
+        }
+      ],
+      "description": "The farthest section from the stage, with the broadest overall look at the room and the full production picture."
+    }
+  ]
+}
