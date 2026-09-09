@@ -45,7 +45,6 @@ parts += [
     '<text x="600" y="1242" text-anchor="middle" fill="#171225" font-family="Arial,sans-serif" font-size="20" font-weight="900" letter-spacing="3">OUR PICK · SWEET SPOT</text>',
     f'<text x="600" y="1330" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="32" font-weight="800">{html.escape(data["venue"])}</text>',
     f'<text x="600" y="1372" text-anchor="middle" fill="#d7cedd" font-family="Arial,sans-serif" font-size="21">{html.escape(data["address"])}</text>',
-    '<text x="600" y="1435" text-anchor="middle" fill="#8f8597" font-family="Arial,sans-serif" font-size="17">Simplified seating chart · exact seat inventory varies by performance</text>',
     '</svg>'
 ]
 out.write_text('\n'.join(parts))
