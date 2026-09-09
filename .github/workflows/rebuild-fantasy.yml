@@ -1,0 +1,206 @@
+name: Rebuild Fantasy
+on:
+  push:
+    paths:
+      - '.github/workflows/rebuild-fantasy.yml'
+permissions:
+  contents: write
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Rebuild Fantasy on current show-page system
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, re, html as htmllib
+          from pathlib import Path
+
+          ROOT=Path('.')
+          page=ROOT/'shows/adult/fantasy/index.html'
+          text=page.read_text()
+          ticket='https://spotlight.vegas/shows/adult/fantasy/ref/vegassidekick'
+          venue='Atrium Showroom at Luxor'
+          address='3900 S Las Vegas Blvd, Las Vegas, NV 89119'
+          desc='75-minute 18+ topless revue with dance, live vocals and comedy at the Atrium Showroom inside Luxor.'
+
+          def sub(pattern,repl,s,flags=re.S,count=1,label='replacement'):
+              out,n=re.subn(pattern,repl,s,count=count,flags=flags)
+              if n!=count:
+                  raise SystemExit(f'{label}: expected {count}, got {n}')
+              return out
+
+          # Metadata
+          text=sub(r'<title>.*?</title>','<title>Fantasy Las Vegas Tickets from $40 | Seat Guide</title>',text,label='title')
+          text=sub(r'<meta content="[^"]*" name="description"/>', '<meta content="Fantasy is a 75-minute 18+ topless revue at the Atrium Showroom inside Luxor. Tickets from $40. Compare showtimes and the Reserved 2 Sweet Spot." name="description"/>', text, label='meta description')
+          text=sub(r'<meta content="[^"]*" property="og:description"/>', f'<meta content="{desc}" property="og:description"/>', text, label='og description')
+
+          # JSON-LD updates while preserving the verified schedule and affiliate URL.
+          def update_ld(m):
+              obj=json.loads(m.group(1))
+              typ=obj.get('@type')
+              if typ in ('Event','EventSeries') and obj.get('name')=='Fantasy':
+                  obj['@type']='EventSeries'
+                  obj['description']=desc
+                  obj.pop('startDate',None); obj.pop('endDate',None)
+                  obj['eventAttendanceMode']='https://schema.org/OfflineEventAttendanceMode'
+                  if isinstance(obj.get('organizer'),dict):
+                      obj['organizer']['name']='Fantasy at Luxor'
+                  if isinstance(obj.get('location'),dict):
+                      obj['location']['name']=venue
+                  if isinstance(obj.get('offers'),dict):
+                      obj['offers']['price']=40
+                      obj['offers']['url']=ticket
+                  obj['duration']='PT75M'
+                  obj['audience']={'@type':'Audience','audienceType':'All guests must be 18 years of age or older. No children allowed.'}
+              elif typ=='FAQPage':
+                  answers={
+                    'Is Fantasy appropriate for couples?':'Yes. Fantasy is built as a polished 18+ Vegas revue with dance, live vocals and comedy, so it works naturally for couples who want an adult night at Luxor.',
+                    'Is it really topless? What should I expect?':'Yes. Fantasy is a topless revue with choreographed dance numbers, costumes, live vocals and comedy. All guests must be 18 or older, and valid photo ID is required.',
+                    'Can men attend Fantasy?':'Yes. Fantasy welcomes adult guests of all genders, including couples, groups and solo visitors.',
+                    'Are cameras allowed during the show?':"Still photos may be allowed as long as they aren't distracting — please check with your usher on the way in. No flash photography.",
+                    'Which seats should I get?':'Reserved 2 is our pick. It covers the large middle block, rows D through J, and gives you a balanced view of the full stage. Reserved 1 is the closest option; Reserved 3 and 4 sit farther back in the same intimate room.',
+                    'How long has Fantasy been running?':'The current listed runtime is 75 minutes.',
+                    'How much are Fantasy tickets?':'Tickets start at $40. Other price points may be available.'
+                  }
+                  for q in obj.get('mainEntity',[]):
+                      name=q.get('name')
+                      if name in answers:
+                          q.setdefault('acceptedAnswer',{})['text']=answers[name]
+              elif typ=='WebPage':
+                  obj['dateModified']='2026-09-09'; obj['lastReviewed']='2026-09-09'
+              return '<script type="application/ld+json">'+json.dumps(obj,separators=(',',':'),ensure_ascii=False)+'</script>'
+          text=re.sub(r'<script type="application/ld\+json">(.*?)</script>',update_ld,text,flags=re.S)
+
+          # Shared Atrium assets + benchmark desktop treatment.
+          extra='''<link rel="stylesheet" href="/assets/seat-layouts/atrium-showroom-luxor.css?v=4"/><style id="fantasy-benchmark-final">@media (min-width:801px){.hero-grid{grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);overflow:visible}.hero-copy{position:relative;z-index:2;padding-right:72px}.hero-media{position:relative;z-index:1;margin-left:-112px;overflow:hidden}.hero-media img{object-position:center center}.hero-media:after{background:linear-gradient(90deg,#2c0b4e 0%,rgba(44,11,78,.94) 12%,rgba(44,11,78,.58) 28%,rgba(44,11,78,.16) 46%,transparent 62%)}#quick .verdict-grid{grid-template-columns:1fr;max-width:920px}#quick .decision{max-width:760px;margin-top:18px}#quick .decision-card.good{display:flex;align-items:center;gap:16px;padding:14px 18px;border-top:0;border-left:6px solid var(--gold);min-height:0}#quick .decision-card.good h3{margin:0;white-space:nowrap}#quick .decision-card.good p{margin:0}}</style>'''
+          if 'atrium-showroom-luxor.css' not in text:
+              text=text.replace('</head>',extra+'</head>',1)
+
+          hero=f'''<header class="hero"><div class="hero-grid"><div class="hero-copy"><div class="crumbs"><a href="/">Home</a><span>›</span><a href="/shows/adult/">Adult Shows</a><span>›</span>Fantasy</div><div class="eyebrow">Adult Vegas · {venue}</div><h1>Fantasy</h1><p class="hero-dek">{desc}</p><div class="chips"><span class="chip">75 minutes</span><span class="chip">18+</span><span class="chip">{venue}</span></div><div class="buybox"><div class="price"><small>Tickets from</small>$40</div><div class="vs-deal-line"><span class="vs-regular-price">Regular $47</span><span class="vs-save-badge">Save $7</span></div><a class="cta vs-ticket-primary" href="{ticket}" rel="noopener sponsored" target="_blank">Get Tickets →</a></div><div class="updated">Tickets start at $40. Other price points may be available.</div></div><div class="hero-media" data-mobile-fit="safe" style="--mobile-hero-image:url('/images/fantasy-hero.webp');--mobile-hero-position:center center"><img alt="Fantasy at the Atrium Showroom at Luxor" fetchpriority="high" src="/images/fantasy-hero.webp"/></div></div></header>'''
+          text=sub(r'<header class="hero">.*?</header>',hero,text,label='hero')
+
+          facts='''<section class="facts"><div class="wrap facts-grid"><div class="fact"><strong>75 min</strong><span>Runtime</span></div><div class="fact"><strong>$40</strong><span>Tickets from</span></div><div class="fact"><strong>10:30 PM</strong><span>Start time · Mon–Sat</span></div><div class="fact"><strong>18+</strong><span>Age guidance</span></div></div></section>'''
+          text=sub(r'<section class="facts">.*?</section>',facts,text,label='facts')
+
+          ticker_items='''<span class="ticker-item">75-minute revue</span><span class="ticker-sep">✦</span><span class="ticker-item">18+</span><span class="ticker-sep">✦</span><span class="ticker-item">Dance · live vocals · comedy</span><span class="ticker-sep">✦</span><span class="ticker-item">Reserved 2 · Sweet Spot</span><span class="ticker-sep">✦</span>'''
+          ticker=f'<div class="ticker"><div class="ticker-track"><div class="ticker-set">{ticker_items}</div><div class="ticker-set">{ticker_items}</div></div></div>'
+          text=sub(r'<div class="ticker"><div class="ticker-track">.*?</div></div></div>',ticker,text,label='ticker')
+
+          quick='''<section class="section" id="quick"><div class="wrap verdict-grid"><div class="copy"><div class="eyebrow">The 30-second answer</div><h2>Is Fantasy worth seeing?</h2><p class="lede lede-highlight">75 minutes of choreographed dance, live vocals and comedy in an 18+ topless revue at Luxor.</p><p>Fantasy has been part of Luxor’s nightlife lineup for more than 25 years. The show moves through 15 acts built around dance, costumes, music, live vocals and comedy, so it plays as a full revue rather than one repeated idea.</p><div class="take"><span>🌵</span><div><b>Kris’s take</b><p>Fantasy is a straightforward pick when you want the classic adult-revue side of Vegas at Luxor. The 75-minute runtime keeps the night moving, and I’d start the seat search in Reserved 2 for the best overall view of the staging.</p></div></div></div><div class="decision"><div class="decision-card good"><h3>Good fit</h3><p>Couples or groups looking for a polished 18+ Vegas revue with dance, live vocals and comedy.</p></div></div></div></section>'''
+          text=sub(r'<section class="section" id="quick">.*?</section>',quick,text,label='quick')
+
+          photos='''<section class="section alt" id="photos"><div class="wrap"><div class="eyebrow">See the show</div><h2>Fantasy photos</h2><div class="gallery gallery-2"><button aria-label="Open Fantasy photo" type="button"><img alt="Fantasy Las Vegas show photo" loading="lazy" src="/images/fantasy-hero.webp"/></button><button class="atrium-chart-gallery" aria-label="Open Atrium Showroom seating chart" type="button"><img alt="Atrium Showroom at Luxor seating chart for Fantasy, showing Reserved 1 through Reserved 4 with Reserved 2 marked as the Vegas Sidekick Sweet Spot and Our Pick" loading="lazy" src="/images/fantasy-atrium-showroom-seating-chart.svg"/></button></div><p class="media-caption">Atrium Showroom at Luxor · 3900 S Las Vegas Blvd.</p></div></section>'''
+          text=sub(r'<section class="section alt" id="photos">.*?</section>',photos,text,label='photos')
+
+          seats=f'''<section class="section" id="seats"><div class="wrap"><div class="eyebrow">Seat guide</div><h2>Where should you sit for Fantasy?</h2><p class="lede">The Atrium Showroom is a compact curved room with Reserved 1 closest to the stage, Reserved 2 across the large middle block, then Reserved 3 and Reserved 4 behind it. Reserved 2 is the Sweet Spot / Our Pick for Fantasy.</p><div id="fantasy-atrium-seat-guide" class="atrium-seat-guide" data-seat-layout="atrium-showroom-luxor" data-layout-url="/data/seat-layouts/atrium-showroom-luxor.json" data-ticket-url="{ticket}" data-sweet-spot="reserved-2" data-sweet-copy="Reserved 2 covers rows D through J and gives you a balanced view of the full revue staging. It is the best place to start if you want to take in the choreography and full-stage picture without sitting right on top of the stage."><noscript><p>Reserved 2 is Vegas Sidekick’s Sweet Spot / Our Pick for Fantasy at the Atrium Showroom.</p></noscript></div></div></section>'''
+          text=sub(r'<section class="section" id="seats">.*?</section>',seats,text,label='seats')
+
+          fit='''<section class="section alt" id="fit"><div class="wrap"><div class="eyebrow">Is it for you?</div><h2>Who it fits best</h2><div class="fit-grid solo"><div class="fit-card good"><h3>Good fit</h3><ul><li>You want an 18+ topless revue rather than a family show.</li><li>Dance, live vocals and comedy all belong in the same 75-minute night for you.</li><li>You are already staying at Luxor or building a night around the south end of the Strip.</li></ul></div></div></div></section>'''
+          text=sub(r'<section class="section alt" id="fit">.*?</section>',fit,text,label='fit')
+
+          days=''.join(f'<div class="day"><a href="{ticket}" rel="noopener sponsored" target="_blank"><strong>{d}</strong><span>10:30 PM</span></a></div>' for d in ['Mon','Tue','Wed','Thu','Fri','Sat'])
+          days+=f'<div class="day"><a href="{ticket}" rel="noopener sponsored" target="_blank"><strong>Sun</strong><span>7:00 &amp; 9:30 PM</span></a></div>'
+          showtimes=f'''<section class="section" id="showtimes"><div class="wrap"><div class="eyebrow">Plan the night</div><h2>Showtimes</h2><div class="schedule">{days}</div><a class="later-date-cta vs-ticket-primary" href="{ticket}" rel="noopener sponsored" target="_blank">See available dates &amp; times →</a></div></section>'''
+          text=sub(r'<section class="section" id="showtimes">.*?</section>',showtimes,text,label='showtimes')
+
+          faq='''<section class="section alt" id="faq"><div class="wrap"><div class="eyebrow">Before you book</div><h2>Frequently asked questions</h2><div class="faq"><details><summary>Is Fantasy appropriate for couples?</summary><p>Yes. Fantasy is built as a polished 18+ Vegas revue with dance, live vocals and comedy, so it works naturally for couples who want an adult night at Luxor.</p></details><details><summary>Is it really topless? What should I expect?</summary><p>Yes. Fantasy is a topless revue with choreographed dance numbers, costumes, live vocals and comedy. All guests must be 18 or older, and valid photo ID is required.</p></details><details><summary>Can men attend Fantasy?</summary><p>Yes. Fantasy welcomes adult guests of all genders, including couples, groups and solo visitors.</p></details><details><summary>Are cameras allowed during the show?</summary><p>Still photos may be allowed as long as they aren't distracting — please check with your usher on the way in. No flash photography.</p></details><details><summary>Which seats should I get?</summary><p>Reserved 2 is our pick. It covers the large middle block, rows D through J, and gives you a balanced view of the full stage. Reserved 1 is the closest option; Reserved 3 and 4 sit farther back in the same intimate room.</p></details><details><summary>How long is Fantasy?</summary><p>The current listed runtime is 75 minutes.</p></details><details><summary>How much are Fantasy tickets?</summary><p>Tickets start at $40. Other price points may be available.</p></details></div></div></section>'''
+          text=sub(r'<section class="section alt" id="faq">.*?</section>',faq,text,label='faq')
+
+          # Standard single freshness line in the author area.
+          text=re.sub(r'<p class="freshness-line">.*?</p>','',text,flags=re.S)
+          marker='<div class="author-card"'
+          if marker in text:
+              text=text.replace(marker,'<p class="freshness-line">Show info confirmed September 2026</p>'+marker,1)
+          elif '<div class="byline"' in text:
+              text=text.replace('<div class="byline"','<p class="freshness-line">Show info confirmed September 2026</p><div class="byline"',1)
+          else:
+              raise SystemExit('author/freshness insertion point not found')
+
+          # Shared Atrium JS before canonical JS/page close.
+          if 'atrium-showroom-luxor.js' not in text:
+              anchor='<script src="/assets/show-canonical.js"></script>'
+              if anchor in text:
+                  text=text.replace(anchor,'<script src="/assets/seat-layouts/atrium-showroom-luxor.js?v=4"></script>'+anchor,1)
+              else:
+                  text=text.replace('</body>','<script src="/assets/seat-layouts/atrium-showroom-luxor.js?v=4"></script></body>',1)
+
+          # Remove retired phrases if any survived untouched modules.
+          text=text.replace('Typical start','Start time')
+          text=text.replace('Typical weekly showtimes','Showtimes')
+          text=text.replace('Your date and seat determine the final total.','Tickets start at $40. Other price points may be available.')
+          text=text.replace('Atrium Theater - Luxor Hotel','Atrium Showroom at Luxor')
+          text=text.replace('Atrium Theater inside Luxor Hotel &amp; Casino','Atrium Showroom inside Luxor')
+          text=text.replace('Atrium Theater inside Luxor Hotel & Casino','Atrium Showroom inside Luxor')
+
+          page.write_text(text)
+
+          # Update operational source-of-truth venue/showroom naming without touching schedule or price.
+          dbp=ROOT/'data/show-database.json'
+          db=json.loads(dbp.read_text())
+          rec=next(x for x in db if x.get('slug')=='fantasy')
+          if 'showroom' in rec: rec['showroom']=venue
+          if rec.get('location') is not None: rec['location']=venue
+          sp=rec.get('spotlight') or {}
+          if 'location' in sp: sp['location']=venue
+          rec['spotlight']=sp
+          dbp.write_text(json.dumps(db,indent=2,ensure_ascii=False)+'\n')
+
+          # Generate the Fantasy static chart from the SAME Atrium room geometry.
+          layout=json.loads((ROOT/'data/seat-layouts/atrium-showroom-luxor.json').read_text())
+          parts=['<svg xmlns="http://www.w3.org/2000/svg" width="700" height="790" viewBox="0 0 700 790" role="img" aria-labelledby="title desc">',
+                 '<title id="title">Atrium Showroom seating chart for Fantasy</title>',
+                 '<desc id="desc">Atrium Showroom at Luxor seating layout with Reserved 1 through Reserved 4. Reserved 2 is marked as the Vegas Sidekick Sweet Spot and Our Pick for Fantasy.</desc>',
+                 '<defs><radialGradient id="bg" cx="50%" cy="35%" r="72%"><stop offset="0" stop-color="#241047"/><stop offset="1" stop-color="#08070d"/></radialGradient></defs>',
+                 '<rect width="700" height="790" rx="28" fill="url(#bg)"/>',
+                 '<text x="28" y="32" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="900">VEGAS <tspan fill="#ff2e7e">SIDEKICK</tspan></text>',
+                 '<text x="28" y="54" fill="#bdb3c8" font-family="Inter,Arial,sans-serif" font-size="10" font-weight="800" letter-spacing="1.6">ATRIUM SHOWROOM · LUXOR</text>']
+          label_y={'reserved-1':520,'reserved-2':315,'reserved-3':112,'reserved-4':52}
+          for sec in layout['sections']:
+              pick=sec['id']=='reserved-2'
+              for row in sec['row_slabs']:
+                  stroke='#ffb000' if pick else 'rgba(255,255,255,.30)'
+                  sw='4' if pick else '2'
+                  parts.append(f'<path d="{htmllib.escape(row["path"],quote=True)}" fill="{sec["color"]}" stroke="{stroke}" stroke-width="{sw}"/>')
+              parts.append(f'<text x="350" y="{label_y[sec["id"]]}" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="900" text-anchor="middle">{sec["label"]}</text>')
+          st=layout['stage']
+          parts += [f'<path d="{htmllib.escape(st["path"],quote=True)}" fill="#111116" stroke="#ffb000" stroke-width="3"/>',
+                    f'<text x="{st["label_x"]}" y="{st["label_y"]}" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="900" text-anchor="middle" letter-spacing="3">STAGE</text>',
+                    '<rect x="202" y="738" width="296" height="32" rx="16" fill="#ffb000"/>',
+                    '<text x="350" y="759" fill="#171225" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="900" text-anchor="middle" letter-spacing="1.3">RESERVED 2 · SWEET SPOT / OUR PICK</text>',
+                    '</svg>']
+          (ROOT/'images/fantasy-atrium-showroom-seating-chart.svg').write_text(''.join(parts))
+
+          # Make shared Atrium behavior show-agnostic instead of Carrot Top-specific.
+          jsp=ROOT/'assets/seat-layouts/atrium-showroom-luxor.js'
+          js=jsp.read_text()
+          js=js.replace("img.alt=th.alt||'Carrot Top photo'","img.alt=th.alt||'Show photo'")
+          js=js.replace('title="Official Carrot Top trailer"','title="Official show trailer"')
+          jsp.write_text(js)
+
+          print('Fantasy rebuilt with shared Atrium Showroom geometry.')
+          PY
+      - name: Run show-page audits
+        run: |
+          python3 scripts/audit-event-schema.py
+          python3 scripts/audit-ticket-cta-color.py
+          python3 scripts/audit-mobile-show-heroes.py
+          python3 scripts/audit-catalog-js-syntax.py
+          if [ -f scripts/audit-content-link-hygiene.py ]; then python3 scripts/audit-content-link-hygiene.py; fi
+          git diff --check
+          grep -q 'data-seat-layout="atrium-showroom-luxor"' shows/adult/fantasy/index.html
+          grep -q 'fantasy-atrium-showroom-seating-chart.svg' shows/adult/fantasy/index.html
+          ! grep -q 'Typical start' shows/adult/fantasy/index.html
+          ! grep -q 'Atrium Theater - Luxor Hotel' shows/adult/fantasy/index.html
+          grep -q 'Show info confirmed September 2026' shows/adult/fantasy/index.html
+      - name: Commit rebuilt page
+        run: |
+          git config user.name 'Vegas Sidekick Operations'
+          git config user.email 'operations@vegassidekick.com'
+          git add shows/adult/fantasy/index.html data/show-database.json images/fantasy-atrium-showroom-seating-chart.svg assets/seat-layouts/atrium-showroom-luxor.js
+          git commit -m 'Rebuild Fantasy on shared Atrium Showroom system'
+          git push origin main
