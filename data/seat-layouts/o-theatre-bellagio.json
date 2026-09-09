@@ -1,0 +1,33 @@
+{
+  "id": "o-theatre-bellagio",
+  "venue": "O Theatre – Bellagio",
+  "address": "3600 S Las Vegas Blvd, Las Vegas, NV 89109",
+  "viewBox": "0 0 1000 1120",
+  "stage": {
+    "path": "M250 1050 Q500 830 750 1050 Z",
+    "label_x": 500,
+    "label_y": 1015
+  },
+  "sections": [
+    {"id":"101","label":"101","path":"M785 900 Q855 930 900 995 L850 1060 Q805 1045 760 1015 Z","label_x":835,"label_y":985,"color":"#ff2e7e","badge":"Closest","description":"Lower Orchestra section on the far right, close to the stage and pool. Bellagio classifies the first three rows of sections 101–105 as Wet Seats."},
+    {"id":"102","label":"102","path":"M625 825 Q730 840 810 895 L760 1015 Q680 985 600 975 Z","label_x":710,"label_y":915,"color":"#ff2e7e","badge":"Close view","description":"Lower Orchestra right-center. You are close to the water-level action with a broad look across the pool and stage."},
+    {"id":"103","label":"103","path":"M375 800 Q500 755 625 800 L600 975 Q500 945 400 975 Z","label_x":500,"label_y":875,"color":"#ff2e7e","badge":"Close center","description":"Lower Orchestra center. A straight-on close view of the pool, stage and performers, with the first three rows classified as Wet Seats."},
+    {"id":"104","label":"104","path":"M190 895 Q270 840 375 825 L400 975 Q320 985 240 1015 Z","label_x":290,"label_y":915,"color":"#ff2e7e","badge":"Close view","description":"Lower Orchestra left-center. You are close to the water-level action with a broad look across the pool and stage."},
+    {"id":"105","label":"105","path":"M100 995 Q145 930 215 900 L240 1015 Q195 1045 150 1060 Z","label_x":165,"label_y":985,"color":"#ff2e7e","badge":"Closest","description":"Lower Orchestra section on the far left, close to the stage and pool. Bellagio classifies the first three rows of sections 101–105 as Wet Seats."},
+    {"id":"100L","label":"100L","path":"M835 790 L880 775 L900 900 L850 920 Z","label_x":870,"label_y":845,"color":"#12c7b1","badge":"Lower loggia","description":"Lower Orchestra Loggia on the right. A compact side section with a clear diagonal perspective across the pool and stage."},
+    {"id":"100R","label":"100R","path":"M120 775 L165 790 L150 920 L100 900 Z","label_x":130,"label_y":845,"color":"#12c7b1","badge":"Lower loggia","description":"Lower Orchestra Loggia on the left. A compact side section with a clear diagonal perspective across the pool and stage."},
+    {"id":"201","label":"201","path":"M805 625 Q870 680 900 760 L835 850 Q790 820 750 785 Z","label_x":842,"label_y":745,"color":"#8d3cff","badge":"Sweet spot","our_pick":true,"description":"Section 201 is part of our Sweet Spot / Our Pick. It gives you an elevated side-to-center view that keeps the pool, stage and aerial space readable together."},
+    {"id":"202","label":"202","path":"M635 525 Q735 545 815 615 L750 785 Q680 750 610 735 Z","label_x":710,"label_y":635,"color":"#8d3cff","badge":"Sweet spot","our_pick":true,"description":"Section 202 is part of our Sweet Spot / Our Pick. The elevated right-center angle gives you a strong full-production view without pushing you too far from the water."},
+    {"id":"203","label":"203","path":"M365 500 Q500 455 635 500 L610 735 Q500 705 390 735 Z","label_x":500,"label_y":610,"color":"#8d3cff","badge":"Sweet spot","our_pick":true,"description":"Section 203 is the straightest-on option within our Sweet Spot / Our Pick, with a centered elevated view across the pool, stage and aerial work."},
+    {"id":"204","label":"204","path":"M185 615 Q265 545 365 525 L390 735 Q320 750 250 785 Z","label_x":290,"label_y":635,"color":"#8d3cff","badge":"Sweet spot","our_pick":true,"description":"Section 204 is part of our Sweet Spot / Our Pick. The elevated left-center angle gives you a strong full-production view without pushing you too far from the water."},
+    {"id":"205","label":"205","path":"M100 760 Q130 680 195 625 L250 785 Q210 820 165 850 Z","label_x":158,"label_y":745,"color":"#8d3cff","badge":"Sweet spot","our_pick":true,"description":"Section 205 is part of our Sweet Spot / Our Pick. It gives you an elevated side-to-center view that keeps the pool, stage and aerial space readable together."},
+    {"id":"200L","label":"200L","path":"M885 455 Q925 575 920 735 L875 720 Q878 585 845 480 Z","label_x":900,"label_y":600,"color":"#12c7b1","badge":"Upper loggia","description":"Upper Orchestra Loggia on the right. A higher side perspective that keeps the full width of the production in view."},
+    {"id":"200R","label":"200R","path":"M115 455 Q75 575 80 735 L125 720 Q122 585 155 480 Z","label_x":100,"label_y":600,"color":"#12c7b1","badge":"Upper loggia","description":"Upper Orchestra Loggia on the left. A higher side perspective that keeps the full width of the production in view."},
+    {"id":"vip","label":"VIP","path":"M205 420 Q500 305 795 420 L765 470 Q500 375 235 470 Z","label_x":500,"label_y":405,"color":"#c6f22e","badge":"VIP","description":"VIP seating sits above the orchestra in a shallow arc, giving you a broad elevated look at the water choreography and aerial space."},
+    {"id":"302","label":"302","path":"M660 145 Q790 165 875 235 L830 330 Q745 290 635 275 Z","label_x":755,"label_y":230,"color":"#a98569","badge":"Balcony","description":"Balcony section 302 on the right. A high, wide perspective that makes the pool formations and full-stage picture easy to follow."},
+    {"id":"303","label":"303","path":"M365 105 Q500 75 635 105 L635 275 Q500 245 365 275 Z","label_x":500,"label_y":190,"color":"#a98569","badge":"Balcony center","description":"Balcony section 303 is the centered high-angle option, useful when you want the full aquatic staging and formations in one frame."},
+    {"id":"304","label":"304","path":"M125 235 Q210 165 340 145 L365 275 Q255 290 170 330 Z","label_x":245,"label_y":230,"color":"#a98569","badge":"Balcony","description":"Balcony section 304 on the left. A high, wide perspective that makes the pool formations and full-stage picture easy to follow."},
+    {"id":"300L","label":"300L","path":"M910 280 Q955 390 955 535 L925 535 Q925 400 885 300 Z","label_x":940,"label_y":410,"color":"#0fb5c9","badge":"Balcony loggia","description":"Balcony Loggia on the right. A high side view with a strong sense of the theater’s scale and the full aquatic stage."},
+    {"id":"300R","label":"300R","path":"M90 280 Q45 390 45 535 L75 535 Q75 400 115 300 Z","label_x":60,"label_y":410,"color":"#0fb5c9","badge":"Balcony loggia","description":"Balcony Loggia on the left. A high side view with a strong sense of the theater’s scale and the full aquatic stage."}
+  ]
+}
