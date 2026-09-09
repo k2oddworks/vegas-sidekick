@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit customer-facing Vegas Sidekick copy for retired decision framing.
+"""Audit live customer-facing Vegas Sidekick copy for retired decision framing.
 
 September 2026 standard:
 - Use Good fit for buyer fit.
@@ -27,7 +27,8 @@ for path in sorted(ROOT.rglob('*.html')):
     rel = rel_path.as_posix()
     if '_archive' in rel_path.parts:
         continue
-    if rel_path.parts and rel_path.parts[0] == 'admin':
+    # Preview experiments and admin tools are not deployed buyer-facing pages.
+    if rel_path.parts and rel_path.parts[0] in {'admin', 'preview'}:
         continue
 
     checked += 1
@@ -43,7 +44,7 @@ for path in sorted(ROOT.rglob('*.html')):
     if re.search(r'\bdownsides?\b', text, re.I):
         issues.append(f"{rel}: retired 'downside' framing remains")
 
-print(f'Checked {checked} customer-facing HTML pages for decision-copy regressions.')
+print(f'Checked {checked} live customer-facing HTML pages for decision-copy regressions.')
 if issues:
     print('\n'.join(issues))
     sys.exit(1)
