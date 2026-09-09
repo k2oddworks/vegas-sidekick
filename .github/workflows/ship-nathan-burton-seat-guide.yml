@@ -1,0 +1,288 @@
+name: Ship Nathan Burton Theater Seat Guide
+
+on:
+  push:
+    paths:
+      - '.github/workflows/ship-nathan-burton-seat-guide.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  ship:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build shared Nathan Burton Theater seating system
+        run: |
+          mkdir -p data/seat-layouts assets/seat-layouts scripts images
+
+          cat > data/seat-layouts/nathan-burton-theater.json <<'EOF'
+          {
+            "id": "nathan-burton-theater",
+            "venue": "Nathan Burton Theater",
+            "address": "3771 S Las Vegas Blvd, Suite 160, Las Vegas, NV 89109",
+            "disclaimer": "Simplified seating chart for reference only. Use the live ticket map for exact row and seat inventory on your date.",
+            "zones": [
+              {
+                "id": "front-sides",
+                "label": "Front sides",
+                "rows": 2,
+                "placement": "sides",
+                "color": "#ff2e7e",
+                "description": "Two rows on each side, very close to the stage with an angled view."
+              },
+              {
+                "id": "front-center",
+                "label": "Front center",
+                "rows": 3,
+                "placement": "center",
+                "color": "#ff2e7e",
+                "description": "The closest straight-on section. Best when seeing smaller details up close matters most."
+              },
+              {
+                "id": "sweet-spot",
+                "label": "Sweet spot",
+                "rows": 5,
+                "placement": "center",
+                "color": "#8d3cff",
+                "our_pick": true,
+                "description": "Our pick. Close enough for detail while keeping the full stage easy to read."
+              },
+              {
+                "id": "good-value",
+                "label": "Good value",
+                "rows": 5,
+                "placement": "center",
+                "color": "#ffb000",
+                "description": "Farther back and still straight-on. Worth checking when the price gap from the middle is meaningful."
+              },
+              {
+                "id": "rear-section",
+                "label": "Rear section",
+                "rows": 4,
+                "placement": "center",
+                "color": "#12c7b1",
+                "description": "The farthest straight-on section. Best when keeping the ticket price down matters most."
+              }
+            ]
+          }
+          EOF
+
+          cat > assets/seat-layouts/nathan-burton-theater.css <<'EOF'
+          .nbt-seat-guide{--nbt-pink:#ff2e7e;--nbt-purple:#8d3cff;--nbt-amber:#ffb000;--nbt-teal:#12c7b1;display:grid;grid-template-columns:minmax(0,1.18fr) minmax(280px,.82fr);gap:22px;align-items:start;margin-top:24px}
+          .nbt-map-shell{position:relative;overflow:hidden;border-radius:28px;padding:24px;background:radial-gradient(circle at 50% -5%,rgba(255,176,0,.18),transparent 25%),linear-gradient(180deg,#140923 0%,#0b0613 62%,#08070d 100%);border:1px solid rgba(255,255,255,.16);box-shadow:0 24px 60px rgba(13,4,24,.28);min-height:650px}
+          .nbt-map-shell:before,.nbt-map-shell:after{content:"";position:absolute;inset:auto -12% -18% -12%;height:38%;background:radial-gradient(ellipse at center,rgba(255,46,126,.12),transparent 65%);pointer-events:none}.nbt-map-shell:after{inset:18% auto 0 50%;width:2px;height:70%;background:linear-gradient(transparent,rgba(255,176,0,.35),transparent);box-shadow:-220px 0 28px rgba(255,176,0,.16),220px 0 28px rgba(255,176,0,.16)}
+          .nbt-stage{position:relative;z-index:2;margin:0 auto 28px;width:min(72%,520px);padding:24px 12px;text-align:center;letter-spacing:.28em;font-weight:800;color:#fff;background:linear-gradient(180deg,#17151b,#0d0c0f);border:2px solid rgba(255,176,0,.82);border-radius:8px 8px 42px 42px;box-shadow:0 0 22px rgba(255,176,0,.22)}
+          .nbt-front-row{position:relative;z-index:2;display:grid;grid-template-columns:minmax(74px,18%) minmax(0,64%) minmax(74px,18%);gap:16px;align-items:start;margin-bottom:12px}
+          .nbt-center-stack{position:relative;z-index:2;width:64%;margin:0 auto;display:grid;gap:11px}
+          .nbt-map-zone{appearance:none;border:0;background:transparent;padding:0;cursor:pointer;display:grid;gap:8px;min-width:0;transition:transform .18s ease,filter .18s ease}
+          .nbt-map-zone:hover,.nbt-map-zone:focus-visible{transform:translateY(-2px);filter:brightness(1.08);outline:none}.nbt-map-zone.is-active .nbt-slab{outline:3px solid var(--nbt-amber);outline-offset:2px;box-shadow:0 0 18px rgba(255,176,0,.55)}
+          .nbt-map-zone.side{padding-top:8px}.nbt-map-zone.side.left{transform:rotate(18deg);transform-origin:70% 0}.nbt-map-zone.side.right{transform:rotate(-18deg);transform-origin:30% 0}.nbt-map-zone.side:hover,.nbt-map-zone.side:focus-visible{filter:brightness(1.08)}
+          .nbt-slab{display:block;width:100%;height:18px;border-radius:6px;background:var(--zone-color);border:1px solid rgba(255,255,255,.42);box-shadow:inset 0 2px 4px rgba(255,255,255,.18),0 5px 12px rgba(0,0,0,.3);transition:outline .18s ease,box-shadow .18s ease}
+          .nbt-map-caption{position:relative;z-index:2;text-align:center;margin:28px 0 4px}.nbt-map-caption strong{display:block;color:#fff;font-size:clamp(1.15rem,2vw,1.45rem)}.nbt-map-caption span{display:block;color:rgba(255,255,255,.72);font-size:.9rem;margin-top:5px}
+          .nbt-zone-panel{display:grid;gap:12px}.nbt-zone-card{appearance:none;width:100%;text-align:left;padding:18px;border-radius:20px;border:1px solid color-mix(in srgb,var(--zone-color) 72%,transparent);background:linear-gradient(135deg,color-mix(in srgb,var(--zone-color) 10%,#110b18),#100a17);color:#ece8f1;cursor:pointer;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}.nbt-zone-card:hover,.nbt-zone-card:focus-visible{transform:translateY(-2px);outline:none}.nbt-zone-card.is-active{border-color:var(--nbt-amber);box-shadow:0 0 0 2px rgba(255,176,0,.16),0 12px 30px rgba(17,4,28,.16)}
+          .nbt-zone-card-head{display:flex;align-items:center;gap:10px;margin-bottom:9px}.nbt-dot{width:20px;height:20px;border-radius:50%;background:var(--zone-color);box-shadow:0 0 18px color-mix(in srgb,var(--zone-color) 60%,transparent)}.nbt-zone-card h3{margin:0;font-size:1.1rem;color:var(--zone-color)}.nbt-zone-card p{margin:0;color:#d8d2dd;line-height:1.55}.nbt-pick{margin-left:auto;border:1px solid var(--nbt-amber);color:#171225;background:var(--nbt-amber);font-size:.68rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:5px 8px;border-radius:999px}
+          .nbt-seat-detail{margin-top:14px;padding:19px;border-radius:20px;background:#fff;border:1px solid #e8e2ed;color:#21182a}.nbt-seat-detail .tag{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:900;color:#7e7287}.nbt-seat-detail h3{margin:5px 0 7px;font-size:1.35rem}.nbt-seat-detail p{margin:0 0 14px;color:#5e5366;line-height:1.55}.nbt-seat-detail .cta{width:100%;text-align:center;justify-content:center}
+          .nbt-disclaimer{display:flex;gap:9px;align-items:flex-start;color:#736a78;font-size:.82rem;line-height:1.45;margin:14px 2px 0}.nbt-disclaimer:before{content:"i";display:grid;place-items:center;flex:0 0 20px;height:20px;border:1px solid #918897;border-radius:50%;font-weight:800}
+          .nbt-chart-gallery{position:relative}.nbt-chart-gallery:after{content:"Seating chart";position:absolute;left:12px;bottom:12px;padding:6px 9px;border-radius:999px;background:rgba(13,7,20,.82);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;pointer-events:none}.nbt-chart-gallery img{object-fit:contain!important;background:#09060f}
+          @media(max-width:820px){.nbt-seat-guide{grid-template-columns:1fr}.nbt-map-shell{padding:18px 14px;min-height:0}.nbt-stage{width:74%;margin-bottom:20px;padding:18px 8px}.nbt-front-row{grid-template-columns:19% 62% 19%;gap:9px}.nbt-center-stack{width:62%;gap:8px}.nbt-map-zone{gap:6px}.nbt-slab{height:14px}.nbt-map-caption{margin-top:22px}.nbt-zone-panel{gap:10px}.nbt-zone-card{padding:15px}}
+          EOF
+
+          cat > assets/seat-layouts/nathan-burton-theater.js <<'EOF'
+          (()=>{
+            const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+            const slabs=(n,color)=>Array.from({length:n},()=>`<span class="nbt-slab" style="--zone-color:${esc(color)}"></span>`).join('');
+            async function mount(root){
+              const url=root.dataset.layoutUrl;
+              const ticket=root.dataset.ticketUrl;
+              try{
+                const data=await fetch(url,{credentials:'same-origin'}).then(r=>{if(!r.ok) throw new Error(`HTTP ${r.status}`);return r.json()});
+                const byId=Object.fromEntries(data.zones.map(z=>[z.id,z]));
+                const side=byId['front-sides'],front=byId['front-center'];
+                const centers=data.zones.filter(z=>z.placement==='center'&&z.id!=='front-center');
+                const mapZone=(z,extra='')=>`<button type="button" class="nbt-map-zone ${extra}" data-zone="${esc(z.id)}" aria-label="${esc(z.label)}" style="--zone-color:${esc(z.color)}">${slabs(z.rows,z.color)}</button>`;
+                root.innerHTML=`
+                  <div>
+                    <div class="nbt-map-shell">
+                      <div class="nbt-stage">STAGE</div>
+                      <div class="nbt-front-row">
+                        ${mapZone(side,'side left')}
+                        ${mapZone(front)}
+                        ${mapZone(side,'side right')}
+                      </div>
+                      <div class="nbt-center-stack">${centers.map(z=>mapZone(z)).join('')}</div>
+                      <div class="nbt-map-caption"><strong>${esc(data.venue)}</strong><span>${esc(data.address)}</span></div>
+                    </div>
+                    <p class="nbt-disclaimer">${esc(data.disclaimer)}</p>
+                  </div>
+                  <div>
+                    <div class="nbt-zone-panel">
+                      ${data.zones.map(z=>`<button type="button" class="nbt-zone-card" data-zone="${esc(z.id)}" style="--zone-color:${esc(z.color)}"><div class="nbt-zone-card-head"><span class="nbt-dot"></span><h3>${esc(z.label)}</h3>${z.our_pick?'<span class="nbt-pick">Our Pick</span>':''}</div><p>${esc(z.description)}</p></button>`).join('')}
+                    </div>
+                    <div class="nbt-seat-detail" aria-live="polite"><div class="tag">Our Pick</div><h3>Sweet spot</h3><p>${esc(byId['sweet-spot'].description)}</p><a class="cta vs-ticket-primary" href="${esc(ticket)}" target="_blank" rel="noopener sponsored">Check seats →</a></div>
+                  </div>`;
+                const detail=root.querySelector('.nbt-seat-detail');
+                const activate=id=>{
+                  const z=byId[id]; if(!z) return;
+                  root.querySelectorAll('[data-zone]').forEach(el=>el.classList.toggle('is-active',el.dataset.zone===id));
+                  detail.querySelector('.tag').textContent=z.our_pick?'Our Pick':'Seat guide';
+                  detail.querySelector('h3').textContent=z.label;
+                  detail.querySelector('p').textContent=z.description;
+                };
+                root.addEventListener('click',e=>{const el=e.target.closest('[data-zone]');if(el)activate(el.dataset.zone)});
+                activate('sweet-spot');
+              }catch(err){
+                root.innerHTML='<p>Seat guide unavailable right now. Use the live ticket map to compare sections for your date.</p>';
+                console.warn('Nathan Burton Theater seat guide:',err);
+              }
+            }
+            document.querySelectorAll('[data-seat-layout="nathan-burton-theater"]').forEach(mount);
+          })();
+          EOF
+
+          cat > scripts/generate-seat-layout-assets.py <<'EOF'
+          #!/usr/bin/env python3
+          import json, html
+          from pathlib import Path
+
+          ROOT=Path(__file__).resolve().parents[1]
+          src=ROOT/'data/seat-layouts/nathan-burton-theater.json'
+          out=ROOT/'images/nathan-burton-theater-seating-chart.svg'
+          data=json.loads(src.read_text())
+          zones={z['id']:z for z in data['zones']}
+          W,H=1200,1500
+          x,w=300,600
+          y=330
+          row_h,gap=32,13
+          parts=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">',
+                 '<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#140923"/><stop offset="1" stop-color="#07070c"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>',
+                 f'<rect width="{W}" height="{H}" rx="42" fill="url(#bg)"/>',
+                 '<text x="70" y="75" fill="#fff" font-family="Arial,sans-serif" font-size="42" font-weight="800">vegas <tspan fill="#ff2e7e">sidekick</tspan></text>',
+                 '<text x="72" y="112" fill="#d9d1df" font-family="Arial,sans-serif" font-size="17" letter-spacing="5">SHOWS • TICKETS • GOOD TIMES</text>',
+                 '<path d="M330 165 H870 V255 Q600 310 330 255 Z" fill="#121116" stroke="#ffb000" stroke-width="4" filter="url(#glow)"/>',
+                 '<text x="600" y="235" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="10">STAGE</text>']
+          side=zones['front-sides']
+          for sx,ang in [(165,-18),(915,18)]:
+              for r in range(side['rows']):
+                  yy=330+r*62
+                  parts.append(f'<rect x="{sx}" y="{yy}" width="115" height="38" rx="8" fill="{side["color"]}" stroke="#fff" stroke-opacity=".35" transform="rotate({ang} {sx+57} {yy+19})"/>')
+          current=y
+          for zid in ['front-center','sweet-spot','good-value','rear-section']:
+              z=zones[zid]
+              for _ in range(z['rows']):
+                  parts.append(f'<rect x="{x}" y="{current}" width="{w}" height="{row_h}" rx="9" fill="{z["color"]}" stroke="#fff" stroke-opacity=".25"/>')
+                  current += row_h+gap
+              current += 14
+          # zone labels
+          labels=[('Front sides',95,400,side['color']),('Front center',930,395,zones['front-center']['color']),('Sweet spot',90,630,zones['sweet-spot']['color']),('Good value',930,900,zones['good-value']['color']),('Rear section',90,1120,zones['rear-section']['color'])]
+          for label,lx,ly,c in labels:
+              parts.append(f'<rect x="{lx-20}" y="{ly-38}" width="190" height="62" rx="16" fill="#100a17" stroke="{c}" stroke-width="2"/>')
+              parts.append(f'<text x="{lx}" y="{ly}" fill="{c}" font-family="Arial,sans-serif" font-size="24" font-weight="700">{html.escape(label)}</text>')
+          parts += [
+              '<rect x="420" y="1210" width="360" height="48" rx="24" fill="#ffb000"/>',
+              '<text x="600" y="1242" text-anchor="middle" fill="#171225" font-family="Arial,sans-serif" font-size="20" font-weight="900" letter-spacing="3">OUR PICK · SWEET SPOT</text>',
+              f'<text x="600" y="1330" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="32" font-weight="800">{html.escape(data["venue"])}</text>',
+              f'<text x="600" y="1372" text-anchor="middle" fill="#d7cedd" font-family="Arial,sans-serif" font-size="21">{html.escape(data["address"])}</text>',
+              '<text x="600" y="1435" text-anchor="middle" fill="#8f8597" font-family="Arial,sans-serif" font-size="17">Simplified seating chart · exact seat inventory varies by performance</text>',
+              '</svg>'
+          ]
+          out.write_text('\n'.join(parts))
+          print(out)
+          EOF
+          chmod +x scripts/generate-seat-layout-assets.py
+          python3 scripts/generate-seat-layout-assets.py
+
+      - name: Wire Nathan Burton page and Marc variable schedule
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re, json
+
+          nathan=Path('shows/magic/nathan-burton-comedy-magic/index.html')
+          s=nathan.read_text(encoding='utf-8')
+          css='<link rel="stylesheet" href="/assets/seat-layouts/nathan-burton-theater.css?v=1"/>'
+          if css not in s:
+              s=s.replace('</head>',css+'</head>',1)
+          replacement='''<section class="section alt" id="photos"><div class="wrap"><div class="eyebrow">See the show</div><h2>Photos from Nathan Burton Comedy Magic</h2><p>Use the show photos and the theater chart together before you choose a section.</p><div class="gallery gallery-4"><button aria-label="Open Nathan Burton Comedy Magic photo" type="button"><img alt="Nathan Burton Comedy Magic Las Vegas show photo" loading="lazy" src="/images/nathan-burton-comedy-magic-hero.jpg"/></button><button aria-label="Open Nathan Burton Comedy Magic photo" type="button"><img alt="Nathan Burton Comedy Magic Las Vegas show photo" loading="lazy" src="/images/nathan-burton-comedy-magic-2.jpg"/></button><button aria-label="Open Nathan Burton Comedy Magic photo" type="button"><img alt="Nathan Burton Comedy Magic Las Vegas show photo" loading="lazy" src="/images/nathan-burton-comedy-magic-3.jpg"/></button><button class="nbt-chart-gallery" aria-label="Open Nathan Burton Theater seating chart" type="button"><img alt="Seating chart for Nathan Burton Comedy Magic at Nathan Burton Theater in Las Vegas, showing front-side, front-center, middle, value and rear seating areas" loading="lazy" src="/images/nathan-burton-theater-seating-chart.svg"/></button></div><p class="media-caption">Nathan Burton Theater seating chart · 3771 S Las Vegas Blvd, Suite 160. The diagram is simplified; check the live ticket map for exact inventory on your date.</p></div></section><section class="section" id="seats"><div class="wrap"><div class="eyebrow">Seat guide</div><h2>Find your seat at the Nathan Burton Theater</h2><p class="lede">The real room has two small two-row side sections up front, then a straight center block running from the front toward the rear. Tap a zone below to compare the tradeoff.</p><div id="nbt-seat-guide" class="nbt-seat-guide" data-seat-layout="nathan-burton-theater" data-layout-url="/data/seat-layouts/nathan-burton-theater.json" data-ticket-url="https://spotlight.vegas/shows/magic/nathan-burton-comedy-magic/ref/vegassidekick"><noscript><p>The Nathan Burton Theater has two-row side sections near the stage plus straight-on front, middle, value and rear seating areas. Use the live ticket map to compare exact rows and prices.</p></noscript></div></div></section>'''
+          pat=re.compile(r'<section class="section alt" id="photos">.*?</section><section class="section" id="seats">.*?</section>(?=<section class="section alt" id="fit">)',re.S)
+          s2,n=pat.subn(replacement,s,count=1)
+          if n!=1:
+              raise SystemExit(f'Nathan photos/seat section replacement count={n}')
+          s=s2
+          js='<script src="/assets/seat-layouts/nathan-burton-theater.js?v=1" defer></script>'
+          if js not in s:
+              s=s.replace('</body>',js+'</body>',1)
+          nathan.write_text(s,encoding='utf-8')
+
+          marc=Path('shows/comedy/marc-savard-comedy-hypnosis/index.html')
+          m=marc.read_text(encoding='utf-8')
+          # Remove fixed eventSchedule from the EventSeries JSON-LD.
+          def fix_event(match):
+              obj=json.loads(match.group(1))
+              if obj.get('@type')=='EventSeries' and obj.get('name')=='Marc Savard Comedy Hypnosis':
+                  obj.pop('eventSchedule',None)
+                  return '<script type="application/ld+json">'+json.dumps(obj,separators=(',',':'),ensure_ascii=False)+'</script>'
+              return match.group(0)
+          m=re.sub(r'<script type="application/ld\+json">(.*?)</script>',fix_event,m,flags=re.S)
+          m=m.replace('<div class="fact"><strong>7:00 PM</strong><span>Typical start</span></div>','<div class="fact"><strong>Varies</strong><span>Showtime</span></div>',1)
+          m=m.replace('Marc Savard Comedy Hypnosis performs Monday, Wednesday, Friday, Saturday, and Sunday at 7:00 PM. The show is dark on Tuesdays and Thursdays. Always verify the current schedule before purchasing.','Performance times vary by date. Use the live calendar to check the current Marc Savard schedule before purchasing.',1)
+          show_pat=re.compile(r'<section class="section" id="showtimes">.*?</section>(?=<section class="section alt" id="faq">)',re.S)
+          show_repl='''<section class="section" id="showtimes"><div class="wrap"><div class="eyebrow">Plan the night</div><h2>Check the current schedule</h2><div class="schedule-variable"><p>Marc Savard performance times vary by date.</p><a class="cta vs-ticket-primary" href="https://spotlight.vegas/shows/comedy/marc-savard-comedy-hypnosis/ref/vegassidekick" target="_blank" rel="noopener sponsored">Click here to check schedule →</a></div></div></section>'''
+          m2,c=show_pat.subn(show_repl,m,count=1)
+          if c!=1:
+              raise SystemExit(f'Marc showtime section replacement count={c}')
+          marc.write_text(m2,encoding='utf-8')
+
+          # Keep comedy catalog schedule summary from claiming a fixed time.
+          cat=Path('shows/comedy/index.html')
+          cs=cat.read_text(encoding='utf-8')
+          cs=cs.replace("schedule:'Mon, Wed, Fri, Sat, Sun · 7 PM'","schedule:'Times vary · Check schedule'",1)
+          cat.write_text(cs,encoding='utf-8')
+
+          # Update master DB schedule summaries when those fields exist.
+          dbp=Path('data/show-database.json')
+          db=json.loads(dbp.read_text(encoding='utf-8'))
+          changed=False
+          def walk(x):
+              nonlocal_flag=[False]
+              if isinstance(x,dict):
+                  ident=' '.join(str(x.get(k,'')) for k in ('slug','name','title')).lower()
+                  if 'marc-savard-comedy-hypnosis' in ident or 'marc savard' in ident:
+                      for key in ('schedule_summary','schedule'):
+                          if key in x and isinstance(x[key],str):
+                              x[key]='Times vary · Check live calendar'; nonlocal_flag[0]=True
+                  for v in x.values():
+                      if walk(v): nonlocal_flag[0]=True
+              elif isinstance(x,list):
+                  for v in x:
+                      if walk(v): nonlocal_flag[0]=True
+              return nonlocal_flag[0]
+          if walk(db):
+              dbp.write_text(json.dumps(db,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          PY
+
+      - name: Validate rollout
+        run: |
+          node --check assets/seat-layouts/nathan-burton-theater.js
+          python3 -m json.tool data/seat-layouts/nathan-burton-theater.json >/dev/null
+          python3 scripts/audit-event-schema.py
+          python3 scripts/audit-ticket-cta-color.py
+          python3 scripts/audit-mobile-show-heroes.py
+          python3 scripts/audit-show-decision-copy.py
+          python3 scripts/audit-catalog-js-syntax.py
+          git diff --check
+          grep -q 'nathan-burton-theater-seating-chart.svg' shows/magic/nathan-burton-comedy-magic/index.html
+          grep -q '3771 S Las Vegas Blvd, Suite 160' images/nathan-burton-theater-seating-chart.svg
+          ! grep -q 'audience interaction' data/seat-layouts/nathan-burton-theater.json
+
+      - name: Commit live changes
+        run: |
+          git config user.name 'Vegas Sidekick Operations'
+          git config user.email 'operations@vegassidekick.com'
+          git add data/seat-layouts/nathan-burton-theater.json assets/seat-layouts/nathan-burton-theater.css assets/seat-layouts/nathan-burton-theater.js scripts/generate-seat-layout-assets.py images/nathan-burton-theater-seating-chart.svg shows/magic/nathan-burton-comedy-magic/index.html shows/comedy/marc-savard-comedy-hypnosis/index.html shows/comedy/index.html data/show-database.json
+          git commit -m 'Build Nathan Burton Theater seating guide'
+          git push origin HEAD:main
