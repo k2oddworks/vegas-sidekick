@@ -45,3 +45,5 @@ jobs:
           git diff --cached --check
           git commit -m 'Rebuild Wizard of Oz to current benchmark'
           git push origin HEAD:main
+
+# retry after assertion correction
