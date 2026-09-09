@@ -24,7 +24,7 @@
             <div class="nbt-center-stack">${centers.map(z=>mapZone(z)).join('')}</div>
             <div class="nbt-map-caption"><strong>${esc(data.venue)}</strong><span>${esc(data.address)}</span></div>
           </div>
-          <p class="nbt-disclaimer">${esc(data.disclaimer)}</p>
+          ${data.disclaimer?`<p class="nbt-disclaimer">${esc(data.disclaimer)}</p>`:''}
         </div>
         <div>
           <div class="nbt-zone-panel">
