@@ -1,0 +1,56 @@
+name: Fix Absinthe Good To Know
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-absinthe-good-to-know.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Rewrite Absinthe decision context
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('shows/spectaculars/absinthe/index.html')
+          s = p.read_text(encoding='utf-8')
+
+          old1 = '<div class="decision-card watch"><h3>Good to know</h3><p>You want a polished family-friendly production or a low-interaction night.</p></div>'
+          new1 = '<div class="decision-card watch"><h3>Good to know</h3><p>Absinthe is 18+ and intentionally raunchy, with audience interaction built into the show.</p></div>'
+          if old1 not in s:
+              raise SystemExit('Top Good to know target not found')
+          s = s.replace(old1, new1, 1)
+
+          old2 = '<div class="fit-card twice"><h3>Good to know</h3><ul><li>You actually want a magic show.</li><li>You would rather spend the night with one comedian, magician or singer as the clear focus.</li><li>A different show category is the real priority for your group.</li></ul></div>'
+          new2 = '<div class="fit-card twice"><h3>Good to know</h3><ul><li>Absinthe is strictly 18+ and the comedy is intentionally explicit.</li><li>The Spiegeltent is intimate, so the show feels close-up rather than like a huge arena production.</li><li>Audience interaction is part of the experience.</li></ul></div>'
+          if old2 not in s:
+              raise SystemExit('Lower Good to know target not found')
+          s = s.replace(old2, new2, 1)
+
+          p.write_text(s, encoding='utf-8')
+          PY
+
+      - name: Validate decision copy
+        run: python3 scripts/audit-show-decision-copy.py
+
+      - name: Validate Event schema
+        run: python3 scripts/audit-event-schema.py
+
+      - name: Validate ticket CTAs
+        run: python3 scripts/audit-ticket-cta-color.py
+
+      - name: Commit fix
+        run: |
+          git config user.name 'Vegas Sidekick Operations'
+          git config user.email 'operations@vegassidekick.com'
+          git add shows/spectaculars/absinthe/index.html
+          git commit -m 'Rewrite Absinthe good-to-know guidance'
+          git push origin HEAD:main
