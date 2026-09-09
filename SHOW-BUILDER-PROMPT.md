@@ -469,7 +469,7 @@ Copy these exactly — wording is locked. Never name the ticketing partner anywh
 <div class="trust-grid fade-up">
   <div class="trust-card"><div class="trust-icon">🎟️</div><div class="trust-title">Useful Ticket Details</div><div class="trust-body">Show the current price, schedule, venue and practical booking context without unsupported checkout claims.</div></div>
   <div class="trust-card"><div class="trust-icon">⚡</div><div class="trust-title">Instant Delivery</div><div class="trust-body">Tickets arrive by email immediately after purchase. No will-call, no waiting.</div></div>
-  <div class="trust-card"><div class="trust-icon">🌵</div><div class="trust-title">Honest Tradeoffs</div><div class="trust-body">Say who the show fits, what to know first and one real downside when it matters.</div></div>
+  <div class="trust-card"><div class="trust-icon">🌵</div><div class="trust-title">Useful Context</div><div class="trust-body">Say who the show fits, what to know first and one useful caveat when it matters.</div></div>
   <div class="trust-card"><div class="trust-icon">🎫</div><div class="trust-title">No Account Required</div><div class="trust-body">Buy without creating an account. Fast, clean, tickets straight to your inbox.</div></div>
 </div>
 ```
@@ -870,7 +870,7 @@ A correctly built show page:
 
 
 ### Decision-card standard (September 2026)
-Use **Good fit** and **Booking tip** as the core buyer decision aid. **Think twice** is optional and should appear only when there is a real, show-specific downside, mismatch, or tradeoff. Never add it just to fill a third card. Never use the retired labels **Book it if…**, **Know this first**, or **Best practical angle**. Preserve stronger custom decision modules on benchmark pages rather than flattening them.
+Use **Good fit** and **Booking tip** as the core buyer decision aid. **Good to know** is optional and should appear only when there is useful, show-specific context, a mismatch, or a meaningful tradeoff. Never add it just to fill a third card. Never use the retired labels **Book it if…**, **Know this first**, or **Best practical angle**. Preserve stronger custom decision modules on benchmark pages rather than flattening them.
 
 
 ---

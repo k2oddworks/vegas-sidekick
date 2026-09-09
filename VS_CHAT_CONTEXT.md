@@ -45,7 +45,7 @@ Before shipping customer-facing copy, ask:
 - practical
 - numbers-first when relevant
 - dry humor when natural
-- comfortable stating downsides
+- comfortable stating practical caveats
 - never PR-sounding
 - never generic travel fluff
 
@@ -126,7 +126,7 @@ Current canonical show pages generally use:
 5. Quick Take
 6. Photos
 7. Interactive seat guide where useful
-8. Good Fit / Think Twice
+8. Good Fit / Good to Know
 9. Seven-day schedule grid or appropriate variable-schedule treatment
 10. FAQ
 11. Related shows
@@ -269,7 +269,7 @@ The database should become the operational control center for:
 It should **not casually overwrite editorial judgment**, including:
 
 - Kris’s Take
-- Good Fit / Think Twice
+- Good Fit / Good to Know
 - rankings
 - guide inclusion
 - editorial verdicts
@@ -510,7 +510,7 @@ Human judgment remains required for:
 
 - rankings
 - Kris’s Take
-- Good Fit / Think Twice
+- Good Fit / Good to Know
 - guide inclusion
 - subjective editorial copy
 - disputed source facts
@@ -781,7 +781,7 @@ When data conflicts, do not guess.
 The customer-facing three-card decision aid uses these labels:
 
 - **Good fit** — who the show is genuinely a match for.
-- **Think twice** — optional; include only for a real, show-specific mismatch, downside, or tradeoff. Omit it rather than use category filler.
+- **Good to know** — optional; include only for useful, show-specific context, a mismatch, or a meaningful tradeoff. Omit it rather than use category filler.
 - **Booking tip** — a concrete seat, timing, or booking action.
 
 Do not use the old labels `Book it if…`, `Know this first`, or `Best practical angle`. Do not fill these cards with generic category filler when a useful show-specific point is available. If there is no defensible booking tip, use a verified planning action rather than inventing seat advice. Existing custom/benchmark decision modules that are more detailed should not be flattened just to match the generic card format.

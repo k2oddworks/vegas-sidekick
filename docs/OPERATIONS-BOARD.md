@@ -93,7 +93,7 @@ Then publish the next 90-day roadmap.
 
 - Kris's Take
 - recommendation order
-- Good Fit / Think Twice judgment
+- Good Fit / Good to Know judgment
 - comparison verdicts
 - guide inclusion/ranking
 - material editorial tone/positioning

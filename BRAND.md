@@ -38,7 +38,7 @@ will tell you which ones are worth it and which are not.
 
 **The promise, verbatim from the site:**
 
-> Independent Las Vegas show recommendations, practical ticket guidance and honest tradeoffs.
+> Independent Las Vegas show recommendations, practical ticket guidance and practical booking context.
 > Your Vegas insider without the sales-floor nonsense.
 
 **The homepage headline:** *More Vegas. Less "how much?"*
@@ -123,7 +123,7 @@ one fact that justifies it. No throat-clearing.
    came for. Put them early and plainly.
 3. **Earn superlatives.** "Best" needs a reason in the same sentence. If the reason is
    just "it's popular," cut the superlative.
-4. **Say the downside.** Off-Strip, late start, no intermission, tight seats, 18+ —
+4. **Give the useful context.** Off-Strip, late start, no intermission, tight seats, 18+ —
    these get said out loud. It is the single cheapest way to be believed.
 5. **No generic urgency or scarcity.** Do not use phrases like "selling fast," "prices may increase," or countdown-style pressure unless a current, verifiable fact specifically requires it. Prefer the useful fact: current price, showtime, dark day, availability status or closure date.
 6. **Second person, present tense.** "You're out by 9:15 with the whole night ahead."
