@@ -18,32 +18,35 @@
       "rows": 3,
       "placement": "center",
       "color": "#ff2e7e",
-      "description": "The closest straight-on section. Best when seeing smaller details up close matters most."
+      "description": "The closest straight-on section. A strong choice when seeing smaller details up close matters most."
     },
     {
       "id": "sweet-spot",
-      "label": "Sweet spot",
+      "label": "Center section",
+      "badge": "Sweet spot",
       "rows": 5,
       "placement": "center",
       "color": "#8d3cff",
       "our_pick": true,
-      "description": "Our pick. Close enough for detail while keeping the full stage easy to read."
+      "description": "Our pick for the best balance of detail and a clear view of the full stage."
     },
     {
       "id": "good-value",
-      "label": "Good value",
+      "label": "Value center",
+      "badge": "Good value",
       "rows": 5,
       "placement": "center",
       "color": "#ffb000",
-      "description": "Farther back and still straight-on. Worth checking when the price gap from the middle is meaningful."
+      "description": "A straight-on view farther back that can be an excellent value when the price is lower than the middle sections."
     },
     {
       "id": "rear-section",
-      "label": "Rear section",
+      "label": "Rear center",
+      "badge": "Best price",
       "rows": 4,
       "placement": "center",
       "color": "#12c7b1",
-      "description": "The farthest straight-on section. Best when keeping the ticket price down matters most."
+      "description": "A clear straight-on view from the back of the room and a smart choice when keeping the ticket price down is the priority."
     }
   ]
 }
