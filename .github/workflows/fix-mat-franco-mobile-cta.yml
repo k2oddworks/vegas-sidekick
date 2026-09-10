@@ -1,0 +1,40 @@
+name: Fix Mat Franco mobile CTA
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/fix-mat-franco-mobile-cta.yml']
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Match Nathan Burton mobile CTA structure
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('shows/magic/mat-franco/index.html')
+          s=p.read_text()
+          old='<div class="mobile-buy"><div><small>From</small><strong>$57</strong></div><a class="cta vs-ticket-primary" href="https://spotlight.vegas/shows/magic/mat-franco/ref/vegassidekick" target="_blank" rel="noopener sponsored">Get Tickets →</a></div>'
+          new='<div class="mobile-bar"><div class="mobile-progress" id="mobileProgress"></div><div class="mobile-inner"><div class="mobile-price"><small>FROM</small>$57</div><a class="cta vs-ticket-primary" href="https://spotlight.vegas/shows/magic/mat-franco/ref/vegassidekick" target="_blank" rel="noopener sponsored">Get Tickets →</a></div></div>'
+          if old not in s:
+              raise SystemExit('Expected Mat Franco mobile-buy markup not found')
+          p.write_text(s.replace(old,new,1))
+          PY
+      - name: Run relevant audits
+        run: |
+          python3 scripts/audit-ticket-cta-color.py
+          python3 scripts/audit-mobile-show-heroes.py
+          python3 scripts/audit-content-link-hygiene.py
+          git diff --check
+          grep -q 'class="mobile-bar"' shows/magic/mat-franco/index.html
+          ! grep -q 'class="mobile-buy"' shows/magic/mat-franco/index.html
+      - name: Commit correction and remove workflow
+        run: |
+          git config user.name 'Vegas Sidekick Operations'
+          git config user.email 'operations@vegassidekick.com'
+          rm .github/workflows/fix-mat-franco-mobile-cta.yml
+          git add shows/magic/mat-franco/index.html .github/workflows/fix-mat-franco-mobile-cta.yml
+          git commit -m 'Match Mat Franco mobile ticket CTA to benchmark'
+          git push origin main
