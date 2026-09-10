@@ -1,0 +1,92 @@
+name: Finalize Mat Franco rebuild
+on:
+  push:
+    branches: [rebuild-mat-franco-benchmark]
+    paths: ['.github/workflows/finalize-mat-franco-rebuild.yml']
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: rebuild-mat-franco-benchmark
+          fetch-depth: 0
+      - name: Refresh Mat Franco source data
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json,re
+          from pathlib import Path
+          p=Path('data/show-database.json'); db=json.loads(p.read_text())
+          rec=next((r for r in db.get('records',[]) if r.get('slug')=='mat-franco'),None)
+          if not rec: raise SystemExit('Mat Franco record not found')
+          expected={'status':'active','our_price':57,'runtime_minutes':90,'ticket_url':'https://spotlight.vegas/shows/magic/mat-franco/ref/vegassidekick'}
+          for k,v in expected.items():
+              if rec.get(k)!=v: raise SystemExit(f'Unexpected Mat Franco {k}: {rec.get(k)!r} != {v!r}')
+          rec.update(verified_on='2026-09-10',freshness_label='September 2026',venue='Mat Franco Theater - The LINQ Hotel',age_summary='5+',schedule_summary='Mon, Tue, Wed, Fri, Sat, Sun · 7 PM')
+          spot=rec.setdefault('spotlight',{})
+          days={d:['7:00 PM'] for d in ['Monday','Tuesday','Wednesday','Friday','Saturday','Sunday']}
+          spot.update(location='Mat Franco Theater - The LINQ Hotel',our_price=57,runtime_minutes=90,age_rule='Must be 5 years of age or older. Everyone must have a ticket to enter the event. Guests 18 years of age and under must be accompanied by an adult.',schedule_days=days,schedule_summary='Mon, Tue, Wed, Fri, Sat, Sun · 7 PM',schedule_variable=False,schedule_raw=[f'{d} - 7:00pm' for d in days],spotlight_url='https://spotlight.vegas/shows/magic/mat-franco/',affiliate_url='https://spotlight.vegas/shows/magic/mat-franco/ref/vegassidekick',age_label='5+')
+          note='Schedule reverified 2026-09-10 against the current Spotlight Mat Franco listing: Monday, Tuesday, Wednesday, Friday, Saturday and Sunday at 7:00 PM; Thursday dark.'
+          notes=(rec.get('notes') or '').strip(); rec['notes']=notes if note in notes else (notes+' '+note).strip()
+          db['updated_on']='2026-09-10'; p.write_text(json.dumps(db,ensure_ascii=False,indent=2)+'\n')
+          for fp in ['shows/magic/index.html','shows/family/index.html']:
+              q=Path(fp); txt=q.read_text()
+              txt=txt.replace("slug:'mat-franco', name:'Mat Franco', subtitle:'Magic Reinvented Nightly', venue:'Mat Franco Theater - The LINQ Hotel', price:57, pd:'$57', sp:false, pills:['Great Date Night','AGT Champion'], img:'/images/mat-franco-hero.jpg', duration:'90 min', age:'5+', schedule:'Mon, Tue, Wed, Thu, Fri, Sat, Sun · 7 PM'", "slug:'mat-franco', name:'Mat Franco', subtitle:'Magic Reinvented Nightly', venue:'Mat Franco Theater - The LINQ Hotel', price:57, pd:'$57', sp:false, pills:['Great Date Night','AGT Champion'], img:'/images/mat-franco-hero.jpg', duration:'90 min', age:'5+', schedule:'Mon, Tue, Wed, Fri, Sat, Sun · 7 PM'")
+              txt=txt.replace("slug:'mat-franco', cat:'magic', name:'Mat Franco', subtitle:'Magic Reinvented Nightly', venue:'Mat Franco Theater - The LINQ Hotel', price:57, pd:'$57', sp:false, pills:['Great Date Night','AGT Champion'], img:'/images/mat-franco-hero.jpg', duration:'90 min', age:'5+', schedule:'Mon, Tue, Wed, Thu, Fri, Sat, Sun · 7 PM'", "slug:'mat-franco', cat:'magic', name:'Mat Franco', subtitle:'Magic Reinvented Nightly', venue:'Mat Franco Theater - The LINQ Hotel', price:57, pd:'$57', sp:false, pills:['Great Date Night','AGT Champion'], img:'/images/mat-franco-hero.jpg', duration:'90 min', age:'5+', schedule:'Mon, Tue, Wed, Fri, Sat, Sun · 7 PM'")
+              q.write_text(txt)
+          s=Path('sitemap.xml'); txt=s.read_text(); pat=r'(<loc>https://vegassidekick\.com/shows/magic/mat-franco/</loc>[\s\S]{0,220}?<lastmod>)([^<]+)(</lastmod>)'; out,n=re.subn(pat,r'\g<1>2026-09-10\g<3>',txt,count=1)
+          if n: s.write_text(out)
+          PY
+      - name: Mat Franco regression checks
+        shell: bash
+        run: |
+          node --check assets/seat-layouts/mat-franco-theater-linq.js
+          python3 - <<'PY'
+          import json,re
+          from pathlib import Path
+          page=Path('shows/magic/mat-franco/index.html').read_text()
+          required=['Tickets start at $57. Other price points may be available.','data-seat-layout="mat-franco-theater-linq"','/images/mat-franco-theater-linq-seating-chart.svg','/assets/seat-layouts/mat-franco-theater-linq.js?v=1','Preferred is our Sweet Spot','Show info confirmed September 2026','>Start time<']
+          for x in required:
+              if x not in page: raise SystemExit('Missing Mat Franco marker: '+x)
+          for x in ['Typical start','tradeoff','Think Twice','Think twice','Downside','Honest Downside','Your date and seat determine the final total']:
+              if x in page: raise SystemExit('Banned/stale Mat Franco copy: '+x)
+          if page.count('class="ticker-set"')!=2: raise SystemExit('Ticker duplication wrong')
+          if page.count('Show info confirmed September 2026')!=1: raise SystemExit('Freshness duplication wrong')
+          blocks=[]
+          for m in re.finditer(r'<script type="application/ld\+json">(.*?)</script>',page,re.S): blocks.append(json.loads(m.group(1)))
+          ev=next(x for x in blocks if x.get('@type')=='EventSeries')
+          if ev['offers']['price']!=57 or not isinstance(ev['offers']['price'],(int,float)): raise SystemExit('Bad price schema')
+          if ev['offers']['url']!='https://spotlight.vegas/shows/magic/mat-franco/ref/vegassidekick': raise SystemExit('Bad affiliate URL')
+          sch=ev.get('eventSchedule',{}); days=set(sch.get('byDay',[]))
+          if 'https://schema.org/Thursday' in days or sch.get('startTime')!='19:00': raise SystemExit('Schedule schema drift')
+          layout=json.loads(Path('data/seat-layouts/mat-franco-theater-linq.json').read_text()); picks={s['id'] for s in layout['sections'] if s.get('our_pick')}
+          if picks!={'preferred-left','preferred-right'}: raise SystemExit(f'Wrong Sweet Spot: {picks}')
+          svg=Path('images/mat-franco-theater-linq-seating-chart.svg').read_text()
+          if 'width="1200"' not in svg or 'height="1140"' not in svg: raise SystemExit('SVG intrinsic dimensions missing')
+          rec=next(r for r in json.loads(Path('data/show-database.json').read_text())['records'] if r['slug']=='mat-franco')
+          if 'Thursday' in rec['spotlight'].get('schedule_days',{}): raise SystemExit('Thursday incorrectly active in DB')
+          if rec['schedule_summary']!='Mon, Tue, Wed, Fri, Sat, Sun · 7 PM': raise SystemExit('Top-level schedule drift')
+          print('Mat Franco regression checks passed')
+          PY
+      - name: Repository audits
+        shell: bash
+        run: |
+          python3 scripts/audit-event-schema.py
+          python3 scripts/audit-ticket-cta-color.py
+          python3 scripts/audit-mobile-show-heroes.py
+          python3 scripts/audit-catalog-js-syntax.py
+          python3 scripts/audit-content-link-hygiene.py
+          git diff --check
+      - name: Commit audited rebuild
+        shell: bash
+        run: |
+          git config user.name 'Vegas Sidekick Operations'
+          git config user.email 'operations@vegassidekick.com'
+          git rm .github/workflows/finalize-mat-franco-rebuild.yml
+          git add data/show-database.json shows/magic/index.html shows/family/index.html sitemap.xml
+          git diff --cached --check
+          git commit -m 'Finalize audited Mat Franco benchmark rebuild'
+          git push origin rebuild-mat-franco-benchmark
