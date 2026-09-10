@@ -1,0 +1,15 @@
+{
+  "id": "mat-franco-theater-linq",
+  "venue": "Mat Franco Theater - The LINQ Hotel",
+  "address": "3535 S Las Vegas Blvd, Las Vegas, NV 89109",
+  "viewBox": "0 0 800 760",
+  "stage": {"path": "M170 42 H630 V105 H170 Z", "label_x": 400, "label_y": 82},
+  "sections": [
+    {"id":"premium-left","label":"Premium","side":"Left","color":"#ff2e7e","our_pick":false,"description":"Closest seating on the left side, with a near-stage perspective and a strong sense of scale.","row_slabs":[{"path":"M145 145 Q250 125 382 138 L382 250 Q250 236 112 270 Z"}]},
+    {"id":"premium-right","label":"Premium","side":"Right","color":"#ff2e7e","our_pick":false,"description":"Closest seating on the right side, with a near-stage perspective and a strong sense of scale.","row_slabs":[{"path":"M418 138 Q550 125 655 145 L688 270 Q550 236 418 250 Z"}]},
+    {"id":"preferred-left","label":"Preferred","side":"Left","color":"#7c3aed","our_pick":true,"description":"A balanced middle distance with a centered-feeling view of the full stage while keeping Mat visually close.","row_slabs":[{"path":"M112 292 Q245 258 382 272 L382 485 Q235 470 76 520 Z"}]},
+    {"id":"preferred-right","label":"Preferred","side":"Right","color":"#7c3aed","our_pick":true,"description":"A balanced middle distance with a centered-feeling view of the full stage while keeping Mat visually close.","row_slabs":[{"path":"M418 272 Q555 258 688 292 L724 520 Q565 470 418 485 Z"}]},
+    {"id":"reserved-left","label":"Reserved","side":"Left","color":"#0fb5c9","our_pick":false,"description":"A wider full-stage view from farther back, useful when you want the room and staging in one frame.","row_slabs":[{"path":"M76 542 Q235 490 382 508 L382 690 Q220 675 42 728 Z"}]},
+    {"id":"reserved-right","label":"Reserved","side":"Right","color":"#0fb5c9","our_pick":false,"description":"A wider full-stage view from farther back, useful when you want the room and staging in one frame.","row_slabs":[{"path":"M418 508 Q565 490 724 542 L758 728 Q580 675 418 690 Z"}]}
+  ]
+}
