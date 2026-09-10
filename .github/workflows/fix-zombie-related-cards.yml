@@ -1,0 +1,43 @@
+name: Fix Zombie Burlesque related cards
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-zombie-related-cards.yml'
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace related show links with benchmark cards
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('shows/adult/zombie-burlesque/index.html')
+          s=p.read_text()
+          old='''<section class="section"><div class="wrap"><div class="eyebrow">Keep comparing</div><h2>You may also like</h2><div class="cards"><a class="card" href="/shows/adult/fantasy/"><h3>Fantasy →</h3><p>A long-running adult revue at Luxor.</p></a><a class="card" href="/shows/adult/x-burlesque/"><h3>X Burlesque →</h3><p>Another burlesque-focused Vegas option.</p></a><a class="card" href="/shows/adult/rouge/"><h3>Rouge →</h3><p>A larger-scale adults-only production.</p></a></div></div></section>'''
+          new='''<section class="section"><div class="wrap"><div class="eyebrow">Keep comparing</div><h2>You may also like</h2><div class="related-grid"><a class="related-card" href="/shows/adult/fantasy/"><img alt="Fantasy" loading="lazy" src="/images/fantasy-hero.webp"/><div><strong>Fantasy</strong><small>From $40</small></div></a><a class="related-card" href="/shows/adult/x-burlesque/"><img alt="X Burlesque" loading="lazy" src="/images/x-burlesque-hero.webp"/><div><strong>X Burlesque</strong><small>From $82</small></div></a><a class="related-card" href="/shows/adult/rouge/"><img alt="Rouge" loading="lazy" src="/images/rouge-hero.webp"/><div><strong>Rouge</strong><small>From $54</small></div></a></div></div></section>'''
+          assert old in s, 'old related section not found'
+          p.write_text(s.replace(old,new,1))
+          PY
+      - name: QA
+        run: |
+          python3 scripts/audit-content-link-hygiene.py
+          git diff --check
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('shows/adult/zombie-burlesque/index.html').read_text()
+          assert '<div class="related-grid">' in p
+          for img in ['/images/fantasy-hero.webp','/images/x-burlesque-hero.webp','/images/rouge-hero.webp']:
+            assert img in p
+          for price in ['From $40','From $82','From $54']:
+            assert price in p
+          PY
+      - name: Commit
+        run: |
+          git config user.name 'Vegas Sidekick Operations'
+          git config user.email 'operations@vegassidekick.com'
+          git add shows/adult/zombie-burlesque/index.html
+          git commit -m 'Match Zombie Burlesque related cards to show benchmark'
+          git push origin main
