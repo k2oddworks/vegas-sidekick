@@ -1,0 +1,28 @@
+name: Fix Zombie rebuild organizer
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-zombie-rebuild-organizer.yml'
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add organizer to rebuild schema
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('.github/workflows/rebuild-zombie-burlesque-benchmark.yml')
+          s=p.read_text()
+          old='"eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode"'
+          new='"eventStatus":"https://schema.org/EventScheduled","organizer":{"@type":"Organization","name":"Zombie Burlesque","url":"https://vegassidekick.com/shows/adult/zombie-burlesque/"},"eventAttendanceMode"'
+          assert old in s
+          p.write_text(s.replace(old,new,1))
+          PY
+          git config user.name 'Vegas Sidekick Operations'
+          git config user.email 'operations@vegassidekick.com'
+          git add .github/workflows/rebuild-zombie-burlesque-benchmark.yml
+          git commit -m 'Fix Zombie Burlesque rebuild schema organizer'
+          git push origin main
