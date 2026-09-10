@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-09-09",
+  "updated_on": "2026-09-10",
   "source": "Vegas Sidekick Show Database",
   "records": [
     {
@@ -1854,14 +1854,14 @@
       "age_summary": "5+",
       "venue": "Mat Franco Theater - The LINQ Hotel",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 7 PM",
+      "schedule_summary": "Mon, Tue, Wed, Fri, Sat, Sun · 7 PM",
       "ticket_url": "https://spotlight.vegas/shows/magic/mat-franco/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/magic/mat-franco/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-09-10",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
-      "notes": "",
+      "notes": "Schedule reverified 2026-09-10 against the current Spotlight Mat Franco listing: Monday, Tuesday, Wednesday, Friday, Saturday and Sunday at 7:00 PM; Thursday dark.",
       "spotlight": {
         "name": "Mat Franco Las Vegas",
         "our_price": 57,
@@ -1872,43 +1872,33 @@
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater.",
         "schedule_days": {
           "Monday": [
-            "7 PM"
+            "7:00 PM"
           ],
           "Tuesday": [
-            "7 PM"
+            "7:00 PM"
           ],
           "Wednesday": [
-            "7 PM"
+            "7:00 PM"
           ],
           "Friday": [
-            "7 PM"
+            "7:00 PM"
           ],
           "Saturday": [
-            "7 PM"
+            "7:00 PM"
           ],
           "Sunday": [
-            "7 PM"
-          ],
-          "Thursday": [
-            "7 PM"
+            "7:00 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 7 PM",
+        "schedule_summary": "Mon, Tue, Wed, Fri, Sat, Sun · 7 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Monday – 7:00pm",
-          "Tuesday – 7:00pm",
-          "Wednesday – 7:00pm",
-          "Friday – 7:00pm",
-          "Saturday – 7:00pm",
-          "Sunday – 7:00pm",
-          "2027 Calendar",
-          "Monday – 7:00pm",
-          "Tuesday – 7:00pm",
-          "Thursday– 7:00pm",
-          "Friday – 7:00pm",
-          "Saturday – 7:00pm",
-          "Sunday – 7:00pm"
+          "Monday - 7:00pm",
+          "Tuesday - 7:00pm",
+          "Wednesday - 7:00pm",
+          "Friday - 7:00pm",
+          "Saturday - 7:00pm",
+          "Sunday - 7:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/mat-franco/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/mat-franco/ref/vegassidekick",
