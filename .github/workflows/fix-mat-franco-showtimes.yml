@@ -1,0 +1,44 @@
+name: Fix Mat Franco showtimes
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-mat-franco-showtimes.yml'
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Match Carrot Top showtime-card pattern
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('shows/magic/mat-franco/index.html')
+          s=p.read_text()
+          old=re.compile(r'<section class="section" id="showtimes">.*?</section>', re.S)
+          new='''<section class="section alt" id="showtimes"><div class="wrap"><div class="eyebrow">Plan the night</div><h2>Showtimes</h2><p class="lede">Mon, Tue, Wed, Fri, Sat, Sun · 7 PM. Thu · Dark.</p><div class="schedule"><div class="day"><a href="https://spotlight.vegas/shows/magic/mat-franco/ref/vegassidekick" rel="noopener sponsored" target="_blank"><strong>Mon</strong><span>7 PM</span><small>Tickets →</small></a></div><div class="day"><a href="https://spotlight.vegas/shows/magic/mat-franco/ref/vegassidekick" rel="noopener sponsored" target="_blank"><strong>Tue</strong><span>7 PM</span><small>Tickets →</small></a></div><div class="day"><a href="https://spotlight.vegas/shows/magic/mat-franco/ref/vegassidekick" rel="noopener sponsored" target="_blank"><strong>Wed</strong><span>7 PM</span><small>Tickets →</small></a></div><div class="day"><a href="https://spotlight.vegas/shows/magic/mat-franco/ref/vegassidekick" rel="noopener sponsored" target="_blank"><strong>Thu</strong><span>Dark</span></a></div><div class="day"><a href="https://spotlight.vegas/shows/magic/mat-franco/ref/vegassidekick" rel="noopener sponsored" target="_blank"><strong>Fri</strong><span>7 PM</span><small>Tickets →</small></a></div><div class="day"><a href="https://spotlight.vegas/shows/magic/mat-franco/ref/vegassidekick" rel="noopener sponsored" target="_blank"><strong>Sat</strong><span>7 PM</span><small>Tickets →</small></a></div><div class="day"><a href="https://spotlight.vegas/shows/magic/mat-franco/ref/vegassidekick" rel="noopener sponsored" target="_blank"><strong>Sun</strong><span>7 PM</span><small>Tickets →</small></a></div></div><a class="later-date-cta" href="https://spotlight.vegas/shows/magic/mat-franco/ref/vegassidekick" rel="noopener sponsored" target="_blank">See available dates &amp; times →</a></div></section>'''
+          s2,n=old.subn(new,s,count=1)
+          assert n==1, f'Expected one showtimes section, got {n}'
+          assert s2.count('class="schedule"')==1
+          assert s2.count('https://spotlight.vegas/shows/magic/mat-franco/ref/vegassidekick') >= 10
+          p.write_text(s2)
+          PY
+      - name: Run relevant audits
+        run: |
+          python3 scripts/audit-event-schema.py
+          python3 scripts/audit-ticket-cta-color.py
+          python3 scripts/audit-mobile-show-heroes.py
+          python3 scripts/audit-content-link-hygiene.py
+          git diff --check
+      - name: Commit correction and remove workflow
+        run: |
+          git config user.name 'Vegas Sidekick Operations'
+          git config user.email 'operations@vegassidekick.com'
+          git rm .github/workflows/fix-mat-franco-showtimes.yml
+          git add shows/magic/mat-franco/index.html
+          git commit -m 'Match Mat Franco showtimes to show-page standard'
+          git push origin main
