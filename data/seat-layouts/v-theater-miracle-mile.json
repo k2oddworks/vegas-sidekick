@@ -1,0 +1,50 @@
+{
+  "id": "v-theater-miracle-mile",
+  "venue": "V Theater",
+  "address": "3667 S Las Vegas Blvd, Las Vegas, NV 89109",
+  "stage": "Stage",
+  "zones": [
+    {
+      "id": "vip",
+      "label": "VIP",
+      "rows": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L"
+      ],
+      "our_pick": true,
+      "badge": "Sweet spot",
+      "color": "#f43f8c",
+      "description": "Rows A\u2013L put you closest to the stage and make the comedy, choreography and specialty acts easy to read. This is the Vegas Sidekick Sweet Spot / Our Pick for Zombie Burlesque."
+    },
+    {
+      "id": "rear",
+      "label": "Rear",
+      "rows": [
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V"
+      ],
+      "our_pick": false,
+      "badge": "Full-stage view",
+      "color": "#ffb000",
+      "description": "Rows M\u2013V sit farther back with a clean view across the full stage. A good pick when you want to take in the whole production at once."
+    }
+  ]
+}

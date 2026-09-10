@@ -12,9 +12,9 @@
       "regular_price": null,
       "runtime_minutes": 80,
       "age_summary": "18+",
-      "venue": "Spiegeltent – Caesars Palace",
+      "venue": "Spiegeltent \u2013 Caesars Palace",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Thu, Sun · 7 PM & 9 PM; Fri, Sat · 7 PM & 9 PM & 11 PM",
+      "schedule_summary": "Mon, Tue, Wed, Thu, Sun \u00b7 7 PM & 9 PM; Fri, Sat \u00b7 7 PM & 9 PM & 11 PM",
       "ticket_url": "https://spotlight.vegas/shows/production/absinthe/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/spectaculars/absinthe/",
@@ -26,7 +26,7 @@
         "name": "Absinthe",
         "our_price": 122,
         "regular_price": null,
-        "location": "Spiegeltent – Caesars Palace",
+        "location": "Spiegeltent \u2013 Caesars Palace",
         "runtime_minutes": 80,
         "age_rule": "Must be 18 years of age or older. Everyone must have a ticket to enter the event.",
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater.",
@@ -62,16 +62,16 @@
             "9 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Thu, Sun · 7 PM & 9 PM; Fri, Sat · 7 PM & 9 PM & 11 PM",
+        "schedule_summary": "Mon, Tue, Wed, Thu, Sun \u00b7 7 PM & 9 PM; Fri, Sat \u00b7 7 PM & 9 PM & 11 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Monday – 7:00pm & 9:00pm",
-          "Tuesday – 7:00pm & 9:00pm",
-          "Wednesday – 7:00pm & 9:00pm",
-          "Thursday – 7:00pm & 9:00pm",
-          "Friday – 7:00pm, 9:00pm & 11:00pm",
-          "Saturday – 7:00pm, 9:00pm & 11:00pm",
-          "Sunday – 7:00pm & 9:00pm"
+          "Monday \u2013 7:00pm & 9:00pm",
+          "Tuesday \u2013 7:00pm & 9:00pm",
+          "Wednesday \u2013 7:00pm & 9:00pm",
+          "Thursday \u2013 7:00pm & 9:00pm",
+          "Friday \u2013 7:00pm, 9:00pm & 11:00pm",
+          "Saturday \u2013 7:00pm, 9:00pm & 11:00pm",
+          "Sunday \u2013 7:00pm & 9:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/production/absinthe/",
         "affiliate_url": "https://spotlight.vegas/shows/production/absinthe/ref/vegassidekick",
@@ -92,7 +92,7 @@
       "age_summary": "All ages",
       "venue": "Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",
       "showroom": "",
-      "schedule_summary": "Tue, Wed, Thu, Sat, Sun · 7:30 PM",
+      "schedule_summary": "Tue, Wed, Thu, Sat, Sun \u00b7 7:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/tribute/all-motown/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/all-motown/",
@@ -125,7 +125,7 @@
             "7:30 PM"
           ]
         },
-        "schedule_summary": "Tue, Wed, Thu, Sat, Sun · 7:30 PM",
+        "schedule_summary": "Tue, Wed, Thu, Sat, Sun \u00b7 7:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Tuesday - 7:30",
@@ -144,7 +144,7 @@
     },
     {
       "slug": "all-shook-up",
-      "name": "All Shook Up — Tribute to the King",
+      "name": "All Shook Up \u2014 Tribute to the King",
       "category": "music",
       "status": "active",
       "our_price": 47,
@@ -153,7 +153,7 @@
       "age_summary": "All ages",
       "venue": "Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 6 PM",
+      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun \u00b7 6 PM",
       "ticket_url": "https://spotlight.vegas/shows/tribute/all-shook-up/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/all-shook-up/",
@@ -192,7 +192,7 @@
             "6 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 6 PM",
+        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun \u00b7 6 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 6:00pm",
@@ -222,7 +222,7 @@
       "age_summary": "All ages",
       "venue": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
-      "schedule_summary": "Tue, Thu, Sat · 4 PM",
+      "schedule_summary": "Tue, Thu, Sat \u00b7 4 PM",
       "ticket_url": "https://spotlight.vegas/shows/magic/allstars-of-magic/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/magic/allstars-of-magic/",
@@ -249,12 +249,12 @@
             "4 PM"
           ]
         },
-        "schedule_summary": "Tue, Thu, Sat · 4 PM",
+        "schedule_summary": "Tue, Thu, Sat \u00b7 4 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Tuesday – 4:00pm",
-          "Thursday – 4:00pm",
-          "Saturday – 4:00pm"
+          "Tuesday \u2013 4:00pm",
+          "Thursday \u2013 4:00pm",
+          "Saturday \u2013 4:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/allstars-of-magic/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/allstars-of-magic/ref/vegassidekick",
@@ -275,7 +275,7 @@
       "age_summary": "All ages",
       "venue": "Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",
       "showroom": "",
-      "schedule_summary": "Sat, Sun · 4 PM",
+      "schedule_summary": "Sat, Sun \u00b7 4 PM",
       "ticket_url": "https://spotlight.vegas/shows/tribute/america-the-show/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/spectaculars/america-the-show/",
@@ -299,7 +299,7 @@
             "4 PM"
           ]
         },
-        "schedule_summary": "Sat, Sun · 4 PM",
+        "schedule_summary": "Sat, Sun \u00b7 4 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Saturday - 4:00pm",
@@ -324,7 +324,7 @@
       "age_summary": "All ages",
       "venue": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
-      "schedule_summary": "Wed, Thu, Fri, Sat · 7 PM",
+      "schedule_summary": "Wed, Thu, Fri, Sat \u00b7 7 PM",
       "ticket_url": "https://spotlight.vegas/shows/magic/an-r-rated-magic-show/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/magic/an-r-rated-magic-show/",
@@ -354,13 +354,13 @@
             "7 PM"
           ]
         },
-        "schedule_summary": "Wed, Thu, Fri, Sat · 7 PM",
+        "schedule_summary": "Wed, Thu, Fri, Sat \u00b7 7 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Wednesday – 7:00pm",
-          "Thursday – 7:00pm",
-          "Friday – 7:00pm",
-          "Saturday – 7:00pm"
+          "Wednesday \u2013 7:00pm",
+          "Thursday \u2013 7:00pm",
+          "Friday \u2013 7:00pm",
+          "Saturday \u2013 7:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/an-r-rated-magic-show/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/an-r-rated-magic-show/ref/vegassidekick",
@@ -381,7 +381,7 @@
       "age_summary": "18+",
       "venue": "Waterfall Atrium Level 2M - Venetian",
       "showroom": "",
-      "schedule_summary": "Tue, Fri, Sat · 7:30 PM & 9:30 PM; Wed, Thu · 7:30 PM",
+      "schedule_summary": "Tue, Fri, Sat \u00b7 7:30 PM & 9:30 PM; Wed, Thu \u00b7 7:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/adult/atomic-saloon/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/adult/atomic-saloon/",
@@ -417,14 +417,14 @@
             "9:30 PM"
           ]
         },
-        "schedule_summary": "Tue, Fri, Sat · 7:30 PM & 9:30 PM; Wed, Thu · 7:30 PM",
+        "schedule_summary": "Tue, Fri, Sat \u00b7 7:30 PM & 9:30 PM; Wed, Thu \u00b7 7:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Tuesday – 7:30pm & 9:30pm",
-          "Wednesday – 7:30pm",
-          "Thursday – 7:30pm",
-          "Friday – 7:30pm & 9:30pm",
-          "Saturday – 7:30pm & 9:30pm",
+          "Tuesday \u2013 7:30pm & 9:30pm",
+          "Wednesday \u2013 7:30pm",
+          "Thursday \u2013 7:30pm",
+          "Friday \u2013 7:30pm & 9:30pm",
+          "Saturday \u2013 7:30pm & 9:30pm",
           "2027 dates move to 7:00pm & 9:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/adult/atomic-saloon/",
@@ -446,7 +446,7 @@
       "age_summary": "5+",
       "venue": "Awakening Theater - Wynn Las Vegas",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Fri, Sat · 6:30 PM & 9 PM; Sun · 4 PM & 6 PM",
+      "schedule_summary": "Mon, Tue, Fri, Sat \u00b7 6:30 PM & 9 PM; Sun \u00b7 4 PM & 6 PM",
       "ticket_url": "https://spotlight.vegas/shows/production/awakening/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/spectaculars/awakening/",
@@ -484,7 +484,7 @@
             "6 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Fri, Sat · 6:30 PM & 9 PM; Sun · 4 PM & 6 PM",
+        "schedule_summary": "Mon, Tue, Fri, Sat \u00b7 6:30 PM & 9 PM; Sun \u00b7 4 PM & 6 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 6:30pm & 9:00pm",
@@ -513,7 +513,7 @@
       "age_summary": "All ages",
       "venue": "BattleBots Arena - 4165 Koval Lane",
       "showroom": "",
-      "schedule_summary": "Wed, Thu, Fri · 6 PM; Sat, Sun · 2 PM",
+      "schedule_summary": "Wed, Thu, Fri \u00b7 6 PM; Sat, Sun \u00b7 2 PM",
       "ticket_url": "https://spotlight.vegas/shows/production/battlebots/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/family/battlebots-destruct-a-thon/",
@@ -546,7 +546,7 @@
             "2 PM"
           ]
         },
-        "schedule_summary": "Wed, Thu, Fri · 6 PM; Sat, Sun · 2 PM",
+        "schedule_summary": "Wed, Thu, Fri \u00b7 6 PM; Sat, Sun \u00b7 2 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Wednesday - 6:00pm",
@@ -574,7 +574,7 @@
       "age_summary": "3+",
       "venue": "Blue Man Theater - Luxor Hotel",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 5 PM & 8 PM",
+      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun \u00b7 5 PM & 8 PM",
       "ticket_url": "https://spotlight.vegas/shows/production/blue-man-group/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/blue-man-group/",
@@ -588,7 +588,7 @@
         "regular_price": 92,
         "location": "Blue Man Theater - Luxor Hotel",
         "runtime_minutes": 90,
-        "age_rule": "Recommended Age: 3 years and older Children under the age of 3 are permitted and do not require a paid ticket if they are sitting on a parent’s lap. Children aged 4 and above will continue to require a paid ticket for admission.",
+        "age_rule": "Recommended Age: 3 years and older Children under the age of 3 are permitted and do not require a paid ticket if they are sitting on a parent\u2019s lap. Children aged 4 and above will continue to require a paid ticket for admission.",
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater.",
         "schedule_days": {
           "Monday": [
@@ -620,7 +620,7 @@
             "8 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 5 PM & 8 PM",
+        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun \u00b7 5 PM & 8 PM",
         "schedule_variable": true,
         "schedule_raw": [
           "Monday - 5:00pm & 8:00pm",
@@ -651,7 +651,7 @@
       "age_summary": "18+",
       "venue": "The District - MGM Grand",
       "showroom": "",
-      "schedule_summary": "Nightly – 8:00pm · Seating · Seating will be assigned upon arrival and will be best available within the zone purchased.",
+      "schedule_summary": "Nightly \u2013 8:00pm \u00b7 Seating \u00b7 Seating will be assigned upon arrival and will be best available within the zone purchased.",
       "ticket_url": "https://spotlight.vegas/shows/comedy/brad-garretts-comedy-club/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/comedy/brad-garretts-comedy-club/",
@@ -666,12 +666,12 @@
         "location": "The District - MGM Grand",
         "runtime_minutes": 90,
         "age_rule": "Must be 18 years of age or older. Guests under the age of 18 are NOT permitted.",
-        "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater. Additional Information Get seating info from the Brad Garrett’s Comedy Club Seating Chart .",
+        "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater. Additional Information Get seating info from the Brad Garrett\u2019s Comedy Club Seating Chart .",
         "schedule_days": {},
-        "schedule_summary": "Nightly – 8:00pm · Seating · Seating will be assigned upon arrival and will be best available within the zone purchased.",
+        "schedule_summary": "Nightly \u2013 8:00pm \u00b7 Seating \u00b7 Seating will be assigned upon arrival and will be best available within the zone purchased.",
         "schedule_variable": false,
         "schedule_raw": [
-          "Nightly – 8:00pm",
+          "Nightly \u2013 8:00pm",
           "Seating",
           "Seating will be assigned upon arrival and will be best available within the zone purchased."
         ],
@@ -694,7 +694,7 @@
       "age_summary": "16+",
       "venue": "Atrium Showroom at Luxor",
       "showroom": "Atrium Showroom",
-      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat · 8 PM",
+      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat \u00b7 8 PM",
       "ticket_url": "https://spotlight.vegas/shows/comedy/carrot-top/ref/vegassidekick",
       "official_trailer": "https://youtu.be/XRdqvnCZe-A?si=OmYJy6MwjF7IgZfB",
       "page_path": "/shows/comedy/carrot-top/",
@@ -730,7 +730,7 @@
             "8 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat · 8 PM",
+        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat \u00b7 8 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 8:00pm",
@@ -759,7 +759,7 @@
       "age_summary": "18+",
       "venue": "Chippendales Theatre - Planet Hollywood",
       "showroom": "",
-      "schedule_summary": "Tue, Wed, Thu, Sun · 8 PM; Fri, Sat · 8 PM & 10 PM",
+      "schedule_summary": "Tue, Wed, Thu, Sun \u00b7 8 PM; Fri, Sat \u00b7 8 PM & 10 PM",
       "ticket_url": "https://spotlight.vegas/shows/adult/chippendales/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/adult/chippendales/",
@@ -797,7 +797,7 @@
             "8 PM"
           ]
         },
-        "schedule_summary": "Tue, Wed, Thu, Sun · 8 PM; Fri, Sat · 8 PM & 10 PM",
+        "schedule_summary": "Tue, Wed, Thu, Sun \u00b7 8 PM; Fri, Sat \u00b7 8 PM & 10 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Tuesday - 8:00pm",
@@ -824,9 +824,9 @@
       "regular_price": 75,
       "runtime_minutes": 90,
       "age_summary": "10+",
-      "venue": "Harrah's Cabaret - Harrah’s Las Vegas",
+      "venue": "Harrah's Cabaret - Harrah\u2019s Las Vegas",
       "showroom": "",
-      "schedule_summary": "Tue, Wed, Thu, Fri, Sat · 7 PM",
+      "schedule_summary": "Tue, Wed, Thu, Fri, Sat \u00b7 7 PM",
       "ticket_url": "https://spotlight.vegas/shows/magic/colin-cloud/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/magic/colin-cloud/",
@@ -838,7 +838,7 @@
         "name": "Colin Cloud Mastermind",
         "our_price": 57,
         "regular_price": 75,
-        "location": "Harrah's Cabaret - Harrah’s Las Vegas",
+        "location": "Harrah's Cabaret - Harrah\u2019s Las Vegas",
         "runtime_minutes": 90,
         "age_rule": "Ages 10+. All customers require a ticket regardless of age.",
         "other_restrictions": "",
@@ -859,7 +859,7 @@
             "7 PM"
           ]
         },
-        "schedule_summary": "Tue, Wed, Thu, Fri, Sat · 7 PM",
+        "schedule_summary": "Tue, Wed, Thu, Fri, Sat \u00b7 7 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Tuesday - 7:00pm",
@@ -887,7 +887,7 @@
       "age_summary": "18+",
       "venue": "Comedy Cellar - Rio Hotel",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 7 PM & 9:30 PM",
+      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun \u00b7 7 PM & 9:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/comedy/comedy-cellar/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/comedy/comedy-cellar/",
@@ -933,16 +933,16 @@
             "9:30 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 7 PM & 9:30 PM",
+        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun \u00b7 7 PM & 9:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Monday – 7:00pm & 9:30pm",
-          "Tuesday – 7:00pm & 9:30pm",
-          "Wednesday – 7:00pm & 9:30pm",
-          "Thursday – 7:00pm & 9:30pm",
-          "Friday – 7:00pm & 9:30pm",
-          "Saturday – 7:00pm & 9:30pm",
-          "Sunday – 7:00pm & 9:30pm"
+          "Monday \u2013 7:00pm & 9:30pm",
+          "Tuesday \u2013 7:00pm & 9:30pm",
+          "Wednesday \u2013 7:00pm & 9:30pm",
+          "Thursday \u2013 7:00pm & 9:30pm",
+          "Friday \u2013 7:00pm & 9:30pm",
+          "Saturday \u2013 7:00pm & 9:30pm",
+          "Sunday \u2013 7:00pm & 9:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/comedy/comedy-cellar/",
         "affiliate_url": "https://spotlight.vegas/shows/comedy/comedy-cellar/ref/vegassidekick",
@@ -961,9 +961,9 @@
       "regular_price": null,
       "runtime_minutes": 75,
       "age_summary": "Recommended for ages 10 and up due to mature content. Everyo",
-      "venue": "Criss Angel Theater – Planet Hollywood",
+      "venue": "Criss Angel Theater \u2013 Planet Hollywood",
       "showroom": "",
-      "schedule_summary": "Wed, Thu, Fri, Sat, Sun · 7 PM",
+      "schedule_summary": "Wed, Thu, Fri, Sat, Sun \u00b7 7 PM",
       "ticket_url": "https://spotlight.vegas/shows/magic/criss-angel/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/magic/criss-angel/",
@@ -975,7 +975,7 @@
         "name": "Criss Angel MINDFREAK",
         "our_price": 110,
         "regular_price": null,
-        "location": "Criss Angel Theater – Planet Hollywood",
+        "location": "Criss Angel Theater \u2013 Planet Hollywood",
         "runtime_minutes": 75,
         "age_rule": "Recommended for ages 10 and up due to mature content. Everyone must have a ticket to enter the event. Guests 18 years of age and under must be accompanied by an adult.",
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater. Additional Information Get seating info from the Criss Angel Mindfreak Seating Chart .",
@@ -996,14 +996,14 @@
             "7 PM"
           ]
         },
-        "schedule_summary": "Wed, Thu, Fri, Sat, Sun · 7 PM",
+        "schedule_summary": "Wed, Thu, Fri, Sat, Sun \u00b7 7 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Wednesday – 7:00pm",
-          "Thursday – 7:00pm",
-          "Friday – 7:00pm",
-          "Saturday – 7:00pm",
-          "Sunday – 7:00pm"
+          "Wednesday \u2013 7:00pm",
+          "Thursday \u2013 7:00pm",
+          "Friday \u2013 7:00pm",
+          "Saturday \u2013 7:00pm",
+          "Sunday \u2013 7:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/criss-angel/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/criss-angel/ref/vegassidekick",
@@ -1015,16 +1015,16 @@
     },
     {
       "slug": "donny-osmond",
-      "name": "Donny Osmond — DONNY",
+      "name": "Donny Osmond \u2014 DONNY",
       "category": "music",
       "status": "active",
       "our_price": 95,
       "regular_price": null,
       "runtime_minutes": 90,
       "age_summary": "All ages",
-      "venue": "Harrah's Showroom - Harrah’s Las Vegas",
+      "venue": "Harrah's Showroom - Harrah\u2019s Las Vegas",
       "showroom": "",
-      "schedule_summary": "Tue, Wed, Thu, Fri, Sat · 7:30 PM",
+      "schedule_summary": "Tue, Wed, Thu, Fri, Sat \u00b7 7:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/music/donny-osmond/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/donny-osmond/",
@@ -1036,7 +1036,7 @@
         "name": "Donny Osmond Las Vegas",
         "our_price": 95,
         "regular_price": null,
-        "location": "Harrah's Showroom - Harrah’s Las Vegas",
+        "location": "Harrah's Showroom - Harrah\u2019s Las Vegas",
         "runtime_minutes": 90,
         "age_rule": "No age restrictions",
         "other_restrictions": "No Cell Phones. We kindly ask that you refrain from using cell phones. Taking photos and recording videos during the performance is strictly prohibited. Thank you for your understanding and cooperation.",
@@ -1057,7 +1057,7 @@
             "7:30 PM"
           ]
         },
-        "schedule_summary": "Tue, Wed, Thu, Fri, Sat · 7:30 PM",
+        "schedule_summary": "Tue, Wed, Thu, Fri, Sat \u00b7 7:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Tuesday - 7:30pm",
@@ -1085,7 +1085,7 @@
       "age_summary": "18+",
       "venue": "Atrium Theater - Luxor Hotel",
       "showroom": "Atrium Showroom at Luxor",
-      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat · 10:30 PM; Sun · 7 PM & 9:30 PM",
+      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat \u00b7 10:30 PM; Sun \u00b7 7 PM & 9:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/adult/fantasy/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/adult/fantasy/",
@@ -1125,7 +1125,7 @@
             "9:30 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat · 10:30 PM; Sun · 7 PM & 9:30 PM",
+        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat \u00b7 10:30 PM; Sun \u00b7 7 PM & 9:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 10:30pm",
@@ -1161,7 +1161,7 @@
       "age_summary": "5+",
       "venue": "The STRAT Theater",
       "showroom": "",
-      "schedule_summary": "Tue, Wed, Thu, Fri, Sat, Sun · 7 PM",
+      "schedule_summary": "Tue, Wed, Thu, Fri, Sat, Sun \u00b7 7 PM",
       "ticket_url": "https://spotlight.vegas/shows/tribute/ikons-of-rock-hard-rock/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/ikons-of-rock/",
@@ -1197,7 +1197,7 @@
             "7 PM"
           ]
         },
-        "schedule_summary": "Tue, Wed, Thu, Fri, Sat, Sun · 7 PM",
+        "schedule_summary": "Tue, Wed, Thu, Fri, Sat, Sun \u00b7 7 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Tuesday - 7:00pm",
@@ -1226,7 +1226,7 @@
       "age_summary": "All ages",
       "venue": "Jabbawockeez Theater - MGM Grand",
       "showroom": "",
-      "schedule_summary": "Mon, Wed, Thu, Fri, Sat, Sun · 5:30 PM & 8 PM",
+      "schedule_summary": "Mon, Wed, Thu, Fri, Sat, Sun \u00b7 5:30 PM & 8 PM",
       "ticket_url": "https://spotlight.vegas/shows/production/jabbawockeez/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/jabbawockeez/",
@@ -1268,15 +1268,15 @@
             "8 PM"
           ]
         },
-        "schedule_summary": "Mon, Wed, Thu, Fri, Sat, Sun · 5:30 PM & 8 PM",
+        "schedule_summary": "Mon, Wed, Thu, Fri, Sat, Sun \u00b7 5:30 PM & 8 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Monday – 5:30pm & 8:00pm",
-          "Wednesday – 5:30pm & 8:00pm",
-          "Thursday – 5:30pm & 8:00pm",
-          "Friday – 5:30pm & 8:00pm",
-          "Saturday – 5:30pm & 8:00pm",
-          "Sunday – 5:30pm & 8:00pm"
+          "Monday \u2013 5:30pm & 8:00pm",
+          "Wednesday \u2013 5:30pm & 8:00pm",
+          "Thursday \u2013 5:30pm & 8:00pm",
+          "Friday \u2013 5:30pm & 8:00pm",
+          "Saturday \u2013 5:30pm & 8:00pm",
+          "Sunday \u2013 5:30pm & 8:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/production/jabbawockeez/",
         "affiliate_url": "https://spotlight.vegas/shows/production/jabbawockeez/ref/vegassidekick",
@@ -1297,7 +1297,7 @@
       "age_summary": "18+",
       "venue": "Jimmy Kimmel Comedy Club - The LINQ Promenade",
       "showroom": "",
-      "schedule_summary": "Dates & times vary · check booking page",
+      "schedule_summary": "Dates & times vary \u00b7 check booking page",
       "ticket_url": "https://spotlight.vegas/shows/comedy/jimmy-kimmels-comedy-club/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/comedy/jimmy-kimmels-comedy-club/",
@@ -1312,9 +1312,9 @@
         "location": "Jimmy Kimmel Comedy Club - The LINQ Promenade",
         "runtime_minutes": 75,
         "age_rule": "All guests must be 18 years of age or older. No children allowed.",
-        "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater. Please be aware that reserved seating assignments are subject to change for guests arriving 15 minutes or more after show begins. Additional Information Get seating info from the Jimmy Kimmel’s Comedy Club Comedian Schedule .",
+        "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater. Please be aware that reserved seating assignments are subject to change for guests arriving 15 minutes or more after show begins. Additional Information Get seating info from the Jimmy Kimmel\u2019s Comedy Club Comedian Schedule .",
         "schedule_days": {},
-        "schedule_summary": "Dates & times vary · check booking page",
+        "schedule_summary": "Dates & times vary \u00b7 check booking page",
         "schedule_variable": true,
         "schedule_raw": [
           "Dates & Times Vary"
@@ -1338,7 +1338,7 @@
       "age_summary": "No age restricitions",
       "venue": "Athena Showroom - Alexis Park Resort, 375 E Harmon Ave",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Sun · 9 PM",
+      "schedule_summary": "Mon, Tue, Wed, Sun \u00b7 9 PM",
       "ticket_url": "https://spotlight.vegas/shows/tribute/neil-diamond/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/king-of-diamonds/",
@@ -1368,7 +1368,7 @@
             "9 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Sun · 9 PM",
+        "schedule_summary": "Mon, Tue, Wed, Sun \u00b7 9 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 9:00pm",
@@ -1386,16 +1386,16 @@
     },
     {
       "slug": "ka",
-      "name": "KÀ by Cirque du Soleil",
+      "name": "K\u00c0 by Cirque du Soleil",
       "category": "cirque",
       "status": "active",
       "our_price": 80,
       "regular_price": 118,
       "runtime_minutes": 90,
       "age_summary": "3+",
-      "venue": "KÀ Theatre – MGM Grand",
+      "venue": "K\u00c0 Theatre \u2013 MGM Grand",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed · 6 PM & 8:30 PM; Sat, Sun · 4:30 PM & 7 PM",
+      "schedule_summary": "Mon, Tue, Wed \u00b7 6 PM & 8:30 PM; Sat, Sun \u00b7 4:30 PM & 7 PM",
       "ticket_url": "https://spotlight.vegas/shows/cirque-du-soleil/ka/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/cirque/ka/",
@@ -1404,10 +1404,10 @@
       "verification": "verified_spotlight",
       "notes": "",
       "spotlight": {
-        "name": "KÀ by Cirque du Soleil",
+        "name": "K\u00c0 by Cirque du Soleil",
         "our_price": 80,
         "regular_price": 118,
-        "location": "KÀ Theatre – MGM Grand",
+        "location": "K\u00c0 Theatre \u2013 MGM Grand",
         "runtime_minutes": 90,
         "age_rule": "Everyone must be 3 years of age or older to attend the event. Guests under the age of 18 must be accompanied by an adult.",
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater.",
@@ -1433,7 +1433,7 @@
             "7 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed · 6 PM & 8:30 PM; Sat, Sun · 4:30 PM & 7 PM",
+        "schedule_summary": "Mon, Tue, Wed \u00b7 6 PM & 8:30 PM; Sat, Sun \u00b7 4:30 PM & 7 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 6:00pm & 8:30pm",
@@ -1461,7 +1461,7 @@
       "age_summary": "15+",
       "venue": "Dragon Room - The STRAT",
       "showroom": "",
-      "schedule_summary": "Nightly · Happy Hour Variety Show – 6:00pm · Touring Comics – 8:00pm",
+      "schedule_summary": "Nightly \u00b7 Happy Hour Variety Show \u2013 6:00pm \u00b7 Touring Comics \u2013 8:00pm",
       "ticket_url": "https://spotlight.vegas/shows/comedy/la-comedy-club/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/comedy/la-comedy-club/",
@@ -1478,13 +1478,13 @@
         "age_rule": "Ages 15+ - Ages 15-17 must be accompanied by a guardian.",
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater.",
         "schedule_days": {},
-        "schedule_summary": "Nightly · Happy Hour Variety Show – 6:00pm · Touring Comics – 8:00pm",
+        "schedule_summary": "Nightly \u00b7 Happy Hour Variety Show \u2013 6:00pm \u00b7 Touring Comics \u2013 8:00pm",
         "schedule_variable": false,
         "schedule_raw": [
           "Nightly",
-          "Happy Hour Variety Show – 6:00pm",
-          "Touring Comics – 8:00pm",
-          "Bret Ernst (Tuesday/Wednesday) Butch Bradley (Thursday – Monday) – 10:00pm"
+          "Happy Hour Variety Show \u2013 6:00pm",
+          "Touring Comics \u2013 8:00pm",
+          "Bret Ernst (Tuesday/Wednesday) Butch Bradley (Thursday \u2013 Monday) \u2013 10:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/comedy/la-comedy-club/",
         "affiliate_url": "https://spotlight.vegas/shows/comedy/la-comedy-club/ref/vegassidekick",
@@ -1505,7 +1505,7 @@
       "age_summary": "16+",
       "venue": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 9 PM",
+      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun \u00b7 9 PM",
       "ticket_url": "https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/comedy/las-vegas-live-comedy-club/",
@@ -1544,7 +1544,7 @@
             "9 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 9 PM",
+        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun \u00b7 9 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 9:00pm",
@@ -1574,7 +1574,7 @@
       "age_summary": "18+",
       "venue": "Laugh Factory at Horseshoe Las Vegas.",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed · 6:30 PM & 8:30 PM; Thu, Fri, Sat, Sun · 8:30 PM & 10:30 PM",
+      "schedule_summary": "Mon, Tue, Wed \u00b7 6:30 PM & 8:30 PM; Thu, Fri, Sat, Sun \u00b7 8:30 PM & 10:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/comedy/laugh-factory/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/comedy/laugh-factory/",
@@ -1620,7 +1620,7 @@
             "10:30 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed · 6:30 PM & 8:30 PM; Thu, Fri, Sat, Sun · 8:30 PM & 10:30 PM",
+        "schedule_summary": "Mon, Tue, Wed \u00b7 6:30 PM & 8:30 PM; Thu, Fri, Sat, Sun \u00b7 8:30 PM & 10:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 6:30pm & 8:30pm",
@@ -1650,7 +1650,7 @@
       "age_summary": "5+",
       "venue": "Thunderland Theater- Excalibur",
       "showroom": "",
-      "schedule_summary": "Tue, Wed, Thu, Fri, Sat · 3 PM",
+      "schedule_summary": "Tue, Wed, Thu, Fri, Sat \u00b7 3 PM",
       "ticket_url": "https://spotlight.vegas/shows/magic/mac-king/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/magic/mac-king/",
@@ -1683,14 +1683,14 @@
             "3 PM"
           ]
         },
-        "schedule_summary": "Tue, Wed, Thu, Fri, Sat · 3 PM",
+        "schedule_summary": "Tue, Wed, Thu, Fri, Sat \u00b7 3 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Tuesday – 3:00pm",
-          "Wednesday – 3:00pm",
-          "Thursday – 3:00pm",
-          "Friday – 3:00pm",
-          "Saturday – 3:00pm"
+          "Tuesday \u2013 3:00pm",
+          "Wednesday \u2013 3:00pm",
+          "Thursday \u2013 3:00pm",
+          "Friday \u2013 3:00pm",
+          "Saturday \u2013 3:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/mac-king/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/mac-king/ref/vegassidekick",
@@ -1711,7 +1711,7 @@
       "age_summary": "All guests must be at least 18 years old to attend the show ",
       "venue": "MAGIC MIKE LIVE Theater - SAHARA Las Vegas",
       "showroom": "",
-      "schedule_summary": "Dates & times vary · check booking page",
+      "schedule_summary": "Dates & times vary \u00b7 check booking page",
       "ticket_url": "https://spotlight.vegas/shows/adult/magic-mike-live/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/adult/magic-mike-live/",
@@ -1728,7 +1728,7 @@
         "age_rule": "All guests must be at least 18 years old to attend the show and at least 21 years old to consume alcohol.  A valid photo ID is required upon entry.  No children or minors permitted.",
         "other_restrictions": "Cell phone photo and recording is allowed, with no flash. Professional photo, video, or audio recording is strictly prohibited, and smoking is not allowed in the theater.",
         "schedule_days": {},
-        "schedule_summary": "Dates & times vary · check booking page",
+        "schedule_summary": "Dates & times vary \u00b7 check booking page",
         "schedule_variable": true,
         "schedule_raw": [
           "Dates & Time Vary"
@@ -1752,7 +1752,7 @@
       "age_summary": "All ages",
       "venue": "Nathan Burton Theater - Showcase Mall",
       "showroom": "",
-      "schedule_summary": "Times vary · Check live calendar",
+      "schedule_summary": "Times vary \u00b7 Check live calendar",
       "ticket_url": "https://spotlight.vegas/shows/comedy/marc-savard-comedy-hypnosis/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/comedy/marc-savard-comedy-hypnosis/",
@@ -1769,7 +1769,7 @@
         "age_rule": "No age restrictions. Lap sitting is allowed for children ages 2 and under.",
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater.",
         "schedule_days": {},
-        "schedule_summary": "Times vary · Check live calendar",
+        "schedule_summary": "Times vary \u00b7 Check live calendar",
         "schedule_variable": true,
         "schedule_raw": [],
         "spotlight_url": "https://spotlight.vegas/shows/comedy/marc-savard-comedy-hypnosis/",
@@ -1791,7 +1791,7 @@
       "age_summary": "8+",
       "venue": "Rio Hotel & Casino - 3700 W Flamingo Rd",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Thu, Fri, Sat · 7 PM; Sun · Times vary",
+      "schedule_summary": "Mon, Tue, Thu, Fri, Sat \u00b7 7 PM; Sun \u00b7 Times vary",
       "ticket_url": "https://spotlight.vegas/shows/comedy/marriage-can-be-murder/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/comedy/marriage-can-be-murder/",
@@ -1806,7 +1806,7 @@
         "location": "Rio Hotel & Casino - 3700 W Flamingo Rd",
         "runtime_minutes": 120,
         "age_rule": "Recommended for ages 8+",
-        "other_restrictions": "Need help or support? Contact Us 1-844-699-0136 Facebook Twitter Youtube Instagram Top Categories Cirque du Soliel Shows Concerts Comedy Shows Adult Shows Kid Friendly Shows Company About Contact My account Best Price Guarantee Popular Venues Planet Hollywood Shows MGM Grand Shows Caesars Shows Luxor Shows Alexis Park Shows Support Purchase Terms & Conditions Website Terms & Conditions Privacy Policy Upcoming Shows Shows September 2026 Shows October 2026 Shows November 2026 Shows December 2026 Spotlight.Vegas © 2026 / All Rights Reserved Shows Top Shows Top Shows The Wizard Of Oz At Sphere Awakening Mystère Absinthe “O” KÀ Blue Man Group Michael Jackson ONE Tournament of Kings Jabbawockeez Piff The Magic Dragon Criss Angel Mindfreak Featured shows in this category The Wizard Of Oz At Sphere $ 122.72 See tickets Absinthe $ 122.14 See tickets \"O\" $ 178.70 Original price was: $178.70. $ 155.60 Current price is: $155.60. See tickets Cirque du Soleil Production Family-Friendly Magic Shows Comedy Shows Music Shows Adult Shows Tribute Shows Burlesque Shows Vegas Concerts Attractions Hotels Hot Deals Calendar Groups Contact",
+        "other_restrictions": "Need help or support? Contact Us 1-844-699-0136 Facebook Twitter Youtube Instagram Top Categories Cirque du Soliel Shows Concerts Comedy Shows Adult Shows Kid Friendly Shows Company About Contact My account Best Price Guarantee Popular Venues Planet Hollywood Shows MGM Grand Shows Caesars Shows Luxor Shows Alexis Park Shows Support Purchase Terms & Conditions Website Terms & Conditions Privacy Policy Upcoming Shows Shows September 2026 Shows October 2026 Shows November 2026 Shows December 2026 Spotlight.Vegas \u00a9 2026 / All Rights Reserved Shows Top Shows Top Shows The Wizard Of Oz At Sphere Awakening Myst\u00e8re Absinthe \u201cO\u201d K\u00c0 Blue Man Group Michael Jackson ONE Tournament of Kings Jabbawockeez Piff The Magic Dragon Criss Angel Mindfreak Featured shows in this category The Wizard Of Oz At Sphere $ 122.72 See tickets Absinthe $ 122.14 See tickets \"O\" $ 178.70 Original price was: $178.70. $ 155.60 Current price is: $155.60. See tickets Cirque du Soleil Production Family-Friendly Magic Shows Comedy Shows Music Shows Adult Shows Tribute Shows Burlesque Shows Vegas Concerts Attractions Hotels Hot Deals Calendar Groups Contact",
         "schedule_days": {
           "Monday": [
             "7 PM"
@@ -1825,7 +1825,7 @@
           ],
           "Sunday": []
         },
-        "schedule_summary": "Mon, Tue, Thu, Fri, Sat · 7 PM; Sun · Times vary",
+        "schedule_summary": "Mon, Tue, Thu, Fri, Sat \u00b7 7 PM; Sun \u00b7 Times vary",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday -7:00pm",
@@ -1854,7 +1854,7 @@
       "age_summary": "5+",
       "venue": "Mat Franco Theater - The LINQ Hotel",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Fri, Sat, Sun · 7 PM",
+      "schedule_summary": "Mon, Tue, Wed, Fri, Sat, Sun \u00b7 7 PM",
       "ticket_url": "https://spotlight.vegas/shows/magic/mat-franco/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/magic/mat-franco/",
@@ -1890,7 +1890,7 @@
             "7:00 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Fri, Sat, Sun · 7 PM",
+        "schedule_summary": "Mon, Tue, Wed, Fri, Sat, Sun \u00b7 7 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 7:00pm",
@@ -1917,9 +1917,9 @@
       "regular_price": 163,
       "runtime_minutes": 90,
       "age_summary": "5+",
-      "venue": "Mandalay Bay Theatre – The Mandalay Bay Hotel",
+      "venue": "Mandalay Bay Theatre \u2013 The Mandalay Bay Hotel",
       "showroom": "",
-      "schedule_summary": "Mon, Thu, Fri, Sat, Sun · 7 PM & 9:30 PM",
+      "schedule_summary": "Mon, Thu, Fri, Sat, Sun \u00b7 7 PM & 9:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/cirque-du-soleil/michael-jackson-one/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/cirque/michael-jackson-one/",
@@ -1931,7 +1931,7 @@
         "name": "Michael Jackson ONE by Cirque du Soleil",
         "our_price": 115,
         "regular_price": 163,
-        "location": "Mandalay Bay Theatre – The Mandalay Bay Hotel",
+        "location": "Mandalay Bay Theatre \u2013 The Mandalay Bay Hotel",
         "runtime_minutes": 90,
         "age_rule": "Everyone must be 5 years of age or older to attend the event.",
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater.",
@@ -1957,7 +1957,7 @@
             "9:30 PM"
           ]
         },
-        "schedule_summary": "Mon, Thu, Fri, Sat, Sun · 7 PM & 9:30 PM",
+        "schedule_summary": "Mon, Thu, Fri, Sat, Sun \u00b7 7 PM & 9:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 7:00pm & 9:30pm",
@@ -1985,7 +1985,7 @@
       "age_summary": "12+",
       "venue": "Azul Lounge - Fontainebleau Las Vegas",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Sun · 7 PM; Fri, Sat · 7 PM & 9:30 PM",
+      "schedule_summary": "Mon, Tue, Sun \u00b7 7 PM; Fri, Sat \u00b7 7 PM & 9:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/magic/mind2mind/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/magic/mind2mind/",
@@ -2020,7 +2020,7 @@
             "7 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Sun · 7 PM; Fri, Sat · 7 PM & 9:30 PM",
+        "schedule_summary": "Mon, Tue, Sun \u00b7 7 PM; Fri, Sat \u00b7 7 PM & 9:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 7:00pm",
@@ -2039,7 +2039,7 @@
     },
     {
       "slug": "mj-live",
-      "name": "MJ Live — Michael Jackson Tribute Concert",
+      "name": "MJ Live \u2014 Michael Jackson Tribute Concert",
       "category": "music",
       "status": "active",
       "our_price": 54,
@@ -2048,7 +2048,7 @@
       "age_summary": "5 + ages with an adult. All patrons require a ticket regardl",
       "venue": "Saxe Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 7 PM",
+      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun \u00b7 7 PM",
       "ticket_url": "https://spotlight.vegas/shows/tribute/mj-live-at-planet-hollywood/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/mj-live/",
@@ -2087,7 +2087,7 @@
             "7 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 7 PM",
+        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun \u00b7 7 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 7:00pm",
@@ -2117,7 +2117,7 @@
       "age_summary": "21+",
       "venue": "Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",
       "showroom": "",
-      "schedule_summary": "Sun · 11 AM",
+      "schedule_summary": "Sun \u00b7 11 AM",
       "ticket_url": "https://spotlight.vegas/shows/music/motown-brunch/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/motown-brunch/",
@@ -2138,7 +2138,7 @@
             "11 AM"
           ]
         },
-        "schedule_summary": "Sun · 11 AM",
+        "schedule_summary": "Sun \u00b7 11 AM",
         "schedule_variable": false,
         "schedule_raw": [
           "Sunday - 11:00am"
@@ -2153,16 +2153,16 @@
     },
     {
       "slug": "mystere",
-      "name": "Mystère by Cirque du Soleil",
+      "name": "Myst\u00e8re by Cirque du Soleil",
       "category": "cirque",
       "status": "active",
       "our_price": 84,
       "regular_price": null,
       "runtime_minutes": 90,
       "age_summary": "All ages",
-      "venue": "Mystère Theatre – TI Hotel",
+      "venue": "Myst\u00e8re Theatre \u2013 TI Hotel",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Fri, Sat, Sun · 6:30 PM & 9 PM",
+      "schedule_summary": "Mon, Tue, Fri, Sat, Sun \u00b7 6:30 PM & 9 PM",
       "ticket_url": "https://spotlight.vegas/shows/cirque-du-soleil/mystere/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/cirque/mystere/",
@@ -2174,7 +2174,7 @@
         "name": "Mystere by Cirque du Soleil",
         "our_price": 84,
         "regular_price": null,
-        "location": "Mystère Theatre – TI Hotel",
+        "location": "Myst\u00e8re Theatre \u2013 TI Hotel",
         "runtime_minutes": 90,
         "age_rule": "No age restrictions",
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater.",
@@ -2200,7 +2200,7 @@
             "9 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Fri, Sat, Sun · 6:30 PM & 9 PM",
+        "schedule_summary": "Mon, Tue, Fri, Sat, Sun \u00b7 6:30 PM & 9 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 6:30pm & 9:00pm",
@@ -2228,7 +2228,7 @@
       "age_summary": "All ages",
       "venue": "Nathan Burton Theater - Showcase Mall",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 4 PM",
+      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun \u00b7 4 PM",
       "ticket_url": "https://spotlight.vegas/shows/magic/nathan-burton-comedy-magic/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/magic/nathan-burton-comedy-magic/",
@@ -2267,16 +2267,16 @@
             "4 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 4 PM",
+        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun \u00b7 4 PM",
         "schedule_variable": true,
         "schedule_raw": [
-          "Monday – 4:00pm",
-          "Tuesday – 4:00pm",
-          "Wednesday – 4:00pm",
-          "Thursday – 4:00pm",
-          "Friday – 4:00pm",
-          "Saturday – 4:00pm",
-          "Sunday – 4:00pm",
+          "Monday \u2013 4:00pm",
+          "Tuesday \u2013 4:00pm",
+          "Wednesday \u2013 4:00pm",
+          "Thursday \u2013 4:00pm",
+          "Friday \u2013 4:00pm",
+          "Saturday \u2013 4:00pm",
+          "Sunday \u2013 4:00pm",
           "November 22nd-25th - 2:00pm, 4:00pm & 6:00pm",
           "November 26th-28th - 12:00pm, 2:00pm & 4:00pm",
           "December 19th-31st - Times vary from 12:00pm, 2:00pm, 4:00pm & 6:00pm. Please double check times."
@@ -2339,24 +2339,24 @@
       "regular_price": 179,
       "runtime_minutes": 90,
       "age_summary": "5+",
-      "venue": "O Theatre – Bellagio",
+      "venue": "O Theatre \u2013 Bellagio",
       "showroom": "",
-      "schedule_summary": "Wed, Thu, Fri, Sat, Sun · 6:30 PM & 9 PM",
+      "schedule_summary": "Wed, Thu, Fri, Sat, Sun \u00b7 6:30 PM & 9 PM",
       "ticket_url": "https://spotlight.vegas/shows/cirque-du-soleil/o/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/cirque/o/",
       "verified_on": "2026-09-09",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
-      "notes": "Schedule reverified 2026-09-09 against Spotlight and Bellagio: Wednesday–Sunday at 6:30 PM and 9 PM. No variable-schedule override applies.",
+      "notes": "Schedule reverified 2026-09-09 against Spotlight and Bellagio: Wednesday\u2013Sunday at 6:30 PM and 9 PM. No variable-schedule override applies.",
       "spotlight": {
         "name": "O by Cirque du Soleil",
         "our_price": 156,
         "regular_price": 179,
-        "location": "O Theatre – Bellagio",
+        "location": "O Theatre \u2013 Bellagio",
         "runtime_minutes": 90,
         "age_rule": "Everyone must be 5 years of age or older to attend the event.",
-        "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater. No shopping bags, luggage, or backpacks will be permitted into the O Theatre except for small personal bags or purses (9″ x 5″x 2″ max).  No outside food will be permitted in the theater.",
+        "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater. No shopping bags, luggage, or backpacks will be permitted into the O Theatre except for small personal bags or purses (9\u2033 x 5\u2033x 2\u2033 max).  No outside food will be permitted in the theater.",
         "schedule_days": {
           "Wednesday": [
             "6:30 PM",
@@ -2379,7 +2379,7 @@
             "9 PM"
           ]
         },
-        "schedule_summary": "Wed, Thu, Fri, Sat, Sun · 6:30 PM & 9 PM",
+        "schedule_summary": "Wed, Thu, Fri, Sat, Sun \u00b7 6:30 PM & 9 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Wednesday - 6:30pm & 9:00pm",
@@ -2407,7 +2407,7 @@
       "age_summary": "5+",
       "venue": "Laugh Factory at Horseshoe Las Vegas.",
       "showroom": "",
-      "schedule_summary": "Mon, Wed, Fri, Sat · 4 PM",
+      "schedule_summary": "Mon, Wed, Fri, Sat \u00b7 4 PM",
       "ticket_url": "https://spotlight.vegas/shows/magic/paranormal/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/magic/paranormal/",
@@ -2437,7 +2437,7 @@
             "4 PM"
           ]
         },
-        "schedule_summary": "Mon, Wed, Fri, Sat · 4 PM",
+        "schedule_summary": "Mon, Wed, Fri, Sat \u00b7 4 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 4:00pm",
@@ -2464,7 +2464,7 @@
       "age_summary": "5+",
       "venue": "Penn & Teller Theater - Rio Hotel",
       "showroom": "",
-      "schedule_summary": "Thu, Fri, Sat, Sun · 8 PM",
+      "schedule_summary": "Thu, Fri, Sat, Sun \u00b7 8 PM",
       "ticket_url": "https://spotlight.vegas/shows/magic/penn-and-teller/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/magic/penn-and-teller/",
@@ -2494,7 +2494,7 @@
             "8 PM"
           ]
         },
-        "schedule_summary": "Thu, Fri, Sat, Sun · 8 PM",
+        "schedule_summary": "Thu, Fri, Sat, Sun \u00b7 8 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Thursday - 8:00pm",
@@ -2512,7 +2512,7 @@
     },
     {
       "slug": "piano-man",
-      "name": "Piano Man — A Tribute to Elton John & Billy Joel",
+      "name": "Piano Man \u2014 A Tribute to Elton John & Billy Joel",
       "category": "music",
       "status": "active",
       "our_price": 49,
@@ -2521,7 +2521,7 @@
       "age_summary": "All ages",
       "venue": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 6:30 PM",
+      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun \u00b7 6:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/tribute/piano-man/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/piano-man/",
@@ -2560,7 +2560,7 @@
             "6:30 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 6:30 PM",
+        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun \u00b7 6:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 6:30pm",
@@ -2588,9 +2588,9 @@
       "regular_price": 70,
       "runtime_minutes": 75,
       "age_summary": "8+",
-      "venue": "Flamingo Showroom – Flamingo",
+      "venue": "Flamingo Showroom \u2013 Flamingo",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Thu, Sat, Sun · 7 PM",
+      "schedule_summary": "Mon, Tue, Wed, Thu, Sat, Sun \u00b7 7 PM",
       "ticket_url": "https://spotlight.vegas/shows/magic/piff-the-magic-dragon/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/magic/piff-the-magic-dragon/",
@@ -2602,7 +2602,7 @@
         "name": "Piff The Magic Dragon",
         "our_price": 45,
         "regular_price": 70,
-        "location": "Flamingo Showroom – Flamingo",
+        "location": "Flamingo Showroom \u2013 Flamingo",
         "runtime_minutes": 75,
         "age_rule": "Must be 8 years of age or older. Everyone must have a ticket to enter the event. Guests 18 years of age and under must be accompanied by an adult.",
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater.",
@@ -2626,15 +2626,15 @@
             "7 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Thu, Sat, Sun · 7 PM",
+        "schedule_summary": "Mon, Tue, Wed, Thu, Sat, Sun \u00b7 7 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Monday – 7:00pm",
-          "Tuesday – 7:00pm",
-          "Wednesday – 7:00pm",
-          "Thursday – 7:00pm",
-          "Saturday – 7:00pm",
-          "Sunday – 7:00pm"
+          "Monday \u2013 7:00pm",
+          "Tuesday \u2013 7:00pm",
+          "Wednesday \u2013 7:00pm",
+          "Thursday \u2013 7:00pm",
+          "Saturday \u2013 7:00pm",
+          "Sunday \u2013 7:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/piff-the-magic-dragon/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/piff-the-magic-dragon/ref/vegassidekick",
@@ -2655,7 +2655,7 @@
       "age_summary": "All ages",
       "venue": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
-      "schedule_summary": "Tue, Wed, Thu, Fri, Sat · 2:30 PM",
+      "schedule_summary": "Tue, Wed, Thu, Fri, Sat \u00b7 2:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/comedy/popovich-comedy-pet-theater/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/comedy/popovich-comedy-pet-theater/",
@@ -2688,14 +2688,14 @@
             "2:30 PM"
           ]
         },
-        "schedule_summary": "Tue, Wed, Thu, Fri, Sat · 2:30 PM",
+        "schedule_summary": "Tue, Wed, Thu, Fri, Sat \u00b7 2:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Tuesday – 2:30pm",
-          "Wednesday – 2:30pm",
-          "Thursday – 2:30pm",
-          "Friday – 2:30pm",
-          "Saturday – 2:30pm"
+          "Tuesday \u2013 2:30pm",
+          "Wednesday \u2013 2:30pm",
+          "Thursday \u2013 2:30pm",
+          "Friday \u2013 2:30pm",
+          "Saturday \u2013 2:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/comedy/popovich-comedy-pet-theater/",
         "affiliate_url": "https://spotlight.vegas/shows/comedy/popovich-comedy-pet-theater/ref/vegassidekick",
@@ -2707,7 +2707,7 @@
     },
     {
       "slug": "purple-reign",
-      "name": "Purple Reign — The Prince Tribute Show",
+      "name": "Purple Reign \u2014 The Prince Tribute Show",
       "category": "music",
       "status": "active",
       "our_price": 51,
@@ -2716,7 +2716,7 @@
       "age_summary": "16+",
       "venue": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
-      "schedule_summary": "Tue, Thu, Sat · 8:30 PM",
+      "schedule_summary": "Tue, Thu, Sat \u00b7 8:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/tribute/purple-reign/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/purple-reign/",
@@ -2743,7 +2743,7 @@
             "8:30 PM"
           ]
         },
-        "schedule_summary": "Tue, Thu, Sat · 8:30 PM",
+        "schedule_summary": "Tue, Thu, Sat \u00b7 8:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Tuesday - 8:30pm",
@@ -2769,7 +2769,7 @@
       "age_summary": "All ages",
       "venue": "Pegasus Showroom - Alexis Park Resort, 375 E Harmon Ave",
       "showroom": "",
-      "schedule_summary": "Fri, Sat, Sun · 7 PM",
+      "schedule_summary": "Fri, Sat, Sun \u00b7 7 PM",
       "ticket_url": "https://spotlight.vegas/shows/tribute/queen-selena/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/queen-selena/",
@@ -2796,7 +2796,7 @@
             "7 PM"
           ]
         },
-        "schedule_summary": "Fri, Sat, Sun · 7 PM",
+        "schedule_summary": "Fri, Sat, Sun \u00b7 7 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Friday - 7:00pm",
@@ -2822,7 +2822,7 @@
       "age_summary": "18+",
       "venue": "The STRAT Theater",
       "showroom": "",
-      "schedule_summary": "Tue, Wed, Thu, Sun · 9 PM; Fri, Sat · 8 PM & 10 PM",
+      "schedule_summary": "Tue, Wed, Thu, Sun \u00b7 9 PM; Fri, Sat \u00b7 8 PM & 10 PM",
       "ticket_url": "https://spotlight.vegas/shows/adult/rouge/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/adult/rouge/",
@@ -2860,15 +2860,15 @@
             "9 PM"
           ]
         },
-        "schedule_summary": "Tue, Wed, Thu, Sun · 9 PM; Fri, Sat · 8 PM & 10 PM",
+        "schedule_summary": "Tue, Wed, Thu, Sun \u00b7 9 PM; Fri, Sat \u00b7 8 PM & 10 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Tuesday – 9:00pm",
-          "Wednesday – 9:00pm",
-          "Thursday – 9:00pm",
-          "Friday – 8:00pm & 10:00pm",
-          "Saturday – 8:00pm & 10:00pm",
-          "Sunday – 9:00pm"
+          "Tuesday \u2013 9:00pm",
+          "Wednesday \u2013 9:00pm",
+          "Thursday \u2013 9:00pm",
+          "Friday \u2013 8:00pm & 10:00pm",
+          "Saturday \u2013 8:00pm & 10:00pm",
+          "Sunday \u2013 9:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/adult/rouge/",
         "affiliate_url": "https://spotlight.vegas/shows/adult/rouge/ref/vegassidekick",
@@ -2889,7 +2889,7 @@
       "age_summary": "All ages",
       "venue": "Flamingo Showroom - Flamingo",
       "showroom": "",
-      "schedule_summary": "Mon, Thu, Sat, Sun · 9:30 PM; Fri · 7 PM & 9:30 PM",
+      "schedule_summary": "Mon, Thu, Sat, Sun \u00b7 9:30 PM; Fri \u00b7 7 PM & 9:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/production/rupauls-drag-race-live/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/rupauls-drag-race-live/",
@@ -2923,7 +2923,7 @@
             "9:30 PM"
           ]
         },
-        "schedule_summary": "Mon, Thu, Sat, Sun · 9:30 PM; Fri · 7 PM & 9:30 PM",
+        "schedule_summary": "Mon, Thu, Sat, Sun \u00b7 9:30 PM; Fri \u00b7 7 PM & 9:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 9:30pm",
@@ -2951,7 +2951,7 @@
       "age_summary": "No children ages 4 and under",
       "venue": "Palazzo Theatre - Palazzo Hotel",
       "showroom": "",
-      "schedule_summary": "Wed, Thu, Fri, Sat, Sun · 7:30 PM",
+      "schedule_summary": "Wed, Thu, Fri, Sat, Sun \u00b7 7:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/magic/shin-lim/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/magic/shin-lim/",
@@ -2984,14 +2984,14 @@
             "7:30 PM"
           ]
         },
-        "schedule_summary": "Wed, Thu, Fri, Sat, Sun · 7:30 PM",
+        "schedule_summary": "Wed, Thu, Fri, Sat, Sun \u00b7 7:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Wednesday – 7:30pm",
-          "Thursday – 7:30pm",
-          "Friday – 7:30pm",
-          "Saturday – 7:30pm",
-          "Sunday – 7:30pm",
+          "Wednesday \u2013 7:30pm",
+          "Thursday \u2013 7:30pm",
+          "Friday \u2013 7:30pm",
+          "Saturday \u2013 7:30pm",
+          "Sunday \u2013 7:30pm",
           "December 25th-31st shows- 4:30pm & 7:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/shin-lim/",
@@ -3013,7 +3013,7 @@
       "age_summary": "All ages",
       "venue": "Alexis Steakhouse - Alexis Park Resort Hotel",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Fri, Sat, Sun · 8 PM",
+      "schedule_summary": "Mon, Tue, Wed, Fri, Sat, Sun \u00b7 8 PM",
       "ticket_url": "https://spotlight.vegas/shows/tribute/sinatra-live/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/sinatra-live/",
@@ -3049,7 +3049,7 @@
             "8 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Fri, Sat, Sun · 8 PM",
+        "schedule_summary": "Mon, Tue, Wed, Fri, Sat, Sun \u00b7 8 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 8:00pm",
@@ -3078,7 +3078,7 @@
       "age_summary": "All ages",
       "venue": "Pegasus Showroom - Alexis Park Resort, 375 E Harmon Ave",
       "showroom": "",
-      "schedule_summary": "Mon, Tue · 7 PM",
+      "schedule_summary": "Mon, Tue \u00b7 7 PM",
       "ticket_url": "https://spotlight.vegas/shows/tribute/sir-elton/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/sir-elton/",
@@ -3102,7 +3102,7 @@
             "7 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue · 7 PM",
+        "schedule_summary": "Mon, Tue \u00b7 7 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 7:00pm",
@@ -3127,7 +3127,7 @@
       "age_summary": "16 years and over. Guest under the 18 must be accompanied by",
       "venue": "The Underground Theater - MGM Grand",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Thu, Fri, Sat, Sun · 9:30 PM; Wed · 8 PM",
+      "schedule_summary": "Mon, Tue, Thu, Fri, Sat, Sun \u00b7 9:30 PM; Wed \u00b7 8 PM",
       "ticket_url": "https://spotlight.vegas/shows/comedy/steve-falcons-comedy-hypnosis-hour/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/comedy/steve-falcons-comedy-hypnosis-hour/",
@@ -3166,7 +3166,7 @@
             "9:30 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Thu, Fri, Sat, Sun · 9:30 PM; Wed · 8 PM",
+        "schedule_summary": "Mon, Tue, Thu, Fri, Sat, Sun \u00b7 9:30 PM; Wed \u00b7 8 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Sunday - 9:30pm",
@@ -3196,7 +3196,7 @@
       "age_summary": "All ages",
       "venue": "The Underground Theater - MGM Grand",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Thu, Fri, Sat, Sun · 7:30 PM",
+      "schedule_summary": "Mon, Tue, Thu, Fri, Sat, Sun \u00b7 7:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/comedy/tape-face/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/comedy/tape-face/",
@@ -3232,15 +3232,15 @@
             "7:30 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Thu, Fri, Sat, Sun · 7:30 PM",
+        "schedule_summary": "Mon, Tue, Thu, Fri, Sat, Sun \u00b7 7:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Monday – 7:30pm",
-          "Tuesday – 7:30pm",
-          "Thursday – 7:30pm",
-          "Friday – 7:30pm",
-          "Saturday – 7:30pm",
-          "Sunday – 7:30pm"
+          "Monday \u2013 7:30pm",
+          "Tuesday \u2013 7:30pm",
+          "Thursday \u2013 7:30pm",
+          "Friday \u2013 7:30pm",
+          "Saturday \u2013 7:30pm",
+          "Sunday \u2013 7:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/comedy/tape-face/",
         "affiliate_url": "https://spotlight.vegas/shows/comedy/tape-face/ref/vegassidekick",
@@ -3261,7 +3261,7 @@
       "age_summary": "5+",
       "venue": "Thunderland Theater- Excalibur",
       "showroom": "",
-      "schedule_summary": "Monday 6:00pm · Tuesday 6:00pm · Wednesday 6:00pm",
+      "schedule_summary": "Monday 6:00pm \u00b7 Tuesday 6:00pm \u00b7 Wednesday 6:00pm",
       "ticket_url": "https://spotlight.vegas/shows/tribute/the-australian-bee-gees/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/australian-bee-gees/",
@@ -3278,7 +3278,7 @@
         "age_rule": "Must be 5 years of age or older. Everyone must have a ticket to enter the event. Guests 18 years of age and under must be accompanied by an adult.",
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater. Additional Information Get seating info from the Australian Bee Gees Seating Chart .",
         "schedule_days": {},
-        "schedule_summary": "Monday 6:00pm · Tuesday 6:00pm · Wednesday 6:00pm",
+        "schedule_summary": "Monday 6:00pm \u00b7 Tuesday 6:00pm \u00b7 Wednesday 6:00pm",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday 6:00pm",
@@ -3307,7 +3307,7 @@
       "age_summary": "Recommended guest age is 5+ years of age or older.",
       "venue": "The Magicians Room",
       "showroom": "",
-      "schedule_summary": "Wed, Thu, Fri, Sat, Sun · 6:30 PM",
+      "schedule_summary": "Wed, Thu, Fri, Sat, Sun \u00b7 6:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/magic/the-conjurors/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/magic/the-conjurors/",
@@ -3340,7 +3340,7 @@
             "6:30 PM"
           ]
         },
-        "schedule_summary": "Wed, Thu, Fri, Sat, Sun · 6:30 PM",
+        "schedule_summary": "Wed, Thu, Fri, Sat, Sun \u00b7 6:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Wednesday - 6:30pm",
@@ -3359,7 +3359,7 @@
     },
     {
       "slug": "empire-strips-back",
-      "name": "The Empire Strips Back — A Burlesque Parody",
+      "name": "The Empire Strips Back \u2014 A Burlesque Parody",
       "category": "adult",
       "status": "active",
       "our_price": 35,
@@ -3368,7 +3368,7 @@
       "age_summary": "18+",
       "venue": "Empire Strips Back Theater - Rio Hotel",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Thu · 8 PM; Fri, Sat · 7 PM & 9:30 PM; Sun · 7 PM",
+      "schedule_summary": "Mon, Tue, Wed, Thu \u00b7 8 PM; Fri, Sat \u00b7 7 PM & 9:30 PM; Sun \u00b7 7 PM",
       "ticket_url": "https://spotlight.vegas/shows/burlesque/empire-strips-back/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/adult/empire-strips-back/",
@@ -3409,7 +3409,7 @@
             "7 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Thu · 8 PM; Fri, Sat · 7 PM & 9:30 PM; Sun · 7 PM",
+        "schedule_summary": "Mon, Tue, Wed, Thu \u00b7 8 PM; Fri, Sat \u00b7 7 PM & 9:30 PM; Sun \u00b7 7 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 8:00pm",
@@ -3439,7 +3439,7 @@
       "age_summary": "5+",
       "venue": "Westgate Cabaret - Westgate Resort",
       "showroom": "",
-      "schedule_summary": "Tue · 5:30 PM; Wed, Thu, Fri · 7:30 PM; Sat · 2 PM",
+      "schedule_summary": "Tue \u00b7 5:30 PM; Wed, Thu, Fri \u00b7 7:30 PM; Sat \u00b7 2 PM",
       "ticket_url": "https://spotlight.vegas/shows/music/the-king-comes-home/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/the-king-comes-home/",
@@ -3472,7 +3472,7 @@
             "2 PM"
           ]
         },
-        "schedule_summary": "Tue · 5:30 PM; Wed, Thu, Fri · 7:30 PM; Sat · 2 PM",
+        "schedule_summary": "Tue \u00b7 5:30 PM; Wed, Thu, Fri \u00b7 7:30 PM; Sat \u00b7 2 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Tuesday - 5:30pm",
@@ -3500,7 +3500,7 @@
       "age_summary": "All ages",
       "venue": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Thu, Fri, Sat, Sun · 7:30 PM",
+      "schedule_summary": "Mon, Tue, Thu, Fri, Sat, Sun \u00b7 7:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/magic/the-mentalist/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/magic/the-mentalist/",
@@ -3536,7 +3536,7 @@
             "7:30 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Thu, Fri, Sat, Sun · 7:30 PM",
+        "schedule_summary": "Mon, Tue, Thu, Fri, Sat, Sun \u00b7 7:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 7:30pm",
@@ -3565,7 +3565,7 @@
       "age_summary": "12+",
       "venue": "Copa Room - Tuscany Suites & Casino",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Thu, Fri · 7:30 PM",
+      "schedule_summary": "Mon, Tue, Wed, Thu, Fri \u00b7 7:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/tribute/the-rat-pack-is-back/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/rat-pack-is-back/",
@@ -3598,7 +3598,7 @@
             "7:30 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Thu, Fri · 7:30 PM",
+        "schedule_summary": "Mon, Tue, Wed, Thu, Fri \u00b7 7:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 7:30pm",
@@ -3626,7 +3626,7 @@
       "age_summary": "Ages 6+",
       "venue": "Sphere - 255 Sands Ave",
       "showroom": "",
-      "schedule_summary": "Dates & times vary · check booking page",
+      "schedule_summary": "Dates & times vary \u00b7 check booking page",
       "ticket_url": "https://spotlight.vegas/shows/production/the-wizard-of-oz-at-sphere/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/spectaculars/wizard-of-oz/",
@@ -3643,7 +3643,7 @@
         "age_rule": "The Wizard of Oz at Sphere is intended for guests aged 6+. All guests, regardless of age, require a ticket.",
         "other_restrictions": "This film experience begins at the time listed on your ticket. There is no late seating permitted for this event. This event is an immersive experience with various elements, that may include seat haptics, movement sensations, flashing lights, intense lighting, visual effects, loud noises, falling and flying objects, projectiles, pyrotechnics and atmospheric simulations such as fog, scent, mist and wind. Such elements may aggravate certain medical or physical conditions, and guests should take into consideration if they have a history of discomfort or physical symptoms when experiencing these elements. If you have any concerns and/or are pregnant, you should consult with your physician prior to attending an immersive experience. Event content, dates, times, prices, and availability subject to change. Tickets are non-refundable.",
         "schedule_days": {},
-        "schedule_summary": "Dates & times vary · check booking page",
+        "schedule_summary": "Dates & times vary \u00b7 check booking page",
         "schedule_variable": true,
         "schedule_raw": [
           "Days & Times Vary",
@@ -3667,9 +3667,9 @@
       "regular_price": 99,
       "runtime_minutes": 70,
       "age_summary": "18+",
-      "venue": "Thunderland Theater – Excalibur Hotel",
+      "venue": "Thunderland Theater \u2013 Excalibur Hotel",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 8 PM",
+      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun \u00b7 8 PM",
       "ticket_url": "https://spotlight.vegas/shows/adult/thunder-from-down-under/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/adult/thunder-from-down-under/",
@@ -3681,7 +3681,7 @@
         "name": "Thunder From Down Under",
         "our_price": 70,
         "regular_price": 99,
-        "location": "Thunderland Theater – Excalibur Hotel",
+        "location": "Thunderland Theater \u2013 Excalibur Hotel",
         "runtime_minutes": 70,
         "age_rule": "All guests must be 18 years of age or older. No children allowed.",
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater.",
@@ -3708,7 +3708,7 @@
             "8 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 8 PM",
+        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun \u00b7 8 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 8:00pm",
@@ -3736,9 +3736,9 @@
       "regular_price": 88,
       "runtime_minutes": 75,
       "age_summary": "All ages",
-      "venue": "King Arthur’s Arena – Excalibur Hotel",
+      "venue": "King Arthur\u2019s Arena \u2013 Excalibur Hotel",
       "showroom": "",
-      "schedule_summary": "Mon, Thu, Fri, Sat, Sun · 6 PM & 8:30 PM",
+      "schedule_summary": "Mon, Thu, Fri, Sat, Sun \u00b7 6 PM & 8:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/production/tournament-of-kings/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/family/tournament-of-kings/",
@@ -3750,9 +3750,9 @@
         "name": "Tournament of Kings",
         "our_price": 74,
         "regular_price": 88,
-        "location": "King Arthur’s Arena – Excalibur Hotel",
+        "location": "King Arthur\u2019s Arena \u2013 Excalibur Hotel",
         "runtime_minutes": 75,
-        "age_rule": "No age restrictions. Children 3 years and under may attend without needing a ticket and must sit on an adult’s lap and share the adult’s meal. Guests 4 years of age and older must have their own ticket. Guests under 16 must be accompanied by an adult.",
+        "age_rule": "No age restrictions. Children 3 years and under may attend without needing a ticket and must sit on an adult\u2019s lap and share the adult\u2019s meal. Guests 4 years of age and older must have their own ticket. Guests under 16 must be accompanied by an adult.",
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater.",
         "schedule_days": {
           "Monday": [
@@ -3776,7 +3776,7 @@
             "8:30 PM"
           ]
         },
-        "schedule_summary": "Mon, Thu, Fri, Sat, Sun · 6 PM & 8:30 PM",
+        "schedule_summary": "Mon, Thu, Fri, Sat, Sun \u00b7 6 PM & 8:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 6:00pm & 8:30pm",
@@ -3795,7 +3795,7 @@
     },
     {
       "slug": "v-the-ultimate-variety-show",
-      "name": "V – The Ultimate Variety Show",
+      "name": "V \u2013 The Ultimate Variety Show",
       "category": "family",
       "status": "active",
       "our_price": 46,
@@ -3804,7 +3804,7 @@
       "age_summary": "All ages",
       "venue": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 7 PM",
+      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun \u00b7 7 PM",
       "ticket_url": "https://spotlight.vegas/shows/production/v-the-ultimate-variety-show/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/family/v-the-ultimate-variety-show/",
@@ -3843,7 +3843,7 @@
             "7 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 7 PM",
+        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun \u00b7 7 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 7:00pm",
@@ -3874,7 +3874,7 @@
       "age_summary": "All ages",
       "venue": "Saxe Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat · 7 PM",
+      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat \u00b7 7 PM",
       "ticket_url": "https://spotlight.vegas/shows/production/vegas-the-show/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/vegas-the-show/",
@@ -3910,15 +3910,15 @@
             "7 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat · 7 PM",
+        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat \u00b7 7 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Monday – 7:00pm",
-          "Tuesday – 7:00pm",
-          "Wednesday – 7:00pm",
-          "Thursday – 7:00pm",
-          "Friday – 7:00pm",
-          "Saturday – 7:00pm",
+          "Monday \u2013 7:00pm",
+          "Tuesday \u2013 7:00pm",
+          "Wednesday \u2013 7:00pm",
+          "Thursday \u2013 7:00pm",
+          "Friday \u2013 7:00pm",
+          "Saturday \u2013 7:00pm",
           "On September 21, 2026, show will move to 5:30pm."
         ],
         "spotlight_url": "https://spotlight.vegas/shows/production/vegas-the-show/",
@@ -3940,7 +3940,7 @@
       "age_summary": "All ages",
       "venue": "The Siren Poolside - Alexis Park Resort, 375 E Harmon Ave",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Sun · 6:30 PM",
+      "schedule_summary": "Mon, Tue, Sun \u00b7 6:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/music/wastin-away/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/wastin-away/",
@@ -3967,7 +3967,7 @@
             "6:30 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Sun · 6:30 PM",
+        "schedule_summary": "Mon, Tue, Sun \u00b7 6:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Sunday - 6:30pm",
@@ -3993,7 +3993,7 @@
       "age_summary": "5+",
       "venue": "Bugsys Cabaret - Flamingo Hotel",
       "showroom": "",
-      "schedule_summary": "Mon, Wed, Sat · 7 PM",
+      "schedule_summary": "Mon, Wed, Sat \u00b7 7 PM",
       "ticket_url": "https://spotlight.vegas/shows/music/wayne-newton/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/wayne-newton/",
@@ -4020,7 +4020,7 @@
             "7 PM"
           ]
         },
-        "schedule_summary": "Mon, Wed, Sat · 7 PM",
+        "schedule_summary": "Mon, Wed, Sat \u00b7 7 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 7:00pm",
@@ -4037,7 +4037,7 @@
     },
     {
       "slug": "wow-the-vegas-spectacular",
-      "name": "WOW – The Vegas Spectacular",
+      "name": "WOW \u2013 The Vegas Spectacular",
       "category": "spectaculars",
       "status": "active",
       "our_price": 51,
@@ -4046,7 +4046,7 @@
       "age_summary": "All ages",
       "venue": "Rio Showroom - Rio Hotel",
       "showroom": "",
-      "schedule_summary": "Dates & times vary · check booking page",
+      "schedule_summary": "Dates & times vary \u00b7 check booking page",
       "ticket_url": "https://spotlight.vegas/shows/production/wow-the-vegas-spectacular/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/spectaculars/wow-the-vegas-spectacular/",
@@ -4063,7 +4063,7 @@
         "age_rule": "Appropriate for all ages. Recommended for ages 3 and up. All patrons must have a ticket, regardless of age. Infants under 1 year old can be held on the lap of a paying ticket holder.",
         "other_restrictions": "No refunds/exchanges. No cameras/audio/video Weapons of any kind are strictly prohibited. All guests and their belongings are subject to security screening prior to entry. Venue utilizes smoke, haze, strobing lights, and other stage effects. The venue reserves the right to implement security procedures designed to protect the experience for our customers. FM Transmitted Assisted Listening Devices with Hearing Aid Loop available on request.",
         "schedule_days": {},
-        "schedule_summary": "Dates & times vary · check booking page",
+        "schedule_summary": "Dates & times vary \u00b7 check booking page",
         "schedule_variable": true,
         "schedule_raw": [
           "Show times vary: 5:00pm, 7:00pm & 9:00pm",
@@ -4093,7 +4093,7 @@
       "age_summary": "18+",
       "venue": "Bugsy's Cabaret - Flamingo Hotel",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Thu · 10 PM; Fri, Sat · 7 PM & 10 PM",
+      "schedule_summary": "Mon, Tue, Wed, Thu \u00b7 10 PM; Fri, Sat \u00b7 7 PM & 10 PM",
       "ticket_url": "https://spotlight.vegas/shows/adult/x-burlesque/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/adult/x-burlesque/",
@@ -4131,7 +4131,7 @@
             "10 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Thu · 10 PM; Fri, Sat · 7 PM & 10 PM",
+        "schedule_summary": "Mon, Tue, Wed, Thu \u00b7 10 PM; Fri, Sat \u00b7 7 PM & 10 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 10:00pm",
@@ -4158,9 +4158,9 @@
       "regular_price": 68,
       "runtime_minutes": 90,
       "age_summary": "18+",
-      "venue": "Harrah’s Cabaret – Harrah’s",
+      "venue": "Harrah\u2019s Cabaret \u2013 Harrah\u2019s",
       "showroom": "",
-      "schedule_summary": "Mon, Thu, Fri, Sat, Sun · 10 PM",
+      "schedule_summary": "Mon, Thu, Fri, Sat, Sun \u00b7 10 PM",
       "ticket_url": "https://spotlight.vegas/shows/adult/x-country/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/adult/x-country/",
@@ -4172,7 +4172,7 @@
         "name": "X Country Las Vegas",
         "our_price": 65,
         "regular_price": 68,
-        "location": "Harrah’s Cabaret – Harrah’s",
+        "location": "Harrah\u2019s Cabaret \u2013 Harrah\u2019s",
         "runtime_minutes": 90,
         "age_rule": "All guests must be 18 years of age or older. Everyone must have a ticket to enter the event. No children allowed.",
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater. Additional Information Get seating info from the X Country Seating Chart .",
@@ -4193,14 +4193,14 @@
             "10 PM"
           ]
         },
-        "schedule_summary": "Mon, Thu, Fri, Sat, Sun · 10 PM",
+        "schedule_summary": "Mon, Thu, Fri, Sat, Sun \u00b7 10 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Monday – 10:00pm",
-          "Thursday – 10:00pm",
-          "Friday – 10:00pm",
-          "Saturday – 10:00pm",
-          "Sunday – 10:00pm"
+          "Monday \u2013 10:00pm",
+          "Thursday \u2013 10:00pm",
+          "Friday \u2013 10:00pm",
+          "Saturday \u2013 10:00pm",
+          "Sunday \u2013 10:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/adult/x-country/",
         "affiliate_url": "https://spotlight.vegas/shows/adult/x-country/ref/vegassidekick",
@@ -4221,7 +4221,7 @@
       "age_summary": "18+",
       "venue": "X Rocks Theatre - Horseshoe Las Vegas",
       "showroom": "",
-      "schedule_summary": "Mon, Thu, Sat · 9:30 PM",
+      "schedule_summary": "Mon, Thu, Sat \u00b7 9:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/adult/x-rocks/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/adult/x-rocks/",
@@ -4248,7 +4248,7 @@
             "9:30 PM"
           ]
         },
-        "schedule_summary": "Mon, Thu, Sat · 9:30 PM",
+        "schedule_summary": "Mon, Thu, Sat \u00b7 9:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 9:30pm",
@@ -4274,11 +4274,11 @@
       "age_summary": "16+",
       "venue": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat · 8 PM",
+      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat \u00b7 8 PM",
       "ticket_url": "https://spotlight.vegas/shows/adult/zombie-burlesque/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/adult/zombie-burlesque/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-09-10",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
       "notes": "",
@@ -4310,7 +4310,7 @@
             "8 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat · 8 PM",
+        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat \u00b7 8 PM",
         "schedule_variable": false,
         "schedule_raw": [
           "Monday - 8:00pm",
