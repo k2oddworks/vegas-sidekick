@@ -2,7 +2,12 @@
   "id": "v-theater-main-floor-vip-ga",
   "venue": "V Theater",
   "address": "3667 S Las Vegas Blvd, Las Vegas, NV 89109",
-  "stage": "Stage",
+  "stage": {
+    "path": "M44 82 Q60 78 76 82 L72 94 H48 Z",
+    "labelX": 60,
+    "labelY": 88,
+    "label": "STAGE"
+  },
   "zones": [
     {
       "id": "vip",
@@ -10,15 +15,15 @@
       "our_pick": true,
       "badge": "Sweet spot",
       "color": "#ffb000",
-      "description": "VIP Seating wraps the stage across the center and both sides. It is the Vegas Sidekick Sweet Spot / Our Pick for V because it keeps the specialty acts close while still giving you a strong view of the full performance area."
+      "description": "VIP Seating wraps the front and center performance area. It is the Vegas Sidekick Sweet Spot / Our Pick for V Theater: close enough for performer detail while keeping the full stage easy to read."
     },
     {
       "id": "ga",
       "label": "General Admission",
       "our_pick": false,
       "badge": "Full-show view",
-      "color": "#6f86a8",
-      "description": "General Admission sits behind and beside the VIP areas, giving you a wider look at the full stage and a straightforward way to see the same rotating variety lineup."
+      "color": "#19c7dd",
+      "description": "General Admission sits behind and along the outer areas, giving you a wider full-stage view and the lower-price way into this intimate room."
     }
   ],
   "shapes": [
@@ -58,5 +63,6 @@
       "zone": "vip",
       "points": "48,58 80,58 77,68 70,68 70,73 57,73 57,68 50,68"
     }
-  ]
+  ],
+  "viewBox": "0 0 120 100"
 }
