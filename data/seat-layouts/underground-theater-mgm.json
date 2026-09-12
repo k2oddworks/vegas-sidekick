@@ -1,0 +1,48 @@
+{
+  "venue": "The Underground Theater at MGM Grand",
+  "address": "3799 S Las Vegas Blvd, Las Vegas, NV 89109",
+  "viewBox": "0 0 120 100",
+  "stage": {
+    "path": "M31 83 Q60 78 89 83 L84 97 H36 Z",
+    "labelX": 60,
+    "labelY": 90
+  },
+  "zones": [
+    {
+      "id": "a",
+      "label": "Category A",
+      "mapLabel": "A",
+      "badge": "Closest section",
+      "our_pick": true,
+      "color": "#ffb000",
+      "path": "M25 61 Q60 50 95 61 L88 79 Q60 71 32 79 Z",
+      "labelX": 60,
+      "labelY": 66,
+      "description": "Category A is the Vegas Sidekick Sweet Spot / Our Pick for Tape Face: closest to the stage, with the clearest view of facial expressions, props and the small physical details that drive the show."
+    },
+    {
+      "id": "b",
+      "label": "Category B",
+      "mapLabel": "B",
+      "badge": "Middle section",
+      "our_pick": false,
+      "color": "#8b5cff",
+      "path": "M18 38 Q60 23 102 38 L96 58 Q60 47 24 58 Z",
+      "labelX": 60,
+      "labelY": 43,
+      "description": "Category B sits through the middle of the room and is the strongest value balance when you want a clear overall view without paying for the closest section."
+    },
+    {
+      "id": "c",
+      "label": "Category C",
+      "mapLabel": "C",
+      "badge": "Rear value",
+      "our_pick": false,
+      "color": "#1fc7dc",
+      "path": "M12 14 Q60 -1 108 14 L103 35 Q60 20 17 35 Z",
+      "labelX": 60,
+      "labelY": 19,
+      "description": "Category C is the rear value section. The Underground is compact enough that you still get the full visual-comedy picture from farther back."
+    }
+  ]
+}
