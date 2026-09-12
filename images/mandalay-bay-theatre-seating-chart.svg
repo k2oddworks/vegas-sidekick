@@ -1,1 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 120 100"><defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#140923"/><stop offset="1" stop-color="#07070c"/></linearGradient></defs><rect width="120" height="100" rx="4" fill="url(#bg)"/><text x="6" y="7" fill="#fff" font-family="Arial,sans-serif" font-size="4.4" font-weight="800">vegas <tspan fill="#ff2e7e">sidekick</tspan></text><rect x="38" y="86" width="44" height="8" rx="2" fill="#171717" stroke="#ffb000" stroke-width=".7"/><text x="60" y="91" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="4.4" font-weight="900" letter-spacing="1">STAGE</text><polygon points="20,78 38,82 42,52 28,48" fill="#ffb000" stroke="#fff" stroke-opacity=".42" stroke-width=".55"/><text x="32.00" y="65.00" text-anchor="middle" dominant-baseline="middle" fill="#171225" font-family="Arial,sans-serif" font-size="4" font-weight="800">103</text><polygon points="42,82 78,82 74,48 46,48" fill="#ffb000" stroke="#fff" stroke-opacity=".42" stroke-width=".55"/><text x="60.00" y="65.00" text-anchor="middle" dominant-baseline="middle" fill="#171225" font-family="Arial,sans-serif" font-size="4" font-weight="800">102</text><polygon points="78,82 100,78 92,48 74,52" fill="#ffb000" stroke="#fff" stroke-opacity=".42" stroke-width=".55"/><text x="86.00" y="65.00" text-anchor="middle" dominant-baseline="middle" fill="#171225" font-family="Arial,sans-serif" font-size="4" font-weight="800">101</text><polygon points="3,40 27,46 24,18 7,13" fill="#0fb5c9" stroke="#fff" stroke-opacity=".42" stroke-width=".55"/><text x="15.25" y="29.25" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="4" font-weight="800">205</text><polygon points="27,46 46,44 45,12 25,14" fill="#ffb000" stroke="#fff" stroke-opacity=".42" stroke-width=".55"/><text x="35.75" y="29.00" text-anchor="middle" dominant-baseline="middle" fill="#171225" font-family="Arial,sans-serif" font-size="4" font-weight="800">204</text><polygon points="46,44 74,44 72,11 48,11" fill="#ffb000" stroke="#fff" stroke-opacity=".42" stroke-width=".55"/><text x="60.00" y="27.50" text-anchor="middle" dominant-baseline="middle" fill="#171225" font-family="Arial,sans-serif" font-size="4" font-weight="800">203</text><polygon points="74,44 93,46 95,14 75,12" fill="#ffb000" stroke="#fff" stroke-opacity=".42" stroke-width=".55"/><text x="84.25" y="29.00" text-anchor="middle" dominant-baseline="middle" fill="#171225" font-family="Arial,sans-serif" font-size="4" font-weight="800">202</text><polygon points="93,46 117,40 113,13 96,18" fill="#0fb5c9" stroke="#fff" stroke-opacity=".42" stroke-width=".55"/><text x="104.75" y="29.25" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="4" font-weight="800">201</text><rect x="31" y="3" width="58" height="6" rx="3" fill="#ffb000"/><text x="60" y="7.1" text-anchor="middle" fill="#171225" font-family="Arial,sans-serif" font-size="2.6" font-weight="900">SWEET SPOT · 101–103 + 202–204</text><text x="60" y="98" text-anchor="middle" fill="#d7cedd" font-family="Arial,sans-serif" font-size="2.3">Mandalay Bay Theatre · 3950 S Las Vegas Blvd</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 120 100">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#140923"/><stop offset="1" stop-color="#07070c"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="1.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <clipPath id="c103"><path d="M22 74 Q29 78 39 80 L43 50 Q34 48 27 45 Z"/></clipPath>
+  <clipPath id="c102"><path d="M43 80 Q60 82 77 80 L74 47 Q60 45 46 47 Z"/></clipPath>
+  <clipPath id="c101"><path d="M81 80 Q91 78 98 74 L93 45 Q86 48 77 50 Z"/></clipPath>
+  <clipPath id="c205"><path d="M5 37 Q14 42 27 44 L23 15 Q14 12 8 10 Z"/></clipPath>
+  <clipPath id="c204"><path d="M28 44 Q36 46 46 44 L45 11 Q34 11 24 14 Z"/></clipPath>
+  <clipPath id="c203"><path d="M47 44 Q60 46 73 44 L72 10 Q60 9 48 10 Z"/></clipPath>
+  <clipPath id="c202"><path d="M74 44 Q84 46 92 44 L96 14 Q86 11 75 11 Z"/></clipPath>
+  <clipPath id="c201"><path d="M93 44 Q106 42 115 37 L112 10 Q106 12 97 15 Z"/></clipPath>
+</defs>
+<rect width="120" height="100" rx="4" fill="url(#bg)"/>
+<text x="6" y="7" fill="#fff" font-family="Arial,sans-serif" font-size="4.4" font-weight="800">vegas <tspan fill="#ff2e7e">sidekick</tspan></text>
+<text x="6" y="10.2" fill="#cfc7d6" font-family="Arial,sans-serif" font-size="1.75" letter-spacing=".45">SHOWS · TICKETS · GOOD TIMES</text>
+
+<path d="M5 37 Q14 42 27 44 L23 15 Q14 12 8 10 Z" fill="#12c7b1" stroke="#fff" stroke-opacity=".2" stroke-width=".45"/>
+<g clip-path="url(#c205)" fill="none" stroke="#fff" stroke-opacity=".26" stroke-width=".42"><path d="M4 15 Q16 15 29 15"/><path d="M4 19 Q16 19.5 29 19"/><path d="M4 23 Q16 23.5 29 23"/><path d="M4 27 Q16 27.5 29 27"/><path d="M4 31 Q16 31.5 29 31"/><path d="M4 35 Q16 35.5 29 35"/><path d="M4 39 Q16 39.5 29 39"/></g>
+<text x="16" y="28" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="4" font-weight="800">205</text>
+
+<path d="M28 44 Q36 46 46 44 L45 11 Q34 11 24 14 Z" fill="#ffb000" stroke="#fff" stroke-opacity=".2" stroke-width=".45"/>
+<g clip-path="url(#c204)" fill="none" stroke="#fff" stroke-opacity=".24" stroke-width=".42"><path d="M23 15 Q35 14.5 47 15"/><path d="M23 19 Q35 18.5 47 19"/><path d="M23 23 Q35 22.5 47 23"/><path d="M23 27 Q35 26.5 47 27"/><path d="M23 31 Q35 30.5 47 31"/><path d="M23 35 Q35 34.5 47 35"/><path d="M23 39 Q35 38.5 47 39"/><path d="M23 43 Q35 42.5 47 43"/></g>
+<text x="36" y="27" text-anchor="middle" fill="#171225" font-family="Arial,sans-serif" font-size="4" font-weight="800">204</text>
+
+<path d="M47 44 Q60 46 73 44 L72 10 Q60 9 48 10 Z" fill="#ffb000" stroke="#fff" stroke-opacity=".2" stroke-width=".45"/>
+<g clip-path="url(#c203)" fill="none" stroke="#fff" stroke-opacity=".24" stroke-width=".42"><path d="M46 14 Q60 13.2 74 14"/><path d="M46 18 Q60 17.2 74 18"/><path d="M46 22 Q60 21.2 74 22"/><path d="M46 26 Q60 25.2 74 26"/><path d="M46 30 Q60 29.2 74 30"/><path d="M46 34 Q60 33.2 74 34"/><path d="M46 38 Q60 37.2 74 38"/><path d="M46 42 Q60 41.2 74 42"/></g>
+<text x="60" y="27" text-anchor="middle" fill="#171225" font-family="Arial,sans-serif" font-size="4" font-weight="800">203</text>
+
+<path d="M74 44 Q84 46 92 44 L96 14 Q86 11 75 11 Z" fill="#ffb000" stroke="#fff" stroke-opacity=".2" stroke-width=".45"/>
+<g clip-path="url(#c202)" fill="none" stroke="#fff" stroke-opacity=".24" stroke-width=".42"><path d="M73 15 Q85 14.5 97 15"/><path d="M73 19 Q85 18.5 97 19"/><path d="M73 23 Q85 22.5 97 23"/><path d="M73 27 Q85 26.5 97 27"/><path d="M73 31 Q85 30.5 97 31"/><path d="M73 35 Q85 34.5 97 35"/><path d="M73 39 Q85 38.5 97 39"/><path d="M73 43 Q85 42.5 97 43"/></g>
+<text x="84" y="27" text-anchor="middle" fill="#171225" font-family="Arial,sans-serif" font-size="4" font-weight="800">202</text>
+
+<path d="M93 44 Q106 42 115 37 L112 10 Q106 12 97 15 Z" fill="#12c7b1" stroke="#fff" stroke-opacity=".2" stroke-width=".45"/>
+<g clip-path="url(#c201)" fill="none" stroke="#fff" stroke-opacity=".26" stroke-width=".42"><path d="M91 15 Q104 15 116 15"/><path d="M91 19 Q104 19.5 116 19"/><path d="M91 23 Q104 23.5 116 23"/><path d="M91 27 Q104 27.5 116 27"/><path d="M91 31 Q104 31.5 116 31"/><path d="M91 35 Q104 35.5 116 35"/><path d="M91 39 Q104 39.5 116 39"/></g>
+<text x="104" y="28" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="4" font-weight="800">201</text>
+
+<path d="M22 74 Q29 78 39 80 L43 50 Q34 48 27 45 Z" fill="#ffb000" stroke="#fff" stroke-opacity=".2" stroke-width=".45"/>
+<g clip-path="url(#c103)" fill="none" stroke="#fff" stroke-opacity=".24" stroke-width=".42"><path d="M20 52 Q32 52.4 45 52"/><path d="M20 56 Q32 56.5 45 56"/><path d="M20 60 Q32 60.5 45 60"/><path d="M20 64 Q32 64.5 45 64"/><path d="M20 68 Q32 68.5 45 68"/><path d="M20 72 Q32 72.5 45 72"/></g>
+<text x="32" y="62" text-anchor="middle" fill="#171225" font-family="Arial,sans-serif" font-size="4" font-weight="800">103</text>
+
+<path d="M43 80 Q60 82 77 80 L74 47 Q60 45 46 47 Z" fill="#ffb000" stroke="#fff" stroke-opacity=".2" stroke-width=".45"/>
+<g clip-path="url(#c102)" fill="none" stroke="#fff" stroke-opacity=".24" stroke-width=".42"><path d="M42 50 Q60 49.5 78 50"/><path d="M42 54 Q60 53.5 78 54"/><path d="M42 58 Q60 57.5 78 58"/><path d="M42 62 Q60 61.5 78 62"/><path d="M42 66 Q60 65.5 78 66"/><path d="M42 70 Q60 69.5 78 70"/><path d="M42 74 Q60 73.5 78 74"/><path d="M42 78 Q60 77.5 78 78"/></g>
+<text x="60" y="62" text-anchor="middle" fill="#171225" font-family="Arial,sans-serif" font-size="4" font-weight="800">102</text>
+
+<path d="M81 80 Q91 78 98 74 L93 45 Q86 48 77 50 Z" fill="#ffb000" stroke="#fff" stroke-opacity=".2" stroke-width=".45"/>
+<g clip-path="url(#c101)" fill="none" stroke="#fff" stroke-opacity=".24" stroke-width=".42"><path d="M76 52 Q88 52.4 100 52"/><path d="M76 56 Q88 56.5 100 56"/><path d="M76 60 Q88 60.5 100 60"/><path d="M76 64 Q88 64.5 100 64"/><path d="M76 68 Q88 68.5 100 68"/><path d="M76 72 Q88 72.5 100 72"/></g>
+<text x="88" y="62" text-anchor="middle" fill="#171225" font-family="Arial,sans-serif" font-size="4" font-weight="800">101</text>
+
+<path d="M38 82 H82 V88 Q60 92 38 88 Z" fill="#151217" stroke="#ffb000" stroke-width=".7" filter="url(#glow)"/>
+<text x="60" y="87" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="4" font-weight="900" letter-spacing="1.1">STAGE</text>
+<rect x="39" y="93" width="42" height="4.8" rx="2.4" fill="#ffb000"/>
+<text x="60" y="96.1" text-anchor="middle" fill="#171225" font-family="Arial,sans-serif" font-size="1.95" font-weight="900" letter-spacing=".12">OUR PICK · SWEET SPOT</text>
+</svg>
