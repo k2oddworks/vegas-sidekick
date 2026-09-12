@@ -4,10 +4,9 @@
   "address": "3950 S Las Vegas Blvd, Las Vegas, NV 89119",
   "viewBox": "0 0 120 100",
   "stage": {
-    "x": 38,
-    "y": 86,
-    "w": 44,
-    "h": 8
+    "path": "M38 82 H82 V88 Q60 92 38 88 Z",
+    "labelX": 60,
+    "labelY": 87
   },
   "zones": [
     {
@@ -16,7 +15,11 @@
       "badge": "Lower left",
       "our_pick": true,
       "color": "#ffb000",
-      "points": "20,78 38,82 42,52 28,48",
+      "path": "M22 74 Q29 78 39 80 L43 50 Q34 48 27 45 Z",
+      "labelX": 32,
+      "labelY": 62,
+      "rowYs": [52, 56, 60, 64, 68, 72],
+      "bbox": [20, 44, 45, 81],
       "description": "Lower left seating with a close view of the performers and strong stage detail. It is part of the Vegas Sidekick Sweet Spot / Our Pick group."
     },
     {
@@ -25,7 +28,11 @@
       "badge": "Lower center",
       "our_pick": true,
       "color": "#ffb000",
-      "points": "42,82 78,82 74,48 46,48",
+      "path": "M43 80 Q60 82 77 80 L74 47 Q60 45 46 47 Z",
+      "labelX": 60,
+      "labelY": 62,
+      "rowYs": [50, 54, 58, 62, 66, 70, 74, 78],
+      "bbox": [42, 45, 78, 82],
       "description": "The main lower-center block. It keeps the stage straight ahead and is part of the Vegas Sidekick Sweet Spot / Our Pick group."
     },
     {
@@ -34,7 +41,11 @@
       "badge": "Lower right",
       "our_pick": true,
       "color": "#ffb000",
-      "points": "78,82 100,78 92,48 74,52",
+      "path": "M81 80 Q91 78 98 74 L93 45 Q86 48 77 50 Z",
+      "labelX": 88,
+      "labelY": 62,
+      "rowYs": [52, 56, 60, 64, 68, 72],
+      "bbox": [76, 44, 100, 81],
       "description": "Lower right seating with a close view and clear access to the full stage picture. It is part of the Vegas Sidekick Sweet Spot / Our Pick group."
     },
     {
@@ -42,8 +53,12 @@
       "label": "Section 205",
       "badge": "Upper side",
       "our_pick": false,
-      "color": "#0fb5c9",
-      "points": "3,40 27,46 24,18 7,13",
+      "color": "#12c7b1",
+      "path": "M5 37 Q14 42 27 44 L23 15 Q14 12 8 10 Z",
+      "labelX": 16,
+      "labelY": 28,
+      "rowYs": [15, 19, 23, 27, 31, 35, 39],
+      "bbox": [4, 9, 29, 45],
       "description": "The far-left upper section gives you a wider view of the full production and is a strong choice when seeing the whole stage picture matters most."
     },
     {
@@ -52,7 +67,11 @@
       "badge": "Upper left center",
       "our_pick": true,
       "color": "#ffb000",
-      "points": "27,46 46,44 45,12 25,14",
+      "path": "M28 44 Q36 46 46 44 L45 11 Q34 11 24 14 Z",
+      "labelX": 36,
+      "labelY": 27,
+      "rowYs": [15, 19, 23, 27, 31, 35, 39, 43],
+      "bbox": [23, 10, 47, 46],
       "description": "Upper left-center seating balances the wider full-stage view with a strong angle toward the center of the production. It is part of the Sweet Spot / Our Pick group."
     },
     {
@@ -61,7 +80,11 @@
       "badge": "Upper center",
       "our_pick": true,
       "color": "#ffb000",
-      "points": "46,44 74,44 72,11 48,11",
+      "path": "M47 44 Q60 46 73 44 L72 10 Q60 9 48 10 Z",
+      "labelX": 60,
+      "labelY": 27,
+      "rowYs": [14, 18, 22, 26, 30, 34, 38, 42],
+      "bbox": [46, 9, 74, 46],
       "description": "The central upper block gives you the most symmetrical wide view of the theater. It is part of the Sweet Spot / Our Pick group."
     },
     {
@@ -70,7 +93,11 @@
       "badge": "Upper right center",
       "our_pick": true,
       "color": "#ffb000",
-      "points": "74,44 93,46 95,14 75,12",
+      "path": "M74 44 Q84 46 92 44 L96 14 Q86 11 75 11 Z",
+      "labelX": 84,
+      "labelY": 27,
+      "rowYs": [15, 19, 23, 27, 31, 35, 39, 43],
+      "bbox": [73, 10, 97, 46],
       "description": "Upper right-center seating gives you a broad view while keeping the stage comfortably centered. It is part of the Sweet Spot / Our Pick group."
     },
     {
@@ -78,8 +105,12 @@
       "label": "Section 201",
       "badge": "Upper side",
       "our_pick": false,
-      "color": "#0fb5c9",
-      "points": "93,46 117,40 113,13 96,18",
+      "color": "#12c7b1",
+      "path": "M93 44 Q106 42 115 37 L112 10 Q106 12 97 15 Z",
+      "labelX": 104,
+      "labelY": 28,
+      "rowYs": [15, 19, 23, 27, 31, 35, 39],
+      "bbox": [91, 9, 116, 45],
       "description": "The far-right upper section gives you a broad full-production view and can be a smart choice when you prefer to take in the entire stage at once."
     }
   ]
