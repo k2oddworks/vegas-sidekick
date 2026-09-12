@@ -1,0 +1,45 @@
+name: Refresh Michael Jackson ONE seating chart
+on:
+  push:
+    paths:
+      - '.github/workflows/mj-one-seat-chart-refresh.yml'
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bust seating asset cache and validate
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('shows/cirque/michael-jackson-one/index.html')
+          s=p.read_text()
+          s=s.replace('/assets/seat-layouts/mandalay-bay-theatre.css?v=1','/assets/seat-layouts/mandalay-bay-theatre.css?v=2')
+          s=s.replace('/assets/seat-layouts/mandalay-bay-theatre.js?v=1','/assets/seat-layouts/mandalay-bay-theatre.js?v=2')
+          p.write_text(s)
+          PY
+          python3 scripts/audit-ticket-cta-color.py
+          python3 scripts/audit-mobile-show-heroes.py
+          python3 scripts/audit-content-link-hygiene.py
+          git diff --check
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          p=Path('shows/cirque/michael-jackson-one/index.html').read_text()
+          assert '/assets/seat-layouts/mandalay-bay-theatre.css?v=2' in p
+          assert '/assets/seat-layouts/mandalay-bay-theatre.js?v=2' in p
+          data=json.loads(Path('data/seat-layouts/mandalay-bay-theatre.json').read_text())
+          assert {z['id'] for z in data['zones'] if z['our_pick']}=={'101','102','103','202','203','204'}
+          svg=Path('images/mandalay-bay-theatre-seating-chart.svg').read_text()
+          assert 'width="1200" height="1000" viewBox="0 0 120 100"' in svg
+          assert 'OUR PICK · SWEET SPOT' in svg
+          PY
+      - name: Commit cache refresh
+        run: |
+          git config user.name 'Vegas Sidekick Operations'
+          git config user.email 'operations@vegassidekick.com'
+          git add shows/cirque/michael-jackson-one/index.html
+          git commit -m 'Refresh Michael Jackson ONE seating chart assets'
+          git push origin main
