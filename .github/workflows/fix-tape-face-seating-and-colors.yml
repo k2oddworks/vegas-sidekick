@@ -1,0 +1,102 @@
+name: Fix Tape Face seating and shared colors
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-tape-face-seating-and-colors.yml'
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fix Tape Face, refresh seating colors, and dedupe Carrot Top
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          # Bust the shared room-map CSS cache anywhere the shared system is used.
+          for p in Path('shows').rglob('index.html'):
+              s=p.read_text()
+              ns=re.sub(r'/assets/seat-layouts/room-map\.css\?v=\d+', '/assets/seat-layouts/room-map.css?v=4', s)
+              if ns != s:
+                  p.write_text(ns)
+
+          tape=Path('shows/comedy/tape-face/index.html')
+          s=tape.read_text()
+          s=s.replace('aria-label="Open Harrah\'s Cabaret seating chart" class="vs-chart-gallery" type="button"><img alt="Harrah\'s Cabaret seating chart showing Vegas Sidekick seating recommendations" loading="lazy" src="/images/harrahs-cabaret-seating-chart.svg"/>',
+                      'aria-label="Open The Underground Theater at MGM Grand seating chart" class="vs-chart-gallery" type="button"><img alt="The Underground Theater at MGM Grand seating chart for Tape Face showing Categories A, B and C" loading="lazy" src="/images/underground-theater-mgm-seating-chart.svg"/>')
+          s=s.replace("<h2>Find your seat at Harrah's Cabaret</h2>", '<h2>Find your seat at The Underground Theater · MGM Grand</h2>')
+          s=s.replace('data-layout-url="/data/seat-layouts/harrahs-cabaret.json" data-seat-layout="harrahs-cabaret"',
+                      'data-layout-url="/data/seat-layouts/underground-theater-mgm.json" data-seat-layout="underground-theater-mgm"')
+          s=s.replace('<strong>7:30 PM</strong><span>Typical start</span>', '<strong>7:30 PM</strong><span>Start time</span>')
+          tape.write_text(s)
+
+          carrot=Path('shows/comedy/carrot-top/index.html')
+          s=carrot.read_text()
+          duplicate='<button aria-label="Open Atrium Showroom seating chart" class="vs-chart-gallery" type="button"><img alt="Atrium Showroom seating chart showing Vegas Sidekick seating recommendations" loading="lazy" src="/images/atrium-showroom-luxor-seating-chart.svg"/></button>'
+          s=s.replace(duplicate,'')
+          carrot.write_text(s)
+          PY
+      - name: QA targeted seating fixes
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          tape=Path('shows/comedy/tape-face/index.html').read_text()
+          carrot=Path('shows/comedy/carrot-top/index.html').read_text()
+          data=json.loads(Path('data/seat-layouts/underground-theater-mgm.json').read_text())
+          svg=Path('images/underground-theater-mgm-seating-chart.svg').read_text()
+          css=Path('assets/seat-layouts/room-map.css').read_text()
+
+          assert "Harrah's Cabaret" not in tape, 'Tape Face still references Harrah\'s Cabaret'
+          assert '/data/seat-layouts/underground-theater-mgm.json' in tape
+          assert '/images/underground-theater-mgm-seating-chart.svg' in tape
+          assert 'The Underground Theater · MGM Grand' in tape
+          assert 'Typical start' not in tape
+          assert {z['id'] for z in data['zones']} == {'a','b','c'}
+          assert {z['id'] for z in data['zones'] if z.get('our_pick')} == {'a'}
+          assert 'width="1200"' in svg and 'height="1000"' in svg and 'viewBox="0 0 120 100"' in svg
+          assert 'filter:saturate(1.28) brightness(1.08)' in css
+          assert 'fill-opacity:.42' in css
+
+          # Keep the original polished Carrot Top chart in the gallery, but only once.
+          assert carrot.count('/images/carrot-top-atrium-showroom-seating-chart.svg') == 1
+          assert '/images/atrium-showroom-luxor-seating-chart.svg' not in carrot
+          assert carrot.count('Open Atrium Showroom seating chart') == 1
+
+          # Confirm shared CSS cache bust is present on the recent seating batch.
+          recent=[
+            'shows/cirque/ka/index.html',
+            'shows/magic/criss-angel/index.html',
+            'shows/magic/the-mentalist/index.html',
+            'shows/comedy/carrot-top/index.html',
+            'shows/comedy/tape-face/index.html',
+            'shows/adult/chippendales/index.html',
+            'shows/adult/x-burlesque/index.html',
+            'shows/comedy/comedy-cellar/index.html',
+          ]
+          for f in recent:
+              text=Path(f).read_text()
+              if 'room-map.css' in text:
+                  assert '/assets/seat-layouts/room-map.css?v=4' in text, f+' missing refreshed seating CSS'
+          print('targeted seating QA passed')
+          PY
+      - name: Repository audits
+        run: |
+          python3 scripts/audit-event-schema.py
+          python3 scripts/audit-ticket-cta-color.py
+          python3 scripts/audit-mobile-show-heroes.py
+          python3 scripts/audit-catalog-js-syntax.py
+          if [ -f scripts/audit-content-link-hygiene.py ]; then python3 scripts/audit-content-link-hygiene.py; fi
+          git diff --check
+      - name: Commit and push
+        run: |
+          git config user.name 'Kris Kidd'
+          git config user.email 'k2oddworks@gmail.com'
+          git add shows
+          if ! git diff --cached --quiet; then
+            git commit -m 'Fix Tape Face seating and brighten room maps'
+            git push origin main
+          fi
