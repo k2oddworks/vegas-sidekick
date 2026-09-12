@@ -1,72 +1,36 @@
 {
-  "venue": "V2 Theater · Planet Hollywood",
+  "venue": "V2 Theater \u00b7 Planet Hollywood",
   "address": "3663 S Las Vegas Blvd, Las Vegas, NV 89109",
   "viewBox": "0 0 120 100",
   "stage": {
-    "path": "M33 84 Q60 79 87 84 L82 97 H38 Z",
+    "path": "M45 88 Q60 82 75 88 L82 98 H38 Z",
     "labelX": 60,
-    "labelY": 90
+    "labelY": 93
   },
   "zones": [
     {
-      "id": "vip-center",
-      "label": "VIP Center",
-      "mapLabel": "VIP CENTER",
-      "badge": "Centered close",
+      "id": "vip",
+      "label": "VIP Seating",
+      "mapLabel": "VIP",
+      "badge": "Closest main seating",
       "our_pick": true,
       "color": "#ffb000",
-      "path": "M38 58 Q60 64 82 58 L78 82 Q60 86 42 82 Z",
-      "labelX": 60,
-      "labelY": 70,
-      "description": "VIP Center is the Sweet Spot: straight-on sightlines for the mind-reading demonstrations and a close view of Gerry McCambridge."
+      "path": "M37 31 H93 L91 62 Q88 70 76 76 H44 Q32 70 29 62 L27 45 Q25 40 21 36 L31 29 Z M16 57 L29 45 L36 64 L24 78 L13 67 Z M84 64 L96 48 L107 62 L96 76 Z M38 76 L48 68 L55 83 L45 90 L34 82 Z M65 83 L72 68 L82 77 L88 86 L78 91 Z",
+      "labelX": 61,
+      "labelY": 51,
+      "description": "VIP Seating is the Vegas Sidekick Sweet Spot / Our Pick. The verified room chart shows the largest VIP block directly facing the stage, with additional VIP seating wrapping the lower sides of the room."
     },
     {
-      "id": "vip-side",
-      "label": "VIP Side",
-      "mapLabel": "VIP SIDE",
-      "badge": "Closer side",
+      "id": "ga",
+      "label": "General Admission",
+      "mapLabel": "GA",
+      "badge": "Value seating",
       "our_pick": false,
-      "color": "#ff3b8d",
-      "path": "M14 51 Q26 58 38 58 L42 82 Q24 78 13 68 Z M82 58 Q94 58 106 51 L107 68 Q96 78 78 82 Z",
-      "labelX": 25,
-      "labelY": 67,
-      "description": "VIP Side keeps you close to the stage with a more angled view into the room."
-    },
-    {
-      "id": "ga-center",
-      "label": "General Rear Center",
-      "mapLabel": "GA CENTER",
-      "badge": "Centered value",
-      "our_pick": false,
-      "color": "#7b35ea",
-      "path": "M36 27 Q60 34 84 27 L82 52 Q60 58 38 52 Z",
-      "labelX": 60,
-      "labelY": 42,
-      "description": "General Rear Center gives you a centered view at the value tier, useful in a compact room where the stage still reads clearly."
-    },
-    {
-      "id": "ga-side",
-      "label": "General Rear Side",
-      "mapLabel": "GA SIDE",
-      "badge": "Value side",
-      "our_pick": false,
-      "color": "#16b9c8",
-      "path": "M8 18 Q20 27 36 27 L38 52 Q21 48 10 39 Z M84 27 Q100 27 112 18 L110 39 Q99 48 82 52 Z",
-      "labelX": 21,
-      "labelY": 36,
-      "description": "General Rear Side is the budget-focused option with a wider angle across the stage."
-    },
-    {
-      "id": "balcony",
-      "label": "Balcony",
-      "mapLabel": "BALCONY",
-      "badge": "Elevated rear",
-      "our_pick": false,
-      "color": "#5f47a8",
-      "path": "M7 6 H34 L31 19 Q20 17 9 12 Z",
-      "labelX": 20,
-      "labelY": 12,
-      "description": "The small balcony sits farthest back and gives you an elevated overview of the room."
+      "color": "#19c7dd",
+      "path": "M4 20 L28 4 L43 22 L25 56 L8 46 Z M44 4 H105 V26 H45 Z M102 32 L113 43 L106 50 L113 60 L104 69 L96 58 L101 51 L95 44 Z",
+      "labelX": 75,
+      "labelY": 15,
+      "description": "General Admission is the value tier. The verified chart places GA in the rear and outer areas of the room."
     }
   ]
 }
