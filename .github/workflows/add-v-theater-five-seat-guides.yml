@@ -16,15 +16,11 @@ jobs:
           import json,re,subprocess
           from pathlib import Path
           root=Path('.')
-          layout_s='data/seat-layouts/v-theater-main-floor-vip-ga.json'
-          image_s='images/v-theater-main-floor-vip-ga-seating-chart.svg'
-          layout=root/layout_s
-          data=json.loads(layout.read_text())
+          main_layout='data/seat-layouts/v-theater-main-floor-vip-ga.json'
+          main_image='images/v-theater-main-floor-vip-ga-seating-chart.svg'
+          data=json.loads((root/main_layout).read_text())
           data['viewBox']='0 0 120 100'
-          data['stage']={
-            'path':'M44 82 Q60 78 76 82 L72 94 H48 Z',
-            'labelX':60,'labelY':88,'label':'STAGE'
-          }
+          data['stage']={'path':'M44 82 Q60 78 76 82 L72 94 H48 Z','labelX':60,'labelY':88,'label':'STAGE'}
           for z in data['zones']:
             if z['id']=='vip':
               z['description']='VIP Seating wraps the front and center performance area. It is the Vegas Sidekick Sweet Spot / Our Pick for V Theater: close enough for performer detail while keeping the full stage easy to read.'
@@ -32,18 +28,22 @@ jobs:
             elif z['id']=='ga':
               z['description']='General Admission sits behind and along the outer areas, giving you a wider full-stage view and the lower-price way into this intimate room.'
               z['color']='#19c7dd'
-          layout.write_text(json.dumps(data,indent=2)+"\n")
-          subprocess.run(['python3','scripts/generate-room-seat-chart.py',layout_s,image_s],check=True)
+          (root/main_layout).write_text(json.dumps(data,indent=2)+"\n")
+          subprocess.run(['python3','scripts/generate-room-seat-chart.py',main_layout,main_image],check=True)
+
+          v2_layout='data/seat-layouts/v2-theatre.json'
+          v2_image='images/v2-theatre-seating-chart.svg'
+          subprocess.run(['python3','scripts/generate-room-seat-chart.py',v2_layout,v2_image],check=True)
 
           targets=[
-            'shows/family/v-the-ultimate-variety-show/index.html',
-            'shows/comedy/popovich-comedy-pet-theater/index.html',
-            'shows/adult/zombie-burlesque/index.html',
-            'shows/magic/allstars-of-magic/index.html',
-            'shows/magic/an-r-rated-magic-show/index.html',
+            ('shows/comedy/popovich-comedy-pet-theater/index.html',main_layout,main_image,'V Theater'),
+            ('shows/adult/zombie-burlesque/index.html',main_layout,main_image,'V Theater'),
+            ('shows/magic/allstars-of-magic/index.html',main_layout,main_image,'V Theater'),
+            ('shows/magic/an-r-rated-magic-show/index.html',main_layout,main_image,'V Theater'),
+            ('shows/comedy/las-vegas-live-comedy-club/index.html',v2_layout,v2_image,'V2 Theater · Planet Hollywood'),
           ]
           seat_re=re.compile(r'<section(?=[^>]*\bid=["\']seats["\'])[^>]*>.*?</section>',re.S|re.I)
-          for page_s in targets:
+          for page_s,layout_s,image_s,venue in targets:
             page=root/page_s
             if not page.exists(): raise SystemExit(f'missing page {page_s}')
             text=page.read_text()
@@ -59,10 +59,10 @@ jobs:
             section=(
               '<section class="section" id="seats"><div class="wrap">'
               '<div class="eyebrow">Seat guide</div>'
-              '<h2>Find your seat at V Theater</h2>'
+              f'<h2>Find your seat at {venue}</h2>'
               '<p class="lede">VIP Seating is the Sweet Spot / Our Pick. It keeps you close to the performance while still giving the full stage enough room to read.</p>'
-              f'<div class="vs-room-seat-guide" data-layout-url="/{layout_s}" data-seat-layout="v-theater-main-floor-vip-ga" data-ticket-url="{ticket}"></div>'
-              f'<div class="vs-seat-chart-gallery"><img class="vs-chart-gallery" loading="lazy" src="/{image_s}" alt="V Theater seating chart showing VIP Seating and General Admission, with VIP marked as the Vegas Sidekick Sweet Spot"/></div>'
+              f'<div class="vs-room-seat-guide" data-layout-url="/{layout_s}" data-seat-layout="{Path(layout_s).stem}" data-ticket-url="{ticket}"></div>'
+              f'<div class="vs-seat-chart-gallery"><img class="vs-chart-gallery" loading="lazy" src="/{image_s}" alt="{venue} seating chart showing VIP Seating and General Admission, with VIP marked as the Vegas Sidekick Sweet Spot"/></div>'
               '</div></section>'
             )
             if seat_re.search(text):
@@ -87,30 +87,30 @@ jobs:
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          pages=[
-            'shows/family/v-the-ultimate-variety-show/index.html',
-            'shows/comedy/popovich-comedy-pet-theater/index.html',
-            'shows/adult/zombie-burlesque/index.html',
-            'shows/magic/allstars-of-magic/index.html',
-            'shows/magic/an-r-rated-magic-show/index.html',
-          ]
-          for p in pages:
+          expected={
+            'shows/comedy/popovich-comedy-pet-theater/index.html':'v-theater-main-floor-vip-ga.json',
+            'shows/adult/zombie-burlesque/index.html':'v-theater-main-floor-vip-ga.json',
+            'shows/magic/allstars-of-magic/index.html':'v-theater-main-floor-vip-ga.json',
+            'shows/magic/an-r-rated-magic-show/index.html':'v-theater-main-floor-vip-ga.json',
+            'shows/comedy/las-vegas-live-comedy-club/index.html':'v2-theatre.json',
+          }
+          for p,layout in expected.items():
             t=Path(p).read_text()
             assert t.count('class="vs-room-seat-guide"')==1,p
-            assert 'data-layout-url="/data/seat-layouts/v-theater-main-floor-vip-ga.json"' in t,p
-            assert '/images/v-theater-main-floor-vip-ga-seating-chart.svg' in t,p
+            assert f'data-layout-url="/data/seat-layouts/{layout}"' in t,p
             assert 'VIP Seating is the Sweet Spot / Our Pick' in t,p
-          print('five V Theater seating guides verified')
+          print('five seating guides verified')
           PY
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/seat-layouts/v-theater-main-floor-vip-ga.json images/v-theater-main-floor-vip-ga-seating-chart.svg \
-            shows/family/v-the-ultimate-variety-show/index.html \
+          git add data/seat-layouts/v-theater-main-floor-vip-ga.json \
+            images/v-theater-main-floor-vip-ga-seating-chart.svg images/v2-theatre-seating-chart.svg \
             shows/comedy/popovich-comedy-pet-theater/index.html \
             shows/adult/zombie-burlesque/index.html \
             shows/magic/allstars-of-magic/index.html \
-            shows/magic/an-r-rated-magic-show/index.html
+            shows/magic/an-r-rated-magic-show/index.html \
+            shows/comedy/las-vegas-live-comedy-club/index.html
           git commit -m "Add five V Theater seating guides"
           git push
