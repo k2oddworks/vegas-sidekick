@@ -1,0 +1,100 @@
+name: Add next five seating guides
+on:
+  push:
+    paths:
+      - .github/workflows/add-next-five-seat-guides.yml
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and install five seating guides
+        run: |
+          python3 - <<'PY'
+          import json,re,subprocess
+          from pathlib import Path
+          root=Path('.')
+          targets=[
+            ('shows/magic/criss-angel/index.html','data/seat-layouts/criss-angel-theatre.json','images/criss-angel-theatre-seating-chart.svg'),
+            ('shows/adult/chippendales/index.html','data/seat-layouts/chippendales-theatre-ph.json','images/chippendales-theatre-ph-seating-chart.svg'),
+            ('shows/adult/magic-mike-live/index.html','data/seat-layouts/magic-mike-live-theater-sahara.json','images/magic-mike-live-theater-sahara-seating-chart.svg'),
+            ('shows/family/battlebots-destruct-a-thon/index.html','data/seat-layouts/battlebots-arena.json','images/battlebots-arena-seating-chart.svg'),
+            ('shows/music/jabbawockeez/index.html','data/seat-layouts/jabbawockeez-theater-mgm.json','images/jabbawockeez-theater-mgm-seating-chart.svg'),
+          ]
+          for page_s,layout_s,img_s in targets:
+            page=root/page_s; layout=root/layout_s
+            if not page.exists(): raise SystemExit(f'missing page {page}')
+            data=json.loads(layout.read_text())
+            subprocess.run(['python3','scripts/generate-room-seat-chart.py',layout_s,img_s],check=True)
+            text=page.read_text()
+            m=re.search(r'https://spotlight\.vegas/[^"\'<>\s]+/ref/vegassidekick',text)
+            if not m: raise SystemExit(f'no verified affiliate URL found in {page}')
+            ticket=m.group(0)
+            if '/assets/seat-layouts/room-layout.css' not in text:
+              text=text.replace('</head>','<link href="/assets/seat-layouts/room-layout.css?v=1" rel="stylesheet"/></head>',1)
+            if '/assets/seat-layouts/room-layout.js' not in text:
+              text=text.replace('</body>','<script defer src="/assets/seat-layouts/room-layout.js?v=1"></script></body>',1)
+            picks=[z['label'] for z in data.get('zones',[]) if z.get('our_pick')]
+            pick_text=', '.join(picks)
+            venue=data.get('venue','the venue')
+            layout_name=Path(layout_s).stem
+            alt=f'{venue} seating chart showing Vegas Sidekick seating recommendations'
+            section=(f'<section class="section" id="seats"><div class="wrap"><div class="eyebrow">Seat guide</div>'
+                     f'<h2>Find your seat at {venue}</h2>'
+                     f'<p class="lede">{pick_text} {"are" if len(picks)>1 else "is"} the Sweet Spot / Our Pick. Compare the room layout and what each section offers.</p>'
+                     f'<div class="vs-room-seat-guide" data-layout-url="/{layout_s}" data-seat-layout="{layout_name}" data-ticket-url="{ticket}"></div>'
+                     f'<div class="vs-seat-chart-gallery"><img class="vs-chart-gallery" loading="lazy" src="/{img_s}" alt="{alt}"/></div>'
+                     f'</div></section>')
+            seat_re=re.compile(r'<section(?=[^>]*\bid=["\']seats["\'])[^>]*>.*?</section>',re.S|re.I)
+            if seat_re.search(text):
+              text=seat_re.sub(section,text,count=1)
+            else:
+              fit=re.search(r'<section(?=[^>]*\bid=["\']fit["\'])',text,re.I)
+              if not fit: raise SystemExit(f'no seats or fit section in {page}')
+              text=text[:fit.start()]+section+text[fit.start():]
+            if 'href="#seats"' not in text:
+              text=text.replace('<a href="#photos">Photos</a>','<a href="#photos">Photos</a><a href="#seats">Seat guide</a>',1)
+            page.write_text(text)
+            if f'data-layout-url="/{layout_s}"' not in text: raise SystemExit(f'layout hook missing {page}')
+            if f'src="/{img_s}"' not in text: raise SystemExit(f'static chart missing {page}')
+          PY
+      - name: Run relevant audits
+        run: |
+          python3 scripts/audit-event-schema.py
+          python3 scripts/audit-ticket-cta-color.py
+          python3 scripts/audit-mobile-show-heroes.py
+          python3 scripts/audit-catalog-js-syntax.py
+          python3 scripts/audit-content-link-hygiene.py
+          git diff --check
+      - name: Verify five guide hooks
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          pages=[
+            'shows/magic/criss-angel/index.html',
+            'shows/adult/chippendales/index.html',
+            'shows/adult/magic-mike-live/index.html',
+            'shows/family/battlebots-destruct-a-thon/index.html',
+            'shows/music/jabbawockeez/index.html',
+          ]
+          for p in pages:
+            t=Path(p).read_text()
+            assert t.count('class="vs-room-seat-guide"')==1,p
+            assert '/assets/seat-layouts/room-layout.css?v=1' in t,p
+            assert '/assets/seat-layouts/room-layout.js?v=1' in t,p
+            assert 'Sweet Spot / Our Pick' in t,p
+          print('five seating guides verified')
+          PY
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add shows/magic/criss-angel/index.html shows/adult/chippendales/index.html shows/adult/magic-mike-live/index.html shows/family/battlebots-destruct-a-thon/index.html shows/music/jabbawockeez/index.html images/*-seating-chart.svg
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Add five reusable seating guides"
+          git push
