@@ -1,0 +1,63 @@
+name: Install Zombie Burlesque branded seating map
+on:
+  push:
+    paths:
+      - .github/workflows/install-zombie-branded-seat-map.yml
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace Zombie Burlesque seating treatment
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          p=Path('shows/adult/zombie-burlesque/index.html')
+          t=p.read_text()
+          ticket='https://spotlight.vegas/shows/adult/zombie-burlesque/ref/vegassidekick'
+          # Remove older Zombie/V Theater seating-system assets from this page.
+          t=re.sub(r'<link href="/assets/seat-layouts/v-theater-miracle-mile\.css\?v=1" rel="stylesheet"/?>','',t)
+          t=re.sub(r'<link href="/assets/seat-layouts/room-layout\.css\?v=1" rel="stylesheet"/?>','',t)
+          t=re.sub(r'<script[^>]+src="/assets/seat-layouts/(?:room-layout|v-theater-miracle-mile)\.js[^>]*></script>','',t)
+          # Use the new branded chart everywhere a Zombie seating chart appears in the gallery.
+          t=t.replace('/images/zombie-burlesque-v-theater-seating-chart.svg','/images/zombie-burlesque-seating-chart.svg')
+          t=t.replace('class="vth-chart-gallery"','class="zb-chart-gallery"')
+          # Install page-specific interactive treatment over the same visual.
+          if '/assets/seat-layouts/zombie-burlesque-seat-map.css' not in t:
+              t=t.replace('</head>','<link href="/assets/seat-layouts/zombie-burlesque-seat-map.css?v=1" rel="stylesheet"/></head>',1)
+          section=f'''<section class="section" id="seats"><div class="wrap"><div class="eyebrow">Seat guide</div><h2>Find your seat at V Theater</h2><p class="lede">VIP rows A–L are the Sweet Spot / Our Pick. Rear rows M–V give you a wider full-stage view.</p><div class="zb-seat-guide"><div><div class="zb-seat-map"><img src="/images/zombie-burlesque-seating-chart.svg" alt="Zombie Burlesque seating chart showing VIP rows A through L and Rear rows M through V, with VIP closest to the stage"/><button class="zb-seat-hit rear" type="button" data-zone="rear" aria-label="Rear rows M through V"></button><button class="zb-seat-hit vip" type="button" data-zone="vip" aria-label="VIP rows A through L, Sweet Spot"></button></div></div><div class="zb-seat-side"><div class="zb-seat-detail" aria-live="polite"><div class="zb-seat-detail-kicker">Seat guide</div><h3>VIP</h3><p>VIP covers rows A–L closest to the stage. It is the Vegas Sidekick Sweet Spot / Our Pick for Zombie Burlesque.</p><div class="zb-seat-pick">Sweet Spot / Our Pick</div></div><button type="button" class="zb-seat-card is-pick" data-zone="vip"><strong>VIP · Rows A–L</strong><span>Sweet Spot / Our Pick</span></button><button type="button" class="zb-seat-card" data-zone="rear"><strong>Rear · Rows M–V</strong><span>Wider full-stage view</span></button><a class="zb-seat-book" href="{ticket}" rel="sponsored noopener" target="_blank">Check tickets &amp; seating →</a></div></div></div></section>'''
+          seat_re=re.compile(r'<section(?=[^>]*\bid=["\']seats["\'])[^>]*>.*?</section>',re.S|re.I)
+          if not seat_re.search(t):
+              raise SystemExit('Zombie Burlesque seat section not found')
+          t=seat_re.sub(section,t,count=1)
+          if '/assets/seat-layouts/zombie-burlesque-seat-map.js' not in t:
+              t=t.replace('</body>','<script defer src="/assets/seat-layouts/zombie-burlesque-seat-map.js?v=1"></script></body>',1)
+          p.write_text(t)
+          # Targeted assertions: exactly one seating visual source and one interactive guide.
+          t=p.read_text()
+          assert t.count('id="seats"')==1
+          assert t.count('class="zb-seat-guide"')==1
+          assert '/images/zombie-burlesque-seating-chart.svg' in t
+          assert '/images/zombie-burlesque-v-theater-seating-chart.svg' not in t
+          assert 'v-theater-main-floor-vip-ga-seating-chart.svg' not in t
+          assert 'data-zone="vip"' in t and 'data-zone="rear"' in t
+          assert 'VIP rows A–L are the Sweet Spot / Our Pick' in t
+          PY
+      - name: Run relevant audits
+        run: |
+          python3 scripts/audit-event-schema.py
+          python3 scripts/audit-ticket-cta-color.py
+          python3 scripts/audit-mobile-show-heroes.py
+          python3 scripts/audit-catalog-js-syntax.py
+          python3 scripts/audit-content-link-hygiene.py
+          git diff --check
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add shows/adult/zombie-burlesque/index.html
+          git commit -m "Use branded interactive Zombie Burlesque seating map"
+          git push
