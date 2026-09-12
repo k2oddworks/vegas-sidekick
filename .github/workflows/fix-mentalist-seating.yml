@@ -1,0 +1,98 @@
+name: Fix Mentalist seating
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-mentalist-seating.yml'
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild V2 seating from verified chart
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+
+          data={
+            "venue":"V2 Theater · Planet Hollywood",
+            "address":"3663 S Las Vegas Blvd, Las Vegas, NV 89109",
+            "viewBox":"0 0 120 100",
+            "stage":{"path":"M45 88 Q60 82 75 88 L82 98 H38 Z","labelX":60,"labelY":93},
+            "zones":[
+              {
+                "id":"vip","label":"VIP Seating","mapLabel":"VIP","badge":"Closest main seating","our_pick":True,"color":"#ffb000",
+                "path":"M37 31 H93 L91 62 Q88 70 76 76 H44 Q32 70 29 62 L27 45 Q25 40 21 36 L31 29 Z M16 57 L29 45 L36 64 L24 78 L13 67 Z M84 64 L96 48 L107 62 L96 76 Z M38 76 L48 68 L55 83 L45 90 L34 82 Z M65 83 L72 68 L82 77 L88 86 L78 91 Z",
+                "labelX":61,"labelY":51,
+                "description":"VIP Seating is the Vegas Sidekick Sweet Spot / Our Pick. The verified room chart shows the largest VIP block directly facing the stage, with additional VIP seating wrapping the lower sides of the room."
+              },
+              {
+                "id":"ga","label":"General Admission","mapLabel":"GA","badge":"Value seating","our_pick":False,"color":"#19c7dd",
+                "path":"M4 20 L28 4 L43 22 L25 56 L8 46 Z M44 4 H105 V26 H45 Z M102 32 L113 43 L106 50 L113 60 L104 69 L96 58 L101 51 L95 44 Z",
+                "labelX":75,"labelY":15,
+                "description":"General Admission is the value tier. The verified chart places GA in the rear and outer areas of the room rather than on a separate balcony."
+              }
+            ]
+          }
+          Path('data/seat-layouts/v2-theatre.json').write_text(json.dumps(data,indent=2))
+
+          svg='''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 120 100">
+          <rect width="120" height="100" rx="5" fill="#0d0815"/>
+          <path d="M4 20 L28 4 L43 22 L25 56 L8 46 Z M44 4 H105 V26 H45 Z M102 32 L113 43 L106 50 L113 60 L104 69 L96 58 L101 51 L95 44 Z" fill="#19c7dd" stroke="#fff" stroke-width=".8"/>
+          <path d="M37 31 H93 L91 62 Q88 70 76 76 H44 Q32 70 29 62 L27 45 Q25 40 21 36 L31 29 Z M16 57 L29 45 L36 64 L24 78 L13 67 Z M84 64 L96 48 L107 62 L96 76 Z M38 76 L48 68 L55 83 L45 90 L34 82 Z M65 83 L72 68 L82 77 L88 86 L78 91 Z" fill="#ffb000" stroke="#fff" stroke-width=".8"/>
+          <path d="M45 88 Q60 82 75 88 L82 98 H38 Z" fill="#24152f" stroke="#ffb000" stroke-width=".9"/>
+          <text x="60" y="93" text-anchor="middle" fill="#fff" font-family="Inter,Arial" font-size="4" font-weight="900">STAGE</text>
+          <text x="61" y="51" text-anchor="middle" fill="#171225" font-family="Inter,Arial" font-size="5.2" font-weight="900">VIP SEATING</text>
+          <text x="74" y="15" text-anchor="middle" fill="#071e29" font-family="Inter,Arial" font-size="4.2" font-weight="900">GENERAL ADMISSION</text>
+          <text x="19" y="33" text-anchor="middle" fill="#071e29" font-family="Inter,Arial" font-size="3.5" font-weight="900">GENERAL</text>
+          <text x="19" y="38" text-anchor="middle" fill="#071e29" font-family="Inter,Arial" font-size="3.5" font-weight="900">ADMISSION</text>
+          <rect x="76" y="91" width="39" height="5" rx="2.5" fill="#ffb000"/>
+          <text x="95.5" y="94.4" text-anchor="middle" fill="#171225" font-family="Inter,Arial" font-size="2.5" font-weight="900">SWEET SPOT · VIP SEATING</text>
+          </svg>'''
+          Path('images/v2-theatre-seating-chart.svg').write_text(svg)
+
+          p=Path('shows/magic/the-mentalist/index.html')
+          s=p.read_text()
+          s=s.replace('V2 Theater seating chart showing Vegas Sidekick seating recommendations','V2 Theater seating chart showing VIP Seating and General Admission')
+          s=s.replace('This chart follows the real room layout and ticket sections. Tap a section to see what it offers.','This chart follows the verified V2 room layout: VIP Seating wraps the stage-facing center and lower sides, while General Admission sits in the rear and outer areas. Tap a section to see what it offers.',1)
+          s=s.replace('<strong>7:30 PM</strong><span>Typical start</span>','<strong>7:30 PM</strong><span>Start time</span>')
+          p.write_text(s)
+          PY
+      - name: QA Mentalist seating correction
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          data=json.loads(Path('data/seat-layouts/v2-theatre.json').read_text())
+          page=Path('shows/magic/the-mentalist/index.html').read_text()
+          svg=Path('images/v2-theatre-seating-chart.svg').read_text()
+          assert {z['id'] for z in data['zones']} == {'vip','ga'}
+          assert not any('balcony' in (z['label']+z.get('description','')).lower() for z in data['zones'])
+          assert {z['id'] for z in data['zones'] if z.get('our_pick')} == {'vip'}
+          assert 'Balcony' not in svg and 'BALCONY' not in svg
+          assert 'VIP SEATING' in svg and 'GENERAL ADMISSION' in svg
+          assert 'width="1200"' in svg and 'height="1000"' in svg and 'viewBox="0 0 120 100"' in svg
+          assert 'Typical start' not in page
+          assert '/data/seat-layouts/v2-theatre.json' in page
+          assert '/images/v2-theatre-seating-chart.svg' in page
+          print('Mentalist seating QA passed')
+          PY
+      - name: Repository audits
+        run: |
+          python3 scripts/audit-event-schema.py
+          python3 scripts/audit-ticket-cta-color.py
+          python3 scripts/audit-mobile-show-heroes.py
+          python3 scripts/audit-catalog-js-syntax.py
+          if [ -f scripts/audit-content-link-hygiene.py ]; then python3 scripts/audit-content-link-hygiene.py; fi
+          git diff --check
+      - name: Commit and push
+        run: |
+          git config user.name 'Kris Kidd'
+          git config user.email 'k2oddworks@gmail.com'
+          git add data/seat-layouts/v2-theatre.json images/v2-theatre-seating-chart.svg shows/magic/the-mentalist/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'Correct Mentalist V2 seating layout'
+            git push origin main
+          fi
