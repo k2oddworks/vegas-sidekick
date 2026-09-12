@@ -1,120 +1,60 @@
 {
-  "version": 1,
-  "confirmed_on": "2026-09-09",
-  "recommendation_scope": "show-specific",
-  "venue": "Atrium Showroom at Luxor",
+  "venue": "Atrium Showroom · Luxor",
   "address": "3900 S Las Vegas Blvd, Las Vegas, NV 89119",
-  "viewBox": "0 0 700 760",
+  "viewBox": "0 0 120 100",
   "stage": {
-    "path": "M 235 650 Q 350 610 465 650 L 465 720 L 235 720 Z",
-    "label_x": 350,
-    "label_y": 684
+    "path": "M29 84 Q60 78 91 84 L86 97 H34 Z",
+    "labelX": 60,
+    "labelY": 90
   },
-  "sections": [
+  "zones": [
     {
-      "id": "reserved-1",
-      "label": "Reserved 1",
-      "rows": [
-        "A",
-        "B",
-        "C"
-      ],
-      "color": "#ff2e7e",
-      "description": "Reserved 1 is the closest seating block to the stage, covering rows A through C.",
-      "row_slabs": [
-        {
-          "label": "A",
-          "path": "M 170.0 560.0 Q 350.0 530.0 530.0 560.0 L 530.0 594.0 Q 350.0 564.0 170.0 594.0 Z"
-        },
-        {
-          "label": "B",
-          "path": "M 140.0 522.0 Q 350.0 492.0 560.0 522.0 L 560.0 556.0 Q 350.0 526.0 140.0 556.0 Z"
-        },
-        {
-          "label": "C",
-          "path": "M 110.0 484.0 Q 350.0 454.0 590.0 484.0 L 590.0 518.0 Q 350.0 488.0 110.0 518.0 Z"
-        }
-      ]
+      "id": "section1",
+      "label": "Section 1",
+      "mapLabel": "1",
+      "badge": "First four rows",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M25 68 Q60 76 95 68 L89 84 Q60 90 31 84 Z",
+      "labelX": 60,
+      "labelY": 78,
+      "description": "Section 1 is the first four rows, closest to Carrot Top and the prop-heavy stage action."
     },
     {
-      "id": "reserved-2",
-      "label": "Reserved 2",
-      "rows": [
-        "D",
-        "E",
-        "F",
-        "G",
-        "H",
-        "I",
-        "J"
-      ],
-      "color": "#7c3aed",
-      "description": "Reserved 2 is the large middle seating block, covering rows D through J.",
-      "row_slabs": [
-        {
-          "label": "D",
-          "path": "M 92.5 424.0 Q 350.0 398.0 607.5 424.0 L 607.5 458.0 Q 350.0 432.0 92.5 458.0 Z"
-        },
-        {
-          "label": "E",
-          "path": "M 82.5 386.0 Q 350.0 361.0 617.5 386.0 L 617.5 420.0 Q 350.0 395.0 82.5 420.0 Z"
-        },
-        {
-          "label": "F",
-          "path": "M 75.0 348.0 Q 350.0 324.0 625.0 348.0 L 625.0 382.0 Q 350.0 358.0 75.0 382.0 Z"
-        },
-        {
-          "label": "G",
-          "path": "M 67.5 310.0 Q 350.0 287.0 632.5 310.0 L 632.5 344.0 Q 350.0 321.0 67.5 344.0 Z"
-        },
-        {
-          "label": "H",
-          "path": "M 61.0 272.0 Q 350.0 250.0 639.0 272.0 L 639.0 306.0 Q 350.0 284.0 61.0 306.0 Z"
-        },
-        {
-          "label": "I",
-          "path": "M 55.0 234.0 Q 350.0 213.0 645.0 234.0 L 645.0 268.0 Q 350.0 247.0 55.0 268.0 Z"
-        },
-        {
-          "label": "J",
-          "path": "M 49.0 196.0 Q 350.0 176.0 651.0 196.0 L 651.0 230.0 Q 350.0 210.0 49.0 230.0 Z"
-        }
-      ]
+      "id": "section2",
+      "label": "Section 2",
+      "mapLabel": "2",
+      "badge": "Middle seven rows",
+      "our_pick": true,
+      "color": "#ffb000",
+      "path": "M17 38 Q60 51 103 38 L96 66 Q60 76 24 66 Z",
+      "labelX": 60,
+      "labelY": 56,
+      "description": "Section 2 is the Sweet Spot: seven middle rows with enough proximity for the props and enough distance to see the whole stage comfortably."
     },
     {
-      "id": "reserved-3",
-      "label": "Reserved 3",
-      "rows": [
-        "K",
-        "L"
-      ],
-      "color": "#0fb5c9",
-      "description": "Reserved 3 sits behind the main middle block, covering rows K and L.",
-      "row_slabs": [
-        {
-          "label": "K",
-          "path": "M 41.0 132.0 Q 350.0 114.0 659.0 132.0 L 659.0 168.0 Q 350.0 150.0 41.0 168.0 Z"
-        },
-        {
-          "label": "L",
-          "path": "M 33.0 92.0 Q 350.0 75.0 667.0 92.0 L 667.0 128.0 Q 350.0 111.0 33.0 128.0 Z"
-        }
-      ]
+      "id": "section3",
+      "label": "Section 3",
+      "mapLabel": "3",
+      "badge": "Second-last row",
+      "our_pick": false,
+      "color": "#7b35ea",
+      "path": "M12 24 Q60 37 108 24 L104 36 Q60 49 16 36 Z",
+      "labelX": 60,
+      "labelY": 33,
+      "description": "Section 3 is the second-last row and a strong value option in this compact showroom."
     },
     {
-      "id": "reserved-4",
-      "label": "Reserved 4",
-      "rows": [
-        "M"
-      ],
-      "color": "#159b8c",
-      "description": "Reserved 4 is the rear-most seating band, row M.",
-      "row_slabs": [
-        {
-          "label": "M",
-          "path": "M 24.0 28.0 Q 350.0 13.0 676.0 28.0 L 676.0 70.0 Q 350.0 55.0 24.0 70.0 Z"
-        }
-      ]
+      "id": "section4",
+      "label": "Section 4",
+      "mapLabel": "4",
+      "badge": "Back row",
+      "our_pick": false,
+      "color": "#16b9c8",
+      "path": "M9 10 Q60 22 111 10 L109 22 Q60 35 11 22 Z",
+      "labelX": 60,
+      "labelY": 19,
+      "description": "Section 4 is the final row, giving you the lowest-priced way to see the full Carrot Top stage."
     }
   ]
 }

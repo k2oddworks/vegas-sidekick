@@ -1,0 +1,72 @@
+{
+  "venue": "Harrah's Cabaret",
+  "address": "3475 S Las Vegas Blvd, Las Vegas, NV 89109",
+  "viewBox": "0 0 120 100",
+  "stage": {
+    "path": "M31 84 Q60 78 89 84 L84 97 H36 Z",
+    "labelX": 60,
+    "labelY": 90
+  },
+  "zones": [
+    {
+      "id": "aaa",
+      "label": "Section AAA",
+      "mapLabel": "AAA",
+      "badge": "Front left",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M14 55 Q28 63 43 66 L46 84 Q27 80 14 70 Z",
+      "labelX": 29,
+      "labelY": 70,
+      "description": "Section AAA is the front-left seating block, close to Tape Face with a slightly angled view of the stage."
+    },
+    {
+      "id": "a",
+      "label": "Section A",
+      "mapLabel": "A",
+      "badge": "Front center",
+      "our_pick": true,
+      "color": "#ffb000",
+      "path": "M43 66 Q60 70 77 66 L74 85 Q60 88 46 84 Z",
+      "labelX": 60,
+      "labelY": 76,
+      "description": "Section A is the centered Sweet Spot: the cleanest head-on view for Tape Face’s visual comedy and prop work."
+    },
+    {
+      "id": "aa",
+      "label": "Section AA",
+      "mapLabel": "AA",
+      "badge": "Front right",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M77 66 Q92 63 106 55 L106 70 Q93 80 74 85 Z",
+      "labelX": 91,
+      "labelY": 70,
+      "description": "Section AA is the matching front-right section with a close view from that side."
+    },
+    {
+      "id": "standard-center",
+      "label": "Standard Center",
+      "mapLabel": "STANDARD",
+      "badge": "Middle / rear",
+      "our_pick": false,
+      "color": "#7b35ea",
+      "path": "M27 24 Q60 35 93 24 L87 54 Q60 63 33 54 Z",
+      "labelX": 60,
+      "labelY": 43,
+      "description": "Standard Center keeps the stage aligned straight ahead and is a practical value choice in the intimate cabaret."
+    },
+    {
+      "id": "standard-side",
+      "label": "Standard Side / Booths",
+      "mapLabel": "SIDE",
+      "badge": "Value side",
+      "our_pick": false,
+      "color": "#16b9c8",
+      "path": "M7 18 Q16 25 27 24 L33 54 Q19 50 9 40 Z M93 24 Q104 25 113 18 L111 40 Q101 50 87 54 Z",
+      "labelX": 18,
+      "labelY": 38,
+      "description": "The side and booth areas give you a wider-angle view while keeping the ticket cost focused on the show."
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "venue": "Criss Angel Theater · Planet Hollywood",
+  "address": "3667 S Las Vegas Blvd, Las Vegas, NV 89109",
+  "viewBox": "0 0 120 108",
+  "stage": {
+    "path": "M28 91 Q60 84 92 91 L86 104 H34 Z",
+    "labelX": 60,
+    "labelY": 97
+  },
+  "zones": [
+    {
+      "id": "103",
+      "label": "Section 103",
+      "mapLabel": "103",
+      "badge": "Front left",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M14 69 Q26 75 43 79 L47 91 Q28 88 15 82 Z",
+      "labelX": 29,
+      "labelY": 81,
+      "description": "Section 103 is a close lower-left option for strong performer detail and an angled look across the production."
+    },
+    {
+      "id": "102",
+      "label": "Section 102",
+      "mapLabel": "102",
+      "badge": "Front center",
+      "our_pick": true,
+      "color": "#ffb000",
+      "path": "M43 79 Q60 82 77 79 L73 92 Q60 95 47 91 Z",
+      "labelX": 60,
+      "labelY": 86,
+      "description": "Section 102 is the closest centered Sweet Spot, giving you a direct view of the illusions while keeping the video and lighting lined up."
+    },
+    {
+      "id": "101",
+      "label": "Section 101",
+      "mapLabel": "101",
+      "badge": "Front right",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M77 79 Q94 75 106 69 L105 82 Q92 88 73 92 Z",
+      "labelX": 91,
+      "labelY": 81,
+      "description": "Section 101 mirrors the front-left section with close detail from the right side."
+    },
+    {
+      "id": "203",
+      "label": "Section 203",
+      "mapLabel": "203",
+      "badge": "Mid left",
+      "our_pick": false,
+      "color": "#7b35ea",
+      "path": "M10 48 Q25 56 44 60 L43 76 Q25 72 12 64 Z",
+      "labelX": 28,
+      "labelY": 62,
+      "description": "Section 203 sits in the middle tier on the left and balances production scale with a comfortable viewing distance."
+    },
+    {
+      "id": "202",
+      "label": "Section 202",
+      "mapLabel": "202",
+      "badge": "Mid center",
+      "our_pick": true,
+      "color": "#ffb000",
+      "path": "M44 60 Q60 64 76 60 L77 77 Q60 81 43 76 Z",
+      "labelX": 60,
+      "labelY": 69,
+      "description": "Section 202 is the main Sweet Spot for MINDFREAK: centered and far enough back to absorb the pyro, screens and full-stage effects together."
+    },
+    {
+      "id": "201",
+      "label": "Section 201",
+      "mapLabel": "201",
+      "badge": "Mid right",
+      "our_pick": false,
+      "color": "#7b35ea",
+      "path": "M76 60 Q95 56 110 48 L108 64 Q95 72 77 77 Z",
+      "labelX": 92,
+      "labelY": 62,
+      "description": "Section 201 is the matching mid-tier option on the right with a wide production view."
+    },
+    {
+      "id": "305",
+      "label": "Section 305",
+      "mapLabel": "305",
+      "badge": "Upper far left",
+      "our_pick": false,
+      "color": "#16b9c8",
+      "path": "M4 19 Q12 27 25 32 L22 47 Q10 42 5 35 Z",
+      "labelX": 14,
+      "labelY": 34,
+      "description": "Section 305 is the widest upper-left value angle for taking in the entire production."
+    },
+    {
+      "id": "304",
+      "label": "Section 304",
+      "mapLabel": "304",
+      "badge": "Upper left",
+      "our_pick": false,
+      "color": "#16b9c8",
+      "path": "M25 32 Q35 37 46 39 L44 55 Q32 52 22 47 Z",
+      "labelX": 34,
+      "labelY": 44,
+      "description": "Section 304 keeps the show in a broad elevated view while moving closer toward center."
+    },
+    {
+      "id": "303",
+      "label": "Section 303",
+      "mapLabel": "303",
+      "badge": "Upper center",
+      "our_pick": false,
+      "color": "#7b35ea",
+      "path": "M46 39 Q60 42 74 39 L76 55 Q60 59 44 55 Z",
+      "labelX": 60,
+      "labelY": 48,
+      "description": "Section 303 is the centered upper tier and a good value when you want the full production framed straight ahead."
+    },
+    {
+      "id": "302",
+      "label": "Section 302",
+      "mapLabel": "302",
+      "badge": "Upper right",
+      "our_pick": false,
+      "color": "#16b9c8",
+      "path": "M74 39 Q85 37 95 32 L98 47 Q88 52 76 55 Z",
+      "labelX": 86,
+      "labelY": 44,
+      "description": "Section 302 mirrors the upper-left section with a broad elevated view from the right."
+    },
+    {
+      "id": "301",
+      "label": "Section 301",
+      "mapLabel": "301",
+      "badge": "Upper far right",
+      "our_pick": false,
+      "color": "#16b9c8",
+      "path": "M95 32 Q108 27 116 19 L115 35 Q110 42 98 47 Z",
+      "labelX": 106,
+      "labelY": 34,
+      "description": "Section 301 is the far-right upper value section with the widest angle across the room."
+    }
+  ]
+}

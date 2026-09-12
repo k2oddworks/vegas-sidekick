@@ -1,0 +1,84 @@
+{
+  "venue": "KÀ Theatre · MGM Grand",
+  "address": "3799 S Las Vegas Blvd, Las Vegas, NV 89109",
+  "viewBox": "0 0 120 100",
+  "stage": {
+    "path": "M30 86 Q60 78 90 86 L84 98 H36 Z",
+    "labelX": 60,
+    "labelY": 91
+  },
+  "zones": [
+    {
+      "id": "103",
+      "label": "Section 103",
+      "mapLabel": "103",
+      "badge": "Lower left",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M9 48 Q20 57 39 62 L45 82 Q25 78 12 67 Z",
+      "labelX": 27,
+      "labelY": 66,
+      "description": "Lower-left seating keeps you close to KÀ’s moving stage while giving the action a slightly angled view."
+    },
+    {
+      "id": "102",
+      "label": "Section 102",
+      "mapLabel": "102",
+      "badge": "Lower center",
+      "our_pick": true,
+      "color": "#ffb000",
+      "path": "M39 62 Q60 67 81 62 L75 84 Q60 87 45 82 Z",
+      "labelX": 60,
+      "labelY": 73,
+      "description": "Section 102 is the lower-center Sweet Spot: a straight-on look at the moving platform with enough distance to read the full stage picture."
+    },
+    {
+      "id": "101",
+      "label": "Section 101",
+      "mapLabel": "101",
+      "badge": "Lower right",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M81 62 Q100 57 111 48 L108 67 Q95 78 75 84 Z",
+      "labelX": 93,
+      "labelY": 66,
+      "description": "Lower-right seating mirrors Section 103 with close stage detail from the opposite angle."
+    },
+    {
+      "id": "203",
+      "label": "Section 203",
+      "mapLabel": "203",
+      "badge": "Upper left",
+      "our_pick": false,
+      "color": "#16b9c8",
+      "path": "M5 18 Q20 29 41 35 L39 57 Q19 51 8 40 Z",
+      "labelX": 23,
+      "labelY": 37,
+      "description": "Section 203 gives you a broad elevated view of KÀ’s full scenic machinery from the left side."
+    },
+    {
+      "id": "202",
+      "label": "Section 202",
+      "mapLabel": "202",
+      "badge": "Upper center",
+      "our_pick": true,
+      "color": "#ffb000",
+      "path": "M41 35 Q60 40 79 35 L81 58 Q60 63 39 57 Z",
+      "labelX": 60,
+      "labelY": 48,
+      "description": "Section 202 is the elevated Sweet Spot: centered, wide and especially strong for seeing the scale of KÀ’s moving stage and aerial work."
+    },
+    {
+      "id": "201",
+      "label": "Section 201",
+      "mapLabel": "201",
+      "badge": "Upper right",
+      "our_pick": false,
+      "color": "#16b9c8",
+      "path": "M79 35 Q100 29 115 18 L112 40 Q101 51 81 58 Z",
+      "labelX": 97,
+      "labelY": 37,
+      "description": "Section 201 gives you the matching elevated full-production view from the right side."
+    }
+  ]
+}

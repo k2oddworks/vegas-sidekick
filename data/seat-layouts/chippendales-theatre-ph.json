@@ -1,0 +1,60 @@
+{
+  "venue": "Chippendales Theater · Planet Hollywood",
+  "address": "3667 S Las Vegas Blvd, Las Vegas, NV 89109",
+  "viewBox": "0 0 120 104",
+  "stage": {
+    "path": "M27 86 Q60 80 93 86 L88 99 H32 Z M55 58 H65 V88 H55 Z",
+    "labelX": 60,
+    "labelY": 93
+  },
+  "zones": [
+    {
+      "id": "runway",
+      "label": "Runway / Very VIP",
+      "mapLabel": "VERY VIP",
+      "badge": "Runway-adjacent",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M44 57 Q50 52 55 50 V78 Q49 80 43 79 Z M65 50 Q70 52 76 57 L77 79 Q71 80 65 78 Z",
+      "labelX": 38,
+      "labelY": 67,
+      "description": "The runway-adjacent Very VIP area prioritizes proximity to the performers and the strongest up-close cabaret feel."
+    },
+    {
+      "id": "hot-center",
+      "label": "Hot Seats · Center",
+      "mapLabel": "HOT CENTER",
+      "badge": "Center floor",
+      "our_pick": true,
+      "color": "#ffb000",
+      "path": "M30 43 Q60 34 90 43 L82 66 Q60 60 38 66 Z",
+      "labelX": 60,
+      "labelY": 50,
+      "description": "Center Hot Seats are the Sweet Spot: close to the runway while giving you a balanced view of the ensemble choreography and full stage."
+    },
+    {
+      "id": "hot-side",
+      "label": "Hot Seats · Side",
+      "mapLabel": "HOT SIDE",
+      "badge": "Side floor",
+      "our_pick": false,
+      "color": "#7b35ea",
+      "path": "M10 35 Q20 42 30 43 L38 66 Q22 63 11 53 Z M90 43 Q100 42 110 35 L109 53 Q98 63 82 66 Z",
+      "labelX": 20,
+      "labelY": 50,
+      "description": "Side Hot Seats keep you close to the room energy from a wider angle along the runway."
+    },
+    {
+      "id": "rear",
+      "label": "Rear Seating",
+      "mapLabel": "REAR",
+      "badge": "Full-room view",
+      "our_pick": false,
+      "color": "#16b9c8",
+      "path": "M16 12 Q60 24 104 12 L110 33 Q60 46 10 33 Z",
+      "labelX": 60,
+      "labelY": 27,
+      "description": "Rear seating gives you the broadest view of the room and is the value-focused way to watch the full choreography."
+    }
+  ]
+}
