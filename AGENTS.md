@@ -17,6 +17,8 @@ The current show-page benchmark is:
 
 If an older Carrot Top, Absinthe, V Theater, or other template conflicts with Nathan Burton or `SHOW-PAGE-BENCHMARK.md`, **Nathan Burton wins**.
 
+The shared showtimes booking module is a newer locked system and supersedes older Nathan/Carrot Top day-card schedule treatments where they conflict.
+
 ## Repository
 
 - Repo: `k2oddworks/vegas-sidekick`
@@ -66,12 +68,37 @@ Use the shared canonical assets and current page structure rather than rebuildin
 
 - `assets/show-canonical.css`
 - `assets/show-canonical.js`
+- `assets/showtimes-booking.css`
+- `assets/showtimes-booking.js`
 - current show database / source-of-truth data
 - current audits
 
 Primary ticket CTAs use Warm Amber `#FFB000`.
 
 Mobile heroes use the established safe treatment unless a show-specific focal override is needed.
+
+### Locked showtimes booking system
+
+The shared showtimes module is now the production standard for active show pages.
+
+For shows with a verified regular weekly schedule:
+
+- Show all seven weekday choices in a compact picker.
+- Active days are selectable; verified dark days are visibly muted and labeled **Dark**.
+- Selecting a day updates the showtime choices immediately.
+- Showtime buttons and the primary **Get Tickets for [day] →** CTA use the show’s existing verified affiliate URL.
+- Keep the primary CTA Warm Amber `#FFB000`.
+- Keep **View all dates & times →** as a visually substantial filled lavender secondary CTA.
+- Include the compact **Planning ahead? You can book tickets weeks and months in advance.** treatment.
+- Keep the shared Vegas dusk / skyline / Sphere artwork as the decorative footer treatment without a slogan.
+
+For genuinely variable schedules:
+
+- Do not fabricate weekday buttons or recurring times.
+- Use the variable-date version of the shared module.
+- State that the schedule varies by date and send the customer to **See available dates & times →** using the verified ticket URL.
+
+Use the shared assets rather than copying per-show CSS/JS. The show database schedule is the source of truth for generated weekday/time choices.
 
 ## Seating charts
 
