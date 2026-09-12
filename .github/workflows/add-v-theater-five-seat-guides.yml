@@ -1,0 +1,116 @@
+name: Add five V Theater seating guides
+on:
+  push:
+    paths:
+      - .github/workflows/add-v-theater-five-seat-guides.yml
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build reusable V Theater seating guides
+        run: |
+          python3 - <<'PY'
+          import json,re,subprocess
+          from pathlib import Path
+          root=Path('.')
+          layout_s='data/seat-layouts/v-theater-main-floor-vip-ga.json'
+          image_s='images/v-theater-main-floor-vip-ga-seating-chart.svg'
+          layout=root/layout_s
+          data=json.loads(layout.read_text())
+          data['viewBox']='0 0 120 100'
+          data['stage']={
+            'path':'M44 82 Q60 78 76 82 L72 94 H48 Z',
+            'labelX':60,'labelY':88,'label':'STAGE'
+          }
+          for z in data['zones']:
+            if z['id']=='vip':
+              z['description']='VIP Seating wraps the front and center performance area. It is the Vegas Sidekick Sweet Spot / Our Pick for V Theater: close enough for performer detail while keeping the full stage easy to read.'
+              z['color']='#ffb000'
+            elif z['id']=='ga':
+              z['description']='General Admission sits behind and along the outer areas, giving you a wider full-stage view and the lower-price way into this intimate room.'
+              z['color']='#19c7dd'
+          layout.write_text(json.dumps(data,indent=2)+"\n")
+          subprocess.run(['python3','scripts/generate-room-seat-chart.py',layout_s,image_s],check=True)
+
+          targets=[
+            'shows/family/v-the-ultimate-variety-show/index.html',
+            'shows/comedy/popovich-comedy-pet-theater/index.html',
+            'shows/adult/zombie-burlesque/index.html',
+            'shows/magic/allstars-of-magic/index.html',
+            'shows/magic/an-r-rated-magic-show/index.html',
+          ]
+          seat_re=re.compile(r'<section(?=[^>]*\bid=["\']seats["\'])[^>]*>.*?</section>',re.S|re.I)
+          for page_s in targets:
+            page=root/page_s
+            if not page.exists(): raise SystemExit(f'missing page {page_s}')
+            text=page.read_text()
+            if 'data-layout-url="/'+layout_s+'"' in text:
+              raise SystemExit(f'already upgraded: {page_s}')
+            m=re.search(r'https://spotlight\.vegas/[^"\'<>\s]+/ref/vegassidekick',text)
+            if not m: raise SystemExit(f'no verified affiliate URL found in {page_s}')
+            ticket=m.group(0)
+            if '/assets/seat-layouts/room-layout.css' not in text:
+              text=text.replace('</head>','<link href="/assets/seat-layouts/room-layout.css?v=1" rel="stylesheet"/></head>',1)
+            if '/assets/seat-layouts/room-layout.js' not in text:
+              text=text.replace('</body>','<script defer src="/assets/seat-layouts/room-layout.js?v=1"></script></body>',1)
+            section=(
+              '<section class="section" id="seats"><div class="wrap">'
+              '<div class="eyebrow">Seat guide</div>'
+              '<h2>Find your seat at V Theater</h2>'
+              '<p class="lede">VIP Seating is the Sweet Spot / Our Pick. It keeps you close to the performance while still giving the full stage enough room to read.</p>'
+              f'<div class="vs-room-seat-guide" data-layout-url="/{layout_s}" data-seat-layout="v-theater-main-floor-vip-ga" data-ticket-url="{ticket}"></div>'
+              f'<div class="vs-seat-chart-gallery"><img class="vs-chart-gallery" loading="lazy" src="/{image_s}" alt="V Theater seating chart showing VIP Seating and General Admission, with VIP marked as the Vegas Sidekick Sweet Spot"/></div>'
+              '</div></section>'
+            )
+            if seat_re.search(text):
+              text=seat_re.sub(section,text,count=1)
+            else:
+              fit=re.search(r'<section(?=[^>]*\bid=["\']fit["\'])',text,re.I)
+              if not fit: raise SystemExit(f'no seats or fit section in {page_s}')
+              text=text[:fit.start()]+section+text[fit.start():]
+            if 'href="#seats"' not in text:
+              text=text.replace('<a href="#photos">Photos</a>','<a href="#photos">Photos</a><a href="#seats">Seat guide</a>',1)
+            page.write_text(text)
+          PY
+      - name: Run relevant audits
+        run: |
+          python3 scripts/audit-event-schema.py
+          python3 scripts/audit-ticket-cta-color.py
+          python3 scripts/audit-mobile-show-heroes.py
+          python3 scripts/audit-catalog-js-syntax.py
+          python3 scripts/audit-content-link-hygiene.py
+          git diff --check
+      - name: Verify five guide hooks
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          pages=[
+            'shows/family/v-the-ultimate-variety-show/index.html',
+            'shows/comedy/popovich-comedy-pet-theater/index.html',
+            'shows/adult/zombie-burlesque/index.html',
+            'shows/magic/allstars-of-magic/index.html',
+            'shows/magic/an-r-rated-magic-show/index.html',
+          ]
+          for p in pages:
+            t=Path(p).read_text()
+            assert t.count('class="vs-room-seat-guide"')==1,p
+            assert 'data-layout-url="/data/seat-layouts/v-theater-main-floor-vip-ga.json"' in t,p
+            assert '/images/v-theater-main-floor-vip-ga-seating-chart.svg' in t,p
+            assert 'VIP Seating is the Sweet Spot / Our Pick' in t,p
+          print('five V Theater seating guides verified')
+          PY
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/seat-layouts/v-theater-main-floor-vip-ga.json images/v-theater-main-floor-vip-ga-seating-chart.svg \
+            shows/family/v-the-ultimate-variety-show/index.html \
+            shows/comedy/popovich-comedy-pet-theater/index.html \
+            shows/adult/zombie-burlesque/index.html \
+            shows/magic/allstars-of-magic/index.html \
+            shows/magic/an-r-rated-magic-show/index.html
+          git commit -m "Add five V Theater seating guides"
+          git push
