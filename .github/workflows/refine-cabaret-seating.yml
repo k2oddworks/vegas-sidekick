@@ -1,0 +1,70 @@
+name: Refine cabaret seating
+on:
+  push:
+    paths:
+      - '.github/workflows/refine-cabaret-seating.yml'
+permissions:
+  contents: write
+jobs:
+  refine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Refresh cabaret seating assets on target pages
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          targets=[
+            Path('shows/adult/x-burlesque/index.html'),
+            Path('shows/comedy/comedy-cellar/index.html'),
+          ]
+          for p in targets:
+            s=p.read_text()
+            s=s.replace('/assets/seat-layouts/room-map.css?v=1','/assets/seat-layouts/room-map.css?v=2')
+            s=s.replace('/assets/seat-layouts/room-map.js?v=1','/assets/seat-layouts/room-map.js?v=2')
+            p.write_text(s)
+          PY
+      - name: Seating behavior QA
+        run: |
+          python3 - <<'PY'
+          import json,re
+          from pathlib import Path
+          pairs=[
+            ('shows/adult/x-burlesque/index.html','data/seat-layouts/bugsys-cabaret.json','images/bugsys-cabaret-seating-chart.svg'),
+            ('shows/comedy/comedy-cellar/index.html','data/seat-layouts/comedy-cellar-rio.json','images/comedy-cellar-rio-seating-chart.svg'),
+          ]
+          for page,dataf,svgf in pairs:
+            html=Path(page).read_text(); data=json.loads(Path(dataf).read_text()); svg=Path(svgf).read_text()
+            assert '/assets/seat-layouts/room-map.css?v=2' in html, page+' CSS cache version missing'
+            assert '/assets/seat-layouts/room-map.js?v=2' in html, page+' JS cache version missing'
+            assert svgf.replace('images/','/images/') in html, page+' seating chart gallery image missing'
+            assert 'width="1200"' in svg and 'height="1000"' in svg and 'viewBox=' in svg, svgf+' SVG dimensions missing'
+            assert any(z.get('our_pick') for z in data['zones']), dataf+' has no Sweet Spot'
+            for z in data['zones']:
+              assert z.get('path') and z.get('label') and z.get('description'), dataf+' incomplete zone '+z.get('id','?')
+          x=json.loads(Path('data/seat-layouts/bugsys-cabaret.json').read_text())
+          assert {z['id'] for z in x['zones'] if z.get('our_pick')}=={'pink2','pink3','pink4'}
+          c=json.loads(Path('data/seat-layouts/comedy-cellar-rio.json').read_text())
+          assert {z['id'] for z in c['zones'] if z.get('our_pick')}=={'preferred'}
+          assert {z['id'] for z in c['zones']}=={'vip','preferred','ga'}
+          js=Path('assets/seat-layouts/room-map.js').read_text()
+          assert 'matchMedia' in js and "keydown" in js and 'touchstart' in js and 'touchend' in js
+          print('cabaret seating QA passed')
+          PY
+      - name: Repository audits
+        run: |
+          python3 scripts/audit-event-schema.py
+          python3 scripts/audit-ticket-cta-color.py
+          python3 scripts/audit-mobile-show-heroes.py
+          python3 scripts/audit-catalog-js-syntax.py
+          if [ -f scripts/audit-content-link-hygiene.py ]; then python3 scripts/audit-content-link-hygiene.py; fi
+          git diff --check
+      - name: Commit and push
+        run: |
+          git config user.name 'Kris Kidd'
+          git config user.email 'k2oddworks@gmail.com'
+          git add shows/adult/x-burlesque/index.html shows/comedy/comedy-cellar/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'Refresh X Burlesque and Comedy Cellar seating assets'
+            git push origin main
+          fi
