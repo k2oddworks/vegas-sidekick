@@ -21,6 +21,12 @@ DAY_ABBR = {d: d[:3] for d in DAY_ORDER}
 # Explicit editorial/source-of-truth overrides for schedules that cannot safely be
 # represented by the current public Spotlight markup. Do not remove without re-verifying.
 MANUAL_SCHEDULE_OVERRIDES = {
+    "penn-and-teller": {
+        "schedule_days": {"Thursday": [], "Friday": [], "Saturday": [], "Sunday": []},
+        "schedule_summary": "Thu, Fri, Sat, Sun · Times vary",
+        "schedule_variable": True,
+        "schedule_raw": ["Rio and Spotlight currently disagree on the fixed start hour; verify live calendar."],
+    },
     "marc-savard-comedy-hypnosis": {
         "schedule_days": {},
         "schedule_summary": "Times vary · Check live calendar",

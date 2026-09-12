@@ -1,0 +1,166 @@
+{
+  "id": "penn-teller-theater-rio",
+  "venue": "Penn & Teller Theater · Rio Las Vegas",
+  "address": "3700 W Flamingo Rd, Las Vegas, NV 89103",
+  "stage": "Stage",
+  "zones": [
+    {
+      "id": "section-1",
+      "label": "Section 1",
+      "our_pick": true,
+      "badge": "Sweet spot",
+      "color": "#ffb000",
+      "description": "Section 1 is part of the Vegas Sidekick Sweet Spot / Our Pick group. Sections 1–6 keep you in the main sightline of the room with a strong view of the stage and the visual details in the act."
+    },
+    {
+      "id": "section-2",
+      "label": "Section 2",
+      "our_pick": true,
+      "badge": "Sweet spot",
+      "color": "#ffb000",
+      "description": "Section 2 is part of the Vegas Sidekick Sweet Spot / Our Pick group. Sections 1–6 keep you in the main sightline of the room with a strong view of the stage and the visual details in the act."
+    },
+    {
+      "id": "section-3",
+      "label": "Section 3",
+      "our_pick": true,
+      "badge": "Sweet spot",
+      "color": "#ffb000",
+      "description": "Section 3 is part of the Vegas Sidekick Sweet Spot / Our Pick group. Sections 1–6 keep you in the main sightline of the room with a strong view of the stage and the visual details in the act."
+    },
+    {
+      "id": "section-4",
+      "label": "Section 4",
+      "our_pick": true,
+      "badge": "Sweet spot",
+      "color": "#ffb000",
+      "description": "Section 4 is part of the Vegas Sidekick Sweet Spot / Our Pick group. Sections 1–6 keep you in the main sightline of the room with a strong view of the stage and the visual details in the act."
+    },
+    {
+      "id": "section-5",
+      "label": "Section 5",
+      "our_pick": true,
+      "badge": "Sweet spot",
+      "color": "#ffb000",
+      "description": "Section 5 is part of the Vegas Sidekick Sweet Spot / Our Pick group. Sections 1–6 keep you in the main sightline of the room with a strong view of the stage and the visual details in the act."
+    },
+    {
+      "id": "section-6",
+      "label": "Section 6",
+      "our_pick": true,
+      "badge": "Sweet spot",
+      "color": "#ffb000",
+      "description": "Section 6 is part of the Vegas Sidekick Sweet Spot / Our Pick group. Sections 1–6 keep you in the main sightline of the room with a strong view of the stage and the visual details in the act."
+    },
+    {
+      "id": "section-7",
+      "label": "Section 7",
+      "our_pick": false,
+      "badge": "Wide view",
+      "color": "#0fb5c9",
+      "description": "Section 7 sits farther across the room and gives you a wider look at the full stage. It is a good option when you want to take in the whole production from a little more distance."
+    },
+    {
+      "id": "section-8",
+      "label": "Section 8",
+      "our_pick": false,
+      "badge": "Wide view",
+      "color": "#0fb5c9",
+      "description": "Section 8 sits farther across the room and gives you a wider look at the full stage. It is a good option when you want to take in the whole production from a little more distance."
+    },
+    {
+      "id": "section-9",
+      "label": "Section 9",
+      "our_pick": false,
+      "badge": "Wide view",
+      "color": "#0fb5c9",
+      "description": "Section 9 sits farther across the room and gives you a wider look at the full stage. It is a good option when you want to take in the whole production from a little more distance."
+    },
+    {
+      "id": "amp-1",
+      "label": "AMP 1",
+      "our_pick": false,
+      "badge": "Stage-side",
+      "color": "#f43f8c",
+      "description": "AMP 1 sits along the stage-side edge of the room. It puts you close to the performance area with a distinct side angle."
+    },
+    {
+      "id": "amp-2",
+      "label": "AMP 2",
+      "our_pick": false,
+      "badge": "Stage-side",
+      "color": "#f43f8c",
+      "description": "AMP 2 is a stage-side section with a close view toward the performance area and a more angled perspective than the main center sections."
+    },
+    {
+      "id": "amp-3",
+      "label": "AMP 3",
+      "our_pick": false,
+      "badge": "Stage-side",
+      "color": "#f43f8c",
+      "description": "AMP 3 is another stage-side option. It keeps the stage close while giving you a side-on view of the room."
+    },
+    {
+      "id": "booths",
+      "label": "Booths",
+      "our_pick": false,
+      "badge": "Distinct setup",
+      "color": "#7c3aed",
+      "description": "The booths run through the central aisle between the main seating blocks. They offer a more separated seating setup with a clear angle toward the stage."
+    }
+  ],
+  "shapes": [
+    {
+      "zone": "section-3",
+      "points": "16,11 39,3 49,23 24,30 14,22"
+    },
+    {
+      "zone": "section-2",
+      "points": "14,30 49,23 49,54 18,48"
+    },
+    {
+      "zone": "section-1",
+      "points": "18,48 49,54 43,79 23,72 14,60"
+    },
+    {
+      "zone": "section-6",
+      "points": "44,3 72,3 78,23 51,30 49,16"
+    },
+    {
+      "zone": "section-5",
+      "points": "51,30 78,23 82,54 51,54"
+    },
+    {
+      "zone": "section-4",
+      "points": "51,54 82,54 74,79 45,80"
+    },
+    {
+      "zone": "section-9",
+      "points": "73,5 96,8 99,27 80,33"
+    },
+    {
+      "zone": "section-8",
+      "points": "80,33 99,27 99,59 84,56"
+    },
+    {
+      "zone": "section-7",
+      "points": "84,56 99,59 95,78 75,80"
+    },
+    {
+      "zone": "amp-3",
+      "points": "8,19 17,12 19,25 10,30"
+    },
+    {
+      "zone": "amp-2",
+      "points": "8,30 19,25 20,47 8,43"
+    },
+    {
+      "zone": "amp-1",
+      "points": "8,43 20,47 18,61 9,57"
+    },
+    {
+      "zone": "booths",
+      "points": "47,20 52,20 52,59 47,59"
+    }
+  ]
+}

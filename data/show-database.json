@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-09-10",
+  "updated_on": "2026-09-12",
   "source": "Vegas Sidekick Show Database",
   "records": [
     {
@@ -2464,14 +2464,14 @@
       "age_summary": "5+",
       "venue": "Penn & Teller Theater - Rio Hotel",
       "showroom": "",
-      "schedule_summary": "Thu, Fri, Sat, Sun · 8 PM",
+      "schedule_summary": "Thu, Fri, Sat, Sun · Times vary",
       "ticket_url": "https://spotlight.vegas/shows/magic/penn-and-teller/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/magic/penn-and-teller/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-09-12",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
-      "notes": "",
+      "notes": "Schedule times intentionally treated as variable after Rio and Spotlight showed conflicting current start times on 2026-09-12. Keep Thu–Sun days; do not restore a fixed hour without re-verifying both sources.",
       "spotlight": {
         "name": "Penn & Teller Las Vegas",
         "our_price": 66,
@@ -2481,26 +2481,15 @@
         "age_rule": "Must be 5 years of age or older.",
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater.",
         "schedule_days": {
-          "Thursday": [
-            "8 PM"
-          ],
-          "Friday": [
-            "8 PM"
-          ],
-          "Saturday": [
-            "8 PM"
-          ],
-          "Sunday": [
-            "8 PM"
-          ]
+          "Thursday": [],
+          "Friday": [],
+          "Saturday": [],
+          "Sunday": []
         },
-        "schedule_summary": "Thu, Fri, Sat, Sun · 8 PM",
-        "schedule_variable": false,
+        "schedule_summary": "Thu, Fri, Sat, Sun · Times vary",
+        "schedule_variable": true,
         "schedule_raw": [
-          "Thursday - 8:00pm",
-          "Friday - 8:00pm",
-          "Saturday - 8:00pm",
-          "Sunday - 8:00pm"
+          "Current Rio and Spotlight listings disagree on 8 PM vs 9 PM; verify live calendar."
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/penn-and-teller/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/penn-and-teller/ref/vegassidekick",
