@@ -1,10 +1,12 @@
 # Vegas Sidekick — Show Page Benchmark
 
 **Current benchmark:** `shows/magic/nathan-burton-comedy-magic/index.html`  
-**Locked:** September 9, 2026  
+**Locked:** September 12, 2026  
 **Status:** Governing UX / copy / interaction benchmark for active show product pages.
 
-If an older template, benchmark, prompt, or example conflicts with this document or the current Nathan Burton page, **Nathan Burton wins**.
+If an older template, benchmark, prompt, or example conflicts with this document or the current Nathan Burton page, **Nathan Burton wins**, except where a newer locked shared system is explicitly documented here.
+
+The current shared showtimes booking module is newer than Nathan Burton’s original day-card schedule treatment and supersedes that older showtimes pattern.
 
 This document defines the system. Do not copy Nathan-specific show facts into another page.
 
@@ -32,7 +34,7 @@ Preferred active-show flow:
 6. Photos
 7. Seat Guide when useful
 8. Good Fit / useful fit guidance
-9. Showtimes / schedule treatment
+9. Showtimes / booking module
 10. FAQ
 11. Related shows
 12. Next useful click
@@ -91,9 +93,9 @@ Rules:
 
 ---
 
-## 6. Quick facts and schedule labels
+## 6. Quick facts, schedule labels, and the locked showtimes booking system
 
-Use confident labels:
+Use confident quick-fact labels:
 
 - **Start time** — one reliable time
 - **Start times** — multiple reliable times
@@ -101,11 +103,59 @@ Use confident labels:
 
 Do not use **Typical start**.
 
-For schedule inventory links, prefer:
+### Shared showtimes assets
 
-**See available dates & times →**
+The production showtimes system is shared and reusable:
 
-Do not fabricate a fixed weekly schedule when the real schedule varies.
+- `assets/showtimes-booking.css`
+- `assets/showtimes-booking.js`
+- current verified schedule data in `data/show-database.json`
+
+Do not copy show-specific CSS/JS for the booking module unless there is a genuine exception that cannot be handled by the shared system.
+
+### Verified regular weekly schedules
+
+When the show has a verified regular weekly schedule, use the shared conversion-focused booking module rather than the old large day-card grid.
+
+The module should include:
+
+- **Pick your night** eyebrow
+- **Find your showtime** headline
+- concise verified weekly schedule summary
+- all seven weekday choices in one compact row / picker
+- active show days selectable
+- verified dark days visibly muted and labeled **Dark**
+- selected day highlighted in purple
+- showtime choices displayed immediately for the selected day
+- each showtime linked to the existing verified affiliate URL
+- one dominant Warm Amber **Get Tickets for [day] →** CTA
+- one substantial filled-lavender **View all dates & times →** secondary CTA
+- a compact **Planning ahead? You can book tickets weeks and months in advance.** card
+- the shared decorative Vegas dusk / skyline / Sphere artwork at the bottom, with **no slogan**
+
+The hierarchy matters:
+
+1. Pick a day.
+2. See the times.
+3. Take the amber ticket action.
+4. Use **View all dates & times →** for future dates or broader inventory.
+
+Do not make every day its own oversized card. Do not turn the section back into a timetable wall.
+
+### Variable schedules
+
+If the schedule genuinely varies by date, do not fabricate recurring weekday buttons or recurring times.
+
+Use the variable-date version of the shared module:
+
+- clearly state **Schedule varies by date**
+- use **See available dates & times →** as the primary ticket action
+- retain the planning-ahead treatment and shared artwork
+- link only to the existing verified affiliate URL
+
+### Source-of-truth requirement
+
+The show database schedule is the source of truth for the picker and time choices. Keep the page, structured data, database, and catalogs aligned so stale schedule information cannot regenerate later.
 
 ---
 
@@ -349,7 +399,9 @@ Use other active audits when the change touches their domain.
 
 ---
 
-## 14. Nathan Burton benchmark assets
+## 14. Locked reusable benchmark assets
+
+### Seating
 
 Current reusable room implementation:
 
@@ -359,11 +411,23 @@ Current reusable room implementation:
 - `images/nathan-burton-theater-seating-chart.svg`
 - `scripts/generate-seat-layout-assets.py`
 
-Current benchmark page:
+When expanding this system to another show in the same room, reuse the room geometry and change only the show-specific recommendation/content layer as needed.
+
+### Showtimes
+
+Current reusable showtimes implementation:
+
+- `assets/showtimes-booking.css`
+- `assets/showtimes-booking.js`
+- verified schedule data in `data/show-database.json`
+
+Use this shared showtimes system across active show pages. Do not resurrect older day-card schedule grids unless Kris explicitly changes the benchmark.
+
+### Current benchmark page
 
 - `shows/magic/nathan-burton-comedy-magic/index.html`
 
-When expanding this system to another show in the same room, reuse the room geometry and change only the show-specific recommendation/content layer as needed.
+Nathan Burton remains the overall page benchmark, while the newer shared showtimes module governs the Showtimes section.
 
 ---
 
@@ -372,11 +436,12 @@ When expanding this system to another show in the same room, reuse the room geom
 For active show-page work, use this order when instructions conflict:
 
 1. Explicit current instruction from Kris
-2. Current production Nathan Burton benchmark page
-3. `SHOW-PAGE-BENCHMARK.md`
-4. Vegas Sidekick Brand Bible / `BRAND.md`
-5. `VS_CHAT_CONTEXT.md`
-6. `SHOW-BUILDER-PROMPT.md`
-7. Older benchmark/template examples
+2. Newer locked shared systems explicitly documented in this benchmark
+3. Current production Nathan Burton benchmark page
+4. `SHOW-PAGE-BENCHMARK.md`
+5. Vegas Sidekick Brand Bible / `BRAND.md`
+6. `VS_CHAT_CONTEXT.md`
+7. `SHOW-BUILDER-PROMPT.md`
+8. Older benchmark/template examples
 
 Do not silently resurrect older patterns just because they still exist in legacy files.
