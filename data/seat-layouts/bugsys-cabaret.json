@@ -3,128 +3,148 @@
   "address": "3555 S Las Vegas Blvd, Las Vegas, NV 89109",
   "viewBox": "0 0 120 105",
   "stage": {
-    "path": "M37 82 L83 82 L94 93 L82 102 H38 L26 93 Z",
+    "path": "M34 87 Q60 82 86 87 L82 101 H38 Z",
     "labelX": 60,
-    "labelY": 93
+    "labelY": 94
   },
   "structures": [
     {
-      "path": "M51 37 H69 V61 H51 Z",
+      "path": "M56 49 A4 4 0 1 0 64 49 A4 4 0 1 0 56 49",
       "label": "POLE",
       "labelX": 60,
-      "labelY": 50
+      "labelY": 49
     }
   ],
   "zones": [
     {
-      "id": "ga-left",
-      "label": "General Admission \u00b7 Left",
-      "badge": "Value side",
-      "our_pick": false,
-      "color": "#16b9c8",
-      "path": "M4 25 L31 8 L43 24 L29 73 L8 62 Z",
-      "labelX": 21,
-      "labelY": 40,
-      "description": "General Admission on the left gives you the widest-angle view and keeps the ticket cost focused on the show rather than proximity."
-    },
-    {
       "id": "pink2",
       "label": "Pink Circle 2",
-      "badge": "Left of pole",
+      "mapLabel": "PINK 2",
+      "badge": "Left of center",
       "our_pick": true,
       "color": "#ffb000",
-      "path": "M31 67 L42 72 L51 60 L47 28 L40 31 Z",
-      "labelX": 42,
-      "labelY": 52,
-      "description": "Pink Circle 2 wraps the left side of the central performance area. It is part of the Vegas Sidekick Sweet Spot / Our Pick group."
-    },
-    {
-      "id": "vip1",
-      "label": "VIP 1",
-      "badge": "Near-stage left",
-      "our_pick": false,
-      "color": "#ff3b8d",
-      "path": "M27 72 L34 75 L42 68 L38 58 Z",
-      "labelX": 34,
-      "labelY": 68,
-      "description": "VIP 1 sits very close to the stage on the left, prioritizing proximity and performer detail."
-    },
-    {
-      "id": "vip2",
-      "label": "VIP 2",
-      "badge": "Left-center",
-      "our_pick": false,
-      "color": "#ff3b8d",
-      "path": "M35 50 L41 54 L46 42 L43 35 Z",
-      "labelX": 41,
-      "labelY": 45,
-      "description": "VIP 2 is a close left-center option with a direct angle into the central pole area."
+      "path": "M27 55 Q34 38 51 32 L55 44 Q44 49 40 61 Z",
+      "labelX": 39,
+      "labelY": 43,
+      "tables": [{"x":34,"y":50},{"x":39,"y":41},{"x":47,"y":37},{"x":43,"y":56}],
+      "description": "Pink Circle 2 follows the left side of the central performance area, close enough for strong detail while keeping an easy angle toward both the pole and stage."
     },
     {
       "id": "pink3",
       "label": "Pink Circle 3",
-      "badge": "Center rear",
+      "mapLabel": "PINK 3",
+      "badge": "Centered",
       "our_pick": true,
       "color": "#ffb000",
-      "path": "M45 21 Q60 15 75 21 L70 36 H50 Z",
+      "path": "M48 28 Q60 22 72 28 L68 42 Q60 38 52 42 Z",
       "labelX": 60,
-      "labelY": 26,
-      "description": "Pink Circle 3 is centered behind the pole area and gives the most symmetrical view in the room. It is part of the Sweet Spot / Our Pick group."
-    },
-    {
-      "id": "vip3",
-      "label": "VIP 3",
-      "badge": "Rear center",
-      "our_pick": false,
-      "color": "#ff3b8d",
-      "path": "M48 10 Q60 6 72 10 L74 20 Q60 16 46 20 Z",
-      "labelX": 60,
-      "labelY": 14,
-      "description": "VIP 3 is the centered rear VIP row, giving a straight-on look over the central performance area."
+      "labelY": 31,
+      "tables": [{"x":53,"y":32},{"x":60,"y":29},{"x":67,"y":32},{"x":60,"y":38}],
+      "description": "Pink Circle 3 is the straightest centered view into the room and the strongest single pick when you want the stage and central performance area lined up in front of you."
     },
     {
       "id": "pink4",
       "label": "Pink Circle 4",
-      "badge": "Right of pole",
+      "mapLabel": "PINK 4",
+      "badge": "Right of center",
       "our_pick": true,
       "color": "#ffb000",
-      "path": "M69 60 L78 72 L89 67 L80 31 L73 28 Z",
-      "labelX": 78,
-      "labelY": 52,
-      "description": "Pink Circle 4 wraps the right side of the central performance area. It is part of the Vegas Sidekick Sweet Spot / Our Pick group."
+      "path": "M69 32 Q86 38 93 55 L80 61 Q76 49 65 44 Z",
+      "labelX": 81,
+      "labelY": 43,
+      "tables": [{"x":73,"y":37},{"x":81,"y":41},{"x":86,"y":50},{"x":77,"y":56}],
+      "description": "Pink Circle 4 mirrors Pink 2 on the right side, staying close to the central performance area with a clean angle back toward the stage."
+    },
+    {
+      "id": "vip1",
+      "label": "VIP 1",
+      "mapLabel": "VIP 1",
+      "badge": "Front left",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M22 69 Q27 61 36 57 L43 69 Q36 73 31 79 Z",
+      "labelX": 31,
+      "labelY": 66,
+      "tables": [{"x":28,"y":68},{"x":35,"y":64},{"x":36,"y":73}],
+      "description": "VIP 1 sits on the front-left side near the stage, a good choice when proximity matters more than being perfectly centered."
+    },
+    {
+      "id": "vip2",
+      "label": "VIP 2",
+      "mapLabel": "VIP 2",
+      "badge": "Left-center",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M14 47 Q20 30 35 20 L46 31 Q33 40 28 56 Z",
+      "labelX": 27,
+      "labelY": 35,
+      "tables": [{"x":21,"y":45},{"x":25,"y":36},{"x":31,"y":28},{"x":34,"y":46}],
+      "description": "VIP 2 is a left-center table group that keeps the central performance area comfortably in view without paying for the Pink Circle tier."
+    },
+    {
+      "id": "vip3",
+      "label": "VIP 3",
+      "mapLabel": "VIP 3",
+      "badge": "Rear center",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M39 12 Q60 5 81 12 L74 26 Q60 20 46 26 Z",
+      "labelX": 60,
+      "labelY": 15,
+      "tables": [{"x":47,"y":16},{"x":55,"y":12},{"x":65,"y":12},{"x":73,"y":16},{"x":60,"y":21}],
+      "description": "VIP 3 is the centered VIP group behind Pink Circle 3, giving you a straight-on room view at a little more distance."
     },
     {
       "id": "vip4",
       "label": "VIP 4",
+      "mapLabel": "VIP 4",
       "badge": "Right-center",
       "our_pick": false,
       "color": "#ff3b8d",
-      "path": "M74 42 L79 54 L85 50 L77 35 Z",
-      "labelX": 79,
-      "labelY": 45,
-      "description": "VIP 4 is a close right-center option with a direct angle toward the pole and stage."
+      "path": "M74 31 L85 20 Q100 30 106 47 L92 56 Q87 40 74 31 Z",
+      "labelX": 93,
+      "labelY": 35,
+      "tables": [{"x":99,"y":45},{"x":95,"y":36},{"x":89,"y":28},{"x":86,"y":46}],
+      "description": "VIP 4 is the right-center counterpart to VIP 2, balancing a clear overall view with a closer cabaret feel."
     },
     {
       "id": "vip5",
       "label": "VIP 5",
-      "badge": "Near-stage right",
+      "mapLabel": "VIP 5",
+      "badge": "Front right",
       "our_pick": false,
       "color": "#ff3b8d",
-      "path": "M78 68 L86 75 L93 72 L82 58 Z",
-      "labelX": 86,
-      "labelY": 68,
-      "description": "VIP 5 is the near-stage right counterpart to VIP 1, emphasizing closeness to the performers."
+      "path": "M84 57 Q93 61 98 69 L89 79 Q84 73 77 69 Z",
+      "labelX": 89,
+      "labelY": 66,
+      "tables": [{"x":92,"y":68},{"x":85,"y":64},{"x":84,"y":73}],
+      "description": "VIP 5 is the front-right group near the stage, with a close cabaret view from that side of the room."
     },
     {
-      "id": "ga-right",
-      "label": "General Admission \u00b7 Right",
+      "id": "ga-left",
+      "label": "General Admission · Left",
+      "mapLabel": "GA",
       "badge": "Value side",
       "our_pick": false,
       "color": "#16b9c8",
-      "path": "M116 25 L89 8 L77 24 L91 73 L112 62 Z",
-      "labelX": 99,
-      "labelY": 40,
-      "description": "General Admission on the right gives you the widest-angle view from that side and is the value-focused choice."
+      "path": "M3 25 Q13 12 30 7 L39 19 Q23 28 17 47 L12 72 L3 65 Z",
+      "labelX": 13,
+      "labelY": 23,
+      "tables": [{"x":10,"y":29},{"x":15,"y":20},{"x":24,"y":14},{"x":11,"y":42},{"x":9,"y":56}],
+      "description": "General Admission on the left keeps you in this intimate room at the value end of the ticket range, with a wider angle across the performance space."
+    },
+    {
+      "id": "ga-right",
+      "label": "General Admission · Right",
+      "mapLabel": "GA",
+      "badge": "Value side",
+      "our_pick": false,
+      "color": "#16b9c8",
+      "path": "M117 25 Q107 12 90 7 L81 19 Q97 28 103 47 L108 72 L117 65 Z",
+      "labelX": 107,
+      "labelY": 23,
+      "tables": [{"x":110,"y":29},{"x":105,"y":20},{"x":96,"y":14},{"x":109,"y":42},{"x":111,"y":56}],
+      "description": "General Admission on the right is the matching value-focused option, trading some centering for a lower ticket tier in a compact showroom."
     }
   ]
 }
