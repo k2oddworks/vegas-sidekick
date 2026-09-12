@@ -1913,8 +1913,8 @@
       "name": "Michael Jackson ONE by Cirque du Soleil",
       "category": "cirque",
       "status": "active",
-      "our_price": 115,
-      "regular_price": 163,
+      "our_price": 163,
+      "regular_price": null,
       "runtime_minutes": 90,
       "age_summary": "5+",
       "venue": "Mandalay Bay Theatre – The Mandalay Bay Hotel",
@@ -1923,14 +1923,14 @@
       "ticket_url": "https://spotlight.vegas/shows/cirque-du-soleil/michael-jackson-one/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/cirque/michael-jackson-one/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-09-12",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
       "notes": "",
       "spotlight": {
         "name": "Michael Jackson ONE by Cirque du Soleil",
-        "our_price": 115,
-        "regular_price": 163,
+        "our_price": 163,
+        "regular_price": null,
         "location": "Mandalay Bay Theatre – The Mandalay Bay Hotel",
         "runtime_minutes": 90,
         "age_rule": "Everyone must be 5 years of age or older to attend the event.",
@@ -1970,9 +1970,9 @@
         "affiliate_url": "https://spotlight.vegas/shows/cirque-du-soleil/michael-jackson-one/ref/vegassidekick",
         "age_label": "5+"
       },
-      "savings_amount": 48,
-      "savings_percent": 29,
-      "is_deal": true
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
     },
     {
       "slug": "mind2mind",

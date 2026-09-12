@@ -1,0 +1,86 @@
+{
+  "id": "mandalay-bay-theatre",
+  "venue": "Mandalay Bay Theatre",
+  "address": "3950 S Las Vegas Blvd, Las Vegas, NV 89119",
+  "viewBox": "0 0 120 100",
+  "stage": {
+    "x": 38,
+    "y": 86,
+    "w": 44,
+    "h": 8
+  },
+  "zones": [
+    {
+      "id": "103",
+      "label": "Section 103",
+      "badge": "Lower left",
+      "our_pick": true,
+      "color": "#ffb000",
+      "points": "20,78 38,82 42,52 28,48",
+      "description": "Lower left seating with a close view of the performers and strong stage detail. It is part of the Vegas Sidekick Sweet Spot / Our Pick group."
+    },
+    {
+      "id": "102",
+      "label": "Section 102",
+      "badge": "Lower center",
+      "our_pick": true,
+      "color": "#ffb000",
+      "points": "42,82 78,82 74,48 46,48",
+      "description": "The main lower-center block. It keeps the stage straight ahead and is part of the Vegas Sidekick Sweet Spot / Our Pick group."
+    },
+    {
+      "id": "101",
+      "label": "Section 101",
+      "badge": "Lower right",
+      "our_pick": true,
+      "color": "#ffb000",
+      "points": "78,82 100,78 92,48 74,52",
+      "description": "Lower right seating with a close view and clear access to the full stage picture. It is part of the Vegas Sidekick Sweet Spot / Our Pick group."
+    },
+    {
+      "id": "205",
+      "label": "Section 205",
+      "badge": "Upper side",
+      "our_pick": false,
+      "color": "#0fb5c9",
+      "points": "3,40 27,46 24,18 7,13",
+      "description": "The far-left upper section gives you a wider view of the full production and is a strong choice when seeing the whole stage picture matters most."
+    },
+    {
+      "id": "204",
+      "label": "Section 204",
+      "badge": "Upper left center",
+      "our_pick": true,
+      "color": "#ffb000",
+      "points": "27,46 46,44 45,12 25,14",
+      "description": "Upper left-center seating balances the wider full-stage view with a strong angle toward the center of the production. It is part of the Sweet Spot / Our Pick group."
+    },
+    {
+      "id": "203",
+      "label": "Section 203",
+      "badge": "Upper center",
+      "our_pick": true,
+      "color": "#ffb000",
+      "points": "46,44 74,44 72,11 48,11",
+      "description": "The central upper block gives you the most symmetrical wide view of the theater. It is part of the Sweet Spot / Our Pick group."
+    },
+    {
+      "id": "202",
+      "label": "Section 202",
+      "badge": "Upper right center",
+      "our_pick": true,
+      "color": "#ffb000",
+      "points": "74,44 93,46 95,14 75,12",
+      "description": "Upper right-center seating gives you a broad view while keeping the stage comfortably centered. It is part of the Sweet Spot / Our Pick group."
+    },
+    {
+      "id": "201",
+      "label": "Section 201",
+      "badge": "Upper side",
+      "our_pick": false,
+      "color": "#0fb5c9",
+      "points": "93,46 117,40 113,13 96,18",
+      "description": "The far-right upper section gives you a broad full-production view and can be a smart choice when you prefer to take in the entire stage at once."
+    }
+  ]
+}
