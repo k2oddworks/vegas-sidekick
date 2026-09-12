@@ -1,0 +1,71 @@
+name: Fix desktop show galleries
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-desktop-show-galleries.yml'
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fix gallery count classes and desktop four-item layout
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          pages=[
+            'shows/adult/magic-mike-live/index.html',
+            'shows/music/jabbawockeez/index.html',
+            'shows/family/battlebots-destruct-a-thon/index.html',
+            'shows/magic/the-conjurors/index.html',
+            'shows/magic/paranormal/index.html',
+          ]
+
+          for f in pages:
+              p=Path(f)
+              s=p.read_text()
+              # These pages now contain three show photos + one seating chart.
+              s=s.replace('class="gallery gallery-3"','class="gallery gallery-4"',1)
+              p.write_text(s)
+
+          css=Path('assets/show-canonical.css')
+          s=css.read_text()
+          marker='.gallery button:hover img{transform:scale(1.025)}'
+          fix='''.gallery.gallery-4{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}.gallery.gallery-4 button:first-child{grid-row:auto}.gallery.gallery-4 button{min-width:0;min-height:0}.gallery.gallery-4 img{width:100%;height:100%;object-fit:cover}.gallery.gallery-4 .vs-chart-gallery img,.gallery.gallery-4 [class*="chart-gallery"] img{object-fit:contain!important;background:#0b0613}'''
+          if fix not in s:
+              s=s.replace(marker,marker+fix)
+          css.write_text(s)
+          PY
+      - name: QA gallery repair
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          pages=[
+            'shows/adult/magic-mike-live/index.html',
+            'shows/music/jabbawockeez/index.html',
+            'shows/family/battlebots-destruct-a-thon/index.html',
+            'shows/magic/the-conjurors/index.html',
+            'shows/magic/paranormal/index.html',
+          ]
+          for f in pages:
+              s=Path(f).read_text()
+              assert 'class="gallery gallery-4"' in s, f
+          css=Path('assets/show-canonical.css').read_text()
+          assert '.gallery.gallery-4 button:first-child{grid-row:auto}' in css
+          assert '.gallery.gallery-4{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}' in css
+          print('desktop gallery QA passed')
+          PY
+          python3 scripts/audit-mobile-show-heroes.py
+          python3 scripts/audit-ticket-cta-color.py
+          python3 scripts/audit-catalog-js-syntax.py
+          git diff --check
+      - name: Commit and push
+        run: |
+          git config user.name 'Kris Kidd'
+          git config user.email 'k2oddworks@gmail.com'
+          git add assets/show-canonical.css shows
+          git commit -m 'Fix desktop show photo galleries'
+          git push origin main
