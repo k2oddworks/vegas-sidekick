@@ -1,0 +1,60 @@
+{
+  "venue": "The Magicians Room \u00b7 LINQ Promenade",
+  "address": "3545 S Las Vegas Blvd, Suite L-07B, Las Vegas, NV 89109",
+  "viewBox": "0 0 120 100",
+  "stage": {
+    "path": "M7 61 L30 35 L38 44 L18 74 Z",
+    "labelX": 21,
+    "labelY": 55
+  },
+  "zones": [
+    {
+      "id": "1",
+      "label": "Section 1",
+      "mapLabel": "1",
+      "badge": "Closest",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M31 39 L49 28 L61 42 L41 54 Z",
+      "labelX": 46,
+      "labelY": 41,
+      "description": "Section 1 is the closest seating wedge to the stage. Pick it when facial detail and the most immediate view matter most."
+    },
+    {
+      "id": "2",
+      "label": "Section 2",
+      "mapLabel": "2",
+      "badge": "Best balance",
+      "our_pick": true,
+      "color": "#ffb000",
+      "path": "M43 56 L64 43 L77 57 L54 71 Z",
+      "labelX": 60,
+      "labelY": 57,
+      "description": "Section 2 is the Sweet Spot / Our Pick: centered enough to take in the full routine while staying very close in this intimate room."
+    },
+    {
+      "id": "3",
+      "label": "Section 3",
+      "mapLabel": "3",
+      "badge": "Step-back view",
+      "our_pick": false,
+      "color": "#8d3cff",
+      "path": "M56 73 L79 59 L92 73 L67 88 Z",
+      "labelX": 74,
+      "labelY": 73,
+      "description": "Section 3 takes one step back, giving you a wider look at the whole presentation while remaining close in the small showroom."
+    },
+    {
+      "id": "4",
+      "label": "Section 4",
+      "mapLabel": "4",
+      "badge": "Widest value view",
+      "our_pick": false,
+      "color": "#19c7dd",
+      "path": "M69 89 L94 75 L110 88 L88 99 H76 Z",
+      "labelX": 91,
+      "labelY": 89,
+      "description": "Section 4 is the farthest wedge from the stage and gives you the widest view of the room at the value end of the seating plan."
+    }
+  ]
+}

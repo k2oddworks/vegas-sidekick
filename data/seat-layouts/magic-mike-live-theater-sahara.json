@@ -1,0 +1,72 @@
+{
+  "venue": "MAGIC MIKE LIVE Theater \u00b7 SAHARA Las Vegas",
+  "address": "2535 S Las Vegas Blvd, Las Vegas, NV 89109",
+  "viewBox": "0 0 120 100",
+  "stage": {
+    "path": "M48 38 Q60 31 72 38 L76 50 Q72 63 60 68 Q48 63 44 50 Z",
+    "labelX": 60,
+    "labelY": 50
+  },
+  "zones": [
+    {
+      "id": "floor",
+      "label": "100 Level",
+      "mapLabel": "100",
+      "badge": "Closest ring",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M38 28 Q60 15 82 28 L88 37 Q82 29 75 26 L79 36 Q82 48 76 60 Q70 71 60 75 Q50 71 44 60 Q38 48 41 36 L45 26 Q38 29 32 37 Z",
+      "labelX": 60,
+      "labelY": 23,
+      "description": "The 100-level sections sit closest around the central performance space. Choose them when being right next to the room energy matters most."
+    },
+    {
+      "id": "sweet",
+      "label": "Sections 201\u2013202",
+      "mapLabel": "201\u2013202",
+      "badge": "Balanced middle",
+      "our_pick": true,
+      "color": "#ffb000",
+      "path": "M28 30 Q36 18 48 12 L52 21 Q43 25 37 34 Z M92 30 Q84 18 72 12 L68 21 Q77 25 83 34 Z",
+      "labelX": 60,
+      "labelY": 12,
+      "description": "Sections 201\u2013202 are the Sweet Spot / Our Pick: close enough for performer detail while giving the circular staging room to read as a whole."
+    },
+    {
+      "id": "200",
+      "label": "Other 200 Level",
+      "mapLabel": "200",
+      "badge": "Strong full-room view",
+      "our_pick": false,
+      "color": "#8d3cff",
+      "path": "M20 38 Q25 23 38 13 L44 22 Q34 30 31 43 L27 64 Q31 76 42 84 L36 91 Q20 80 16 64 Z M100 38 Q95 23 82 13 L76 22 Q86 30 89 43 L93 64 Q89 76 78 84 L84 91 Q100 80 104 64 Z",
+      "labelX": 20,
+      "labelY": 58,
+      "description": "The rest of the 200 level gives you a strong all-around view of the room from the second ring, with a little more distance than our center picks."
+    },
+    {
+      "id": "300",
+      "label": "300 Level",
+      "mapLabel": "300",
+      "badge": "Wider production view",
+      "our_pick": false,
+      "color": "#c53cff",
+      "path": "M12 34 Q18 16 35 6 L39 13 Q24 23 20 40 L17 66 Q22 84 39 95 L32 99 Q11 87 7 66 Z M108 34 Q102 16 85 6 L81 13 Q96 23 100 40 L103 66 Q98 84 81 95 L88 99 Q109 87 113 66 Z",
+      "labelX": 11,
+      "labelY": 54,
+      "description": "The 300 level pulls back for a wider look at the choreography and room design while keeping the central stage easy to follow."
+    },
+    {
+      "id": "400",
+      "label": "400 Level",
+      "mapLabel": "400",
+      "badge": "Value / lounge ring",
+      "our_pick": false,
+      "color": "#19c7dd",
+      "path": "M40 4 Q60 -2 80 4 L77 10 Q60 6 43 10 Z M38 94 Q60 102 82 94 L87 99 H33 Z",
+      "labelX": 60,
+      "labelY": 6,
+      "description": "The outer 400-level areas give you the broadest perspective and can be a useful value choice when you want to take in the whole room."
+    }
+  ]
+}

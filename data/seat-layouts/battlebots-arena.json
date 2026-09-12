@@ -1,0 +1,73 @@
+{
+  "venue": "BattleBots Arena",
+  "address": "4165 Koval Lane, Las Vegas, NV 89109",
+  "viewBox": "0 0 120 100",
+  "stage": {
+    "path": "M36 34 H84 V66 H36 Z",
+    "labelX": 60,
+    "labelY": 50,
+    "label": "BATTLEBOX"
+  },
+  "zones": [
+    {
+      "id": "vip",
+      "label": "VIP",
+      "mapLabel": "VIP",
+      "badge": "Premium center",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M36 19 H84 L80 31 H40 Z M40 69 H80 L84 81 H36 Z",
+      "labelX": 60,
+      "labelY": 25,
+      "description": "VIP seating sits in the center sections facing the BattleBox and is the premium choice when you want a straight-on view and the most upgraded ticket tier."
+    },
+    {
+      "id": "center",
+      "label": "Center View",
+      "mapLabel": "CENTER",
+      "badge": "Best balance",
+      "our_pick": true,
+      "color": "#ffb000",
+      "path": "M18 18 H34 L30 32 H14 Z M86 18 H102 L106 32 H90 Z M14 68 H30 L34 82 H18 Z M90 68 H106 L102 82 H86 Z",
+      "labelX": 23,
+      "labelY": 25,
+      "description": "Center View is the Sweet Spot / Our Pick: a strong look into the BattleBox without paying for the highest premium tier."
+    },
+    {
+      "id": "side",
+      "label": "Side View",
+      "mapLabel": "SIDE",
+      "badge": "Angled arena view",
+      "our_pick": false,
+      "color": "#19c7dd",
+      "path": "M5 25 H13 L10 75 H5 Z M107 25 H115 V75 H110 Z",
+      "labelX": 9,
+      "labelY": 50,
+      "description": "Side View seats give you an angled look across the BattleBox and are a practical choice when price matters more than being centered."
+    },
+    {
+      "id": "platinum",
+      "label": "Platinum Club",
+      "mapLabel": "PLATINUM",
+      "badge": "Club upgrade",
+      "our_pick": false,
+      "color": "#c53cff",
+      "path": "M92 38 H116 V62 H92 L87 50 Z",
+      "labelX": 103,
+      "labelY": 50,
+      "description": "Platinum Club is the upgraded club area beside the arena, aimed at guests who want the premium hospitality experience as much as the view."
+    },
+    {
+      "id": "obstructed",
+      "label": "Obstructed View",
+      "mapLabel": "VALUE",
+      "badge": "Lowest-price area",
+      "our_pick": false,
+      "color": "#4dd9c7",
+      "path": "M5 10 H26 L22 17 H5 Z M94 83 H115 V90 H98 Z",
+      "labelX": 15,
+      "labelY": 14,
+      "description": "Obstructed View is the budget-focused tier. The angle or arena structure can limit part of the sightline, so choose it primarily when price is the priority."
+    }
+  ]
+}

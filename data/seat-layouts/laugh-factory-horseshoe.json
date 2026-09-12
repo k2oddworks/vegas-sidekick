@@ -1,0 +1,60 @@
+{
+  "venue": "Laugh Factory \u00b7 Horseshoe Las Vegas",
+  "address": "3645 S Las Vegas Blvd, Las Vegas, NV 89109",
+  "viewBox": "0 0 120 100",
+  "stage": {
+    "path": "M36 88 Q60 80 84 88 L80 98 H40 Z",
+    "labelX": 60,
+    "labelY": 92
+  },
+  "zones": [
+    {
+      "id": "vip",
+      "label": "VIP",
+      "mapLabel": "VIP",
+      "badge": "Closest",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M42 66 Q60 61 78 66 L76 82 Q60 78 44 82 Z M18 65 L38 61 L41 80 L23 84 Z M82 61 L102 65 L97 84 L79 80 Z",
+      "labelX": 60,
+      "labelY": 72,
+      "description": "VIP is the closest seating tier, including the center-front area and side blocks nearest the stage."
+    },
+    {
+      "id": "premium",
+      "label": "Premium",
+      "mapLabel": "PREMIUM",
+      "badge": "Best balance",
+      "our_pick": true,
+      "color": "#ffb000",
+      "path": "M38 45 Q60 39 82 45 L79 62 Q60 57 41 62 Z M12 45 L35 41 L38 59 L16 64 Z M85 41 L108 45 L104 64 L82 59 Z",
+      "labelX": 60,
+      "labelY": 51,
+      "description": "Premium is the Sweet Spot / Our Pick: directly behind VIP with enough proximity for the mind-reading to feel personal without paying the top tier."
+    },
+    {
+      "id": "ga",
+      "label": "General Admission",
+      "mapLabel": "GA",
+      "badge": "Centered value",
+      "our_pick": false,
+      "color": "#8d3cff",
+      "path": "M34 24 Q60 16 86 24 L83 41 Q60 34 37 41 Z M8 25 L31 21 L34 39 L11 43 Z M89 21 L112 25 L109 43 L86 39 Z",
+      "labelX": 60,
+      "labelY": 29,
+      "description": "General Admission sits behind Premium and along the outer room, giving you a solid value view in this compact showroom."
+    },
+    {
+      "id": "garear",
+      "label": "GA Rear",
+      "mapLabel": "GA REAR",
+      "badge": "Rear value",
+      "our_pick": false,
+      "color": "#19c7dd",
+      "path": "M25 6 Q60 -1 95 6 L89 20 Q60 12 31 20 Z M4 7 H22 L28 21 L6 23 Z M98 7 H116 L114 23 L92 21 Z",
+      "labelX": 60,
+      "labelY": 9,
+      "description": "GA Rear is the farthest value tier. The room is compact, so it still keeps the stage readable while emphasizing price over proximity."
+    }
+  ]
+}
