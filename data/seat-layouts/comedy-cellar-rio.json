@@ -1,0 +1,56 @@
+{
+  "venue": "Comedy Cellar at Rio",
+  "address": "3700 W Flamingo Rd, Las Vegas, NV 89103",
+  "viewBox": "0 0 120 100",
+  "stage": {
+    "path": "M77 4 H116 V22 H77 Z",
+    "labelX": 96,
+    "labelY": 14
+  },
+  "zones": [
+    {
+      "id": "vip",
+      "label": "VIP",
+      "badge": "Closest tables",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M67 18 Q79 23 89 30 L79 45 Q67 36 56 33 Z",
+      "labelX": 72,
+      "labelY": 31,
+      "description": "VIP tables are the closest group to the stage, best when you want facial detail and the strongest small-club feel."
+    },
+    {
+      "id": "preferred",
+      "label": "Preferred",
+      "badge": "Center room",
+      "our_pick": true,
+      "color": "#ffb000",
+      "path": "M31 20 Q51 15 68 19 L82 46 Q62 50 44 55 L27 43 Z",
+      "labelX": 52,
+      "labelY": 35,
+      "description": "Preferred is the Vegas Sidekick Sweet Spot / Our Pick: centered in the room, close enough for expressions and crowd work without needing the very nearest tables."
+    },
+    {
+      "id": "ga",
+      "label": "GA",
+      "badge": "Center value",
+      "our_pick": false,
+      "color": "#7b35ea",
+      "path": "M43 57 Q62 51 83 48 L100 71 Q73 78 51 82 Z",
+      "labelX": 70,
+      "labelY": 66,
+      "description": "GA keeps you in the main room with a clear sightline and is a strong value choice in an intimate comedy club."
+    },
+    {
+      "id": "ga2",
+      "label": "GA 2",
+      "badge": "Outer value",
+      "our_pick": false,
+      "color": "#16b9c8",
+      "path": "M9 24 Q18 19 28 20 L41 57 L50 83 Q30 79 16 67 Z",
+      "labelX": 27,
+      "labelY": 50,
+      "description": "GA 2 runs along the outer side of the room. You trade some centering for a lower-cost seat while still staying in a compact 300-seat club."
+    }
+  ]
+}

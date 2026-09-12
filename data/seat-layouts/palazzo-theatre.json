@@ -1,0 +1,212 @@
+{
+  "venue": "Palazzo Theatre",
+  "address": "3325 S Las Vegas Blvd, Las Vegas, NV 89109",
+  "viewBox": "0 0 120 110",
+  "stage": {
+    "path": "M43 94 Q60 88 77 94 L80 102 H40 Z",
+    "labelX": 60,
+    "labelY": 98
+  },
+  "zones": [
+    {
+      "id": "vip1",
+      "label": "VIP 1",
+      "badge": "Closest left",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M25 80 Q34 88 45 91 L49 76 Q39 73 31 68 Z",
+      "labelX": 37,
+      "labelY": 81,
+      "rows": [
+        73,
+        77,
+        81,
+        85
+      ],
+      "description": "VIP 1 puts you very close on the left side, with strong detail on Shin Lim\u2019s hands and expressions."
+    },
+    {
+      "id": "vip2",
+      "label": "VIP 2",
+      "badge": "Closest center",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M49 91 Q60 94 71 91 L69 74 Q60 72 51 74 Z",
+      "labelX": 60,
+      "labelY": 83,
+      "rows": [
+        76,
+        80,
+        84,
+        88
+      ],
+      "description": "VIP 2 is the closest straight-on view. Pick it when maximum proximity matters more than having a little visual breathing room."
+    },
+    {
+      "id": "vip3",
+      "label": "VIP 3",
+      "badge": "Closest right",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M71 91 Q82 88 95 80 L89 68 Q81 73 71 76 Z",
+      "labelX": 83,
+      "labelY": 81,
+      "rows": [
+        73,
+        77,
+        81,
+        85
+      ],
+      "description": "VIP 3 mirrors VIP 1 on the right side, keeping you close to the sleight-of-hand work."
+    },
+    {
+      "id": "1",
+      "label": "Section 1",
+      "badge": "Main floor left",
+      "our_pick": false,
+      "color": "#7b35ea",
+      "path": "M16 55 Q28 66 49 73 L45 31 Q30 29 18 34 Z",
+      "labelX": 33,
+      "labelY": 51,
+      "rows": [
+        36,
+        41,
+        46,
+        51,
+        56,
+        61,
+        66
+      ],
+      "description": "Section 1 is a strong main-floor option with a slight left angle and enough distance to take in the full presentation."
+    },
+    {
+      "id": "2",
+      "label": "Section 2",
+      "badge": "Main floor center",
+      "our_pick": true,
+      "color": "#ffb000",
+      "path": "M49 73 Q60 76 71 73 L75 30 Q60 27 45 30 Z",
+      "labelX": 60,
+      "labelY": 51,
+      "rows": [
+        34,
+        39,
+        44,
+        49,
+        54,
+        59,
+        64,
+        69
+      ],
+      "description": "Section 2 is the Vegas Sidekick Sweet Spot / Our Pick: centered on the main floor, close enough for card detail without sitting on top of the stage."
+    },
+    {
+      "id": "3",
+      "label": "Section 3",
+      "badge": "Main floor right",
+      "our_pick": false,
+      "color": "#7b35ea",
+      "path": "M71 73 Q92 66 104 55 L102 34 Q90 29 75 31 Z",
+      "labelX": 87,
+      "labelY": 51,
+      "rows": [
+        36,
+        41,
+        46,
+        51,
+        56,
+        61,
+        66
+      ],
+      "description": "Section 3 gives the same main-floor distance as Section 1 from the opposite side, with a clean view into the center of the stage."
+    },
+    {
+      "id": "4",
+      "label": "Section 4",
+      "badge": "Mid left",
+      "our_pick": false,
+      "color": "#8a43e8",
+      "path": "M8 28 Q18 31 28 31 L25 15 Q16 14 9 16 Z",
+      "labelX": 18,
+      "labelY": 23,
+      "description": "Section 4 is a wider-value angle on the left while keeping the stage comfortably in view."
+    },
+    {
+      "id": "5",
+      "label": "Section 5",
+      "badge": "Mid left-center",
+      "our_pick": false,
+      "color": "#8a43e8",
+      "path": "M29 31 Q38 31 46 29 L45 13 Q35 12 25 15 Z",
+      "labelX": 36,
+      "labelY": 22,
+      "description": "Section 5 moves closer to center and gives a balanced elevated view."
+    },
+    {
+      "id": "6",
+      "label": "Section 6",
+      "badge": "Mid center",
+      "our_pick": false,
+      "color": "#8a43e8",
+      "path": "M47 29 Q60 27 73 29 L72 12 Q60 10 48 12 Z",
+      "labelX": 60,
+      "labelY": 21,
+      "description": "Section 6 is the centered middle tier, useful when you want a symmetrical full-stage view."
+    },
+    {
+      "id": "7",
+      "label": "Section 7",
+      "badge": "Mid right-center",
+      "our_pick": false,
+      "color": "#8a43e8",
+      "path": "M74 29 Q82 31 91 31 L95 15 Q85 12 75 13 Z",
+      "labelX": 84,
+      "labelY": 22,
+      "description": "Section 7 gives a balanced elevated view just right of center."
+    },
+    {
+      "id": "8",
+      "label": "Section 8",
+      "badge": "Mid right",
+      "our_pick": false,
+      "color": "#8a43e8",
+      "path": "M92 31 Q102 31 112 28 L111 16 Q104 14 95 15 Z",
+      "labelX": 102,
+      "labelY": 23,
+      "description": "Section 8 is a wider-value angle on the right with a clear view of the whole stage."
+    },
+    {
+      "id": "9",
+      "label": "Section 9",
+      "badge": "Upper left",
+      "our_pick": false,
+      "color": "#16b9c8",
+      "path": "M16 9 Q28 11 42 11 L40 2 Q28 1 18 3 Z",
+      "labelX": 29,
+      "labelY": 7,
+      "description": "Section 9 is an upper-level value option with a broad view of the full production."
+    },
+    {
+      "id": "10",
+      "label": "Section 10",
+      "badge": "Upper center",
+      "our_pick": false,
+      "color": "#16b9c8",
+      "path": "M42 11 Q60 9 78 11 L77 2 Q60 0 43 2 Z",
+      "labelX": 60,
+      "labelY": 6,
+      "description": "Section 10 is the centered upper tier and the cleanest straight-on option in the back of the room."
+    },
+    {
+      "id": "11",
+      "label": "Section 11",
+      "badge": "Upper right",
+      "our_pick": false,
+      "color": "#16b9c8",
+      "path": "M78 11 Q92 11 104 9 L102 3 Q92 1 80 2 Z",
+      "labelX": 91,
+      "labelY": 7,
+      "description": "Section 11 mirrors Section 9 on the right and works well when price matters more than proximity."
+    }
+  ]
+}

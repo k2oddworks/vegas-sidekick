@@ -1,0 +1,130 @@
+{
+  "venue": "Bugsy's Cabaret",
+  "address": "3555 S Las Vegas Blvd, Las Vegas, NV 89109",
+  "viewBox": "0 0 120 105",
+  "stage": {
+    "path": "M37 82 L83 82 L94 93 L82 102 H38 L26 93 Z",
+    "labelX": 60,
+    "labelY": 93
+  },
+  "structures": [
+    {
+      "path": "M51 37 H69 V61 H51 Z",
+      "label": "POLE",
+      "labelX": 60,
+      "labelY": 50
+    }
+  ],
+  "zones": [
+    {
+      "id": "ga-left",
+      "label": "General Admission \u00b7 Left",
+      "badge": "Value side",
+      "our_pick": false,
+      "color": "#16b9c8",
+      "path": "M4 25 L31 8 L43 24 L29 73 L8 62 Z",
+      "labelX": 21,
+      "labelY": 40,
+      "description": "General Admission on the left gives you the widest-angle view and keeps the ticket cost focused on the show rather than proximity."
+    },
+    {
+      "id": "pink2",
+      "label": "Pink Circle 2",
+      "badge": "Left of pole",
+      "our_pick": true,
+      "color": "#ffb000",
+      "path": "M31 67 L42 72 L51 60 L47 28 L40 31 Z",
+      "labelX": 42,
+      "labelY": 52,
+      "description": "Pink Circle 2 wraps the left side of the central performance area. It is part of the Vegas Sidekick Sweet Spot / Our Pick group."
+    },
+    {
+      "id": "vip1",
+      "label": "VIP 1",
+      "badge": "Near-stage left",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M27 72 L34 75 L42 68 L38 58 Z",
+      "labelX": 34,
+      "labelY": 68,
+      "description": "VIP 1 sits very close to the stage on the left, prioritizing proximity and performer detail."
+    },
+    {
+      "id": "vip2",
+      "label": "VIP 2",
+      "badge": "Left-center",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M35 50 L41 54 L46 42 L43 35 Z",
+      "labelX": 41,
+      "labelY": 45,
+      "description": "VIP 2 is a close left-center option with a direct angle into the central pole area."
+    },
+    {
+      "id": "pink3",
+      "label": "Pink Circle 3",
+      "badge": "Center rear",
+      "our_pick": true,
+      "color": "#ffb000",
+      "path": "M45 21 Q60 15 75 21 L70 36 H50 Z",
+      "labelX": 60,
+      "labelY": 26,
+      "description": "Pink Circle 3 is centered behind the pole area and gives the most symmetrical view in the room. It is part of the Sweet Spot / Our Pick group."
+    },
+    {
+      "id": "vip3",
+      "label": "VIP 3",
+      "badge": "Rear center",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M48 10 Q60 6 72 10 L74 20 Q60 16 46 20 Z",
+      "labelX": 60,
+      "labelY": 14,
+      "description": "VIP 3 is the centered rear VIP row, giving a straight-on look over the central performance area."
+    },
+    {
+      "id": "pink4",
+      "label": "Pink Circle 4",
+      "badge": "Right of pole",
+      "our_pick": true,
+      "color": "#ffb000",
+      "path": "M69 60 L78 72 L89 67 L80 31 L73 28 Z",
+      "labelX": 78,
+      "labelY": 52,
+      "description": "Pink Circle 4 wraps the right side of the central performance area. It is part of the Vegas Sidekick Sweet Spot / Our Pick group."
+    },
+    {
+      "id": "vip4",
+      "label": "VIP 4",
+      "badge": "Right-center",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M74 42 L79 54 L85 50 L77 35 Z",
+      "labelX": 79,
+      "labelY": 45,
+      "description": "VIP 4 is a close right-center option with a direct angle toward the pole and stage."
+    },
+    {
+      "id": "vip5",
+      "label": "VIP 5",
+      "badge": "Near-stage right",
+      "our_pick": false,
+      "color": "#ff3b8d",
+      "path": "M78 68 L86 75 L93 72 L82 58 Z",
+      "labelX": 86,
+      "labelY": 68,
+      "description": "VIP 5 is the near-stage right counterpart to VIP 1, emphasizing closeness to the performers."
+    },
+    {
+      "id": "ga-right",
+      "label": "General Admission \u00b7 Right",
+      "badge": "Value side",
+      "our_pick": false,
+      "color": "#16b9c8",
+      "path": "M116 25 L89 8 L77 24 L91 73 L112 62 Z",
+      "labelX": 99,
+      "labelY": 40,
+      "description": "General Admission on the right gives you the widest-angle view from that side and is the value-focused choice."
+    }
+  ]
+}
