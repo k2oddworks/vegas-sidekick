@@ -20,7 +20,19 @@ jobs:
           fetch-depth: 0
 
       - name: Apply housekeeping 17-25
-        run: python3 scripts/housekeeping-17-25.py
+        run: |
+          python3 scripts/housekeeping-17-25.py
+          python3 - <<'PY'
+          from pathlib import Path
+          changed = 0
+          for path in Path('shows').glob('*/*/index.html'):
+              text = path.read_text(encoding='utf-8')
+              new = text.replace('>Typical start<', '>Start time<')
+              if new != text:
+                  path.write_text(new, encoding='utf-8')
+                  changed += 1
+          print(f'Updated deprecated start label on {changed} show pages.')
+          PY
 
       - name: Run audits
         run: |
