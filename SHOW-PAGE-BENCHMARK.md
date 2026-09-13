@@ -1,12 +1,12 @@
 # Vegas Sidekick — Show Page Benchmark
 
 **Current benchmark:** `shows/magic/nathan-burton-comedy-magic/index.html`  
-**Locked:** September 12, 2026  
+**Locked:** September 13, 2026  
 **Status:** Governing UX / copy / interaction benchmark for active show product pages.
 
 If an older template, benchmark, prompt, or example conflicts with this document or the current Nathan Burton page, **Nathan Burton wins**, except where a newer locked shared system is explicitly documented here.
 
-The current shared showtimes booking module is newer than Nathan Burton’s original day-card schedule treatment and supersedes that older showtimes pattern.
+The current shared showtimes booking module and the September 13 buyer-journey ordering are newer than Nathan Burton’s original treatment and supersede that older ordering where they conflict.
 
 This document defines the system. Do not copy Nathan-specific show facts into another page.
 
@@ -31,18 +31,21 @@ Preferred active-show flow:
 3. Seamless ticker
 4. Sticky section navigation
 5. Quick Take
-6. Photos
-7. Seat Guide when useful
-8. Good Fit / useful fit guidance
-9. Showtimes / booking module
-10. FAQ
-11. Related shows
-12. Next useful click
-13. Kris author card + freshness + disclosure
-14. Final ticket CTA
-15. Mobile sticky ticket bar
+6. Showtimes / booking module
+7. Photos
+8. Official trailer when a verified video exists
+9. Seat Guide when useful
+10. Good Fit / useful fit guidance
+11. FAQ
+12. Related shows
+13. Next useful click
+14. Kris author card + freshness + disclosure
+15. Final ticket CTA
+16. Mobile sticky ticket bar
 
-Do not add sections just because a template has room for them. Empty-calorie UI is worse than a shorter page.
+The buyer journey is intentional: **What is this? → Can I go? → What does it look like? → Where should I sit? → Is it a good fit? → Buy.** The full **Find your showtime** module belongs immediately after Quick Take so a customer with strong purchase intent can answer the practical availability question without reading half the page first.
+
+Optional sections simply collapse out. A page without a verified trailer should move directly from Photos to Seat Guide, for example. Do not add sections just because a template has room for them. Empty-calorie UI is worse than a shorter page.
 
 ---
 
@@ -102,6 +105,12 @@ Use confident quick-fact labels:
 - **Start times · Varies** — genuinely variable schedule
 
 Do not use **Typical start**.
+
+### Placement
+
+The full booking module belongs immediately after **Quick Take** in the standard active-show flow. This is the first serious conversion position on the page: the visitor has enough context to know what the show is, then immediately gets the answer to whether the show works for their night.
+
+A compact start-time signal or **See available dates & times →** jump link may also appear in the hero/quick facts when useful, but it does not replace the full module.
 
 ### Shared showtimes assets
 
@@ -289,7 +298,7 @@ Preserve useful `alt` text on the original on-page images.
 
 ## 11a. Official video component
 
-When a verified official YouTube trailer exists, use the shared Vegas Sidekick video component rather than a one-off iframe or custom click handler.
+When a verified official YouTube trailer exists, use the shared Vegas Sidekick video component rather than a one-off iframe or custom click handler. In the standard flow, place it **after Photos and before Seat Guide**.
 
 - Assets: `assets/show-video.css` and `assets/show-video.js`.
 - Standard markup uses `.vs-video-shell` containing `.vs-video[data-youtube-id]`, a thumbnail image and `.vs-video-play`.
@@ -465,21 +474,19 @@ Use this shared showtimes system across active show pages. Do not resurrect olde
 
 - `shows/magic/nathan-burton-comedy-magic/index.html`
 
-Nathan Burton remains the overall page benchmark, while the newer shared showtimes module governs the Showtimes section.
+Nathan Burton remains the overall page benchmark, while the newer shared showtimes module and buyer-journey ordering govern the Showtimes position and section sequence.
 
 ---
 
 ## 15. Precedence
 
-For active show-page work, use this order when instructions conflict:
+For active show-page work, use this order of authority:
 
-1. Explicit current instruction from Kris
-2. Newer locked shared systems explicitly documented in this benchmark
-3. Current production Nathan Burton benchmark page
-4. `SHOW-PAGE-BENCHMARK.md`
-5. Vegas Sidekick Brand Bible / `BRAND.md`
-6. `VS_CHAT_CONTEXT.md`
-7. `SHOW-BUILDER-PROMPT.md`
-8. Older benchmark/template examples
+1. Kris's explicit current instruction
+2. `SHOW-PAGE-BENCHMARK.md`
+3. `AGENTS.md`
+4. current Nathan Burton benchmark page
+5. newer locked shared systems documented above
+6. older templates / prompts / examples only when they do not conflict
 
-Do not silently resurrect older patterns just because they still exist in legacy files.
+Useful beats complete-looking. Do not add filler UI or copy to make every page identical.
