@@ -115,6 +115,11 @@
           const selected=el.dataset.zone===id;
           el.classList.toggle('is-active',selected);
           el.setAttribute('aria-pressed',selected?'true':'false');
+          if(selected&&showPopup){
+            el.classList.remove('is-tapped');
+            void el.offsetWidth;
+            el.classList.add('is-tapped');
+          }
         });
         const label=zone.our_pick?'Sweet Spot / Our Pick':zone.badge;
         tag.textContent=label;
@@ -144,6 +149,9 @@
           activate(control.dataset.zone,true);
         }
         if(event.key==='Escape')popup.classList.remove('is-open');
+      });
+      root.addEventListener('animationend',event=>{
+        if(event.target.classList?.contains('mbt-seat-hit'))event.target.classList.remove('is-tapped');
       });
       activate('102',false);
 
