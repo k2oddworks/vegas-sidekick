@@ -57,21 +57,32 @@
     const copy=document.createElement('p');
     detail.append(tag,heading,copy);
 
+    const legend=document.createElement('div');
+    legend.className='mystere-seat-legend';
+    const legendRows=[
+      ['pick','Sweet Spot / Our Pick','102–104, 202–205'],
+      ['close','Close view','101, 105'],
+      ['side','Side view','201, 206']
+    ];
+    legendRows.forEach(([kind,label,sections])=>{
+      const row=document.createElement('div');
+      row.className='mystere-seat-legend-row';
+      const dot=document.createElement('span');
+      dot.className=`mystere-seat-legend-dot ${kind}`;
+      const text=document.createElement('div');
+      const strong=document.createElement('strong');
+      strong.textContent=label;
+      const small=document.createElement('span');
+      small.textContent=sections;
+      text.append(strong,small);
+      row.append(dot,text);
+      legend.appendChild(row);
+    });
+
     const side=document.createElement('div');
     side.className='mystere-seat-side';
-    side.appendChild(detail);
-    data.sections.forEach(section=>{
-      const card=document.createElement('button');
-      card.type='button';
-      card.className=`mystere-seat-card${section.our_pick?' is-pick':''}`;
-      card.dataset.zone=section.id;
-      const strong=document.createElement('strong');
-      strong.textContent=`Section ${section.label}`;
-      const small=document.createElement('span');
-      small.textContent=section.our_pick?'Sweet Spot / Our Pick':section.badge;
-      card.append(strong,small);
-      side.appendChild(card);
-    });
+    side.append(detail,legend);
+
     const book=document.createElement('a');
     book.className='mystere-seat-book vs-ticket-primary';
     book.href=ticket;
@@ -82,7 +93,6 @@
 
     root.replaceChildren(mapShell,side);
 
-    let detailTimer=null;
     function activate(id,showPopup=true){
       const section=byId[id];
       if(!section)return;
@@ -94,15 +104,12 @@
       popupTag.textContent=label;
       popupTitle.textContent=`Section ${section.label}`;
       popupCopy.textContent=section.description;
-      detail.classList.remove('is-changing');
-      requestAnimationFrame(()=>detail.classList.add('is-changing'));
-      clearTimeout(detailTimer);
-      detailTimer=setTimeout(()=>detail.classList.remove('is-changing'),260);
       if(showPopup){
         popup.classList.remove('is-open');
         requestAnimationFrame(()=>popup.classList.add('is-open'));
       }
     }
+
     root.addEventListener('click',event=>{
       if(event.target.closest('.mystere-seat-popup-close')){
         popup.classList.remove('is-open');
