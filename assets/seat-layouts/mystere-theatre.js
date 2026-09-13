@@ -23,6 +23,22 @@
       map.appendChild(hit);
     });
 
+    const popup=document.createElement('div');
+    popup.className='mystere-seat-popup';
+    popup.setAttribute('aria-live','polite');
+    popup.setAttribute('aria-atomic','true');
+    const popupTag=document.createElement('span');
+    popupTag.className='tag';
+    const popupTitle=document.createElement('strong');
+    const popupCopy=document.createElement('p');
+    const popupClose=document.createElement('button');
+    popupClose.type='button';
+    popupClose.className='mystere-seat-popup-close';
+    popupClose.setAttribute('aria-label','Close seat description');
+    popupClose.textContent='×';
+    popup.append(popupTag,popupTitle,popupCopy,popupClose);
+    map.appendChild(popup);
+
     const caption=document.createElement('div');
     caption.className='mystere-map-caption';
     const venue=document.createElement('strong');
@@ -66,20 +82,44 @@
 
     root.replaceChildren(mapShell,side);
 
-    function activate(id){
+    let detailTimer=null;
+    function activate(id,showPopup=true){
       const section=byId[id];
       if(!section)return;
       root.querySelectorAll('[data-zone]').forEach(el=>el.classList.toggle('is-active',el.dataset.zone===id));
-      tag.textContent=section.our_pick?'Sweet spot':section.badge;
+      const label=section.our_pick?'Sweet spot':section.badge;
+      tag.textContent=label;
       heading.textContent=`Section ${section.label}`;
       copy.textContent=section.description;
-      if(matchMedia('(max-width:820px)').matches)detail.scrollIntoView({block:'nearest',behavior:'smooth'});
+      popupTag.textContent=label;
+      popupTitle.textContent=`Section ${section.label}`;
+      popupCopy.textContent=section.description;
+      detail.classList.remove('is-changing');
+      requestAnimationFrame(()=>detail.classList.add('is-changing'));
+      clearTimeout(detailTimer);
+      detailTimer=setTimeout(()=>detail.classList.remove('is-changing'),260);
+      if(showPopup){
+        popup.classList.remove('is-open');
+        requestAnimationFrame(()=>popup.classList.add('is-open'));
+      }
     }
     root.addEventListener('click',event=>{
+      if(event.target.closest('.mystere-seat-popup-close')){
+        popup.classList.remove('is-open');
+        return;
+      }
       const control=event.target.closest('[data-zone]');
-      if(control)activate(control.dataset.zone);
+      if(control)activate(control.dataset.zone,true);
     });
-    activate('203');
+    root.addEventListener('keydown',event=>{
+      const control=event.target.closest('[data-zone]');
+      if(control&&(event.key==='Enter'||event.key===' ')){
+        event.preventDefault();
+        activate(control.dataset.zone,true);
+      }
+      if(event.key==='Escape')popup.classList.remove('is-open');
+    });
+    activate('203',false);
   }
 
   function enhanceGallery(){
