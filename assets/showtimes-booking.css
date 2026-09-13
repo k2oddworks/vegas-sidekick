@@ -33,3 +33,12 @@
 .vs-art-strip i:nth-child(1){height:40px}.vs-art-strip i:nth-child(2){height:68px}.vs-art-strip i:nth-child(3){height:53px}.vs-art-strip i:nth-child(4){height:82px}.vs-art-strip i:nth-child(5){height:49px}.vs-art-strip i:nth-child(6){height:72px}.vs-art-strip i:nth-child(7){height:58px}.vs-art-strip i:nth-child(8){height:77px}
 .vs-variable-panel{text-align:center}.vs-variable-panel .vs-primary-book{margin-top:0}
 @media(max-width:700px){.vs-booking-section{padding-top:50px;padding-bottom:50px}.vs-booking-shell{padding:22px 16px 0;border-radius:22px}.vs-day-picker{grid-template-columns:repeat(7,minmax(44px,1fr));gap:5px;overflow-x:auto;padding-bottom:4px}.vs-day{min-height:58px;font-size:.8rem;border-radius:12px}.vs-time-panel{padding:18px}.vs-time-grid a{min-height:56px;font-size:.95rem}.vs-plan-ahead{align-items:flex-start}.vs-booking-art{margin:22px -16px 0;height:130px}.vs-primary-book,.vs-all-dates{min-height:58px}}
+
+/* Housekeeping 19–20: unmistakable selection + narrow CTA fit. */
+.vs-day{position:relative}
+.vs-day.is-active{outline:2px solid rgba(255,255,255,.72);outline-offset:-5px}
+.vs-day.is-active:after{content:'✓';position:absolute;right:7px;top:6px;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#5d20c9;font:900 .68rem/1 Inter,sans-serif}
+.vs-time-grid a.is-selected{background:#6422cf;color:#fff;box-shadow:0 0 0 3px rgba(100,34,207,.17),0 8px 18px rgba(74,28,144,.18)}
+.vs-time-grid a.is-selected:after{content:'✓';margin-left:8px}
+.vs-primary-book,.vs-all-dates{white-space:nowrap;text-wrap:nowrap;min-width:0}
+@media(max-width:420px){.vs-primary-book,.vs-all-dates{font-size:clamp(.78rem,3.7vw,.92rem);padding-inline:clamp(10px,3.5vw,16px)}}

@@ -56,4 +56,66 @@
  document.addEventListener('click',()=>requestAnimationFrame(syncScrollLock),true);
  document.addEventListener('keydown',event=>{if(event.key==='Escape')requestAnimationFrame(syncScrollLock)});
  syncScrollLock();
+
+
+ /* 17–25: finish the shared housekeeping pass. */
+ const galleries=[...document.querySelectorAll('#photos .gallery,.gallery')].filter((g,i,a)=>a.indexOf(g)===i);
+ galleries.forEach(gallery=>{
+  const buttons=[...gallery.querySelectorAll(':scope > button')];
+  if(buttons.length===1){
+   gallery.classList.add('vs-gallery-single');
+   buttons[0].dataset.vsSingleGallery='1';
+  }
+ });
+ document.addEventListener('click',event=>{
+  const galleryButton=event.target.closest('.gallery>button');
+  if(galleryButton){
+   document.body.classList.toggle('vs-single-gallery-open',galleryButton.dataset.vsSingleGallery==='1');
+  }
+  if(event.target.closest('#lightboxClose,.lightbox.open') && !event.target.closest('.lightbox img')){
+   requestAnimationFrame(()=>{if(!document.querySelector('.lightbox.open'))document.body.classList.remove('vs-single-gallery-open')});
+  }
+ },true);
+
+ /* Fill the gap on galleries that have multiple images but no existing arrows/count/swipe enhancer. */
+ const enhanceGallery=()=>{
+  const gallery=document.querySelector('#photos .gallery,.gallery');
+  const light=document.getElementById('lightbox');
+  if(!gallery||!light)return;
+  const buttons=[...gallery.querySelectorAll(':scope > button')];
+  if(buttons.length<2)return;
+  if(light.querySelector('[aria-label="Previous photo"],[aria-label="Next photo"],.nbt-lb-nav,.approved-lb-nav,[class$="-lb-prev"]'))return;
+  const img=light.querySelector('#lightboxImg,img');
+  if(!img)return;
+  let current=0,touchX=null;
+  const prev=document.createElement('button'),next=document.createElement('button'),count=document.createElement('div');
+  prev.type=next.type='button';prev.className='vs-gallery-nav vs-gallery-prev';next.className='vs-gallery-nav vs-gallery-next';count.className='vs-gallery-count';
+  prev.setAttribute('aria-label','Previous photo');next.setAttribute('aria-label','Next photo');prev.textContent='‹';next.textContent='›';
+  light.append(prev,next,count);
+  const show=i=>{current=(i+buttons.length)%buttons.length;const thumb=buttons[current].querySelector('img');if(!thumb)return;img.src=thumb.currentSrc||thumb.src;img.alt=thumb.alt||'Vegas show photo';count.textContent=`${current+1} of ${buttons.length}`};
+  buttons.forEach((button,i)=>button.addEventListener('click',()=>show(i)));
+  prev.addEventListener('click',e=>{e.stopPropagation();show(current-1)});next.addEventListener('click',e=>{e.stopPropagation();show(current+1)});
+  addEventListener('keydown',e=>{if(!light.classList.contains('open'))return;if(e.key==='ArrowLeft')show(current-1);if(e.key==='ArrowRight')show(current+1)});
+  light.addEventListener('touchstart',e=>{touchX=e.changedTouches[0]?.clientX??null},{passive:true});
+  light.addEventListener('touchend',e=>{if(touchX==null)return;const dx=(e.changedTouches[0]?.clientX??touchX)-touchX;touchX=null;if(Math.abs(dx)>45)show(current+(dx<0?1:-1))},{passive:true});
+ };
+ setTimeout(enhanceGallery,80);
+
+ /* 19: preserve a clear selected time on the page when the ticket opens in a new tab. */
+ document.addEventListener('click',event=>{
+  const time=event.target.closest('.vs-time-grid a');
+  if(!time)return;
+  time.closest('.vs-time-grid')?.querySelectorAll('a').forEach(a=>{a.classList.toggle('is-selected',a===time);if(a===time)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')});
+ },true);
+
+ /* 23: normalize only already-verified external ticket destinations; never invent a URL. */
+ document.querySelectorAll('a[href*="spotlight.vegas"]').forEach(link=>{
+  link.target='_blank';
+  const rel=new Set((link.getAttribute('rel')||'').split(/\s+/).filter(Boolean));rel.add('noopener');rel.add('sponsored');link.setAttribute('rel',[...rel].join(' '));
+  link.classList.add('vs-external-ticket');
+ });
+
+ /* 25: remove empty legacy chrome, never substantive content. */
+ document.querySelectorAll('.media-caption,.updated,.eyebrow,.gallery-count,.image-count').forEach(el=>{if(!(el.textContent||'').trim()&&!el.querySelector('img,svg,a,button'))el.remove()});
+
 })();

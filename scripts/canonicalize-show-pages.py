@@ -623,7 +623,7 @@ def render(path: Path, ctx: dict):
     first_time = fmt_time(first_times[0]) if first_times else "See calendar"
     runtime_fact = fact(f"{runtime} min" if runtime else "See details", "Runtime", runtime if runtime else None, "", " min")
     price_fact = fact(f"${price}" if price != "" else "See price", "Tickets from", price if isinstance(price, (int, float)) else None, "$", "")
-    time_fact = fact(first_time, "Typical start")
+    time_fact = fact(first_time, "Start time")
     age_count = None
     age_suffix = ""
     age_prefix = ""

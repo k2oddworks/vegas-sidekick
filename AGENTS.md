@@ -171,6 +171,7 @@ python3 scripts/audit-event-schema.py
 python3 scripts/audit-ticket-cta-color.py
 python3 scripts/audit-mobile-show-heroes.py
 python3 scripts/audit-catalog-js-syntax.py
+python3 scripts/audit-orphan-ui.py
 git diff --check
 ```
 

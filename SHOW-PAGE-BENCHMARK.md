@@ -271,6 +271,7 @@ Nathan Burton is the gallery interaction benchmark.
 - Use consistent gallery frames / aspect handling (`object-fit` as appropriate).
 - A tall seating chart can use `contain` inside its gallery tile.
 - Remove instructional sentences telling users to inspect the photos.
+- One image: do not show carousel arrows or an image count. Multiple images: support arrows, count, keyboard navigation and mobile swipe.
 
 ### Lightbox
 
