@@ -97,14 +97,11 @@
         const zone=byId[id];
         if(!zone)return;
         const hits=[...root.querySelectorAll('.mbt-seat-hit')];
-        hits.forEach(el=>el.classList.toggle('is-active',el.dataset.zone===id));
-        if(showPopup){
-          hits.filter(el=>el.dataset.zone===id).forEach(hit=>{
-            hit.classList.remove('is-tapped');
-            void hit.offsetWidth;
-            hit.classList.add('is-tapped');
-          });
-        }
+        hits.forEach(el=>{
+          const selected=el.dataset.zone===id;
+          el.classList.toggle('is-active',selected);
+          el.setAttribute('aria-pressed',selected?'true':'false');
+        });
         const label=zone.our_pick?'Sweet Spot / Our Pick':zone.badge;
         tag.textContent=label;
         heading.textContent=zone.label;
