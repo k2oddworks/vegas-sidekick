@@ -2,121 +2,129 @@
   "id": "mystere-theatre",
   "venue": "Mystère Theatre – TI Hotel",
   "address": "3300 S Las Vegas Blvd, Las Vegas, NV 89109",
-  "viewBox": "0 0 1000 860",
+  "viewBox": "0 0 1000 1000",
   "stage": {
-    "path": "M180 790 H820 V700 L760 660 H650 V540 H610 V485 Q500 445 390 485 V540 H350 V660 H240 L180 700 Z",
+    "path": "M400 860 H600 V790 C600 720 565 680 500 680 C435 680 400 720 400 790 Z",
     "label_x": 500,
-    "label_y": 720
+    "label_y": 795
   },
   "sections": [
     {
       "id": "101",
       "label": "101",
-      "path": "M650 620 L800 620 L800 520 L650 520 Z",
-      "label_x": 725,
-      "label_y": 575,
-      "color": "#ff2e7e",
-      "description": "Lower-level section near the stage on the right side. Close to the performers with a clear view into the room."
+      "path": "M615 860 L800 860 L790 700 Q735 690 650 705 L620 770 Z",
+      "label_x": 710,
+      "label_y": 780,
+      "color": "#16c7e8",
+      "badge": "Close view",
+      "description": "Lower-level section beside the stage on the right. It puts you close to the performers while keeping a clear look across the room."
     },
     {
       "id": "102",
       "label": "102",
-      "path": "M650 505 Q730 485 805 455 L805 365 Q735 320 655 315 L610 430 Z",
-      "label_x": 720,
-      "label_y": 410,
-      "color": "#ff2e7e",
-      "description": "Lower-level right-center section. A closer view with a broad look across the stage and aerial space."
+      "path": "M615 650 Q735 625 815 575 L770 455 Q695 420 610 430 L565 560 Z",
+      "label_x": 685,
+      "label_y": 540,
+      "color": "#d99500",
+      "badge": "Sweet spot",
+      "our_pick": true,
+      "description": "Sweet-spot lower right-center. You are closer to the stage without giving up the broad view Mystère needs for its aerial work."
     },
     {
       "id": "103",
       "label": "103",
-      "path": "M385 320 Q500 285 615 320 L585 430 Q500 405 415 430 Z",
+      "path": "M390 420 Q500 390 610 420 L565 560 Q500 540 435 560 Z",
       "label_x": 500,
-      "label_y": 365,
-      "color": "#ff2e7e",
-      "description": "Lower-level center section. Straight-on and close, with a centered view of floor and aerial work."
+      "label_y": 495,
+      "color": "#d99500",
+      "badge": "Sweet spot",
+      "our_pick": true,
+      "description": "Sweet-spot lower center. This is the straight-on choice if you want to be closer while still seeing the full stage picture."
     },
     {
       "id": "104",
       "label": "104",
-      "path": "M350 505 Q270 485 195 455 L195 365 Q265 320 345 315 L390 430 Z",
-      "label_x": 280,
-      "label_y": 410,
-      "color": "#ff2e7e",
-      "description": "Lower-level left-center section. A closer view with a broad look across the stage and aerial space."
+      "path": "M390 430 Q305 420 230 455 L185 575 Q265 625 385 650 L435 560 Z",
+      "label_x": 315,
+      "label_y": 540,
+      "color": "#d99500",
+      "badge": "Sweet spot",
+      "our_pick": true,
+      "description": "Sweet-spot lower left-center. You get the same strong lower-level balance of closeness and a broad production view."
     },
     {
       "id": "105",
       "label": "105",
-      "path": "M350 620 L200 620 L200 520 L350 520 Z",
-      "label_x": 275,
-      "label_y": 575,
-      "color": "#ff2e7e",
-      "description": "Lower-level section near the stage on the left side. Close to the performers with a clear view into the room."
+      "path": "M380 770 L350 705 Q265 690 210 700 L200 860 H385 Z",
+      "label_x": 290,
+      "label_y": 780,
+      "color": "#16c7e8",
+      "badge": "Close view",
+      "description": "Lower-level section beside the stage on the left. It puts you close to the performers while keeping a clear look across the room."
     },
     {
       "id": "201",
       "label": "201",
-      "path": "M820 570 L930 570 L925 350 L850 305 L805 365 L805 455 L820 475 Z",
-      "label_x": 875,
-      "label_y": 455,
-      "color": "#12c7b1",
-      "badge": "Wider view",
-      "description": "Outer 200-level section on the right. A wider side perspective that keeps the full stage and overhead work in view."
+      "path": "M825 800 L955 820 L945 575 L865 500 L800 575 L820 655 Z",
+      "label_x": 885,
+      "label_y": 665,
+      "color": "#ff2e7e",
+      "badge": "Side view",
+      "description": "Outer 200-level section on the right. A wider side perspective that keeps the stage and overhead work in view."
     },
     {
       "id": "202",
       "label": "202",
-      "path": "M610 285 L740 330 L835 250 L800 125 Q715 85 625 75 L585 250 Z",
-      "label_x": 700,
-      "label_y": 205,
+      "path": "M610 390 L735 430 L850 330 L805 155 Q720 105 625 95 L585 365 Z",
+      "label_x": 710,
+      "label_y": 260,
       "color": "#8d3cff",
       "badge": "Sweet spot",
       "our_pick": true,
-      "description": "One of our sweet-spot sections. Upper right-center gives you a broad look at the full stage and the aerial space above it."
+      "description": "Sweet-spot upper right-center. The 200 level gives you a broad look at the full stage and the aerial space above it."
     },
     {
       "id": "203",
       "label": "203",
-      "path": "M390 75 Q500 45 610 75 L585 250 Q500 220 415 250 Z",
+      "path": "M390 95 Q500 65 610 95 L585 365 Q500 340 415 365 Z",
       "label_x": 500,
-      "label_y": 155,
-      "color": "#8d3cff",
-      "badge": "Sweet spot",
-      "our_pick": true,
-      "description": "One of our sweet-spot sections. Upper center gives you the most straight-on full-stage perspective in the 200 level."
-    },
-    {
-      "id": "204",
-      "label": "204",
-      "path": "M375 75 Q285 85 200 125 L165 250 L260 330 L390 285 L415 250 Z",
-      "label_x": 300,
       "label_y": 205,
       "color": "#8d3cff",
       "badge": "Sweet spot",
       "our_pick": true,
-      "description": "One of our sweet-spot sections. Upper left-center gives you a broad look at the full stage and the aerial space above it."
+      "description": "Sweet-spot upper center. This is the most straight-on full-production view in the 200 level."
+    },
+    {
+      "id": "204",
+      "label": "204",
+      "path": "M375 95 Q280 105 195 155 L150 330 L265 430 L390 390 L415 365 Z",
+      "label_x": 290,
+      "label_y": 260,
+      "color": "#8d3cff",
+      "badge": "Sweet spot",
+      "our_pick": true,
+      "description": "Sweet-spot upper left-center. The 200 level gives you a broad look at the full stage and the aerial space above it."
     },
     {
       "id": "205",
       "label": "205",
-      "path": "M165 250 L85 300 L55 355 L55 490 L175 535 L205 455 L195 350 L260 330 Z",
-      "label_x": 130,
-      "label_y": 390,
+      "path": "M150 330 L70 390 L40 485 L40 650 L180 700 L210 610 L190 475 L265 430 Z",
+      "label_x": 120,
+      "label_y": 515,
       "color": "#8d3cff",
       "badge": "Sweet spot",
       "our_pick": true,
-      "description": "One of our sweet-spot sections. This upper-left section gives you a wide look across the room and strong full-production perspective."
+      "description": "Sweet-spot upper-left section. It gives you a wide look across the room and a strong full-production perspective."
     },
     {
       "id": "206",
       "label": "206",
-      "path": "M55 520 L175 555 L175 650 L55 650 Z",
-      "label_x": 115,
-      "label_y": 600,
-      "color": "#12c7b1",
-      "badge": "Wider view",
-      "description": "Outer 200-level section on the left. A wider side perspective that keeps the full stage and overhead work in view."
+      "path": "M40 675 L180 720 L175 835 L35 850 Z",
+      "label_x": 105,
+      "label_y": 770,
+      "color": "#ff2e7e",
+      "badge": "Side view",
+      "description": "Outer 200-level section on the left. A wider side perspective that keeps the stage and overhead work in view."
     }
   ]
 }
