@@ -3,15 +3,11 @@
   "venue": "Mandalay Bay Theatre",
   "address": "3950 S Las Vegas Blvd, Las Vegas, NV 89119",
   "chart_parts": [
-    "/images/mj-one-seating-chart/part-00.txt",
-    "/images/mj-one-seating-chart/part-01.txt",
-    "/images/mj-one-seating-chart/part-02.txt",
-    "/images/mj-one-seating-chart/part-03.txt",
-    "/images/mj-one-seating-chart/part-04.txt",
-    "/images/mj-one-seating-chart/part-05.txt",
-    "/images/mj-one-seating-chart/part-06.txt"
+    "/images/mj-one-seating-chart/part-00.txt?v=20260913",
+    "/images/mj-one-seating-chart/part-01.txt?v=20260913",
+    "/images/mj-one-seating-chart/part-02.txt?v=20260913"
   ],
-  "chart_source": "Kris-approved supplied Michael Jackson ONE seating chart; use this image directly and do not redraw or regenerate it",
+  "chart_source": "Kris-supplied Michael Jackson ONE seating chart approved September 13, 2026; use this exact image directly and do not redraw or regenerate it",
   "zones": [
     {
       "id": "101",
