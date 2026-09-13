@@ -148,6 +148,7 @@ Odd-aspect images must not break the desktop gallery. Preserve descriptive alt t
 - Vegas Sidekick referral paths use `/ref/vegassidekick` when verified.
 - Do not mention the ticket partner by name in visible customer copy unless explicitly directed.
 - Official YouTube embeds only; never invent or re-host trailers.
+- For verified official trailers, use the shared `assets/show-video.css` + `assets/show-video.js` component with `.vs-video[data-youtube-id]`; load the YouTube iframe only after an explicit play click.
 - Use real approved show/event photography. Do not generate fake event imagery for real shows.
 
 ## Structured data

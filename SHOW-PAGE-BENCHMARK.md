@@ -287,6 +287,20 @@ Preserve useful `alt` text on the original on-page images.
 
 ---
 
+## 11a. Official video component
+
+When a verified official YouTube trailer exists, use the shared Vegas Sidekick video component rather than a one-off iframe or custom click handler.
+
+- Assets: `assets/show-video.css` and `assets/show-video.js`.
+- Standard markup uses `.vs-video-shell` containing `.vs-video[data-youtube-id]`, a thumbnail image and `.vs-video-play`.
+- Keep the lightweight thumbnail visible until the customer presses play; only then create the privacy-enhanced `youtube-nocookie.com` iframe.
+- Never invent or guess a video ID. Use only a verified official trailer.
+- Do not autoplay before an explicit user action.
+- Keep descriptive thumbnail alt text and an accessible play-button label.
+- `VideoObject` schema is optional and should only be used when its metadata is verified.
+
+---
+
 ## 12. Seating-chart system
 
 Nathan Burton Theater is the first locked example of the reusable seating system. Zombie Burlesque is the locked example of using an approved chart image directly with transparent interactive hit zones.
