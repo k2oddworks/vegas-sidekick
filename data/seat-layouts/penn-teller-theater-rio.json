@@ -4,10 +4,7 @@
   "address": "3700 W Flamingo Rd, Las Vegas, NV 89103",
   "chart_parts": [
     "/images/penn-teller-seating-chart/part-0.txt",
-    "/images/penn-teller-seating-chart/part-1.txt",
-    "/images/penn-teller-seating-chart/part-2.txt",
-    "/images/penn-teller-seating-chart/part-3.txt",
-    "/images/penn-teller-seating-chart/part-4.txt"
+    "/images/penn-teller-seating-chart/part-1.txt"
   ],
   "chart_source": "Kris-approved supplied seating chart; use this image directly and do not redraw or regenerate it",
   "zones": [
