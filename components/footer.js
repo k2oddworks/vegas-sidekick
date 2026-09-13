@@ -1,4 +1,4 @@
-// Vegas Sidekick — Shared Footer Loader v23
+// Vegas Sidekick — Shared Footer Loader v24
 // Keeps the approved footer implementation in footer-core.js,
 // loads canonical show runtime only on individual show pages,
 // and loads the isolated Walk the Strip spectacle layer only on its game route.
