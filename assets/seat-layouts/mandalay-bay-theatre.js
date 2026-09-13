@@ -1,13 +1,27 @@
 (()=>{
   const chartCache=new Map();
 
+  function decodeBase64Chunk(text){
+    const clean=String(text||'').replace(/\s+/g,'');
+    const binary=atob(clean);
+    const bytes=new Uint8Array(binary.length);
+    for(let i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);
+    return bytes;
+  }
+
   async function loadChart(parts){
     const key=parts.join('|');
     if(chartCache.has(key))return chartCache.get(key);
-    const promise=Promise.all(parts.map(url=>fetch(url,{credentials:'same-origin'}).then(r=>{
+    const promise=Promise.all(parts.map(url=>fetch(url,{credentials:'same-origin'}).then(async r=>{
       if(!r.ok)throw new Error(`Chart asset ${r.status}`);
-      return r.text();
-    }))).then(chunks=>`data:image/webp;base64,${chunks.join('')}`);
+      return decodeBase64Chunk(await r.text());
+    }))).then(chunks=>{
+      const total=chunks.reduce((sum,chunk)=>sum+chunk.length,0);
+      const merged=new Uint8Array(total);
+      let offset=0;
+      chunks.forEach(chunk=>{merged.set(chunk,offset);offset+=chunk.length;});
+      return URL.createObjectURL(new Blob([merged],{type:'image/webp'}));
+    });
     chartCache.set(key,promise);
     return promise;
   }
