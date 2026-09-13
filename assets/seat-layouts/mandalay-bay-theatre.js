@@ -1,38 +1,11 @@
 (()=>{
-  const chartCache=new Map();
-
-  function decodeBase64Chunk(text){
-    const clean=String(text||'').replace(/\s+/g,'');
-    const binary=atob(clean);
-    const bytes=new Uint8Array(binary.length);
-    for(let i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);
-    return bytes;
-  }
-
-  async function loadChart(parts){
-    const key=parts.join('|');
-    if(chartCache.has(key))return chartCache.get(key);
-    const promise=Promise.all(parts.map(url=>fetch(url,{credentials:'same-origin'}).then(async r=>{
-      if(!r.ok)throw new Error(`Chart asset ${r.status}`);
-      return decodeBase64Chunk(await r.text());
-    }))).then(chunks=>{
-      const total=chunks.reduce((sum,chunk)=>sum+chunk.length,0);
-      const merged=new Uint8Array(total);
-      let offset=0;
-      chunks.forEach(chunk=>{merged.set(chunk,offset);offset+=chunk.length;});
-      return URL.createObjectURL(new Blob([merged],{type:'image/webp'}));
-    });
-    chartCache.set(key,promise);
-    return promise;
-  }
-
   async function mount(root){
     try{
       const data=await fetch(root.dataset.layoutUrl,{credentials:'same-origin'}).then(r=>{
         if(!r.ok)throw new Error(`Layout ${r.status}`);
         return r.json();
       });
-      const chartSrc=await loadChart(data.chart_parts);
+      const chartSrc=data.chart_image;
       const ticket=root.dataset.ticketUrl;
       const byId=Object.fromEntries(data.zones.map(zone=>[zone.id,zone]));
 
@@ -209,3 +182,4 @@
   const mounts=[...document.querySelectorAll('[data-seat-layout="mandalay-bay-theatre"]')].map(root=>mount(root));
   Promise.allSettled(mounts).then(gallery);
 })();
+

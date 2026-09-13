@@ -2,11 +2,6 @@
   "id": "mandalay-bay-theatre",
   "venue": "Mandalay Bay Theatre",
   "address": "3950 S Las Vegas Blvd, Las Vegas, NV 89119",
-  "chart_parts": [
-    "/images/mj-one-seating-chart/part-00.txt?v=20260913",
-    "/images/mj-one-seating-chart/part-01.txt?v=20260913",
-    "/images/mj-one-seating-chart/part-02.txt?v=20260913"
-  ],
   "chart_source": "Kris-supplied Michael Jackson ONE seating chart approved September 13, 2026; use this exact image directly and do not redraw or regenerate it",
   "zones": [
     {
@@ -15,7 +10,15 @@
       "our_pick": true,
       "badge": "Sweet spot",
       "description": "Section 101 is part of the Sweet Spot / Our Pick group. It keeps you close to the stage with a strong angled view across the full production.",
-      "hitboxes": [{"left": 11.5, "top": 11.0, "width": 28.5, "height": 40.5, "clip": "polygon(30% 0,100% 12%,82% 100%,0 78%)"}]
+      "hitboxes": [
+        {
+          "left": 11.783854166666668,
+          "top": 11.71875,
+          "width": 27.1484375,
+          "height": 40.625,
+          "clip": "polygon(63.070% 0.000%,100.000% 9.455%,67.146% 100.000%,0.000% 80.929%)"
+        }
+      ]
     },
     {
       "id": "102",
@@ -23,7 +26,15 @@
       "our_pick": true,
       "badge": "Sweet spot",
       "description": "Section 102 is the broad lower-center block and part of the Sweet Spot / Our Pick group. It gives you the most straight-on view of the stage.",
-      "hitboxes": [{"left": 30.0, "top": 14.5, "width": 40.0, "height": 41.0, "clip": "polygon(8% 0,92% 0,100% 100%,0 100%)"}]
+      "hitboxes": [
+        {
+          "left": 30.794270833333332,
+          "top": 15.8203125,
+          "width": 38.34635416666667,
+          "height": 39.453125,
+          "clip": "polygon(23.939% 0.000%,48.727% 3.795%,76.570% 0.990%,100.000% 92.904%,76.231% 98.515%,49.406% 100.000%,0.000% 93.234%)"
+        }
+      ]
     },
     {
       "id": "103",
@@ -31,7 +42,15 @@
       "our_pick": true,
       "badge": "Sweet spot",
       "description": "Section 103 is part of the Sweet Spot / Our Pick group. It keeps you close to the stage with a strong angled view across the full production.",
-      "hitboxes": [{"left": 60.0, "top": 11.0, "width": 28.5, "height": 40.5, "clip": "polygon(0 12%,70% 0,100% 78%,18% 100%)"}]
+      "hitboxes": [
+        {
+          "left": 61.197916666666664,
+          "top": 11.328125,
+          "width": 26.822916666666668,
+          "height": 40.8203125,
+          "clip": "polygon(0.000% 11.164%,36.165% 0.000%,100.000% 81.021%,33.495% 100.000%)"
+        }
+      ]
     },
     {
       "id": "201",
@@ -39,7 +58,15 @@
       "our_pick": false,
       "badge": "Wider side view",
       "description": "Section 201 gives you a broader side view from farther back, useful when you want to take in more of the full-stage picture.",
-      "hitboxes": [{"left": 0.0, "top": 44.0, "width": 27.0, "height": 36.0, "clip": "polygon(38% 0,100% 20%,75% 100%,0 78%)"}]
+      "hitboxes": [
+        {
+          "left": 0.0,
+          "top": 44.85677083333333,
+          "width": 26.236979166666668,
+          "height": 35.41666666666667,
+          "clip": "polygon(44.417% 0.000%,100.000% 19.118%,58.809% 100.000%,0.000% 80.515%,0.000% 70.772%)"
+        }
+      ]
     },
     {
       "id": "202",
@@ -47,7 +74,15 @@
       "our_pick": true,
       "badge": "Sweet spot",
       "description": "Section 202 is part of the Sweet Spot / Our Pick group. It backs up enough for a wider read while staying near the center of the room.",
-      "hitboxes": [{"left": 16.5, "top": 52.5, "width": 25.0, "height": 29.5, "clip": "polygon(24% 0,100% 5%,86% 100%,0 80%,12% 45%)"}]
+      "hitboxes": [
+        {
+          "left": 16.536458333333336,
+          "top": 53.059895833333336,
+          "width": 24.674479166666664,
+          "height": 32.421875,
+          "clip": "polygon(61.214% 0.000%,100.000% 5.020%,87.335% 100.000%,0.000% 85.141%,13.984% 50.803%,44.327% 56.225%)"
+        }
+      ]
     },
     {
       "id": "203",
@@ -55,7 +90,15 @@
       "our_pick": true,
       "badge": "Sweet spot",
       "description": "Section 203 is part of the Sweet Spot / Our Pick group. It gives you a centered, wider view that works especially well for choreography across the full stage.",
-      "hitboxes": [{"left": 38.0, "top": 54.0, "width": 24.0, "height": 32.0, "clip": "polygon(8% 0,92% 0,100% 100%,0 100%)"}]
+      "hitboxes": [
+        {
+          "left": 39.0625,
+          "top": 54.6875,
+          "width": 21.419270833333336,
+          "height": 31.575520833333332,
+          "clip": "polygon(14.590% 0.000%,87.538% 0.412%,100.000% 98.144%,48.632% 100.000%,0.000% 98.557%)"
+        }
+      ]
     },
     {
       "id": "204",
@@ -63,7 +106,15 @@
       "our_pick": true,
       "badge": "Sweet spot",
       "description": "Section 204 is part of the Sweet Spot / Our Pick group. It backs up enough for a wider read while staying near the center of the room.",
-      "hitboxes": [{"left": 58.5, "top": 52.5, "width": 25.0, "height": 29.5, "clip": "polygon(0 5%,76% 0,88% 45%,100% 80%,14% 100%)"}]
+      "hitboxes": [
+        {
+          "left": 58.919270833333336,
+          "top": 52.9296875,
+          "width": 24.088541666666664,
+          "height": 32.48697916666667,
+          "clip": "polygon(0.000% 5.411%,39.730% 0.000%,55.135% 56.112%,85.405% 51.303%,100.000% 86.172%,10.270% 100.000%)"
+        }
+      ]
     },
     {
       "id": "205",
@@ -71,7 +122,16 @@
       "our_pick": false,
       "badge": "Wider side view",
       "description": "Section 205 gives you a broader side view from farther back, useful when you want to take in more of the full-stage picture.",
-      "hitboxes": [{"left": 73.0, "top": 44.0, "width": 27.0, "height": 36.0, "clip": "polygon(0 20%,62% 0,100% 78%,25% 100%)"}]
+      "hitboxes": [
+        {
+          "left": 73.4375,
+          "top": 44.66145833333333,
+          "width": 26.5625,
+          "height": 35.61197916666667,
+          "clip": "polygon(0.000% 19.196%,55.882% 0.000%,100.000% 72.029%,100.000% 81.353%,41.667% 100.000%)"
+        }
+      ]
     }
-  ]
+  ],
+  "chart_image": "/images/michael-jackson-one-seating-chart.webp"
 }
