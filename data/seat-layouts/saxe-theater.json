@@ -2,109 +2,39 @@
   "id": "saxe-theater",
   "venue": "Saxe Theater • Miracle Mile • Planet Hollywood",
   "address": "3663 S Las Vegas Blvd, Las Vegas, NV 89109",
-  "viewBox": "0 0 1000 860",
-  "room_outline": "M42 92 L180 18 L560 208 L575 355 Q760 345 952 468 L862 770 H252 L205 602 L78 505 L42 330 Z",
-  "stage": {
-    "path": "M255 760 Q500 650 745 760 L745 805 H255 Z",
-    "label_x": 500,
-    "label_y": 752
-  },
-  "zones": [
+  "chart_asset": "/images/vegas-the-show-seating-chart.webp",
+  "chart_source": "Kris-approved supplied seating chart; use this image directly and do not redraw or regenerate it",
+  "sections": [
     {
-      "id": "vip-center",
-      "label": "VIP Center",
+      "id": "center",
+      "label": "Center",
       "badge": "Sweet spot",
       "our_pick": true,
-      "color": "#8d3cff",
-      "paths": [
-        "M390 455 L710 485 L640 700 Q505 668 370 700 Z"
-      ],
-      "labels": [
-        {
-          "x": 525,
-          "y": 575,
-          "lines": [
-            "VIP",
-            "CENTER",
-            "A–L"
-          ]
-        }
-      ],
-      "description": "Our pick. VIP Center gives you the straightest look at the wide stage while keeping the full choreography and costumes easy to take in."
+      "description": "Sweet Spot / Our Pick. Center gives you the straightest look at the stage and the best balance for taking in the choreography, costumes and full production picture.",
+      "hitboxes": [
+        {"left": 29.5, "top": 42.5, "width": 41.5, "height": 39.5, "clip": "polygon(10% 0, 90% 4%, 100% 85%, 87% 100%, 13% 100%, 0 85%)"}
+      ]
     },
     {
-      "id": "vip-sides",
-      "label": "VIP Sides",
-      "badge": "Sweet spot",
-      "our_pick": true,
-      "color": "#ff2e7e",
-      "paths": [
-        "M198 515 L345 455 L382 690 L275 728 Z",
-        "M725 490 L870 535 L826 724 L655 700 Z"
-      ],
-      "labels": [
-        {
-          "x": 290,
-          "y": 595,
-          "lines": [
-            "VIP",
-            "SIDE",
-            "A–K"
-          ]
-        },
-        {
-          "x": 785,
-          "y": 600,
-          "lines": [
-            "VIP",
-            "SIDE",
-            "A–J"
-          ]
-        }
-      ],
-      "description": "Also part of our sweet spot. The two VIP Side blocks keep you close to the stage with an angled look across the production."
-    },
-    {
-      "id": "middle",
-      "label": "Middle",
-      "badge": "Wider view",
+      "id": "side",
+      "label": "Side",
+      "badge": "Angled view",
       "our_pick": false,
-      "color": "#12c7b1",
-      "paths": [
-        "M92 290 L365 164 L536 248 L530 392 L180 472 Z"
-      ],
-      "labels": [
-        {
-          "x": 318,
-          "y": 320,
-          "lines": [
-            "MIDDLE",
-            "M–S"
-          ]
-        }
-      ],
-      "description": "A farther-back section with a wider overall perspective on the stage. A solid option when you want more of the full room in one view."
+      "description": "The Side sections keep you close to the front half of the room with an angled look across the stage. You still see the production clearly, just from off-center.",
+      "hitboxes": [
+        {"left": 5.5, "top": 46.5, "width": 27.5, "height": 36, "clip": "polygon(0 12%, 78% 0, 100% 100%, 22% 96%)"},
+        {"left": 68, "top": 48, "width": 27.5, "height": 34.5, "clip": "polygon(22% 0, 100% 16%, 78% 100%, 0 96%)"}
+      ]
     },
     {
       "id": "rear",
       "label": "Rear",
-      "badge": "Full-room view",
+      "badge": "Wider full-stage view",
       "our_pick": false,
-      "color": "#64748b",
-      "paths": [
-        "M70 104 L180 36 L365 136 L112 258 Z"
-      ],
-      "labels": [
-        {
-          "x": 192,
-          "y": 145,
-          "lines": [
-            "REAR",
-            "T–X"
-          ]
-        }
-      ],
-      "description": "The farthest section from the stage, with the broadest overall look at the room and the full production picture."
+      "description": "Rear sits farther back and gives you the widest overall look at the stage. It is the easy choice when you care more about the full production picture than being close.",
+      "hitboxes": [
+        {"left": 14.5, "top": 13.5, "width": 71, "height": 33, "clip": "polygon(0 20%, 13% 3%, 50% 0, 87% 3%, 100% 20%, 90% 100%, 10% 100%)"}
+      ]
     }
   ]
 }

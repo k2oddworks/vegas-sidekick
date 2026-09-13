@@ -1,27 +1,88 @@
 (()=>{
-  const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-  const textLines=(labels)=>labels.map(l=>{const spans=l.lines.map((line,i)=>`<tspan x="${esc(l.x)}" dy="${i?25:0}" class="${i===l.lines.length-1&&line.includes('–')?'sub':''}">${esc(line)}</tspan>`).join('');return `<text x="${esc(l.x)}" y="${esc(l.y)}">${spans}</text>`}).join('');
   async function mount(root){
-    const url=root.dataset.layoutUrl,ticket=root.dataset.ticketUrl;
-    try{
-      const data=await fetch(url,{credentials:'same-origin'}).then(r=>{if(!r.ok)throw new Error(`HTTP ${r.status}`);return r.json()});
-      const byId=Object.fromEntries(data.zones.map(z=>[z.id,z]));
-      const zone=z=>`<g class="saxe-map-zone" data-zone="${esc(z.id)}" data-pick="${z.our_pick?'true':'false'}" role="button" tabindex="0" aria-label="${esc(z.label)}${z.badge?`, ${esc(z.badge)}`:''}" style="--zone-color:${esc(z.color)}">${z.paths.map(p=>`<path d="${esc(p)}"></path>`).join('')}${textLines(z.labels||[])}</g>`;
-      root.innerHTML=`<div><div class="saxe-map-shell"><svg viewBox="${esc(data.viewBox)}" role="img" aria-label="Saxe Theater seating layout"><path class="saxe-room-outline" d="${esc(data.room_outline)}"></path>${data.zones.map(zone).join('')}<path class="saxe-stage" d="${esc(data.stage.path)}"></path><text class="saxe-stage-label" x="${esc(data.stage.label_x)}" y="${esc(data.stage.label_y)}">STAGE</text></svg><div class="saxe-map-caption"><strong>${esc(data.venue)}</strong><span>${esc(data.address)}</span></div></div></div><div><div class="saxe-seat-detail" aria-live="polite"><span class="tag">Sweet spot</span><h3>VIP Center</h3><p>${esc(byId['vip-center'].description)}</p><a class="cta vs-ticket-primary" href="${esc(ticket)}" target="_blank" rel="noopener sponsored">Check seats →</a></div><div class="saxe-legend"><span><i style="--legend-color:#8d3cff"></i>VIP Center · Sweet Spot / Our Pick</span><span><i style="--legend-color:#ff2e7e"></i>VIP Sides · Sweet Spot / Our Pick</span><span><i style="--legend-color:#12c7b1"></i>Middle · wider view</span><span><i style="--legend-color:#64748b"></i>Rear · full-room view</span></div></div><div class="saxe-mobile-popover" aria-live="polite" aria-atomic="true"><div><span class="saxe-mobile-badge">Sweet spot</span><strong>VIP Center</strong><p>${esc(byId['vip-center'].description)}</p></div><button type="button" aria-label="Close seat description">×</button></div>`;
-      const detail=root.querySelector('.saxe-seat-detail'),pop=root.querySelector('.saxe-mobile-popover');
-      const badge=z=>z.badge||(z.our_pick?'Sweet spot':'Seat guide');
-      const activate=(id,showPop=false)=>{
-        const z=byId[id];if(!z)return;
-        root.querySelectorAll('[data-zone]').forEach(el=>el.classList.toggle('is-active',el.dataset.zone===id));
-        detail.querySelector('.tag').textContent=badge(z);detail.querySelector('h3').textContent=z.label;detail.querySelector('p').textContent=z.description;
-        pop.querySelector('.saxe-mobile-badge').textContent=badge(z);pop.querySelector('strong').textContent=z.label;pop.querySelector('p').textContent=z.description;
-        if(showPop&&matchMedia('(max-width:820px)').matches)pop.classList.add('is-open');
-      };
-      root.addEventListener('click',e=>{const z=e.target.closest('[data-zone]');if(z)activate(z.dataset.zone,true);if(e.target.closest('.saxe-mobile-popover>button'))pop.classList.remove('is-open')});
-      root.addEventListener('keydown',e=>{const z=e.target.closest('[data-zone]');if(z&&(e.key==='Enter'||e.key===' ')){e.preventDefault();activate(z.dataset.zone,true)}});
-      addEventListener('scroll',()=>pop.classList.remove('is-open'),{passive:true});activate('vip-center');
-    }catch(err){root.innerHTML='<p>Seat guide unavailable right now. Use the live ticket map to compare sections for your date.</p>';console.warn('Saxe Theater seat guide:',err)}
+    const data=await fetch(root.dataset.layoutUrl,{credentials:'same-origin'}).then(r=>{if(!r.ok)throw new Error(`HTTP ${r.status}`);return r.json()});
+    const ticket=root.dataset.ticketUrl;
+    const byId=Object.fromEntries(data.sections.map(section=>[section.id,section]));
+
+    const mapShell=document.createElement('div');
+    mapShell.className='saxe-map-shell';
+    const map=document.createElement('div');
+    map.className='saxe-seat-map';
+    const chart=document.createElement('img');
+    chart.src=data.chart_asset;
+    chart.alt='VEGAS! The Show seating chart at Saxe Theater showing Center, Side and Rear sections, with Center as the Vegas Sidekick Sweet Spot';
+    map.appendChild(chart);
+
+    data.sections.forEach(section=>{
+      section.hitboxes.forEach((box,index)=>{
+        const hit=document.createElement('button');
+        hit.type='button';
+        hit.className='saxe-seat-hit';
+        hit.dataset.zone=section.id;
+        hit.setAttribute('aria-label',`${section.label}${section.our_pick?', Sweet Spot / Our Pick':''}${index>0?' seating':''}`);
+        hit.style.left=`${box.left}%`;
+        hit.style.top=`${box.top}%`;
+        hit.style.width=`${box.width}%`;
+        hit.style.height=`${box.height}%`;
+        hit.style.setProperty('--hit-shape',box.clip);
+        map.appendChild(hit);
+      });
+    });
+
+    const popup=document.createElement('div');
+    popup.className='saxe-seat-popup';
+    popup.setAttribute('aria-live','polite');
+    popup.setAttribute('aria-atomic','true');
+    const popupTag=document.createElement('span');popupTag.className='tag';
+    const popupTitle=document.createElement('strong');
+    const popupCopy=document.createElement('p');
+    const popupClose=document.createElement('button');popupClose.type='button';popupClose.className='saxe-seat-popup-close';popupClose.setAttribute('aria-label','Close seat description');popupClose.textContent='×';
+    popup.append(popupTag,popupTitle,popupCopy,popupClose);
+    map.appendChild(popup);
+
+    const caption=document.createElement('div');caption.className='saxe-map-caption';
+    const venue=document.createElement('strong');venue.textContent=data.venue;
+    const address=document.createElement('span');address.textContent=data.address;
+    caption.append(venue,address);mapShell.append(map,caption);
+
+    const detail=document.createElement('div');detail.className='saxe-seat-detail';detail.setAttribute('aria-live','polite');
+    const tag=document.createElement('span');tag.className='tag';
+    const heading=document.createElement('h3');
+    const copy=document.createElement('p');
+    detail.append(tag,heading,copy);
+
+    const legend=document.createElement('div');legend.className='saxe-seat-legend';
+    legend.innerHTML='<span><i></i><b>Sweet Spot / Our Pick:</b>&nbsp;Center</span><span><i></i><b>Angled view:</b>&nbsp;Side</span><span><i></i><b>Wider full-stage view:</b>&nbsp;Rear</span>';
+
+    const book=document.createElement('a');book.className='saxe-seat-book vs-ticket-primary';book.href=ticket;book.target='_blank';book.rel='noopener sponsored';book.textContent='Check tickets & seating →';
+    const side=document.createElement('div');side.className='saxe-seat-side';side.append(detail,legend,book);
+    root.replaceChildren(mapShell,side);
+
+    function activate(id,showPopup=true){
+      const section=byId[id];if(!section)return;
+      root.querySelectorAll('[data-zone]').forEach(el=>el.classList.toggle('is-active',el.dataset.zone===id));
+      const label=section.our_pick?'Sweet spot':section.badge;
+      tag.textContent=label;heading.textContent=section.label;copy.textContent=section.description;
+      popupTag.textContent=label;popupTitle.textContent=section.label;popupCopy.textContent=section.description;
+      if(showPopup){popup.classList.remove('is-open');requestAnimationFrame(()=>popup.classList.add('is-open'))}
+    }
+    root.addEventListener('click',event=>{
+      if(event.target.closest('.saxe-seat-popup-close')){popup.classList.remove('is-open');return}
+      const control=event.target.closest('[data-zone]');if(control)activate(control.dataset.zone,true);
+    });
+    root.addEventListener('keydown',event=>{const control=event.target.closest('[data-zone]');if(control&&(event.key==='Enter'||event.key===' ')){event.preventDefault();activate(control.dataset.zone,true)}if(event.key==='Escape')popup.classList.remove('is-open')});
+    activate('center',false);
+
+    const galleryChart=document.querySelector('.saxe-chart-gallery img');
+    if(galleryChart){galleryChart.src=data.chart_asset;galleryChart.alt='VEGAS! The Show seating chart at Saxe Theater showing Center, Side and Rear sections, with Center as the Vegas Sidekick Sweet Spot'}
+
+    document.querySelectorAll('.ticker-item').forEach(el=>{if(el.textContent.includes('VIP Center + VIP Sides'))el.textContent='Center · Sweet spot / Our Pick'});
+    const take=document.querySelector('#quick .take p');if(take)take.textContent='Center is my pick here. This is a wide, choreography-heavy show, and the straight-on view makes it easier to take in the whole stage without chasing the closest possible row.';
+    const seatLede=document.querySelector('#seats .lede');if(seatLede)seatLede.textContent='The room fans away from the stage with Center in the middle, Side blocks on both sides and Rear farther back. Center is the Sweet Spot / Our Pick.';
+    document.querySelectorAll('#faq details').forEach(d=>{const s=d.querySelector('summary');if(s&&s.textContent.includes('difference between the seating sections')){const answer=d.querySelector('div');if(answer)answer.textContent='Center is the Vegas Sidekick Sweet Spot / Our Pick. Side gives you an angled look across the stage, while Rear sits farther back for a wider full-production view.'}});
+    document.querySelectorAll('script[type="application/ld+json"]').forEach(script=>{try{const obj=JSON.parse(script.textContent);if(obj['@type']==='FAQPage'){const q=obj.mainEntity?.find(item=>item.name?.includes('difference between the seating sections'));if(q?.acceptedAnswer)q.acceptedAnswer.text='Center is the Vegas Sidekick Sweet Spot / Our Pick. Side gives you an angled look across the stage, while Rear sits farther back for a wider full-production view.';script.textContent=JSON.stringify(obj)}}catch{}});
   }
+
   function enhanceGallery(){
     const buttons=[...document.querySelectorAll('#photos .gallery button')],light=document.getElementById('lightbox');if(!buttons.length||!light)return;const img=light.querySelector('#lightboxImg, img');if(!img)return;
     let current=0,touchX=null,prev=light.querySelector('.saxe-lb-prev'),next=light.querySelector('.saxe-lb-next'),count=light.querySelector('.saxe-lb-count');
@@ -31,5 +92,5 @@
     addEventListener('keydown',e=>{if(!light.classList.contains('open'))return;if(e.key==='ArrowLeft')show(current-1);if(e.key==='ArrowRight')show(current+1)});
     light.addEventListener('touchstart',e=>{touchX=e.changedTouches[0]?.clientX??null},{passive:true});light.addEventListener('touchend',e=>{if(touchX==null)return;const dx=(e.changedTouches[0]?.clientX??touchX)-touchX;touchX=null;if(Math.abs(dx)>45)show(current+(dx<0?1:-1))},{passive:true});
   }
-  document.querySelectorAll('[data-seat-layout="saxe-theater"]').forEach(mount);enhanceGallery();
+  document.querySelectorAll('[data-seat-layout="saxe-theater"]').forEach(root=>mount(root).catch(err=>{root.textContent='Seat guide unavailable right now. Use the live ticket map to compare sections for your date.';console.warn('Saxe Theater seat guide:',err)}));enhanceGallery();
 })();
