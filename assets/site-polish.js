@@ -46,13 +46,13 @@
   card.addEventListener('click',event=>{if(event.target.closest('a'))return;link.click()});
  });
 
- /* 16: stop page drift behind galleries, dialogs and the mobile drawer. */
+ /* 16: lock only when a genuinely open viewport overlay is present. */
  const syncScrollLock=()=>{
-  const locked=!!document.querySelector('.lightbox.open,.nav-mobile-drawer.open,.nav-overlay.visible,[aria-modal="true"]:not([hidden])');
+  const locked=!!document.querySelector('.lightbox.open,.nav-mobile-drawer.open,dialog[open]');
   document.body.classList.toggle('vs-scroll-locked',locked);
  };
  const lockObserver=new MutationObserver(syncScrollLock);
- lockObserver.observe(document.documentElement,{subtree:true,attributes:true,attributeFilter:['class','hidden','aria-hidden']});
+ lockObserver.observe(document.documentElement,{subtree:true,attributes:true,attributeFilter:['class','open']});
  document.addEventListener('click',()=>requestAnimationFrame(syncScrollLock),true);
  document.addEventListener('keydown',event=>{if(event.key==='Escape')requestAnimationFrame(syncScrollLock)});
  syncScrollLock();
