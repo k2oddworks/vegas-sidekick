@@ -20,8 +20,8 @@
     if(marker) l.setAttribute(marker,'1');
     document.head.appendChild(l);
   }
-  addStyle('/assets/site-polish.css?v=1','data-vs-site-polish');
-  add('/assets/site-polish.js?v=1','data-vs-site-polish-script');
+  addStyle('/assets/site-polish.css?v=2','data-vs-site-polish');
+  add('/assets/site-polish.js?v=2','data-vs-site-polish-script');
   add('/components/footer-core.js?v=15','data-vs-footer-core');
   if(/^\/shows\/(adult|cirque|comedy|family|magic|music|spectaculars)\/[^/]+\/?$/.test(location.pathname)){
     add('/components/show-canonical-runtime.js?v=2','data-vs-show-runtime');
