@@ -1,37 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1300" viewBox="0 0 1200 1300">
-<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#140923"/><stop offset="1" stop-color="#07070c"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-<rect width="1200" height="1300" rx="42" fill="url(#bg)"/>
-<text x="70" y="72" fill="#fff" font-family="Arial,sans-serif" font-size="42" font-weight="800">vegas <tspan fill="#ff2e7e">sidekick</tspan></text>
-<text x="72" y="108" fill="#d9d1df" font-family="Arial,sans-serif" font-size="17" letter-spacing="5">SHOWS • TICKETS • GOOD TIMES</text>
-<g transform="translate(100 120)">
-<path d="M650 620 L800 620 L800 520 L650 520 Z" fill="#ff2e7e" stroke="#ffffff" stroke-width="2" stroke-opacity=".28"/>
-<text x="725" y="575" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="30" font-weight="800">101</text>
-<path d="M650 505 Q730 485 805 455 L805 365 Q735 320 655 315 L610 430 Z" fill="#ff2e7e" stroke="#ffffff" stroke-width="2" stroke-opacity=".28"/>
-<text x="720" y="410" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="30" font-weight="800">102</text>
-<path d="M385 320 Q500 285 615 320 L585 430 Q500 405 415 430 Z" fill="#ff2e7e" stroke="#ffffff" stroke-width="2" stroke-opacity=".28"/>
-<text x="500" y="365" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="30" font-weight="800">103</text>
-<path d="M350 505 Q270 485 195 455 L195 365 Q265 320 345 315 L390 430 Z" fill="#ff2e7e" stroke="#ffffff" stroke-width="2" stroke-opacity=".28"/>
-<text x="280" y="410" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="30" font-weight="800">104</text>
-<path d="M350 620 L200 620 L200 520 L350 520 Z" fill="#ff2e7e" stroke="#ffffff" stroke-width="2" stroke-opacity=".28"/>
-<text x="275" y="575" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="30" font-weight="800">105</text>
-<path d="M820 570 L930 570 L925 350 L850 305 L805 365 L805 455 L820 475 Z" fill="#12c7b1" stroke="#ffffff" stroke-width="2" stroke-opacity=".28"/>
-<text x="875" y="455" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="30" font-weight="800">201</text>
-<path d="M610 285 L740 330 L835 250 L800 125 Q715 85 625 75 L585 250 Z" fill="#8d3cff" stroke="#ffb000" stroke-width="5" stroke-opacity="1" filter="url(#glow)"/>
-<text x="700" y="205" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="30" font-weight="800">202</text>
-<path d="M390 75 Q500 45 610 75 L585 250 Q500 220 415 250 Z" fill="#8d3cff" stroke="#ffb000" stroke-width="5" stroke-opacity="1" filter="url(#glow)"/>
-<text x="500" y="155" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="30" font-weight="800">203</text>
-<path d="M375 75 Q285 85 200 125 L165 250 L260 330 L390 285 L415 250 Z" fill="#8d3cff" stroke="#ffb000" stroke-width="5" stroke-opacity="1" filter="url(#glow)"/>
-<text x="300" y="205" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="30" font-weight="800">204</text>
-<path d="M165 250 L85 300 L55 355 L55 490 L175 535 L205 455 L195 350 L260 330 Z" fill="#8d3cff" stroke="#ffb000" stroke-width="5" stroke-opacity="1" filter="url(#glow)"/>
-<text x="130" y="390" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="30" font-weight="800">205</text>
-<path d="M55 520 L175 555 L175 650 L55 650 Z" fill="#12c7b1" stroke="#ffffff" stroke-width="2" stroke-opacity=".28"/>
-<text x="115" y="600" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="30" font-weight="800">206</text>
-<path d="M180 790 H820 V700 L760 660 H650 V540 H610 V485 Q500 445 390 485 V540 H350 V660 H240 L180 700 Z" fill="#111116" stroke="#ffb000" stroke-width="3" stroke-opacity=".75"/>
-<text x="500" y="720" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="31" font-weight="800" letter-spacing="7">STAGE</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+<title id="title">Mystère seating chart at TI Las Vegas</title>
+<desc id="desc">Mystère Theatre sections 101 through 206 with Vegas Sidekick sweet spots in sections 102 through 104 and 202 through 205.</desc>
+<defs>
+  <radialGradient id="bgGlow" cx="50%" cy="42%" r="72%"><stop offset="0" stop-color="#24113f"/><stop offset=".55" stop-color="#12091f"/><stop offset="1" stop-color="#080611"/></radialGradient>
+  <filter id="purpleGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="goldGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="1200" rx="34" fill="url(#bgGlow)"/>
+<g transform="translate(100 34) scale(1 1)">
+  <g fill="#8d3cff" stroke="#a85cff" stroke-width="4" filter="url(#purpleGlow)">
+    <path d="M610 390 L735 430 L850 330 L805 155 Q720 105 625 95 L585 365 Z"/>
+    <path d="M390 95 Q500 65 610 95 L585 365 Q500 340 415 365 Z"/>
+    <path d="M375 95 Q280 105 195 155 L150 330 L265 430 L390 390 L415 365 Z"/>
+    <path d="M150 330 L70 390 L40 485 L40 650 L180 700 L210 610 L190 475 L265 430 Z"/>
+  </g>
+  <g fill="#d99500" stroke="#ffb000" stroke-width="4" filter="url(#goldGlow)">
+    <path d="M615 650 Q735 625 815 575 L770 455 Q695 420 610 430 L565 560 Z"/>
+    <path d="M390 420 Q500 390 610 420 L565 560 Q500 540 435 560 Z"/>
+    <path d="M390 430 Q305 420 230 455 L185 575 Q265 625 385 650 L435 560 Z"/>
+  </g>
+  <g fill="#16c7e8" stroke="#2fe0ff" stroke-width="4">
+    <path d="M615 860 L800 860 L790 700 Q735 690 650 705 L620 770 Z"/>
+    <path d="M380 770 L350 705 Q265 690 210 700 L200 860 H385 Z"/>
+  </g>
+  <g fill="#d61b68" stroke="#ff3d89" stroke-width="4">
+    <path d="M825 800 L955 820 L945 575 L865 500 L800 575 L820 655 Z"/>
+    <path d="M40 675 L180 720 L175 835 L35 850 Z"/>
+  </g>
+  <path d="M400 860 H600 V790 C600 720 565 680 500 680 C435 680 400 720 400 790 Z" fill="#22242b" stroke="#2f3038" stroke-width="4"/>
+  <g fill="#fff" font-family="Inter,Arial,sans-serif" font-size="42" font-weight="800" text-anchor="middle" dominant-baseline="middle">
+    <text x="710" y="780">101</text><text x="685" y="540">102</text><text x="500" y="495">103</text><text x="315" y="540">104</text><text x="290" y="780">105</text>
+    <text x="885" y="665">201</text><text x="710" y="260">202</text><text x="500" y="205">203</text><text x="290" y="260">204</text><text x="120" y="515">205</text><text x="105" y="770">206</text>
+  </g>
+  <text x="500" y="790" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="23" font-weight="800" text-anchor="middle" letter-spacing="8">STAGE</text>
 </g>
-<rect x="350" y="1025" width="500" height="54" rx="27" fill="#ffb000"/>
-<text x="600" y="1061" text-anchor="middle" fill="#171225" font-family="Arial,sans-serif" font-size="21" font-weight="900" letter-spacing="2">OUR PICK · SECTIONS 202–205</text>
-<text x="600" y="1145" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="34" font-weight="800">Mystère Theatre – TI Hotel</text>
-<text x="600" y="1188" text-anchor="middle" fill="#d7cedd" font-family="Arial,sans-serif" font-size="21">3300 S Las Vegas Blvd, Las Vegas, NV 89109</text>
-<text x="600" y="1240" text-anchor="middle" fill="#a9a0b1" font-family="Arial,sans-serif" font-size="17">Sections are shown by physical location; Sweet spot is Vegas Sidekick’s recommendation.</text>
+<text x="600" y="1085" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="40" font-weight="800" text-anchor="middle">Cirque du Soleil Mystère Seating Chart</text>
+<text x="600" y="1128" fill="#e4dde9" font-family="Inter,Arial,sans-serif" font-size="25" text-anchor="middle">TI / Treasure Island</text>
+<text x="600" y="1168" fill="#ffb000" font-family="Inter,Arial,sans-serif" font-size="25" font-weight="800" text-anchor="middle">VegasSidekick.com</text>
 </svg>
