@@ -1,4 +1,4 @@
-// Vegas Sidekick — Shared Footer Loader v19
+// Vegas Sidekick — Shared Footer Loader v20
 // Keeps the approved footer implementation in footer-core.js,
 // loads canonical show runtime only on individual show pages,
 // and loads the isolated Walk the Strip spectacle layer only on its game route.
@@ -12,6 +12,16 @@
     if(marker) s.setAttribute(marker,'1');
     document.body.appendChild(s);
   }
+  function addStyle(href, marker){
+    if(marker && document.querySelector('link['+marker+']')) return;
+    var l=document.createElement('link');
+    l.rel='stylesheet';
+    l.href=href;
+    if(marker) l.setAttribute(marker,'1');
+    document.head.appendChild(l);
+  }
+  addStyle('/assets/site-polish.css?v=1','data-vs-site-polish');
+  add('/assets/site-polish.js?v=1','data-vs-site-polish-script');
   add('/components/footer-core.js?v=15','data-vs-footer-core');
   if(/^\/shows\/(adult|cirque|comedy|family|magic|music|spectaculars)\/[^/]+\/?$/.test(location.pathname)){
     add('/components/show-canonical-runtime.js?v=2','data-vs-show-runtime');
