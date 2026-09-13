@@ -288,11 +288,24 @@ Preserve useful `alt` text on the original on-page images.
 
 ## 12. Seating-chart system
 
-Nathan Burton Theater is the first locked example of the reusable seating system.
+Nathan Burton Theater is the first locked example of the reusable seating system. Zombie Burlesque is the locked example of using an approved chart image directly with transparent interactive hit zones.
+
+### Approved chart image wins
+
+When Kris supplies or explicitly approves a seating-chart image, **the supplied image is the visual source of truth**.
+
+- Use that image directly in the page gallery.
+- Use that same image as the visible base layer of the interactive seat guide.
+- Do **not** redraw, rebuild, trace, reinterpret, or regenerate its room shapes, seat dots, labels, colors, or section geometry.
+- Add interactivity by placing transparent section hit zones over the image. The overlays may highlight or select a section, but they must not replace the supplied chart artwork.
+- Keep section descriptions and recommendation labels in data/HTML so they can change independently of the approved visual.
+- If a venue is shared by multiple shows, the same approved room image can be reused; show-specific recommendation copy can still differ.
+
+This approved-image rule takes precedence over the generated geometry rules below.
 
 ### Architecture: room first, show second
 
-Model seating as:
+When no approved chart image has been supplied, model seating as:
 
 **Show → Venue / showroom → shared room layout → show-specific recommendation copy**
 
@@ -300,7 +313,9 @@ If two shows use the same room, they should share the same geometry. Their recom
 
 Do not redraw the same theater independently on every show page.
 
-### Geometry
+### Geometry fallback
+
+When generating a chart because no approved image exists:
 
 - The branded chart should visibly resemble the real room.
 - Preserve distinctive shapes: side pockets, straight or curved blocks, balconies, aisles, etc.
@@ -327,7 +342,7 @@ Do not name the physical seating zone itself “Sweet Spot.”
 
 ### Color meaning
 
-Use brand colors consistently rather than randomly:
+For generated charts, use brand colors consistently rather than randomly:
 
 - Warm Amber — Our Pick / recommendation emphasis
 - Purple — core middle seating
@@ -335,7 +350,7 @@ Use brand colors consistently rather than randomly:
 - Teal / green — rear / value seating
 - Near-black — stage / structure
 
-The exact number of zones can vary by room.
+The exact number of zones can vary by room. Do not recolor an approved supplied chart just to force it into this palette.
 
 ### Interaction
 
@@ -343,6 +358,7 @@ The exact number of zones can vary by room.
 - Selecting a zone updates its description and visual highlight.
 - On mobile, the selected-zone explanation must appear immediately in view (popover / compact card near the sticky ticket bar or chart). Do not require the user to tap and then hunt below the fold for the result.
 - Zone copy should explain what the section offers, not frame it as a compromise.
+- For approved-image charts, interaction sits on top of the source image rather than recreating the chart underneath it.
 
 ### Disclaimers
 
@@ -352,14 +368,16 @@ Only add a disclaimer when there is a genuine unusual limitation a customer need
 
 ### Static seating-chart gallery asset
 
-For useful room layouts, generate a matching static seating-chart graphic from the **same underlying geometry/data** used by the interactive chart.
+If Kris has supplied or approved a chart image, use that approved asset for the gallery and interactive chart.
 
-- dark noir / Vegas Sidekick visual treatment is approved
+If no approved image exists and the chart is generated from room data, generate the static seating-chart graphic from the **same underlying geometry/data** used by the interactive chart.
+
+- dark noir / Vegas Sidekick visual treatment is approved for generated charts
 - use a descriptive filename
 - use show-specific descriptive alt text
 - include venue name and verified address where useful
 - do not invent rows or seat counts
-- static and interactive charts must not drift apart
+- generated static and interactive charts must not drift apart
 
 The static chart is a UX/content asset first; any SEO value is secondary.
 
@@ -403,7 +421,7 @@ Use other active audits when the change touches their domain.
 
 ### Seating
 
-Current reusable room implementation:
+Current reusable generated room implementation:
 
 - `data/seat-layouts/nathan-burton-theater.json`
 - `assets/seat-layouts/nathan-burton-theater.css`
@@ -411,7 +429,12 @@ Current reusable room implementation:
 - `images/nathan-burton-theater-seating-chart.svg`
 - `scripts/generate-seat-layout-assets.py`
 
-When expanding this system to another show in the same room, reuse the room geometry and change only the show-specific recommendation/content layer as needed.
+Current approved-image interaction pattern:
+
+- Zombie Burlesque: supplied chart image used directly with transparent interactive overlays.
+- Mystère: supplied chart image used directly with section overlays; Sweet Spot / Our Pick is sections 102–104 and 202–205.
+
+When expanding seating to another show, first check whether Kris supplied/approved a chart image. If yes, use it directly. If not, use the reusable room-geometry system.
 
 ### Showtimes
 
