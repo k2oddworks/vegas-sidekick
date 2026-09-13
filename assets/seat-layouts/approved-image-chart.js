@@ -4,8 +4,14 @@
   const controls=[...root.querySelectorAll('.approved-seat-hit')];
   const detail=root.querySelector('.approved-seat-detail');
   function select(control){
-   controls.forEach(button=>{button.classList.toggle('is-active',button===control);button.setAttribute('aria-pressed',String(button===control));button.classList.remove('is-tapped')});
-   void control.offsetWidth;control.classList.add('is-tapped');
+   const section=control.dataset.section;
+   controls.forEach(button=>{
+    const selected=button.dataset.section===section;
+    button.classList.toggle('is-active',selected);
+    button.setAttribute('aria-pressed',String(selected));
+    button.classList.remove('is-tapped');
+   });
+   controls.filter(button=>button.dataset.section===section).forEach(button=>{void button.offsetWidth;button.classList.add('is-tapped')});
    detail.querySelector('.approved-seat-tag').textContent=control.dataset.pick==='true'?'Sweet Spot / Our Pick':'Seat guide';
    detail.querySelector('h3').textContent=control.dataset.label;
    detail.querySelector('p').textContent=control.dataset.copy;
