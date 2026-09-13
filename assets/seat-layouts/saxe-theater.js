@@ -1,6 +1,29 @@
 (()=>{
+  let chartUrlPromise=null;
+
+  async function getChartUrl(data){
+    if(chartUrlPromise)return chartUrlPromise;
+    chartUrlPromise=(async()=>{
+      if(data.chart_asset_chunks?.length){
+        const parts=await Promise.all(data.chart_asset_chunks.map(url=>fetch(url,{credentials:'same-origin'}).then(response=>{
+          if(!response.ok)throw new Error(`Chart chunk HTTP ${response.status}`);
+          return response.text();
+        })));
+        const b64=parts.join('').replace(/\s+/g,'');
+        const raw=atob(b64);
+        const bytes=new Uint8Array(raw.length);
+        for(let i=0;i<raw.length;i++)bytes[i]=raw.charCodeAt(i);
+        return URL.createObjectURL(new Blob([bytes],{type:'image/webp'}));
+      }
+      if(data.chart_asset)return data.chart_asset;
+      throw new Error('No seating chart asset configured');
+    })();
+    return chartUrlPromise;
+  }
+
   async function mount(root){
     const data=await fetch(root.dataset.layoutUrl,{credentials:'same-origin'}).then(r=>{if(!r.ok)throw new Error(`HTTP ${r.status}`);return r.json()});
+    const chartUrl=await getChartUrl(data);
     const ticket=root.dataset.ticketUrl;
     const byId=Object.fromEntries(data.sections.map(section=>[section.id,section]));
 
@@ -9,7 +32,7 @@
     const map=document.createElement('div');
     map.className='saxe-seat-map';
     const chart=document.createElement('img');
-    chart.src=data.chart_asset;
+    chart.src=chartUrl;
     chart.alt='VEGAS! The Show seating chart at Saxe Theater showing Center, Side and Rear sections, with Center as the Vegas Sidekick Sweet Spot';
     map.appendChild(chart);
 
@@ -74,13 +97,7 @@
     activate('center',false);
 
     const galleryChart=document.querySelector('.saxe-chart-gallery img');
-    if(galleryChart){galleryChart.src=data.chart_asset;galleryChart.alt='VEGAS! The Show seating chart at Saxe Theater showing Center, Side and Rear sections, with Center as the Vegas Sidekick Sweet Spot'}
-
-    document.querySelectorAll('.ticker-item').forEach(el=>{if(el.textContent.includes('VIP Center + VIP Sides'))el.textContent='Center · Sweet spot / Our Pick'});
-    const take=document.querySelector('#quick .take p');if(take)take.textContent='Center is my pick here. This is a wide, choreography-heavy show, and the straight-on view makes it easier to take in the whole stage without chasing the closest possible row.';
-    const seatLede=document.querySelector('#seats .lede');if(seatLede)seatLede.textContent='The room fans away from the stage with Center in the middle, Side blocks on both sides and Rear farther back. Center is the Sweet Spot / Our Pick.';
-    document.querySelectorAll('#faq details').forEach(d=>{const s=d.querySelector('summary');if(s&&s.textContent.includes('difference between the seating sections')){const answer=d.querySelector('div');if(answer)answer.textContent='Center is the Vegas Sidekick Sweet Spot / Our Pick. Side gives you an angled look across the stage, while Rear sits farther back for a wider full-production view.'}});
-    document.querySelectorAll('script[type="application/ld+json"]').forEach(script=>{try{const obj=JSON.parse(script.textContent);if(obj['@type']==='FAQPage'){const q=obj.mainEntity?.find(item=>item.name?.includes('difference between the seating sections'));if(q?.acceptedAnswer)q.acceptedAnswer.text='Center is the Vegas Sidekick Sweet Spot / Our Pick. Side gives you an angled look across the stage, while Rear sits farther back for a wider full-production view.';script.textContent=JSON.stringify(obj)}}catch{}});
+    if(galleryChart){galleryChart.src=chartUrl;galleryChart.alt='VEGAS! The Show seating chart at Saxe Theater showing Center, Side and Rear sections, with Center as the Vegas Sidekick Sweet Spot'}
   }
 
   function enhanceGallery(){
