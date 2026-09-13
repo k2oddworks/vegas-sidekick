@@ -110,7 +110,17 @@ The Nathan Burton Theater implementation is the first locked reusable room-layou
 - `images/nathan-burton-theater-seating-chart.svg`
 - `scripts/generate-seat-layout-assets.py`
 
-Rules:
+### Approved seating-chart image rule
+
+If Kris supplies or explicitly approves a seating-chart image, **that exact image becomes the visual source of truth**.
+
+- Use the supplied/approved chart directly in the photo gallery and as the visible base of the interactive seat guide.
+- **Do not redraw, rebuild, trace, reinterpret, or regenerate the chart geometry.**
+- Add interactivity with transparent hit zones layered over the supplied image, following the Zombie Burlesque pattern.
+- Keep recommendation data (Sweet Spot / Our Pick, section descriptions, etc.) separate from the visual asset so recommendations can change without altering the chart.
+- The generated/reusable room-geometry system below is the fallback only when no approved chart image has been supplied.
+
+Rules when using generated room geometry:
 
 - Model **room geometry once**, then reuse it across shows in that room.
 - Recommendations / copy can differ by show.
@@ -119,7 +129,7 @@ Rules:
 - Keep the physical section name separate from recommendation labels like **Sweet spot / Our Pick**.
 - Mobile tap feedback must appear immediately in view.
 - Do not add generic seating disclaimers.
-- Static seating-chart gallery assets should come from the same underlying geometry as the interactive chart.
+- Static seating-chart gallery assets should come from the same underlying geometry as the interactive chart unless an approved supplied chart image is the source of truth.
 
 ## Photos / gallery
 
