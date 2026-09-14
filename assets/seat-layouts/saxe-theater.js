@@ -25,7 +25,6 @@
     const data=await fetch(root.dataset.layoutUrl,{credentials:'same-origin'}).then(r=>{if(!r.ok)throw new Error(`HTTP ${r.status}`);return r.json()});
     const chartUrl=await getChartUrl(data);
     const ticket=root.dataset.ticketUrl;
-    const byId=Object.fromEntries(data.sections.map(section=>[section.id,section]));
 
     const mapShell=document.createElement('div');
     mapShell.className='saxe-map-shell';
@@ -52,23 +51,13 @@
       });
     });
 
-    const popup=document.createElement('div');
-    popup.className='saxe-seat-popup';
-    popup.setAttribute('aria-live','polite');
-    popup.setAttribute('aria-atomic','true');
-    const popupTag=document.createElement('span');popupTag.className='tag';
-    const popupTitle=document.createElement('strong');
-    const popupCopy=document.createElement('p');
-    const popupClose=document.createElement('button');popupClose.type='button';popupClose.className='saxe-seat-popup-close';popupClose.setAttribute('aria-label','Close seat description');popupClose.textContent='×';
-    popup.append(popupTag,popupTitle,popupCopy,popupClose);
-    map.appendChild(popup);
 
     const caption=document.createElement('div');caption.className='saxe-map-caption';
     const venue=document.createElement('strong');venue.textContent=data.venue;
     const address=document.createElement('span');address.textContent=data.address;
     caption.append(venue,address);mapShell.append(map,caption);
 
-    const detail=document.createElement('div');detail.className='saxe-seat-detail';detail.setAttribute('aria-live','polite');
+    const detail=document.createElement('div');detail.className='saxe-seat-detail';detail.setAttribute('aria-live','off');
     const tag=document.createElement('span');tag.className='tag';
     const heading=document.createElement('h3');
     const copy=document.createElement('p');
@@ -81,20 +70,19 @@
     const side=document.createElement('div');side.className='saxe-seat-side';side.append(detail,legend,book);
     root.replaceChildren(mapShell,side);
 
-    function activate(id,showPopup=true){
-      const section=byId[id];if(!section)return;
-      root.querySelectorAll('[data-zone]').forEach(el=>el.classList.toggle('is-active',el.dataset.zone===id));
-      const label=section.our_pick?'Sweet spot':section.badge;
-      tag.textContent=label;heading.textContent=section.label;copy.textContent=section.description;
-      popupTag.textContent=label;popupTitle.textContent=section.label;popupCopy.textContent=section.description;
-      if(showPopup){popup.classList.remove('is-open');requestAnimationFrame(()=>popup.classList.add('is-open'))}
-    }
-    root.addEventListener('click',event=>{
-      if(event.target.closest('.saxe-seat-popup-close')){popup.classList.remove('is-open');return}
-      const control=event.target.closest('[data-zone]');if(control)activate(control.dataset.zone,true);
+    window.VSSeatInteractions.mount({
+      root,controls:root.querySelectorAll('[data-zone]'),
+      sections:data.sections.map(section=>({
+        id:section.id,label:section.label,
+        description:section.description,pick:section.our_pick,badge:section.badge
+      })),
+      getId:button=>button.dataset.zone,initialId:'center',
+      onSelect:(section,label)=>{
+        tag.textContent=label;
+        heading.textContent=section.label;
+        copy.textContent=section.description;
+      }
     });
-    root.addEventListener('keydown',event=>{const control=event.target.closest('[data-zone]');if(control&&(event.key==='Enter'||event.key===' ')){event.preventDefault();activate(control.dataset.zone,true)}if(event.key==='Escape')popup.classList.remove('is-open')});
-    activate('center',false);
 
     const galleryChart=document.querySelector('.saxe-chart-gallery img');
     if(galleryChart){galleryChart.src=chartUrl;galleryChart.alt='VEGAS! The Show seating chart at Saxe Theater showing Center, Side and Rear sections, with Center as the Vegas Sidekick Sweet Spot'}

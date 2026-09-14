@@ -1,25 +1,21 @@
-/* Approved artwork stays in HTML; only its transparent controls are enhanced. */
+/* Artwork and hit boundaries stay in HTML; shared controller owns all selection behavior. */
 (()=>{'use strict';
  document.querySelectorAll('.approved-seat-guide').forEach(root=>{
   const controls=[...root.querySelectorAll('.approved-seat-hit')];
   const detail=root.querySelector('.approved-seat-detail');
-  function select(control){
-   const section=control.dataset.section;
-   controls.forEach(button=>{
-    const selected=button.dataset.section===section;
-    button.classList.toggle('is-active',selected);
-    button.setAttribute('aria-pressed',String(selected));
-    button.classList.remove('is-tapped');
-   });
-   controls.filter(button=>button.dataset.section===section).forEach(button=>{void button.offsetWidth;button.classList.add('is-tapped')});
-   detail.querySelector('.approved-seat-tag').textContent=control.dataset.pick==='true'?'Sweet Spot / Our Pick':'Seat guide';
-   detail.querySelector('h3').textContent=control.dataset.label;
-   detail.querySelector('p').textContent=control.dataset.copy;
-   detail.classList.add('is-open');
-  }
-  controls.forEach(button=>{button.addEventListener('click',()=>select(button));button.addEventListener('animationend',()=>button.classList.remove('is-tapped'))});
-  detail.querySelector('.approved-seat-close').addEventListener('click',()=>detail.classList.remove('is-open'));
-  root.addEventListener('keydown',event=>{if(event.key==='Escape')detail.classList.remove('is-open')});
+  detail.setAttribute('aria-live','off');
+  const sections=controls.map(button=>({
+   id:button.dataset.section,label:button.dataset.label,
+   pick:button.dataset.pick==='true',description:button.dataset.copy
+  }));
+  window.VSSeatInteractions.mount({
+   root,controls,sections,getId:button=>button.dataset.section,
+   onSelect:(section,label)=>{
+    detail.querySelector('.approved-seat-tag').textContent=label;
+    detail.querySelector('h3').textContent=section.label;
+    detail.querySelector('p').textContent=section.description;
+   }
+  });
  });
  const buttons=[...document.querySelectorAll('#photos .gallery button')],light=document.getElementById('lightbox'),img=document.getElementById('lightboxImg');
  if(!buttons.length||!light||!img)return;

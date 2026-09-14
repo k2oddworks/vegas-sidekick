@@ -2,7 +2,6 @@
   async function mount(root){
     const data=await fetch(root.dataset.layoutUrl,{credentials:'same-origin'}).then(r=>r.json());
     const ticket=root.dataset.ticketUrl;
-    const byId=Object.fromEntries(data.sections.map(section=>[section.id,section]));
 
     const mapShell=document.createElement('div');
     mapShell.className='mystere-map-shell';
@@ -23,21 +22,6 @@
       map.appendChild(hit);
     });
 
-    const popup=document.createElement('div');
-    popup.className='mystere-seat-popup';
-    popup.setAttribute('aria-live','polite');
-    popup.setAttribute('aria-atomic','true');
-    const popupTag=document.createElement('span');
-    popupTag.className='tag';
-    const popupTitle=document.createElement('strong');
-    const popupCopy=document.createElement('p');
-    const popupClose=document.createElement('button');
-    popupClose.type='button';
-    popupClose.className='mystere-seat-popup-close';
-    popupClose.setAttribute('aria-label','Close seat description');
-    popupClose.textContent='×';
-    popup.append(popupTag,popupTitle,popupCopy,popupClose);
-    map.appendChild(popup);
 
     const caption=document.createElement('div');
     caption.className='mystere-map-caption';
@@ -50,7 +34,7 @@
 
     const detail=document.createElement('div');
     detail.className='mystere-seat-detail';
-    detail.setAttribute('aria-live','polite');
+    detail.setAttribute('aria-live','off');
     const tag=document.createElement('span');
     tag.className='tag';
     const heading=document.createElement('h3');
@@ -93,40 +77,19 @@
 
     root.replaceChildren(mapShell,side);
 
-    function activate(id,showPopup=true){
-      const section=byId[id];
-      if(!section)return;
-      root.querySelectorAll('[data-zone]').forEach(el=>el.classList.toggle('is-active',el.dataset.zone===id));
-      const label=section.our_pick?'Sweet spot':section.badge;
-      tag.textContent=label;
-      heading.textContent=`Section ${section.label}`;
-      copy.textContent=section.description;
-      popupTag.textContent=label;
-      popupTitle.textContent=`Section ${section.label}`;
-      popupCopy.textContent=section.description;
-      if(showPopup){
-        popup.classList.remove('is-open');
-        requestAnimationFrame(()=>popup.classList.add('is-open'));
+    window.VSSeatInteractions.mount({
+      root,controls:root.querySelectorAll('[data-zone]'),
+      sections:data.sections.map(section=>({
+        id:section.id,label:'Section '+section.label,
+        description:section.description,pick:section.our_pick,badge:section.badge
+      })),
+      getId:button=>button.dataset.zone,initialId:'203',
+      onSelect:(section,label)=>{
+        tag.textContent=label;
+        heading.textContent=section.label;
+        copy.textContent=section.description;
       }
-    }
-
-    root.addEventListener('click',event=>{
-      if(event.target.closest('.mystere-seat-popup-close')){
-        popup.classList.remove('is-open');
-        return;
-      }
-      const control=event.target.closest('[data-zone]');
-      if(control)activate(control.dataset.zone,true);
     });
-    root.addEventListener('keydown',event=>{
-      const control=event.target.closest('[data-zone]');
-      if(control&&(event.key==='Enter'||event.key===' ')){
-        event.preventDefault();
-        activate(control.dataset.zone,true);
-      }
-      if(event.key==='Escape')popup.classList.remove('is-open');
-    });
-    activate('203',false);
   }
 
   function enhanceGallery(){

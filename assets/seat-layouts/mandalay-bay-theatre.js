@@ -7,7 +7,6 @@
       });
       const chartSrc=data.chart_image;
       const ticket=root.dataset.ticketUrl;
-      const byId=Object.fromEntries(data.zones.map(zone=>[zone.id,zone]));
 
       const mapShell=document.createElement('div');
       mapShell.className='mbt-map-shell';
@@ -34,20 +33,6 @@
         });
       });
 
-      const popup=document.createElement('div');
-      popup.className='mbt-seat-popup';
-      popup.setAttribute('aria-live','polite');
-      popup.setAttribute('aria-atomic','true');
-      const popupTag=document.createElement('span'); popupTag.className='tag';
-      const popupTitle=document.createElement('strong');
-      const popupCopy=document.createElement('p');
-      const popupClose=document.createElement('button');
-      popupClose.type='button';
-      popupClose.className='mbt-seat-popup-close';
-      popupClose.setAttribute('aria-label','Close seat description');
-      popupClose.textContent='×';
-      popup.append(popupTag,popupTitle,popupCopy,popupClose);
-      map.appendChild(popup);
 
       const caption=document.createElement('div');
       caption.className='mbt-map-caption';
@@ -58,7 +43,7 @@
 
       const detail=document.createElement('div');
       detail.className='mbt-seat-detail';
-      detail.setAttribute('aria-live','polite');
+      detail.setAttribute('aria-live','off');
       const tag=document.createElement('span'); tag.className='tag';
       const heading=document.createElement('h3');
       const copy=document.createElement('p');
@@ -80,53 +65,19 @@
       side.append(detail,legend,book);
       root.replaceChildren(mapShell,side);
 
-      function activate(id,showPopup=true){
-        const zone=byId[id];
-        if(!zone)return;
-        const hits=[...root.querySelectorAll('.mbt-seat-hit')];
-        hits.forEach(el=>{
-          const selected=el.dataset.zone===id;
-          el.classList.toggle('is-active',selected);
-          el.setAttribute('aria-pressed',selected?'true':'false');
-          if(selected&&showPopup){
-            el.classList.remove('is-tapped');
-            void el.offsetWidth;
-            el.classList.add('is-tapped');
-          }
-        });
-        const label=zone.our_pick?'Sweet Spot / Our Pick':zone.badge;
+      window.VSSeatInteractions.mount({
+      root,controls:root.querySelectorAll('[data-zone]'),
+      sections:data.zones.map(section=>({
+        id:section.id,label:section.label,
+        description:section.description,pick:section.our_pick,badge:section.badge
+      })),
+      getId:button=>button.dataset.zone,initialId:'102',
+      onSelect:(section,label)=>{
         tag.textContent=label;
-        heading.textContent=zone.label;
-        copy.textContent=zone.description;
-        popupTag.textContent=label;
-        popupTitle.textContent=zone.label;
-        popupCopy.textContent=zone.description;
-        if(showPopup){
-          popup.classList.remove('is-open');
-          requestAnimationFrame(()=>popup.classList.add('is-open'));
-        }
+        heading.textContent=section.label;
+        copy.textContent=section.description;
       }
-
-      root.addEventListener('click',event=>{
-        if(event.target.closest('.mbt-seat-popup-close')){
-          popup.classList.remove('is-open');
-          return;
-        }
-        const control=event.target.closest('[data-zone]');
-        if(control)activate(control.dataset.zone,true);
-      });
-      root.addEventListener('keydown',event=>{
-        const control=event.target.closest('[data-zone]');
-        if(control&&(event.key==='Enter'||event.key===' ')){
-          event.preventDefault();
-          activate(control.dataset.zone,true);
-        }
-        if(event.key==='Escape')popup.classList.remove('is-open');
-      });
-      root.addEventListener('animationend',event=>{
-        if(event.target.classList?.contains('mbt-seat-hit'))event.target.classList.remove('is-tapped');
-      });
-      activate('102',false);
+    });
 
       const galleryChart=document.querySelector('.mbt-chart-gallery img');
       if(galleryChart){
