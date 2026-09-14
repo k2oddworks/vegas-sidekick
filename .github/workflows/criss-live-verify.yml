@@ -1,0 +1,44 @@
+name: Criss Angel Live Verification
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/criss-live-verify.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify-live:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for production and verify exact seating assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          expected='5d62db6f0e5680b1bfc64a93ee5a31e07ca8709d0587fd5fd7a092f1fc23d18c'
+          base='https://vegassidekick.com'
+          for attempt in {1..18}; do
+            echo "Production verification attempt $attempt"
+            rm -f /tmp/chart.jpg /tmp/layout.json /tmp/layout.js /tmp/layout.css
+            if curl -fsS --max-time 20 "$base/images/criss-angel-mindfreak-seating-chart.jpg?verify=$GITHUB_SHA" -o /tmp/chart.jpg \
+              && curl -fsS --max-time 20 "$base/data/seat-layouts/criss-angel-theatre.json?verify=$GITHUB_SHA" -o /tmp/layout.json \
+              && curl -fsS --max-time 20 "$base/assets/seat-layouts/room-layout.js?verify=$GITHUB_SHA" -o /tmp/layout.js \
+              && curl -fsS --max-time 20 "$base/assets/seat-layouts/room-layout.css?verify=$GITHUB_SHA" -o /tmp/layout.css; then
+              actual=$(sha256sum /tmp/chart.jpg | awk '{print $1}')
+              if [[ "$actual" == "$expected" ]] \
+                && grep -q '"approved_image"' /tmp/layout.json \
+                && grep -q '"id": "102"' /tmp/layout.json \
+                && grep -q '"id": "304"' /tmp/layout.json \
+                && grep -q 'renderApproved' /tmp/layout.js \
+                && grep -q 'vs-room-approved-hit' /tmp/layout.css; then
+                echo "LIVE_VERIFIED exact_image_sha256=$actual"
+                exit 0
+              fi
+              echo "Not current yet: chart sha=$actual"
+            fi
+            sleep 10
+          done
+          echo 'Production did not reach the expected Criss Angel seating-chart build in time.' >&2
+          exit 1
