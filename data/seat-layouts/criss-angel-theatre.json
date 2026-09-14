@@ -1,144 +1,104 @@
 {
   "venue": "Criss Angel Theater · Planet Hollywood",
   "address": "3667 S Las Vegas Blvd, Las Vegas, NV 89109",
-  "viewBox": "0 0 120 108",
-  "stage": {
-    "path": "M28 91 Q60 84 92 91 L86 104 H34 Z",
-    "labelX": 60,
-    "labelY": 97
+  "approved_image": {
+    "src": "/images/criss-angel-mindfreak-seating-chart.jpg",
+    "width": 1536,
+    "height": 1536,
+    "alt": "Criss Angel MINDFREAK seating chart at Planet Hollywood showing sections 101 through 103, 201 through 203, and 301 through 305",
+    "gallery": {
+      "ariaLabel": "Open Criss Angel MINDFREAK seating chart",
+      "alt": "Criss Angel MINDFREAK seating chart at Planet Hollywood"
+    }
   },
   "zones": [
     {
-      "id": "103",
-      "label": "Section 103",
-      "mapLabel": "103",
-      "badge": "Front left",
+      "id": "101",
+      "label": "Section 101",
+      "badge": "Close left-side view",
       "our_pick": false,
-      "color": "#ff3b8d",
-      "path": "M14 69 Q26 75 43 79 L47 91 Q28 88 15 82 Z",
-      "labelX": 29,
-      "labelY": 81,
-      "description": "Section 103 is a close lower-left option for strong performer detail and an angled look across the production."
+      "description": "Section 101 puts you close to the stage from the left side, with strong performer detail and an angled view across the production.",
+      "hitAreas": [{"left": 14.0, "top": 51.0, "width": 23.5, "height": 28.0, "clipPath": "polygon(0% 34%,74% 0%,100% 91%,79% 100%,18% 60%)"}]
     },
     {
       "id": "102",
       "label": "Section 102",
-      "mapLabel": "102",
       "badge": "Front center",
       "our_pick": true,
-      "color": "#ffb000",
-      "path": "M43 79 Q60 82 77 79 L73 92 Q60 95 47 91 Z",
-      "labelX": 60,
-      "labelY": 86,
-      "description": "Section 102 is the closest centered Sweet Spot, giving you a direct view of the illusions while keeping the video and lighting lined up."
+      "description": "Section 102 is the closest centered Vegas Sidekick Sweet Spot. You get a direct view of the illusions while keeping the large-scale lighting and video lined up in front of you.",
+      "hitAreas": [{"left": 34.0, "top": 49.3, "width": 29.0, "height": 23.0, "clipPath": "polygon(0% 0%,100% 0%,78% 100%,20% 100%)"}]
     },
     {
-      "id": "101",
-      "label": "Section 101",
-      "mapLabel": "101",
-      "badge": "Front right",
+      "id": "103",
+      "label": "Section 103",
+      "badge": "Close right-side view",
       "our_pick": false,
-      "color": "#ff3b8d",
-      "path": "M77 79 Q94 75 106 69 L105 82 Q92 88 73 92 Z",
-      "labelX": 91,
-      "labelY": 81,
-      "description": "Section 101 mirrors the front-left section with close detail from the right side."
-    },
-    {
-      "id": "203",
-      "label": "Section 203",
-      "mapLabel": "203",
-      "badge": "Mid left",
-      "our_pick": false,
-      "color": "#7b35ea",
-      "path": "M10 48 Q25 56 44 60 L43 76 Q25 72 12 64 Z",
-      "labelX": 28,
-      "labelY": 62,
-      "description": "Section 203 sits in the middle tier on the left and balances production scale with a comfortable viewing distance."
-    },
-    {
-      "id": "202",
-      "label": "Section 202",
-      "mapLabel": "202",
-      "badge": "Mid center",
-      "our_pick": true,
-      "color": "#ffb000",
-      "path": "M44 60 Q60 64 76 60 L77 77 Q60 81 43 76 Z",
-      "labelX": 60,
-      "labelY": 69,
-      "description": "Section 202 is the main Sweet Spot for MINDFREAK: centered and far enough back to absorb the pyro, screens and full-stage effects together."
+      "description": "Section 103 puts you close to the stage from the right side, with strong performer detail and an angled view across the production.",
+      "hitAreas": [{"left": 59.0, "top": 51.0, "width": 24.5, "height": 28.0, "clipPath": "polygon(26% 0%,100% 34%,82% 61%,20% 100%,0% 91%)"}]
     },
     {
       "id": "201",
       "label": "Section 201",
-      "mapLabel": "201",
-      "badge": "Mid right",
-      "our_pick": false,
-      "color": "#7b35ea",
-      "path": "M76 60 Q95 56 110 48 L108 64 Q95 72 77 77 Z",
-      "labelX": 92,
-      "labelY": 62,
-      "description": "Section 201 is the matching mid-tier option on the right with a wide production view."
+      "badge": "Middle left",
+      "our_pick": true,
+      "description": "Section 201 is part of the Vegas Sidekick Sweet Spot. It gives you a strong middle-distance view from the left while keeping the full production easy to take in.",
+      "hitAreas": [{"left": 0.5, "top": 27.0, "width": 31.0, "height": 28.5, "clipPath": "polygon(0% 48%,86% 0%,100% 78%,66% 100%,18% 70%)"}]
     },
     {
-      "id": "305",
-      "label": "Section 305",
-      "mapLabel": "305",
-      "badge": "Upper far left",
-      "our_pick": false,
-      "color": "#16b9c8",
-      "path": "M4 19 Q12 27 25 32 L22 47 Q10 42 5 35 Z",
-      "labelX": 14,
-      "labelY": 34,
-      "description": "Section 305 is the widest upper-left value angle for taking in the entire production."
+      "id": "202",
+      "label": "Section 202",
+      "badge": "Middle center",
+      "our_pick": true,
+      "description": "Section 202 is the centered middle-house Vegas Sidekick Sweet Spot. It is far enough back to read the pyro, screens and full-stage effects together without giving up a direct sightline.",
+      "hitAreas": [{"left": 32.5, "top": 22.0, "width": 34.0, "height": 26.5, "clipPath": "polygon(0% 7%,100% 7%,98% 100%,2% 100%)"}]
     },
     {
-      "id": "304",
-      "label": "Section 304",
-      "mapLabel": "304",
-      "badge": "Upper left",
-      "our_pick": false,
-      "color": "#16b9c8",
-      "path": "M25 32 Q35 37 46 39 L44 55 Q32 52 22 47 Z",
-      "labelX": 34,
-      "labelY": 44,
-      "description": "Section 304 keeps the show in a broad elevated view while moving closer toward center."
-    },
-    {
-      "id": "303",
-      "label": "Section 303",
-      "mapLabel": "303",
-      "badge": "Upper center",
-      "our_pick": false,
-      "color": "#7b35ea",
-      "path": "M46 39 Q60 42 74 39 L76 55 Q60 59 44 55 Z",
-      "labelX": 60,
-      "labelY": 48,
-      "description": "Section 303 is the centered upper tier and a good value when you want the full production framed straight ahead."
-    },
-    {
-      "id": "302",
-      "label": "Section 302",
-      "mapLabel": "302",
-      "badge": "Upper right",
-      "our_pick": false,
-      "color": "#16b9c8",
-      "path": "M74 39 Q85 37 95 32 L98 47 Q88 52 76 55 Z",
-      "labelX": 86,
-      "labelY": 44,
-      "description": "Section 302 mirrors the upper-left section with a broad elevated view from the right."
+      "id": "203",
+      "label": "Section 203",
+      "badge": "Middle right",
+      "our_pick": true,
+      "description": "Section 203 is part of the Vegas Sidekick Sweet Spot. It gives you a strong middle-distance view from the right while keeping the full production easy to take in.",
+      "hitAreas": [{"left": 69.0, "top": 27.0, "width": 30.5, "height": 28.5, "clipPath": "polygon(14% 0%,100% 48%,82% 70%,34% 100%,0% 78%)"}]
     },
     {
       "id": "301",
       "label": "Section 301",
-      "mapLabel": "301",
+      "badge": "Upper far left",
+      "our_pick": false,
+      "description": "Section 301 gives you the widest elevated angle from the left side and a clear read on the full scale of the production.",
+      "hitAreas": [{"left": 0.0, "top": 13.0, "width": 20.0, "height": 18.5, "clipPath": "polygon(0% 39%,72% 0%,100% 78%,48% 100%)"}]
+    },
+    {
+      "id": "302",
+      "label": "Section 302",
+      "badge": "Upper left-center",
+      "our_pick": true,
+      "description": "Section 302 is an elevated Vegas Sidekick Sweet Spot with a broad view of the stage while staying close to center.",
+      "hitAreas": [{"left": 17.0, "top": 8.3, "width": 21.5, "height": 14.5, "clipPath": "polygon(0% 20%,96% 0%,100% 86%,14% 100%)"}]
+    },
+    {
+      "id": "303",
+      "label": "Section 303",
+      "badge": "Upper center",
+      "our_pick": true,
+      "description": "Section 303 is the centered upper-level Vegas Sidekick Sweet Spot. You get the cleanest straight-on elevated view of the full production.",
+      "hitAreas": [{"left": 39.0, "top": 6.0, "width": 22.5, "height": 13.5, "clipPath": "polygon(0% 5%,100% 5%,96% 100%,4% 100%)"}]
+    },
+    {
+      "id": "304",
+      "label": "Section 304",
+      "badge": "Upper right-center",
+      "our_pick": true,
+      "description": "Section 304 is an elevated Vegas Sidekick Sweet Spot with a broad view of the stage while staying close to center.",
+      "hitAreas": [{"left": 61.5, "top": 8.3, "width": 21.5, "height": 14.5, "clipPath": "polygon(4% 0%,100% 20%,86% 100%,0% 86%)"}]
+    },
+    {
+      "id": "305",
+      "label": "Section 305",
       "badge": "Upper far right",
       "our_pick": false,
-      "color": "#16b9c8",
-      "path": "M95 32 Q108 27 116 19 L115 35 Q110 42 98 47 Z",
-      "labelX": 106,
-      "labelY": 34,
-      "description": "Section 301 is the far-right upper value section with the widest angle across the room."
+      "description": "Section 305 gives you the widest elevated angle from the right side and a clear read on the full scale of the production.",
+      "hitAreas": [{"left": 80.0, "top": 13.0, "width": 20.0, "height": 18.5, "clipPath": "polygon(28% 0%,100% 39%,52% 100%,0% 78%)"}]
     }
   ]
 }
