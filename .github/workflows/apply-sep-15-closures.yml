@@ -1,0 +1,30 @@
+name: Apply Sep 15 Closure Updates
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/apply-sep-15-closures.py
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply closure updates
+        run: python scripts/apply-sep-15-closures.py
+      - name: Validate JSON
+        run: python -m json.tool data/show-database.json >/dev/null
+      - name: Commit updates
+        run: |
+          git config user.name "Vegas Sidekick Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add shows/spectaculars/awakening/index.html shows/cirque/index.html guides/best-cirque-shows/index.html data/show-database.json docs/awakening-closing-checklist.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Update Awakening closing and archive Mad Apple"
+          git push origin main
