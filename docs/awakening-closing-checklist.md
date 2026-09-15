@@ -2,6 +2,8 @@
 
 Run after the final performance on October 10, 2026.
 
+Current note: Awakening is carrying the compact booking-module experiment while the show remains active.
+
 - Mark Awakening closed in `data/show-database.json`.
 - Convert the show page from closing to historical/closed treatment; do not delete it.
 - Remove active ticket CTAs and active Offer/Event scheduling schema.
