@@ -8,7 +8,7 @@ s=s.replace('<script src="/assets/site-header.js"></script><script src="/assets/
 p.write_text(s)
 
 # Homepage: remove accidental giant standalone card, then put newest Dispatch story first
-# in the existing compact mini-card list.
+# in the existing compact mini-card list. This is the pattern future Dispatch updates should follow.
 p=root/'index.html'; h=p.read_text()
 start=h.find('<section class="dispatch-oprah"')
 if start!=-1:
@@ -28,7 +28,6 @@ oprah='/news/oprah-winfrey-aha-sphere-las-vegas/'
 if oprah not in n:
     old='<main class="n-wrap" id="articles-section">'
     feature='''<main class="n-wrap" id="articles-section"><a href="/news/oprah-winfrey-aha-sphere-las-vegas/" class="featured-article" data-category="news" id="featured-article"><div class="featured-article-img"><img src="/images/news/oprah-winfrey-speaker.jpg" alt="Oprah Winfrey announces AHA at Sphere Las Vegas" loading="eager"><span class="featured-badge">Featured</span></div><div class="featured-article-body"><div class="featured-meta"><span class="featured-tag">Sphere</span><span class="featured-date">September 15, 2026</span></div><h2>Oprah Is Taking Over Sphere — But This Isn’t a Concert</h2><p>AHA brings four immersive live performances to Sphere April 2–4, 2027, built around music, film, sensory effects and the room itself.</p><div class="featured-footer"><span class="featured-author"><img src="/images/kris-kidd.webp" alt="Kris Kidd">By Kris Kidd</span><span class="read-more-link">Read Article →</span></div></div></a>'''
-    # Demote current Oasis feature if present.
     a=n.find('<a href="/news/oasis-live-27-las-vegas-allegiant-stadium/" class="featured-article"')
     b=n.find('</a><div class="grid-header">',a)
     if a!=-1 and b!=-1:
