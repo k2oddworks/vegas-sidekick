@@ -18,8 +18,12 @@ s=s.replace('"priceValidUntil":"2027-12-31"','"priceValidUntil":"2026-10-10"')
 s=s.replace('["https://schema.org/Sunday"],"startTime":"18:00"','["https://schema.org/Sunday"],"startTime":"19:00"')
 s=s.replace('Sun · 4 PM &amp; 6 PM','Sun · 4 PM &amp; 7 PM').replace('data-times="4 PM|6 PM"','data-times="4 PM|7 PM"')
 s=s.replace('Monday, Tuesday, Friday, Saturday, and Sunday at 6:30 PM and 9:00 PM. The show is dark on Wednesday and Thursday.','Monday, Tuesday, Friday and Saturday at 6:30 PM and 9:00 PM, with Sunday performances at 4:00 PM and 7:00 PM. The final performance is October 10, 2026.')
-banner='<div class="show-closing-banner" role="status" style="background:#fff3cd;color:#3d2c00;padding:14px 20px;text-align:center;font-weight:800;border-bottom:1px solid #e4bd55">Final performances: Awakening closes October 10, 2026. Tickets are only available through the final performance.</div>'
-s=s.replace('<div id="vs-header"></div>','<div id="vs-header"></div>'+banner,1)
+s=s.replace('"dateModified":"2026-09-07","lastReviewed":"2026-09-07"','"dateModified":"2026-09-15","lastReviewed":"2026-09-15"')
+s=s.replace('Last updated September 2026 · Your date and seat determine the final total.','Show info confirmed September 2026')
+s=s.replace('Las Vegas show and ticketing guidance. Last updated September 2026.','Las Vegas show and ticketing guidance. Show info confirmed September 2026.')
+banner='<div class="show-closing-banner" role="status" style="background:#fff3cd;color:#3d2c00;padding:14px 20px;text-align:center;font-weight:800;border-bottom:1px solid #e4bd55">Final performance October 10, 2026. Tickets remain available for performances through the closing date.</div>'
+if 'Final performance October 10, 2026.' not in s:
+ s=s.replace('<div id="vs-header"></div>','<div id="vs-header"></div>'+banner,1)
 p.write_text(s)
 
 # Database record.
