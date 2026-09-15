@@ -1,0 +1,30 @@
+name: Carrot Top Hero Depth
+on:
+  push:
+    branches: [main]
+    paths: [scripts/apply-carrot-top-hero-depth.py]
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    permissions: {contents: write}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: main}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: python scripts/apply-carrot-top-hero-depth.py
+      - run: |
+          python3 scripts/audit-event-schema.py
+          python3 scripts/audit-ticket-cta-color.py
+          python3 scripts/audit-mobile-show-heroes.py
+          python3 scripts/audit-catalog-js-syntax.py
+          python3 scripts/audit-orphan-ui.py
+          git diff --check
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add shows/comedy/carrot-top/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Test dimensional hero on Carrot Top"
+            git push origin main
+          fi
