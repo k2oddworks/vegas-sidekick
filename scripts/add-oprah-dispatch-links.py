@@ -10,22 +10,21 @@ if start!=-1 and end!=-1:
  oasis=s[start:end+4]
  s=s[:start]+s[end+4:]
  oasis=oasis.replace(' class="featured-article" data-category="rock" id="featured-article"',' class="article-card" data-category="rock"').replace('<span class="featured-badge">Featured</span>','')
- # convert to compact card markup manually for consistency
  oasis='''<a href="/news/oasis-live-27-las-vegas-allegiant-stadium/" class="article-card" data-category="rock"><div class="article-card-img"><img src="/images/news/oasis-live-27-las-vegas-wide.jpg" alt="Oasis Live ’27 Las Vegas" loading="lazy"></div><div class="article-card-body"><div class="article-card-meta"><span class="article-tag">Rock</span><span class="article-date">Sept. 14, 2026</span></div><h3 class="article-card-title">Oasis Announce Three Las Vegas Shows at Allegiant Stadium in 2027</h3></div></a>'''
  marker='<div class="articles-grid" id="articles-grid">'
  s=s.replace(marker,marker+'\n'+oasis,1)
-s=s.replace(old,card,1)
+if '/news/oprah-winfrey-aha-sphere-las-vegas/' not in s:
+ s=s.replace(old,card,1)
 news.write_text(s)
 
 home=root/'index.html'; h=home.read_text()
-# Add Oprah before Oasis wherever the homepage Dispatch cards begin.
 needle='<a href="/news/oasis-live-27-las-vegas-allegiant-stadium/"'
-pos=h.find(needle)
-if pos!=-1:
- card='''<a href="/news/oprah-winfrey-aha-sphere-las-vegas/" class="dispatch-card"><div class="dispatch-card-img"><img src="/images/news/oprah-winfrey-speaker.jpg" alt="Oprah Winfrey AHA at Sphere Las Vegas" loading="lazy"></div><div class="dispatch-card-body"><span class="dispatch-card-tag">Sphere</span><h3>Oprah Is Taking Over Sphere — But This Isn’t a Concert</h3><p>Four immersive AHA performances arrive April 2–4, 2027.</p></div></a>'''
- h=h[:pos]+card+h[pos:]
-else:
- # fallback: place a simple linked feature immediately before closing main
- card='''<section class="dispatch-oprah" style="max-width:1100px;margin:40px auto;padding:0 20px"><a href="/news/oprah-winfrey-aha-sphere-las-vegas/" style="display:block"><img src="/images/news/oprah-winfrey-speaker.jpg" alt="Oprah Winfrey AHA at Sphere Las Vegas" style="width:100%;max-height:420px;object-fit:cover;border-radius:18px"><h2>Oprah Is Taking Over Sphere — But This Isn’t a Concert</h2><p>Four immersive AHA performances arrive April 2–4, 2027.</p></a></section>'''
- h=h.replace('</main>',card+'</main>',1)
+if '/news/oprah-winfrey-aha-sphere-las-vegas/' not in h:
+ pos=h.find(needle)
+ if pos!=-1:
+  card='''<a href="/news/oprah-winfrey-aha-sphere-las-vegas/" class="dispatch-card"><div class="dispatch-card-img"><img src="/images/news/oprah-winfrey-speaker.jpg" alt="Oprah Winfrey AHA at Sphere Las Vegas" loading="lazy"></div><div class="dispatch-card-body"><span class="dispatch-card-tag">Sphere</span><h3>Oprah Is Taking Over Sphere — But This Isn’t a Concert</h3><p>Four immersive AHA performances arrive April 2–4, 2027.</p></div></a>'''
+  h=h[:pos]+card+h[pos:]
+ else:
+  card='''<section class="dispatch-oprah" style="max-width:1100px;margin:40px auto;padding:0 20px"><a href="/news/oprah-winfrey-aha-sphere-las-vegas/"><img src="/images/news/oprah-winfrey-speaker.jpg" alt="Oprah Winfrey AHA at Sphere Las Vegas" style="width:100%;max-height:420px;object-fit:cover;border-radius:18px"><h2>Oprah Is Taking Over Sphere — But This Isn’t a Concert</h2><p>Four immersive AHA performances arrive April 2–4, 2027.</p></a></section>'''
+  h=h.replace('</main>',card+'</main>',1)
 home.write_text(h)
