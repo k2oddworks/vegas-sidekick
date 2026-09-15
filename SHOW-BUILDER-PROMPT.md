@@ -818,7 +818,7 @@ After pushing to `main`, Cloudflare Pages deploys automatically. No other steps 
 ### Family (`/shows/family/`)
 | Show | URL | Our Price |
 |---|---|---|
-| Tournament of Kings | /shows/family/tournament-of-kings/ | $74 |
+| Tournament of Kings | /shows/family/tournament-of-kings/ | $78 |
 | BattleBots: Destruct-A-Thon | /shows/family/battlebots-destruct-a-thon/ | — |
 | V – The Ultimate Variety Show | /shows/family/v-the-ultimate-variety-show/ | $39 |
 | WOW – The Vegas Spectacular | /shows/family/wow-the-vegas-spectacular/ → redirects to spectaculars | $41 |
@@ -835,7 +835,7 @@ After pushing to `main`, Cloudflare Pages deploys automatically. No other steps 
 | Show | URL | Our Price |
 |---|---|---|
 | VEGAS! The Show | /shows/music/vegas-the-show/ | $55 |
-| Blue Man Group | /shows/music/blue-man-group/ | $65 |
+| Blue Man Group | /shows/music/blue-man-group/ | $68 |
 | Jabbawockeez | /shows/music/jabbawockeez/ | — |
 
 ---
