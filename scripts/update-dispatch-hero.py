@@ -10,6 +10,5 @@ old='<header class="n-hero"><span class="n-hero-eyebrow">🌵 Vegas Sidekick</sp
 new='<header class="n-hero"><div class="n-hero-inner"><span class="n-hero-eyebrow">🌵 Vegas Sidekick</span><h1>Vegas <span>Dispatch</span></h1><p>Las Vegas show news, concert announcements and the stuff worth knowing before you make plans.</p><div class="n-hero-meta">Las Vegas, NV</div></div></header>'
 if old not in s: raise SystemExit('Old hero markup not found')
 s=s.replace(old,new,1)
-# Use the evergreen Dispatch artwork for social sharing too.
 s=s.replace('https://vegassidekick.com/images/news/oasis-live-27-las-vegas-wide.jpg','https://vegassidekick.com/images/news/vegas-dispatch-collage.jpg',1)
 p.write_text(s)
