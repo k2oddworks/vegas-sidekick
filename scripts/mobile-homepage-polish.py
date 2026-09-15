@@ -1,8 +1,8 @@
 from pathlib import Path
 p=Path(__file__).resolve().parents[1]/'index.html'
 s=p.read_text()
-# A focused mobile-only polish layer: tighter rhythm, better crops, larger tap targets,
-# cleaner text wrapping, and a more Dispatch-like editorial density.
+# Focused mobile-only polish: tighter rhythm, better crops, larger tap targets,
+# cleaner wrapping, and a more Dispatch-like editorial density.
 css='''
 <style id="mobile-homepage-polish">
 @media(max-width:760px){
