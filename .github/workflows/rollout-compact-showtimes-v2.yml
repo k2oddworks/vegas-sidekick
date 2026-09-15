@@ -1,0 +1,52 @@
+name: Roll Out Compact Showtimes V2
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/rollout-compact-showtimes-v2.py'
+      - 'scripts/audit-showtimes-booking-ui.py'
+      - 'assets/showtimes-booking.css'
+      - 'assets/showtimes-booking.js'
+      - '.github/workflows/rollout-compact-showtimes-v2.yml'
+
+jobs:
+  rollout:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Apply compact booking rollout
+        run: python3 scripts/rollout-compact-showtimes-v2.py
+      - name: Check shared booking JavaScript
+        run: node --check assets/showtimes-booking.js
+      - name: Audit compact booking coverage
+        run: python3 scripts/audit-showtimes-booking-ui.py
+      - name: Audit Event schema
+        run: python3 scripts/audit-event-schema.py
+      - name: Audit ticket CTA color
+        run: python3 scripts/audit-ticket-cta-color.py
+      - name: Audit mobile show heroes
+        run: python3 scripts/audit-mobile-show-heroes.py
+      - name: Audit catalog JavaScript
+        run: python3 scripts/audit-catalog-js-syntax.py
+      - name: Audit orphan UI
+        run: python3 scripts/audit-orphan-ui.py
+      - name: Diff whitespace check
+        run: git diff --check
+      - name: Commit rollout
+        run: |
+          git config user.name "Vegas Sidekick Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add shows AGENTS.md SHOW-PAGE-BENCHMARK.md SHOW-BUILDER-PROMPT.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Roll compact booking module across show pages"
+          git push origin main
