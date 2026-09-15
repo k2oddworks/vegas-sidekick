@@ -1,7 +1,7 @@
 from pathlib import Path
 import re
 ROOT=Path(__file__).resolve().parents[1]
-# High-value index surfaces that currently have titles/descriptions but incomplete share identity.
+# High-value public index surfaces with incomplete share identity.
 targets={
 'guides/index.html':'https://vegassidekick.com/images/guide-first-timers-cover.jpg',
 'shows/magic/index.html':'https://vegassidekick.com/images/guide-magic-cover.jpg',
