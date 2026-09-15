@@ -1,0 +1,74 @@
+name: Media Ingest
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_url:
+        description: HTTPS URL of approved source image
+        required: true
+        type: string
+      destination:
+        description: Repo directory, e.g. images/news
+        required: true
+        default: images/news
+        type: string
+      filename:
+        description: Web-safe basename without extension
+        required: true
+        type: string
+      sha256:
+        description: Optional expected SHA-256 of source bytes
+        required: false
+        type: string
+      min_width:
+        description: Minimum acceptable pixel width
+        required: false
+        default: '0'
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: media-ingest-main
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate destination
+        env:
+          DEST: ${{ inputs.destination }}
+        run: |
+          case "$DEST" in
+            images/news|images/news/*|images/shows|images/shows/*|images/venues|images/venues/*|images/guides|images/guides/*) ;;
+            *) echo "Destination is outside approved media roots: $DEST" >&2; exit 2 ;;
+          esac
+      - name: Download, verify and ingest
+        run: >-
+          python3 scripts/ingest-media-url.py
+          "${{ inputs.source_url }}"
+          --dest "${{ inputs.destination }}"
+          --name "${{ inputs.filename }}"
+          --min-width "${{ inputs.min_width }}"
+          ${{ inputs.sha256 != '' && format('--sha256 "{0}"', inputs.sha256) || '' }}
+      - name: Require a media change
+        run: |
+          git diff --exit-code --quiet && { echo 'No media change produced' >&2; exit 3; } || true
+          git status --short
+      - name: Commit verified media
+        env:
+          NAME: ${{ inputs.filename }}
+        run: |
+          git config user.name "Vegas Sidekick Media Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -- images/
+          git commit -m "Add verified media: $NAME"
+          git push origin HEAD:main
