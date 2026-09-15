@@ -1,0 +1,24 @@
+name: Fix Barry Dispatch placement
+on:
+  push:
+    paths:
+      - scripts/fix-barry-dispatch-placement.py
+      - .github/workflows/fix-barry-dispatch-placement.yml
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - run: python3 scripts/fix-barry-dispatch-placement.py
+      - run: git diff --check
+      - name: Commit placement fix
+        run: |
+          git config user.name "Vegas Sidekick Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html news/index.html
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Put Barry Manilow at top of Vegas Dispatch"
+          git push origin main
