@@ -6,6 +6,52 @@ ROOT = Path(__file__).resolve().parents[1]
 CATS = ['adult', 'cirque', 'comedy', 'family', 'magic', 'music', 'spectaculars']
 
 PLAN_AHEAD = '<div class="vs-plan-ahead"><div aria-hidden="true" class="vs-calendar-icon">▦</div><div><strong>Planning ahead?</strong><p>You can book tickets weeks and months in advance.</p></div></div>'
+BOOKING_ART = '<div aria-hidden="true" class="vs-booking-art"><div class="vs-art-moon"></div><div class="vs-art-sphere"></div><div class="vs-art-strip"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>'
+
+
+def ensure_barry_booking_module():
+    """Bring the one remaining active legacy product page into the shared module."""
+    p = ROOT / 'shows/music/barry-manilow/index.html'
+    s = p.read_text(encoding='utf-8', errors='replace')
+    if 'vs-booking-section' in s:
+        return False
+
+    css_anchor = '<link rel="stylesheet" href="/assets/ticket-cta.css">'
+    if css_anchor not in s:
+        raise RuntimeError('Barry Manilow ticket CTA stylesheet anchor not found')
+    s = s.replace(css_anchor, css_anchor + '<link rel="stylesheet" href="/assets/showtimes-booking.css?v=2">', 1)
+
+    nav_anchor = '<a href="#quick">Quick take</a>'
+    if nav_anchor not in s:
+        raise RuntimeError('Barry Manilow nav anchor not found')
+    s = s.replace(nav_anchor, nav_anchor + '<a href="#showtimes">Showtimes</a>', 1)
+
+    ticket = 'https://spotlight.vegas/shows/music/barry-manilow/ref/vegassidekick'
+    module = (
+        '<section class="section vs-booking-section" id="showtimes"><div class="wrap">'
+        '<div class="vs-booking-shell"><div class="vs-booking-pill">CHECK YOUR DATE</div>'
+        '<div class="vs-booking-copy"><h2>See available dates &amp; times</h2>'
+        '<p class="vs-booking-summary"><strong>Schedule varies by date</strong>'
+        '<span>Use the live calendar to choose your performance.</span></p></div>'
+        '<div class="vs-time-panel vs-variable-panel">'
+        f'<a class="vs-primary-book vs-ticket-primary" href="{ticket}" rel="noopener sponsored" target="_blank">See available dates &amp; times →</a>'
+        '</div>' + BOOKING_ART + '</div></div></section>'
+    )
+
+    quick_start = s.find('<section class="section" id="quick">')
+    if quick_start < 0:
+        raise RuntimeError('Barry Manilow quick section not found')
+    quick_end = s.find('</section>', quick_start)
+    if quick_end < 0:
+        raise RuntimeError('Barry Manilow quick section end not found')
+    quick_end += len('</section>')
+    s = s[:quick_end] + module + s[quick_end:]
+
+    if 'showtimes-booking.js?v=2' not in s:
+        s = s.replace('</body>', '<script src="/assets/showtimes-booking.js?v=2"></script></body>', 1)
+
+    p.write_text(s, encoding='utf-8')
+    return True
 
 
 def update_show_pages():
@@ -13,6 +59,9 @@ def update_show_pages():
     regular = 0
     variable = 0
     custom = 0
+
+    if ensure_barry_booking_module():
+        changed.append('shows/music/barry-manilow/index.html')
 
     for cat in CATS:
         for p in sorted((ROOT / 'shows' / cat).glob('*/index.html')):
@@ -66,9 +115,20 @@ def update_show_pages():
 
             if s != old:
                 p.write_text(s, encoding='utf-8')
-                changed.append(str(p.relative_to(ROOT)))
+                rel = str(p.relative_to(ROOT))
+                if rel not in changed:
+                    changed.append(rel)
 
     return changed, regular, variable, custom
+
+
+def apply_replacements(text, replacements, label):
+    for old, new in replacements.items():
+        if old in text:
+            text = text.replace(old, new)
+        elif new not in text:
+            raise RuntimeError(f'{label} expected text not found: {old}')
+    return text
 
 
 def update_docs():
@@ -77,16 +137,12 @@ def update_docs():
     p = ROOT / 'AGENTS.md'
     s = p.read_text(encoding='utf-8')
     old = s
-    reps = {
+    s = apply_replacements(s, {
         '- Showtime buttons and the primary **Get Tickets for [day] →** CTA use the show’s existing verified affiliate URL.': '- Showtime buttons and the primary **Get Tickets →** CTA use the show’s existing verified affiliate URL.',
         '- Keep **View all dates & times →** as a visually substantial filled lavender secondary CTA.': '- Keep **See all dates & times →** as a compact secondary text action beneath the primary purchase path.',
         '- Include the compact **Planning ahead? You can book tickets weeks and months in advance.** treatment.': '- Put a compact booking pill above the headline. Default copy is **CHOOSE YOUR DAY** for regular schedules and **CHECK YOUR DATE** for variable schedules. Use show-specific factual copy only when it is verified, such as a closing date.',
         '- Keep the shared Vegas dusk / skyline / Sphere artwork as the decorative footer treatment without a slogan.': '- Keep the shared Vegas dusk / skyline / Sphere artwork as a thin decorative footer treatment without a slogan.',
-    }
-    for a, b in reps.items():
-        if a not in s:
-            raise RuntimeError(f'AGENTS.md expected text not found: {a}')
-        s = s.replace(a, b)
+    }, 'AGENTS.md')
     if s != old:
         p.write_text(s, encoding='utf-8')
         changed.append(str(p.relative_to(ROOT)))
@@ -94,7 +150,7 @@ def update_docs():
     p = ROOT / 'SHOW-PAGE-BENCHMARK.md'
     s = p.read_text(encoding='utf-8')
     old = s
-    reps = {
+    s = apply_replacements(s, {
         '**Locked:** September 13, 2026': '**Locked:** September 15, 2026',
         '- **Pick your night** eyebrow': '- compact booking pill above the headline: **CHOOSE YOUR DAY** for regular schedules by default; verified show-specific facts may replace it',
         '- one dominant Warm Amber **Get Tickets for [day] →** CTA': '- one dominant Warm Amber **Get Tickets →** CTA; the selected day remains obvious in the picker and available in the accessible label',
@@ -102,11 +158,7 @@ def update_docs():
         '- a compact **Planning ahead? You can book tickets weeks and months in advance.** card': '- no generic planning-ahead card; omit filler unless there is a genuinely useful show-specific fact',
         '- the shared decorative Vegas dusk / skyline / Sphere artwork at the bottom, with **no slogan**': '- the shared decorative Vegas dusk / skyline / Sphere artwork as a thin footer strip, with **no slogan**',
         '- retain the planning-ahead treatment and shared artwork': '- use the **CHECK YOUR DATE** pill and retain the thin shared artwork; do not add generic planning filler',
-    }
-    for a, b in reps.items():
-        if a not in s:
-            raise RuntimeError(f'SHOW-PAGE-BENCHMARK.md expected text not found: {a}')
-        s = s.replace(a, b)
+    }, 'SHOW-PAGE-BENCHMARK.md')
     if s != old:
         p.write_text(s, encoding='utf-8')
         changed.append(str(p.relative_to(ROOT)))
