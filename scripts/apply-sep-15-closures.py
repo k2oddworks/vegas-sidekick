@@ -21,14 +21,72 @@ s=s.replace('Monday, Tuesday, Friday, Saturday, and Sunday at 6:30 PM and 9:00 P
 s=s.replace('"dateModified":"2026-09-07","lastReviewed":"2026-09-07"','"dateModified":"2026-09-15","lastReviewed":"2026-09-15"')
 s=s.replace('Last updated September 2026 · Your date and seat determine the final total.','Show info confirmed September 2026')
 s=s.replace('Las Vegas show and ticketing guidance. Last updated September 2026.','Las Vegas show and ticketing guidance. Show info confirmed September 2026.')
-# Keep the notice below the shared fixed header: 85px desktop, 54px mobile.
-s=re.sub(r'<style id="awakening-closing-banner-style">.*?</style>','',s,count=1)
-s=re.sub(r'<div class="show-closing-banner-spacer"[^>]*></div>','',s,count=1)
-s=re.sub(r'<div class="show-closing-banner" role="status"[^>]*>.*?</div>','',s,count=1)
-banner_style='<style id="awakening-closing-banner-style">.show-closing-banner-spacer{height:85px}@media(max-width:980px){.show-closing-banner-spacer{height:54px}}</style>'
-spacer='<div class="show-closing-banner-spacer" aria-hidden="true"></div>'
+
 banner='<div class="show-closing-banner" role="status" style="background:#fff3cd;color:#3d2c00;padding:14px 20px;text-align:center;font-weight:800;border-bottom:1px solid #e4bd55">Final performance October 10, 2026. Tickets remain available for performances through the closing date.</div>'
-s=s.replace('<div id="vs-header"></div>','<div id="vs-header"></div>'+banner_style+spacer+banner,1)
+spacer='<style id="awakening-closing-banner-style">.show-closing-banner-spacer{height:85px}@media(max-width:980px){.show-closing-banner-spacer{height:54px}}</style><div class="show-closing-banner-spacer" aria-hidden="true"></div>'
+if 'Final performance October 10, 2026.' not in s:
+ s=s.replace('<div id="vs-header"></div>','<div id="vs-header"></div>'+spacer+banner,1)
+elif 'show-closing-banner-spacer' not in s:
+ s=s.replace('<div id="vs-header"></div>','<div id="vs-header"></div>'+spacer,1)
+
+# Awakening-only booking experiment: compact the conversion module without touching the shared system.
+booking_style='''<style id="awakening-booking-experiment">
+#showtimes.vs-booking-section{padding:42px 0 44px;background:linear-gradient(180deg,#f8f4ff 0%,#f2eaff 100%)}
+#showtimes .wrap{max-width:1080px}
+#showtimes .vs-booking-shell{padding:20px 24px 0;border-radius:24px}
+#showtimes .vs-awakening-closing-chip{width:max-content;max-width:100%;margin:0 auto 9px;padding:7px 12px;border-radius:999px;background:#171225;color:#FFB000;font:800 .7rem/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.09em;text-transform:uppercase}
+#showtimes .vs-booking-copy h2{font-size:clamp(2rem,4vw,3rem);margin:0 0 4px}
+#showtimes .vs-booking-summary{gap:1px;font-size:.92rem}
+#showtimes .vs-booking-summary strong{font-size:.76rem;text-transform:uppercase;letter-spacing:.07em;color:#7b6e89}
+#showtimes .vs-day-picker{margin:15px 0 13px;gap:7px}
+#showtimes .vs-day{min-height:50px;border-radius:12px;font-size:.84rem}
+#showtimes .vs-day small{margin-top:5px;font-size:.61rem}
+#showtimes .vs-time-panel{max-width:none;margin:0;padding:14px 16px;display:grid;grid-template-columns:auto minmax(240px,1fr) minmax(220px,.9fr);grid-template-areas:'heading times primary' '. all all';align-items:center;gap:9px 14px;border-radius:18px}
+#showtimes .vs-time-panel h3{grid-area:heading;margin:0;font-size:1rem;white-space:nowrap}
+#showtimes .vs-awakening-selected-day{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+#showtimes .vs-time-grid{grid-area:times;grid-template-columns:repeat(2,minmax(108px,1fr));gap:8px}
+#showtimes .vs-time-grid a{min-height:46px;border-radius:11px;font-size:.9rem}
+#showtimes .vs-primary-book{grid-area:primary;margin:0;min-height:48px;border-radius:12px;font-size:0!important;padding:10px 16px}
+#showtimes .vs-primary-book:after{content:'Get Tickets →';font:900 .92rem/1 'Plus Jakarta Sans',sans-serif}
+#showtimes .vs-all-dates{grid-area:all;justify-self:center;display:inline-flex;min-height:0;margin:0;padding:3px 8px;border:0;background:transparent;box-shadow:none;color:#5e23bd;font-size:.82rem;text-decoration:underline;text-underline-offset:3px}
+#showtimes .vs-all-dates:hover,#showtimes .vs-all-dates:focus-visible{border:0;background:transparent;box-shadow:none;color:#421486}
+#showtimes .vs-awakening-deadline{display:flex;align-items:center;justify-content:center;gap:8px;margin:11px auto 0;color:#5d526a;font-size:.8rem}
+#showtimes .vs-awakening-deadline strong{color:#25133f}
+#showtimes .vs-awakening-deadline i{width:4px;height:4px;border-radius:50%;background:#ff2e7e}
+#showtimes .vs-booking-art{height:92px;margin:16px -24px 0}
+#showtimes .vs-art-moon{width:76px;height:76px;right:11%;top:5px}
+#showtimes .vs-art-sphere{width:62px;height:62px;right:12%;bottom:-18px}
+#showtimes .vs-art-strip{height:50px;padding:0 14px;gap:6px}
+#showtimes .vs-art-strip i:nth-child(1){height:24px}#showtimes .vs-art-strip i:nth-child(2){height:39px}#showtimes .vs-art-strip i:nth-child(3){height:31px}#showtimes .vs-art-strip i:nth-child(4){height:46px}#showtimes .vs-art-strip i:nth-child(5){height:29px}#showtimes .vs-art-strip i:nth-child(6){height:41px}#showtimes .vs-art-strip i:nth-child(7){height:34px}#showtimes .vs-art-strip i:nth-child(8){height:44px}
+@media(max-width:700px){
+ #showtimes.vs-booking-section{padding:34px 0 36px}
+ #showtimes .vs-booking-shell{padding:17px 13px 0;border-radius:20px}
+ #showtimes .vs-awakening-closing-chip{font-size:.64rem;padding:7px 10px;margin-bottom:8px}
+ #showtimes .vs-booking-copy h2{font-size:2rem}
+ #showtimes .vs-booking-summary{font-size:.82rem;line-height:1.4}
+ #showtimes .vs-booking-summary strong{font-size:.67rem}
+ #showtimes .vs-day-picker{margin:13px 0 11px;gap:5px;padding-bottom:1px}
+ #showtimes .vs-day{min-height:48px;font-size:.76rem;border-radius:10px}
+ #showtimes .vs-time-panel{display:block;padding:13px;border-radius:16px}
+ #showtimes .vs-time-panel h3{margin:0 0 9px;font-size:.92rem}
+ #showtimes .vs-time-grid{gap:7px}
+ #showtimes .vs-time-grid a{min-height:45px;font-size:.88rem}
+ #showtimes .vs-primary-book{margin-top:9px;min-height:50px}
+ #showtimes .vs-all-dates{margin:7px auto 0;font-size:.79rem}
+ #showtimes .vs-awakening-deadline{margin-top:10px;gap:6px;flex-wrap:wrap;text-align:center;font-size:.74rem;line-height:1.35}
+ #showtimes .vs-booking-art{height:76px;margin:13px -13px 0}
+ #showtimes .vs-art-moon{width:62px;height:62px;top:3px}
+ #showtimes .vs-art-sphere{width:50px;height:50px;bottom:-15px}
+ #showtimes .vs-art-strip{height:42px}
+}
+</style>'''
+if 'id="awakening-booking-experiment"' in s:
+ s=re.sub(r'<style id="awakening-booking-experiment">[\s\S]*?</style>',booking_style,s,count=1)
+else:
+ s=s.replace('</head>',booking_style+'</head>',1)
+
+booking_section='''<section class="section vs-booking-section" id="showtimes"><div class="wrap"><div class="vs-booking-shell" data-ticket-url="https://spotlight.vegas/shows/production/awakening/ref/vegassidekick"><div class="vs-awakening-closing-chip">Final performances · Oct 10</div><div class="vs-booking-copy"><h2>Find your showtime</h2><p class="vs-booking-summary"><strong>Regular weekly schedule</strong><span>Mon, Tue, Fri, Sat · 6:30 PM &amp; 9 PM; Sun · 4 PM &amp; 7 PM</span></p></div><div aria-label="Choose a show day" class="vs-day-picker" role="tablist"><button aria-selected="true" class="vs-day is-active" data-day="Monday" data-times="6:30 PM|9 PM" role="tab" type="button"><span>Mon</span></button><button aria-selected="false" class="vs-day" data-day="Tuesday" data-times="6:30 PM|9 PM" role="tab" type="button"><span>Tue</span></button><button aria-selected="false" class="vs-day is-dark" disabled="" role="tab" type="button"><span>Wed</span><small>Dark</small></button><button aria-selected="false" class="vs-day is-dark" disabled="" role="tab" type="button"><span>Thu</span><small>Dark</small></button><button aria-selected="false" class="vs-day" data-day="Friday" data-times="6:30 PM|9 PM" role="tab" type="button"><span>Fri</span></button><button aria-selected="false" class="vs-day" data-day="Saturday" data-times="6:30 PM|9 PM" role="tab" type="button"><span>Sat</span></button><button aria-selected="false" class="vs-day" data-day="Sunday" data-times="4 PM|7 PM" role="tab" type="button"><span>Sun</span></button></div><div aria-live="polite" class="vs-time-panel"><h3>Choose a time <span class="vs-awakening-selected-day">for <span data-selected-day="">Monday</span></span></h3><div class="vs-time-grid"><a href="https://spotlight.vegas/shows/production/awakening/ref/vegassidekick" rel="noopener sponsored" target="_blank">6:30 PM</a><a href="https://spotlight.vegas/shows/production/awakening/ref/vegassidekick" rel="noopener sponsored" target="_blank">9 PM</a></div><a class="vs-primary-book vs-ticket-primary" href="https://spotlight.vegas/shows/production/awakening/ref/vegassidekick" rel="noopener sponsored" target="_blank">Get Tickets for Monday →</a><a class="vs-all-dates" href="https://spotlight.vegas/shows/production/awakening/ref/vegassidekick" rel="noopener sponsored" target="_blank">See all dates &amp; times →</a></div><div class="vs-awakening-deadline"><strong>Final performance October 10</strong><i aria-hidden="true"></i><span>Remaining dates available now.</span></div><div aria-hidden="true" class="vs-booking-art"><div class="vs-art-moon"></div><div class="vs-art-sphere"></div><div class="vs-art-strip"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div></div></section>'''
+s=re.sub(r'<section class="section vs-booking-section" id="showtimes">[\s\S]*?</section>\s*<section class="section alt" id="photos">',booking_section+'\n<section class="section alt" id="photos">',s,count=1)
 p.write_text(s)
 
 # Database record.
