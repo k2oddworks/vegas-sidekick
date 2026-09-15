@@ -21,9 +21,14 @@ s=s.replace('Monday, Tuesday, Friday, Saturday, and Sunday at 6:30 PM and 9:00 P
 s=s.replace('"dateModified":"2026-09-07","lastReviewed":"2026-09-07"','"dateModified":"2026-09-15","lastReviewed":"2026-09-15"')
 s=s.replace('Last updated September 2026 · Your date and seat determine the final total.','Show info confirmed September 2026')
 s=s.replace('Las Vegas show and ticketing guidance. Last updated September 2026.','Las Vegas show and ticketing guidance. Show info confirmed September 2026.')
+# Keep the notice below the shared fixed header: 85px desktop, 54px mobile.
+s=re.sub(r'<style id="awakening-closing-banner-style">.*?</style>','',s,count=1)
+s=re.sub(r'<div class="show-closing-banner-spacer"[^>]*></div>','',s,count=1)
+s=re.sub(r'<div class="show-closing-banner" role="status"[^>]*>.*?</div>','',s,count=1)
+banner_style='<style id="awakening-closing-banner-style">.show-closing-banner-spacer{height:85px}@media(max-width:980px){.show-closing-banner-spacer{height:54px}}</style>'
+spacer='<div class="show-closing-banner-spacer" aria-hidden="true"></div>'
 banner='<div class="show-closing-banner" role="status" style="background:#fff3cd;color:#3d2c00;padding:14px 20px;text-align:center;font-weight:800;border-bottom:1px solid #e4bd55">Final performance October 10, 2026. Tickets remain available for performances through the closing date.</div>'
-if 'Final performance October 10, 2026.' not in s:
- s=s.replace('<div id="vs-header"></div>','<div id="vs-header"></div>'+banner,1)
+s=s.replace('<div id="vs-header"></div>','<div id="vs-header"></div>'+banner_style+spacer+banner,1)
 p.write_text(s)
 
 # Database record.
