@@ -150,8 +150,9 @@ def update_docs():
     p = ROOT / 'SHOW-PAGE-BENCHMARK.md'
     s = p.read_text(encoding='utf-8')
     old = s
+    # The old lock line used a Markdown hard-break; compact v2 removes that trailing whitespace too.
+    s = re.sub(r'^\*\*Locked:\*\* September 13, 2026\s*$', '**Locked:** September 15, 2026', s, count=1, flags=re.M)
     s = apply_replacements(s, {
-        '**Locked:** September 13, 2026': '**Locked:** September 15, 2026',
         '- **Pick your night** eyebrow': '- compact booking pill above the headline: **CHOOSE YOUR DAY** for regular schedules by default; verified show-specific facts may replace it',
         '- one dominant Warm Amber **Get Tickets for [day] →** CTA': '- one dominant Warm Amber **Get Tickets →** CTA; the selected day remains obvious in the picker and available in the accessible label',
         '- one substantial filled-lavender **View all dates & times →** secondary CTA': '- one compact **See all dates & times →** secondary text action',
@@ -159,6 +160,8 @@ def update_docs():
         '- the shared decorative Vegas dusk / skyline / Sphere artwork at the bottom, with **no slogan**': '- the shared decorative Vegas dusk / skyline / Sphere artwork as a thin footer strip, with **no slogan**',
         '- retain the planning-ahead treatment and shared artwork': '- use the **CHECK YOUR DATE** pill and retain the thin shared artwork; do not add generic planning filler',
     }, 'SHOW-PAGE-BENCHMARK.md')
+    if '**Locked:** September 15, 2026' not in s:
+        raise RuntimeError('SHOW-PAGE-BENCHMARK.md lock date was not updated')
     if s != old:
         p.write_text(s, encoding='utf-8')
         changed.append(str(p.relative_to(ROOT)))
