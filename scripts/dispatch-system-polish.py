@@ -22,15 +22,12 @@ h=h[:list_start]+''.join(cards[:5])+h[list_end:]
 p.write_text(h)
 
 # 3) Standardize all actual Dispatch article pages on shared site chrome.
-# Skip the index and non-article/support pages. Add missing mount points and normalize component versions.
 for article in (root/'news').glob('*/index.html'):
     text=article.read_text()
-    # Only touch pages that identify as Vegas Dispatch/news content.
     if 'Vegas Dispatch' not in text and 'NewsArticle' not in text:
         continue
     text=re.sub(r'<script src="/components/header\.js(?:\?v=\d+)?"></script>', '<script src="/components/header.js?v=14"></script>', text)
     text=re.sub(r'<script src="/components/footer\.js(?:\?v=\d+)?"></script>', '<script src="/components/footer.js?v=14"></script>', text)
-    # Repair old/nonexistent shared chrome references if any remain.
     text=text.replace('<script src="/assets/site-header.js"></script>', '<script src="/components/header.js?v=14"></script>')
     text=text.replace('<script src="/assets/site-footer.js"></script>', '<script src="/components/footer.js?v=14"></script>')
     if '/components/header.js' in text and 'id="vs-header"' not in text:
