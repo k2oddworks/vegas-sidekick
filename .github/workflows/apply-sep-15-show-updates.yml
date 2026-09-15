@@ -1,0 +1,28 @@
+name: Apply Sep 15 Show Updates
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/apply-sep-15-show-updates.yml'
+permissions:
+  contents: write
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply verified updates
+        run: python3 scripts/apply-2026-09-15-show-updates.py
+      - name: Commit changes
+        run: |
+          git config user.name "Vegas Sidekick Update Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html shows venues guides data/show-database.json SHOW-BUILDER-PROMPT.md
+          git diff --cached --quiet && { echo "No changes to commit"; exit 1; }
+          git commit -m "Update Ikons, Atomic Saloon, Tournament of Kings and Blue Man Group"
+          git push origin HEAD:main
