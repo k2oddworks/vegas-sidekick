@@ -1,0 +1,28 @@
+name: Barry Manilow 2027 Update
+on:
+  push:
+    branches: [main]
+    paths: [scripts/update-barry-manilow-2027.py]
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    permissions: {contents: write}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: main}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: python scripts/update-barry-manilow-2027.py
+      - run: |
+          python3 scripts/audit-event-schema.py
+          python3 scripts/audit-ticket-cta-color.py
+          python3 scripts/audit-catalog-js-syntax.py
+          git diff --check
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add shows/music/barry-manilow/index.html news/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Add Barry Manilow 2027 dates across site"
+            git push origin main
+          fi
