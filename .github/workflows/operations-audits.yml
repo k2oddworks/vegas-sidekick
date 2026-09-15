@@ -11,6 +11,8 @@ on:
       - 'guides/**'
       - 'news/**'
       - 'venues/**'
+      - 'assets/showtimes-booking.css'
+      - 'assets/showtimes-booking.js'
       - '_redirects'
       - 'scripts/audit-*.py'
       - '.github/workflows/operations-audits.yml'
@@ -166,3 +168,15 @@ jobs:
       - uses: actions/checkout@v4
       - name: Audit show decision-card copy
         run: python3 scripts/audit-show-decision-copy.py
+
+  showtimes-booking-ui:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check shared booking JavaScript
+        run: node --check assets/showtimes-booking.js
+      - name: Audit compact booking coverage across active show pages
+        run: python3 scripts/audit-showtimes-booking-ui.py
