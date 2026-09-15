@@ -1,0 +1,25 @@
+name: Add Barry Manilow to Dispatch listings
+on:
+  push:
+    paths:
+      - scripts/add-barry-dispatch-listings.py
+      - .github/workflows/add-barry-dispatch-listings.yml
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: python3 scripts/add-barry-dispatch-listings.py
+      - run: git diff --check
+      - name: Commit
+        run: |
+          git config user.name "Vegas Sidekick Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html news/index.html
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Add Barry Manilow to Dispatch and homepage"
+          git push origin main
