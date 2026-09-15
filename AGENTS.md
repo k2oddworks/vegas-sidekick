@@ -86,11 +86,11 @@ For shows with a verified regular weekly schedule:
 - Show all seven weekday choices in a compact picker.
 - Active days are selectable; verified dark days are visibly muted and labeled **Dark**.
 - Selecting a day updates the showtime choices immediately.
-- Showtime buttons and the primary **Get Tickets for [day] →** CTA use the show’s existing verified affiliate URL.
+- Showtime buttons and the primary **Get Tickets →** CTA use the show’s existing verified affiliate URL.
 - Keep the primary CTA Warm Amber `#FFB000`.
-- Keep **View all dates & times →** as a visually substantial filled lavender secondary CTA.
-- Include the compact **Planning ahead? You can book tickets weeks and months in advance.** treatment.
-- Keep the shared Vegas dusk / skyline / Sphere artwork as the decorative footer treatment without a slogan.
+- Keep **See all dates & times →** as a compact secondary text action beneath the primary purchase path.
+- Put a compact booking pill above the headline. Default copy is **CHOOSE YOUR DAY** for regular schedules and **CHECK YOUR DATE** for variable schedules. Use show-specific factual copy only when it is verified, such as a closing date.
+- Keep the shared Vegas dusk / skyline / Sphere artwork as a thin decorative footer treatment without a slogan.
 
 For genuinely variable schedules:
 

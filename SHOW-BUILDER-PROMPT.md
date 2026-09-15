@@ -7,6 +7,8 @@ Paste this entire document at the start of a new chat session before requesting 
 > `shows/magic/nathan-burton-comedy-magic/index.html` and `SHOW-PAGE-BENCHMARK.md` now govern active show-page UX and copy. Older V Theater / Carrot Top / Absinthe examples in this long prompt are legacy implementation references only. If anything below conflicts with the Nathan benchmark, **Nathan wins**.
 >
 > Key current rules: no formal downside/Think twice modules; Good to know only for real useful facts; Booking tip is optional and actionable only; no customer-facing “tradeoff”; no interaction/participation claims unless Kris explicitly confirms them; use Start time/Start times; prefer “See available dates & times”; use one visible “Show info confirmed Month YYYY” freshness line near the author card; galleries support arrows/keyboard/swipe; seating charts are room-based, geometrically faithful, slab-row when exact seat counts are unnecessary, and mobile tap feedback must appear immediately in view.
+>
+> **Booking module update — September 15, 2026:** compact v2 is the shared standard. Use the pill + compact day/time/amber CTA treatment in `assets/showtimes-booking.css` and `.js`; do not restore the old large secondary CTA or generic Planning Ahead card.
 
 ---
 

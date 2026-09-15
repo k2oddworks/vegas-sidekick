@@ -1,7 +1,7 @@
 # Vegas Sidekick — Show Page Benchmark
 
 **Current benchmark:** `shows/magic/nathan-burton-comedy-magic/index.html`  
-**Locked:** September 13, 2026  
+**Locked:** September 15, 2026
 **Status:** Governing UX / copy / interaction benchmark for active show product pages.
 
 If an older template, benchmark, prompt, or example conflicts with this document or the current Nathan Burton page, **Nathan Burton wins**, except where a newer locked shared system is explicitly documented here.
@@ -128,7 +128,7 @@ When the show has a verified regular weekly schedule, use the shared conversion-
 
 The module should include:
 
-- **Pick your night** eyebrow
+- compact booking pill above the headline: **CHOOSE YOUR DAY** for regular schedules by default; verified show-specific facts may replace it
 - **Find your showtime** headline
 - concise verified weekly schedule summary
 - all seven weekday choices in one compact row / picker
@@ -137,10 +137,10 @@ The module should include:
 - selected day highlighted in purple
 - showtime choices displayed immediately for the selected day
 - each showtime linked to the existing verified affiliate URL
-- one dominant Warm Amber **Get Tickets for [day] →** CTA
-- one substantial filled-lavender **View all dates & times →** secondary CTA
-- a compact **Planning ahead? You can book tickets weeks and months in advance.** card
-- the shared decorative Vegas dusk / skyline / Sphere artwork at the bottom, with **no slogan**
+- one dominant Warm Amber **Get Tickets →** CTA; the selected day remains obvious in the picker and available in the accessible label
+- one compact **See all dates & times →** secondary text action
+- no generic planning-ahead card; omit filler unless there is a genuinely useful show-specific fact
+- the shared decorative Vegas dusk / skyline / Sphere artwork as a thin footer strip, with **no slogan**
 
 The hierarchy matters:
 
@@ -159,7 +159,7 @@ Use the variable-date version of the shared module:
 
 - clearly state **Schedule varies by date**
 - use **See available dates & times →** as the primary ticket action
-- retain the planning-ahead treatment and shared artwork
+- use the **CHECK YOUR DATE** pill and retain the thin shared artwork; do not add generic planning filler
 - link only to the existing verified affiliate URL
 
 ### Source-of-truth requirement
