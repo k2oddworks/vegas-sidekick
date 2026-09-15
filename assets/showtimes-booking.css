@@ -2,10 +2,10 @@
 .vs-booking-section{background:linear-gradient(180deg,#f8f4ff 0%,#f2eaff 100%);overflow:hidden;padding:42px 0 44px}
 .vs-booking-section .wrap{max-width:1080px}
 .vs-booking-section>.wrap>.eyebrow{display:none}
-.vs-booking-shell{position:relative;border:1px solid #e6dcf5;border-radius:24px;padding:20px 24px 0;background:rgba(255,255,255,.76);box-shadow:0 18px 46px rgba(64,31,94,.09);overflow:hidden}
+.vs-booking-shell{position:relative;border:1px solid #e6dcf5;border-radius:24px;padding:20px 24px 0;background:rgba(255,255,255,.76);box-shadow:0 18px 46px rgba(64,31,94,.09);overflow:hidden;color:#25133f;font-family:Inter,sans-serif}
 .vs-booking-pill{width:max-content;max-width:100%;margin:0 auto 9px;padding:7px 12px;border-radius:999px;background:#171225;color:#FFB000;font:800 .7rem/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.09em;text-transform:uppercase;text-align:center}
 .vs-booking-copy{text-align:center}
-.vs-booking-copy h2{font-size:clamp(2rem,4vw,3rem);margin:0 0 4px}
+.vs-booking-copy h2{font:800 clamp(2rem,4vw,3rem)/1.05 'Plus Jakarta Sans',sans-serif;color:#17082e;margin:0 0 4px;letter-spacing:-.045em}
 .vs-booking-summary{display:flex;flex-direction:column;gap:1px;margin:0;color:#25133f;font-size:.92rem}
 .vs-booking-summary strong{font-size:.76rem;text-transform:uppercase;letter-spacing:.07em;color:#7b6e89}
 .vs-booking-summary span{color:#645a70}
@@ -15,15 +15,15 @@
 .vs-day.is-active{background:linear-gradient(180deg,#7b35ea,#5d20c9);color:#fff;border-color:#6a26dc;box-shadow:0 8px 20px rgba(105,38,220,.22);outline:2px solid rgba(255,255,255,.72);outline-offset:-5px}
 .vs-day.is-active:after{content:'✓';position:absolute;right:7px;top:6px;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#5d20c9;font:900 .68rem/1 Inter,sans-serif}
 .vs-day.is-dark{background:#f3f0f5;color:#99919f;cursor:default}
-.vs-time-panel{border:1px solid #e4d9ee;border-radius:18px;background:#fff;box-shadow:0 9px 24px rgba(68,31,95,.055)}
+.vs-time-panel{border:1px solid #e4d9ee;border-radius:18px;background:#fff;box-shadow:0 9px 24px rgba(68,31,95,.055);color:#25133f}
 .vs-time-panel:not(.vs-variable-panel){max-width:none;margin:0;padding:14px 16px;display:grid;grid-template-columns:auto minmax(240px,1fr) minmax(220px,.9fr);grid-template-areas:'heading times primary' '. all all';align-items:center;gap:9px 14px}
-.vs-time-panel:not(.vs-variable-panel) h3{grid-area:heading;margin:0;font-size:1rem;white-space:nowrap}
+.vs-time-panel:not(.vs-variable-panel) h3{grid-area:heading;margin:0;color:#25133f;font:800 1rem/1.05 'Plus Jakarta Sans',sans-serif;white-space:nowrap}
 .vs-selected-day-context{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 .vs-time-grid{grid-area:times;display:grid;grid-template-columns:repeat(auto-fit,minmax(108px,1fr));gap:8px}
 .vs-time-grid a{display:flex;align-items:center;justify-content:center;min-height:46px;border:2px solid #7a32e7;border-radius:11px;color:#6422cf;text-decoration:none;font-weight:900;background:#fff;font-size:.9rem}
 .vs-time-grid a.is-selected{background:#6422cf;color:#fff;box-shadow:0 0 0 3px rgba(100,34,207,.17),0 8px 18px rgba(74,28,144,.18)}
 .vs-time-grid a.is-selected:after{content:'✓';margin-left:8px}
-.vs-primary-book,.vs-all-dates{display:flex;align-items:center;justify-content:center;text-decoration:none;font-weight:900;white-space:nowrap;text-wrap:nowrap;min-width:0}
+.vs-primary-book,.vs-all-dates{display:flex;align-items:center;justify-content:center;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;white-space:nowrap;text-wrap:nowrap;min-width:0}
 .vs-primary-book{grid-area:primary;margin:0;min-height:48px;border-radius:12px;padding:10px 16px;background:#FFB000!important;color:#171225!important;box-shadow:0 10px 24px rgba(255,176,0,.28)}
 .vs-all-dates{grid-area:all;justify-self:center;display:inline-flex;min-height:0;margin:0;padding:3px 8px;border:0;background:transparent;color:#5e23bd;box-shadow:none;font-size:.82rem;text-decoration:underline;text-underline-offset:3px}
 .vs-all-dates:hover,.vs-all-dates:focus-visible{background:transparent;border:0;color:#421486;box-shadow:none}
