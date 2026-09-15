@@ -439,18 +439,18 @@
       "slug": "awakening",
       "name": "Awakening",
       "category": "spectaculars",
-      "status": "active",
+      "status": "closing",
       "our_price": 92,
       "regular_price": 121,
       "runtime_minutes": 80,
       "age_summary": "5+",
       "venue": "Awakening Theater - Wynn Las Vegas",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Fri, Sat · 6:30 PM & 9 PM; Sun · 4 PM & 6 PM",
+      "schedule_summary": "Mon, Tue, Fri, Sat · 6:30 PM & 9 PM; Sun · 4 PM & 7 PM",
       "ticket_url": "https://spotlight.vegas/shows/production/awakening/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/spectaculars/awakening/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-09-15",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
       "notes": "",
@@ -481,7 +481,7 @@
           ],
           "Sunday": [
             "4 PM",
-            "6 PM"
+            "7 PM"
           ]
         },
         "schedule_summary": "Mon, Tue, Fri, Sat · 6:30 PM & 9 PM; Sun · 4 PM & 6 PM",
@@ -500,7 +500,8 @@
       },
       "savings_amount": 29,
       "savings_percent": 24,
-      "is_deal": true
+      "is_deal": true,
+      "closing_date": "2026-10-10"
     },
     {
       "slug": "battlebots-destruct-a-thon",
