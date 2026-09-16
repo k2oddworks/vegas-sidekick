@@ -16,9 +16,9 @@
       thirdNum:'7', thirdLabel:'Show categories',
       guideKicker:'QUICK WAY TO START', guideTitle:'Pick the kind of Vegas night you want first.', guideCopy:'Category first. Price second. That keeps a giant list of shows from turning into homework.',
       choices:[['Big visual night','Start with Cirque or Spectaculars if scale and production are the point.'],['Personality-driven night','Comedy, magic and music usually put the performer closer to the center of the experience.'],['Planning for a group','Family and All Shows make it easier to compare age fit, venue and budget together.']],
-      bottomTitle:'How to use the all-shows page',
-      bottomCopy:'Use the category links to move from “everything in Vegas” to the canonical category page that fits your night. Starting price is useful for comparison, but the individual show page is where schedule, venue, age guidance and seating context belong.',
-      take:'The fastest way to make a bad Vegas decision is to compare 40 unrelated shows at once. Pick the experience first. Once you are comparing similar nights, the price differences actually mean something.'
+      bottomTitle:'Don’t overthink the list',
+      bottomCopy:'Start with the kind of night you want — comedy, magic, Cirque, music, whatever sounds fun. The price on the card is just the starting number. Open a show page for the useful stuff: dates, venue, age guidance, seating advice and whether it fits your night.',
+      take:'Don’t compare a magic show, a comedy club and a Cirque show like they’re the same thing. Pick the vibe first. Once you’re down to a few shows you’d actually choose between, then start looking at the price.'
     },
     '/shows/comedy/': {
       accent:'#ff2e7e', accent2:'#f59e0b', eyebrow:'LAS VEGAS COMEDY · 2026', title:'Las Vegas Comedy Shows',
