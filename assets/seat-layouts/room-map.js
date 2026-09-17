@@ -5,6 +5,10 @@
   async function mount(root){
     const d=await fetch(root.dataset.layoutUrl,{credentials:'same-origin'}).then(r=>{if(!r.ok)throw Error(r.status);return r.json()});
     const ticket=root.dataset.ticketUrl,by=Object.fromEntries(d.zones.map(z=>[z.id,z]));
+    if(d.image){
+      const galleryChart=document.querySelector('#photos .vs-chart-gallery img');
+      if(galleryChart){galleryChart.src=d.image;galleryChart.alt=`${d.venue} seating chart showing ${d.zones.map(z=>z.label).join(', ')}`;}
+    }
     let map='';
     if(d.image){
       const hits=d.zones.map(z=>(z.hitPaths||[]).map(p=>`<path tabindex="0" role="button" aria-label="${esc(z.label)}" data-zone="${esc(z.id)}" class="vs-room-zone vs-room-image-hit" d="${esc(p)}" fill="${esc(z.color)}" fill-opacity="0" stroke="${esc(z.color)}" stroke-opacity="0" stroke-width="10"/>`).join('')).join('');
@@ -15,10 +19,24 @@
       map=`<svg width="1200" height="1000" viewBox="${esc(d.viewBox)}" aria-label="${esc(d.venue)} seating layout"><rect width="120" height="110" rx="5" fill="#0d0815"/>${shapes}${structs}<path class="vs-room-stage" d="${esc(d.stage.path)}"/><text x="${d.stage.labelX}" y="${d.stage.labelY}" text-anchor="middle" dominant-baseline="middle" class="vs-room-stage-label">${esc(d.stage.label||'STAGE')}</text></svg>`;
     }
     root.innerHTML=`<div class="vs-room-guide"><div class="vs-room-map">${map}</div><div><div class="vs-room-cards">${d.zones.map(z=>`<button type="button" class="vs-room-card ${z.our_pick?'is-pick':''}" data-zone="${esc(z.id)}"><strong>${esc(z.label)}</strong><span>${z.our_pick?'Sweet Spot / Our Pick':esc(z.badge)}</span></button>`).join('')}</div><div class="vs-room-detail" aria-live="polite"><div class="tag"></div><h3></h3><p></p><a class="cta vs-ticket-primary" href="${esc(ticket)}" target="_blank" rel="noopener sponsored">Check seats →</a></div></div></div><div class="vs-room-mobile" aria-live="polite"><strong></strong><p></p><button type="button" aria-label="Close seat description">×</button></div>`;
-    const detail=root.querySelector('.vs-room-detail'),pop=root.querySelector('.vs-room-mobile');
-    function act(id,show){const z=by[id];if(!z)return;root.querySelectorAll('[data-zone]').forEach(x=>x.classList.toggle('is-active',x.dataset.zone===id));detail.querySelector('.tag').textContent=z.our_pick?'Sweet Spot / Our Pick':z.badge;detail.querySelector('h3').textContent=z.label;detail.querySelector('p').textContent=z.description;pop.querySelector('strong').textContent=(z.our_pick?'Sweet Spot · ':'')+z.label;pop.querySelector('p').textContent=z.description;if(show&&matchMedia('(max-width:820px)').matches)pop.classList.add('is-open')}
-    root.addEventListener('click',e=>{const z=e.target.closest('[data-zone]');if(z)act(z.dataset.zone,true);if(e.target.closest('.vs-room-mobile button'))pop.classList.remove('is-open')});
-    root.addEventListener('keydown',e=>{const z=e.target.closest('[data-zone]');if(z&&(e.key==='Enter'||e.key===' ')){e.preventDefault();act(z.dataset.zone,true)}});
+    const detail=root.querySelector('.vs-room-detail'),pop=root.querySelector('.vs-room-mobile'),mapEl=root.querySelector('.vs-room-map');
+    function act(id,show,source){
+      const z=by[id];if(!z)return;
+      root.querySelectorAll('[data-zone]').forEach(x=>x.classList.toggle('is-active',x.dataset.zone===id));
+      detail.querySelector('.tag').textContent=z.our_pick?'Sweet Spot / Our Pick':z.badge;
+      detail.querySelector('h3').textContent=z.label;
+      detail.querySelector('p').textContent=z.description;
+      pop.querySelector('strong').textContent=(z.our_pick?'Sweet Spot · ':'')+z.label;
+      pop.querySelector('p').textContent=z.description;
+      if(show&&matchMedia('(max-width:820px)').matches){
+        const card=source?.closest?.('.vs-room-card');
+        if(card)card.insertAdjacentElement('afterend',pop);else mapEl.insertAdjacentElement('afterend',pop);
+        pop.classList.add('is-open');
+        requestAnimationFrame(()=>pop.scrollIntoView({behavior:'smooth',block:'nearest'}));
+      }
+    }
+    root.addEventListener('click',e=>{const z=e.target.closest('[data-zone]');if(z)act(z.dataset.zone,true,z);if(e.target.closest('.vs-room-mobile button'))pop.classList.remove('is-open')});
+    root.addEventListener('keydown',e=>{const z=e.target.closest('[data-zone]');if(z&&(e.key==='Enter'||e.key===' ')){e.preventDefault();act(z.dataset.zone,true,z)}});
     act((d.zones.find(z=>z.our_pick)||d.zones[0]).id,false);
   }
   document.querySelectorAll('[data-seat-layout]').forEach(mount);
