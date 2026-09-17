@@ -4,26 +4,12 @@
   const approvedSeatChartUpgrades={
     '/shows/spectaculars/absinthe/':{
       image:'/images/absinthe-seating-chart.webp?v=aed2ac49',
-      alt:'Absinthe seating chart at the Spiegeltent at Caesars Palace showing Reserved 1, Reserved 2 and Reserved 3',
+      alt:'Absinthe seating chart at the Spiegeltent at Caesars Palace showing Reserved 1, Reserved 2, Reserved 3, Reserved 4 and VIP sections',
       layoutUrl:'/data/seat-layouts/spiegeltent-caesars-palace.json',
       layoutId:'spiegeltent-caesars-palace',
       ticketUrl:'https://spotlight.vegas/shows/production/absinthe/ref/vegassidekick',
       heading:'Find your seat at the Spiegeltent',
       summary:'Reserved 2 and Reserved 3 are the Vegas Sidekick Sweet Spot / Our Pick.'
-    }
-  };
-
-  const approvedVideoUpgrades={
-    '/shows/spectaculars/absinthe/':{
-      youtubeId:'EtDfq185HjI',
-      eyebrow:'Official video preview',
-      heading:'Watch Absinthe',
-      thumbnail:'https://i.ytimg.com/vi/EtDfq185HjI/hqdefault.jpg',
-      thumbnailAlt:'Official Absinthe video preview thumbnail',
-      schemaName:'Absinthe — Official Video Preview',
-      schemaDescription:'Official Absinthe Las Vegas video preview.',
-      uploadDate:'2026-09-17',
-      duration:'PT34S'
     }
   };
 
@@ -35,7 +21,7 @@
     if(!document.querySelector('link[data-vs-room-map]')){
       const link=document.createElement('link');
       link.rel='stylesheet';
-      link.href='/assets/seat-layouts/room-map.css?v=5';
+      link.href='/assets/seat-layouts/room-map.css?v=6';
       link.dataset.vsRoomMap='1';
       document.head.appendChild(link);
     }
@@ -58,74 +44,18 @@
 
     const seats=document.querySelector('#seats .wrap');
     if(seats){
-      seats.innerHTML=`<div class="eyebrow">Seat guide</div><h2>${cfg.heading}</h2><p class="lede">${cfg.summary}</p><div class="vs-room-seat-guide" data-layout-url="${cfg.layoutUrl}" data-seat-layout="${cfg.layoutId}" data-ticket-url="${cfg.ticketUrl}"></div>`;
+      seats.innerHTML=`<div class="eyebrow">Seat guide</div><h2>${cfg.heading}</h2><p class="vs-room-summary">${cfg.summary}</p><div class="vs-room-seat-guide" data-layout-url="${cfg.layoutUrl}" data-seat-layout="${cfg.layoutId}" data-ticket-url="${cfg.ticketUrl}"></div>`;
     }
 
     if(!document.querySelector('script[data-vs-room-map]')){
       const script=document.createElement('script');
-      script.src='/assets/seat-layouts/room-map.js?v=5';
+      script.src='/assets/seat-layouts/room-map.js?v=6';
       script.dataset.vsRoomMap='1';
       document.body.appendChild(script);
     }
   }
 
-  function upgradeOfficialVideo(){
-    const path=location.pathname.endsWith('/')?location.pathname:location.pathname+'/';
-    const cfg=approvedVideoUpgrades[path];
-    if(!cfg||document.getElementById('trailer'))return;
-    const photos=document.getElementById('photos');
-    if(!photos)return;
-
-    if(!document.querySelector('link[data-vs-show-video]')){
-      const link=document.createElement('link');
-      link.rel='stylesheet';
-      link.href='/assets/show-video.css?v=1';
-      link.dataset.vsShowVideo='1';
-      document.head.appendChild(link);
-    }
-
-    const section=document.createElement('section');
-    section.className='section';
-    section.id='trailer';
-    section.innerHTML=`<div class="wrap"><div class="eyebrow">${cfg.eyebrow}</div><h2>${cfg.heading}</h2><div class="vs-video-shell"><div class="vs-video" data-youtube-id="${cfg.youtubeId}"><img alt="${cfg.thumbnailAlt}" loading="lazy" src="${cfg.thumbnail}"/><button aria-label="Play Absinthe video preview" class="vs-video-play" type="button"><span aria-hidden="true">▶</span></button></div></div></div>`;
-    photos.insertAdjacentElement('afterend',section);
-
-    const photosNav=document.querySelector('.subnav a[href="#photos"]');
-    if(photosNav&&!document.querySelector('.subnav a[href="#trailer"]')){
-      const videoNav=document.createElement('a');
-      videoNav.href='#trailer';
-      videoNav.textContent='Video';
-      photosNav.insertAdjacentElement('afterend',videoNav);
-    }
-
-    if(!document.querySelector('script[data-vs-video-schema]')){
-      const schema=document.createElement('script');
-      schema.type='application/ld+json';
-      schema.dataset.vsVideoSchema='1';
-      schema.textContent=JSON.stringify({
-        '@context':'https://schema.org',
-        '@type':'VideoObject',
-        name:cfg.schemaName,
-        description:cfg.schemaDescription,
-        thumbnailUrl:cfg.thumbnail,
-        uploadDate:cfg.uploadDate,
-        duration:cfg.duration,
-        contentUrl:`https://www.youtube.com/watch?v=${cfg.youtubeId}`,
-        embedUrl:`https://www.youtube-nocookie.com/embed/${cfg.youtubeId}`
-      });
-      document.head.appendChild(schema);
-    }
-
-    if(!document.querySelector('script[data-vs-show-video],script[src*="/assets/show-video.js"]')){
-      const script=document.createElement('script');
-      script.src='/assets/show-video.js?v=1';
-      script.dataset.vsShowVideo='1';
-      document.body.appendChild(script);
-    }
-  }
-
   upgradeApprovedSeatChart();
-  upgradeOfficialVideo();
 
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const progress=document.querySelector('.progress'),mobileProgress=document.getElementById('mobileProgress');

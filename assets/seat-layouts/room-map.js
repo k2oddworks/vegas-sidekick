@@ -7,6 +7,7 @@
     const ticket=root.dataset.ticketUrl,by=Object.fromEntries(d.zones.map(z=>[z.id,z]));
     if(d.image){
       root.classList.add('vs-room-image-layout');
+      if(d.highlightMode==='precise-outline')root.classList.add('vs-room-precise-highlight');
       const galleryChart=document.querySelector('#photos .vs-chart-gallery img');
       if(galleryChart){
         galleryChart.src=d.image;
@@ -20,7 +21,7 @@
     }
     let map='';
     if(d.image){
-      const hits=d.zones.map(z=>(z.hitPaths||[]).map(p=>`<path tabindex="0" role="button" aria-label="${esc(z.label)}" data-zone="${esc(z.id)}" class="vs-room-zone vs-room-image-hit" d="${esc(p)}" fill="${esc(z.color)}" fill-opacity="0" stroke="none" pointer-events="all"/>`).join('')).join('');
+      const hits=d.zones.map(z=>(z.hitPaths||[]).map(p=>`<path tabindex="0" role="button" aria-label="${esc(z.label)}" data-zone="${esc(z.id)}" class="vs-room-zone vs-room-image-hit" d="${esc(p)}" fill="${esc(z.color)}" fill-opacity="0" stroke="none" pointer-events="all" vector-effect="non-scaling-stroke" style="--zone-color:${esc(z.color)}"/>`).join('')).join('');
       map=`<svg width="1200" height="1200" viewBox="${esc(d.viewBox)}" aria-label="${esc(d.venue)} seating layout"><image href="${esc(d.image)}" x="0" y="0" width="1200" height="1200" preserveAspectRatio="xMidYMid meet"/>${hits}</svg>`;
     }else{
       const shapes=d.zones.map(z=>{const rows=(z.rows||[]).map(y=>`<path class="vs-room-row" d="M4 ${y} H116" clip-path="url(#c-${esc(z.id)})"/>`).join('');const tables=(z.tables||[]).map(t=>tableMarkup(z,t)).join('');return `<g><clipPath id="c-${esc(z.id)}"><path d="${esc(z.path)}"/></clipPath><path tabindex="0" role="button" aria-label="${esc(z.label)}" data-zone="${esc(z.id)}" class="vs-room-zone" d="${esc(z.path)}" fill="${esc(z.color)}"/>${rows}${tables}<text x="${z.labelX}" y="${z.labelY}" text-anchor="middle" dominant-baseline="middle" class="vs-room-label ${z.our_pick?'dark':''}">${esc(z.mapLabel||z.label.replace('Section ',''))}</text></g>`}).join('');
