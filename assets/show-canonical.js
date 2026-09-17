@@ -13,6 +13,20 @@
     }
   };
 
+  const approvedVideoUpgrades={
+    '/shows/spectaculars/absinthe/':{
+      youtubeId:'EtDfq185HjI',
+      eyebrow:'Official video preview',
+      heading:'Watch Absinthe',
+      thumbnail:'https://i.ytimg.com/vi/EtDfq185HjI/hqdefault.jpg',
+      thumbnailAlt:'Official Absinthe video preview thumbnail',
+      schemaName:'Absinthe — Official Video Preview',
+      schemaDescription:'Official Absinthe Las Vegas video preview.',
+      uploadDate:'2026-09-17',
+      duration:'PT34S'
+    }
+  };
+
   function upgradeApprovedSeatChart(){
     const path=location.pathname.endsWith('/')?location.pathname:location.pathname+'/';
     const cfg=approvedSeatChartUpgrades[path];
@@ -55,7 +69,63 @@
     }
   }
 
+  function upgradeOfficialVideo(){
+    const path=location.pathname.endsWith('/')?location.pathname:location.pathname+'/';
+    const cfg=approvedVideoUpgrades[path];
+    if(!cfg||document.getElementById('trailer'))return;
+    const photos=document.getElementById('photos');
+    if(!photos)return;
+
+    if(!document.querySelector('link[data-vs-show-video]')){
+      const link=document.createElement('link');
+      link.rel='stylesheet';
+      link.href='/assets/show-video.css?v=1';
+      link.dataset.vsShowVideo='1';
+      document.head.appendChild(link);
+    }
+
+    const section=document.createElement('section');
+    section.className='section';
+    section.id='trailer';
+    section.innerHTML=`<div class="wrap"><div class="eyebrow">${cfg.eyebrow}</div><h2>${cfg.heading}</h2><div class="vs-video-shell"><div class="vs-video" data-youtube-id="${cfg.youtubeId}"><img alt="${cfg.thumbnailAlt}" loading="lazy" src="${cfg.thumbnail}"/><button aria-label="Play Absinthe video preview" class="vs-video-play" type="button"><span aria-hidden="true">▶</span></button></div></div></div>`;
+    photos.insertAdjacentElement('afterend',section);
+
+    const photosNav=document.querySelector('.subnav a[href="#photos"]');
+    if(photosNav&&!document.querySelector('.subnav a[href="#trailer"]')){
+      const videoNav=document.createElement('a');
+      videoNav.href='#trailer';
+      videoNav.textContent='Video';
+      photosNav.insertAdjacentElement('afterend',videoNav);
+    }
+
+    if(!document.querySelector('script[data-vs-video-schema]')){
+      const schema=document.createElement('script');
+      schema.type='application/ld+json';
+      schema.dataset.vsVideoSchema='1';
+      schema.textContent=JSON.stringify({
+        '@context':'https://schema.org',
+        '@type':'VideoObject',
+        name:cfg.schemaName,
+        description:cfg.schemaDescription,
+        thumbnailUrl:cfg.thumbnail,
+        uploadDate:cfg.uploadDate,
+        duration:cfg.duration,
+        contentUrl:`https://www.youtube.com/watch?v=${cfg.youtubeId}`,
+        embedUrl:`https://www.youtube-nocookie.com/embed/${cfg.youtubeId}`
+      });
+      document.head.appendChild(schema);
+    }
+
+    if(!document.querySelector('script[data-vs-show-video],script[src*="/assets/show-video.js"]')){
+      const script=document.createElement('script');
+      script.src='/assets/show-video.js?v=1';
+      script.dataset.vsShowVideo='1';
+      document.body.appendChild(script);
+    }
+  }
+
   upgradeApprovedSeatChart();
+  upgradeOfficialVideo();
 
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const progress=document.querySelector('.progress'),mobileProgress=document.getElementById('mobileProgress');
