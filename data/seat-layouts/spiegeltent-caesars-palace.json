@@ -1,0 +1,41 @@
+{
+  "venue": "Spiegeltent at Caesars Palace",
+  "address": "3570 S Las Vegas Blvd, Las Vegas, NV 89109",
+  "viewBox": "0 0 1200 1200",
+  "image": "/images/absinthe-seating-chart.webp?v=aed2ac49",
+  "zones": [
+    {
+      "id": "reserved-1",
+      "label": "Reserved 1",
+      "badge": "Reserved seating",
+      "our_pick": false,
+      "color": "#f59e0b",
+      "hitPaths": [
+        "M105 245 C260 135 445 125 565 230 L520 505 C350 470 215 520 105 650 Z"
+      ],
+      "description": "Reserved 1 is one of the main reserved seating areas shown on the Absinthe chart."
+    },
+    {
+      "id": "reserved-2",
+      "label": "Reserved 2",
+      "badge": "Reserved seating",
+      "our_pick": true,
+      "color": "#ff2e7e",
+      "hitPaths": [
+        "M665 230 C845 145 1050 245 1135 450 L1090 755 C930 650 805 575 650 535 Z"
+      ],
+      "description": "Reserved 2 is one of the Vegas Sidekick Sweet Spot / Our Pick sections for Absinthe."
+    },
+    {
+      "id": "reserved-3",
+      "label": "Reserved 3",
+      "badge": "Reserved seating",
+      "our_pick": true,
+      "color": "#8d3cff",
+      "hitPaths": [
+        "M135 715 C345 585 805 585 1060 735 L1015 1070 C760 1150 410 1150 155 1015 Z"
+      ],
+      "description": "Reserved 3 is one of the Vegas Sidekick Sweet Spot / Our Pick sections for Absinthe."
+    }
+  ]
+}
