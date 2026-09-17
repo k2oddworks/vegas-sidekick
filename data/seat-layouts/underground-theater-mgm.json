@@ -1,48 +1,47 @@
 {
   "venue": "The Underground Theater at MGM Grand",
   "address": "3799 S Las Vegas Blvd, Las Vegas, NV 89109",
-  "viewBox": "0 0 120 100",
-  "stage": {
-    "path": "M31 83 Q60 78 89 83 L84 97 H36 Z",
-    "labelX": 60,
-    "labelY": 90
-  },
+  "viewBox": "0 0 1200 1200",
+  "image": "/images/tape-face-seating-chart.webp",
   "zones": [
     {
       "id": "a",
       "label": "Category A",
-      "mapLabel": "A",
       "badge": "Closest section",
-      "our_pick": true,
+      "our_pick": false,
       "color": "#ffb000",
-      "path": "M25 61 Q60 50 95 61 L88 79 Q60 71 32 79 Z",
-      "labelX": 60,
-      "labelY": 66,
-      "description": "Category A is the Vegas Sidekick Sweet Spot / Our Pick for Tape Face: closest to the stage, with the clearest view of facial expressions, props and the small physical details that drive the show."
+      "hitPaths": [
+        "M310 390 C410 360 475 360 535 470 C585 505 675 505 720 470 C780 360 850 360 930 395 L900 590 C820 545 755 545 705 615 C650 650 555 650 500 615 C450 550 385 545 330 585 Z",
+        "M420 600 C510 570 690 570 780 605 L760 735 C660 765 540 765 440 730 Z"
+      ],
+      "description": "Category A is the closest seating category, giving you the shortest sightline to the stage and the physical details of the performance."
     },
     {
       "id": "b",
       "label": "Category B",
-      "mapLabel": "B",
       "badge": "Middle section",
-      "our_pick": false,
-      "color": "#8b5cff",
-      "path": "M18 38 Q60 23 102 38 L96 58 Q60 47 24 58 Z",
-      "labelX": 60,
-      "labelY": 43,
-      "description": "Category B sits through the middle of the room and is the strongest value balance when you want a clear overall view without paying for the closest section."
+      "our_pick": true,
+      "color": "#f72b83",
+      "hitPaths": [
+        "M60 420 C170 390 270 420 350 500 L390 790 C300 735 205 700 105 720 Z",
+        "M850 455 C950 395 1080 400 1160 470 L1140 760 C1045 700 955 715 850 785 Z",
+        "M185 785 L625 785 L625 875 L185 875 Z",
+        "M785 735 C900 705 1010 740 1080 825 L1005 1020 C900 960 830 910 775 850 Z"
+      ],
+      "description": "Category B is the Vegas Sidekick Sweet Spot / Our Pick for Tape Face. It keeps you close enough to read the visual comedy clearly while giving you a balanced view of the full stage."
     },
     {
       "id": "c",
       "label": "Category C",
-      "mapLabel": "C",
-      "badge": "Rear value",
+      "badge": "Value seating",
       "our_pick": false,
-      "color": "#1fc7dc",
-      "path": "M12 14 Q60 -1 108 14 L103 35 Q60 20 17 35 Z",
-      "labelX": 60,
-      "labelY": 19,
-      "description": "Category C is the rear value section. The Underground is compact enough that you still get the full visual-comedy picture from farther back."
+      "color": "#22c7df",
+      "hitPaths": [
+        "M65 360 C145 330 235 340 300 410 L260 485 C190 430 125 420 65 450 Z",
+        "M930 360 C1010 330 1090 350 1165 420 L1145 500 C1075 445 1015 435 950 465 Z",
+        "M865 930 C930 910 1000 925 1050 965 L1000 1045 C945 1010 900 1000 855 1015 Z"
+      ],
+      "description": "Category C is the value option around the outer edges of the room. You still get the full visual-comedy picture while keeping the ticket price lower."
     }
   ]
 }
