@@ -1,31 +1,22 @@
 (()=>{
   const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
   const chair=(x,y,r=.7)=>`<circle class="chair" cx="${x}" cy="${y}" r="${r}"/>`;
-  const tableMarkup=(z,t)=>{
-    const x=Number(t.x),y=Number(t.y),r=Number(t.r||2.2);
-    return `<g tabindex="0" role="button" aria-label="${esc(z.label)}" class="vs-room-table" data-zone="${esc(z.id)}">${chair(x,y-r-1)}${chair(x+r+1,y)}${chair(x,y+r+1)}${chair(x-r-1,y)}<circle class="table-top" cx="${x}" cy="${y}" r="${r}" fill="${esc(z.color)}"/></g>`;
-  };
+  const tableMarkup=(z,t)=>{const x=Number(t.x),y=Number(t.y),r=Number(t.r||2.2);return `<g tabindex="0" role="button" aria-label="${esc(z.label)}" class="vs-room-table" data-zone="${esc(z.id)}">${chair(x,y-r-1)}${chair(x+r+1,y)}${chair(x,y+r+1)}${chair(x-r-1,y)}<circle class="table-top" cx="${x}" cy="${y}" r="${r}" fill="${esc(z.color)}"/></g>`};
   async function mount(root){
     const d=await fetch(root.dataset.layoutUrl,{credentials:'same-origin'}).then(r=>{if(!r.ok)throw Error(r.status);return r.json()});
     const ticket=root.dataset.ticketUrl,by=Object.fromEntries(d.zones.map(z=>[z.id,z]));
-    const shapes=d.zones.map(z=>{
-      const rows=(z.rows||[]).map(y=>`<path class="vs-room-row" d="M4 ${y} H116" clip-path="url(#c-${esc(z.id)})"/>`).join('');
-      const tables=(z.tables||[]).map(t=>tableMarkup(z,t)).join('');
-      return `<g><clipPath id="c-${esc(z.id)}"><path d="${esc(z.path)}"/></clipPath><path tabindex="0" role="button" aria-label="${esc(z.label)}" data-zone="${esc(z.id)}" class="vs-room-zone" d="${esc(z.path)}" fill="${esc(z.color)}"/>${rows}${tables}<text x="${z.labelX}" y="${z.labelY}" text-anchor="middle" dominant-baseline="middle" class="vs-room-label ${z.our_pick?'dark':''}">${esc(z.mapLabel||z.label.replace('Section ',''))}</text></g>`;
-    }).join('');
-    const structs=(d.structures||[]).map(s=>`<path class="vs-room-structure" d="${esc(s.path)}"/><text x="${s.labelX}" y="${s.labelY}" text-anchor="middle" dominant-baseline="middle" class="vs-room-structure-label">${esc(s.label)}</text>`).join('');
-    root.innerHTML=`<div class="vs-room-guide"><div class="vs-room-map"><svg width="1200" height="1000" viewBox="${esc(d.viewBox)}" aria-label="${esc(d.venue)} seating layout"><rect width="120" height="110" rx="5" fill="#0d0815"/>${shapes}${structs}<path class="vs-room-stage" d="${esc(d.stage.path)}"/><text x="${d.stage.labelX}" y="${d.stage.labelY}" text-anchor="middle" dominant-baseline="middle" class="vs-room-stage-label">${esc(d.stage.label||'STAGE')}</text></svg></div><div><div class="vs-room-cards">${d.zones.map(z=>`<button type="button" class="vs-room-card ${z.our_pick?'is-pick':''}" data-zone="${esc(z.id)}"><strong>${esc(z.label)}</strong><span>${z.our_pick?'Sweet Spot / Our Pick':esc(z.badge)}</span></button>`).join('')}</div><div class="vs-room-detail" aria-live="polite"><div class="tag"></div><h3></h3><p></p><a class="cta vs-ticket-primary" href="${esc(ticket)}" target="_blank" rel="noopener sponsored">Check seats →</a></div></div></div><div class="vs-room-mobile" aria-live="polite"><strong></strong><p></p><button type="button" aria-label="Close seat description">×</button></div>`;
-    const detail=root.querySelector('.vs-room-detail'),pop=root.querySelector('.vs-room-mobile');
-    function act(id,show){
-      const z=by[id];if(!z)return;
-      root.querySelectorAll('[data-zone]').forEach(x=>x.classList.toggle('is-active',x.dataset.zone===id));
-      detail.querySelector('.tag').textContent=z.our_pick?'Sweet Spot / Our Pick':z.badge;
-      detail.querySelector('h3').textContent=z.label;
-      detail.querySelector('p').textContent=z.description;
-      pop.querySelector('strong').textContent=(z.our_pick?'Sweet Spot · ':'')+z.label;
-      pop.querySelector('p').textContent=z.description;
-      if(show&&matchMedia('(max-width:820px)').matches)pop.classList.add('is-open');
+    let map='';
+    if(d.image){
+      const hits=d.zones.map(z=>(z.hitPaths||[]).map(p=>`<path tabindex="0" role="button" aria-label="${esc(z.label)}" data-zone="${esc(z.id)}" class="vs-room-zone vs-room-image-hit" d="${esc(p)}" fill="${esc(z.color)}" fill-opacity="0" stroke="${esc(z.color)}" stroke-opacity="0" stroke-width="10"/>`).join('')).join('');
+      map=`<svg width="1200" height="1200" viewBox="${esc(d.viewBox)}" aria-label="${esc(d.venue)} seating layout"><image href="${esc(d.image)}" x="0" y="0" width="1200" height="1200" preserveAspectRatio="xMidYMid meet"/>${hits}</svg>`;
+    }else{
+      const shapes=d.zones.map(z=>{const rows=(z.rows||[]).map(y=>`<path class="vs-room-row" d="M4 ${y} H116" clip-path="url(#c-${esc(z.id)})"/>`).join('');const tables=(z.tables||[]).map(t=>tableMarkup(z,t)).join('');return `<g><clipPath id="c-${esc(z.id)}"><path d="${esc(z.path)}"/></clipPath><path tabindex="0" role="button" aria-label="${esc(z.label)}" data-zone="${esc(z.id)}" class="vs-room-zone" d="${esc(z.path)}" fill="${esc(z.color)}"/>${rows}${tables}<text x="${z.labelX}" y="${z.labelY}" text-anchor="middle" dominant-baseline="middle" class="vs-room-label ${z.our_pick?'dark':''}">${esc(z.mapLabel||z.label.replace('Section ',''))}</text></g>`}).join('');
+      const structs=(d.structures||[]).map(s=>`<path class="vs-room-structure" d="${esc(s.path)}"/><text x="${s.labelX}" y="${s.labelY}" text-anchor="middle" dominant-baseline="middle" class="vs-room-structure-label">${esc(s.label)}</text>`).join('');
+      map=`<svg width="1200" height="1000" viewBox="${esc(d.viewBox)}" aria-label="${esc(d.venue)} seating layout"><rect width="120" height="110" rx="5" fill="#0d0815"/>${shapes}${structs}<path class="vs-room-stage" d="${esc(d.stage.path)}"/><text x="${d.stage.labelX}" y="${d.stage.labelY}" text-anchor="middle" dominant-baseline="middle" class="vs-room-stage-label">${esc(d.stage.label||'STAGE')}</text></svg>`;
     }
+    root.innerHTML=`<div class="vs-room-guide"><div class="vs-room-map">${map}</div><div><div class="vs-room-cards">${d.zones.map(z=>`<button type="button" class="vs-room-card ${z.our_pick?'is-pick':''}" data-zone="${esc(z.id)}"><strong>${esc(z.label)}</strong><span>${z.our_pick?'Sweet Spot / Our Pick':esc(z.badge)}</span></button>`).join('')}</div><div class="vs-room-detail" aria-live="polite"><div class="tag"></div><h3></h3><p></p><a class="cta vs-ticket-primary" href="${esc(ticket)}" target="_blank" rel="noopener sponsored">Check seats →</a></div></div></div><div class="vs-room-mobile" aria-live="polite"><strong></strong><p></p><button type="button" aria-label="Close seat description">×</button></div>`;
+    const detail=root.querySelector('.vs-room-detail'),pop=root.querySelector('.vs-room-mobile');
+    function act(id,show){const z=by[id];if(!z)return;root.querySelectorAll('[data-zone]').forEach(x=>x.classList.toggle('is-active',x.dataset.zone===id));detail.querySelector('.tag').textContent=z.our_pick?'Sweet Spot / Our Pick':z.badge;detail.querySelector('h3').textContent=z.label;detail.querySelector('p').textContent=z.description;pop.querySelector('strong').textContent=(z.our_pick?'Sweet Spot · ':'')+z.label;pop.querySelector('p').textContent=z.description;if(show&&matchMedia('(max-width:820px)').matches)pop.classList.add('is-open')}
     root.addEventListener('click',e=>{const z=e.target.closest('[data-zone]');if(z)act(z.dataset.zone,true);if(e.target.closest('.vs-room-mobile button'))pop.classList.remove('is-open')});
     root.addEventListener('keydown',e=>{const z=e.target.closest('[data-zone]');if(z&&(e.key==='Enter'||e.key===' ')){e.preventDefault();act(z.dataset.zone,true)}});
     act((d.zones.find(z=>z.our_pick)||d.zones[0]).id,false);
