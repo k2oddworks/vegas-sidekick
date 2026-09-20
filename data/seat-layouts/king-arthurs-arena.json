@@ -1,0 +1,102 @@
+{
+  "venue": "King Arthur's Arena at Excalibur",
+  "viewBox": "0 0 1536 1499",
+  "image": "/images/tournament-of-kings-seating-chart.jpg",
+  "highlightMode": "precise-outline",
+  "zones": [
+    {
+      "id": "ireland",
+      "label": "Ireland",
+      "badge": "Upper-left side",
+      "our_pick": false,
+      "color": "#24c0db",
+      "hitPaths": [
+        "M147 491 L296 322 L381 322 L381 454 L345 454 L319 491 Z",
+        "M414 321 L464 321 L464 355 L492 355 L492 321 L564 321 L564 491 L414 491 Z"
+      ],
+      "description": "Ireland occupies two blocks on the upper-left side of the chart. Both face the central performance area from that side of the arena."
+    },
+    {
+      "id": "russia",
+      "label": "Russia",
+      "badge": "Upper middle",
+      "our_pick": false,
+      "color": "#ff318f",
+      "hitPaths": [
+        "M592 355 L624 355 L624 321 L715 321 L715 355 L743 355 L743 491 L592 491 Z",
+        "M778 354 L928 354 L928 491 L778 491 Z"
+      ],
+      "description": "Russia has two blocks along the upper middle edge of the arena, facing in toward the performance area."
+    },
+    {
+      "id": "norway",
+      "label": "Norway",
+      "badge": "Upper-right side",
+      "our_pick": false,
+      "color": "#a454ed",
+      "hitPaths": [
+        "M959 354 L1109 354 L1109 492 L959 492 Z"
+      ],
+      "description": "Norway is the upper-right block between Russia and Spain on the supplied chart."
+    },
+    {
+      "id": "spain",
+      "label": "Spain",
+      "badge": "Around the upper-right corner",
+      "our_pick": false,
+      "color": "#12c8bc",
+      "hitPaths": [
+        "M1140 353 L1242 353 L1269 344 L1351 425 L1215 568 L1140 492 Z",
+        "M1238 584 L1379 456 L1410 487 L1410 683 L1238 683 Z"
+      ],
+      "description": "Spain bends around the upper-right corner of the arena, with one block along the top and one along the right side."
+    },
+    {
+      "id": "austria",
+      "label": "Austria",
+      "badge": "Around the lower-right corner",
+      "our_pick": false,
+      "color": "#ff328d",
+      "hitPaths": [
+        "M1238 724 L1410 724 L1410 921 L1380 953 L1238 835 Z",
+        "M1138 928 L1210 840 L1352 980 L1247 1085 L1138 1085 Z"
+      ],
+      "description": "Austria wraps the lower-right corner, with blocks on the right and bottom edges of the arena."
+    },
+    {
+      "id": "hungary",
+      "label": "Hungary",
+      "badge": "Lower-right side",
+      "our_pick": false,
+      "color": "#ffad10",
+      "hitPaths": [
+        "M960 914 L1109 914 L1109 1085 L1037 1085 L1037 1051 L960 1051 Z"
+      ],
+      "description": "Hungary is the bottom-right block between Dragon and Austria on the supplied chart."
+    },
+    {
+      "id": "dragon",
+      "label": "Dragon",
+      "badge": "Lower middle",
+      "our_pick": false,
+      "color": "#873df5",
+      "hitPaths": [
+        "M595 914 L742 914 L742 1052 L713 1052 L713 1085 L623 1085 L623 1052 L595 1052 Z",
+        "M778 914 L928 914 L928 1085 L827 1085 L827 1051 L778 1051 Z"
+      ],
+      "description": "Dragon has two blocks along the lower middle edge, facing toward the central performance area."
+    },
+    {
+      "id": "france",
+      "label": "France",
+      "badge": "Lower-left side",
+      "our_pick": false,
+      "color": "#ffae13",
+      "hitPaths": [
+        "M147 914 L318 914 L379 954 L379 1085 L299 1085 Z",
+        "M414 914 L564 914 L564 1085 L492 1085 L492 1051 L464 1051 L464 1085 L414 1085 Z"
+      ],
+      "description": "France occupies two blocks on the lower-left side of the arena, opposite Ireland on the chart."
+    }
+  ]
+}
