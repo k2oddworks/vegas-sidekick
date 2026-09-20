@@ -1,0 +1,74 @@
+{
+  "venue": "Blue Man Theater at Luxor",
+  "viewBox": "0 0 1200 1200",
+  "image": "/images/blue-man-group-seating-chart.jpg",
+  "highlightMode": "precise-outline",
+  "zones": [
+    {
+      "id": "103",
+      "label": "Section 103",
+      "badge": "Closer, left of center",
+      "our_pick": true,
+      "color": "#ff278d",
+      "hitPaths": [
+        "M161.7 702.3 C248.4 618 401.6 538.3 575.8 520.3 L579.7 750 C462.5 756.3 363.3 802.3 307 871.1 C243.8 814.8 195.3 750 161.7 702.3 Z"
+      ],
+      "description": "Section 103 is the front-left section nearest the stage on the supplied chart. Choose it for a closer view from the left side."
+    },
+    {
+      "id": "102",
+      "label": "Section 102",
+      "badge": "Closer, right of center",
+      "our_pick": true,
+      "color": "#ffae08",
+      "hitPaths": [
+        "M626.6 519.5 C799.2 535.9 957.8 618.8 1043.8 703.9 C1010.2 753.9 958.6 814.1 894.5 869.5 C826.6 798.4 737.5 760.2 625.8 749.2 Z"
+      ],
+      "description": "Section 102 is the front-right section nearest the stage on the supplied chart. Choose it for a closer view from the right side."
+    },
+    {
+      "id": "203",
+      "label": "Section 203",
+      "badge": "Set back, left of center",
+      "our_pick": true,
+      "color": "#13b9d3",
+      "hitPaths": [
+        "M243.8 289.8 C333.6 245.3 452.3 214.1 575.8 206.3 L580.5 446.9 C483.6 449.2 399.2 472.7 340.6 504.7 C303.9 433.6 271.1 359.4 243.8 289.8 Z"
+      ],
+      "description": "Section 203 sits behind 103 on the left half of the chart. It gives you more distance from the stage while staying near the center."
+    },
+    {
+      "id": "202",
+      "label": "Section 202",
+      "badge": "Set back, right of center",
+      "our_pick": true,
+      "color": "#a24aee",
+      "hitPaths": [
+        "M621.1 207.8 C742.2 211.7 864.1 240.6 957.8 283.6 C933.6 349.2 902.3 421.1 861.7 501.6 C790.6 470.3 710.9 450.8 621.1 447.7 Z"
+      ],
+      "description": "Section 202 sits behind 102 on the right half of the chart. It gives you more distance from the stage while staying near the center."
+    },
+    {
+      "id": "204",
+      "label": "Section 204",
+      "badge": "Far left of the stage",
+      "our_pick": false,
+      "color": "#8234eb",
+      "hitPaths": [
+        "M20.3 460.9 C66.4 405.5 132 352.3 209.4 319.5 C241.4 369.5 274.2 439.1 303.9 524.2 C252.3 550.8 203.1 580.5 161.7 617.2 C112.5 575 64.8 521.1 20.3 460.9 Z"
+      ],
+      "description": "Section 204 is the outer-left section behind the front seating. It gives you a more angled view from farther back."
+    },
+    {
+      "id": "201",
+      "label": "Section 201",
+      "badge": "Far right of the stage",
+      "our_pick": false,
+      "color": "#12c4bb",
+      "hitPaths": [
+        "M932 425 C987.5 406.3 1038.3 389.8 1093 379.7 C1123.4 399.2 1150 422.7 1175 446.9 C1135.2 503.1 1087.5 554.7 1028.1 601.6 C984.4 565.6 940.6 539.8 896.1 520.3 Z"
+      ],
+      "description": "Section 201 is the outer-right section behind the front seating. It gives you a more angled view from farther back."
+    }
+  ]
+}

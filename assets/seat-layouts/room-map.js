@@ -42,7 +42,7 @@
         const card=source?.closest?.('.vs-room-card');
         if(card)card.insertAdjacentElement('afterend',pop);else mapEl.insertAdjacentElement('afterend',pop);
         pop.classList.add('is-open');
-        requestAnimationFrame(()=>pop.scrollIntoView({behavior:'smooth',block:'nearest'}));
+        if(root.dataset.mobilePopup!=='fixed')requestAnimationFrame(()=>pop.scrollIntoView({behavior:'smooth',block:'nearest'}));
       }
     }
     root.addEventListener('click',e=>{const z=e.target.closest('[data-zone]');if(z)act(z.dataset.zone,true,z);if(e.target.closest('.vs-room-mobile button'))pop.classList.remove('is-open')});
