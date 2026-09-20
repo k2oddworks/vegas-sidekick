@@ -1,0 +1,67 @@
+{
+  "venue": "Flamingo Showroom at Flamingo Las Vegas",
+  "viewBox": "0 0 1536 1536",
+  "image": "/images/rupauls-drag-race-live-seating-chart.jpg",
+  "highlightMode": "precise-outline",
+  "zones": [
+    {
+      "id": "orange",
+      "label": "Orange seating",
+      "badge": "Nearest the stage",
+      "our_pick": false,
+      "color": "#ffad18",
+      "hitPaths": [
+        "M240 626 L240 425 L349 351 C419 452 467 597 488 741 L378 741 L378 712 L240 712 Z",
+        "M240 793 L378 793 L378 772 L487 772 C470 921 423 1063 361 1165 L249 1015 L294 886 L240 886 Z"
+      ],
+      "description": "Orange is the seating nearest the stage, split above and below the center walkway on the chart. Choose it when being closer matters most."
+    },
+    {
+      "id": "pink",
+      "label": "Pink seating",
+      "badge": "Closer middle section",
+      "our_pick": true,
+      "color": "#ff398f",
+      "hitPaths": [
+        "M367 344 L526 235 C618 367 668 550 681 754 L489 754 C473 592 427 450 367 344 Z",
+        "M489 771 L681 771 C670 950 614 1120 531 1259 L363 1167 C427 1055 472 921 489 771 Z"
+      ],
+      "description": "Pink sits just behind orange, in the closer half of the middle seating. It is one of our two picks for a middle position facing the stage."
+    },
+    {
+      "id": "purple",
+      "label": "Purple seating",
+      "badge": "Farther middle section",
+      "our_pick": true,
+      "color": "#a562ea",
+      "hitPaths": [
+        "M586 341 L640 315 L662 354 L718 328 L731 344 L787 308 C880 440 930 596 947 754 L681 754 C669 585 638 449 586 341 Z",
+        "M681 771 L947 771 C940 952 900 1107 840 1238 L768 1238 L732 1290 L531 1259 C614 1117 669 953 681 771 Z"
+      ],
+      "description": "Purple is the next middle band behind pink, before the cyan seating. It is our other pick if you want a little more distance from the stage."
+    },
+    {
+      "id": "cyan",
+      "label": "Cyan seating",
+      "badge": "Back of the main seating",
+      "our_pick": false,
+      "color": "#1ac9d5",
+      "hitPaths": [
+        "M870 201 L960 201 C1026 337 1065 506 1079 668 L1003 670 L999 638 L946 645 C936 513 906 399 870 327 Z",
+        "M945 843 L1000 843 L1078 843 C1067 1038 1018 1192 950 1315 L872 1315 L840 1238 C899 1108 937 958 945 843 Z"
+      ],
+      "description": "Cyan is the back band of the main seating on either side of the MIX area. Choose it for more distance from the stage."
+    },
+    {
+      "id": "balcony",
+      "label": "Balcony",
+      "badge": "Separate balcony area",
+      "our_pick": false,
+      "color": "#8737f2",
+      "hitPaths": [
+        "M1071 260 L1411 260 C1457 450 1476 612 1470 759 C1467 947 1442 1124 1397 1275 L1106 1118 L1109 828 L1148 828 L1148 680 L1109 680 Z"
+      ],
+      "description": "The balcony is the separate area to the right of the main seating on the chart. Choose it for a more distant perspective over the room."
+    }
+  ]
+}
