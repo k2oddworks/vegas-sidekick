@@ -1,0 +1,45 @@
+{
+  "venue": "Brad Garrett's Comedy Club at MGM Grand",
+  "viewBox": "0 0 1536 1536",
+  "image": "/images/brad-garretts-comedy-club-seating-chart.jpg",
+  "highlightMode": "precise-outline",
+  "zones": [
+    {
+      "id": "category-a",
+      "label": "Category A",
+      "badge": "Nearest the stage",
+      "our_pick": false,
+      "color": "#ffad17",
+      "hitPaths": [
+        "M383 473 L564 466 C609 537 680 582 763 582 C846 582 922 541 960 469 L1140 543 C1090 705 943 828 762 831 C579 831 431 711 383 473 Z"
+      ],
+      "description": "Category A is the curved section nearest the stage. Choose it when the closest view of the performer is your priority."
+    },
+    {
+      "id": "category-b",
+      "label": "Category B",
+      "badge": "Curved middle section",
+      "our_pick": true,
+      "color": "#ff2e8d",
+      "hitPaths": [
+        "M34 674 L340 559 C414 748 571 866 758 868 C946 868 1104 751 1178 565 L1486 686 C1398 1035 1125 1248 763 1252 C402 1248 124 1024 34 674 Z"
+      ],
+      "description": "Category B curves behind A across the center of the room. It is our pick for a central view with some distance from the stage."
+    },
+    {
+      "id": "category-c",
+      "label": "Category C",
+      "badge": "Outer side areas",
+      "our_pick": false,
+      "color": "#21c5d7",
+      "hitPaths": [
+        "M35 454 L263 375 C280 369 290 375 296 393 L302 419 C305 435 296 443 279 449 L49 512 C35 513 30 502 33 486 Z",
+        "M62 545 L298 456 C315 451 323 460 328 477 L334 509 C336 528 326 537 310 543 L91 615 C76 621 67 609 63 591 Z",
+        "M1231 385 C1238 372 1248 374 1265 378 L1474 459 C1488 464 1493 476 1489 490 L1481 517 C1478 528 1468 533 1454 526 L1242 444 C1226 439 1221 428 1225 414 Z",
+        "M1217 462 L1440 541 C1456 547 1459 558 1452 576 L1438 612 C1433 628 1424 630 1407 623 L1203 541 C1185 535 1182 525 1189 508 L1200 479 C1204 466 1208 462 1217 462 Z",
+        "M1066 1221 L1318 1078 C1330 1071 1340 1074 1347 1087 L1375 1131 C1382 1144 1379 1153 1364 1162 L1118 1301 C1101 1310 1094 1306 1084 1290 L1067 1258 C1059 1244 1057 1231 1066 1221 Z"
+      ],
+      "description": "Category C appears in the smaller outer-side areas shown on the chart. It gives you a view from farther toward the side of the room."
+    }
+  ]
+}
