@@ -30,20 +30,21 @@ Preferred active-show flow:
 2. Four quick facts
 3. Seamless ticker
 4. Sticky section navigation
-5. Quick Take
-6. Showtimes / booking module
-7. Photos
-8. Official trailer when a verified video exists
-9. Seat Guide when useful
-10. Good Fit / useful fit guidance
-11. FAQ
-12. Related shows
-13. Next useful click
-14. Kris author card + freshness + disclosure
-15. Final ticket CTA
-16. Mobile sticky ticket bar
+5. What is [Show]? descriptive overview
+6. Quick Take
+7. Showtimes / booking module
+8. Photos
+9. Official trailer when a verified video exists
+10. Seat Guide when useful
+11. Good Fit / useful fit guidance
+12. FAQ
+13. Related shows
+14. Next useful click
+15. Kris author card + freshness + disclosure
+16. Final ticket CTA
+17. Mobile sticky ticket bar
 
-The buyer journey is intentional: **What is this? → Can I go? → What does it look like? → Where should I sit? → Is it a good fit? → Buy.** The full **Find your showtime** module belongs immediately after Quick Take so a customer with strong purchase intent can answer the practical availability question without reading half the page first.
+The buyer journey is intentional: **What is this? → Is it for me? → Can I go? → What does it look like? → Where should I sit? → Buy.** The descriptive overview explains the entertainment product before Quick Take makes a decision-oriented recommendation. The full **Find your showtime** module belongs immediately after Quick Take so a customer with strong purchase intent can answer the practical availability question without reading half the page first.
 
 Optional sections simply collapse out. A page without a verified trailer should move directly from Photos to Seat Guide, for example. Do not add sections just because a template has room for them. Empty-calorie UI is worse than a shorter page.
 
@@ -178,7 +179,43 @@ The ticker must be a truly seamless loop on desktop and mobile.
 
 ---
 
-## 8. Quick Take, Good Fit, and Kris’s take
+## 8. Descriptive show overview
+
+Every active show page should include a compact **What is [Show]?** section before Quick Take.
+
+Its job is to explain the entertainment product in natural language for someone who has never seen or heard of the show. Cover the verified details that actually define the experience, such as:
+
+- what type of show it is
+- what happens onstage
+- the core performers / format
+- the music, comedy, magic, acrobatics, dance, story, effects, or other defining elements
+- what makes the production meaningfully different from a conventional show in the same category
+- venue / property context when it helps explain the experience
+
+### SEO rule: entity completeness, not keyword density
+
+This section should strengthen the page’s descriptive search footprint by describing the show thoroughly, **not** by repeating search phrases.
+
+- Write for a person first.
+- Use show-specific entities and concepts naturally.
+- Never write keyword-stuffed lines such as “best Las Vegas show tickets” or repeat “Las Vegas” unnaturally.
+- Do not impose a hard word-count minimum. Most shows will need roughly 150–250 useful words; simpler shows can be shorter.
+- Stop when the entertainment product is clearly explained. Do not add filler to make the page look complete.
+- Never invent show elements to make the description richer.
+
+### Hero / overview / Quick Take are three different jobs
+
+- **Hero:** identify the show quickly.
+- **What is [Show]?:** explain what the customer is actually buying a ticket to.
+- **Quick Take:** answer whether the show makes sense for the customer and who it fits.
+
+Do not copy the hero sentence into the overview. Do not move the same synopsis into Quick Take with synonyms. A visitor reading all three should learn something new at each step.
+
+Blue Man Group is the first sitewide example of this separation; use the pattern, not its show-specific copy.
+
+---
+
+## 9. Quick Take, Good Fit, and Kris’s take
 
 ### Hero / Quick Take separation
 
@@ -229,7 +266,7 @@ Never invent first-hand attendance or experience.
 
 ---
 
-## 9. Language rules from the Nathan benchmark
+## 10. Language rules from the Nathan benchmark
 
 ### Do not use “tradeoff” in customer-facing copy
 
@@ -265,7 +302,7 @@ This is especially important for hypnosis, comedy, magic, and close-to-stage sea
 
 ---
 
-## 10. Booking tip rule
+## 11. Booking tip rule
 
 **Booking tip is optional.**
 
@@ -280,7 +317,7 @@ If the tip is generic category copy or merely describes a seat, remove it. Never
 
 ---
 
-## 11. Photo gallery
+## 12. Photo gallery
 
 Nathan Burton is the gallery interaction benchmark.
 
@@ -306,7 +343,7 @@ Preserve useful `alt` text on the original on-page images.
 
 ---
 
-## 11a. Official video component
+## 12a. Official video component
 
 When a verified official YouTube trailer exists, use the shared Vegas Sidekick video component rather than a one-off iframe or custom click handler. In the standard flow, place it **after Photos and before Seat Guide**.
 
@@ -320,7 +357,7 @@ When a verified official YouTube trailer exists, use the shared Vegas Sidekick v
 
 ---
 
-## 12. Seating-chart system
+## 13. Seating-chart system
 
 Nathan Burton Theater is the first locked example of the reusable seating system. Zombie Burlesque is the locked example of using an approved chart image directly with transparent interactive hit zones.
 
@@ -417,7 +454,7 @@ The static chart is a UX/content asset first; any SEO value is secondary.
 
 ---
 
-## 13. SEO and structured data
+## 14. SEO and structured data
 
 Every active rebuilt show page should include, where appropriate:
 
@@ -451,7 +488,7 @@ Use other active audits when the change touches their domain.
 
 ---
 
-## 14. Locked reusable benchmark assets
+## 15. Locked reusable benchmark assets
 
 ### Seating
 
