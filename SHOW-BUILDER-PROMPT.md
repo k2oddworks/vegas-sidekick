@@ -6,7 +6,7 @@ Paste this entire document at the start of a new chat session before requesting 
 >
 > `shows/magic/nathan-burton-comedy-magic/index.html` and `SHOW-PAGE-BENCHMARK.md` now govern active show-page UX and copy. Older V Theater / Carrot Top / Absinthe examples in this long prompt are legacy implementation references only. If anything below conflicts with the Nathan benchmark, **Nathan wins**.
 >
-> Key current rules: no formal downside/Think twice modules; Good to know only for real useful facts; Booking tip is optional and actionable only; no customer-facing “tradeoff”; no interaction/participation claims unless Kris explicitly confirms them; use Start time/Start times; prefer “See available dates & times”; use one visible “Show info confirmed Month YYYY” freshness line near the author card; galleries support arrows/keyboard/swipe; seating charts are room-based, geometrically faithful, slab-row when exact seat counts are unnecessary, and mobile tap feedback must appear immediately in view.
+> Key current rules: active show pages include a compact **What is [Show]?** descriptive overview before Quick Take; write for entity completeness rather than keyword density and never pad to a word count; Hero, descriptive overview, and Quick Take must do different jobs; no formal downside/Think twice modules; Good to know only for real useful facts; Booking tip is optional and actionable only; no customer-facing “tradeoff”; no interaction/participation claims unless Kris explicitly confirms them; use Start time/Start times; prefer “See available dates & times”; use one visible “Show info confirmed Month YYYY” freshness line near the author card; galleries support arrows/keyboard/swipe; seating charts are room-based, geometrically faithful, slab-row when exact seat counts are unnecessary, and mobile tap feedback must appear immediately in view.
 >
 > **Booking module update — September 15, 2026:** compact v2 is the shared standard. Use the pill + compact day/time/amber CTA treatment in `assets/showtimes-booking.css` and `.js`; do not restore the old large secondary CTA or generic Planning Ahead card.
 
@@ -68,6 +68,17 @@ Main content sections order (inside `<main>`):
 ## Current Show-Page Benchmark — Nathan Burton
 
 **Current benchmark/model:** `shows/magic/nathan-burton-comedy-magic/index.html`. For new show pages and major rebuilds, use Nathan Burton as the interaction, conversion, mobile UX, gallery, seating, copy-framing, and SEO benchmark. Read `SHOW-PAGE-BENCHMARK.md` first. Preserve each show's own personality and facts; reuse the system, not Nathan-specific copy.
+
+### Descriptive show copy
+
+Before Quick Take, include a **What is [Show]?** section that explains the actual entertainment product for someone unfamiliar with it.
+
+- Use verified show-specific details only.
+- Explain what happens onstage, the format, defining performers/elements, and what makes it distinct.
+- Use natural relevant entities and concepts; do not keyword-stuff.
+- Do not enforce a word minimum. Roughly 150–250 words is often enough, but simpler shows can be shorter.
+- Hero = fast identification. Descriptive overview = what the customer is buying. Quick Take = whether it fits.
+- Never repeat the hero sentence in the overview or turn Quick Take into another synopsis.
 
 ### Required SEO metadata package
 Every rebuilt show page must include all of the following:
