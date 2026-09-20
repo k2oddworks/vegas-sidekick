@@ -127,6 +127,8 @@ Current canonical show pages generally use:
 3. Ticker
 4. Sticky section navigation
 5. Quick Take
+
+**Locked copy rule:** Hero and Quick Take must not duplicate or lightly paraphrase each other. Hero answers what the show is; Quick Take answers whether it is worth seeing and who it makes sense for.
 6. Photos
 7. Interactive seat guide where useful
 8. Good Fit / Good to Know
