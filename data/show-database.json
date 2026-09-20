@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-09-15",
+  "updated_on": "2026-09-20",
   "source": "Vegas Sidekick Show Database",
   "records": [
     {
@@ -559,6 +559,47 @@
         "spotlight_url": "https://spotlight.vegas/shows/production/battlebots/",
         "affiliate_url": "https://spotlight.vegas/shows/production/battlebots/ref/vegassidekick",
         "age_label": "All ages"
+      },
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
+    },
+    {
+      "slug": "barry-manilow",
+      "name": "Barry Manilow: The Hits Come Home!",
+      "category": "music",
+      "status": "active",
+      "our_price": 91,
+      "regular_price": null,
+      "runtime_minutes": 90,
+      "age_summary": "Confirm current listing",
+      "venue": "International Theater at Westgate Las Vegas Resort & Casino",
+      "showroom": "",
+      "schedule_summary": "Dates & times vary · check booking page",
+      "ticket_url": "https://spotlight.vegas/shows/music/barry-manilow/ref/vegassidekick",
+      "official_trailer": "",
+      "page_path": "/shows/music/barry-manilow/",
+      "verified_on": "2026-09-15",
+      "freshness_label": "September 2026",
+      "verification": "verified_spotlight",
+      "notes": "Select performance blocks are posted through April 2027; do not convert this to a recurring weekly schedule.",
+      "spotlight": {
+        "name": "Barry Manilow: The Hits Come Home! Las Vegas",
+        "our_price": 91,
+        "regular_price": null,
+        "location": "International Theater at Westgate Las Vegas Resort & Casino",
+        "runtime_minutes": 90,
+        "age_rule": "",
+        "other_restrictions": "",
+        "schedule_days": {},
+        "schedule_summary": "Dates & times vary · check booking page",
+        "schedule_variable": true,
+        "schedule_raw": [
+          "Dates & times vary; posted performance blocks currently extend through April 2027."
+        ],
+        "spotlight_url": "https://spotlight.vegas/shows/music/barry-manilow/",
+        "affiliate_url": "https://spotlight.vegas/shows/music/barry-manilow/ref/vegassidekick",
+        "age_label": "Confirm current listing"
       },
       "savings_amount": null,
       "savings_percent": null,
