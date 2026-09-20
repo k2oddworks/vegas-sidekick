@@ -6,8 +6,8 @@
   "zones": [
     {
       "id": "front-orange",
-      "label": "Orange front blocks",
-      "badge": "Nearest the stage",
+      "label": "Front arc",
+      "badge": "Closest to the stage",
       "our_pick": false,
       "color": "#ffa216",
       "hitPaths": [
@@ -23,12 +23,12 @@
         "M1026 1192 Q1032 1181 1045 1182 Q1062 1188 1071 1208 L1054 1252 L999 1232 Z",
         "M1076 1212 Q1092 1216 1106 1241 L1110 1257 L1086 1255 L1060 1229 Z"
       ],
-      "description": "The small orange blocks curve around the front of the stage. Choose these when being nearest the performance matters most."
+      "description": "These small blocks curve around the stage edge. Choose this area for the closest view of the performers."
     },
     {
       "id": "front-pink",
-      "label": "Pink near-stage blocks",
-      "badge": "Behind the front arc",
+      "label": "Near-stage center and sides",
+      "badge": "Just behind the front arc",
       "our_pick": false,
       "color": "#f62a8d",
       "hitPaths": [
@@ -36,12 +36,12 @@
         "M526 1013 Q539 1008 548 1020 L583 1080 Q590 1094 579 1106 Q481 1161 424 1229 Q414 1240 402 1234 L344 1191 Q329 1180 343 1165 Q427 1061 526 1013 Z",
         "M986 1020 Q995 1008 1008 1015 Q1114 1065 1197 1167 Q1209 1181 1196 1194 L1138 1234 Q1127 1241 1117 1231 Q1057 1157 958 1104 Q950 1096 956 1081 Z"
       ],
-      "description": "The pink blocks sit just behind the orange front arc. The center and side pieces keep you near the stage with a little more distance."
+      "description": "This curved area has a center block and two side blocks. It keeps you near the stage while giving you a little more distance to see the full setup."
     },
     {
       "id": "lower-cyan",
-      "label": "Cyan inner blocks",
-      "badge": "Curved inner area",
+      "label": "Inner curve and sides",
+      "badge": "A little farther back",
       "our_pick": false,
       "color": "#18bed1",
       "hitPaths": [
@@ -49,12 +49,12 @@
         "M459 896 Q474 885 484 899 L524 962 Q534 977 519 989 Q418 1042 343 1126 Q334 1137 322 1132 L265 1083 Q253 1074 263 1061 Q347 960 459 896 Z",
         "M1052 899 Q1063 885 1079 896 Q1190 962 1276 1061 Q1288 1075 1274 1086 L1213 1131 Q1203 1138 1193 1126 Q1119 1041 1018 988 Q1005 980 1014 964 Z"
       ],
-      "description": "These cyan blocks form a curved band behind the pink areas, with a center piece and two sides. They offer more space to see the full staging."
+      "description": "A center block and two side blocks sit behind the near-stage area. You can follow the whole stage from here, with a centered or angled view depending on the block."
     },
     {
       "id": "lower-purple",
-      "label": "Purple middle blocks",
-      "badge": "Middle curve and sides",
+      "label": "Middle curve and sides",
+      "badge": "Center or side angle",
       "our_pick": false,
       "color": "#9c4deb",
       "hitPaths": [
@@ -62,58 +62,58 @@
         "M333 730 Q342 722 351 736 L429 854 Q439 866 423 878 L309 970 Q297 980 285 971 L186 859 Q174 847 187 834 Z",
         "M1186 734 Q1194 722 1208 730 L1357 833 Q1370 844 1360 858 L1260 971 Q1249 980 1237 971 L1116 877 Q1104 866 1113 854 Z"
       ],
-      "description": "The purple middle blocks sweep around the room behind the inner cyan curve. They give you a broader view from the center or either side."
+      "description": "The curved center and its two side blocks sit farther back. Choose the center for a straight-on view or a side block for a wider angle."
     },
     {
       "id": "middle-cyan",
-      "label": "Cyan middle curve",
-      "badge": "Broad center band",
+      "label": "Broad middle curve",
+      "badge": "Across the center",
       "our_pick": false,
       "color": "#16bed0",
       "hitPaths": [
         "M348 638 Q765 376 1194 638 Q1207 646 1194 662 L1143 732 Q1134 745 1122 737 Q768 532 415 736 Q403 746 393 733 Z"
       ],
-      "description": "This broad cyan curve spans the center of the room. Its position farther from the stage makes it easy to take in the overall set."
+      "description": "This broad central band faces the stage from farther back. Its width gives you a straightforward view of the full staging."
     },
     {
       "id": "upper-cyan-center",
-      "label": "Cyan upper center",
-      "badge": "Center bands farther back",
+      "label": "Rear center bands",
+      "badge": "Straight-on view",
       "our_pick": false,
       "color": "#0ec8bf",
       "hitPaths": [
         "M439 279 Q765 132 1098 279 Q1108 285 1102 301 L1060 376 Q1052 387 1039 382 Q767 281 496 382 Q483 387 476 377 Z",
         "M505 409 Q769 303 1034 409 Q1045 415 1040 430 L1005 512 Q1000 525 985 520 Q767 447 551 520 Q537 524 532 511 Z"
       ],
-      "description": "Two cyan center bands sit farther back on the chart. They face the stage from the middle, with room to see the wider picture."
+      "description": "These two center bands sit toward the back of the room. Both face the stage head-on, with enough distance to take in the whole performance area."
     },
     {
       "id": "upper-cyan-sides",
-      "label": "Cyan upper sides",
-      "badge": "Side blocks farther back",
+      "label": "Rear side blocks",
+      "badge": "Angled view",
       "our_pick": false,
       "color": "#0ec8bf",
       "hitPaths": [
         "M291 412 L412 345 Q425 337 432 354 L507 519 Q513 535 499 542 L402 576 Q389 583 380 568 L287 433 Q279 420 291 412 Z",
         "M1116 352 Q1123 338 1137 346 L1250 414 Q1263 421 1253 435 L1163 568 Q1155 583 1141 575 L1042 540 Q1027 535 1033 520 Z"
       ],
-      "description": "These cyan blocks sit to either side of the upper center bands. Choose one for a side angle with more distance from the stage."
+      "description": "These blocks flank the rear center bands. They give you a side angle and a broader look across the stage."
     },
     {
       "id": "rear-purple",
-      "label": "Purple rear curve",
-      "badge": "Far center curve",
+      "label": "Back center curve",
+      "badge": "Farthest center area",
       "our_pick": false,
       "color": "#9440e9",
       "hitPaths": [
         "M433 110 Q767 -7 1104 110 Q1115 116 1108 131 L1070 218 Q1064 230 1050 224 Q767 130 484 225 Q468 231 462 217 Z"
       ],
-      "description": "The purple rear curve is the far center band on this chart. It gives you the widest centered view of the stage."
+      "description": "The farthest central curve on the chart faces the stage directly. Choose it for the widest centered view of the room."
     },
     {
       "id": "outer-purple",
-      "label": "Purple outer blocks",
-      "badge": "Outer side positions",
+      "label": "Outer side blocks",
+      "badge": "Along the room's sides",
       "our_pick": false,
       "color": "#9440e9",
       "hitPaths": [
@@ -122,7 +122,7 @@
         "M126 463 Q132 456 143 461 L257 491 Q270 495 269 509 L272 630 Q272 643 259 649 L150 683 Q139 689 130 679 L50 582 Q42 573 50 562 Z",
         "M1287 492 L1406 461 Q1417 456 1425 466 L1492 563 Q1500 573 1492 582 L1414 675 Q1406 687 1394 683 L1281 649 Q1268 643 1270 629 L1274 507 Q1275 497 1287 492 Z"
       ],
-      "description": "The smaller purple blocks sit along the room’s outer sides, farther from the center. Each gives a side perspective on the performance."
+      "description": "These smaller blocks sit along the outer edges. Each offers a side perspective; their distance from the stage varies by block."
     }
   ]
 }
