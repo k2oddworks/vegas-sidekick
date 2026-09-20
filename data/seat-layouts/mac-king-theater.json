@@ -1,0 +1,87 @@
+{
+  "venue": "Mac King Theater at Excalibur",
+  "viewBox": "0 0 1536 1536",
+  "image": "/images/mac-king-seating-chart.jpg",
+  "highlightMode": "precise-outline",
+  "zones": [
+    {
+      "id": "vip",
+      "label": "VIP seating",
+      "badge": "Closest to the stage",
+      "our_pick": true,
+      "color": "#ffad1c",
+      "hitPaths": [
+        "M398 403 L473 403 L473 558 L398 558 Z",
+        "M501 403 L577 403 L577 558 L501 558 Z",
+        "M604 403 L680 403 L680 558 L604 558 Z",
+        "M702 403 L778 403 L778 558 L702 558 Z",
+        "M810 403 L887 403 L887 558 L810 558 Z",
+        "M908 403 L984 403 L984 558 L908 558 Z",
+        "M1012 403 L1088 403 L1088 558 L1012 558 Z",
+        "M1114 403 L1190 403 L1190 558 L1114 558 Z"
+      ],
+      "description": "VIP is the row of orange blocks nearest the stage. It is one of our picks for seeing Mac King from close range."
+    },
+    {
+      "id": "preferred",
+      "label": "Preferred seating",
+      "badge": "Across the middle and sides",
+      "our_pick": true,
+      "color": "#1ec6d3",
+      "hitPaths": [
+        "M213 439 L248 439 L248 405 L336 405 L336 485 L248 485 L248 455 L213 455 Z",
+        "M213 548 L248 548 L248 517 L336 517 L336 598 L248 598 L248 564 L213 564 Z",
+        "M246 673 L313 633 L369 692 L303 758 L244 742 L269 717 Z",
+        "M322 783 L390 712 L445 770 L377 840 L320 822 L345 796 Z",
+        "M399 862 L466 793 L521 849 L454 919 L397 901 L421 876 Z",
+        "M478 943 L546 873 L601 930 L533 1000 L477 983 L500 957 Z",
+        "M452 638 L528 638 L528 713 L452 713 Z",
+        "M556 636 L630 636 L630 813 L556 813 Z",
+        "M656 635 L730 635 L730 936 L656 936 Z",
+        "M756 635 L830 635 L830 937 L756 937 Z",
+        "M856 635 L930 635 L930 935 L856 935 Z",
+        "M956 636 L1030 636 L1030 813 L956 813 Z",
+        "M1057 637 L1131 637 L1131 713 L1057 713 Z",
+        "M1257 406 L1346 406 L1346 437 L1380 437 L1380 453 L1346 453 L1346 486 L1257 486 Z",
+        "M1257 518 L1346 518 L1346 549 L1380 549 L1380 565 L1346 565 L1346 598 L1257 598 Z",
+        "M1265 629 L1331 693 L1275 756 L1210 685 Z",
+        "M1188 707 L1255 772 L1199 831 L1133 765 Z",
+        "M1111 786 L1179 851 L1122 910 L1056 845 Z",
+        "M1033 866 L1099 930 L1043 990 L977 924 Z"
+      ],
+      "description": "Preferred covers the central blocks behind VIP and the angled sections along both sides. It is our other pick for a view from the main seating area."
+    },
+    {
+      "id": "reserved",
+      "label": "Reserved seating",
+      "badge": "Around the sides and back",
+      "our_pick": false,
+      "color": "#8933ec",
+      "hitPaths": [
+        "M128 261 L84 261 C22 261 22 365 85 365 L129 365 L129 340 L84 340 C50 340 50 286 85 286 L128 286 Z",
+        "M128 379 L84 379 C22 379 22 483 85 483 L129 483 L129 458 L84 458 C50 458 50 404 85 404 L128 404 Z",
+        "M128 496 L84 496 C22 496 22 600 85 600 L129 600 L129 575 L84 575 C50 575 50 521 85 521 L128 521 Z",
+        "M128 614 L84 614 C22 614 22 718 85 718 L129 718 L129 693 L84 693 C50 693 50 639 85 639 L128 639 Z",
+        "M128 732 L84 732 C22 732 22 836 85 836 L129 836 L129 811 L84 811 C50 811 50 757 85 757 L128 757 Z",
+        "M156 367 L202 367 L202 739 L170 756 L156 739 Z",
+        "M167 764 L205 725 L531 1066 L489 1108 Z",
+        "M54 963 L174 842 L216 882 L96 1007 Z",
+        "M118 1029 L238 907 L280 949 L159 1071 Z",
+        "M185 1096 L304 975 L346 1017 L227 1138 Z",
+        "M252 1168 L370 1047 L412 1089 L294 1210 Z",
+        "M319 1239 L438 1118 L481 1160 L361 1281 Z",
+        "M638 1104 L673 1104 L673 1150 C673 1183 729 1183 729 1150 L729 1104 L763 1104 L763 1152 C763 1224 638 1224 638 1152 Z",
+        "M798 1104 L833 1104 L833 1150 C833 1183 888 1183 888 1150 L888 1104 L922 1104 L922 1152 C922 1224 798 1224 798 1152 Z",
+        "M592 1238 L958 1238 L958 1301 L592 1301 Z",
+        "M1393 231 L1494 231 L1494 688 L1393 688 Z",
+        "M1011 1086 L1388 695 L1430 738 L1054 1128 Z",
+        "M1319 896 L1362 854 L1482 976 L1440 1018 Z",
+        "M1251 968 L1293 927 L1414 1048 L1371 1090 Z",
+        "M1183 1040 L1225 998 L1345 1120 L1303 1162 Z",
+        "M1117 1111 L1159 1069 L1280 1191 L1237 1233 Z",
+        "M1054 1181 L1098 1139 L1219 1262 L1176 1302 Z"
+      ],
+      "description": "Reserved runs along the outside edges and rear of the room. Choose it for more distance and a wider look across the stage."
+    }
+  ]
+}
