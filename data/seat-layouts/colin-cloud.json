@@ -1,0 +1,70 @@
+{
+  "venue": "Colin Cloud: Mastermind at Harrah's Las Vegas",
+  "viewBox": "0 0 1536 1536",
+  "image": "/images/colin-cloud-seating-chart.jpg",
+  "highlightMode": "precise-outline",
+  "zones": [
+    {
+      "id": "section-a",
+      "label": "Section A",
+      "badge": "Nearest the stage",
+      "our_pick": false,
+      "color": "#ffa313",
+      "hitPaths": [
+        "M111 483 L298 363 L488 363 L488 525 L111 525 Z",
+        "M536 363 L999 363 L999 525 L536 525 Z",
+        "M1049 363 L1236 363 L1425 483 L1425 525 L1049 525 Z"
+      ],
+      "description": "Section A is the nearest band to the stage. Choose it for the closest view of the performer."
+    },
+    {
+      "id": "section-b",
+      "label": "Section B",
+      "badge": "Second band",
+      "our_pick": true,
+      "color": "#ff2e8d",
+      "hitPaths": [
+        "M72 570 L488 570 L488 761 L72 761 Z",
+        "M536 570 L999 570 L999 761 L536 761 Z",
+        "M1049 570 L1456 570 L1456 761 L1049 761 Z"
+      ],
+      "description": "Section B sits just behind A, with center and side blocks. It keeps you close to the stage while giving you a little more room to take in the full setup."
+    },
+    {
+      "id": "section-c",
+      "label": "Section C",
+      "badge": "Third band",
+      "our_pick": true,
+      "color": "#9848e6",
+      "hitPaths": [
+        "M72 805 L488 805 L488 1011 L165 1011 L72 936 Z",
+        "M536 805 L999 805 L999 1011 L536 1011 Z",
+        "M1049 805 L1456 805 L1456 918 L1374 1011 L1049 1011 Z"
+      ],
+      "description": "Section C is the third band from the stage. Its center and side blocks give you a wider view of the stage while keeping you within the main seating area."
+    },
+    {
+      "id": "section-d-center",
+      "label": "Section D · Center",
+      "badge": "Back center",
+      "our_pick": true,
+      "color": "#21bed1",
+      "hitPaths": [
+        "M536 1055 L999 1055 L999 1202 L536 1202 Z"
+      ],
+      "description": "The center block of Section D faces the stage from the back of the chart. It is our pick if you prefer a little more distance with a centered view."
+    },
+    {
+      "id": "section-d-sides",
+      "label": "Section D · Sides",
+      "badge": "Outer back blocks",
+      "our_pick": false,
+      "color": "#21bed1",
+      "hitPaths": [
+        "M128 1055 L488 1055 L488 1202 L235 1202 L128 1095 Z",
+        "M1049 1055 L1412 1055 L1412 1107 L1302 1202 L1049 1202 Z"
+      ],
+      "description": "The outer Section D blocks sit at the back on either side. They offer a wider, angled view of the stage."
+    }
+  ]
+}
