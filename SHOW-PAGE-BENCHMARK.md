@@ -180,6 +180,16 @@ The ticker must be a truly seamless loop on desktop and mobile.
 
 ## 8. Quick Take, Good Fit, and Kris’s take
 
+### Hero / Quick Take separation
+
+The Hero and Quick Take must never duplicate or lightly paraphrase each other.
+
+- **Hero:** answers **What is this show?** Identify the show clearly with useful descriptive language, including the Las Vegas context, show type, venue/property, and defining elements when verified and natural.
+- **Quick Take / 30-second answer:** answers **Is it worth seeing, and for whom?** Give the customer a decision-oriented answer instead of repeating the synopsis.
+- Do not reuse the hero description as the highlighted Quick Take sentence.
+- Do not make superficial synonym swaps to create the appearance of unique copy. The two areas must perform different jobs.
+- Keep the Quick Take concise and useful; do not turn it into an SEO paragraph.
+
 ### Positive decision framing
 
 Vegas Sidekick can be candid without planting objections.
