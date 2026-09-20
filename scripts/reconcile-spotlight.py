@@ -266,10 +266,10 @@ def update_jsonld(soup: BeautifulSoup, rec: dict, spot: dict):
                     continue
                 if "how much" in q or "ticket" in q and "cost" in q:
                     if spot.get("our_price") is not None:
-                        ans["text"] = f"Tickets currently start at ${spot['our_price']}. Your date and seat determine the final total."
+                        ans["text"] = f"Tickets start at ${spot['our_price']}. Other price points may be available."
                 elif "how long" in q or "runtime" in q:
                     if spot.get("runtime_minutes"):
-                        ans["text"] = f"Spotlight currently lists the show length as {spot['runtime_minutes']} minutes."
+                        ans["text"] = f"The show runs about {spot['runtime_minutes']} minutes."
                 elif "age" in q or "young kids" in q or "children" in q:
                     if spot.get("age_rule"):
                         ans["text"] = spot["age_rule"]
@@ -283,7 +283,7 @@ def update_schedule_section(soup: BeautifulSoup, spot: dict):
     lede = section.select_one(".lede")
     summary = spot.get("schedule_summary") or "Check current schedule"
     if lede:
-        lede.string = f"Typical schedule: {summary}. Check the live booking page for the dates currently available."
+        lede.string = f"Current schedule: {summary}. Check the live booking page for the dates currently available."
     grid = section.select_one(".schedule")
     if not grid:
         return
@@ -323,9 +323,9 @@ def update_visible_faq(soup: BeautifulSoup, spot: dict):
         if ("age" in qt or "young kids" in qt or "children" in qt) and spot.get("age_rule"):
             a.string = spot["age_rule"]
         elif ("how long" in qt or "runtime" in qt) and spot.get("runtime_minutes"):
-            a.string = f"Spotlight currently lists the show length as {spot['runtime_minutes']} minutes."
+            a.string = f"The show runs about {spot['runtime_minutes']} minutes."
         elif ("how much" in qt or ("ticket" in qt and "cost" in qt)) and spot.get("our_price") is not None:
-            a.string = f"Tickets currently start at ${spot['our_price']}. Your date and seat determine the final total."
+            a.string = f"Tickets start at ${spot['our_price']}. Other price points may be available."
 
 
 def sync_page(rec: dict, old: dict, spot: dict) -> list[str]:
