@@ -1,0 +1,74 @@
+{
+  "venue": "Azul Lounge at Fontainebleau Las Vegas",
+  "viewBox": "0 0 1536 1536",
+  "image": "/images/mind2mind-seating-chart.jpg",
+  "highlightMode": "precise-outline",
+  "zones": [
+    {
+      "id": "101",
+      "label": "Section 101",
+      "badge": "Left theater section",
+      "color": "#ffb000",
+      "our_pick": false,
+      "hitPaths": [
+        "M338 406 L752 477 L742 912 C537 947 314 887 150 752 Z"
+      ],
+      "description": "Section 101 sits on the left as you face the stage, with rows A–E running from front to back. Choose the front for a closer look at the performers or sit farther back for a broader view."
+    },
+    {
+      "id": "102",
+      "label": "Section 102",
+      "badge": "Right theater section",
+      "color": "#ff2e7e",
+      "our_pick": false,
+      "hitPaths": [
+        "M790 499 L1201 428 L1401 805 C1236 947 1019 1006 806 987 Z"
+      ],
+      "description": "Section 102 sits on the right as you face the stage, with rows A–F running from front to back. Seats toward the center aisle give you a more central angle; the outer edge offers a side perspective."
+    },
+    {
+      "id": "table-1",
+      "label": "Table 1",
+      "badge": "Rear left table",
+      "color": "#16c9d9",
+      "our_pick": false,
+      "hitPaths": [
+        "M211 1029 a61 67 0 1 0 122 0 a61 67 0 1 0 -122 0 Z"
+      ],
+      "description": "Table 1 is behind Section 101 on the left side of the room. It offers table seating with a left-side perspective across the stage."
+    },
+    {
+      "id": "table-2",
+      "label": "Table 2",
+      "badge": "Rear center-left table",
+      "color": "#16c9d9",
+      "our_pick": false,
+      "hitPaths": [
+        "M504 1106 a61 66 0 1 0 122 0 a61 66 0 1 0 -122 0 Z"
+      ],
+      "description": "Table 2 sits behind Section 101, closer to the middle of the room. It offers table seating with a broader view from the rear and a more central angle than Table 1."
+    },
+    {
+      "id": "table-3",
+      "label": "Table 3",
+      "badge": "Rear center-right table",
+      "color": "#16c9d9",
+      "our_pick": false,
+      "hitPaths": [
+        "M870 1106 a61 66 0 1 0 122 0 a61 66 0 1 0 -122 0 Z"
+      ],
+      "description": "Table 3 sits behind Section 102, closer to the middle of the room. It offers table seating with a broader view from the rear and a more central angle than Table 4."
+    },
+    {
+      "id": "table-4",
+      "label": "Table 4",
+      "badge": "Rear right table",
+      "color": "#16c9d9",
+      "our_pick": false,
+      "hitPaths": [
+        "M1177 1029 a61 67 0 1 0 122 0 a61 67 0 1 0 -122 0 Z"
+      ],
+      "description": "Table 4 is behind Section 102 on the right side of the room. It offers table seating with a right-side perspective across the stage."
+    }
+  ]
+}
