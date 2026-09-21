@@ -1,7 +1,7 @@
 {
   "venue": "Copa Room at Tuscany Suites & Casino",
   "viewBox": "0 0 1536 1536",
-  "image": "/images/rat-pack-is-back-seating-chart.jpg",
+  "image": "/images/rat-pack-is-back-seating-chart-v2.jpg",
   "highlightMode": "precise-outline",
   "zones": [
     {
@@ -11,42 +11,28 @@
       "our_pick": false,
       "color": "#20c9dc",
       "hitPaths": [
-        "M390 517 L501 502 Q514 500 517 514 L524 556 L501 560 L506 600 L422 614 L414 571 L391 574 L384 532 Q382 520 390 517 Z",
-        "M553 484 L665 451 Q678 447 682 460 L692 500 L669 507 L681 546 L598 569 L588 531 L565 538 L547 498 Q543 487 553 484 Z",
-        "M697 427 L808 393 Q820 389 825 402 L838 438 L814 446 L829 485 L742 512 L729 474 L708 480 L691 442 Q687 431 697 427 Z",
-        "M850 349 L944 302 Q956 296 963 307 L980 337 L957 349 L980 380 L909 432 L890 401 L870 412 L844 364 Q839 354 850 349 Z",
-        "M380 623 L686 567 Q702 564 707 579 L720 610 Q724 622 711 626 L407 682 Q393 685 389 671 L375 642 Q370 627 380 623 Z",
-        "M400 697 L708 631 Q724 627 729 642 L744 674 Q748 687 734 691 L425 757 Q411 760 406 747 L394 716 Q388 701 400 697 Z",
-        "M430 767 L733 699 Q749 695 755 710 L768 741 Q773 754 758 758 L455 826 Q440 829 435 815 L423 786 Q417 771 430 767 Z",
-        "M442 842 L759 766 Q775 762 780 777 L795 808 Q799 821 784 825 L468 902 Q453 905 448 891 L435 861 Q429 846 442 842 Z",
-        "M466 915 L791 833 Q807 829 812 844 L829 875 Q833 888 818 892 L493 975 Q478 978 473 964 L460 934 Q453 919 466 915 Z",
-        "M486 984 L819 900 Q835 896 840 911 L856 942 Q860 955 845 959 L512 1043 Q497 1046 492 1032 L480 1003 Q473 988 486 984 Z",
-        "M748 539 L1057 430 Q1073 424 1079 439 L1091 469 Q1096 482 1081 487 L772 595 Q757 600 751 586 L741 558 Q735 543 748 539 Z",
-        "M776 611 L1083 502 Q1099 496 1105 511 L1117 542 Q1122 555 1107 560 L800 668 Q785 673 779 659 L769 630 Q763 615 776 611 Z",
-        "M804 681 L1111 574 Q1127 568 1133 583 L1145 614 Q1150 627 1135 632 L828 739 Q813 744 807 730 L797 701 Q791 686 804 681 Z",
-        "M831 754 L1142 647 Q1158 641 1164 656 L1176 687 Q1181 700 1166 705 L855 813 Q840 818 834 804 L824 774 Q818 759 831 754 Z",
-        "M859 827 L1170 720 Q1186 714 1192 729 L1204 760 Q1209 773 1194 778 L883 886 Q868 891 862 877 L852 847 Q846 832 859 827 Z",
-        "M76 598 Q79 587 91 591 L286 665 Q299 670 295 682 L283 713 Q278 726 265 721 L69 647 Q57 642 61 630 Z",
-        "M55 671 Q59 659 72 664 L271 735 Q284 740 280 753 L268 784 Q264 797 250 792 L50 720 Q38 715 42 702 Z",
-        "M34 741 Q38 729 51 734 L247 804 Q260 809 256 822 L244 853 Q240 866 226 861 L29 791 Q17 786 21 773 Z",
-        "M1160 373 Q1167 365 1176 373 L1207 401 Q1216 409 1208 418 L1152 477 Q1144 486 1135 478 L1104 449 Q1096 441 1104 432 Z",
-        "M1209 424 Q1217 416 1226 424 L1257 452 Q1266 460 1258 469 L1199 531 Q1191 540 1182 532 L1151 503 Q1143 495 1151 486 Z",
-        "M1258 477 Q1266 469 1275 477 L1307 506 Q1316 514 1308 523 L1247 588 Q1239 597 1230 589 L1198 560 Q1190 552 1198 543 Z"
+        "M404 753 L1046 489 L1186 825 L542 1090 Z",
+        "M123 663 L335 742 L272 912 L61 834 Z",
+        "M1253 328 L1373 461 L1204 611 L1084 478 Z",
+        "M399 556 a31 31 0 1 0 62 0 a31 31 0 1 0 -62 0 Z",
+        "M559 512 a31 31 0 1 0 62 0 a31 31 0 1 0 -62 0 Z",
+        "M709 457 a31 31 0 1 0 62 0 a31 31 0 1 0 -62 0 Z",
+        "M855 382 a31 31 0 1 0 62 0 a31 31 0 1 0 -62 0 Z"
       ],
       "description": "VIP covers every seating area ahead of General Admission: the central floor, the small tables near the stage and both side groups. In this cozy showroom, these seats keep you closer to the performers from either a straight-on or side angle.",
-      "highlightStyle": "fill",
+      "highlightStyle": "outline",
       "highlightColor": "#ffb000"
     },
     {
       "id": "general-admission",
       "label": "General Admission",
-      "badge": "Four rear rows",
+      "badge": "Rear section",
       "our_pick": false,
       "color": "#a354e8",
       "hitPaths": [
-        "M574 1044 L1148 828 Q1163 822 1170 837 L1307 1095 Q1314 1109 1299 1116 L684 1373 Q669 1379 661 1364 L568 1064 Q563 1050 574 1044 Z"
+        "M638 1113 L1136 910 L1185 1028 L1118 1056 L1150 1135 L1294 1078 L1314 1127 L668 1387 L648 1343 L788 1286 L756 1205 L687 1233 Z"
       ],
-      "description": "General Admission is the four rear rows behind VIP. The Copa Room is a cozy showroom, so this section keeps the full stage in view without feeling far removed.",
+      "description": "General Admission sits behind the central VIP section, giving you a broader view of the stage. The Copa Room is a cozy showroom, so you're still part of a small-room setting.",
       "highlightStyle": "outline"
     }
   ]
