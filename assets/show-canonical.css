@@ -80,3 +80,35 @@
 /* Seating-chart SVG lightbox fallback */
 .lightbox img[src*=".svg"]{width:min(760px,92vw);height:min(82vh,900px);object-fit:contain}
 @media(max-width:800px){.lightbox img[src*=".svg"]{width:92vw;height:min(72vh,760px);object-fit:contain}}
+
+
+/* Desktop gallery: derive layout from actual item count so added photos/charts never collapse rows. */
+@media (min-width:801px){
+  .gallery:has(> button:nth-child(5)){
+    height:auto;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    grid-template-rows:none;
+    grid-auto-rows:auto;
+    align-items:stretch;
+  }
+  .gallery:has(> button:nth-child(5)) > button{
+    grid-column:span 2;
+    grid-row:auto!important;
+    min-width:0;
+    min-height:0;
+    aspect-ratio:4/3;
+  }
+  .gallery:has(> button:nth-child(5)) > button img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .gallery:has(> button:nth-child(5):last-child) > button:nth-child(n+4){grid-column:span 3}
+  .gallery:has(> button:nth-child(7):last-child) > button:nth-child(n+4){grid-column:span 3}
+  .gallery:has(> button:nth-child(8):last-child) > button:nth-child(n+7){grid-column:span 3}
+  .gallery .vs-chart-gallery img,
+  .gallery [class*="chart-gallery"] img{
+    object-fit:contain!important;
+    background:#0b0613;
+  }
+}
