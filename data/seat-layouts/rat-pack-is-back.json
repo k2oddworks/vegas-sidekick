@@ -34,7 +34,8 @@
         "M1258 477 Q1266 469 1275 477 L1307 506 Q1316 514 1308 523 L1247 588 Q1239 597 1230 589 L1198 560 Q1190 552 1198 543 Z"
       ],
       "description": "VIP covers every seating area ahead of General Admission: the central floor, the small tables near the stage and both side groups. In this cozy showroom, these seats keep you closer to the performers from either a straight-on or side angle.",
-      "highlightStyle": "fill"
+      "highlightStyle": "fill",
+      "highlightColor": "#ffb000"
     },
     {
       "id": "general-admission",
@@ -50,4 +51,3 @@
     }
   ]
 }
-
