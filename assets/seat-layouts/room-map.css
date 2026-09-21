@@ -44,6 +44,9 @@
 .vs-room-image-layout.vs-room-precise-highlight .vs-room-image-hit:focus{outline:none}
 .vs-room-image-layout.vs-room-precise-highlight .vs-room-image-hit:focus-visible{stroke-opacity:1;filter:drop-shadow(0 0 7px rgba(255,176,0,.5))}
 .vs-room-image-layout.vs-room-precise-highlight .vs-room-image-hit.is-active{fill-opacity:.08;stroke-opacity:1;stroke-width:5;filter:drop-shadow(0 0 7px rgba(255,176,0,.5))}
+.vs-room-image-layout.vs-room-precise-highlight .vs-room-highlight-fill,.vs-room-image-layout.vs-room-precise-highlight .vs-room-highlight-fill:hover,.vs-room-image-layout.vs-room-precise-highlight .vs-room-highlight-fill:focus-visible,.vs-room-image-layout.vs-room-precise-highlight .vs-room-highlight-fill.is-active{stroke-opacity:0;stroke-width:0;outline:none}
+.vs-room-image-layout.vs-room-precise-highlight .vs-room-highlight-fill:hover{fill-opacity:.12;filter:drop-shadow(0 0 5px rgba(255,176,0,.28))}
+.vs-room-image-layout.vs-room-precise-highlight .vs-room-highlight-fill:focus-visible,.vs-room-image-layout.vs-room-precise-highlight .vs-room-highlight-fill.is-active{fill-opacity:.26;filter:drop-shadow(0 0 7px rgba(255,176,0,.42))}
 .vs-room-image-layout.vs-room-precise-highlight .vs-room-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
 
 /* Keep gallery navigation centered when a show page styles every lightbox button. */
