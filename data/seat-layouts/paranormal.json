@@ -1,0 +1,60 @@
+{
+  "venue": "Paranormal at the Laugh Factory, Horseshoe Las Vegas",
+  "viewBox": "0 0 1536 1536",
+  "image": "/images/paranormal-seating-chart.jpg",
+  "highlightMode": "precise-outline",
+  "zones": [
+    {
+      "id": "vip",
+      "label": "VIP",
+      "badge": "Nearest the stage",
+      "our_pick": false,
+      "color": "#ffa20b",
+      "hitPaths": [
+        "M555 764 H987 Q1000 764 1000 779 V950 Q1000 965 985 965 H556 Q540 965 540 949 V780 Q540 764 555 764 Z",
+        "M344 924 L406 866 Q416 857 425 870 L489 953 Q499 961 491 970 L431 1037 Q423 1047 414 1038 L340 967 Q331 958 339 949 Z",
+        "M1118 868 Q1126 857 1136 866 L1198 925 Q1208 935 1199 946 L1128 1038 Q1119 1049 1110 1038 L1052 971 Q1043 962 1052 952 Z"
+      ],
+      "description": "VIP includes the central block and two small side blocks closest to the stage. Choose it when the nearest view of the performer is your priority."
+    },
+    {
+      "id": "premium",
+      "label": "Premium",
+      "badge": "Just behind VIP",
+      "our_pick": true,
+      "color": "#ff2e8d",
+      "hitPaths": [
+        "M551 550 H988 Q1001 550 1001 566 V727 Q1001 742 985 742 H552 Q536 742 536 726 V567 Q536 550 551 550 Z",
+        "M182 889 L412 638 Q422 628 432 640 L498 720 Q506 729 498 738 L275 1003 Q266 1012 256 1001 L180 910 Q171 901 182 889 Z",
+        "M1112 638 Q1121 629 1130 639 L1355 889 Q1365 900 1356 909 L1280 1001 Q1272 1012 1262 1003 L1041 738 Q1032 730 1040 720 Z"
+      ],
+      "description": "Premium has a central block directly behind VIP and angled blocks on both sides. It keeps you close while giving you more room to take in the full performance."
+    },
+    {
+      "id": "general-admission",
+      "label": "General Admission",
+      "badge": "Center and side areas",
+      "our_pick": true,
+      "color": "#9e4be9",
+      "hitPaths": [
+        "M634 94 H909 Q924 94 924 109 V241 Q924 255 910 255 H635 Q620 255 620 240 V110 Q620 94 634 94 Z",
+        "M553 322 H986 Q1003 322 1003 338 V509 Q1003 523 987 523 H553 Q537 523 537 508 V338 Q537 322 553 322 Z",
+        "M27 813 L343 436 Q352 425 362 437 L455 550 Q468 563 455 578 L146 932 Q136 944 125 933 L20 839 Q11 831 27 813 Z",
+        "M1181 437 Q1190 426 1200 437 L1513 813 Q1527 830 1516 840 L1411 933 Q1400 943 1390 931 L1082 579 Q1069 565 1082 550 Z"
+      ],
+      "description": "General Admission includes two straight-on center blocks farther back and one block on each side. The center blocks offer a direct view; the side blocks give you a wider angle."
+    },
+    {
+      "id": "ga-rear",
+      "label": "GA Rear",
+      "badge": "Outer side positions",
+      "our_pick": false,
+      "color": "#25bfda",
+      "hitPaths": [
+        "M0 701 L294 368 Q301 359 308 367 L346 408 Q354 417 346 426 L47 753 Q37 764 29 754 L0 723 Z",
+        "M1229 367 Q1238 359 1246 369 L1536 701 V724 L1507 754 Q1499 764 1489 753 L1195 426 Q1188 417 1195 407 Z"
+      ],
+      "description": "GA Rear runs along the outer left and right edges of the chart. Both areas provide a wider side view from farther out in the room."
+    }
+  ]
+}
