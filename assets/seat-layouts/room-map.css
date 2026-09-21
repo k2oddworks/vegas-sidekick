@@ -41,6 +41,8 @@
 /* Precise-image highlight mode: the hit paths trace the approved artwork, so selected outlines can be visible. */
 .vs-room-image-layout.vs-room-precise-highlight .vs-room-image-hit{fill-opacity:0;stroke:#ffb000;stroke-opacity:0;stroke-width:4;filter:none;transition:fill-opacity .16s ease,stroke-opacity .16s ease,filter .16s ease}
 .vs-room-image-layout.vs-room-precise-highlight .vs-room-image-hit:hover{fill-opacity:.05;stroke-opacity:.58;filter:drop-shadow(0 0 5px rgba(255,176,0,.35))}
+.vs-room-image-layout.vs-room-precise-highlight .vs-room-image-hit:focus{outline:none}
+.vs-room-image-layout.vs-room-precise-highlight .vs-room-image-hit:focus-visible{stroke-opacity:1;filter:drop-shadow(0 0 7px rgba(255,176,0,.5))}
 .vs-room-image-layout.vs-room-precise-highlight .vs-room-image-hit.is-active{fill-opacity:.08;stroke-opacity:1;stroke-width:5;filter:drop-shadow(0 0 7px rgba(255,176,0,.5))}
 .vs-room-image-layout.vs-room-precise-highlight .vs-room-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
 
