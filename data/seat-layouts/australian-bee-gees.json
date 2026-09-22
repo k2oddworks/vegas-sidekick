@@ -1,0 +1,89 @@
+{
+  "venue": "Thunderland Theater at Excalibur Las Vegas",
+  "viewBox": "0 0 1536 1536",
+  "image": "/images/australian-bee-gees-seating-chart.jpg",
+  "highlightMode": "precise-outline",
+  "zones": [
+    {
+      "id": "vip-seating",
+      "label": "VIP Seating",
+      "badge": "Closest to the stage",
+      "our_pick": true,
+      "color": "#ffa20b",
+      "hitPaths": [
+        "M574 404 L503 407 L504 553 L575 552 Z",
+        "M403 404 L400 552 L471 554 L472 407 Z",
+        "M608 404 L605 550 L675 554 L678 407 Z",
+        "M774 404 L704 405 L705 554 L776 551 Z",
+        "M813 404 L812 552 L881 554 L885 407 Z",
+        "M911 404 L909 552 L979 554 L980 405 Z",
+        "M1015 404 L1013 552 L1082 554 L1085 406 Z",
+        "M1187 404 L1115 406 L1116 553 L1190 549 Z"
+      ],
+      "description": "VIP is the orange seating closest to the stage. It is one of our picks when you want the shortest distance to the performers.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "preferred-seating",
+      "label": "Preferred Seating",
+      "badge": "Main seating area",
+      "our_pick": true,
+      "color": "#14d2df",
+      "hitPaths": [
+        "M215 405 H336 V484 H215 Z",
+        "M1256 407 H1381 V485 H1256 Z",
+        "M215 516 H336 V595 H215 Z",
+        "M1256 519 H1381 V599 H1256 Z",
+        "M279 784 L220 727 L313 632 L372 689 Z",
+        "M453 632 H530 V713 H453 Z",
+        "M1058 634 H1135 V714 H1058 Z",
+        "M1265 625 L1357 720 L1297 777 L1206 682 Z",
+        "M557 637 H630 V814 H557 Z",
+        "M653 637 H731 V939 H653 Z",
+        "M754 637 H832 V939 H754 Z",
+        "M856 637 H930 V939 H856 Z",
+        "M957 637 H1030 V814 H957 Z",
+        "M1189 704 L1280 798 L1220 856 L1129 761 Z",
+        "M390 711 L447 768 L352 863 L295 806 Z",
+        "M1112 782 L1203 876 L1144 934 L1052 840 Z",
+        "M466 790 L524 848 L430 942 L372 884 Z",
+        "M1032 863 L1124 959 L1064 1016 L972 921 Z",
+        "M545 870 L604 927 L511 1023 L452 966 Z"
+      ],
+      "description": "Preferred is the cyan seating through the middle and angled sides of the room. It is one of our picks for staying close while keeping a broader view of the stage.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "reserved-seating",
+      "label": "Reserved Seating",
+      "badge": "Outer seating",
+      "our_pick": false,
+      "color": "#8b3bff",
+      "hitPaths": [
+        "M1392 233 H1496 V689 H1392 Z",
+        "M61 267 L38 301 L46 345 L74 365 L127 366 L128 336 L84 335 L68 310 L86 291 L127 291 L128 262 Z",
+        "M157 365 L166 768 L489 1108 L529 1061 L202 723 L203 373 Z",
+        "M60 385 L38 417 L47 463 L76 482 L126 480 L126 453 L84 452 L68 427 L80 407 L128 407 L128 378 Z",
+        "M56 505 L38 534 L46 579 L79 599 L127 600 L127 570 L79 567 L68 543 L79 526 L124 494 L128 496 L128 524 Z",
+        "M60 621 L38 652 L47 699 L82 718 L127 719 L127 688 L82 687 L68 662 L79 644 L128 644 L128 617 Z",
+        "M1391 696 L1012 1081 L1049 1125 L1431 738 Z",
+        "M59 739 L38 768 L45 814 L80 837 L127 837 L127 806 L78 803 L68 780 L83 762 L128 759 L128 732 Z",
+        "M97 1009 L50 963 L173 838 L220 883 Z",
+        "M1439 1019 L1317 897 L1363 851 L1485 973 Z",
+        "M161 1073 L115 1027 L237 903 L284 949 Z",
+        "M1370 1090 L1247 968 L1294 922 L1416 1044 Z",
+        "M226 1141 L180 1095 L304 972 L350 1018 Z",
+        "M1302 1160 L1180 1038 L1226 992 L1348 1114 Z",
+        "M294 1212 L248 1166 L370 1042 L417 1088 Z",
+        "M1238 1226 L1116 1104 L1162 1057 L1285 1180 Z",
+        "M637 1104 L641 1171 L672 1202 L722 1204 L756 1175 L761 1103 L727 1104 L725 1152 L705 1170 L675 1155 L672 1103 Z",
+        "M797 1103 L799 1167 L823 1197 L874 1206 L915 1177 L922 1103 L887 1104 L886 1151 L866 1170 L837 1158 L832 1103 Z",
+        "M362 1285 L316 1239 L439 1115 L486 1162 Z",
+        "M1176 1292 L1053 1169 L1099 1123 L1222 1246 Z",
+        "M590 1236 H962 V1271 H590 Z"
+      ],
+      "description": "Reserved is the purple seating around the outer edges of the room. It gives you more distance from the stage while keeping the full production in view.",
+      "highlightStyle": "outline"
+    }
+  ]
+}
