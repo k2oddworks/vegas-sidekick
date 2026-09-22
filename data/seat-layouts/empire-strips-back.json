@@ -1,0 +1,56 @@
+{
+  "venue": "Empire Strips Back Theater at Rio Las Vegas",
+  "viewBox": "0 0 1536 1536",
+  "image": "/images/empire-strips-back-seating-chart.png",
+  "highlightMode": "precise-outline",
+  "zones": [
+    {
+      "id": "vip-emperor",
+      "label": "VIP Emperor",
+      "badge": "Closest to the stage",
+      "our_pick": false,
+      "color": "#ffa20b",
+      "hitPaths": [
+        "M483 299 L472 303 L475 408 L544 679 L553 734 L476 1049 L472 1157 L477 1161 L485 1160 L502 1091 L501 1061 L513 1039 L534 935 L539 928 L617 930 L641 834 L671 827 L683 784 L683 682 L674 635 L664 622 L640 619 L622 541 L614 526 L538 526 L511 412 L503 401 L502 359 Z"
+      ],
+      "description": "VIP Emperor is the orange stage-side section. It puts you closest to the stage for the most immediate view of the performers.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "premium",
+      "label": "Premium",
+      "badge": "Broad middle section",
+      "our_pick": true,
+      "color": "#ff3196",
+      "hitPaths": [
+        "M570 268 L542 275 L558 398 L519 405 L538 499 L550 520 L625 516 L647 613 L668 614 L682 625 L692 670 L693 785 L682 833 L666 842 L648 842 L626 940 L545 938 L518 1055 L557 1063 L542 1175 L548 1189 L593 1197 L686 1196 L811 1165 L806 1161 L807 1140 L906 791 L906 650 L815 322 L815 306 L821 302 L730 273 L683 265 Z"
+      ],
+      "description": "Premium is the pink section just behind VIP Emperor. It keeps you close while giving you more room to take in the choreography across the stage.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "preferred",
+      "label": "Preferred",
+      "badge": "Curved middle section",
+      "our_pick": true,
+      "color": "#8b3bff",
+      "hitPaths": [
+        "M823 305 L824 331 L912 648 L912 792 L814 1139 L812 1164 L906 1113 L933 1084 L942 1083 L943 1076 L984 1031 L995 1031 L995 1019 L1043 943 L1073 869 L1089 799 L1095 730 L1092 659 L1060 550 L1038 562 L1021 562 L994 508 L961 461 L961 444 L982 427 L912 358 L864 324 Z"
+      ],
+      "description": "Preferred is the purple curved section behind Premium. It gives you a wider view of the full staging while keeping you inside the main seating area.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "standard",
+      "label": "Standard",
+      "badge": "Outer curved section",
+      "our_pick": false,
+      "color": "#12ddea",
+      "hitPaths": [
+        "M1093 192 L1053 231 L1122 289 L1187 361 L1234 433 L1266 504 L1300 633 L1306 763 L1284 908 L1263 972 L1227 1049 L1156 1151 L1056 1247 L1071 1261 L1071 1269 L1237 1269 L1237 1261 L1338 1129 L1406 986 L1427 913 L1444 818 L1449 735 L1444 639 L1428 549 L1399 454 L1361 373 L1298 272 L1221 192 Z"
+      ],
+      "description": "Standard is the detached cyan arc farthest from the stage on this chart. It gives you the widest overall view of the production.",
+      "highlightStyle": "outline"
+    }
+  ]
+}
