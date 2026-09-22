@@ -1,0 +1,63 @@
+{
+  "venue": "Athena Showlounge at Alexis Park Resort",
+  "viewBox": "0 0 1536 1536",
+  "image": "/images/america-the-show-seating-chart.jpg",
+  "highlightMode": "precise-outline",
+  "zones": [
+    {
+      "id": "front-rows",
+      "label": "Front rows",
+      "badge": "Closest to the stage",
+      "our_pick": false,
+      "color": "#a728ed",
+      "hitPaths": [
+        "M365 417 H690 V476 H365 Z",
+        "M365 519 H690 V578 H365 Z",
+        "M365 621 H690 V680 H365 Z",
+        "M830 417 H1160 V476 H830 Z",
+        "M830 519 H1160 V578 H830 Z",
+        "M830 621 H1160 V680 H830 Z"
+      ],
+      "description": "These rows face the stage directly and sit closest to it. Choose them when proximity to the performers matters most.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "center-tables",
+      "label": "Center tables",
+      "badge": "Straight-on view",
+      "our_pick": false,
+      "color": "#ff9f0a",
+      "hitPaths": [
+        "M302 811 a64 64 0 1 0 128 0 a64 64 0 1 0 -128 0 Z",
+        "M451 811 a64 64 0 1 0 128 0 a64 64 0 1 0 -128 0 Z",
+        "M600 811 a64 64 0 1 0 128 0 a64 64 0 1 0 -128 0 Z",
+        "M788 811 a64 64 0 1 0 128 0 a64 64 0 1 0 -128 0 Z",
+        "M943 811 a64 64 0 1 0 128 0 a64 64 0 1 0 -128 0 Z",
+        "M1090 811 a64 64 0 1 0 128 0 a64 64 0 1 0 -128 0 Z",
+        "M302 991 a64 64 0 1 0 128 0 a64 64 0 1 0 -128 0 Z",
+        "M451 991 a64 64 0 1 0 128 0 a64 64 0 1 0 -128 0 Z",
+        "M600 991 a64 64 0 1 0 128 0 a64 64 0 1 0 -128 0 Z",
+        "M788 991 a64 64 0 1 0 128 0 a64 64 0 1 0 -128 0 Z",
+        "M943 991 a64 64 0 1 0 128 0 a64 64 0 1 0 -128 0 Z",
+        "M1090 991 a64 64 0 1 0 128 0 a64 64 0 1 0 -128 0 Z"
+      ],
+      "description": "The center tables sit behind the front rows with a straight-on view of the stage and table-style seating.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "side-seating",
+      "label": "Side seating",
+      "badge": "Left and right sides",
+      "our_pick": false,
+      "color": "#15d9d3",
+      "hitPaths": [
+        "M55 475 H150 V612 H225 V715 H55 Z",
+        "M55 746 H150 V887 H225 V990 H55 Z",
+        "M1385 475 H1481 V715 H1310 V612 H1385 Z",
+        "M1385 746 H1481 V990 H1310 V887 H1385 Z"
+      ],
+      "description": "These seating areas run along both sides of the room. They give you a side-angle view while keeping you relatively close to the stage area.",
+      "highlightStyle": "outline"
+    }
+  ]
+}
