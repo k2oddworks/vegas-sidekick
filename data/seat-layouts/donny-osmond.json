@@ -1,0 +1,144 @@
+{
+  "venue": "Harrah's Showroom at Harrah's Las Vegas",
+  "viewBox": "0 0 1536 1536",
+  "image": "/images/donny-osmond-seating-chart.jpg",
+  "highlightMode": "precise-outline",
+  "zones": [
+    {
+      "id": "section-aaa",
+      "label": "Section AAA",
+      "badge": "Front left section",
+      "our_pick": false,
+      "color": "#d99a22",
+      "hitPaths": [
+        "M322 941 H548 V1161 H423 L378 1126 L322 1055 Z"
+      ],
+      "description": "Section AAA is the front-left section beside center Section A. It keeps you very close to the stage with a slight left-side angle.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "section-a",
+      "label": "Section A",
+      "badge": "Front center section",
+      "our_pick": false,
+      "color": "#d99a22",
+      "hitPaths": [
+        "M560 941 H944 V1161 H560 Z"
+      ],
+      "description": "Section A is the large front-center block directly behind the stage. Choose it when proximity and a centered view matter most.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "section-aa",
+      "label": "Section AA",
+      "badge": "Front right section",
+      "our_pick": false,
+      "color": "#d99a22",
+      "hitPaths": [
+        "M958 941 H1187 V1054 L1131 1127 L1081 1161 H958 Z"
+      ],
+      "description": "Section AA is the front-right section beside center Section A. It keeps you very close to the stage with a slight right-side angle.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "rows-k-o-kk-oo",
+      "label": "Rows K–O / KK–OO",
+      "badge": "Middle rows",
+      "our_pick": true,
+      "color": "#b82ee6",
+      "hitPaths": [
+        "M57 829 H244 V921 H57 Z",
+        "M252 829 H438 V921 H252 Z",
+        "M445 829 H573 V921 H445 Z",
+        "M579 829 H714 V921 H579 Z",
+        "M801 829 H957 V921 H801 Z",
+        "M964 829 H1082 V921 H964 Z",
+        "M1089 829 H1280 V921 H1089 Z",
+        "M1287 829 H1487 V921 H1287 Z",
+        "M57 719 H237 V812 H57 Z",
+        "M244 719 H327 V812 H244 Z",
+        "M335 719 H425 V812 H335 Z",
+        "M433 719 H522 V812 H433 Z",
+        "M530 719 H619 V812 H530 Z",
+        "M626 719 H714 V812 H626 Z",
+        "M801 719 H887 V812 H801 Z",
+        "M895 719 H991 V812 H895 Z",
+        "M999 719 H1086 V812 H999 Z",
+        "M1093 719 H1189 V812 H1093 Z",
+        "M1196 719 H1286 V812 H1196 Z",
+        "M1293 719 H1487 V812 H1293 Z",
+        "M57 605 H304 V698 H57 Z",
+        "M311 605 H438 V698 H311 Z",
+        "M445 605 H572 V698 H445 Z",
+        "M579 605 H714 V698 H579 Z",
+        "M801 605 H957 V698 H801 Z",
+        "M964 605 H1082 V698 H964 Z",
+        "M1089 605 H1216 V698 H1089 Z",
+        "M1223 605 H1487 V698 H1223 Z",
+        "M57 489 H237 V581 H57 Z",
+        "M244 489 H327 V581 H244 Z",
+        "M335 489 H426 V581 H335 Z",
+        "M434 489 H523 V581 H434 Z",
+        "M531 489 H619 V581 H531 Z",
+        "M801 489 H887 V581 H801 Z",
+        "M895 489 H991 V581 H895 Z",
+        "M999 489 H1085 V581 H999 Z",
+        "M1092 489 H1189 V581 H1092 Z",
+        "M1196 489 H1286 V581 H1196 Z",
+        "M1293 489 H1487 V581 H1293 Z",
+        "M57 372 H239 V464 H57 Z",
+        "M245 372 H382 V464 H245 Z",
+        "M389 372 H573 V464 H389 Z",
+        "M578 372 H714 V464 H578 Z",
+        "M801 372 H949 V464 H801 Z",
+        "M955 372 H1145 V464 H955 Z",
+        "M1151 372 H1276 V464 H1151 Z",
+        "M1282 372 H1487 V464 H1282 Z"
+      ],
+      "description": "Rows K through O on the right and KK through OO on the left are the Vegas Sidekick Sweet Spot. You stay centered enough for the full song-and-dance staging while keeping Donny comfortably close.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "rows-p-pp",
+      "label": "Rows P / PP",
+      "badge": "Table seating",
+      "our_pick": false,
+      "color": "#16c7c7",
+      "hitPaths": [
+        "M57 253 H237 V351 H57 Z",
+        "M244 253 H328 V351 H244 Z",
+        "M336 253 H426 V351 H336 Z",
+        "M433 253 H523 V351 H433 Z",
+        "M530 253 H618 V351 H530 Z",
+        "M625 253 H713 V351 H625 Z",
+        "M802 253 H887 V351 H802 Z",
+        "M895 253 H991 V351 H895 Z",
+        "M999 253 H1086 V351 H999 Z",
+        "M1093 253 H1189 V351 H1093 Z",
+        "M1196 253 H1285 V351 H1196 Z",
+        "M1293 253 H1487 V351 H1293 Z"
+      ],
+      "description": "Rows P and PP are table rows behind the Sweet Spot band. They give you more distance from the stage while keeping the room layout straightforward.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "rows-q-qq",
+      "label": "Rows Q / QQ",
+      "badge": "Rear booth rows",
+      "our_pick": false,
+      "color": "#b82ee6",
+      "hitPaths": [
+        "M58 129 H438 V231 H58 Z",
+        "M443 129 H566 V231 H443 Z",
+        "M573 129 H714 V231 H573 Z",
+        "M803 129 H944 V231 H803 Z",
+        "M949 129 H1078 V231 H949 Z",
+        "M1084 129 H1202 V231 H1084 Z",
+        "M1208 129 H1338 V231 H1208 Z",
+        "M1344 129 H1486 V231 H1344 Z"
+      ],
+      "description": "Rows Q and QQ are the rearmost booth rows on the chart. They give you the widest overall view of the stage and room.",
+      "highlightStyle": "outline"
+    }
+  ]
+}
