@@ -1,0 +1,80 @@
+{
+  "venue": "Jimmy Kimmel's Comedy Club at The LINQ Promenade",
+  "viewBox": "0 0 1536 1536",
+  "image": "/images/jimmy-kimmels-comedy-club-seating-chart.jpg",
+  "highlightMode": "precise-outline",
+  "zones": [
+    {
+      "id": "ga-seated-preferred",
+      "label": "GA Seated Preferred",
+      "badge": "Broad center section",
+      "our_pick": true,
+      "color": "#ffa20b",
+      "hitPaths": [
+        "M31 368 L29 726 L114 719 L229 725 L325 751 L414 796 L496 859 L576 949 L634 1048 L670 1150 L839 1077 L815 1000 L748 872 L750 863 L942 796 L952 797 L982 853 L1136 802 L1058 650 L964 520 L831 382 L708 289 L463 290 L460 418 L247 368 L164 362 Z"
+      ],
+      "description": "GA Seated Preferred is the broad orange center section. It's our pick because it keeps you in the main central viewing area between the closest reserved section and the outer Standard section.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "ga-seated-standard",
+      "label": "GA Seated Standard",
+      "badge": "Outer right section",
+      "our_pick": false,
+      "color": "#8b3bff",
+      "hitPaths": [
+        "M1321 237 L805 281 L721 289 L813 357 L948 491 L1066 649 L1142 799 L1141 807 L997 858 L978 859 L954 812 L940 806 L757 868 L814 978 L845 1074 L1263 895 L1264 696 L1509 496 Z"
+      ],
+      "description": "GA Seated Standard is the purple outer-right section. It gives you a wider angle on the stage from farther out in the room.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "reserved-1",
+      "label": "Reserved 1",
+      "badge": "Nearest the stage",
+      "our_pick": false,
+      "color": "#fa3797",
+      "hitPaths": [
+        "M29 734 L31 982 L108 967 L183 969 L249 986 L313 1022 L362 1065 L417 1142 L444 1208 L458 1288 L542 1250 L583 1218 L629 1167 L664 1153 L628 1048 L573 954 L494 864 L415 803 L341 763 L238 732 L120 724 Z"
+      ],
+      "description": "Reserved 1 is the pink section wrapping closest around the stage. Choose it when being nearest the stage matters most.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "premium-booths",
+      "label": "Premium Booths",
+      "badge": "Booths 1–4",
+      "our_pick": false,
+      "color": "#12ddea",
+      "hitPaths": [
+        "M29 260 L304 258 L305 368 L159 354 L31 361 Z"
+      ],
+      "description": "Premium Booths 1–4 are the four cyan booth areas along the upper-left edge of the chart.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "rsvd-3",
+      "label": "RSVD 3",
+      "badge": "Small reserved block",
+      "our_pick": false,
+      "color": "#cf5065",
+      "hitPaths": [
+        "M309 260 L458 285 L458 341 L309 310 Z"
+      ],
+      "description": "RSVD 3 is the upper of the two small reserved blocks beside the Premium Booths.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "rsvd-2",
+      "label": "RSVD 2",
+      "badge": "Small reserved block",
+      "our_pick": false,
+      "color": "#cf5065",
+      "hitPaths": [
+        "M309 310 L458 341 L458 413 L309 371 Z"
+      ],
+      "description": "RSVD 2 is the lower of the two small reserved blocks beside the Premium Booths.",
+      "highlightStyle": "outline"
+    }
+  ]
+}
