@@ -1,0 +1,39 @@
+{
+  "venue": "Wastin' Away poolside at Alexis Park Las Vegas",
+  "viewBox": "0 0 1536 1536",
+  "image": "/images/wastin-away-poolside-layout.jpg",
+  "highlightMode": "precise-outline",
+  "zones": [
+    {
+      "id": "general-admission",
+      "label": "General Admission",
+      "badge": "Relaxed poolside setup",
+      "our_pick": false,
+      "color": "#7c4dff",
+      "hitPaths": [
+        "M250 535 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0 Z",
+        "M300 595 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0 Z",
+        "M185 660 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0 Z"
+      ],
+      "description": "General Admission here is intentionally casual rather than row-based. The show happens around the pool, so guests can settle into the poolside area and enjoy it without a traditional assigned-seat setup.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "seating-available",
+      "label": "Seating available",
+      "badge": "You do not have to stand",
+      "our_pick": false,
+      "color": "#17cfd2",
+      "hitPaths": [
+        "M45 742 L118 777 L91 838 L18 804 Z",
+        "M42 984 L116 951 L143 1014 L69 1047 Z",
+        "M157 1132 L218 1080 L265 1134 L204 1186 Z",
+        "M312 1165 L346 1169 L342 1244 L307 1240 Z",
+        "M425 1133 L458 1123 L481 1195 L447 1205 Z",
+        "M520 1082 L548 1057 L600 1112 L572 1138 Z"
+      ],
+      "description": "Seating is available along the poolside area for guests who prefer to sit. The setup is still casual, so think chairs around the show area rather than fixed theater rows.",
+      "highlightStyle": "outline"
+    }
+  ]
+}
