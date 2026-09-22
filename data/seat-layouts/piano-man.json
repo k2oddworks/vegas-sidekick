@@ -1,0 +1,32 @@
+{
+  "venue": "Piano Man at Miracle Mile Shops at Planet Hollywood",
+  "viewBox": "0 0 1536 1536",
+  "image": "/images/piano-man-seating-chart.png",
+  "highlightMode": "precise-outline",
+  "zones": [
+    {
+      "id": "vip",
+      "label": "VIP",
+      "badge": "Closest to the stage",
+      "our_pick": false,
+      "color": "#ffa20b",
+      "hitPaths": [
+        "M491 594 H1038 V758 H1096 V955 H1038 V1126 H491 Z"
+      ],
+      "description": "VIP is the orange section closest to the stage. Because the room is narrow, these seats stay centered while putting you nearer to the piano, band and dancers.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "general-admission",
+      "label": "General Admission",
+      "badge": "Centered farther back",
+      "our_pick": false,
+      "color": "#8b3bff",
+      "hitPaths": [
+        "M489 68 H1042 V124 H983 V240 H1041 V577 H489 Z"
+      ],
+      "description": "General Admission sits directly behind VIP. The narrow layout keeps this section centered on the stage, giving you a straight-on view from farther back.",
+      "highlightStyle": "outline"
+    }
+  ]
+}
