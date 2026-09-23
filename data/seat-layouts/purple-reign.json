@@ -1,0 +1,45 @@
+{
+  "venue": "V Theater at Miracle Mile Shops, Planet Hollywood",
+  "viewBox": "0 0 1536 1536",
+  "image": "/images/purple-reign-seating-chart.jpg",
+  "highlightMode": "precise-outline",
+  "zones": [
+    {
+      "id": "vip",
+      "label": "VIP",
+      "badge": "Closest to the stage",
+      "our_pick": true,
+      "color": "#ffa20b",
+      "hitPaths": [
+        "M1293 1056 L1283 1015 L1250 967 L1198 929 L1137 902 L1182 796 L1180 781 L701 781 L696 791 L728 903 L668 931 L618 969 L587 1012 L577 1067 L675 1124 L721 1079 L771 1053 L779 1073 L791 1079 L1051 1078 L1072 1042 L1082 1039 L1166 1082 L1223 1140 L1277 1086 Z"
+      ],
+      "description": "VIP wraps closest to the stage. It is one of our picks when you want the shortest distance to the performers.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "preferred",
+      "label": "Preferred",
+      "badge": "Centered behind VIP",
+      "our_pick": true,
+      "color": "#8b3bff",
+      "hitPaths": [
+        "M655 347 L716 718 L727 751 L1154 753 L1161 746 L1251 439 L1254 401 L841 401 L827 394 L827 353 L819 344 Z"
+      ],
+      "description": "Preferred sits centered directly behind VIP. It is one of our picks for a straight-on view with a little more distance from the stage.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "general-admission",
+      "label": "General Admission",
+      "badge": "Left and right side sections",
+      "our_pick": false,
+      "color": "#22a8b8",
+      "hitPaths": [
+        "M302 332 L97 550 L492 975 L543 1021 L634 922 L564 743 L563 724 L583 683 L306 396 L305 375 L322 352 Z",
+        "M1361 644 L1214 901 L1257 954 L1314 1006 L1432 903 L1450 839 L1411 772 L1440 734 Z"
+      ],
+      "description": "General Admission is split into two side sections on the chart. Both pieces are the same seating category and highlight together.",
+      "highlightStyle": "outline"
+    }
+  ]
+}
