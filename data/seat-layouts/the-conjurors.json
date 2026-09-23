@@ -1,0 +1,44 @@
+{
+  "venue": "The Magicians Room at the LINQ Promenade",
+  "viewBox": "0 0 1536 1536",
+  "image": "/images/the-conjurors-seating-chart.jpg",
+  "highlightMode": "precise-outline",
+  "zones": [
+    {
+      "id": "section-1",
+      "label": "Section 1",
+      "badge": "Closest to the stage",
+      "our_pick": false,
+      "color": "#ffa20b",
+      "hitPaths": [
+        "M489 409 L293 537 L293 745 L484 1092 L681 977 L784 1149 L866 1094 Z"
+      ],
+      "description": "Section 1 is the closest section to the stage. It gives you the shortest distance to the performers in this compact showroom.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "section-2",
+      "label": "Section 2",
+      "badge": "Middle section",
+      "our_pick": false,
+      "color": "#ff3698",
+      "hitPaths": [
+        "M683 282 L493 395 L881 1099 L1060 969 Z"
+      ],
+      "description": "Section 2 runs through the middle of the room. It keeps you close while giving you a little more perspective on the full presentation.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "section-3",
+      "label": "Section 3",
+      "badge": "A little farther back",
+      "our_pick": false,
+      "color": "#8b3bff",
+      "hitPaths": [
+        "M1038 290 L788 456 L1067 965 L1318 787 Z"
+      ],
+      "description": "Section 3 sits a step farther back. In this cozy showroom, it still keeps you close while giving you the widest view of the stage area.",
+      "highlightStyle": "outline"
+    }
+  ]
+}
