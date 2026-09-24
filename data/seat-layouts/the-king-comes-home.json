@@ -1,0 +1,44 @@
+{
+  "venue": "Westgate Cabaret at Westgate Las Vegas",
+  "viewBox": "0 0 1536 1536",
+  "image": "/images/the-king-comes-home-seating-chart.jpg",
+  "highlightMode": "precise-outline",
+  "zones": [
+    {
+      "id": "vip",
+      "label": "VIP",
+      "badge": "Closest to the stage",
+      "our_pick": false,
+      "color": "#ffad18",
+      "hitPaths": [
+        "M487 1153 L539 1254 L674 1222 L695 1145 L849 1155 L860 1226 L1013 1266 L1090 1112 L915 1052 L640 1044 L635 1103 Z"
+      ],
+      "description": "VIP is the closest seating section to the stage. Choose it when being as near to the performance as possible matters most.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "main-floor",
+      "label": "Main Floor",
+      "badge": "Sweet Spot / Our Pick",
+      "our_pick": true,
+      "color": "#ff398f",
+      "hitPaths": [
+        "M228 705 L473 1159 L622 1088 L627 1036 L947 1041 L1105 1103 L1210 957 L1266 677 L1014 563 L719 530 L475 579 Z"
+      ],
+      "description": "The Main Floor is our pick. It keeps you closer than the Balcony while giving you more distance from the stage than VIP for a balanced overall view.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "balcony",
+      "label": "Balcony",
+      "badge": "Widest view",
+      "our_pick": false,
+      "color": "#8737f2",
+      "hitPaths": [
+        "M1295 314 L965 202 L683 208 L333 263 L250 314 L243 383 L364 611 L699 511 L924 526 L1184 608 L1295 408 Z"
+      ],
+      "description": "The Balcony sits behind and above the main seating area on the chart. Choose it when you want the widest perspective on the stage.",
+      "highlightStyle": "outline"
+    }
+  ]
+}
