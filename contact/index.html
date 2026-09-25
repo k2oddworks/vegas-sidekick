@@ -130,7 +130,7 @@
       var btn=document.getElementById('contactSignupBtn');
       btn.textContent='...'; btn.disabled=true;
       try{
-        await fetch('https://brevo-subscribe.vegassidekickcom.workers.dev',{
+        await fetch('https://subscribe.vegassidekick.com',{
           method:'POST', headers:{'Content-Type':'application/json'},
           body:JSON.stringify({email:email})
         });
