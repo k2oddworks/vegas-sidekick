@@ -619,7 +619,7 @@ On every new article publish:
 
 Use the Cloudflare Worker endpoint (not the Brevo API directly):
 ```javascript
-fetch('https://brevo-subscribe.vegassidekickcom.workers.dev', {
+fetch('https://subscribe.vegassidekick.com', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({ email })
