@@ -27,7 +27,7 @@
   ! Cache-Control
   Cache-Control: public, max-age=0, must-revalidate
 
-/images/logo-horizontal.jpg
+/images/logo-horizontal.png
   ! Cache-Control
   Cache-Control: public, max-age=0, must-revalidate
 
