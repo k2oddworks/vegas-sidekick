@@ -160,7 +160,7 @@
       '@id':'https://vegassidekick.com/#organization',
       name:'Vegas Sidekick',
       url:'https://vegassidekick.com/',
-      logo:{'@type':'ImageObject',url:'https://vegassidekick.com/images/logo-pill-alt.png'},
+      logo:{'@type':'ImageObject',url:'https://vegassidekick.com/images/logo-badge.png'},
       founder:{'@type':'Person','@id':'https://vegassidekick.com/about/kris-kidd/#kris',name:'Kris Kidd',url:'https://vegassidekick.com/about/kris-kidd/'}
     });
     document.head.appendChild(script);
