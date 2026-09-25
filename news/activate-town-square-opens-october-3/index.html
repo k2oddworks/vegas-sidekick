@@ -59,7 +59,7 @@
     if(!email || !email.includes('@')){msg.textContent='Enter a valid email and try again.';return;}
     btn.disabled=true;btn.textContent='Signing you up…';msg.textContent='';
     try{
-      const r=await fetch('https://brevo-subscribe.vegassidekickcom.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email})});
+      const r=await fetch('https://subscribe.vegassidekick.com',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email})});
       if(!r.ok) throw new Error('subscribe failed');
       input.value='';msg.textContent='You’re on the list. 🌵';btn.textContent='You’re in';
     }catch(err){
