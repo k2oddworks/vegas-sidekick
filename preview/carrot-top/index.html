@@ -1333,7 +1333,7 @@ function subEmail(){
   }
   msg.style.color = '#8ef0b0';
   msg.textContent = 'Signing you up…';
-  fetch('https://brevo-subscribe.vegassidekickcom.workers.dev', {
+  fetch('https://subscribe.vegassidekick.com', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email: val })
