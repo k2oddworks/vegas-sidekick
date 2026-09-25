@@ -3,7 +3,7 @@
 (function () {
   'use strict';
 
-  const WORKER_URL = 'https://brevo-subscribe.vegassidekickcom.workers.dev';
+  const WORKER_URL = 'https://subscribe.vegassidekick.com';
 
   const html = `
 <div class="vs-email-bar" id="vsEmailBar">
