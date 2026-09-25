@@ -519,7 +519,7 @@ async function submitEmail() {
   if (!email || !email.includes('@')) return;
   document.getElementById('emailBtn').disabled = true;
   try {
-    await fetch('https://brevo-subscribe.vegassidekickcom.workers.dev', {
+    await fetch('https://subscribe.vegassidekick.com', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email })
     });
