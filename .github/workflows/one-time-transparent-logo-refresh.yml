@@ -1,0 +1,59 @@
+name: One-time transparent logo refresh
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.logo-refresh-trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Replace Vegas Sidekick logo masters
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -L --fail --retry 3 --retry-delay 2 \
+            'https://cdn.openart.ai/openart-uploads/production/attachment-transfers/cd769ed3dbc8d82de09d5bf8922a40957ba006a0df3e7020581dc49b0c328dc4.png' \
+            -o images/logo-badge.png
+          curl -L --fail --retry 3 --retry-delay 2 \
+            'https://cdn.openart.ai/openart-uploads/production/attachment-transfers/01b2716f1f87357c34b8433a5c5a08a18afccf0f781d15a21b1cf64a606fe6da.png' \
+            -o images/logo-horizontal.png
+
+          rm -f images/logo-horizontal.jpg
+
+          # Transparency requires PNG, so update any exact legacy wide-logo references.
+          while IFS= read -r -d '' file; do
+            sed -i 's/logo-horizontal\.jpg/logo-horizontal.png/g' "$file"
+          done < <(grep -RIlZ --exclude-dir=.git --exclude='*.png' --exclude='*.jpg' --exclude='*.jpeg' 'logo-horizontal.jpg' . || true)
+
+          rm -f .logo-refresh-trigger
+
+          python3 - <<'PY'
+from PIL import Image
+for path in ('images/logo-badge.png','images/logo-horizontal.png'):
+    im=Image.open(path)
+    if im.format != 'PNG':
+        raise SystemExit(f'{path}: expected PNG')
+    if 'A' not in im.mode and 'transparency' not in im.info:
+        raise SystemExit(f'{path}: no transparency channel')
+    print(path, im.size, im.mode)
+PY
+
+      - name: Commit logo refresh
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "Vegas Sidekick Media Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && exit 0
+          git commit -m "Replace Vegas Sidekick logos with transparent masters"
+          git push origin HEAD:main
