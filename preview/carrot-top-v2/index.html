@@ -759,7 +759,7 @@ function joinList(){
   }
   msg.style.color = '#1a9e5c';
   msg.textContent = 'Joining…';
-  fetch('https://brevo-subscribe.vegassidekickcom.workers.dev', {
+  fetch('https://subscribe.vegassidekick.com', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email: val })
