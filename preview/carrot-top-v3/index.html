@@ -92,6 +92,6 @@ document.querySelectorAll('.faq-btn').forEach(btn=>btn.addEventListener('click',
 document.querySelectorAll('.gallery img').forEach(img=>img.addEventListener('click',()=>{const lb=document.getElementById('lightbox');lb.querySelector('img').src=img.src;lb.querySelector('img').alt=img.alt;lb.classList.add('open');}));document.querySelector('#lightbox button').addEventListener('click',()=>document.getElementById('lightbox').classList.remove('open'));document.getElementById('lightbox').addEventListener('click',e=>{if(e.target.id==='lightbox')e.currentTarget.classList.remove('open');});
 document.getElementById('emailBtn').addEventListener('click',async()=>{const input=document.getElementById('email'),msg=document.getElementById('newsMsg'),email=input.value.trim();if(!email||!email.includes('@')||!email.includes('.')){msg.style.color='#ffb4a2';msg.textContent='Enter a valid email address.';return;}msg.style.color='#8be2aa';msg.textContent='Joining…';try{const r=await fetch('https://subscribe.vegassidekick.com',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email})});if(r.ok){msg.textContent='You’re on the list.';input.value='';}else{msg.style.color='#ffb4a2';msg.textContent='Something went wrong. Try again.';}}catch(e){msg.style.color='#ffb4a2';msg.textContent='Something went wrong. Try again.';}});
 </script>
-<script src="/components/header.js?v=20"></script><script src="/components/footer.js?v=16"></script>
+<script src="/components/header.js?v=21"></script><script src="/components/footer.js?v=16"></script>
 </body>
 </html>

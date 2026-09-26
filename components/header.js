@@ -1,5 +1,5 @@
 // Vegas Sidekick — Shared Header Component
-// v19 — tightly cropped transparent logo with correct intrinsic dimensions
+// v20 — unique image URL to bypass stale Cloudflare logo cache
 (function () {
   'use strict';
 
@@ -7,7 +7,7 @@
 <nav id="vs-nav" aria-label="Primary navigation">
   <div class="vs-announce">&#127917; Real Vegas show savings, when the numbers support them &mdash; <span>compare current deals</span></div>
   <div class="vs-nav-row">
-    <a class="nav-logo" href="/" aria-label="Vegas Sidekick home"><img src="/images/logo-horizontal.png?v=5" alt="Vegas Sidekick" width="1425" height="249" loading="eager" fetchpriority="high" decoding="async"></a>
+    <a class="nav-logo" href="/" aria-label="Vegas Sidekick home"><img src="/images/logo-horizontal.png?v=72014685" alt="Vegas Sidekick" width="1425" height="249" loading="eager" fetchpriority="high" decoding="async"></a>
 
     <div class="nav-desktop">
       <div class="nav-dropdown-wrap">
