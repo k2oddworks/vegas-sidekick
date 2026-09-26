@@ -1,0 +1,48 @@
+{
+  "venue": "Saxe Theater at Miracle Mile Shops, Planet Hollywood",
+  "viewBox": "0 0 1536 1536",
+  "image": "/images/mj-live-seating-chart.jpg",
+  "highlightMode": "precise-outline",
+  "zones": [
+    {
+      "id": "vip",
+      "label": "VIP",
+      "badge": "Closest to the stage",
+      "our_pick": false,
+      "color": "#ffad18",
+      "hitPaths": [
+        "M292 982 L394 944 L552 906 L607 1219 L389 1344 L286 1134 Z",
+        "M579 919 L1046 919 L953 1264 L626 1264 Z",
+        "M1056 918 L1225 960 L1388 1032 L1268 1306 L1016 1198 Z"
+      ],
+      "description": "VIP is the orange seating closest to the stage. Choose it when proximity to the performers matters most.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "preferred",
+      "label": "Preferred",
+      "badge": "Sweet Spot / Our Pick",
+      "our_pick": true,
+      "color": "#ff3596",
+      "hitPaths": [
+        "M121 719 L387 654 L505 916 L252 1056 Z",
+        "M470 667 L1077 667 L1016 910 L555 910 Z",
+        "M1110 708 L1415 791 L1301 1030 L1049 915 Z"
+      ],
+      "description": "Preferred is the Vegas Sidekick Sweet Spot. It keeps you in the middle of the room with a centered view and enough distance to take in the choreography across the stage.",
+      "highlightStyle": "outline"
+    },
+    {
+      "id": "standard",
+      "label": "Standard",
+      "badge": "Farther back",
+      "our_pick": false,
+      "color": "#8b3bff",
+      "hitPaths": [
+        "M75 39 L150 16 L164 62 L221 49 L239 84 L296 76 L324 119 L385 116 L407 160 L468 158 L489 214 L548 217 L552 271 L625 261 L642 318 L646 527 L539 548 L425 570 L309 601 L180 641 L145 572 L118 503 L95 435 L76 369 L61 305 L50 247 L46 193 L48 143 L55 96 Z"
+      ],
+      "description": "Standard is the purple seating farther back in the room. It gives you more distance from the stage while keeping the full performance in view.",
+      "highlightStyle": "outline"
+    }
+  ]
+}
