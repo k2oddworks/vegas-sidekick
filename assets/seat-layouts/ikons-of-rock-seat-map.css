@@ -1,0 +1,50 @@
+/* Ikons of Rock — transparent hit geometry over the approved supplied seating chart. */
+.ior-seat-map{background:#08050f}
+.ior-seat-map .approved-seat-hit{border-radius:12px}
+.ior-seat-map .approved-seat-hit:hover{background:rgba(255,176,0,.12)}
+.ior-seat-map .approved-seat-hit.is-active{background:rgba(255,176,0,.24)!important;filter:drop-shadow(0 0 8px rgba(255,176,0,.58))}
+.gallery .approved-chart-gallery img{object-fit:contain!important;background:#08050f}
+
+/* Gallery: six disconnected rear / upper-side pieces. */
+.ior-gallery-1{left:22.4%;top:2.2%;width:13.4%;height:4.7%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.ior-gallery-2{left:59.9%;top:2.2%;width:12.8%;height:3.4%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.ior-gallery-3{left:28.2%;top:9.1%;width:13.7%;height:7.7%;clip-path:polygon(0 26%,94% 0,100% 77%,7% 100%)}
+.ior-gallery-4{left:58.5%;top:9.1%;width:13.9%;height:7.8%;clip-path:polygon(6% 0,100% 27%,93% 100%,0 77%)}
+.ior-gallery-5{left:6.6%;top:11.5%;width:15.8%;height:12.8%;clip-path:polygon(8% 17%,55% 0,100% 23%,98% 100%,26% 88%,0 43%)}
+.ior-gallery-6{left:78.9%;top:11.4%;width:12.9%;height:12.8%;clip-path:polygon(0 0,83% 17%,100% 40%,77% 100%,4% 86%,0 21%)}
+
+/* Preferred Booth: the two centered booth bands below Gallery. */
+.ior-pb-1{left:25.4%;top:15.8%;width:48.0%;height:7.0%;clip-path:polygon(4% 26%,22% 5%,50% 0,78% 5%,96% 27%,91% 100%,9% 100%)}
+.ior-pb-2{left:28.7%;top:21.8%;width:43.0%;height:7.6%;clip-path:polygon(4% 7%,96% 7%,91% 100%,9% 100%)}
+
+/* Preferred Tables: two centered table bands. */
+.ior-pt-1{left:27.6%;top:29.0%;width:44.8%;height:6.9%;clip-path:polygon(2% 20%,98% 20%,94% 100%,6% 100%)}
+.ior-pt-2{left:28.2%;top:34.5%;width:43.8%;height:7.6%;clip-path:polygon(3% 7%,97% 7%,94% 100%,6% 100%)}
+
+/* Named Preferred side sections. Disconnected pieces share one data-section so they highlight together. */
+.ior-dd-1{left:5.7%;top:20.8%;width:15.4%;height:8.2%;clip-path:polygon(0 24%,77% 0,100% 37%,88% 100%,12% 100%)}
+.ior-dd-2{left:8.2%;top:28.3%;width:14.5%;height:11.0%;clip-path:polygon(4% 18%,100% 0,100% 71%,1% 100%)}
+.ior-dd-3{left:6.0%;top:39.5%;width:14.9%;height:8.6%;clip-path:polygon(9% 5%,100% 0,87% 100%,0 84%)}
+
+.ior-bb-1{left:8.1%;top:45.0%;width:14.8%;height:13.3%;clip-path:polygon(0 42%,100% 0,100% 63%,3% 100%)}
+.ior-bb-2{left:7.2%;top:56.7%;width:15.4%;height:10.4%;clip-path:polygon(12% 0,100% 8%,86% 100%,0 80%)}
+
+.ior-d-1{left:80.0%;top:20.7%;width:13.6%;height:8.6%;clip-path:polygon(17% 0,100% 28%,91% 100%,0 79%)}
+.ior-d-2{left:77.0%;top:27.8%;width:14.7%;height:11.6%;clip-path:polygon(0 0,96% 22%,100% 100%,0 70%)}
+.ior-d-3{left:79.4%;top:39.2%;width:14.1%;height:8.7%;clip-path:polygon(0 0,91% 5%,100% 84%,13% 100%)}
+
+.ior-a-1{left:77.3%;top:44.7%;width:14.3%;height:12.3%;clip-path:polygon(0 0,100% 43%,97% 100%,1% 64%)}
+.ior-a-2{left:81.0%;top:56.6%;width:12.9%;height:10.8%;clip-path:polygon(0 8%,88% 0,100% 80%,14% 100%)}
+
+/* VIP Booth: cyan center area. */
+.ior-vb-1{left:26.4%;top:40.3%;width:47.4%;height:10.2%;clip-path:polygon(2% 10%,98% 10%,93% 100%,7% 100%)}
+.ior-vb-2{left:27.3%;top:48.3%;width:45.5%;height:10.7%;clip-path:polygon(3% 0,97% 0,92% 100%,8% 100%)}
+
+/* VIP Tables: front-center plus the two orange table arcs flanking the stage. */
+.ior-vt-1{left:31.0%;top:56.1%;width:39.5%;height:15.8%;clip-path:polygon(5% 0,95% 0,88% 100%,12% 100%)}
+.ior-vt-2{left:8.2%;top:62.6%;width:25.6%;height:25.5%;clip-path:polygon(46% 0,100% 10%,79% 100%,0 92%,0 42%)}
+.ior-vt-3{left:69.2%;top:62.0%;width:23.6%;height:25.8%;clip-path:polygon(0 9%,54% 0,100% 39%,100% 91%,20% 100%)}
+
+@media(max-width:820px){
+  .ior-seat-map .approved-seat-hit{border-radius:8px}
+}
