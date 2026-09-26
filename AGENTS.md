@@ -54,7 +54,7 @@ Do not use fake urgency, fake scarcity, generic trust theater, unsupported ratin
 - Keep Hero, descriptive overview, and Quick Take distinct: Hero identifies the show, the overview explains what happens / what it is, and Quick Take helps the customer decide whether it fits.
 - Do not impose a hard SEO word minimum or pad pages with filler. Never repeat the hero sentence as the descriptive section.
 - **Good to know** only when there is a real useful fact; omit it otherwise.
-- **Good Fit** should be positive and compact.
+- **Good Fit** should be positive and compact. Keep it inside Quick Take using the shared compact treatment; do not repeat it later in a separate **Who it fits best** section.
 - **Kris’s take** should reinforce why the show is a good choice, not inject generic doubt.
 - Do not use **tradeoff** in customer-facing copy; describe what each option offers.
 - Do not use **Typical start**; use **Start time / Start times**.

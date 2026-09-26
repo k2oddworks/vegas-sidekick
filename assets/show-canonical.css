@@ -112,3 +112,13 @@
     background:#0b0613;
   }
 }
+
+
+/* Shared Quick Take Good Fit — compact on desktop, normal card on mobile */
+@media(min-width:801px){
+  #quick .verdict-grid{grid-template-columns:1fr;max-width:920px}
+  #quick .decision{max-width:760px;margin-top:18px}
+  #quick .decision-card.good{display:flex;align-items:center;gap:16px;padding:14px 18px;border-top:0;border-left:6px solid var(--gold);min-height:0}
+  #quick .decision-card.good h3{margin:0;white-space:nowrap}
+  #quick .decision-card.good p{margin:0}
+}

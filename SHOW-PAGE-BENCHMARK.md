@@ -36,13 +36,12 @@ Preferred active-show flow:
 8. Photos
 9. Official trailer when a verified video exists
 10. Seat Guide when useful
-11. Good Fit / useful fit guidance
-12. FAQ
-13. Related shows
-14. Next useful click
-15. Kris author card + freshness + disclosure
-16. Final ticket CTA
-17. Mobile sticky ticket bar
+11. FAQ
+12. Related shows
+13. Next useful click
+14. Kris author card + freshness + disclosure
+15. Final ticket CTA
+16. Mobile sticky ticket bar
 
 The buyer journey is intentional: **What is this? → Is it for me? → Can I go? → What does it look like? → Where should I sit? → Buy.** The descriptive overview explains the entertainment product before Quick Take makes a decision-oriented recommendation. The full **Find your showtime** module belongs immediately after Quick Take so a customer with strong purchase intent can answer the practical availability question without reading half the page first.
 
@@ -241,8 +240,10 @@ Do not use formal recurring sections or labels such as:
 ### Good Fit
 
 - Explain who the show works well for.
+- Good Fit lives inside **Quick Take**, immediately after the main recommendation / Kris's take.
+- On desktop, render it as a compact horizontal callout instead of a tall side rail.
 - Keep it compact when there is only one useful point.
-- Do not leave a tiny Good Fit sentence stranded in a giant desktop side rail.
+- Do not create a second **Who it fits best** / **Good fit** section later in the page. If there is genuinely different buyer guidance, use a show-specific **Good to know** item where it is useful instead of repeating Good Fit.
 
 ### Good to know
 

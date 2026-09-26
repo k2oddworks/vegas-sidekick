@@ -126,19 +126,20 @@ Current canonical show pages generally use:
 2. Four-part quick facts
 3. Ticker
 4. Sticky section navigation
-5. Quick Take
+5. What is [Show]? descriptive overview
+6. Quick Take + compact Good Fit
+7. Showtimes / booking module
+8. Photos
+9. Official trailer when verified
+10. Interactive seat guide where useful
+11. FAQ
+12. Related shows
+13. Next useful click
+14. Author / freshness / disclosure
+15. Final CTA
+16. Mobile sticky ticket bar
 
-**Locked copy rule:** Hero and Quick Take must not duplicate or lightly paraphrase each other. Hero answers what the show is; Quick Take answers whether it is worth seeing and who it makes sense for.
-6. Photos
-7. Interactive seat guide where useful
-8. Good Fit / Good to Know
-9. Seven-day schedule grid or appropriate variable-schedule treatment
-10. FAQ
-11. Related shows
-12. Next useful click
-13. Author / freshness / disclosure
-14. Final CTA
-15. Mobile sticky ticket bar
+**Locked copy rule:** Hero and Quick Take must not duplicate or lightly paraphrase each other. Hero answers what the show is; Quick Take answers whether it is worth seeing and who it makes sense for. Good Fit belongs inside Quick Take as a compact callout, not in a second later section.
 
 
 
@@ -148,7 +149,7 @@ Nathan Burton is the new model for active show product pages. The important deci
 
 - Keep honesty positive. Do not use recurring **Think twice / downside / honest downside** sections.
 - **Good to know** is optional and only for real useful facts; never relabel rejection copy.
-- **Good Fit** should be positive and compact; do not strand one small card in a huge desktop side rail.
+- **Good Fit** should be positive and compact. It lives inside Quick Take; on desktop it uses the compact horizontal treatment. Do not repeat it later in a separate **Who it fits best** section.
 - **Kris’s take** should reinforce a useful reason to choose the show, not inject generic doubt or tell the customer they may want a different category.
 - Do not use **tradeoff** in customer-facing copy. Explain what each option offers.
 - Do not describe a show or seat as interactive, in the action, likely to be selected, etc. unless Kris explicitly confirms it.
@@ -807,13 +808,13 @@ When data conflicts, do not guess.
 
 ## Show Decision Cards
 
-The customer-facing three-card decision aid uses these labels:
+The customer-facing decision aids use these labels:
 
-- **Good fit** — who the show is genuinely a match for.
-- **Good to know** — optional; include only for useful, show-specific context, a mismatch, or a meaningful tradeoff. Omit it rather than use category filler.
-- **Booking tip** — a concrete seat, timing, or booking action.
+- **Good fit** — who the show is genuinely a match for. This is the core fit treatment and belongs inside Quick Take as one compact callout.
+- **Good to know** — optional; include only for useful, show-specific context. Omit it rather than use category filler.
+- **Booking tip** — optional; use only for a concrete seat, timing, or booking action.
 
-Do not use the old labels `Book it if…`, `Know this first`, or `Best practical angle`. Do not fill these cards with generic category filler when a useful show-specific point is available. If there is no genuinely useful, show-specific Booking tip, omit the card entirely rather than inventing or recycling seat or planning advice. Existing custom/benchmark decision modules that are more detailed should not be flattened just to match the generic card format.
+Do not create a second later **Who it fits best** / **Good fit** section. Do not use the old labels `Book it if…`, `Know this first`, or `Best practical angle`. Do not fill these cards with generic category filler. If there is no genuinely useful, show-specific Good to know or Booking tip, omit it.
 
 
 ---
