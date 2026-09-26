@@ -7,7 +7,7 @@
 <nav id="vs-nav" aria-label="Primary navigation">
   <div class="vs-announce">&#127917; Real Vegas show savings, when the numbers support them &mdash; <span>compare current deals</span></div>
   <div class="vs-nav-row">
-    <a class="nav-logo" href="/" aria-label="Vegas Sidekick home"><img src="/images/logo-horizontal-header.png" alt="Vegas Sidekick" width="841" height="144" loading="eager" fetchpriority="high" decoding="async"></a>
+    <a class="nav-logo" href="/" aria-label="Vegas Sidekick home"><img src="/images/logo-horizontal.png?v=4" alt="Vegas Sidekick" width="900" height="300" loading="eager" fetchpriority="high" decoding="async"></a>
 
     <div class="nav-desktop">
       <div class="nav-dropdown-wrap">
