@@ -411,6 +411,8 @@ Example:
 
 Do not name the physical seating zone itself “Sweet Spot.”
 
+If a show has **no Sweet Spot / Our Pick**, simply omit the recommendation badge and recommendation copy. Do not tell customers that there is no Sweet Spot; the absence of a recommendation is enough.
+
 ### Color meaning
 
 For generated charts, use brand colors consistently rather than randomly:
