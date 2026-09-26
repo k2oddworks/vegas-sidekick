@@ -147,12 +147,12 @@
 @media(max-width:980px){
   .vs-announce{display:none}
   .nav-desktop,.nav-search-wrap{display:none}
-  .vs-nav-row{padding:0 20px;height:54px;gap:13px}
+  .vs-nav-row{padding:0 20px;height:64px;gap:13px}
   .nav-mobile-menu{display:block}
   .nav-mobile-drawer{display:flex}
   .nav-cta{padding:9px 16px;font-size:.85rem}
 }
-@media(max-width:460px){.nav-logo img{height:36px;max-width:220px}.nav-cta{display:none}.vs-nav-row{padding:0 15px}}
+@media(max-width:460px){.nav-logo{height:48px;overflow:visible}.nav-logo img{height:36px;max-width:220px}.nav-cta{display:none}.vs-nav-row{height:64px;padding:0 15px;overflow:visible}}
 @media(prefers-reduced-motion:reduce){.nav-dropdown,.nav-search-popover,.nav-mobile-drawer,.drawer-primary,.drawer-categories a,.nav-cta{transition:none!important}}
 </style>`;
 
