@@ -266,7 +266,10 @@
     </image:image>
   </url>
   <url>
-    \g<1>2026-09-09\g<2>
+    <loc>https://vegassidekick.com/shows/cirque/mystere/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-09</lastmod>
       <image:image>
       <image:loc>https://vegassidekick.com/images/mystere-hero.jpg</image:loc>
     </image:image>
@@ -335,7 +338,10 @@
     </image:image>
   </url>
   <url>
-    \g<1>2026-09-09\g<2>
+    <loc>https://vegassidekick.com/shows/comedy/marc-savard-comedy-hypnosis/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-09</lastmod>
       <image:image>
       <image:loc>https://vegassidekick.com/images/marc-savard-comedy-hypnosis-hero.jpg</image:loc>
     </image:image>
@@ -713,7 +719,7 @@
     <loc>https://vegassidekick.com/news/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-26</lastmod>
       <image:image>
       <image:loc>https://vegassidekick.com/images/news/matt-rife-stay-golden-las-vegas.jpg</image:loc>
     </image:image>
@@ -1210,5 +1216,13 @@
       <image:loc>https://vegassidekick.com/images/paranormal-hero.webp</image:loc>
     </image:image>
   </url>
+  <url>
+    <loc>https://vegassidekick.com/news/rouge-tickets-free-strat-tower-admission/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://vegassidekick.com/images/news/rouge-free-strat-tower-wide.png</image:loc></image:image>
+  </url>
 </urlset>
+
 
