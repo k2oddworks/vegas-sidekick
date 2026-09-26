@@ -423,7 +423,7 @@
     window.addEventListener('scroll', function(){ var h=document.documentElement;
       var s=(h.scrollTop)/(h.scrollHeight-h.clientHeight); p.style.width=(s*100)+'%'; }, {passive:true}); })();
 </script>
-<script src="/components/header.js?v=19"></script>
+<script src="/components/header.js?v=20"></script>
 <script src="/components/footer.js?v=16"></script>
 <script id="guide-newsletter-js">document.querySelectorAll('.guide-newsletter-form').forEach(f=>f.addEventListener('submit',async e=>{e.preventDefault();const i=f.querySelector('input'),b=f.querySelector('button'),m=f.parentElement.querySelector('.nl-msg'),email=i.value.trim();if(!email||!email.includes('@')||!email.includes('.')){m.textContent='Enter a valid email address.';return;}b.disabled=true;b.textContent='Joining…';try{const r=await fetch('https://subscribe.vegassidekick.com',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email})});if(!r.ok)throw 0;m.textContent='You’re in. Watch your inbox for the useful stuff.';i.value='';b.textContent='Joined';}catch(x){m.textContent='Couldn’t add you just now. Try again in a minute.';b.disabled=false;b.textContent='Get Vegas Updates';}}));</script></body>
 </html>

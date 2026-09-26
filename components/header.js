@@ -1,5 +1,5 @@
 // Vegas Sidekick — Shared Header Component
-// v18 — dedicated cropped header asset to avoid stale padded-logo cache
+// v19 — tightly cropped transparent logo with correct intrinsic dimensions
 (function () {
   'use strict';
 
@@ -7,7 +7,7 @@
 <nav id="vs-nav" aria-label="Primary navigation">
   <div class="vs-announce">&#127917; Real Vegas show savings, when the numbers support them &mdash; <span>compare current deals</span></div>
   <div class="vs-nav-row">
-    <a class="nav-logo" href="/" aria-label="Vegas Sidekick home"><img src="/images/logo-horizontal.png?v=4" alt="Vegas Sidekick" width="900" height="300" loading="eager" fetchpriority="high" decoding="async"></a>
+    <a class="nav-logo" href="/" aria-label="Vegas Sidekick home"><img src="/images/logo-horizontal.png?v=5" alt="Vegas Sidekick" width="1425" height="249" loading="eager" fetchpriority="high" decoding="async"></a>
 
     <div class="nav-desktop">
       <div class="nav-dropdown-wrap">
@@ -87,7 +87,7 @@
 .vs-nav-row{position:relative;display:flex;align-items:center;gap:20px;height:56px;padding:0 40px;background:rgba(20,8,40,.94);backdrop-filter:saturate(160%) blur(14px)}
 .vs-nav-row::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,#ff2e7e 0%,#7c3aed 42%,#0fb5c9 70%,#c6f22e 100%);opacity:.95}
 .nav-logo{display:flex;align-items:center;flex:0 0 auto;text-decoration:none;line-height:0}
-.nav-logo img{display:block;width:240px;height:auto;max-width:calc(100vw - 110px);object-fit:contain}
+.nav-logo img{display:block;width:300px;height:auto;max-width:calc(100vw - 110px);object-fit:contain}
 .nav-desktop{display:flex;align-items:center;gap:6px}
 .nav-text-link,.nav-link-btn{appearance:none;border:0;background:transparent;color:rgba(255,255,255,.84);font:600 .9rem 'Inter',sans-serif;text-decoration:none;padding:10px 11px;border-radius:9px;cursor:pointer;transition:.18s;white-space:nowrap}
 .nav-link-btn{display:flex;align-items:center;gap:5px}
