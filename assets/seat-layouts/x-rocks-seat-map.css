@@ -1,0 +1,26 @@
+/* X Rocks — transparent interaction zones over the exact supplied seating chart. */
+.xr-seat-map{background:#08050f}
+.xr-seat-map .approved-seat-hit{border-radius:12px}
+.xr-seat-map .approved-seat-hit:hover{background:rgba(255,176,0,.12)}
+.xr-seat-map .approved-seat-hit.is-active{background:rgba(255,176,0,.24)!important;filter:drop-shadow(0 0 8px rgba(255,176,0,.58))}
+.gallery .approved-chart-gallery img{object-fit:contain!important;background:#08050f}
+
+/* General Admission — upper center plus two outer angled sections. */
+.xr-ga-left{left:2.0%;top:23.1%;width:25.7%;height:27.0%;clip-path:polygon(67% 0,100% 31%,39% 100%,0 66%)}
+.xr-ga-center{left:31.5%;top:31.0%;width:36.4%;height:8.9%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.xr-ga-right{left:72.3%;top:23.1%;width:25.5%;height:27.0%;clip-path:polygon(33% 0,100% 66%,61% 100%,0 31%)}
+
+/* VIP — center band plus two angled wings. */
+.xr-vip-left{left:11.7%;top:34.5%;width:21.8%;height:20.3%;clip-path:polygon(67% 0,100% 25%,35% 100%,0 68%)}
+.xr-vip-center{left:31.5%;top:40.4%;width:36.4%;height:7.6%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.xr-vip-right{left:66.6%;top:34.5%;width:21.8%;height:20.3%;clip-path:polygon(33% 0,100% 68%,65% 100%,0 25%)}
+
+/* Rockstar — four pink sections closest to the stage. */
+.xr-rockstar-left{left:20.7%;top:46.3%;width:10.8%;height:10.4%;clip-path:polygon(50% 0,100% 48%,56% 100%,0 53%)}
+.xr-rockstar-center-left{left:31.3%;top:48.6%;width:13.8%;height:6.9%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.xr-rockstar-center-right{left:54.8%;top:48.6%;width:13.6%;height:6.9%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.xr-rockstar-right{left:68.4%;top:46.3%;width:10.8%;height:10.4%;clip-path:polygon(50% 0,100% 53%,44% 100%,0 48%)}
+
+@media(max-width:820px){
+  .xr-seat-map .approved-seat-hit{border-radius:8px}
+}
