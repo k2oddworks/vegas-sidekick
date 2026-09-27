@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Las Vegas Show Price Index: Cirque Pilot | Vegas Sidekick</title>
+<meta name="description" content="A dated comparison of publicly advertised starting ticket prices for O, KÀ, Mystère and Michael Jackson ONE across Spotlight.Vegas, Vegas.com and official box offices.">
+<link rel="canonical" href="https://vegassidekick.com/data/show-price-index/">
+<meta name="robots" content="noindex, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vegas Sidekick Show Price Index — Cirque Pilot">
+<meta property="og:description" content="A source-linked snapshot of advertised starting prices across three Las Vegas ticket sources.">
+<meta property="og:url" content="https://vegassidekick.com/data/show-price-index/">
+<meta property="og:image" content="https://vegassidekick.com/images/logo-badge.png">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Dataset",
+  "name":"Vegas Sidekick Show Price Index — Cirque Pilot",
+  "description":"A point-in-time comparison of publicly advertised starting ticket prices for the four active resident Cirque du Soleil productions in Las Vegas across Spotlight.Vegas, Vegas.com and official box offices.",
+  "url":"https://vegassidekick.com/data/show-price-index/",
+  "dateModified":"2026-09-27",
+  "temporalCoverage":"2026-09-27",
+  "spatialCoverage":{"@type":"Place","name":"Las Vegas, Nevada"},
+  "creator":{"@type":"Organization","name":"Vegas Sidekick","url":"https://vegassidekick.com/"},
+  "maintainer":{"@type":"Person","name":"Kris Kidd","url":"https://vegassidekick.com/about/kris-kidd/"},
+  "variableMeasured":"Publicly advertised starting ticket price in U.S. dollars",
+  "keywords":["Las Vegas shows","ticket prices","Cirque du Soleil","Las Vegas entertainment data"],
+  "distribution":[{
+    "@type":"DataDownload",
+    "encodingFormat":"text/csv",
+    "contentUrl":"https://vegassidekick.com/data/show-price-index/2026-09-27.csv",
+    "name":"Cirque price snapshot — September 27, 2026"
+  }]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://vegassidekick.com/"},
+    {"@type":"ListItem","position":2,"name":"Data","item":"https://vegassidekick.com/data/"},
+    {"@type":"ListItem","position":3,"name":"Show Price Index","item":"https://vegassidekick.com/data/show-price-index/"}
+  ]
+}
+</script>
+<style>
+:root{
+  --ink:#171225;--bg:#fff;--soft:#f5f4fb;--line:#e8e4f2;--muted:#6c6883;
+  --blue:#3b82f6;--pink:#ff2e7e;--lime:#c6f22e;--purple:#7c3aed;--teal:#0fb5c9;
+  --hero-1:#1c0a3a;--hero-2:#2b0f5c;--hero-3:#12061f;--amber:#FFB000;
+  --display:'Plus Jakarta Sans',sans-serif;--body:'Inter',sans-serif;--mono:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{width:min(1120px,calc(100% - 40px));margin:0 auto}
+.crumb{padding:104px 0 16px;font:500 .72rem var(--mono);color:var(--muted)}
+.crumb a{color:var(--muted);text-decoration:none}.crumb a:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;color:#fff;padding:54px 0 58px;background:
+ radial-gradient(900px 440px at 85% -20%,rgba(124,58,237,.62),transparent 62%),
+ radial-gradient(700px 420px at 5% 120%,rgba(255,46,126,.28),transparent 58%),
+ linear-gradient(155deg,var(--hero-1),var(--hero-2) 58%,var(--hero-3))}
+.hero:after{content:"";position:absolute;inset:0;opacity:.85;pointer-events:none;background-image:
+ radial-gradient(1.5px 1.5px at 12% 24%,rgba(255,255,255,.72),transparent),
+ radial-gradient(1.5px 1.5px at 73% 30%,rgba(198,242,46,.75),transparent),
+ radial-gradient(1.5px 1.5px at 41% 82%,rgba(255,46,126,.68),transparent),
+ radial-gradient(1.5px 1.5px at 91% 71%,rgba(255,255,255,.55),transparent)}
+.hero .wrap{position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.09);border-radius:999px;padding:7px 13px;font:800 .7rem var(--display);letter-spacing:.12em;text-transform:uppercase;color:#eee7ff}
+.hero h1{max-width:850px;margin:16px 0 13px;font:800 clamp(2.5rem,6vw,4.6rem)/.98 var(--display);letter-spacing:-.04em}
+.hero h1 span{background:linear-gradient(90deg,#ff5fa0,var(--lime));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-copy{max-width:770px;margin:0;color:rgba(255,255,255,.82);font-size:1.08rem}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.meta span{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.075);border-radius:999px;padding:6px 11px;font:500 .7rem var(--mono);color:rgba(255,255,255,.8)}
+.meta b{color:#fff}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+.hero-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border-radius:11px;padding:10px 16px;text-decoration:none;font:800 .82rem var(--display)}
+.download{background:var(--amber);color:var(--ink)}
+.method-jump{border:1px solid rgba(255,255,255,.24);color:#fff;background:rgba(255,255,255,.07)}
+.disclosure{margin:28px auto 0;padding:16px 18px;border:1px solid #eadff5;border-left:4px solid var(--pink);border-radius:14px;background:#fff7fb;color:#4b4357;font-size:.9rem}
+.disclosure strong{color:var(--ink)}
+.section{padding:48px 0 0}
+.kicker{margin:0 0 7px;color:var(--purple);font:800 .7rem var(--display);letter-spacing:.13em;text-transform:uppercase}
+.section h2{margin:0 0 10px;font:800 clamp(1.65rem,3.5vw,2.35rem)/1.08 var(--display);letter-spacing:-.025em}
+.section-lede{max-width:780px;margin:0;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:25px 0 0}
+.stat{padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--soft)}
+.stat strong{display:block;font:800 1.65rem var(--display);letter-spacing:-.03em}
+.stat span{display:block;color:var(--muted);font-size:.84rem}
+.table-card{margin-top:24px;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 14px 34px rgba(23,18,37,.07);overflow:hidden}
+.table-headnote{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:15px 18px;border-bottom:1px solid var(--line);background:#fbfaff}
+.table-headnote span{font:500 .7rem var(--mono);color:var(--muted)}
+.table-headnote b{color:var(--ink)}
+.table-scroll{overflow-x:auto}
+table{width:100%;min-width:900px;border-collapse:collapse}
+th,td{text-align:left;vertical-align:top;padding:17px 16px;border-bottom:1px solid var(--line)}
+tbody tr:last-child td{border-bottom:0}
+th{background:#f8f6fc;color:var(--muted);font:800 .65rem var(--display);text-transform:uppercase;letter-spacing:.08em}
+.show-name{font:800 1rem var(--display);line-height:1.2}.venue{display:block;margin-top:4px;color:var(--muted);font-size:.78rem}
+.price-link{display:inline-flex;align-items:baseline;gap:6px;text-decoration:none}
+.price{font:800 1.36rem var(--display);letter-spacing:-.03em;color:var(--ink)}
+.price-link:hover .price{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+.source-note{display:block;margin-top:4px;color:var(--muted);font-size:.72rem;line-height:1.35}
+.source-note.sale{color:#6b4f00;font-weight:700}
+.source-label{display:block;margin-top:8px;color:var(--purple);font:700 .64rem var(--mono);text-decoration:none}
+.source-label:hover{text-decoration:underline}
+.partner{display:inline-block;margin-left:5px;padding:2px 5px;border-radius:6px;background:#fff2c2;color:#735300;font:700 .55rem var(--display);letter-spacing:.04em;text-transform:uppercase}
+.scope-note{margin-top:14px;color:var(--muted);font-size:.83rem}
+.scope-note strong{color:var(--ink)}
+.method-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}
+.rule{padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--soft)}
+.rule .n{font:800 .66rem var(--mono);color:var(--purple);letter-spacing:.08em}
+.rule h3{margin:7px 0 7px;font:800 1rem var(--display)}
+.rule p{margin:0;color:#514b63;font-size:.9rem}
+.caveat{margin-top:18px;padding:20px;border-radius:16px;background:#171225;color:#fff}
+.caveat strong{font-family:var(--display)}
+.caveat p{margin:7px 0 0;color:#d8d2e3;font-size:.9rem}
+.source-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:21px}
+.source-card{padding:18px;border:1px solid var(--line);border-radius:16px;background:#fff}
+.source-card h3{margin:0 0 5px;font:800 .98rem var(--display)}
+.source-card p{margin:0 0 10px;color:var(--muted);font-size:.83rem}
+.source-card a{color:var(--blue);font:700 .77rem var(--display);text-underline-offset:3px}
+.byline{display:flex;gap:14px;align-items:center;margin:38px 0 0;padding:20px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(135deg,#f7f4ff,#fff)}
+.byline img{width:54px;height:54px;object-fit:cover;border-radius:50%}
+.byline small{display:block;color:var(--purple);font:800 .64rem var(--display);letter-spacing:.1em;text-transform:uppercase}
+.byline strong{display:block;margin:2px 0;font:800 1rem var(--display)}
+.byline p{margin:0;color:var(--muted);font-size:.82rem}
+.endcap{margin:48px 0 60px;padding:28px;border-radius:20px;background:linear-gradient(145deg,#2b0f5c,#12061f);color:#fff}
+.endcap h2{margin:0 0 8px;font:800 1.6rem var(--display)}
+.endcap p{max-width:730px;margin:0;color:#d9d0e4}
+.endcap a{display:inline-block;margin-top:16px;color:var(--lime);font:800 .8rem var(--display);text-underline-offset:4px}
+@media(max-width:760px){
+  .wrap{width:min(100% - 28px,1120px)}
+  .crumb{padding-top:98px}
+  .hero{padding:42px 0 46px}
+  .stats,.method-grid,.source-list{grid-template-columns:1fr}
+  .table-headnote{align-items:flex-start;flex-direction:column}
+  .section{padding-top:40px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div id="vs-header"></div>
+
+<nav class="crumb" aria-label="Breadcrumb">
+  <div class="wrap"><a href="/">Home</a> &rsaquo; Data &rsaquo; <strong>Show Price Index</strong></div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Data Desk · Pilot</span>
+    <h1>Vegas Sidekick <span>Show Price Index</span></h1>
+    <p class="hero-copy">A point-in-time record of the starting ticket prices Las Vegas shoppers are actually shown. This pilot compares the four active resident Cirque du Soleil productions across Spotlight.Vegas, Vegas.com and each show’s official box office.</p>
+    <div class="meta">
+      <span>Snapshot <b>Sep 27, 2026</b></span>
+      <span><b>4</b> active Cirque productions</span>
+      <span><b>12</b> source observations</span>
+      <span>Prices in <b>USD</b></span>
+    </div>
+    <div class="hero-actions">
+      <a class="download" href="/data/show-price-index/2026-09-27.csv" download>Download this snapshot · CSV</a>
+      <a class="method-jump" href="#methodology">Read the methodology</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <aside class="disclosure"><strong>Affiliate disclosure:</strong> Vegas Sidekick earns a commission when a reader books through Spotlight.Vegas. That relationship does not change which prices are recorded here or how the other sellers are shown. Spotlight links on this page are affiliate links; Vegas.com and official box-office links are not.</aside>
+
+  <section class="section" aria-labelledby="snapshot-heading">
+    <p class="kicker">September 27 snapshot</p>
+    <h2 id="snapshot-heading">Four shows. Three sources each.</h2>
+    <p class="section-lede">These are advertised starting prices, not a seat-for-seat comparison. Fee treatment varies by seller, so every price keeps its source’s own fee basis instead of being “normalized” into a number the seller never actually published.</p>
+
+    <div class="stats" aria-label="Snapshot summary">
+      <div class="stat"><strong>4</strong><span>active resident Cirque productions</span></div>
+      <div class="stat"><strong>3</strong><span>ticket sources checked per show</span></div>
+      <div class="stat"><strong>12</strong><span>source-linked price observations</span></div>
+    </div>
+
+    <div class="table-card">
+      <div class="table-headnote">
+        <span><b>Observed:</b> September 27, 2026</span>
+        <span>Tap any price to inspect the source.</span>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Show</th>
+              <th scope="col">Spotlight.Vegas</th>
+              <th scope="col">Vegas.com</th>
+              <th scope="col">Official box office</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="show-name">“O” by Cirque du Soleil</span><span class="venue">Bellagio</span></td>
+              <td>
+                <a class="price-link" href="https://spotlight.vegas/shows/cirque-du-soleil/o/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$121</span></a>
+                <span class="source-note">Service fee may be added to some tickets.</span>
+                <a class="source-label" href="https://spotlight.vegas/shows/cirque-du-soleil/o/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a>
+              </td>
+              <td>
+                <a class="price-link" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener"><span class="price">$126</span></a>
+                <span class="source-note">Displayed as including fees.</span>
+                <a class="source-label" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener">Vegas.com source</a>
+              </td>
+              <td>
+                <a class="price-link" href="https://bellagio.mgmresorts.com/en/entertainment/o-by-cirque-du-soleil.html" target="_blank" rel="noopener"><span class="price">$125</span></a>
+                <span class="source-note">Service fee included; taxes excluded.</span>
+                <a class="source-label" href="https://bellagio.mgmresorts.com/en/entertainment/o-by-cirque-du-soleil.html" target="_blank" rel="noopener">Bellagio source</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td><span class="show-name">Michael Jackson ONE</span><span class="venue">Mandalay Bay</span></td>
+              <td>
+                <a class="price-link" href="https://spotlight.vegas/shows/cirque-du-soleil/michael-jackson-one/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$115</span></a>
+                <span class="source-note">Service fee may be added to some tickets.</span>
+                <a class="source-label" href="https://spotlight.vegas/shows/cirque-du-soleil/michael-jackson-one/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a>
+              </td>
+              <td>
+                <a class="price-link" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener"><span class="price">$100</span></a>
+                <span class="source-note">Displayed as including fees.</span>
+                <a class="source-label" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener">Vegas.com source</a>
+              </td>
+              <td>
+                <a class="price-link" href="https://mandalaybay.mgmresorts.com/en/entertainment/michael-jackson-one.html" target="_blank" rel="noopener"><span class="price">$99</span></a>
+                <span class="source-note">Service fee included; taxes excluded.</span>
+                <a class="source-label" href="https://mandalaybay.mgmresorts.com/en/entertainment/michael-jackson-one.html" target="_blank" rel="noopener">Mandalay Bay source</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td><span class="show-name">Mystère</span><span class="venue">Treasure Island</span></td>
+              <td>
+                <a class="price-link" href="https://spotlight.vegas/shows/cirque-du-soleil/mystere/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$84</span></a>
+                <span class="source-note">Service fee may be added to some tickets.</span>
+                <a class="source-label" href="https://spotlight.vegas/shows/cirque-du-soleil/mystere/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a>
+              </td>
+              <td>
+                <a class="price-link" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener"><span class="price">$56</span></a>
+                <span class="source-note sale">Current sale price · displayed as including fees.</span>
+                <a class="source-label" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener">Vegas.com source</a>
+              </td>
+              <td>
+                <a class="price-link" href="https://treasureisland.com/entertainment/mystere-by-cirque-du-soleil" target="_blank" rel="noopener"><span class="price">$59</span></a>
+                <span class="source-note">Box-office service fee included; Live Entertainment Tax excluded.</span>
+                <a class="source-label" href="https://treasureisland.com/entertainment/mystere-by-cirque-du-soleil" target="_blank" rel="noopener">Treasure Island source</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td><span class="show-name">KÀ by Cirque du Soleil</span><span class="venue">MGM Grand</span></td>
+              <td>
+                <a class="price-link" href="https://spotlight.vegas/shows/cirque-du-soleil/ka/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$80</span></a>
+                <span class="source-note">Service fee may be added to some tickets.</span>
+                <a class="source-label" href="https://spotlight.vegas/shows/cirque-du-soleil/ka/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a>
+              </td>
+              <td>
+                <a class="price-link" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener"><span class="price">$70</span></a>
+                <span class="source-note">Displayed as including fees.</span>
+                <a class="source-label" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener">Vegas.com source</a>
+              </td>
+              <td>
+                <a class="price-link" href="https://mgmgrand.mgmresorts.com/en/entertainment/ka-cirque-du-soleil-show.html" target="_blank" rel="noopener"><span class="price">$69</span></a>
+                <span class="source-note">Service fee included; taxes excluded.</span>
+                <a class="source-label" href="https://mgmgrand.mgmresorts.com/en/entertainment/ka-cirque-du-soleil-show.html" target="_blank" rel="noopener">MGM Grand source</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p class="scope-note"><strong>Why four shows instead of five?</strong> This pilot covers the four active Las Vegas productions currently branded as resident Cirque du Soleil shows: “O,” Michael Jackson ONE, Mystère and KÀ. Mad Apple ended its run, so it is not included as an active price observation.</p>
+  </section>
+
+  <section class="section" id="methodology" aria-labelledby="method-heading">
+    <p class="kicker">Methodology</p>
+    <h2 id="method-heading">We record the number the seller actually publishes.</h2>
+    <p class="section-lede">The point is reproducibility, not forcing three different checkout systems into fake precision.</p>
+
+    <div class="method-grid">
+      <article class="rule"><span class="n">01 · SNAPSHOT</span><h3>One observation date</h3><p>Every number in this pilot was checked on September 27, 2026. Prices can change after the observation date.</p></article>
+      <article class="rule"><span class="n">02 · PUBLIC PRICE</span><h3>Use the advertised “from” price</h3><p>We record the lowest explicit starting price the source publicly displays for the show. We do not calculate a lower price from a percentage-off promotion.</p></article>
+      <article class="rule"><span class="n">03 · NO NORMALIZATION</span><h3>Keep the seller’s fee basis</h3><p>If one seller includes fees and another may add them later, the table says so. We do not invent an adjusted price the seller never published.</p></article>
+      <article class="rule"><span class="n">04 · SPECIALS</span><h3>Label temporary sale pricing</h3><p>If a source explicitly publishes a current sale price, we record that displayed price and label it as a sale. Mystère on Vegas.com is the example in this snapshot.</p></article>
+      <article class="rule"><span class="n">05 · STANDARD TICKETS</span><h3>Skip upgrades and packages</h3><p>The index is built around standard show admission. VIP packages, dining bundles and other upgrades are not used as the starting-price observation.</p></article>
+      <article class="rule"><span class="n">06 · SOURCE IT</span><h3>Every number gets a link</h3><p>Each observation links to the page used to capture it so writers and readers can inspect the source instead of taking our table on faith.</p></article>
+    </div>
+
+    <div class="caveat"><strong>Don’t use this table as a guaranteed checkout quote.</strong><p>A “from” price can refer to different performances, seat categories or fee treatments across sellers. This dataset records advertised starting prices at a specific moment. It does not claim the three sellers are offering the same seat for the same performance.</p></div>
+  </section>
+
+  <section class="section" aria-labelledby="sources-heading">
+    <p class="kicker">Sources</p>
+    <h2 id="sources-heading">The three price surfaces in this pilot.</h2>
+    <div class="source-list">
+      <article class="source-card"><h3>Spotlight.Vegas</h3><p>Vegas Sidekick’s affiliate ticket partner. Individual show pages are checked for the advertised starting price.</p><a href="https://spotlight.vegas/shows/" target="_blank" rel="noopener">View Spotlight show listings →</a></article>
+      <article class="source-card"><h3>Vegas.com</h3><p>The current Cirque category listing is used as one consistent observation surface for all four shows.</p><a href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener">View Vegas.com Cirque listings →</a></article>
+      <article class="source-card"><h3>Official box offices</h3><p>Bellagio, Mandalay Bay, Treasure Island and MGM Grand provide the official-source observation for their resident productions.</p><a href="#snapshot-heading">See official links in the table →</a></article>
+    </div>
+
+    <div class="byline">
+      <img src="/images/kris-kidd.webp" alt="Kris Kidd" width="54" height="54" loading="lazy">
+      <div><small>Research maintained by</small><strong><a href="/about/kris-kidd/">Kris Kidd</a> · Vegas Sidekick</strong><p>Las Vegas local since 2005 · show ticketing since 2006</p></div>
+    </div>
+  </section>
+
+  <section class="endcap">
+    <h2>This is the pilot.</h2>
+    <p>If the format holds up, the next step is expanding the same methodology across the active Vegas Sidekick show catalog and preserving dated snapshots so price movement becomes measurable over time.</p>
+    <a href="/shows/cirque/">Browse the current Cirque show pages →</a>
+  </section>
+</main>
+
+<div id="vs-footer"></div>
+<script src="/components/header.js?v=21"></script>
+<script src="/components/footer.js?v=16"></script>
+</body>
+</html>
