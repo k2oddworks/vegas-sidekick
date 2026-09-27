@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Las Vegas Show Price Index: Cirque & Adult Shows | Vegas Sidekick</title>
-<meta name="description" content="A dated comparison of publicly advertised starting ticket prices for 15 Las Vegas shows across Spotlight.Vegas, Vegas.com and official ticket sources.">
+<title>Las Vegas Show Price Index | 71 Current Shows | Vegas Sidekick</title>
+<meta name="description" content="A dated price index covering 71 current Vegas Sidekick shows, comparing Spotlight.Vegas, Vegas.com and verified official ticket sources where published.">
 <link rel="canonical" href="https://vegassidekick.com/data/show-price-index/">
 <meta name="robots" content="noindex, follow">
 <meta property="og:type" content="website">
@@ -140,6 +140,18 @@ th{background:#f8f6fc;color:var(--muted);font:800 .65rem var(--display);text-tra
 .endcap h2{margin:0 0 8px;font:800 1.6rem var(--display)}
 .endcap p{max-width:730px;margin:0;color:#d9d0e4}
 .endcap a{display:inline-block;margin-top:16px;color:var(--lime);font:800 .8rem var(--display);text-underline-offset:4px}.endcap a+a{margin-left:18px}
+
+.filter-shell{margin:24px 0 18px;padding:16px;border:1px solid var(--line);border-radius:18px;background:#fbfaff;box-shadow:0 8px 22px rgba(23,18,37,.04)}
+.filter-line{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}.filter-line:first-child{margin-top:0}
+.filter-label{font:800 .62rem var(--display);letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-right:3px}
+.filter-pill{border:1px solid #ddd7ea;background:#fff;color:var(--ink);border-radius:999px;padding:8px 12px;font:700 .72rem var(--display);cursor:pointer;transition:.16s}
+.filter-pill:hover{border-color:#bda9e6}.filter-pill.active{background:#24103d;color:#fff;border-color:#24103d}
+.filter-search{flex:1;min-width:220px;border:1px solid #ddd7ea;background:#fff;border-radius:999px;padding:10px 14px;font:600 .8rem var(--body);outline:none}
+.filter-search:focus{border-color:var(--purple);box-shadow:0 0 0 3px rgba(124,58,237,.1)}
+.filter-select{border:1px solid #ddd7ea;background:#fff;border-radius:999px;padding:9px 32px 9px 13px;font:700 .72rem var(--display);color:var(--ink)}
+.filter-count{margin-left:auto;font:600 .68rem var(--mono);color:var(--muted)}
+.row-cat{display:none;margin-top:7px;font:800 .58rem var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--purple)}
+body.all-view .row-cat{display:block}
 @media(max-width:760px){
   .wrap{width:min(100% - 28px,1120px)}
   .crumb{padding-top:98px}
@@ -162,13 +174,8 @@ th{background:#f8f6fc;color:var(--muted);font:800 .65rem var(--display);text-tra
   <div class="wrap">
     <span class="eyebrow">Data Desk · Pilot</span>
     <h1>Vegas Sidekick <span>Show Price Index</span></h1>
-    <p class="hero-copy">A point-in-time record of the starting ticket prices Las Vegas shoppers are actually shown. This pilot now covers Cirque du Soleil and Adult Shows across Spotlight.Vegas, Vegas.com and official ticket sources.</p>
-    <div class="meta">
-      <span>Snapshot <b>Sep 27, 2026</b></span>
-      <span><b>15</b> indexed shows</span>
-      <span><b>45</b> source checks</span>
-      <span>Prices in <b>USD</b></span>
-    </div>
+    <p class="hero-copy">A point-in-time record of advertised starting ticket prices for every current show in the Vegas Sidekick catalog. Compare Spotlight.Vegas, Vegas.com and verified official ticket sources, then filter the full index by category, show name and source coverage.</p>
+    <div class="meta"><span>Snapshot <b>Sep 27, 2026</b></span><span><b>71</b> current shows</span><span><b>148</b> published prices recorded</span><span>Prices in <b>USD</b></span></div>
     <div class="hero-actions">
       <a class="download" href="/data/show-price-index/2026-09-27.csv" download>Download this snapshot · CSV</a>
       <a class="method-jump" href="#methodology">Read the methodology</a>
@@ -181,15 +188,21 @@ th{background:#f8f6fc;color:var(--muted);font:800 .65rem var(--display);text-tra
 
   <section class="section" aria-labelledby="snapshot-heading">
     <p class="kicker">September 27 snapshot</p>
-    <h2 id="snapshot-heading">15 shows. Three source types.</h2>
+    <h2 id="snapshot-heading">71 current shows. One searchable index.</h2>
     <p class="section-lede">These are the advertised starting prices shown by each seller. Mandatory ticketing fees are included in the advertised price. Nevada Live Entertainment Tax (LET) is recorded as displayed by the seller.</p>
 
     <div class="stats" aria-label="Snapshot summary">
-      <div class="stat"><strong>15</strong><span>active shows in this pilot</span></div>
-      <div class="stat"><strong>3</strong><span>ticket source types checked per show</span></div>
-      <div class="stat"><strong>41</strong><span>published starting prices found</span></div>
+      <div class="stat"><strong>71</strong><span>current Vegas Sidekick shows</span></div>
+      <div class="stat"><strong>148</strong><span>published prices recorded</span></div>
+      <div class="stat"><strong>16</strong><span>shows with all three prices</span></div>
     </div>
 
+    <div class="filter-shell" aria-label="Price index filters">
+      <div class="filter-line"><span class="filter-label">View</span><button class="filter-pill active" data-view="category">By category</button><button class="filter-pill" data-view="all">All shows A–Z</button><span class="filter-count" id="filter-count">71 shows</span></div>
+      <div class="filter-line"><input class="filter-search" id="show-filter" type="search" placeholder="Filter by show name…" aria-label="Filter shows by name"></div>
+      <div class="filter-line" id="category-pills"><span class="filter-label">Category</span><button class="filter-pill active" data-cat="all">All</button><button class="filter-pill" data-cat="cirque">Cirque</button><button class="filter-pill" data-cat="adult">Adult</button><button class="filter-pill" data-cat="comedy">Comedy</button><button class="filter-pill" data-cat="magic">Magic</button><button class="filter-pill" data-cat="music">Music</button><button class="filter-pill" data-cat="family">Family</button><button class="filter-pill" data-cat="spectaculars">Spectaculars</button></div>
+      <div class="filter-line"><span class="filter-label">Coverage</span><button class="filter-pill active" data-coverage="all">All</button><button class="filter-pill" data-coverage="complete">3 prices</button><button class="filter-pill" data-coverage="missing">Missing source</button><span class="filter-label" style="margin-left:8px">Sort</span><select class="filter-select" id="price-sort"><option value="name">Name A–Z</option><option value="low">Lowest published price</option><option value="high">Highest published price</option><option value="spread">Largest price spread</option></select></div>
+    </div>
     <div class="table-card">
       <div class="table-headnote">
         <span><b>Observed:</b> September 27, 2026</span>
@@ -206,152 +219,362 @@ th{background:#f8f6fc;color:var(--muted);font:800 .65rem var(--display);text-tra
               <th scope="col">Official box office</th>
             </tr>
           </thead>
-          <tbody>
-            <tr class="category-row"><th colspan="4">Cirque du Soleil · 4 shows <a href="/shows/cirque/">Browse category →</a></th></tr>
-<tr>
-              <td><span class="show-name">“O” by Cirque du Soleil</span><span class="venue">Bellagio</span></td>
-              <td>
-                <a class="price-link" href="https://spotlight.vegas/shows/cirque-du-soleil/o/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$121</span></a>
-                <a class="source-label" href="https://spotlight.vegas/shows/cirque-du-soleil/o/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a>
-              </td>
-              <td>
-                <a class="price-link" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener"><span class="price">$126</span></a>
-                <a class="source-label" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener">Vegas.com source</a>
-              </td>
-              <td>
-                <a class="price-link" href="https://bellagio.mgmresorts.com/en/entertainment/o-by-cirque-du-soleil.html" target="_blank" rel="noopener"><span class="price">$125</span></a>
-                <a class="source-label" href="https://bellagio.mgmresorts.com/en/entertainment/o-by-cirque-du-soleil.html" target="_blank" rel="noopener">Bellagio source</a>
-              </td>
-            </tr>
-
-            <tr>
-              <td><span class="show-name">Michael Jackson ONE</span><span class="venue">Mandalay Bay</span></td>
-              <td>
-                <a class="price-link" href="https://spotlight.vegas/shows/cirque-du-soleil/michael-jackson-one/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$115</span></a>
-                <a class="source-label" href="https://spotlight.vegas/shows/cirque-du-soleil/michael-jackson-one/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a>
-              </td>
-              <td>
-                <a class="price-link" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener"><span class="price">$100</span></a>
-                <a class="source-label" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener">Vegas.com source</a>
-              </td>
-              <td>
-                <a class="price-link" href="https://mandalaybay.mgmresorts.com/en/entertainment/michael-jackson-one.html" target="_blank" rel="noopener"><span class="price">$99</span></a>
-                <a class="source-label" href="https://mandalaybay.mgmresorts.com/en/entertainment/michael-jackson-one.html" target="_blank" rel="noopener">Mandalay Bay source</a>
-              </td>
-            </tr>
-
-            <tr>
-              <td><span class="show-name">Mystère</span><span class="venue">Treasure Island</span></td>
-              <td>
-                <a class="price-link" href="https://spotlight.vegas/shows/cirque-du-soleil/mystere/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$84</span></a>
-                <a class="source-label" href="https://spotlight.vegas/shows/cirque-du-soleil/mystere/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a>
-              </td>
-              <td>
-                <a class="price-link" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener"><span class="price">$56</span></a>
-                <span class="source-note sale">Current sale price.</span>
-                <a class="source-label" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener">Vegas.com source</a>
-              </td>
-              <td>
-                <a class="price-link" href="https://treasureisland.com/entertainment/mystere-by-cirque-du-soleil" target="_blank" rel="noopener"><span class="price">$59</span></a>
-                <a class="source-label" href="https://treasureisland.com/entertainment/mystere-by-cirque-du-soleil" target="_blank" rel="noopener">Treasure Island source</a>
-              </td>
-            </tr>
-
-            <tr>
-              <td><span class="show-name">KÀ by Cirque du Soleil</span><span class="venue">MGM Grand</span></td>
-              <td>
-                <a class="price-link" href="https://spotlight.vegas/shows/cirque-du-soleil/ka/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$80</span></a>
-                <a class="source-label" href="https://spotlight.vegas/shows/cirque-du-soleil/ka/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a>
-              </td>
-              <td>
-                <a class="price-link" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener"><span class="price">$70</span></a>
-                <a class="source-label" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener">Vegas.com source</a>
-              </td>
-              <td>
-                <a class="price-link" href="https://mgmgrand.mgmresorts.com/en/entertainment/ka-cirque-du-soleil-show.html" target="_blank" rel="noopener"><span class="price">$69</span></a>
-                <a class="source-label" href="https://mgmgrand.mgmresorts.com/en/entertainment/ka-cirque-du-soleil-show.html" target="_blank" rel="noopener">MGM Grand source</a>
-              </td>
-            </tr>
-
-            <tr class="category-row"><th colspan="4">Adult Shows · 11 shows <a href="/shows/adult/">Browse category →</a></th></tr>
-
-            <tr>
-              <td><span class="show-name">Atomic Saloon Show</span><span class="venue">The Venetian</span></td>
-              <td><a class="price-link" href="https://spotlight.vegas/shows/adult/atomic-saloon/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$100</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/atomic-saloon/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
-              <td><a class="price-link" href="https://www.vegas.com/shows/adult/atomic-saloon/" target="_blank" rel="noopener"><span class="price">$59</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/atomic-saloon/" target="_blank" rel="noopener">Vegas.com source</a></td>
-              <td><a class="price-link" href="https://spiegelworld.com/shows/atomic-saloon-show/" target="_blank" rel="noopener"><span class="price">$118.13</span></a><span class="source-note">Published as “around $118.13.”</span><a class="source-label" href="https://spiegelworld.com/shows/atomic-saloon-show/" target="_blank" rel="noopener">Official source</a></td>
-            </tr>
-
-            <tr>
-              <td><span class="show-name">Chippendales</span><span class="venue">Planet Hollywood</span></td>
-              <td><a class="price-link" href="https://spotlight.vegas/shows/adult/chippendales/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$76</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/chippendales/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
-              <td><a class="price-link" href="https://www.vegas.com/shows/adult/chippendales-las-vegas/" target="_blank" rel="noopener"><span class="price">$67</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/chippendales-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
-              <td><a class="price-link" href="https://chippendales.com/" target="_blank" rel="noopener"><span class="price">$66.85</span></a><a class="source-label" href="https://chippendales.com/" target="_blank" rel="noopener">Official source</a></td>
-            </tr>
-
-            <tr>
-              <td><span class="show-name">FANTASY</span><span class="venue">Luxor</span></td>
-              <td><a class="price-link" href="https://spotlight.vegas/shows/adult/fantasy/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$47</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/fantasy/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
-              <td><a class="price-link" href="https://www.vegas.com/shows/adult/fantasy-las-vegas/" target="_blank" rel="noopener"><span class="price">$40</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/fantasy-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
-              <td><a class="price-link" href="https://luxor.mgmresorts.com/en/entertainment/fantasy.html" target="_blank" rel="noopener"><span class="price">$39.95</span></a><a class="source-label" href="https://luxor.mgmresorts.com/en/entertainment/fantasy.html" target="_blank" rel="noopener">Luxor source</a></td>
-            </tr>
-
-            <tr>
-              <td><span class="show-name">Magic Mike Live</span><span class="venue">SAHARA Las Vegas</span></td>
-              <td><a class="price-link" href="https://spotlight.vegas/shows/adult/magic-mike-live/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$58</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/magic-mike-live/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
-              <td><a class="price-link" href="https://www.vegas.com/shows/adult/magic-mike-live-las-vegas/" target="_blank" rel="noopener"><span class="price">$50</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/magic-mike-live-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
-              <td><span class="na">—</span><span class="no-price">No public starting price found.</span><a class="source-label" href="https://magicmikelive.com/las-vegas/tickets/" target="_blank" rel="noopener">Official ticket source</a></td>
-            </tr>
-
-            <tr>
-              <td><span class="show-name">ROUGE</span><span class="venue">The STRAT</span></td>
-              <td><a class="price-link" href="https://spotlight.vegas/shows/adult/rouge/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$54</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/rouge/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
-              <td><a class="price-link" href="https://www.vegas.com/shows/adult/rouge-las-vegas/" target="_blank" rel="noopener"><span class="price">$46</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/rouge-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
-              <td><a class="price-link" href="https://www.rouge-vegas.com/tickets" target="_blank" rel="noopener"><span class="price">$83.93</span></a><span class="source-note">STRAT box-office starting price.</span><a class="source-label" href="https://www.rouge-vegas.com/tickets" target="_blank" rel="noopener">Official source</a></td>
-            </tr>
-
-            <tr>
-              <td><span class="show-name">The Empire Strips Back</span><span class="venue">Rio Hotel & Casino</span></td>
-              <td><a class="price-link" href="https://spotlight.vegas/shows/burlesque/empire-strips-back/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$35</span></a><a class="source-label" href="https://spotlight.vegas/shows/burlesque/empire-strips-back/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
-              <td><a class="price-link" href="https://www.vegas.com/shows/adult/the-empire-strips-back-burlesque-parody-las-vegas/" target="_blank" rel="noopener"><span class="price">$42</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/the-empire-strips-back-burlesque-parody-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
-              <td><a class="price-link" href="https://www.riolasvegas.com/shows/the-empire-strips-back" target="_blank" rel="noopener"><span class="price">$35</span></a><a class="source-label" href="https://www.riolasvegas.com/shows/the-empire-strips-back" target="_blank" rel="noopener">Official source</a></td>
-            </tr>
-
-            <tr>
-              <td><span class="show-name">Thunder From Down Under</span><span class="venue">Excalibur</span></td>
-              <td><a class="price-link" href="https://spotlight.vegas/shows/adult/thunder-from-down-under/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$70</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/thunder-from-down-under/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
-              <td><a class="price-link" href="https://www.vegas.com/shows/adult/thunder-from-down-under-las-vegas/" target="_blank" rel="noopener"><span class="price">$62</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/thunder-from-down-under-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
-              <td><a class="price-link" href="https://excalibur.mgmresorts.com/en/entertainment/thunder-from-down-under.html" target="_blank" rel="noopener"><span class="price">$62.16</span></a><a class="source-label" href="https://excalibur.mgmresorts.com/en/entertainment/thunder-from-down-under.html" target="_blank" rel="noopener">Excalibur source</a></td>
-            </tr>
-
-            <tr>
-              <td><span class="show-name">X Burlesque</span><span class="venue">Flamingo</span></td>
-              <td><a class="price-link" href="https://spotlight.vegas/shows/adult/x-burlesque/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$82</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/x-burlesque/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
-              <td><a class="price-link" href="https://www.vegas.com/shows/adult/x-burlesque-las-vegas/" target="_blank" rel="noopener"><span class="price">$78</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/x-burlesque-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
-              <td><a class="price-link" href="https://www.ticketmaster.com/x-burlesque-tickets/artist/1740540" target="_blank" rel="noopener"><span class="price">$69</span></a><a class="source-label" href="https://www.ticketmaster.com/x-burlesque-tickets/artist/1740540" target="_blank" rel="noopener">Official ticketing</a></td>
-            </tr>
-
-            <tr>
-              <td><span class="show-name">X Country</span><span class="venue">Harrah’s</span></td>
-              <td><a class="price-link" href="https://spotlight.vegas/shows/adult/x-country/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$65</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/x-country/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
-              <td><a class="price-link" href="https://www.vegas.com/shows/adult/x-country-las-vegas/" target="_blank" rel="noopener"><span class="price">$68</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/x-country-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
-              <td><span class="na">—</span><span class="no-price">No public starting price found.</span><a class="source-label" href="https://www.ticketmaster.com/x-country-tickets/artist/2171077" target="_blank" rel="noopener">Official ticket source</a></td>
-            </tr>
-
-            <tr>
-              <td><span class="show-name">X Rocks</span><span class="venue">Horseshoe Las Vegas</span></td>
-              <td><a class="price-link" href="https://spotlight.vegas/shows/adult/x-rocks/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$57</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/x-rocks/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
-              <td><a class="price-link" href="https://www.vegas.com/shows/adult/x-rocks-las-vegas/" target="_blank" rel="noopener"><span class="price">$63</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/x-rocks-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
-              <td><span class="na">—</span><span class="no-price">No public starting price found.</span><a class="source-label" href="https://www.ticketmaster.com/x-rocks-tickets/artist/1898867" target="_blank" rel="noopener">Official ticket source</a></td>
-            </tr>
-
-            <tr>
-              <td><span class="show-name">Zombie Burlesque</span><span class="venue">V Theater · Miracle Mile Shops</span></td>
-              <td><a class="price-link" href="https://spotlight.vegas/shows/adult/zombie-burlesque/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$51</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/zombie-burlesque/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
-              <td><a class="price-link" href="https://www.vegas.com/shows/adult/zombie-burlesque-las-vegas/" target="_blank" rel="noopener"><span class="price">$44</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/zombie-burlesque-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
-              <td><span class="na">—</span><span class="no-price">No public starting price found.</span><a class="source-label" href="https://vtheater.com/zombie-burlesque" target="_blank" rel="noopener">Official source</a></td>
-            </tr>
-          </tbody>
+          <tbody id="price-body"><tr class="category-row" data-category-heading="cirque"><th colspan="4">Cirque · 4 shows</th></tr><tr class="show-row" data-name="kà by cirque du soleil" data-category="cirque" data-complete="1" data-min="69" data-max="80" data-spread="11">
+      <td><span class="show-name">KÀ by Cirque du Soleil</span><span class="venue">KÀ Theatre – MGM Grand</span><span class="row-cat">Cirque</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/cirque-du-soleil/ka/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$80</span></a><a class="source-label" href="https://spotlight.vegas/shows/cirque-du-soleil/ka/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener"><span class="price">$70</span></a><a class="source-label" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><a class="price-link" href="https://mgmgrand.mgmresorts.com/en/entertainment/ka-cirque-du-soleil-show.html" target="_blank" rel="noopener"><span class="price">$69</span></a><a class="source-label" href="https://mgmgrand.mgmresorts.com/en/entertainment/ka-cirque-du-soleil-show.html" target="_blank" rel="noopener">MGM Grand</a></td>
+    </tr><tr class="show-row" data-name="michael jackson one by cirque du soleil" data-category="cirque" data-complete="1" data-min="99" data-max="115" data-spread="16">
+      <td><span class="show-name">Michael Jackson ONE by Cirque du Soleil</span><span class="venue">Mandalay Bay Theatre – The Mandalay Bay Hotel</span><span class="row-cat">Cirque</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/cirque-du-soleil/michael-jackson-one/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$115</span></a><a class="source-label" href="https://spotlight.vegas/shows/cirque-du-soleil/michael-jackson-one/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener"><span class="price">$100</span></a><a class="source-label" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><a class="price-link" href="https://mandalaybay.mgmresorts.com/en/entertainment/michael-jackson-one.html" target="_blank" rel="noopener"><span class="price">$99</span></a><a class="source-label" href="https://mandalaybay.mgmresorts.com/en/entertainment/michael-jackson-one.html" target="_blank" rel="noopener">Mandalay Bay</a></td>
+    </tr><tr class="show-row" data-name="mystère by cirque du soleil" data-category="cirque" data-complete="1" data-min="56" data-max="84" data-spread="28">
+      <td><span class="show-name">Mystère by Cirque du Soleil</span><span class="venue">Mystère Theatre – TI Hotel</span><span class="row-cat">Cirque</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/cirque-du-soleil/mystere/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$84</span></a><a class="source-label" href="https://spotlight.vegas/shows/cirque-du-soleil/mystere/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener"><span class="price">$56</span></a><a class="source-label" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><a class="price-link" href="https://treasureisland.com/entertainment/mystere-by-cirque-du-soleil" target="_blank" rel="noopener"><span class="price">$59</span></a><a class="source-label" href="https://treasureisland.com/entertainment/mystere-by-cirque-du-soleil" target="_blank" rel="noopener">Treasure Island</a></td>
+    </tr><tr class="show-row" data-name="o by cirque du soleil" data-category="cirque" data-complete="1" data-min="121" data-max="126" data-spread="5">
+      <td><span class="show-name">O by Cirque du Soleil</span><span class="venue">O Theatre – Bellagio</span><span class="row-cat">Cirque</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/cirque-du-soleil/o/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$121</span></a><a class="source-label" href="https://spotlight.vegas/shows/cirque-du-soleil/o/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener"><span class="price">$126</span></a><a class="source-label" href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><a class="price-link" href="https://bellagio.mgmresorts.com/en/entertainment/o-by-cirque-du-soleil.html" target="_blank" rel="noopener"><span class="price">$125</span></a><a class="source-label" href="https://bellagio.mgmresorts.com/en/entertainment/o-by-cirque-du-soleil.html" target="_blank" rel="noopener">Bellagio</a></td>
+    </tr><tr class="category-row" data-category-heading="adult"><th colspan="4">Adult · 11 shows</th></tr><tr class="show-row" data-name="atomic saloon show" data-category="adult" data-complete="1" data-min="59" data-max="118.13" data-spread="59.129999999999995">
+      <td><span class="show-name">Atomic Saloon Show</span><span class="venue">Waterfall Atrium Level 2M - Venetian</span><span class="row-cat">Adult</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/adult/atomic-saloon/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$100</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/atomic-saloon/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/adult/" target="_blank" rel="noopener"><span class="price">$59</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><a class="price-link" href="https://spiegelworld.com/shows/atomic-saloon-show/" target="_blank" rel="noopener"><span class="price">$118.13</span></a><a class="source-label" href="https://spiegelworld.com/shows/atomic-saloon-show/" target="_blank" rel="noopener">Official</a></td>
+    </tr><tr class="show-row" data-name="chippendales" data-category="adult" data-complete="1" data-min="66.85" data-max="76" data-spread="9.150000000000006">
+      <td><span class="show-name">Chippendales</span><span class="venue">Chippendales Theatre - Planet Hollywood</span><span class="row-cat">Adult</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/adult/chippendales/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$76</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/chippendales/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/adult/" target="_blank" rel="noopener"><span class="price">$67</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><a class="price-link" href="https://chippendales.com/" target="_blank" rel="noopener"><span class="price">$66.85</span></a><a class="source-label" href="https://chippendales.com/" target="_blank" rel="noopener">Official</a></td>
+    </tr><tr class="show-row" data-name="fantasy" data-category="adult" data-complete="1" data-min="39.95" data-max="47" data-spread="7.049999999999997">
+      <td><span class="show-name">Fantasy</span><span class="venue">Atrium Theater - Luxor Hotel</span><span class="row-cat">Adult</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/adult/fantasy/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$47</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/fantasy/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/adult/" target="_blank" rel="noopener"><span class="price">$40</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><a class="price-link" href="https://luxor.mgmresorts.com/en/entertainment/fantasy.html" target="_blank" rel="noopener"><span class="price">$39.95</span></a><a class="source-label" href="https://luxor.mgmresorts.com/en/entertainment/fantasy.html" target="_blank" rel="noopener">Luxor</a></td>
+    </tr><tr class="show-row" data-name="magic mike live" data-category="adult" data-complete="0" data-min="50" data-max="58" data-spread="8">
+      <td><span class="show-name">Magic Mike Live</span><span class="venue">MAGIC MIKE LIVE Theater - SAHARA Las Vegas</span><span class="row-cat">Adult</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/adult/magic-mike-live/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$58</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/magic-mike-live/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/adult/" target="_blank" rel="noopener"><span class="price">$50</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="rouge" data-category="adult" data-complete="1" data-min="46" data-max="83.93" data-spread="37.93000000000001">
+      <td><span class="show-name">Rouge</span><span class="venue">The STRAT Theater</span><span class="row-cat">Adult</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/adult/rouge/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$54</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/rouge/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/adult/" target="_blank" rel="noopener"><span class="price">$46</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><a class="price-link" href="https://www.rouge-vegas.com/tickets" target="_blank" rel="noopener"><span class="price">$83.93</span></a><a class="source-label" href="https://www.rouge-vegas.com/tickets" target="_blank" rel="noopener">Official</a></td>
+    </tr><tr class="show-row" data-name="the empire strips back — a burlesque parody" data-category="adult" data-complete="1" data-min="35" data-max="42" data-spread="7">
+      <td><span class="show-name">The Empire Strips Back — A Burlesque Parody</span><span class="venue">Empire Strips Back Theater - Rio Hotel</span><span class="row-cat">Adult</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/burlesque/empire-strips-back/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$35</span></a><a class="source-label" href="https://spotlight.vegas/shows/burlesque/empire-strips-back/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/adult/" target="_blank" rel="noopener"><span class="price">$42</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><a class="price-link" href="https://www.riolasvegas.com/shows/the-empire-strips-back" target="_blank" rel="noopener"><span class="price">$35</span></a><a class="source-label" href="https://www.riolasvegas.com/shows/the-empire-strips-back" target="_blank" rel="noopener">Rio</a></td>
+    </tr><tr class="show-row" data-name="thunder from down under" data-category="adult" data-complete="1" data-min="62" data-max="70" data-spread="8">
+      <td><span class="show-name">Thunder From Down Under</span><span class="venue">Thunderland Theater – Excalibur Hotel</span><span class="row-cat">Adult</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/adult/thunder-from-down-under/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$70</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/thunder-from-down-under/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/adult/" target="_blank" rel="noopener"><span class="price">$62</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><a class="price-link" href="https://excalibur.mgmresorts.com/en/entertainment/thunder-from-down-under.html" target="_blank" rel="noopener"><span class="price">$62.16</span></a><a class="source-label" href="https://excalibur.mgmresorts.com/en/entertainment/thunder-from-down-under.html" target="_blank" rel="noopener">Excalibur</a></td>
+    </tr><tr class="show-row" data-name="x burlesque" data-category="adult" data-complete="1" data-min="69" data-max="82" data-spread="13">
+      <td><span class="show-name">X Burlesque</span><span class="venue">Bugsy's Cabaret - Flamingo Hotel</span><span class="row-cat">Adult</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/adult/x-burlesque/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$82</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/x-burlesque/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/adult/" target="_blank" rel="noopener"><span class="price">$78</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><a class="price-link" href="https://www.ticketmaster.com/x-burlesque-tickets/artist/1740540" target="_blank" rel="noopener"><span class="price">$69</span></a><a class="source-label" href="https://www.ticketmaster.com/x-burlesque-tickets/artist/1740540" target="_blank" rel="noopener">Official ticketing</a></td>
+    </tr><tr class="show-row" data-name="x country" data-category="adult" data-complete="0" data-min="65" data-max="68" data-spread="3">
+      <td><span class="show-name">X Country</span><span class="venue">Harrah’s Cabaret – Harrah’s</span><span class="row-cat">Adult</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/adult/x-country/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$65</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/x-country/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/adult/" target="_blank" rel="noopener"><span class="price">$68</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="x rocks" data-category="adult" data-complete="0" data-min="57" data-max="63" data-spread="6">
+      <td><span class="show-name">X Rocks</span><span class="venue">X Rocks Theatre - Horseshoe Las Vegas</span><span class="row-cat">Adult</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/adult/x-rocks/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$57</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/x-rocks/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/adult/" target="_blank" rel="noopener"><span class="price">$63</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="zombie burlesque" data-category="adult" data-complete="0" data-min="44" data-max="51" data-spread="7">
+      <td><span class="show-name">Zombie Burlesque</span><span class="venue">V Theater - Miracle Mile Shops - Planet Hollywood Hotel</span><span class="row-cat">Adult</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/adult/zombie-burlesque/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$51</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/zombie-burlesque/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/adult/" target="_blank" rel="noopener"><span class="price">$44</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="category-row" data-category-heading="comedy"><th colspan="4">Comedy · 12 shows</th></tr><tr class="show-row" data-name="brad garrett's comedy club" data-category="comedy" data-complete="0" data-min="50" data-max="51" data-spread="1">
+      <td><span class="show-name">Brad Garrett's Comedy Club</span><span class="venue">The District - MGM Grand</span><span class="row-cat">Comedy</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/comedy/brad-garretts-comedy-club/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$51</span></a><a class="source-label" href="https://spotlight.vegas/shows/comedy/brad-garretts-comedy-club/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/comedy/brad-garrett-comedy-club/" target="_blank" rel="noopener"><span class="price">$50</span></a><a class="source-label" href="https://www.vegas.com/shows/comedy/brad-garrett-comedy-club/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="carrot top" data-category="comedy" data-complete="0" data-min="49" data-max="62" data-spread="13">
+      <td><span class="show-name">Carrot Top</span><span class="venue">Atrium Showroom at Luxor</span><span class="row-cat">Comedy</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/comedy/carrot-top/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$62</span></a><a class="source-label" href="https://spotlight.vegas/shows/comedy/carrot-top/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/comedy/" target="_blank" rel="noopener"><span class="price">$49</span></a><a class="source-label" href="https://www.vegas.com/shows/comedy/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="comedy cellar las vegas" data-category="comedy" data-complete="0" data-min="32" data-max="38" data-spread="6">
+      <td><span class="show-name">Comedy Cellar Las Vegas</span><span class="venue">Comedy Cellar - Rio Hotel</span><span class="row-cat">Comedy</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/comedy/comedy-cellar/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$38</span></a><a class="source-label" href="https://spotlight.vegas/shows/comedy/comedy-cellar/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/comedy/comedy-cellar/" target="_blank" rel="noopener"><span class="price">$32</span></a><a class="source-label" href="https://www.vegas.com/shows/comedy/comedy-cellar/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="jimmy kimmel's comedy club" data-category="comedy" data-complete="0" data-min="20" data-max="22" data-spread="2">
+      <td><span class="show-name">Jimmy Kimmel's Comedy Club</span><span class="venue">Jimmy Kimmel Comedy Club - The LINQ Promenade</span><span class="row-cat">Comedy</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/comedy/jimmy-kimmels-comedy-club/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$22</span></a><a class="source-label" href="https://spotlight.vegas/shows/comedy/jimmy-kimmels-comedy-club/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/comedy/" target="_blank" rel="noopener"><span class="price">$20</span></a><a class="source-label" href="https://www.vegas.com/shows/comedy/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="la comedy club las vegas" data-category="comedy" data-complete="0" data-min="35" data-max="35" data-spread="0">
+      <td><span class="show-name">LA Comedy Club Las Vegas</span><span class="venue">Dragon Room - The STRAT</span><span class="row-cat">Comedy</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/comedy/la-comedy-club/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$35</span></a><a class="source-label" href="https://spotlight.vegas/shows/comedy/la-comedy-club/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="las vegas live comedy club" data-category="comedy" data-complete="0" data-min="122" data-max="122" data-spread="0">
+      <td><span class="show-name">Las Vegas LIVE Comedy Club</span><span class="venue">V Theater - Miracle Mile Shops - Planet Hollywood Hotel</span><span class="row-cat">Comedy</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$122</span></a><a class="source-label" href="https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="laugh factory las vegas" data-category="comedy" data-complete="0" data-min="30" data-max="32" data-spread="2">
+      <td><span class="show-name">Laugh Factory Las Vegas</span><span class="venue">Laugh Factory at Horseshoe Las Vegas.</span><span class="row-cat">Comedy</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/comedy/laugh-factory/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$32</span></a><a class="source-label" href="https://spotlight.vegas/shows/comedy/laugh-factory/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/comedy/" target="_blank" rel="noopener"><span class="price">$30</span></a><a class="source-label" href="https://www.vegas.com/shows/comedy/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="marc savard comedy hypnosis" data-category="comedy" data-complete="0" data-min="20" data-max="28" data-spread="8">
+      <td><span class="show-name">Marc Savard Comedy Hypnosis</span><span class="venue">Nathan Burton Theater - Showcase Mall</span><span class="row-cat">Comedy</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/comedy/marc-savard-comedy-hypnosis/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$28</span></a><a class="source-label" href="https://spotlight.vegas/shows/comedy/marc-savard-comedy-hypnosis/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/hypnosis/marc-savard-las-vegas/" target="_blank" rel="noopener"><span class="price">$20</span></a><a class="source-label" href="https://www.vegas.com/shows/hypnosis/marc-savard-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="marriage can be murder" data-category="comedy" data-complete="0" data-min="95" data-max="95" data-spread="0">
+      <td><span class="show-name">Marriage Can Be Murder</span><span class="venue">Rio Hotel &amp; Casino - 3700 W Flamingo Rd</span><span class="row-cat">Comedy</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/comedy/marriage-can-be-murder/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$95</span></a><a class="source-label" href="https://spotlight.vegas/shows/comedy/marriage-can-be-murder/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="popovich comedy pet theater" data-category="comedy" data-complete="0" data-min="26" data-max="34" data-spread="8">
+      <td><span class="show-name">Popovich Comedy Pet Theater</span><span class="venue">V Theater - Miracle Mile Shops - Planet Hollywood Hotel</span><span class="row-cat">Comedy</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/comedy/popovich-comedy-pet-theater/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$34</span></a><a class="source-label" href="https://spotlight.vegas/shows/comedy/popovich-comedy-pet-theater/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/comedy/" target="_blank" rel="noopener"><span class="price">$26</span></a><a class="source-label" href="https://www.vegas.com/shows/comedy/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="steve falcon's comedy hypnosis hour" data-category="comedy" data-complete="0" data-min="58" data-max="64" data-spread="6">
+      <td><span class="show-name">Steve Falcon's Comedy Hypnosis Hour</span><span class="venue">The Underground Theater - MGM Grand</span><span class="row-cat">Comedy</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/comedy/steve-falcons-comedy-hypnosis-hour/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$58</span></a><a class="source-label" href="https://spotlight.vegas/shows/comedy/steve-falcons-comedy-hypnosis-hour/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/hypnosis/" target="_blank" rel="noopener"><span class="price">$64</span></a><a class="source-label" href="https://www.vegas.com/shows/hypnosis/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="tape face" data-category="comedy" data-complete="0" data-min="57" data-max="57" data-spread="0">
+      <td><span class="show-name">Tape Face</span><span class="venue">The Underground Theater - MGM Grand</span><span class="row-cat">Comedy</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/comedy/tape-face/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$57</span></a><a class="source-label" href="https://spotlight.vegas/shows/comedy/tape-face/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/comedy/" target="_blank" rel="noopener"><span class="price">$57</span></a><a class="source-label" href="https://www.vegas.com/shows/comedy/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="category-row" data-category-heading="magic"><th colspan="4">Magic · 15 shows</th></tr><tr class="show-row" data-name="allstars of magic" data-category="magic" data-complete="0" data-min="31" data-max="31" data-spread="0">
+      <td><span class="show-name">Allstars of Magic</span><span class="venue">V Theater - Miracle Mile Shops - Planet Hollywood Hotel</span><span class="row-cat">Magic</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/magic/allstars-of-magic/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$31</span></a><a class="source-label" href="https://spotlight.vegas/shows/magic/allstars-of-magic/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="an r-rated magic show" data-category="magic" data-complete="0" data-min="32" data-max="40" data-spread="8">
+      <td><span class="show-name">An R-Rated Magic Show</span><span class="venue">V Theater - Miracle Mile Shops - Planet Hollywood Hotel</span><span class="row-cat">Magic</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/magic/an-r-rated-magic-show/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$40</span></a><a class="source-label" href="https://spotlight.vegas/shows/magic/an-r-rated-magic-show/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/magic/an-r-rated-magic-show-las-vegas/" target="_blank" rel="noopener"><span class="price">$32</span></a><a class="source-label" href="https://www.vegas.com/shows/magic/an-r-rated-magic-show-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="colin cloud: mastermind" data-category="magic" data-complete="0" data-min="45" data-max="57" data-spread="12">
+      <td><span class="show-name">Colin Cloud: Mastermind</span><span class="venue">Harrah's Cabaret - Harrah’s Las Vegas</span><span class="row-cat">Magic</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/magic/colin-cloud/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$57</span></a><a class="source-label" href="https://spotlight.vegas/shows/magic/colin-cloud/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/comedy/" target="_blank" rel="noopener"><span class="price">$45</span></a><a class="source-label" href="https://www.vegas.com/shows/comedy/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="criss angel mindfreak" data-category="magic" data-complete="0" data-min="110" data-max="110" data-spread="0">
+      <td><span class="show-name">Criss Angel MINDFREAK</span><span class="venue">Criss Angel Theater – Planet Hollywood</span><span class="row-cat">Magic</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/magic/criss-angel/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$110</span></a><a class="source-label" href="https://spotlight.vegas/shows/magic/criss-angel/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="mac king comedy magic" data-category="magic" data-complete="1" data-min="45" data-max="52.95" data-spread="7.950000000000003">
+      <td><span class="show-name">Mac King Comedy Magic</span><span class="venue">Thunderland Theater- Excalibur</span><span class="row-cat">Magic</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/magic/mac-king/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$50</span></a><a class="source-label" href="https://spotlight.vegas/shows/magic/mac-king/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/magic/" target="_blank" rel="noopener"><span class="price">$45</span></a><a class="source-label" href="https://www.vegas.com/shows/magic/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><a class="price-link" href="https://excalibur.mgmresorts.com/en/entertainment/mackingcomedymagic.html" target="_blank" rel="noopener"><span class="price">$52.95</span></a><a class="source-label" href="https://excalibur.mgmresorts.com/en/entertainment/mackingcomedymagic.html" target="_blank" rel="noopener">Excalibur</a></td>
+    </tr><tr class="show-row" data-name="mat franco: magic reinvented nightly" data-category="magic" data-complete="0" data-min="50" data-max="57" data-spread="7">
+      <td><span class="show-name">Mat Franco: Magic Reinvented Nightly</span><span class="venue">Mat Franco Theater - The LINQ Hotel</span><span class="row-cat">Magic</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/magic/mat-franco/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$57</span></a><a class="source-label" href="https://spotlight.vegas/shows/magic/mat-franco/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/magic/mat-franco-las-vegas/" target="_blank" rel="noopener"><span class="price">$50</span></a><a class="source-label" href="https://www.vegas.com/shows/magic/mat-franco-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="mind2mind" data-category="magic" data-complete="0" data-min="54" data-max="82" data-spread="28">
+      <td><span class="show-name">MIND2MIND</span><span class="venue">Azul Lounge - Fontainebleau Las Vegas</span><span class="row-cat">Magic</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/magic/mind2mind/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$82</span></a><a class="source-label" href="https://spotlight.vegas/shows/magic/mind2mind/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/magic/mind2mind-las-vegas/" target="_blank" rel="noopener"><span class="price">$54</span></a><a class="source-label" href="https://www.vegas.com/shows/magic/mind2mind-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="nathan burton comedy magic" data-category="magic" data-complete="0" data-min="20" data-max="32" data-spread="12">
+      <td><span class="show-name">Nathan Burton Comedy Magic</span><span class="venue">Nathan Burton Theater - Showcase Mall</span><span class="row-cat">Magic</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/magic/nathan-burton-comedy-magic/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$32</span></a><a class="source-label" href="https://spotlight.vegas/shows/magic/nathan-burton-comedy-magic/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/magic/nathan-burton-comedy-magic-las-vegas/" target="_blank" rel="noopener"><span class="price">$20</span></a><a class="source-label" href="https://www.vegas.com/shows/magic/nathan-burton-comedy-magic-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="now you see me live" data-category="magic" data-complete="1" data-min="62.83" data-max="77" data-spread="14.170000000000002">
+      <td><span class="show-name">Now You See Me LIVE</span><span class="venue">MGM Grand Theater - MGM Grand</span><span class="row-cat">Magic</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/magic/now-you-see-me-live/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$72</span></a><a class="source-label" href="https://spotlight.vegas/shows/magic/now-you-see-me-live/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/magic/now-you-see-me-live-las-vegas/" target="_blank" rel="noopener"><span class="price">$77</span></a><a class="source-label" href="https://www.vegas.com/shows/magic/now-you-see-me-live-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><a class="price-link" href="https://mgmgrand.mgmresorts.com/en/entertainment/now-you-see-me-live.html" target="_blank" rel="noopener"><span class="price">$62.83</span></a><a class="source-label" href="https://mgmgrand.mgmresorts.com/en/entertainment/now-you-see-me-live.html" target="_blank" rel="noopener">MGM Grand</a></td>
+    </tr><tr class="show-row" data-name="paranormal" data-category="magic" data-complete="0" data-min="29" data-max="31" data-spread="2">
+      <td><span class="show-name">Paranormal</span><span class="venue">Laugh Factory at Horseshoe Las Vegas.</span><span class="row-cat">Magic</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/magic/paranormal/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$31</span></a><a class="source-label" href="https://spotlight.vegas/shows/magic/paranormal/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/hypnosis/" target="_blank" rel="noopener"><span class="price">$29</span></a><a class="source-label" href="https://www.vegas.com/shows/hypnosis/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="penn &amp; teller" data-category="magic" data-complete="0" data-min="58" data-max="66" data-spread="8">
+      <td><span class="show-name">Penn &amp; Teller</span><span class="venue">Penn &amp; Teller Theater - Rio Hotel</span><span class="row-cat">Magic</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/magic/penn-and-teller/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$66</span></a><a class="source-label" href="https://spotlight.vegas/shows/magic/penn-and-teller/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/magic/penn-and-teller-las-vegas/" target="_blank" rel="noopener"><span class="price">$58</span></a><a class="source-label" href="https://www.vegas.com/shows/magic/penn-and-teller-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="piff the magic dragon" data-category="magic" data-complete="0" data-min="39" data-max="45" data-spread="6">
+      <td><span class="show-name">Piff The Magic Dragon</span><span class="venue">Flamingo Showroom – Flamingo</span><span class="row-cat">Magic</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/magic/piff-the-magic-dragon/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$45</span></a><a class="source-label" href="https://spotlight.vegas/shows/magic/piff-the-magic-dragon/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/magic/piff-the-magic-dragon-las-vegas/" target="_blank" rel="noopener"><span class="price">$39</span></a><a class="source-label" href="https://www.vegas.com/shows/magic/piff-the-magic-dragon-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="shin lim: limitless" data-category="magic" data-complete="0" data-min="54" data-max="67" data-spread="13">
+      <td><span class="show-name">Shin Lim: LIMITLESS</span><span class="venue">Palazzo Theatre - Palazzo Hotel</span><span class="row-cat">Magic</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/magic/shin-lim/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$67</span></a><a class="source-label" href="https://spotlight.vegas/shows/magic/shin-lim/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/production/" target="_blank" rel="noopener"><span class="price">$54</span></a><a class="source-label" href="https://www.vegas.com/shows/production/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="the conjurors: secret wonders" data-category="magic" data-complete="0" data-min="37" data-max="44" data-spread="7">
+      <td><span class="show-name">The Conjurors: Secret Wonders</span><span class="venue">The Magicians Room</span><span class="row-cat">Magic</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/magic/the-conjurors/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$37</span></a><a class="source-label" href="https://spotlight.vegas/shows/magic/the-conjurors/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/magic/the-conjurors-las-vegas/" target="_blank" rel="noopener"><span class="price">$44</span></a><a class="source-label" href="https://www.vegas.com/shows/magic/the-conjurors-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="the mentalist" data-category="magic" data-complete="0" data-min="34" data-max="40" data-spread="6">
+      <td><span class="show-name">The Mentalist</span><span class="venue">V Theater - Miracle Mile Shops - Planet Hollywood Hotel</span><span class="row-cat">Magic</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/magic/the-mentalist/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$40</span></a><a class="source-label" href="https://spotlight.vegas/shows/magic/the-mentalist/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/hypnosis/the-mentalist-las-vegas/" target="_blank" rel="noopener"><span class="price">$34</span></a><a class="source-label" href="https://www.vegas.com/shows/hypnosis/the-mentalist-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="category-row" data-category-heading="music"><th colspan="4">Music · 22 shows</th></tr><tr class="show-row" data-name="all motown" data-category="music" data-complete="0" data-min="38" data-max="40" data-spread="2">
+      <td><span class="show-name">All Motown</span><span class="venue">Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave</span><span class="row-cat">Music</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/tribute/all-motown/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$40</span></a><a class="source-label" href="https://spotlight.vegas/shows/tribute/all-motown/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/tribute/all-motown-las-vegas/" target="_blank" rel="noopener"><span class="price">$38</span></a><a class="source-label" href="https://www.vegas.com/shows/tribute/all-motown-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="all shook up — tribute to the king" data-category="music" data-complete="0" data-min="47" data-max="58" data-spread="11">
+      <td><span class="show-name">All Shook Up — Tribute to the King</span><span class="venue">Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave</span><span class="row-cat">Music</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/tribute/all-shook-up/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$47</span></a><a class="source-label" href="https://spotlight.vegas/shows/tribute/all-shook-up/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/tribute/all-shook-up-las-vegas/" target="_blank" rel="noopener"><span class="price">$58</span></a><a class="source-label" href="https://www.vegas.com/shows/tribute/all-shook-up-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="barry manilow: the hits come home!" data-category="music" data-complete="0" data-min="91" data-max="91" data-spread="0">
+      <td><span class="show-name">Barry Manilow: The Hits Come Home!</span><span class="venue">International Theater at Westgate Las Vegas Resort &amp; Casino</span><span class="row-cat">Music</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/music/barry-manilow/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$91</span></a><a class="source-label" href="https://spotlight.vegas/shows/music/barry-manilow/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="blue man group" data-category="music" data-complete="1" data-min="57" data-max="68.36" data-spread="11.36">
+      <td><span class="show-name">Blue Man Group</span><span class="venue">Blue Man Theater - Luxor Hotel</span><span class="row-cat">Music</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/production/blue-man-group/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$68</span></a><a class="source-label" href="https://spotlight.vegas/shows/production/blue-man-group/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/production/blue-man-group-las-vegas/" target="_blank" rel="noopener"><span class="price">$57</span></a><a class="source-label" href="https://www.vegas.com/shows/production/blue-man-group-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><a class="price-link" href="https://www.blueman.com/las-vegas/buy-tickets" target="_blank" rel="noopener"><span class="price">$68.36</span></a><a class="source-label" href="https://www.blueman.com/las-vegas/buy-tickets" target="_blank" rel="noopener">Official</a></td>
+    </tr><tr class="show-row" data-name="donny osmond — donny" data-category="music" data-complete="0" data-min="95" data-max="95" data-spread="0">
+      <td><span class="show-name">Donny Osmond — DONNY</span><span class="venue">Harrah's Showroom - Harrah’s Las Vegas</span><span class="row-cat">Music</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/music/donny-osmond/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$95</span></a><a class="source-label" href="https://spotlight.vegas/shows/music/donny-osmond/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="ikons of rock" data-category="music" data-complete="0" data-min="62" data-max="81" data-spread="19">
+      <td><span class="show-name">Ikons of Rock</span><span class="venue">The STRAT Theater</span><span class="row-cat">Music</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/tribute/ikons-of-rock/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$62</span></a><a class="source-label" href="https://spotlight.vegas/shows/tribute/ikons-of-rock/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/tribute/ikons-of-rock-las-vegas/" target="_blank" rel="noopener"><span class="price">$81</span></a><a class="source-label" href="https://www.vegas.com/shows/tribute/ikons-of-rock-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="jabbawockeez" data-category="music" data-complete="1" data-min="59.96" data-max="81" data-spread="21.04">
+      <td><span class="show-name">Jabbawockeez</span><span class="venue">Jabbawockeez Theater - MGM Grand</span><span class="row-cat">Music</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/production/jabbawockeez/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$76</span></a><a class="source-label" href="https://spotlight.vegas/shows/production/jabbawockeez/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/dance/jabbawockeez-las-vegas/" target="_blank" rel="noopener"><span class="price">$81</span></a><a class="source-label" href="https://www.vegas.com/shows/dance/jabbawockeez-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><a class="price-link" href="https://mgmgrand.mgmresorts.com/en/entertainment/jabbawockeez.html" target="_blank" rel="noopener"><span class="price">$59.96</span></a><a class="source-label" href="https://mgmgrand.mgmresorts.com/en/entertainment/jabbawockeez.html" target="_blank" rel="noopener">MGM Grand</a></td>
+    </tr><tr class="show-row" data-name="king of diamonds" data-category="music" data-complete="0" data-min="40" data-max="40" data-spread="0">
+      <td><span class="show-name">King of Diamonds</span><span class="venue">Athena Showroom - Alexis Park Resort, 375 E Harmon Ave</span><span class="row-cat">Music</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/tribute/neil-diamond/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$40</span></a><a class="source-label" href="https://spotlight.vegas/shows/tribute/neil-diamond/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="mj live — michael jackson tribute concert" data-category="music" data-complete="0" data-min="54" data-max="61" data-spread="7">
+      <td><span class="show-name">MJ Live — Michael Jackson Tribute Concert</span><span class="venue">Saxe Theater - Miracle Mile Shops - Planet Hollywood Hotel</span><span class="row-cat">Music</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/tribute/mj-live-at-planet-hollywood/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$54</span></a><a class="source-label" href="https://spotlight.vegas/shows/tribute/mj-live-at-planet-hollywood/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/production/" target="_blank" rel="noopener"><span class="price">$61</span></a><a class="source-label" href="https://www.vegas.com/shows/production/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="motown brunch" data-category="music" data-complete="0" data-min="59" data-max="65" data-spread="6">
+      <td><span class="show-name">Motown Brunch</span><span class="venue">Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave</span><span class="row-cat">Music</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/music/motown-brunch/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$65</span></a><a class="source-label" href="https://spotlight.vegas/shows/music/motown-brunch/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/alexis-park/" target="_blank" rel="noopener"><span class="price">$59</span></a><a class="source-label" href="https://www.vegas.com/shows/alexis-park/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="piano man — a tribute to elton john &amp; billy joel" data-category="music" data-complete="0" data-min="42" data-max="49" data-spread="7">
+      <td><span class="show-name">Piano Man — A Tribute to Elton John &amp; Billy Joel</span><span class="venue">V Theater - Miracle Mile Shops - Planet Hollywood Hotel</span><span class="row-cat">Music</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/tribute/piano-man/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$49</span></a><a class="source-label" href="https://spotlight.vegas/shows/tribute/piano-man/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/tribute/piano-man-las-vegas/" target="_blank" rel="noopener"><span class="price">$42</span></a><a class="source-label" href="https://www.vegas.com/shows/tribute/piano-man-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="purple reign — the prince tribute show" data-category="music" data-complete="0" data-min="51" data-max="51" data-spread="0">
+      <td><span class="show-name">Purple Reign — The Prince Tribute Show</span><span class="venue">V Theater - Miracle Mile Shops - Planet Hollywood Hotel</span><span class="row-cat">Music</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/tribute/purple-reign/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$51</span></a><a class="source-label" href="https://spotlight.vegas/shows/tribute/purple-reign/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="queen selena" data-category="music" data-complete="0" data-min="38" data-max="40" data-spread="2">
+      <td><span class="show-name">Queen Selena</span><span class="venue">Pegasus Showroom - Alexis Park Resort, 375 E Harmon Ave</span><span class="row-cat">Music</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/tribute/queen-selena/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$40</span></a><a class="source-label" href="https://spotlight.vegas/shows/tribute/queen-selena/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/tribute/queen-selena-las-vegas/" target="_blank" rel="noopener"><span class="price">$38</span></a><a class="source-label" href="https://www.vegas.com/shows/tribute/queen-selena-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="rupaul's drag race live!" data-category="music" data-complete="0" data-min="71" data-max="80" data-spread="9">
+      <td><span class="show-name">RuPaul's Drag Race LIVE!</span><span class="venue">Flamingo Showroom - Flamingo</span><span class="row-cat">Music</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/production/rupauls-drag-race-live/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$80</span></a><a class="source-label" href="https://spotlight.vegas/shows/production/rupauls-drag-race-live/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/production/rupauls-drag-race-live/" target="_blank" rel="noopener"><span class="price">$71</span></a><a class="source-label" href="https://www.vegas.com/shows/production/rupauls-drag-race-live/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="sinatra live!" data-category="music" data-complete="0" data-min="40" data-max="40" data-spread="0">
+      <td><span class="show-name">Sinatra Live!</span><span class="venue">Alexis Steakhouse - Alexis Park Resort Hotel</span><span class="row-cat">Music</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/tribute/sinatra-live/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$40</span></a><a class="source-label" href="https://spotlight.vegas/shows/tribute/sinatra-live/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="sir elton" data-category="music" data-complete="0" data-min="38" data-max="40" data-spread="2">
+      <td><span class="show-name">Sir Elton</span><span class="venue">Pegasus Showroom - Alexis Park Resort, 375 E Harmon Ave</span><span class="row-cat">Music</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/tribute/sir-elton/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$40</span></a><a class="source-label" href="https://spotlight.vegas/shows/tribute/sir-elton/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/alexis-park/" target="_blank" rel="noopener"><span class="price">$38</span></a><a class="source-label" href="https://www.vegas.com/shows/alexis-park/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="the australian bee gees show" data-category="music" data-complete="1" data-min="36" data-max="41" data-spread="5">
+      <td><span class="show-name">The Australian Bee Gees Show</span><span class="venue">Thunderland Theater- Excalibur</span><span class="row-cat">Music</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/tribute/the-australian-bee-gees/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$36</span></a><a class="source-label" href="https://spotlight.vegas/shows/tribute/the-australian-bee-gees/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/tribute/australian-bee-gees/" target="_blank" rel="noopener"><span class="price">$41</span></a><a class="source-label" href="https://www.vegas.com/shows/tribute/australian-bee-gees/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><a class="price-link" href="https://excalibur.mgmresorts.com/en/entertainment/the-australian-bee-gees.html" target="_blank" rel="noopener"><span class="price">$36.76</span></a><a class="source-label" href="https://excalibur.mgmresorts.com/en/entertainment/the-australian-bee-gees.html" target="_blank" rel="noopener">Excalibur</a></td>
+    </tr><tr class="show-row" data-name="the king comes home" data-category="music" data-complete="0" data-min="41" data-max="54" data-spread="13">
+      <td><span class="show-name">The King Comes Home</span><span class="venue">Westgate Cabaret - Westgate Resort</span><span class="row-cat">Music</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/music/the-king-comes-home/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$54</span></a><a class="source-label" href="https://spotlight.vegas/shows/music/the-king-comes-home/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/tribute/the-king-comes-home-las-vegas/" target="_blank" rel="noopener"><span class="price">$41</span></a><a class="source-label" href="https://www.vegas.com/shows/tribute/the-king-comes-home-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="the rat pack is back!" data-category="music" data-complete="0" data-min="92" data-max="97" data-spread="5">
+      <td><span class="show-name">The Rat Pack Is Back!</span><span class="venue">Copa Room - Tuscany Suites &amp; Casino</span><span class="row-cat">Music</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/tribute/the-rat-pack-is-back/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$92</span></a><a class="source-label" href="https://spotlight.vegas/shows/tribute/the-rat-pack-is-back/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/tribute/rat-pack-is-back-las-vegas/" target="_blank" rel="noopener"><span class="price">$97</span></a><a class="source-label" href="https://www.vegas.com/shows/tribute/rat-pack-is-back-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="vegas! the show" data-category="music" data-complete="0" data-min="49" data-max="63" data-spread="14">
+      <td><span class="show-name">VEGAS! The Show</span><span class="venue">Saxe Theater - Miracle Mile Shops - Planet Hollywood Hotel</span><span class="row-cat">Music</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/production/vegas-the-show/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$63</span></a><a class="source-label" href="https://spotlight.vegas/shows/production/vegas-the-show/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/production/" target="_blank" rel="noopener"><span class="price">$49</span></a><a class="source-label" href="https://www.vegas.com/shows/production/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="wastin' away" data-category="music" data-complete="0" data-min="38" data-max="40" data-spread="2">
+      <td><span class="show-name">Wastin' Away</span><span class="venue">The Siren Poolside - Alexis Park Resort, 375 E Harmon Ave</span><span class="row-cat">Music</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/music/wastin-away/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$40</span></a><a class="source-label" href="https://spotlight.vegas/shows/music/wastin-away/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/alexis-park/" target="_blank" rel="noopener"><span class="price">$38</span></a><a class="source-label" href="https://www.vegas.com/shows/alexis-park/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="wayne newton: up close and personal" data-category="music" data-complete="0" data-min="84" data-max="88" data-spread="4">
+      <td><span class="show-name">Wayne Newton: Up Close and Personal</span><span class="venue">Bugsys Cabaret - Flamingo Hotel</span><span class="row-cat">Music</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/music/wayne-newton/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$84</span></a><a class="source-label" href="https://spotlight.vegas/shows/music/wayne-newton/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/variety/wayne-newton-las-vegas/" target="_blank" rel="noopener"><span class="price">$88</span></a><a class="source-label" href="https://www.vegas.com/shows/variety/wayne-newton-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="category-row" data-category-heading="family"><th colspan="4">Family · 3 shows</th></tr><tr class="show-row" data-name="battlebots: destruct-a-thon" data-category="family" data-complete="0" data-min="50" data-max="55" data-spread="5">
+      <td><span class="show-name">BattleBots: Destruct-A-Thon</span><span class="venue">BattleBots Arena - 4165 Koval Lane</span><span class="row-cat">Family</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/production/battlebots/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$55</span></a><a class="source-label" href="https://spotlight.vegas/shows/production/battlebots/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/variety/battlebots-las-vegas/" target="_blank" rel="noopener"><span class="price">$50</span></a><a class="source-label" href="https://www.vegas.com/shows/variety/battlebots-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="tournament of kings" data-category="family" data-complete="0" data-min="66" data-max="78" data-spread="12">
+      <td><span class="show-name">Tournament of Kings</span><span class="venue">King Arthur’s Arena – Excalibur Hotel</span><span class="row-cat">Family</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/production/tournament-of-kings/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$78</span></a><a class="source-label" href="https://spotlight.vegas/shows/production/tournament-of-kings/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/production/" target="_blank" rel="noopener"><span class="price">$66</span></a><a class="source-label" href="https://www.vegas.com/shows/production/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="v – the ultimate variety show" data-category="family" data-complete="0" data-min="35" data-max="41" data-spread="6">
+      <td><span class="show-name">V – The Ultimate Variety Show</span><span class="venue">V Theater - Miracle Mile Shops - Planet Hollywood Hotel</span><span class="row-cat">Family</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/production/v-the-ultimate-variety-show/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$41</span></a><a class="source-label" href="https://spotlight.vegas/shows/production/v-the-ultimate-variety-show/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/production/" target="_blank" rel="noopener"><span class="price">$35</span></a><a class="source-label" href="https://www.vegas.com/shows/production/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="category-row" data-category-heading="spectaculars"><th colspan="4">Spectaculars · 4 shows</th></tr><tr class="show-row" data-name="absinthe" data-category="spectaculars" data-complete="0" data-min="121" data-max="122" data-spread="1">
+      <td><span class="show-name">Absinthe</span><span class="venue">Spiegeltent – Caesars Palace</span><span class="row-cat">Spectaculars</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/production/absinthe/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$122</span></a><a class="source-label" href="https://spotlight.vegas/shows/production/absinthe/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/production/" target="_blank" rel="noopener"><span class="price">$121</span></a><a class="source-label" href="https://www.vegas.com/shows/production/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="america the show" data-category="spectaculars" data-complete="0" data-min="38" data-max="40" data-spread="2">
+      <td><span class="show-name">America The Show</span><span class="venue">Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave</span><span class="row-cat">Spectaculars</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/tribute/america-the-show/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$40</span></a><a class="source-label" href="https://spotlight.vegas/shows/tribute/america-the-show/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/variety/america-the-show-las-vegas/" target="_blank" rel="noopener"><span class="price">$38</span></a><a class="source-label" href="https://www.vegas.com/shows/variety/america-the-show-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="the wizard of oz at sphere" data-category="spectaculars" data-complete="0" data-min="122" data-max="123" data-spread="1">
+      <td><span class="show-name">The Wizard of Oz at Sphere</span><span class="venue">Sphere - 255 Sands Ave</span><span class="row-cat">Spectaculars</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/production/the-wizard-of-oz-at-sphere/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$123</span></a><a class="source-label" href="https://spotlight.vegas/shows/production/the-wizard-of-oz-at-sphere/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/variety/wizard-of-oz-sphere-las-vegas/" target="_blank" rel="noopener"><span class="price">$122</span></a><a class="source-label" href="https://www.vegas.com/shows/variety/wizard-of-oz-sphere-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr><tr class="show-row" data-name="wow – the vegas spectacular" data-category="spectaculars" data-complete="0" data-min="45" data-max="51" data-spread="6">
+      <td><span class="show-name">WOW – The Vegas Spectacular</span><span class="venue">Rio Showroom - Rio Hotel</span><span class="row-cat">Spectaculars</span></td>
+      <td><a class="price-link" href="https://spotlight.vegas/shows/production/wow-the-vegas-spectacular/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$51</span></a><a class="source-label" href="https://spotlight.vegas/shows/production/wow-the-vegas-spectacular/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+      <td><a class="price-link" href="https://www.vegas.com/shows/production/wow-las-vegas/" target="_blank" rel="noopener"><span class="price">$45</span></a><a class="source-label" href="https://www.vegas.com/shows/production/wow-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+      <td><span class="na">—</span><span class="no-price">Not recorded in this snapshot.</span></td>
+    </tr></tbody>
         </table>
       </div>
     </div>
@@ -376,11 +599,11 @@ th{background:#f8f6fc;color:var(--muted);font:800 .65rem var(--display);text-tra
 
   <section class="section" aria-labelledby="sources-heading">
     <p class="kicker">Sources</p>
-    <h2 id="sources-heading">The three price surfaces in this pilot.</h2>
+    <h2 id="sources-heading">Three source types, with gaps shown instead of guessed.</h2>
     <div class="source-list">
       <article class="source-card"><h3>Spotlight.Vegas <span class="partner">affiliate</span></h3><p>Individual Spotlight show pages are checked for the advertised starting price.</p><a href="https://spotlight.vegas/shows/ref/vegassidekick/" target="_blank" rel="sponsored noopener">View Spotlight show listings →</a></article>
-      <article class="source-card"><h3>Vegas.com</h3><p>Vegas.com show listings are checked for the currently advertised starting price.</p><a href="https://www.vegas.com/shows/" target="_blank" rel="noopener">View Vegas.com show listings →</a></article>
-      <article class="source-card"><h3>Official ticket sources</h3><p>Official venue, show or primary ticketing pages provide the third observation when they publish a starting price. If they do not, the table says so.</p><a href="#snapshot-heading">See official links in the table →</a></article>
+      <article class="source-card"><h3>Vegas.com</h3><p>Vegas.com show and category pages are checked for a published starting price. If a price was not verified for this snapshot, the table leaves it blank.</p><a href="https://www.vegas.com/shows/" target="_blank" rel="noopener">View Vegas.com show listings →</a></article>
+      <article class="source-card"><h3>Official ticket sources</h3><p>Official venue, show or primary ticketing pages are used only when a starting price is clearly published. Unverified official prices are shown as Not recorded.</p><a href="#snapshot-heading">See source links in the table →</a></article>
     </div>
 
     <p class="scope-note"><strong>Historical note:</strong> Mad Apple is excluded from the active index. The Cirque du Soleil production played its final performance at New York-New York on September 5, 2026.</p>
@@ -391,15 +614,39 @@ th{background:#f8f6fc;color:var(--muted);font:800 .65rem var(--display);text-tra
     </div>
   </section>
 
-  <section class="endcap">
-    <h2>This is the pilot.</h2>
-    <p>The pilot now covers Cirque du Soleil and Adult Shows. The next step is expanding the same methodology across the rest of the active Vegas Sidekick catalog while preserving dated snapshots so price movement becomes measurable over time.</p>
-    <a href="/shows/cirque/">Browse Cirque shows →</a><a href="/shows/adult/">Browse Adult shows →</a>
-  </section>
+  <section class="endcap"><h2>The current Vegas Sidekick catalog is now indexed.</h2><p>This snapshot includes only shows already carried by Vegas Sidekick. Future additions will enter the index when they are added to the site, and dated snapshots will preserve price movement over time.</p><a href="/shows/">Browse all Vegas Sidekick shows →</a></section>
 </main>
 
 <div id="vs-footer"></div>
 <script src="/components/header.js?v=21"></script>
 <script src="/components/footer.js?v=16"></script>
+<script id="price-index-filter">
+(function(){
+  const body=document.getElementById('price-body'), rows=[...body.querySelectorAll('.show-row')], heads=[...body.querySelectorAll('.category-row')];
+  const search=document.getElementById('show-filter'), sort=document.getElementById('price-sort'), count=document.getElementById('filter-count');
+  let view='category',cat='all',coverage='all';
+  const catOrder=["cirque","adult","comedy","magic","music","family","spectaculars"];
+  function visible(r){const q=search.value.trim().toLowerCase();return(!q||r.dataset.name.includes(q))&&(cat==='all'||r.dataset.category===cat)&&(coverage==='all'||(coverage==='complete'&&r.dataset.complete==='1')||(coverage==='missing'&&r.dataset.complete==='0'))}
+  function cmp(a,b){const mode=sort.value;if(mode==='low')return +a.dataset.min-+b.dataset.min||a.dataset.name.localeCompare(b.dataset.name);if(mode==='high')return +b.dataset.max-+a.dataset.max||a.dataset.name.localeCompare(b.dataset.name);if(mode==='spread')return +b.dataset.spread-+a.dataset.spread||a.dataset.name.localeCompare(b.dataset.name);return a.dataset.name.localeCompare(b.dataset.name)}
+  function render(){
+    document.body.classList.toggle('all-view',view==='all');
+    const shown=rows.filter(visible); rows.forEach(r=>r.hidden=!shown.includes(r));
+    heads.forEach(h=>h.hidden=true);
+    if(view==='all'){
+      shown.sort(cmp).forEach(r=>body.appendChild(r));
+    }else{
+      catOrder.forEach(c=>{
+        const h=heads.find(x=>x.dataset.categoryHeading===c), group=shown.filter(r=>r.dataset.category===c).sort(cmp);
+        if(group.length&&h){h.hidden=false;body.appendChild(h);group.forEach(r=>body.appendChild(r));}
+      });
+    }
+    count.textContent=shown.length+' show'+(shown.length===1?'':'s');
+  }
+  document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>{view=b.dataset.view;document.querySelectorAll('[data-view]').forEach(x=>x.classList.toggle('active',x===b));render()}));
+  document.querySelectorAll('[data-cat]').forEach(b=>b.addEventListener('click',()=>{cat=b.dataset.cat;document.querySelectorAll('[data-cat]').forEach(x=>x.classList.toggle('active',x===b));render()}));
+  document.querySelectorAll('[data-coverage]').forEach(b=>b.addEventListener('click',()=>{coverage=b.dataset.coverage;document.querySelectorAll('[data-coverage]').forEach(x=>x.classList.toggle('active',x===b));render()}));
+  search.addEventListener('input',render);sort.addEventListener('change',render);render();
+})();
+</script>
 </body>
 </html>
