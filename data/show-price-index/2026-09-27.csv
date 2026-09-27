@@ -1,46 +1,214 @@
 observed_date,category,show,venue,source,advertised_start_price_usd,price_note,source_url,affiliate_link
-2026-09-27,Cirque,O by Cirque du Soleil,Bellagio,Spotlight.Vegas,121,Advertised starting price,https://spotlight.vegas/shows/cirque-du-soleil/o/ref/vegassidekick,yes
-2026-09-27,Cirque,O by Cirque du Soleil,Bellagio,Vegas.com,126,Advertised starting price,https://www.vegas.com/shows/cirque-du-soleil/,no
-2026-09-27,Cirque,O by Cirque du Soleil,Bellagio,Official ticket source,125,Advertised starting price,https://bellagio.mgmresorts.com/en/entertainment/o-by-cirque-du-soleil.html,no
-2026-09-27,Cirque,Michael Jackson ONE,Mandalay Bay,Spotlight.Vegas,115,Advertised starting price,https://spotlight.vegas/shows/cirque-du-soleil/michael-jackson-one/ref/vegassidekick,yes
-2026-09-27,Cirque,Michael Jackson ONE,Mandalay Bay,Vegas.com,100,Advertised starting price,https://www.vegas.com/shows/cirque-du-soleil/,no
-2026-09-27,Cirque,Michael Jackson ONE,Mandalay Bay,Official ticket source,99,Advertised starting price,https://mandalaybay.mgmresorts.com/en/entertainment/michael-jackson-one.html,no
-2026-09-27,Cirque,Mystère by Cirque du Soleil,Treasure Island,Spotlight.Vegas,84,Advertised starting price,https://spotlight.vegas/shows/cirque-du-soleil/mystere/ref/vegassidekick,yes
-2026-09-27,Cirque,Mystère by Cirque du Soleil,Treasure Island,Vegas.com,56,Current sale price,https://www.vegas.com/shows/cirque-du-soleil/,no
-2026-09-27,Cirque,Mystère by Cirque du Soleil,Treasure Island,Official ticket source,59,Advertised starting price,https://treasureisland.com/entertainment/mystere-by-cirque-du-soleil,no
-2026-09-27,Cirque,KÀ by Cirque du Soleil,MGM Grand,Spotlight.Vegas,80,Advertised starting price,https://spotlight.vegas/shows/cirque-du-soleil/ka/ref/vegassidekick,yes
-2026-09-27,Cirque,KÀ by Cirque du Soleil,MGM Grand,Vegas.com,70,Advertised starting price,https://www.vegas.com/shows/cirque-du-soleil/,no
-2026-09-27,Cirque,KÀ by Cirque du Soleil,MGM Grand,Official ticket source,69,Advertised starting price,https://mgmgrand.mgmresorts.com/en/entertainment/ka-cirque-du-soleil-show.html,no
-2026-09-27,Adult,Atomic Saloon Show,The Venetian,Spotlight.Vegas,100,Advertised starting price,https://spotlight.vegas/shows/adult/atomic-saloon/ref/vegassidekick,yes
-2026-09-27,Adult,Atomic Saloon Show,The Venetian,Vegas.com,59,Advertised starting price,https://www.vegas.com/shows/adult/atomic-saloon/,no
-2026-09-27,Adult,Atomic Saloon Show,The Venetian,Official ticket source,118.13,Published as around $118.13,https://spiegelworld.com/shows/atomic-saloon-show/,no
-2026-09-27,Adult,Chippendales,Planet Hollywood,Spotlight.Vegas,76,Advertised starting price,https://spotlight.vegas/shows/adult/chippendales/ref/vegassidekick,yes
-2026-09-27,Adult,Chippendales,Planet Hollywood,Vegas.com,67,Advertised starting price,https://www.vegas.com/shows/adult/chippendales-las-vegas/,no
-2026-09-27,Adult,Chippendales,Planet Hollywood,Official ticket source,66.85,Advertised starting price,https://chippendales.com/,no
-2026-09-27,Adult,FANTASY,Luxor,Spotlight.Vegas,47,Advertised starting price,https://spotlight.vegas/shows/adult/fantasy/ref/vegassidekick,yes
-2026-09-27,Adult,FANTASY,Luxor,Vegas.com,40,Advertised starting price,https://www.vegas.com/shows/adult/fantasy-las-vegas/,no
-2026-09-27,Adult,FANTASY,Luxor,Official ticket source,39.95,Advertised starting price,https://luxor.mgmresorts.com/en/entertainment/fantasy.html,no
-2026-09-27,Adult,Magic Mike Live,SAHARA Las Vegas,Spotlight.Vegas,58,Advertised starting price,https://spotlight.vegas/shows/adult/magic-mike-live/ref/vegassidekick,yes
-2026-09-27,Adult,Magic Mike Live,SAHARA Las Vegas,Vegas.com,50,Advertised starting price,https://www.vegas.com/shows/adult/magic-mike-live-las-vegas/,no
-2026-09-27,Adult,Magic Mike Live,SAHARA Las Vegas,Official ticket source,,No public starting price found,https://magicmikelive.com/las-vegas/tickets/,no
-2026-09-27,Adult,ROUGE,The STRAT,Spotlight.Vegas,54,Advertised starting price,https://spotlight.vegas/shows/adult/rouge/ref/vegassidekick,yes
-2026-09-27,Adult,ROUGE,The STRAT,Vegas.com,46,Advertised starting price,https://www.vegas.com/shows/adult/rouge-las-vegas/,no
-2026-09-27,Adult,ROUGE,The STRAT,Official ticket source,83.93,STRAT box-office starting price,https://www.rouge-vegas.com/tickets,no
-2026-09-27,Adult,The Empire Strips Back,Rio Hotel & Casino,Spotlight.Vegas,35,Advertised starting price,https://spotlight.vegas/shows/burlesque/empire-strips-back/ref/vegassidekick,yes
-2026-09-27,Adult,The Empire Strips Back,Rio Hotel & Casino,Vegas.com,42,Advertised starting price,https://www.vegas.com/shows/adult/the-empire-strips-back-burlesque-parody-las-vegas/,no
-2026-09-27,Adult,The Empire Strips Back,Rio Hotel & Casino,Official ticket source,35,Advertised starting price,https://www.riolasvegas.com/shows/the-empire-strips-back,no
-2026-09-27,Adult,Thunder From Down Under,Excalibur,Spotlight.Vegas,70,Advertised starting price,https://spotlight.vegas/shows/adult/thunder-from-down-under/ref/vegassidekick,yes
-2026-09-27,Adult,Thunder From Down Under,Excalibur,Vegas.com,62,Advertised starting price,https://www.vegas.com/shows/adult/thunder-from-down-under-las-vegas/,no
-2026-09-27,Adult,Thunder From Down Under,Excalibur,Official ticket source,62.16,Advertised starting price,https://excalibur.mgmresorts.com/en/entertainment/thunder-from-down-under.html,no
-2026-09-27,Adult,X Burlesque,Flamingo,Spotlight.Vegas,82,Advertised starting price,https://spotlight.vegas/shows/adult/x-burlesque/ref/vegassidekick,yes
-2026-09-27,Adult,X Burlesque,Flamingo,Vegas.com,78,Advertised starting price,https://www.vegas.com/shows/adult/x-burlesque-las-vegas/,no
-2026-09-27,Adult,X Burlesque,Flamingo,Official ticket source,69,Advertised starting price,https://www.ticketmaster.com/x-burlesque-tickets/artist/1740540,no
-2026-09-27,Adult,X Country,Harrah’s,Spotlight.Vegas,65,Advertised starting price,https://spotlight.vegas/shows/adult/x-country/ref/vegassidekick,yes
-2026-09-27,Adult,X Country,Harrah’s,Vegas.com,68,Advertised starting price,https://www.vegas.com/shows/adult/x-country-las-vegas/,no
-2026-09-27,Adult,X Country,Harrah’s,Official ticket source,,No public starting price found,https://www.ticketmaster.com/x-country-tickets/artist/2171077,no
-2026-09-27,Adult,X Rocks,Horseshoe Las Vegas,Spotlight.Vegas,57,Advertised starting price,https://spotlight.vegas/shows/adult/x-rocks/ref/vegassidekick,yes
-2026-09-27,Adult,X Rocks,Horseshoe Las Vegas,Vegas.com,63,Advertised starting price,https://www.vegas.com/shows/adult/x-rocks-las-vegas/,no
-2026-09-27,Adult,X Rocks,Horseshoe Las Vegas,Official ticket source,,No public starting price found,https://www.ticketmaster.com/x-rocks-tickets/artist/1898867,no
-2026-09-27,Adult,Zombie Burlesque,V Theater · Miracle Mile Shops,Spotlight.Vegas,51,Advertised starting price,https://spotlight.vegas/shows/adult/zombie-burlesque/ref/vegassidekick,yes
-2026-09-27,Adult,Zombie Burlesque,V Theater · Miracle Mile Shops,Vegas.com,44,Advertised starting price,https://www.vegas.com/shows/adult/zombie-burlesque-las-vegas/,no
-2026-09-27,Adult,Zombie Burlesque,V Theater · Miracle Mile Shops,Official ticket source,,No public starting price found,https://vtheater.com/zombie-burlesque,no
+2026-09-27,Cirque,KÀ by Cirque du Soleil,KÀ Theatre – MGM Grand,Spotlight.Vegas,80,Advertised starting price,https://spotlight.vegas/shows/cirque-du-soleil/ka/ref/vegassidekick,yes
+2026-09-27,Cirque,KÀ by Cirque du Soleil,KÀ Theatre – MGM Grand,Vegas.com,70,Advertised starting price,https://www.vegas.com/shows/cirque-du-soleil/,no
+2026-09-27,Cirque,KÀ by Cirque du Soleil,KÀ Theatre – MGM Grand,Official ticket source,69,Advertised starting price,https://mgmgrand.mgmresorts.com/en/entertainment/ka-cirque-du-soleil-show.html,no
+2026-09-27,Cirque,Michael Jackson ONE by Cirque du Soleil,Mandalay Bay Theatre – The Mandalay Bay Hotel,Spotlight.Vegas,115,Advertised starting price,https://spotlight.vegas/shows/cirque-du-soleil/michael-jackson-one/ref/vegassidekick,yes
+2026-09-27,Cirque,Michael Jackson ONE by Cirque du Soleil,Mandalay Bay Theatre – The Mandalay Bay Hotel,Vegas.com,100,Advertised starting price,https://www.vegas.com/shows/cirque-du-soleil/,no
+2026-09-27,Cirque,Michael Jackson ONE by Cirque du Soleil,Mandalay Bay Theatre – The Mandalay Bay Hotel,Official ticket source,99,Advertised starting price,https://mandalaybay.mgmresorts.com/en/entertainment/michael-jackson-one.html,no
+2026-09-27,Cirque,Mystère by Cirque du Soleil,Mystère Theatre – TI Hotel,Spotlight.Vegas,84,Advertised starting price,https://spotlight.vegas/shows/cirque-du-soleil/mystere/ref/vegassidekick,yes
+2026-09-27,Cirque,Mystère by Cirque du Soleil,Mystère Theatre – TI Hotel,Vegas.com,56,Advertised starting price,https://www.vegas.com/shows/cirque-du-soleil/,no
+2026-09-27,Cirque,Mystère by Cirque du Soleil,Mystère Theatre – TI Hotel,Official ticket source,59,Advertised starting price,https://treasureisland.com/entertainment/mystere-by-cirque-du-soleil,no
+2026-09-27,Cirque,O by Cirque du Soleil,O Theatre – Bellagio,Spotlight.Vegas,121,Advertised starting price,https://spotlight.vegas/shows/cirque-du-soleil/o/ref/vegassidekick,yes
+2026-09-27,Cirque,O by Cirque du Soleil,O Theatre – Bellagio,Vegas.com,126,Advertised starting price,https://www.vegas.com/shows/cirque-du-soleil/,no
+2026-09-27,Cirque,O by Cirque du Soleil,O Theatre – Bellagio,Official ticket source,125,Advertised starting price,https://bellagio.mgmresorts.com/en/entertainment/o-by-cirque-du-soleil.html,no
+2026-09-27,Adult,Atomic Saloon Show,Waterfall Atrium Level 2M - Venetian,Spotlight.Vegas,100,Advertised starting price,https://spotlight.vegas/shows/adult/atomic-saloon/ref/vegassidekick,yes
+2026-09-27,Adult,Atomic Saloon Show,Waterfall Atrium Level 2M - Venetian,Vegas.com,59,Advertised starting price,https://www.vegas.com/shows/adult/,no
+2026-09-27,Adult,Atomic Saloon Show,Waterfall Atrium Level 2M - Venetian,Official ticket source,118.13,Advertised starting price,https://spiegelworld.com/shows/atomic-saloon-show/,no
+2026-09-27,Adult,Chippendales,Chippendales Theatre - Planet Hollywood,Spotlight.Vegas,76,Advertised starting price,https://spotlight.vegas/shows/adult/chippendales/ref/vegassidekick,yes
+2026-09-27,Adult,Chippendales,Chippendales Theatre - Planet Hollywood,Vegas.com,67,Advertised starting price,https://www.vegas.com/shows/adult/,no
+2026-09-27,Adult,Chippendales,Chippendales Theatre - Planet Hollywood,Official ticket source,66.85,Advertised starting price,https://chippendales.com/,no
+2026-09-27,Adult,Fantasy,Atrium Theater - Luxor Hotel,Spotlight.Vegas,47,Advertised starting price,https://spotlight.vegas/shows/adult/fantasy/ref/vegassidekick,yes
+2026-09-27,Adult,Fantasy,Atrium Theater - Luxor Hotel,Vegas.com,40,Advertised starting price,https://www.vegas.com/shows/adult/,no
+2026-09-27,Adult,Fantasy,Atrium Theater - Luxor Hotel,Official ticket source,39.95,Advertised starting price,https://luxor.mgmresorts.com/en/entertainment/fantasy.html,no
+2026-09-27,Adult,Magic Mike Live,MAGIC MIKE LIVE Theater - SAHARA Las Vegas,Spotlight.Vegas,58,Advertised starting price,https://spotlight.vegas/shows/adult/magic-mike-live/ref/vegassidekick,yes
+2026-09-27,Adult,Magic Mike Live,MAGIC MIKE LIVE Theater - SAHARA Las Vegas,Vegas.com,50,Advertised starting price,https://www.vegas.com/shows/adult/,no
+2026-09-27,Adult,Magic Mike Live,MAGIC MIKE LIVE Theater - SAHARA Las Vegas,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Adult,Rouge,The STRAT Theater,Spotlight.Vegas,54,Advertised starting price,https://spotlight.vegas/shows/adult/rouge/ref/vegassidekick,yes
+2026-09-27,Adult,Rouge,The STRAT Theater,Vegas.com,46,Advertised starting price,https://www.vegas.com/shows/adult/,no
+2026-09-27,Adult,Rouge,The STRAT Theater,Official ticket source,83.93,Advertised starting price,https://www.rouge-vegas.com/tickets,no
+2026-09-27,Adult,The Empire Strips Back — A Burlesque Parody,Empire Strips Back Theater - Rio Hotel,Spotlight.Vegas,35,Advertised starting price,https://spotlight.vegas/shows/burlesque/empire-strips-back/ref/vegassidekick,yes
+2026-09-27,Adult,The Empire Strips Back — A Burlesque Parody,Empire Strips Back Theater - Rio Hotel,Vegas.com,42,Advertised starting price,https://www.vegas.com/shows/adult/,no
+2026-09-27,Adult,The Empire Strips Back — A Burlesque Parody,Empire Strips Back Theater - Rio Hotel,Official ticket source,35,Advertised starting price,https://www.riolasvegas.com/shows/the-empire-strips-back,no
+2026-09-27,Adult,Thunder From Down Under,Thunderland Theater – Excalibur Hotel,Spotlight.Vegas,70,Advertised starting price,https://spotlight.vegas/shows/adult/thunder-from-down-under/ref/vegassidekick,yes
+2026-09-27,Adult,Thunder From Down Under,Thunderland Theater – Excalibur Hotel,Vegas.com,62,Advertised starting price,https://www.vegas.com/shows/adult/,no
+2026-09-27,Adult,Thunder From Down Under,Thunderland Theater – Excalibur Hotel,Official ticket source,62.16,Advertised starting price,https://excalibur.mgmresorts.com/en/entertainment/thunder-from-down-under.html,no
+2026-09-27,Adult,X Burlesque,Bugsy's Cabaret - Flamingo Hotel,Spotlight.Vegas,82,Advertised starting price,https://spotlight.vegas/shows/adult/x-burlesque/ref/vegassidekick,yes
+2026-09-27,Adult,X Burlesque,Bugsy's Cabaret - Flamingo Hotel,Vegas.com,78,Advertised starting price,https://www.vegas.com/shows/adult/,no
+2026-09-27,Adult,X Burlesque,Bugsy's Cabaret - Flamingo Hotel,Official ticket source,69,Advertised starting price,https://www.ticketmaster.com/x-burlesque-tickets/artist/1740540,no
+2026-09-27,Adult,X Country,Harrah’s Cabaret – Harrah’s,Spotlight.Vegas,65,Advertised starting price,https://spotlight.vegas/shows/adult/x-country/ref/vegassidekick,yes
+2026-09-27,Adult,X Country,Harrah’s Cabaret – Harrah’s,Vegas.com,68,Advertised starting price,https://www.vegas.com/shows/adult/,no
+2026-09-27,Adult,X Country,Harrah’s Cabaret – Harrah’s,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Adult,X Rocks,X Rocks Theatre - Horseshoe Las Vegas,Spotlight.Vegas,57,Advertised starting price,https://spotlight.vegas/shows/adult/x-rocks/ref/vegassidekick,yes
+2026-09-27,Adult,X Rocks,X Rocks Theatre - Horseshoe Las Vegas,Vegas.com,63,Advertised starting price,https://www.vegas.com/shows/adult/,no
+2026-09-27,Adult,X Rocks,X Rocks Theatre - Horseshoe Las Vegas,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Adult,Zombie Burlesque,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Spotlight.Vegas,51,Advertised starting price,https://spotlight.vegas/shows/adult/zombie-burlesque/ref/vegassidekick,yes
+2026-09-27,Adult,Zombie Burlesque,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Vegas.com,44,Advertised starting price,https://www.vegas.com/shows/adult/,no
+2026-09-27,Adult,Zombie Burlesque,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Comedy,Brad Garrett's Comedy Club,The District - MGM Grand,Spotlight.Vegas,51,Advertised starting price,https://spotlight.vegas/shows/comedy/brad-garretts-comedy-club/ref/vegassidekick,yes
+2026-09-27,Comedy,Brad Garrett's Comedy Club,The District - MGM Grand,Vegas.com,50,Advertised starting price,https://www.vegas.com/shows/comedy/brad-garrett-comedy-club/,no
+2026-09-27,Comedy,Brad Garrett's Comedy Club,The District - MGM Grand,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Comedy,Carrot Top,Atrium Showroom at Luxor,Spotlight.Vegas,62,Advertised starting price,https://spotlight.vegas/shows/comedy/carrot-top/ref/vegassidekick,yes
+2026-09-27,Comedy,Carrot Top,Atrium Showroom at Luxor,Vegas.com,49,Advertised starting price,https://www.vegas.com/shows/comedy/,no
+2026-09-27,Comedy,Carrot Top,Atrium Showroom at Luxor,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Comedy,Comedy Cellar Las Vegas,Comedy Cellar - Rio Hotel,Spotlight.Vegas,38,Advertised starting price,https://spotlight.vegas/shows/comedy/comedy-cellar/ref/vegassidekick,yes
+2026-09-27,Comedy,Comedy Cellar Las Vegas,Comedy Cellar - Rio Hotel,Vegas.com,32,Advertised starting price,https://www.vegas.com/shows/comedy/comedy-cellar/,no
+2026-09-27,Comedy,Comedy Cellar Las Vegas,Comedy Cellar - Rio Hotel,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Comedy,Jimmy Kimmel's Comedy Club,Jimmy Kimmel Comedy Club - The LINQ Promenade,Spotlight.Vegas,22,Advertised starting price,https://spotlight.vegas/shows/comedy/jimmy-kimmels-comedy-club/ref/vegassidekick,yes
+2026-09-27,Comedy,Jimmy Kimmel's Comedy Club,Jimmy Kimmel Comedy Club - The LINQ Promenade,Vegas.com,20,Advertised starting price,https://www.vegas.com/shows/comedy/,no
+2026-09-27,Comedy,Jimmy Kimmel's Comedy Club,Jimmy Kimmel Comedy Club - The LINQ Promenade,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Comedy,LA Comedy Club Las Vegas,Dragon Room - The STRAT,Spotlight.Vegas,35,Advertised starting price,https://spotlight.vegas/shows/comedy/la-comedy-club/ref/vegassidekick,yes
+2026-09-27,Comedy,LA Comedy Club Las Vegas,Dragon Room - The STRAT,Vegas.com,,Not recorded in this snapshot,,no
+2026-09-27,Comedy,LA Comedy Club Las Vegas,Dragon Room - The STRAT,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Comedy,Las Vegas LIVE Comedy Club,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Spotlight.Vegas,122,Advertised starting price,https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick,yes
+2026-09-27,Comedy,Las Vegas LIVE Comedy Club,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Vegas.com,,Not recorded in this snapshot,,no
+2026-09-27,Comedy,Las Vegas LIVE Comedy Club,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Comedy,Laugh Factory Las Vegas,Laugh Factory at Horseshoe Las Vegas.,Spotlight.Vegas,32,Advertised starting price,https://spotlight.vegas/shows/comedy/laugh-factory/ref/vegassidekick,yes
+2026-09-27,Comedy,Laugh Factory Las Vegas,Laugh Factory at Horseshoe Las Vegas.,Vegas.com,30,Advertised starting price,https://www.vegas.com/shows/comedy/,no
+2026-09-27,Comedy,Laugh Factory Las Vegas,Laugh Factory at Horseshoe Las Vegas.,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Comedy,Marc Savard Comedy Hypnosis,Nathan Burton Theater - Showcase Mall,Spotlight.Vegas,28,Advertised starting price,https://spotlight.vegas/shows/comedy/marc-savard-comedy-hypnosis/ref/vegassidekick,yes
+2026-09-27,Comedy,Marc Savard Comedy Hypnosis,Nathan Burton Theater - Showcase Mall,Vegas.com,20,Advertised starting price,https://www.vegas.com/shows/hypnosis/marc-savard-las-vegas/,no
+2026-09-27,Comedy,Marc Savard Comedy Hypnosis,Nathan Burton Theater - Showcase Mall,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Comedy,Marriage Can Be Murder,Rio Hotel & Casino - 3700 W Flamingo Rd,Spotlight.Vegas,95,Advertised starting price,https://spotlight.vegas/shows/comedy/marriage-can-be-murder/ref/vegassidekick,yes
+2026-09-27,Comedy,Marriage Can Be Murder,Rio Hotel & Casino - 3700 W Flamingo Rd,Vegas.com,,Not recorded in this snapshot,,no
+2026-09-27,Comedy,Marriage Can Be Murder,Rio Hotel & Casino - 3700 W Flamingo Rd,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Comedy,Popovich Comedy Pet Theater,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Spotlight.Vegas,34,Advertised starting price,https://spotlight.vegas/shows/comedy/popovich-comedy-pet-theater/ref/vegassidekick,yes
+2026-09-27,Comedy,Popovich Comedy Pet Theater,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Vegas.com,26,Advertised starting price,https://www.vegas.com/shows/comedy/,no
+2026-09-27,Comedy,Popovich Comedy Pet Theater,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Comedy,Steve Falcon's Comedy Hypnosis Hour,The Underground Theater - MGM Grand,Spotlight.Vegas,58,Advertised starting price,https://spotlight.vegas/shows/comedy/steve-falcons-comedy-hypnosis-hour/ref/vegassidekick,yes
+2026-09-27,Comedy,Steve Falcon's Comedy Hypnosis Hour,The Underground Theater - MGM Grand,Vegas.com,64,Advertised starting price,https://www.vegas.com/shows/hypnosis/,no
+2026-09-27,Comedy,Steve Falcon's Comedy Hypnosis Hour,The Underground Theater - MGM Grand,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Comedy,Tape Face,The Underground Theater - MGM Grand,Spotlight.Vegas,57,Advertised starting price,https://spotlight.vegas/shows/comedy/tape-face/ref/vegassidekick,yes
+2026-09-27,Comedy,Tape Face,The Underground Theater - MGM Grand,Vegas.com,57,Advertised starting price,https://www.vegas.com/shows/comedy/,no
+2026-09-27,Comedy,Tape Face,The Underground Theater - MGM Grand,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Magic,Allstars of Magic,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Spotlight.Vegas,31,Advertised starting price,https://spotlight.vegas/shows/magic/allstars-of-magic/ref/vegassidekick,yes
+2026-09-27,Magic,Allstars of Magic,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Vegas.com,,Not recorded in this snapshot,,no
+2026-09-27,Magic,Allstars of Magic,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Magic,An R-Rated Magic Show,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Spotlight.Vegas,40,Advertised starting price,https://spotlight.vegas/shows/magic/an-r-rated-magic-show/ref/vegassidekick,yes
+2026-09-27,Magic,An R-Rated Magic Show,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Vegas.com,32,Advertised starting price,https://www.vegas.com/shows/magic/an-r-rated-magic-show-las-vegas/,no
+2026-09-27,Magic,An R-Rated Magic Show,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Magic,Colin Cloud: Mastermind,Harrah's Cabaret - Harrah’s Las Vegas,Spotlight.Vegas,57,Advertised starting price,https://spotlight.vegas/shows/magic/colin-cloud/ref/vegassidekick,yes
+2026-09-27,Magic,Colin Cloud: Mastermind,Harrah's Cabaret - Harrah’s Las Vegas,Vegas.com,45,Advertised starting price,https://www.vegas.com/shows/comedy/,no
+2026-09-27,Magic,Colin Cloud: Mastermind,Harrah's Cabaret - Harrah’s Las Vegas,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Magic,Criss Angel MINDFREAK,Criss Angel Theater – Planet Hollywood,Spotlight.Vegas,110,Advertised starting price,https://spotlight.vegas/shows/magic/criss-angel/ref/vegassidekick,yes
+2026-09-27,Magic,Criss Angel MINDFREAK,Criss Angel Theater – Planet Hollywood,Vegas.com,,Not recorded in this snapshot,,no
+2026-09-27,Magic,Criss Angel MINDFREAK,Criss Angel Theater – Planet Hollywood,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Magic,Mac King Comedy Magic,Thunderland Theater- Excalibur,Spotlight.Vegas,50,Advertised starting price,https://spotlight.vegas/shows/magic/mac-king/ref/vegassidekick,yes
+2026-09-27,Magic,Mac King Comedy Magic,Thunderland Theater- Excalibur,Vegas.com,45,Advertised starting price,https://www.vegas.com/shows/magic/,no
+2026-09-27,Magic,Mac King Comedy Magic,Thunderland Theater- Excalibur,Official ticket source,52.95,Advertised starting price,https://excalibur.mgmresorts.com/en/entertainment/mackingcomedymagic.html,no
+2026-09-27,Magic,Mat Franco: Magic Reinvented Nightly,Mat Franco Theater - The LINQ Hotel,Spotlight.Vegas,57,Advertised starting price,https://spotlight.vegas/shows/magic/mat-franco/ref/vegassidekick,yes
+2026-09-27,Magic,Mat Franco: Magic Reinvented Nightly,Mat Franco Theater - The LINQ Hotel,Vegas.com,50,Advertised starting price,https://www.vegas.com/shows/magic/mat-franco-las-vegas/,no
+2026-09-27,Magic,Mat Franco: Magic Reinvented Nightly,Mat Franco Theater - The LINQ Hotel,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Magic,MIND2MIND,Azul Lounge - Fontainebleau Las Vegas,Spotlight.Vegas,82,Advertised starting price,https://spotlight.vegas/shows/magic/mind2mind/ref/vegassidekick,yes
+2026-09-27,Magic,MIND2MIND,Azul Lounge - Fontainebleau Las Vegas,Vegas.com,54,Advertised starting price,https://www.vegas.com/shows/magic/mind2mind-las-vegas/,no
+2026-09-27,Magic,MIND2MIND,Azul Lounge - Fontainebleau Las Vegas,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Magic,Nathan Burton Comedy Magic,Nathan Burton Theater - Showcase Mall,Spotlight.Vegas,32,Advertised starting price,https://spotlight.vegas/shows/magic/nathan-burton-comedy-magic/ref/vegassidekick,yes
+2026-09-27,Magic,Nathan Burton Comedy Magic,Nathan Burton Theater - Showcase Mall,Vegas.com,20,Advertised starting price,https://www.vegas.com/shows/magic/nathan-burton-comedy-magic-las-vegas/,no
+2026-09-27,Magic,Nathan Burton Comedy Magic,Nathan Burton Theater - Showcase Mall,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Magic,Now You See Me LIVE,MGM Grand Theater - MGM Grand,Spotlight.Vegas,72,Advertised starting price,https://spotlight.vegas/shows/magic/now-you-see-me-live/ref/vegassidekick,yes
+2026-09-27,Magic,Now You See Me LIVE,MGM Grand Theater - MGM Grand,Vegas.com,77,Advertised starting price,https://www.vegas.com/shows/magic/now-you-see-me-live-las-vegas/,no
+2026-09-27,Magic,Now You See Me LIVE,MGM Grand Theater - MGM Grand,Official ticket source,62.83,Advertised starting price,https://mgmgrand.mgmresorts.com/en/entertainment/now-you-see-me-live.html,no
+2026-09-27,Magic,Paranormal,Laugh Factory at Horseshoe Las Vegas.,Spotlight.Vegas,31,Advertised starting price,https://spotlight.vegas/shows/magic/paranormal/ref/vegassidekick,yes
+2026-09-27,Magic,Paranormal,Laugh Factory at Horseshoe Las Vegas.,Vegas.com,29,Advertised starting price,https://www.vegas.com/shows/hypnosis/,no
+2026-09-27,Magic,Paranormal,Laugh Factory at Horseshoe Las Vegas.,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Magic,Penn & Teller,Penn & Teller Theater - Rio Hotel,Spotlight.Vegas,66,Advertised starting price,https://spotlight.vegas/shows/magic/penn-and-teller/ref/vegassidekick,yes
+2026-09-27,Magic,Penn & Teller,Penn & Teller Theater - Rio Hotel,Vegas.com,58,Advertised starting price,https://www.vegas.com/shows/magic/penn-and-teller-las-vegas/,no
+2026-09-27,Magic,Penn & Teller,Penn & Teller Theater - Rio Hotel,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Magic,Piff The Magic Dragon,Flamingo Showroom – Flamingo,Spotlight.Vegas,45,Advertised starting price,https://spotlight.vegas/shows/magic/piff-the-magic-dragon/ref/vegassidekick,yes
+2026-09-27,Magic,Piff The Magic Dragon,Flamingo Showroom – Flamingo,Vegas.com,39,Advertised starting price,https://www.vegas.com/shows/magic/piff-the-magic-dragon-las-vegas/,no
+2026-09-27,Magic,Piff The Magic Dragon,Flamingo Showroom – Flamingo,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Magic,Shin Lim: LIMITLESS,Palazzo Theatre - Palazzo Hotel,Spotlight.Vegas,67,Advertised starting price,https://spotlight.vegas/shows/magic/shin-lim/ref/vegassidekick,yes
+2026-09-27,Magic,Shin Lim: LIMITLESS,Palazzo Theatre - Palazzo Hotel,Vegas.com,54,Advertised starting price,https://www.vegas.com/shows/production/,no
+2026-09-27,Magic,Shin Lim: LIMITLESS,Palazzo Theatre - Palazzo Hotel,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Magic,The Conjurors: Secret Wonders,The Magicians Room,Spotlight.Vegas,37,Advertised starting price,https://spotlight.vegas/shows/magic/the-conjurors/ref/vegassidekick,yes
+2026-09-27,Magic,The Conjurors: Secret Wonders,The Magicians Room,Vegas.com,44,Advertised starting price,https://www.vegas.com/shows/magic/the-conjurors-las-vegas/,no
+2026-09-27,Magic,The Conjurors: Secret Wonders,The Magicians Room,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Magic,The Mentalist,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Spotlight.Vegas,40,Advertised starting price,https://spotlight.vegas/shows/magic/the-mentalist/ref/vegassidekick,yes
+2026-09-27,Magic,The Mentalist,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Vegas.com,34,Advertised starting price,https://www.vegas.com/shows/hypnosis/the-mentalist-las-vegas/,no
+2026-09-27,Magic,The Mentalist,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Music,All Motown,"Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",Spotlight.Vegas,40,Advertised starting price,https://spotlight.vegas/shows/tribute/all-motown/ref/vegassidekick,yes
+2026-09-27,Music,All Motown,"Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",Vegas.com,38,Advertised starting price,https://www.vegas.com/shows/tribute/all-motown-las-vegas/,no
+2026-09-27,Music,All Motown,"Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Music,All Shook Up — Tribute to the King,"Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",Spotlight.Vegas,47,Advertised starting price,https://spotlight.vegas/shows/tribute/all-shook-up/ref/vegassidekick,yes
+2026-09-27,Music,All Shook Up — Tribute to the King,"Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",Vegas.com,58,Advertised starting price,https://www.vegas.com/shows/tribute/all-shook-up-las-vegas/,no
+2026-09-27,Music,All Shook Up — Tribute to the King,"Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Music,Barry Manilow: The Hits Come Home!,International Theater at Westgate Las Vegas Resort & Casino,Spotlight.Vegas,91,Advertised starting price,https://spotlight.vegas/shows/music/barry-manilow/ref/vegassidekick,yes
+2026-09-27,Music,Barry Manilow: The Hits Come Home!,International Theater at Westgate Las Vegas Resort & Casino,Vegas.com,,Not recorded in this snapshot,,no
+2026-09-27,Music,Barry Manilow: The Hits Come Home!,International Theater at Westgate Las Vegas Resort & Casino,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Music,Blue Man Group,Blue Man Theater - Luxor Hotel,Spotlight.Vegas,68,Advertised starting price,https://spotlight.vegas/shows/production/blue-man-group/ref/vegassidekick,yes
+2026-09-27,Music,Blue Man Group,Blue Man Theater - Luxor Hotel,Vegas.com,57,Advertised starting price,https://www.vegas.com/shows/production/blue-man-group-las-vegas/,no
+2026-09-27,Music,Blue Man Group,Blue Man Theater - Luxor Hotel,Official ticket source,68.36,Advertised starting price,https://www.blueman.com/las-vegas/buy-tickets,no
+2026-09-27,Music,Donny Osmond — DONNY,Harrah's Showroom - Harrah’s Las Vegas,Spotlight.Vegas,95,Advertised starting price,https://spotlight.vegas/shows/music/donny-osmond/ref/vegassidekick,yes
+2026-09-27,Music,Donny Osmond — DONNY,Harrah's Showroom - Harrah’s Las Vegas,Vegas.com,,Not recorded in this snapshot,,no
+2026-09-27,Music,Donny Osmond — DONNY,Harrah's Showroom - Harrah’s Las Vegas,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Music,Ikons of Rock,The STRAT Theater,Spotlight.Vegas,62,Advertised starting price,https://spotlight.vegas/shows/tribute/ikons-of-rock/ref/vegassidekick,yes
+2026-09-27,Music,Ikons of Rock,The STRAT Theater,Vegas.com,81,Advertised starting price,https://www.vegas.com/shows/tribute/ikons-of-rock-las-vegas/,no
+2026-09-27,Music,Ikons of Rock,The STRAT Theater,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Music,Jabbawockeez,Jabbawockeez Theater - MGM Grand,Spotlight.Vegas,76,Advertised starting price,https://spotlight.vegas/shows/production/jabbawockeez/ref/vegassidekick,yes
+2026-09-27,Music,Jabbawockeez,Jabbawockeez Theater - MGM Grand,Vegas.com,81,Advertised starting price,https://www.vegas.com/shows/dance/jabbawockeez-las-vegas/,no
+2026-09-27,Music,Jabbawockeez,Jabbawockeez Theater - MGM Grand,Official ticket source,59.96,Advertised starting price,https://mgmgrand.mgmresorts.com/en/entertainment/jabbawockeez.html,no
+2026-09-27,Music,King of Diamonds,"Athena Showroom - Alexis Park Resort, 375 E Harmon Ave",Spotlight.Vegas,40,Advertised starting price,https://spotlight.vegas/shows/tribute/neil-diamond/ref/vegassidekick,yes
+2026-09-27,Music,King of Diamonds,"Athena Showroom - Alexis Park Resort, 375 E Harmon Ave",Vegas.com,,Not recorded in this snapshot,,no
+2026-09-27,Music,King of Diamonds,"Athena Showroom - Alexis Park Resort, 375 E Harmon Ave",Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Music,MJ Live — Michael Jackson Tribute Concert,Saxe Theater - Miracle Mile Shops - Planet Hollywood Hotel,Spotlight.Vegas,54,Advertised starting price,https://spotlight.vegas/shows/tribute/mj-live-at-planet-hollywood/ref/vegassidekick,yes
+2026-09-27,Music,MJ Live — Michael Jackson Tribute Concert,Saxe Theater - Miracle Mile Shops - Planet Hollywood Hotel,Vegas.com,61,Advertised starting price,https://www.vegas.com/shows/production/,no
+2026-09-27,Music,MJ Live — Michael Jackson Tribute Concert,Saxe Theater - Miracle Mile Shops - Planet Hollywood Hotel,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Music,Motown Brunch,"Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",Spotlight.Vegas,65,Advertised starting price,https://spotlight.vegas/shows/music/motown-brunch/ref/vegassidekick,yes
+2026-09-27,Music,Motown Brunch,"Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",Vegas.com,59,Advertised starting price,https://www.vegas.com/shows/alexis-park/,no
+2026-09-27,Music,Motown Brunch,"Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Music,Piano Man — A Tribute to Elton John & Billy Joel,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Spotlight.Vegas,49,Advertised starting price,https://spotlight.vegas/shows/tribute/piano-man/ref/vegassidekick,yes
+2026-09-27,Music,Piano Man — A Tribute to Elton John & Billy Joel,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Vegas.com,42,Advertised starting price,https://www.vegas.com/shows/tribute/piano-man-las-vegas/,no
+2026-09-27,Music,Piano Man — A Tribute to Elton John & Billy Joel,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Music,Purple Reign — The Prince Tribute Show,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Spotlight.Vegas,51,Advertised starting price,https://spotlight.vegas/shows/tribute/purple-reign/ref/vegassidekick,yes
+2026-09-27,Music,Purple Reign — The Prince Tribute Show,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Vegas.com,,Not recorded in this snapshot,,no
+2026-09-27,Music,Purple Reign — The Prince Tribute Show,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Music,Queen Selena,"Pegasus Showroom - Alexis Park Resort, 375 E Harmon Ave",Spotlight.Vegas,40,Advertised starting price,https://spotlight.vegas/shows/tribute/queen-selena/ref/vegassidekick,yes
+2026-09-27,Music,Queen Selena,"Pegasus Showroom - Alexis Park Resort, 375 E Harmon Ave",Vegas.com,38,Advertised starting price,https://www.vegas.com/shows/tribute/queen-selena-las-vegas/,no
+2026-09-27,Music,Queen Selena,"Pegasus Showroom - Alexis Park Resort, 375 E Harmon Ave",Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Music,RuPaul's Drag Race LIVE!,Flamingo Showroom - Flamingo,Spotlight.Vegas,80,Advertised starting price,https://spotlight.vegas/shows/production/rupauls-drag-race-live/ref/vegassidekick,yes
+2026-09-27,Music,RuPaul's Drag Race LIVE!,Flamingo Showroom - Flamingo,Vegas.com,71,Advertised starting price,https://www.vegas.com/shows/production/rupauls-drag-race-live/,no
+2026-09-27,Music,RuPaul's Drag Race LIVE!,Flamingo Showroom - Flamingo,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Music,Sinatra Live!,Alexis Steakhouse - Alexis Park Resort Hotel,Spotlight.Vegas,40,Advertised starting price,https://spotlight.vegas/shows/tribute/sinatra-live/ref/vegassidekick,yes
+2026-09-27,Music,Sinatra Live!,Alexis Steakhouse - Alexis Park Resort Hotel,Vegas.com,,Not recorded in this snapshot,,no
+2026-09-27,Music,Sinatra Live!,Alexis Steakhouse - Alexis Park Resort Hotel,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Music,Sir Elton,"Pegasus Showroom - Alexis Park Resort, 375 E Harmon Ave",Spotlight.Vegas,40,Advertised starting price,https://spotlight.vegas/shows/tribute/sir-elton/ref/vegassidekick,yes
+2026-09-27,Music,Sir Elton,"Pegasus Showroom - Alexis Park Resort, 375 E Harmon Ave",Vegas.com,38,Advertised starting price,https://www.vegas.com/shows/alexis-park/,no
+2026-09-27,Music,Sir Elton,"Pegasus Showroom - Alexis Park Resort, 375 E Harmon Ave",Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Music,The Australian Bee Gees Show,Thunderland Theater- Excalibur,Spotlight.Vegas,36,Advertised starting price,https://spotlight.vegas/shows/tribute/the-australian-bee-gees/ref/vegassidekick,yes
+2026-09-27,Music,The Australian Bee Gees Show,Thunderland Theater- Excalibur,Vegas.com,41,Advertised starting price,https://www.vegas.com/shows/tribute/australian-bee-gees/,no
+2026-09-27,Music,The Australian Bee Gees Show,Thunderland Theater- Excalibur,Official ticket source,36.76,Advertised starting price,https://excalibur.mgmresorts.com/en/entertainment/the-australian-bee-gees.html,no
+2026-09-27,Music,The King Comes Home,Westgate Cabaret - Westgate Resort,Spotlight.Vegas,54,Advertised starting price,https://spotlight.vegas/shows/music/the-king-comes-home/ref/vegassidekick,yes
+2026-09-27,Music,The King Comes Home,Westgate Cabaret - Westgate Resort,Vegas.com,41,Advertised starting price,https://www.vegas.com/shows/tribute/the-king-comes-home-las-vegas/,no
+2026-09-27,Music,The King Comes Home,Westgate Cabaret - Westgate Resort,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Music,The Rat Pack Is Back!,Copa Room - Tuscany Suites & Casino,Spotlight.Vegas,92,Advertised starting price,https://spotlight.vegas/shows/tribute/the-rat-pack-is-back/ref/vegassidekick,yes
+2026-09-27,Music,The Rat Pack Is Back!,Copa Room - Tuscany Suites & Casino,Vegas.com,97,Advertised starting price,https://www.vegas.com/shows/tribute/rat-pack-is-back-las-vegas/,no
+2026-09-27,Music,The Rat Pack Is Back!,Copa Room - Tuscany Suites & Casino,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Music,VEGAS! The Show,Saxe Theater - Miracle Mile Shops - Planet Hollywood Hotel,Spotlight.Vegas,63,Advertised starting price,https://spotlight.vegas/shows/production/vegas-the-show/ref/vegassidekick,yes
+2026-09-27,Music,VEGAS! The Show,Saxe Theater - Miracle Mile Shops - Planet Hollywood Hotel,Vegas.com,49,Advertised starting price,https://www.vegas.com/shows/production/,no
+2026-09-27,Music,VEGAS! The Show,Saxe Theater - Miracle Mile Shops - Planet Hollywood Hotel,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Music,Wastin' Away,"The Siren Poolside - Alexis Park Resort, 375 E Harmon Ave",Spotlight.Vegas,40,Advertised starting price,https://spotlight.vegas/shows/music/wastin-away/ref/vegassidekick,yes
+2026-09-27,Music,Wastin' Away,"The Siren Poolside - Alexis Park Resort, 375 E Harmon Ave",Vegas.com,38,Advertised starting price,https://www.vegas.com/shows/alexis-park/,no
+2026-09-27,Music,Wastin' Away,"The Siren Poolside - Alexis Park Resort, 375 E Harmon Ave",Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Music,Wayne Newton: Up Close and Personal,Bugsys Cabaret - Flamingo Hotel,Spotlight.Vegas,84,Advertised starting price,https://spotlight.vegas/shows/music/wayne-newton/ref/vegassidekick,yes
+2026-09-27,Music,Wayne Newton: Up Close and Personal,Bugsys Cabaret - Flamingo Hotel,Vegas.com,88,Advertised starting price,https://www.vegas.com/shows/variety/wayne-newton-las-vegas/,no
+2026-09-27,Music,Wayne Newton: Up Close and Personal,Bugsys Cabaret - Flamingo Hotel,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Family,BattleBots: Destruct-A-Thon,BattleBots Arena - 4165 Koval Lane,Spotlight.Vegas,55,Advertised starting price,https://spotlight.vegas/shows/production/battlebots/ref/vegassidekick,yes
+2026-09-27,Family,BattleBots: Destruct-A-Thon,BattleBots Arena - 4165 Koval Lane,Vegas.com,50,Advertised starting price,https://www.vegas.com/shows/variety/battlebots-las-vegas/,no
+2026-09-27,Family,BattleBots: Destruct-A-Thon,BattleBots Arena - 4165 Koval Lane,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Family,Tournament of Kings,King Arthur’s Arena – Excalibur Hotel,Spotlight.Vegas,78,Advertised starting price,https://spotlight.vegas/shows/production/tournament-of-kings/ref/vegassidekick,yes
+2026-09-27,Family,Tournament of Kings,King Arthur’s Arena – Excalibur Hotel,Vegas.com,66,Advertised starting price,https://www.vegas.com/shows/production/,no
+2026-09-27,Family,Tournament of Kings,King Arthur’s Arena – Excalibur Hotel,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Family,V – The Ultimate Variety Show,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Spotlight.Vegas,41,Advertised starting price,https://spotlight.vegas/shows/production/v-the-ultimate-variety-show/ref/vegassidekick,yes
+2026-09-27,Family,V – The Ultimate Variety Show,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Vegas.com,35,Advertised starting price,https://www.vegas.com/shows/production/,no
+2026-09-27,Family,V – The Ultimate Variety Show,V Theater - Miracle Mile Shops - Planet Hollywood Hotel,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Spectaculars,Absinthe,Spiegeltent – Caesars Palace,Spotlight.Vegas,122,Advertised starting price,https://spotlight.vegas/shows/production/absinthe/ref/vegassidekick,yes
+2026-09-27,Spectaculars,Absinthe,Spiegeltent – Caesars Palace,Vegas.com,121,Advertised starting price,https://www.vegas.com/shows/production/,no
+2026-09-27,Spectaculars,Absinthe,Spiegeltent – Caesars Palace,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Spectaculars,America The Show,"Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",Spotlight.Vegas,40,Advertised starting price,https://spotlight.vegas/shows/tribute/america-the-show/ref/vegassidekick,yes
+2026-09-27,Spectaculars,America The Show,"Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",Vegas.com,38,Advertised starting price,https://www.vegas.com/shows/variety/america-the-show-las-vegas/,no
+2026-09-27,Spectaculars,America The Show,"Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Spectaculars,The Wizard of Oz at Sphere,Sphere - 255 Sands Ave,Spotlight.Vegas,123,Advertised starting price,https://spotlight.vegas/shows/production/the-wizard-of-oz-at-sphere/ref/vegassidekick,yes
+2026-09-27,Spectaculars,The Wizard of Oz at Sphere,Sphere - 255 Sands Ave,Vegas.com,122,Advertised starting price,https://www.vegas.com/shows/variety/wizard-of-oz-sphere-las-vegas/,no
+2026-09-27,Spectaculars,The Wizard of Oz at Sphere,Sphere - 255 Sands Ave,Official ticket source,,Not recorded in this snapshot,,no
+2026-09-27,Spectaculars,WOW – The Vegas Spectacular,Rio Showroom - Rio Hotel,Spotlight.Vegas,51,Advertised starting price,https://spotlight.vegas/shows/production/wow-the-vegas-spectacular/ref/vegassidekick,yes
+2026-09-27,Spectaculars,WOW – The Vegas Spectacular,Rio Showroom - Rio Hotel,Vegas.com,45,Advertised starting price,https://www.vegas.com/shows/production/wow-las-vegas/,no
+2026-09-27,Spectaculars,WOW – The Vegas Spectacular,Rio Showroom - Rio Hotel,Official ticket source,,Not recorded in this snapshot,,no
