@@ -1,0 +1,39 @@
+/* Atomic Saloon — transparent interaction zones over the approved supplied seating chart. */
+.as-seat-map{background:#08050f}
+.as-seat-map .approved-seat-hit{border-radius:12px}
+.as-seat-map .approved-seat-hit:hover{background:rgba(255,176,0,.12)}
+.as-seat-map .approved-seat-hit.is-active{background:rgba(255,176,0,.24)!important;filter:drop-shadow(0 0 8px rgba(255,176,0,.58))}
+.gallery .approved-chart-gallery img{object-fit:contain!important;background:#08050f}
+
+/* Floor — grouped pieces follow the visible cyan seating clusters around the central stage. */
+.as-floor-top{left:31.4%;top:29.2%;width:33.1%;height:7.4%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.as-floor-mid-left{left:39.2%;top:38.6%;width:5.8%;height:7.0%}
+.as-floor-mid-center{left:44.9%;top:38.1%;width:13.2%;height:8.8%}
+.as-floor-mid-right{left:58.7%;top:38.6%;width:7.5%;height:7.0%}
+.as-floor-bottom{left:31.4%;top:47.0%;width:33.1%;height:7.7%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+
+/* Booths — two disconnected banks are one physical seating category. */
+.as-booths-top{left:25.1%;top:17.4%;width:42.0%;height:9.7%;clip-path:polygon(2% 4%,98% 4%,98% 96%,2% 96%)}
+.as-booths-bottom{left:25.1%;top:56.3%;width:42.0%;height:9.5%;clip-path:polygon(2% 4%,98% 4%,98% 96%,2% 96%)}
+
+/* Tables — vertical table section to the right of Floor. */
+.as-tables{left:67.5%;top:16.7%;width:14.6%;height:49.9%;border-radius:34px!important;clip-path:polygon(0 0,82% 0,94% 4%,100% 10%,100% 90%,95% 96%,88% 100%,0 100%)}
+
+/* Mezzanine — separate block at far right. */
+.as-mezzanine{left:81.9%;top:29.4%;width:14.8%;height:25.5%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+
+/* Upper numbered boxes. */
+.as-box50{left:14.1%;top:5.5%;width:12.2%;height:10.2%;clip-path:polygon(0 0,100% 0,100% 72%,86% 87%,62% 100%,35% 98%,12% 86%,0 72%)}
+.as-box51{left:26.1%;top:5.5%;width:14.1%;height:10.8%;clip-path:polygon(0 0,100% 0,100% 67%,78% 79%,26% 100%,10% 88%,0 64%)}
+.as-box52{left:39.8%;top:5.5%;width:14.2%;height:12.4%;clip-path:polygon(0 0,100% 0,100% 70%,84% 79%,29% 100%,14% 95%,0 58%)}
+.as-box53{left:53.8%;top:5.5%;width:11.3%;height:14.5%;clip-path:polygon(0 0,100% 0,100% 76%,72% 92%,34% 100%,14% 91%,0 69%)}
+
+/* Lower numbered boxes. */
+.as-box60{left:14.2%;top:67.4%;width:12.4%;height:10.5%;clip-path:polygon(15% 0,65% 0,100% 34%,100% 100%,0 100%,0 26%)}
+.as-box61{left:26.4%;top:68.0%;width:13.5%;height:10.0%;clip-path:polygon(22% 0,100% 25%,100% 100%,0 100%,0 28%)}
+.as-box62{left:39.8%;top:64.7%;width:14.2%;height:13.2%;clip-path:polygon(28% 0,100% 22%,100% 100%,0 100%,0 27%)}
+.as-box63{left:53.7%;top:63.8%;width:11.3%;height:14.2%;clip-path:polygon(25% 0,100% 18%,100% 100%,0 100%,0 26%)}
+
+@media(max-width:820px){
+  .as-seat-map .approved-seat-hit{border-radius:8px}
+}
