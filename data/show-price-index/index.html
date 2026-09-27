@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Las Vegas Show Price Index: Cirque Pilot | Vegas Sidekick</title>
-<meta name="description" content="A dated comparison of publicly advertised starting ticket prices for O, KÀ, Mystère and Michael Jackson ONE across Spotlight.Vegas, Vegas.com and official box offices.">
+<title>Las Vegas Show Price Index: Cirque & Adult Shows | Vegas Sidekick</title>
+<meta name="description" content="A dated comparison of publicly advertised starting ticket prices for 15 Las Vegas shows across Spotlight.Vegas, Vegas.com and official ticket sources.">
 <link rel="canonical" href="https://vegassidekick.com/data/show-price-index/">
 <meta name="robots" content="noindex, follow">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Vegas Sidekick Show Price Index — Cirque Pilot">
+<meta property="og:title" content="Vegas Sidekick Show Price Index — Cirque & Adult Shows">
 <meta property="og:description" content="A source-linked snapshot of advertised starting prices across three Las Vegas ticket sources.">
 <meta property="og:url" content="https://vegassidekick.com/data/show-price-index/">
 <meta property="og:image" content="https://vegassidekick.com/images/logo-badge.png">
@@ -20,8 +20,8 @@
 {
   "@context":"https://schema.org",
   "@type":"Dataset",
-  "name":"Vegas Sidekick Show Price Index — Cirque Pilot",
-  "description":"A point-in-time comparison of publicly advertised starting ticket prices for the four active resident Cirque du Soleil productions in Las Vegas across Spotlight.Vegas, Vegas.com and official box offices.",
+  "name":"Vegas Sidekick Show Price Index — September 27, 2026",
+  "description":"A point-in-time comparison of publicly advertised starting ticket prices for 15 active Las Vegas shows across Cirque du Soleil and Adult Shows, using Spotlight.Vegas, Vegas.com and official ticket sources.",
   "url":"https://vegassidekick.com/data/show-price-index/",
   "dateModified":"2026-09-27",
   "temporalCoverage":"2026-09-27",
@@ -110,6 +110,11 @@ th{background:#f8f6fc;color:var(--muted);font:800 .65rem var(--display);text-tra
 .source-note{display:block;margin-top:4px;color:var(--muted);font-size:.72rem;line-height:1.35}.source-note.sale{color:#6b4f00;font-weight:700}
 .source-label{display:block;margin-top:8px;color:var(--purple);font:700 .64rem var(--mono);text-decoration:none}
 .source-label:hover{text-decoration:underline}
+.category-row th{padding:12px 16px;background:#231038;color:#fff;font:800 .72rem var(--display);letter-spacing:.08em;text-transform:uppercase;border-bottom:0}
+.category-row a{float:right;color:var(--lime);font:700 .66rem var(--display);text-transform:none;letter-spacing:0;text-decoration:none}
+.category-row a:hover{text-decoration:underline}
+.na{display:inline-block;font:800 1.2rem var(--display);color:#9a94aa}
+.no-price{display:block;margin-top:4px;color:var(--muted);font-size:.72rem;line-height:1.35}
 .partner{display:inline-block;margin-left:5px;padding:2px 5px;border-radius:6px;background:#fff2c2;color:#735300;font:700 .55rem var(--display);letter-spacing:.04em;text-transform:uppercase}
 .scope-note{margin-top:14px;color:var(--muted);font-size:.83rem}
 .scope-note strong{color:var(--ink)}
@@ -157,11 +162,11 @@ th{background:#f8f6fc;color:var(--muted);font:800 .65rem var(--display);text-tra
   <div class="wrap">
     <span class="eyebrow">Data Desk · Pilot</span>
     <h1>Vegas Sidekick <span>Show Price Index</span></h1>
-    <p class="hero-copy">A point-in-time record of the starting ticket prices Las Vegas shoppers are actually shown. This pilot compares the four active resident Cirque du Soleil productions across Spotlight.Vegas, Vegas.com and each show’s official box office.</p>
+    <p class="hero-copy">A point-in-time record of the starting ticket prices Las Vegas shoppers are actually shown. This pilot now covers Cirque du Soleil and Adult Shows across Spotlight.Vegas, Vegas.com and official ticket sources.</p>
     <div class="meta">
       <span>Snapshot <b>Sep 27, 2026</b></span>
-      <span><b>4</b> active Cirque productions</span>
-      <span><b>12</b> source observations</span>
+      <span><b>15</b> indexed shows</span>
+      <span><b>45</b> source checks</span>
       <span>Prices in <b>USD</b></span>
     </div>
     <div class="hero-actions">
@@ -176,13 +181,13 @@ th{background:#f8f6fc;color:var(--muted);font:800 .65rem var(--display);text-tra
 
   <section class="section" aria-labelledby="snapshot-heading">
     <p class="kicker">September 27 snapshot</p>
-    <h2 id="snapshot-heading">Four shows. Three sources each.</h2>
+    <h2 id="snapshot-heading">15 shows. Three source types.</h2>
     <p class="section-lede">These are the advertised starting prices shown by each seller. Mandatory ticketing fees are included in the advertised price. Nevada Live Entertainment Tax (LET) is recorded as displayed by the seller.</p>
 
     <div class="stats" aria-label="Snapshot summary">
-      <div class="stat"><strong>4</strong><span>active resident Cirque productions</span></div>
-      <div class="stat"><strong>3</strong><span>ticket sources checked per show</span></div>
-      <div class="stat"><strong>12</strong><span>source-linked price observations</span></div>
+      <div class="stat"><strong>15</strong><span>active shows in this pilot</span></div>
+      <div class="stat"><strong>3</strong><span>ticket source types checked per show</span></div>
+      <div class="stat"><strong>41</strong><span>published starting prices found</span></div>
     </div>
 
     <div class="table-card">
@@ -202,7 +207,8 @@ th{background:#f8f6fc;color:var(--muted);font:800 .65rem var(--display);text-tra
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr class="category-row"><th colspan="4">Cirque du Soleil · 4 shows <a href="/shows/cirque/">Browse category →</a></th></tr>
+<tr>
               <td><span class="show-name">“O” by Cirque du Soleil</span><span class="venue">Bellagio</span></td>
               <td>
                 <a class="price-link" href="https://spotlight.vegas/shows/cirque-du-soleil/o/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$121</span></a>
@@ -266,6 +272,85 @@ th{background:#f8f6fc;color:var(--muted);font:800 .65rem var(--display);text-tra
                 <a class="source-label" href="https://mgmgrand.mgmresorts.com/en/entertainment/ka-cirque-du-soleil-show.html" target="_blank" rel="noopener">MGM Grand source</a>
               </td>
             </tr>
+
+            <tr class="category-row"><th colspan="4">Adult Shows · 11 shows <a href="/shows/adult/">Browse category →</a></th></tr>
+
+            <tr>
+              <td><span class="show-name">Atomic Saloon Show</span><span class="venue">The Venetian</span></td>
+              <td><a class="price-link" href="https://spotlight.vegas/shows/adult/atomic-saloon/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$100</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/atomic-saloon/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+              <td><a class="price-link" href="https://www.vegas.com/shows/adult/atomic-saloon/" target="_blank" rel="noopener"><span class="price">$59</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/atomic-saloon/" target="_blank" rel="noopener">Vegas.com source</a></td>
+              <td><a class="price-link" href="https://spiegelworld.com/shows/atomic-saloon-show/" target="_blank" rel="noopener"><span class="price">$118.13</span></a><span class="source-note">Published as “around $118.13.”</span><a class="source-label" href="https://spiegelworld.com/shows/atomic-saloon-show/" target="_blank" rel="noopener">Official source</a></td>
+            </tr>
+
+            <tr>
+              <td><span class="show-name">Chippendales</span><span class="venue">Planet Hollywood</span></td>
+              <td><a class="price-link" href="https://spotlight.vegas/shows/adult/chippendales/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$76</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/chippendales/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+              <td><a class="price-link" href="https://www.vegas.com/shows/adult/chippendales-las-vegas/" target="_blank" rel="noopener"><span class="price">$67</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/chippendales-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+              <td><a class="price-link" href="https://chippendales.com/" target="_blank" rel="noopener"><span class="price">$66.85</span></a><a class="source-label" href="https://chippendales.com/" target="_blank" rel="noopener">Official source</a></td>
+            </tr>
+
+            <tr>
+              <td><span class="show-name">FANTASY</span><span class="venue">Luxor</span></td>
+              <td><a class="price-link" href="https://spotlight.vegas/shows/adult/fantasy/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$47</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/fantasy/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+              <td><a class="price-link" href="https://www.vegas.com/shows/adult/fantasy-las-vegas/" target="_blank" rel="noopener"><span class="price">$40</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/fantasy-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+              <td><a class="price-link" href="https://luxor.mgmresorts.com/en/entertainment/fantasy.html" target="_blank" rel="noopener"><span class="price">$39.95</span></a><a class="source-label" href="https://luxor.mgmresorts.com/en/entertainment/fantasy.html" target="_blank" rel="noopener">Luxor source</a></td>
+            </tr>
+
+            <tr>
+              <td><span class="show-name">Magic Mike Live</span><span class="venue">SAHARA Las Vegas</span></td>
+              <td><a class="price-link" href="https://spotlight.vegas/shows/adult/magic-mike-live/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$58</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/magic-mike-live/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+              <td><a class="price-link" href="https://www.vegas.com/shows/adult/magic-mike-live-las-vegas/" target="_blank" rel="noopener"><span class="price">$50</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/magic-mike-live-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+              <td><span class="na">—</span><span class="no-price">No public starting price found.</span><a class="source-label" href="https://magicmikelive.com/las-vegas/tickets/" target="_blank" rel="noopener">Official ticket source</a></td>
+            </tr>
+
+            <tr>
+              <td><span class="show-name">ROUGE</span><span class="venue">The STRAT</span></td>
+              <td><a class="price-link" href="https://spotlight.vegas/shows/adult/rouge/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$54</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/rouge/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+              <td><a class="price-link" href="https://www.vegas.com/shows/adult/rouge-las-vegas/" target="_blank" rel="noopener"><span class="price">$46</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/rouge-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+              <td><a class="price-link" href="https://www.rouge-vegas.com/tickets" target="_blank" rel="noopener"><span class="price">$83.93</span></a><span class="source-note">STRAT box-office starting price.</span><a class="source-label" href="https://www.rouge-vegas.com/tickets" target="_blank" rel="noopener">Official source</a></td>
+            </tr>
+
+            <tr>
+              <td><span class="show-name">The Empire Strips Back</span><span class="venue">Rio Hotel & Casino</span></td>
+              <td><a class="price-link" href="https://spotlight.vegas/shows/burlesque/empire-strips-back/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$35</span></a><a class="source-label" href="https://spotlight.vegas/shows/burlesque/empire-strips-back/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+              <td><a class="price-link" href="https://www.vegas.com/shows/adult/the-empire-strips-back-burlesque-parody-las-vegas/" target="_blank" rel="noopener"><span class="price">$42</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/the-empire-strips-back-burlesque-parody-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+              <td><a class="price-link" href="https://www.riolasvegas.com/shows/the-empire-strips-back" target="_blank" rel="noopener"><span class="price">$35</span></a><a class="source-label" href="https://www.riolasvegas.com/shows/the-empire-strips-back" target="_blank" rel="noopener">Official source</a></td>
+            </tr>
+
+            <tr>
+              <td><span class="show-name">Thunder From Down Under</span><span class="venue">Excalibur</span></td>
+              <td><a class="price-link" href="https://spotlight.vegas/shows/adult/thunder-from-down-under/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$70</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/thunder-from-down-under/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+              <td><a class="price-link" href="https://www.vegas.com/shows/adult/thunder-from-down-under-las-vegas/" target="_blank" rel="noopener"><span class="price">$62</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/thunder-from-down-under-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+              <td><a class="price-link" href="https://excalibur.mgmresorts.com/en/entertainment/thunder-from-down-under.html" target="_blank" rel="noopener"><span class="price">$62.16</span></a><a class="source-label" href="https://excalibur.mgmresorts.com/en/entertainment/thunder-from-down-under.html" target="_blank" rel="noopener">Excalibur source</a></td>
+            </tr>
+
+            <tr>
+              <td><span class="show-name">X Burlesque</span><span class="venue">Flamingo</span></td>
+              <td><a class="price-link" href="https://spotlight.vegas/shows/adult/x-burlesque/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$82</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/x-burlesque/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+              <td><a class="price-link" href="https://www.vegas.com/shows/adult/x-burlesque-las-vegas/" target="_blank" rel="noopener"><span class="price">$78</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/x-burlesque-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+              <td><a class="price-link" href="https://www.ticketmaster.com/x-burlesque-tickets/artist/1740540" target="_blank" rel="noopener"><span class="price">$69</span></a><a class="source-label" href="https://www.ticketmaster.com/x-burlesque-tickets/artist/1740540" target="_blank" rel="noopener">Official ticketing</a></td>
+            </tr>
+
+            <tr>
+              <td><span class="show-name">X Country</span><span class="venue">Harrah’s</span></td>
+              <td><a class="price-link" href="https://spotlight.vegas/shows/adult/x-country/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$65</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/x-country/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+              <td><a class="price-link" href="https://www.vegas.com/shows/adult/x-country-las-vegas/" target="_blank" rel="noopener"><span class="price">$68</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/x-country-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+              <td><span class="na">—</span><span class="no-price">No public starting price found.</span><a class="source-label" href="https://www.ticketmaster.com/x-country-tickets/artist/2171077" target="_blank" rel="noopener">Official ticket source</a></td>
+            </tr>
+
+            <tr>
+              <td><span class="show-name">X Rocks</span><span class="venue">Horseshoe Las Vegas</span></td>
+              <td><a class="price-link" href="https://spotlight.vegas/shows/adult/x-rocks/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$57</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/x-rocks/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+              <td><a class="price-link" href="https://www.vegas.com/shows/adult/x-rocks-las-vegas/" target="_blank" rel="noopener"><span class="price">$63</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/x-rocks-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+              <td><span class="na">—</span><span class="no-price">No public starting price found.</span><a class="source-label" href="https://www.ticketmaster.com/x-rocks-tickets/artist/1898867" target="_blank" rel="noopener">Official ticket source</a></td>
+            </tr>
+
+            <tr>
+              <td><span class="show-name">Zombie Burlesque</span><span class="venue">V Theater · Miracle Mile Shops</span></td>
+              <td><a class="price-link" href="https://spotlight.vegas/shows/adult/zombie-burlesque/ref/vegassidekick" target="_blank" rel="sponsored noopener"><span class="price">$51</span></a><a class="source-label" href="https://spotlight.vegas/shows/adult/zombie-burlesque/ref/vegassidekick" target="_blank" rel="sponsored noopener">Spotlight source <span class="partner">affiliate</span></a></td>
+              <td><a class="price-link" href="https://www.vegas.com/shows/adult/zombie-burlesque-las-vegas/" target="_blank" rel="noopener"><span class="price">$44</span></a><a class="source-label" href="https://www.vegas.com/shows/adult/zombie-burlesque-las-vegas/" target="_blank" rel="noopener">Vegas.com source</a></td>
+              <td><span class="na">—</span><span class="no-price">No public starting price found.</span><a class="source-label" href="https://vtheater.com/zombie-burlesque" target="_blank" rel="noopener">Official source</a></td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -294,8 +379,8 @@ th{background:#f8f6fc;color:var(--muted);font:800 .65rem var(--display);text-tra
     <h2 id="sources-heading">The three price surfaces in this pilot.</h2>
     <div class="source-list">
       <article class="source-card"><h3>Spotlight.Vegas <span class="partner">affiliate</span></h3><p>Individual Spotlight show pages are checked for the advertised starting price.</p><a href="https://spotlight.vegas/shows/ref/vegassidekick/" target="_blank" rel="sponsored noopener">View Spotlight show listings →</a></article>
-      <article class="source-card"><h3>Vegas.com</h3><p>The current Cirque category listing is used as one consistent observation surface for all four shows.</p><a href="https://www.vegas.com/shows/cirque-du-soleil/" target="_blank" rel="noopener">View Vegas.com Cirque listings →</a></article>
-      <article class="source-card"><h3>Official box offices</h3><p>Bellagio, Mandalay Bay, Treasure Island and MGM Grand provide the official-source observation for their resident productions.</p><a href="#snapshot-heading">See official links in the table →</a></article>
+      <article class="source-card"><h3>Vegas.com</h3><p>Vegas.com show listings are checked for the currently advertised starting price.</p><a href="https://www.vegas.com/shows/" target="_blank" rel="noopener">View Vegas.com show listings →</a></article>
+      <article class="source-card"><h3>Official ticket sources</h3><p>Official venue, show or primary ticketing pages provide the third observation when they publish a starting price. If they do not, the table says so.</p><a href="#snapshot-heading">See official links in the table →</a></article>
     </div>
 
     <p class="scope-note"><strong>Historical note:</strong> Mad Apple is excluded from the active index. The Cirque du Soleil production played its final performance at New York-New York on September 5, 2026.</p>
@@ -308,7 +393,7 @@ th{background:#f8f6fc;color:var(--muted);font:800 .65rem var(--display);text-tra
 
   <section class="endcap">
     <h2>This is the pilot.</h2>
-    <p>If the format holds up, the next step is expanding the same methodology across the active Vegas Sidekick show catalog and preserving dated snapshots so price movement becomes measurable over time.</p>
+    <p>The pilot now covers Cirque du Soleil and Adult Shows. The next step is expanding the same methodology across the rest of the active Vegas Sidekick catalog while preserving dated snapshots so price movement becomes measurable over time.</p>
     <a href="/shows/cirque/">Browse Cirque shows →</a><a href="/shows/adult/">Browse Adult shows →</a>
   </section>
 </main>
