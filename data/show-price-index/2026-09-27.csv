@@ -1,13 +1,46 @@
-observed_date,show,venue,source,advertised_start_price_usd,price_note,source_url,affiliate_link
-2026-09-27,"O by Cirque du Soleil","Bellagio","Spotlight.Vegas",121,"Advertised starting price recorded as published","https://spotlight.vegas/shows/cirque-du-soleil/o/","yes"
-2026-09-27,"O by Cirque du Soleil","Bellagio","Vegas.com",126,"Advertised starting price recorded as published","https://www.vegas.com/shows/cirque-du-soleil/","no"
-2026-09-27,"O by Cirque du Soleil","Bellagio","Official box office",125,"Advertised starting price recorded as published","https://bellagio.mgmresorts.com/en/entertainment/o-by-cirque-du-soleil.html","no"
-2026-09-27,"Michael Jackson ONE","Mandalay Bay","Spotlight.Vegas",115,"Advertised starting price recorded as published","https://spotlight.vegas/shows/cirque-du-soleil/michael-jackson-one/","yes"
-2026-09-27,"Michael Jackson ONE","Mandalay Bay","Vegas.com",100,"Advertised starting price recorded as published","https://www.vegas.com/shows/cirque-du-soleil/","no"
-2026-09-27,"Michael Jackson ONE","Mandalay Bay","Official box office",99,"Advertised starting price recorded as published","https://mandalaybay.mgmresorts.com/en/entertainment/michael-jackson-one.html","no"
-2026-09-27,"Mystère by Cirque du Soleil","Treasure Island","Spotlight.Vegas",84,"Advertised starting price recorded as published","https://spotlight.vegas/shows/cirque-du-soleil/mystere/","yes"
-2026-09-27,"Mystère by Cirque du Soleil","Treasure Island","Vegas.com",56,"Current sale price","https://www.vegas.com/shows/cirque-du-soleil/","no"
-2026-09-27,"Mystère by Cirque du Soleil","Treasure Island","Official box office",59,"Advertised starting price recorded as published","https://treasureisland.com/entertainment/mystere-by-cirque-du-soleil","no"
-2026-09-27,"KÀ by Cirque du Soleil","MGM Grand","Spotlight.Vegas",80,"Advertised starting price recorded as published","https://spotlight.vegas/shows/cirque-du-soleil/ka/","yes"
-2026-09-27,"KÀ by Cirque du Soleil","MGM Grand","Vegas.com",70,"Advertised starting price recorded as published","https://www.vegas.com/shows/cirque-du-soleil/","no"
-2026-09-27,"KÀ by Cirque du Soleil","MGM Grand","Official box office",69,"Advertised starting price recorded as published","https://mgmgrand.mgmresorts.com/en/entertainment/ka-cirque-du-soleil-show.html","no"
+observed_date,category,show,venue,source,advertised_start_price_usd,price_note,source_url,affiliate_link
+2026-09-27,Cirque,O by Cirque du Soleil,Bellagio,Spotlight.Vegas,121,Advertised starting price,https://spotlight.vegas/shows/cirque-du-soleil/o/ref/vegassidekick,yes
+2026-09-27,Cirque,O by Cirque du Soleil,Bellagio,Vegas.com,126,Advertised starting price,https://www.vegas.com/shows/cirque-du-soleil/,no
+2026-09-27,Cirque,O by Cirque du Soleil,Bellagio,Official ticket source,125,Advertised starting price,https://bellagio.mgmresorts.com/en/entertainment/o-by-cirque-du-soleil.html,no
+2026-09-27,Cirque,Michael Jackson ONE,Mandalay Bay,Spotlight.Vegas,115,Advertised starting price,https://spotlight.vegas/shows/cirque-du-soleil/michael-jackson-one/ref/vegassidekick,yes
+2026-09-27,Cirque,Michael Jackson ONE,Mandalay Bay,Vegas.com,100,Advertised starting price,https://www.vegas.com/shows/cirque-du-soleil/,no
+2026-09-27,Cirque,Michael Jackson ONE,Mandalay Bay,Official ticket source,99,Advertised starting price,https://mandalaybay.mgmresorts.com/en/entertainment/michael-jackson-one.html,no
+2026-09-27,Cirque,Mystère by Cirque du Soleil,Treasure Island,Spotlight.Vegas,84,Advertised starting price,https://spotlight.vegas/shows/cirque-du-soleil/mystere/ref/vegassidekick,yes
+2026-09-27,Cirque,Mystère by Cirque du Soleil,Treasure Island,Vegas.com,56,Current sale price,https://www.vegas.com/shows/cirque-du-soleil/,no
+2026-09-27,Cirque,Mystère by Cirque du Soleil,Treasure Island,Official ticket source,59,Advertised starting price,https://treasureisland.com/entertainment/mystere-by-cirque-du-soleil,no
+2026-09-27,Cirque,KÀ by Cirque du Soleil,MGM Grand,Spotlight.Vegas,80,Advertised starting price,https://spotlight.vegas/shows/cirque-du-soleil/ka/ref/vegassidekick,yes
+2026-09-27,Cirque,KÀ by Cirque du Soleil,MGM Grand,Vegas.com,70,Advertised starting price,https://www.vegas.com/shows/cirque-du-soleil/,no
+2026-09-27,Cirque,KÀ by Cirque du Soleil,MGM Grand,Official ticket source,69,Advertised starting price,https://mgmgrand.mgmresorts.com/en/entertainment/ka-cirque-du-soleil-show.html,no
+2026-09-27,Adult,Atomic Saloon Show,The Venetian,Spotlight.Vegas,100,Advertised starting price,https://spotlight.vegas/shows/adult/atomic-saloon/ref/vegassidekick,yes
+2026-09-27,Adult,Atomic Saloon Show,The Venetian,Vegas.com,59,Advertised starting price,https://www.vegas.com/shows/adult/atomic-saloon/,no
+2026-09-27,Adult,Atomic Saloon Show,The Venetian,Official ticket source,118.13,Published as around $118.13,https://spiegelworld.com/shows/atomic-saloon-show/,no
+2026-09-27,Adult,Chippendales,Planet Hollywood,Spotlight.Vegas,76,Advertised starting price,https://spotlight.vegas/shows/adult/chippendales/ref/vegassidekick,yes
+2026-09-27,Adult,Chippendales,Planet Hollywood,Vegas.com,67,Advertised starting price,https://www.vegas.com/shows/adult/chippendales-las-vegas/,no
+2026-09-27,Adult,Chippendales,Planet Hollywood,Official ticket source,66.85,Advertised starting price,https://chippendales.com/,no
+2026-09-27,Adult,FANTASY,Luxor,Spotlight.Vegas,47,Advertised starting price,https://spotlight.vegas/shows/adult/fantasy/ref/vegassidekick,yes
+2026-09-27,Adult,FANTASY,Luxor,Vegas.com,40,Advertised starting price,https://www.vegas.com/shows/adult/fantasy-las-vegas/,no
+2026-09-27,Adult,FANTASY,Luxor,Official ticket source,39.95,Advertised starting price,https://luxor.mgmresorts.com/en/entertainment/fantasy.html,no
+2026-09-27,Adult,Magic Mike Live,SAHARA Las Vegas,Spotlight.Vegas,58,Advertised starting price,https://spotlight.vegas/shows/adult/magic-mike-live/ref/vegassidekick,yes
+2026-09-27,Adult,Magic Mike Live,SAHARA Las Vegas,Vegas.com,50,Advertised starting price,https://www.vegas.com/shows/adult/magic-mike-live-las-vegas/,no
+2026-09-27,Adult,Magic Mike Live,SAHARA Las Vegas,Official ticket source,,No public starting price found,https://magicmikelive.com/las-vegas/tickets/,no
+2026-09-27,Adult,ROUGE,The STRAT,Spotlight.Vegas,54,Advertised starting price,https://spotlight.vegas/shows/adult/rouge/ref/vegassidekick,yes
+2026-09-27,Adult,ROUGE,The STRAT,Vegas.com,46,Advertised starting price,https://www.vegas.com/shows/adult/rouge-las-vegas/,no
+2026-09-27,Adult,ROUGE,The STRAT,Official ticket source,83.93,STRAT box-office starting price,https://www.rouge-vegas.com/tickets,no
+2026-09-27,Adult,The Empire Strips Back,Rio Hotel & Casino,Spotlight.Vegas,35,Advertised starting price,https://spotlight.vegas/shows/burlesque/empire-strips-back/ref/vegassidekick,yes
+2026-09-27,Adult,The Empire Strips Back,Rio Hotel & Casino,Vegas.com,42,Advertised starting price,https://www.vegas.com/shows/adult/the-empire-strips-back-burlesque-parody-las-vegas/,no
+2026-09-27,Adult,The Empire Strips Back,Rio Hotel & Casino,Official ticket source,35,Advertised starting price,https://www.riolasvegas.com/shows/the-empire-strips-back,no
+2026-09-27,Adult,Thunder From Down Under,Excalibur,Spotlight.Vegas,70,Advertised starting price,https://spotlight.vegas/shows/adult/thunder-from-down-under/ref/vegassidekick,yes
+2026-09-27,Adult,Thunder From Down Under,Excalibur,Vegas.com,62,Advertised starting price,https://www.vegas.com/shows/adult/thunder-from-down-under-las-vegas/,no
+2026-09-27,Adult,Thunder From Down Under,Excalibur,Official ticket source,62.16,Advertised starting price,https://excalibur.mgmresorts.com/en/entertainment/thunder-from-down-under.html,no
+2026-09-27,Adult,X Burlesque,Flamingo,Spotlight.Vegas,82,Advertised starting price,https://spotlight.vegas/shows/adult/x-burlesque/ref/vegassidekick,yes
+2026-09-27,Adult,X Burlesque,Flamingo,Vegas.com,78,Advertised starting price,https://www.vegas.com/shows/adult/x-burlesque-las-vegas/,no
+2026-09-27,Adult,X Burlesque,Flamingo,Official ticket source,69,Advertised starting price,https://www.ticketmaster.com/x-burlesque-tickets/artist/1740540,no
+2026-09-27,Adult,X Country,Harrah’s,Spotlight.Vegas,65,Advertised starting price,https://spotlight.vegas/shows/adult/x-country/ref/vegassidekick,yes
+2026-09-27,Adult,X Country,Harrah’s,Vegas.com,68,Advertised starting price,https://www.vegas.com/shows/adult/x-country-las-vegas/,no
+2026-09-27,Adult,X Country,Harrah’s,Official ticket source,,No public starting price found,https://www.ticketmaster.com/x-country-tickets/artist/2171077,no
+2026-09-27,Adult,X Rocks,Horseshoe Las Vegas,Spotlight.Vegas,57,Advertised starting price,https://spotlight.vegas/shows/adult/x-rocks/ref/vegassidekick,yes
+2026-09-27,Adult,X Rocks,Horseshoe Las Vegas,Vegas.com,63,Advertised starting price,https://www.vegas.com/shows/adult/x-rocks-las-vegas/,no
+2026-09-27,Adult,X Rocks,Horseshoe Las Vegas,Official ticket source,,No public starting price found,https://www.ticketmaster.com/x-rocks-tickets/artist/1898867,no
+2026-09-27,Adult,Zombie Burlesque,V Theater · Miracle Mile Shops,Spotlight.Vegas,51,Advertised starting price,https://spotlight.vegas/shows/adult/zombie-burlesque/ref/vegassidekick,yes
+2026-09-27,Adult,Zombie Burlesque,V Theater · Miracle Mile Shops,Vegas.com,44,Advertised starting price,https://www.vegas.com/shows/adult/zombie-burlesque-las-vegas/,no
+2026-09-27,Adult,Zombie Burlesque,V Theater · Miracle Mile Shops,Official ticket source,,No public starting price found,https://vtheater.com/zombie-burlesque,no
