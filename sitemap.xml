@@ -1223,6 +1223,15 @@
     <priority>0.6</priority>
     <image:image><image:loc>https://vegassidekick.com/images/news/rouge-free-strat-tower-wide.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://vegassidekick.com/shows/music/barry-manilow/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-27</lastmod>
+    <image:image>
+      <image:loc>https://vegassidekick.com/images/barry-manilow-hero.webp</image:loc>
+    </image:image>
+  </url>
 </urlset>
 
 
