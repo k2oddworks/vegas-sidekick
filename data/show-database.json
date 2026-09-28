@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-09-20",
+  "updated_on": "2026-09-28",
   "source": "Vegas Sidekick Show Database",
   "records": [
     {
@@ -1826,64 +1826,24 @@
       "slug": "marriage-can-be-murder",
       "name": "Marriage Can Be Murder",
       "category": "comedy",
-      "status": "active",
-      "our_price": 95,
-      "regular_price": 109,
+      "status": "closed",
+      "our_price": null,
+      "regular_price": null,
       "runtime_minutes": 120,
       "age_summary": "8+",
       "venue": "Rio Hotel & Casino - 3700 W Flamingo Rd",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Thu, Fri, Sat · 7 PM; Sun · Times vary",
-      "ticket_url": "https://spotlight.vegas/shows/comedy/marriage-can-be-murder/ref/vegassidekick",
+      "schedule_summary": "",
+      "ticket_url": "",
       "official_trailer": "",
       "page_path": "/shows/comedy/marriage-can-be-murder/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-09-28",
       "freshness_label": "September 2026",
-      "verification": "verified_spotlight",
-      "notes": "",
-      "spotlight": {
-        "name": "Marriage Can Be Murder - Dinner Show",
-        "our_price": 95,
-        "regular_price": 109,
-        "location": "Rio Hotel & Casino - 3700 W Flamingo Rd",
-        "runtime_minutes": 120,
-        "age_rule": "Recommended for ages 8+",
-        "other_restrictions": "Need help or support? Contact Us 1-844-699-0136 Facebook Twitter Youtube Instagram Top Categories Cirque du Soliel Shows Concerts Comedy Shows Adult Shows Kid Friendly Shows Company About Contact My account Best Price Guarantee Popular Venues Planet Hollywood Shows MGM Grand Shows Caesars Shows Luxor Shows Alexis Park Shows Support Purchase Terms & Conditions Website Terms & Conditions Privacy Policy Upcoming Shows Shows September 2026 Shows October 2026 Shows November 2026 Shows December 2026 Spotlight.Vegas © 2026 / All Rights Reserved Shows Top Shows Top Shows The Wizard Of Oz At Sphere Awakening Mystère Absinthe “O” KÀ Blue Man Group Michael Jackson ONE Tournament of Kings Jabbawockeez Piff The Magic Dragon Criss Angel Mindfreak Featured shows in this category The Wizard Of Oz At Sphere $ 122.72 See tickets Absinthe $ 122.14 See tickets \"O\" $ 178.70 Original price was: $178.70. $ 155.60 Current price is: $155.60. See tickets Cirque du Soleil Production Family-Friendly Magic Shows Comedy Shows Music Shows Adult Shows Tribute Shows Burlesque Shows Vegas Concerts Attractions Hotels Hot Deals Calendar Groups Contact",
-        "schedule_days": {
-          "Monday": [
-            "7 PM"
-          ],
-          "Tuesday": [
-            "7 PM"
-          ],
-          "Thursday": [
-            "7 PM"
-          ],
-          "Friday": [
-            "7 PM"
-          ],
-          "Saturday": [
-            "7 PM"
-          ],
-          "Sunday": []
-        },
-        "schedule_summary": "Mon, Tue, Thu, Fri, Sat · 7 PM; Sun · Times vary",
-        "schedule_variable": false,
-        "schedule_raw": [
-          "Monday -7:00pm",
-          "Tuesday - 7:00pm",
-          "Thursday - 7:00pm",
-          "Friday - 7:00pm",
-          "Saturday - 7:00pm",
-          "Sunday - 7:00pmpm"
-        ],
-        "spotlight_url": "https://spotlight.vegas/shows/comedy/marriage-can-be-murder/",
-        "affiliate_url": "https://spotlight.vegas/shows/comedy/marriage-can-be-murder/ref/vegassidekick",
-        "age_label": "8+"
-      },
-      "savings_amount": 14,
-      "savings_percent": 13,
-      "is_deal": true
+      "verification": "needs_review",
+      "notes": "Temporarily closed per Kris on 2026-09-28. Keep the show page live, suppress active ticketing/schedule treatment, and restore only when reopening is confirmed.",
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
     },
     {
       "slug": "mat-franco",
