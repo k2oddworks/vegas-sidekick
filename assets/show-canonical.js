@@ -57,6 +57,18 @@
 
   upgradeApprovedSeatChart();
 
+  function ensureSeamlessTickers(){
+    document.querySelectorAll('.ticker-track').forEach(track=>{
+      const sets=Array.from(track.children).filter(el=>el.classList?.contains('ticker-set'));
+      if(sets.length!==1)return;
+      const clone=sets[0].cloneNode(true);
+      clone.setAttribute('aria-hidden','true');
+      track.appendChild(clone);
+    });
+  }
+
+  ensureSeamlessTickers();
+
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const progress=document.querySelector('.progress'),mobileProgress=document.getElementById('mobileProgress');
   function prog(){
