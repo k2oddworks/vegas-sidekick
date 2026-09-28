@@ -171,6 +171,7 @@ Closed shows stay archived, are removed from active catalogs / ticket CTAs / act
 Use the audits relevant to the change. For show-page work, the common minimum is:
 
 ```bash
+python3 scripts/audit-show-page-benchmark.py
 python3 scripts/audit-event-schema.py
 python3 scripts/audit-ticket-cta-color.py
 python3 scripts/audit-mobile-show-heroes.py
