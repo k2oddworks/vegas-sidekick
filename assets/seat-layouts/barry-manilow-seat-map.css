@@ -1,0 +1,37 @@
+/* Barry Manilow — transparent interaction zones over the exact approved seating chart. */
+.bm-seat-map{background:#08050f}
+.bm-seat-map .approved-seat-hit{border-radius:12px}
+.bm-seat-map .approved-seat-hit:hover{background:rgba(255,176,0,.12)}
+.bm-seat-map .approved-seat-hit.is-active{background:rgba(255,176,0,.24)!important;filter:drop-shadow(0 0 8px rgba(255,176,0,.58))}
+.bm-seat-guide .approved-seat-detail{background:#101d35;border-color:rgba(255,255,255,.14);color:#fff}
+.bm-seat-guide .approved-seat-detail p,.bm-seat-guide .approved-seat-note{color:#c3cde0}
+.bm-seat-guide .approved-seat-tag{color:#ffcf66}
+#photos .gallery.gallery-4 button{border:1px solid rgba(255,255,255,.12);padding:0;background:#07101f;border-radius:16px;overflow:hidden;cursor:pointer}
+.gallery .approved-chart-gallery img{object-fit:contain!important;background:#08050f}
+
+.bm-s1{left:28.0%;top:17.6%;width:23.8%;height:26.3%;clip-path:polygon(18% 7%,82% 0,100% 78%,10% 100%,0 65%)}
+.bm-s2{left:28.0%;top:43.0%;width:18.4%;height:22.1%;clip-path:polygon(0 0,100% 0,100% 100%,0 87%)}
+.bm-s3{left:27.0%;top:63.2%;width:19.2%;height:23.6%;clip-path:polygon(4% 0,100% 10%,100% 100%,21% 88%,0 44%)}
+.bm-s4{left:45.7%;top:16.8%;width:20.7%;height:35.3%;clip-path:polygon(0 0,74% 0,100% 100%,17% 100%)}
+.bm-s5{left:45.6%;top:52.1%;width:20.1%;height:35.5%;clip-path:polygon(18% 0,100% 0,74% 100%,0 100%)}
+.bm-s6{left:67.7%;top:21.5%;width:16.7%;height:15.2%;clip-path:polygon(0 0,92% 0,100% 100%,5% 100%)}
+.bm-s7{left:68.3%;top:36.0%;width:16.8%;height:16.7%;clip-path:polygon(0 0,100% 0,100% 100%,4% 100%)}
+.bm-s8{left:68.5%;top:52.5%;width:16.7%;height:16.4%;clip-path:polygon(3% 0,100% 0,100% 100%,0 100%)}
+.bm-s9{left:67.3%;top:68.7%;width:17.4%;height:15.7%;clip-path:polygon(5% 0,100% 0,91% 100%,0 100%)}
+
+.bm-b1{left:44.4%;top:41.4%;width:4.0%;height:5.0%}
+.bm-b2{left:44.3%;top:46.2%;width:4.0%;height:5.0%}
+.bm-b3{left:44.3%;top:51.0%;width:4.0%;height:5.0%}
+.bm-b4{left:44.3%;top:55.8%;width:4.0%;height:5.0%}
+.bm-b5{left:44.3%;top:60.6%;width:4.0%;height:5.0%}
+.bm-b6{left:48.4%;top:40.8%;width:4.0%;height:5.3%}
+.bm-b7{left:48.5%;top:60.0%;width:4.0%;height:5.3%}
+
+.lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(4,4,12,.92);align-items:center;justify-content:center;padding:24px}
+.lightbox.open{display:flex}
+.lightbox>img{max-width:min(1100px,92vw);max-height:86vh;width:auto;height:auto;object-fit:contain;border-radius:14px}
+#lightboxClose{position:absolute;right:18px;top:18px;width:46px;height:46px;border:1px solid rgba(255,255,255,.4);border-radius:50%;background:#17082e;color:#fff;font-size:1.7rem;cursor:pointer;z-index:4}
+
+@media(max-width:820px){
+  .bm-seat-map .approved-seat-hit{border-radius:8px}
+}
