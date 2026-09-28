@@ -1,0 +1,40 @@
+/* LA Comedy Club — transparent interaction zones over the exact supplied seating chart. */
+.lacc-seat-map{background:#08050f}
+.lacc-seat-map .approved-seat-hit{border-radius:12px}
+.lacc-seat-map .approved-seat-hit:hover{background:rgba(255,176,0,.12)}
+.lacc-seat-map .approved-seat-hit.is-active{background:rgba(255,176,0,.24)!important;filter:drop-shadow(0 0 8px rgba(255,176,0,.58))}
+.gallery .approved-chart-gallery img{object-fit:contain!important;background:#08050f}
+
+/* VIP — green clusters nearest the stage on the left side. */
+.lacc-vip-1{left:6.2%;top:22.9%;width:19.3%;height:12.2%;clip-path:polygon(0 0,100% 25%,86% 100%,5% 81%)}
+.lacc-vip-2{left:6.7%;top:34.8%;width:18.2%;height:9.7%;clip-path:polygon(0 0,100% 25%,87% 100%,0 70%)}
+.lacc-vip-3{left:13.2%;top:43.7%;width:8.8%;height:14.7%;clip-path:polygon(24% 0,100% 0,82% 100%,0 100%)}
+.lacc-vip-4{left:6.8%;top:56.7%;width:14.8%;height:12.0%;clip-path:polygon(10% 0,100% 16%,74% 100%,0 76%)}
+.lacc-vip-5{left:15.0%;top:57.1%;width:10.1%;height:9.0%;clip-path:polygon(22% 0,100% 17%,77% 100%,0 77%)}
+
+/* General Admission — blue chair clusters across the main room. */
+.lacc-ga-1{left:12.1%;top:18.0%;width:24.0%;height:18.5%;clip-path:polygon(0 0,100% 35%,83% 100%,7% 70%)}
+.lacc-ga-2{left:25.5%;top:33.6%;width:11.4%;height:30.9%}
+.lacc-ga-3{left:39.1%;top:16.2%;width:13.8%;height:28.3%}
+.lacc-ga-4{left:52.5%;top:16.6%;width:15.8%;height:28.4%}
+.lacc-ga-5{left:65.2%;top:21.4%;width:11.1%;height:22.7%}
+.lacc-ga-6{left:39.7%;top:47.2%;width:12.4%;height:28.3%}
+.lacc-ga-7{left:52.5%;top:48.0%;width:24.1%;height:27.6%}
+
+/* Booths — explicitly labeled booth areas. */
+.lacc-booth-1{left:6.5%;top:78.4%;width:30.1%;height:5.8%;border-radius:16px!important}
+.lacc-booth-2{left:6.5%;top:7.0%;width:14.2%;height:6.5%;border-radius:16px!important}
+.lacc-booth-3{left:21.2%;top:7.0%;width:14.4%;height:6.5%;border-radius:16px!important}
+.lacc-booth-4{left:82.3%;top:7.0%;width:14.5%;height:12.9%;clip-path:polygon(0 22%,25% 0,100% 53%,77% 100%)}
+
+/* HT1–HT6 — the six small orange areas labeled on the supplied chart. */
+.lacc-ht-1{left:46.0%;top:78.4%;width:9.1%;height:5.6%}
+.lacc-ht-2{left:44.0%;top:7.2%;width:8.6%;height:5.5%}
+.lacc-ht-3{left:57.5%;top:7.2%;width:8.6%;height:5.5%}
+.lacc-ht-4{left:73.4%;top:75.6%;width:7.1%;height:8.1%}
+.lacc-ht-5{left:78.4%;top:74.4%;width:7.1%;height:9.2%}
+.lacc-ht-6{left:87.8%;top:66.3%;width:5.5%;height:10.6%}
+
+@media(max-width:820px){
+  .lacc-seat-map .approved-seat-hit{border-radius:8px}
+}
