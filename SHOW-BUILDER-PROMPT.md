@@ -798,7 +798,6 @@ After pushing to `main`, Cloudflare Pages deploys automatically. No other steps 
 | Popovich Comedy Pet Theater | /shows/comedy/popovich-comedy-pet-theater/ | $31 |
 | LA Comedy Club | /shows/comedy/la-comedy-club/ | $43 |
 | Las Vegas LIVE Comedy Club | /shows/comedy/las-vegas-live-comedy-club/ | $30 |
-| Marriage Can Be Murder | /shows/comedy/marriage-can-be-murder/ | $95 |
 
 ### Magic (`/shows/magic/`)
 | Show | URL | Our Price |
