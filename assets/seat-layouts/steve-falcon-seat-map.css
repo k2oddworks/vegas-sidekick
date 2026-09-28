@@ -1,0 +1,26 @@
+/* Steve Falcon's Comedy Hypnosis — transparent interaction zones over the exact approved seating chart. */
+.sf-seat-map{background:#08050f}
+.sf-seat-map .approved-seat-hit{border-radius:12px}
+.sf-seat-map .approved-seat-hit:hover{background:rgba(255,176,0,.12)}
+.sf-seat-map .approved-seat-hit.is-active{background:rgba(255,176,0,.24)!important;filter:drop-shadow(0 0 8px rgba(255,176,0,.58))}
+.gallery .approved-chart-gallery img{object-fit:contain!important;background:#08050f}
+
+/* VIP — orange table clusters nearest the stage. */
+.sf-vip-left{left:28.8%;top:20.2%;width:24.7%;height:15.8%;clip-path:polygon(0 0,100% 5%,93% 100%,6% 91%)}
+.sf-vip-right{left:54.1%;top:20.6%;width:18.8%;height:15.0%;clip-path:polygon(4% 0,100% 7%,91% 100%,0 93%)}
+
+/* Prime — magenta rows and angled sections through the middle of the room. */
+.sf-prime-left{left:28.0%;top:31.0%;width:12.2%;height:20.4%;clip-path:polygon(0 8%,72% 0,100% 92%,28% 100%)}
+.sf-prime-center-left{left:40.3%;top:38.4%;width:11.9%;height:13.5%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.sf-prime-center-right{left:51.8%;top:38.4%;width:8.9%;height:13.5%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.sf-prime-right{left:62.4%;top:30.8%;width:16.2%;height:18.5%;clip-path:polygon(29% 0,100% 10%,74% 100%,0 87%)}
+
+/* GA — cyan seating in the outer and rear portions of the room. */
+.sf-ga-left{left:10.3%;top:34.0%;width:22.0%;height:26.8%;clip-path:polygon(43% 0,100% 16%,77% 100%,0 82%)}
+.sf-ga-center-left{left:43.7%;top:48.6%;width:7.8%;height:9.4%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.sf-ga-center-right{left:51.6%;top:48.6%;width:7.7%;height:9.4%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.sf-ga-right{left:69.5%;top:39.0%;width:10.3%;height:8.8%;clip-path:polygon(0 21%,71% 0,100% 72%,23% 100%)}
+
+@media(max-width:820px){
+  .sf-seat-map .approved-seat-hit{border-radius:8px}
+}
