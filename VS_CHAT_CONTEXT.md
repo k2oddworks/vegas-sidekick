@@ -110,7 +110,7 @@ The current canonical show-page system uses:
 - `shows/magic/nathan-burton-comedy-magic/index.html` as the current show-page benchmark / model
 - `SHOW-PAGE-BENCHMARK.md` as the governing detailed UX / copy / seating specification
 - `AGENTS.md` as the concise coding-agent execution guide
-- `scripts/canonicalize-show-pages.py` where still applicable
+- `scripts/canonicalize-show-pages.py` is a legacy migration helper only; it is guarded and should not be used to rewrite current active show pages
 - `assets/show-canonical.css`
 - `assets/show-canonical.js`
 
