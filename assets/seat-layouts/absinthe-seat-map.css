@@ -1,0 +1,37 @@
+/* Absinthe — transparent interaction zones over the exact supplied seating chart. */
+.ab-seat-map{background:#070708}
+.ab-seat-map .approved-seat-hit{border-radius:12px}
+.ab-seat-map .approved-seat-hit:hover{background:rgba(255,176,0,.12)}
+.ab-seat-map .approved-seat-hit.is-active{background:rgba(255,176,0,.24)!important;filter:drop-shadow(0 0 8px rgba(255,176,0,.58))}
+.gallery .approved-chart-gallery img{object-fit:contain!important;background:#070708}
+
+/* VIP sections around the center stage. */
+.ab-vip1-left{left:39.3%;top:36.0%;width:10.2%;height:12.8%;clip-path:polygon(0 0,100% 14%,88% 100%,15% 82%)}
+.ab-vip1-right{left:49.5%;top:36.0%;width:10.5%;height:12.8%;clip-path:polygon(0 14%,100% 0,85% 82%,12% 100%)}
+.ab-vip2{left:63.7%;top:34.0%;width:13.7%;height:38.4%;clip-path:polygon(22% 0,100% 6%,100% 94%,16% 100%,0 53%)}
+.ab-vip3-left{left:39.5%;top:57.7%;width:10.2%;height:12.3%;clip-path:polygon(15% 0,88% 18%,100% 100%,0 85%)}
+.ab-vip3-right{left:49.5%;top:57.7%;width:10.4%;height:12.3%;clip-path:polygon(12% 18%,85% 0,100% 85%,0 100%)}
+.ab-vip4{left:30.7%;top:37.4%;width:13.6%;height:26.5%;clip-path:polygon(0 0,74% 0,100% 50%,76% 100%,0 100%)}
+
+/* Reserved 1 — labeled orange sections across the upper half. */
+.ab-r1-top-left{left:28.7%;top:16.5%;width:21.2%;height:15.4%;clip-path:polygon(16% 0,100% 0,100% 50%,0 100%)}
+.ab-r1-top-right{left:50.1%;top:16.7%;width:18.8%;height:13.4%;clip-path:polygon(0 0,86% 0,100% 35%,76% 100%,0 53%)}
+.ab-r1-mid-left{left:30.0%;top:24.7%;width:19.8%;height:18.2%;clip-path:polygon(0 0,100% 0,100% 100%,22% 100%)}
+.ab-r1-mid-right{left:50.2%;top:25.0%;width:16.3%;height:17.4%;clip-path:polygon(0 0,100% 16%,79% 100%,0 100%)}
+
+/* Reserved 2 — right of the center stage. */
+.ab-r2{left:57.8%;top:43.1%;width:9.4%;height:19.0%;clip-path:polygon(0 0,79% 12%,100% 51%,78% 100%,0 100%)}
+
+/* Reserved 3 — labeled orange sections across the lower half. */
+.ab-r3-main-left{left:29.3%;top:62.0%;width:20.5%;height:21.2%;clip-path:polygon(20% 0,100% 0,100% 100%,0 79%)}
+.ab-r3-main-right{left:50.2%;top:62.3%;width:18.3%;height:20.0%;clip-path:polygon(0 0,80% 0,100% 75%,0 100%)}
+.ab-r3-outer-left{left:24.9%;top:72.8%;width:14.6%;height:17.1%;clip-path:polygon(22% 0,100% 36%,77% 100%,0 53%)}
+.ab-r3-bottom{left:39.6%;top:82.4%;width:18.0%;height:12.1%;clip-path:polygon(0 0,100% 0,87% 100%,12% 100%)}
+.ab-r3-outer-right{left:59.5%;top:72.7%;width:14.2%;height:16.3%;clip-path:polygon(0 36%,78% 0,100% 53%,23% 100%)}
+
+/* Reserved 4 — left side below the piano stage. */
+.ab-r4{left:19.5%;top:52.4%;width:12.1%;height:15.1%;clip-path:polygon(0 0,100% 13%,100% 82%,17% 100%)}
+
+@media(max-width:820px){
+  .ab-seat-map .approved-seat-hit{border-radius:8px}
+}
