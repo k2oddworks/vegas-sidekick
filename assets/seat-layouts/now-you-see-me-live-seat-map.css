@@ -1,0 +1,25 @@
+/* Now You See Me LIVE — transparent interaction zones over the exact approved seating chart. */
+.nysm-seat-map{background:#08050f}
+.nysm-seat-map .approved-seat-hit{border-radius:14px}
+.nysm-seat-map .approved-seat-hit:hover{background:rgba(255,176,0,.12)}
+.nysm-seat-map .approved-seat-hit.is-active{background:rgba(255,176,0,.24)!important;filter:drop-shadow(0 0 8px rgba(255,176,0,.58))}
+.gallery .approved-chart-gallery img{object-fit:contain!important;background:#08050f}
+
+/* Section 1 — rows A–H, pink lower fan. */
+.nysm-s1-left{left:6.0%;top:42.0%;width:37.0%;height:38.2%;clip-path:polygon(41% 0,100% 8%,86% 100%,44% 92%,0 42%)}
+.nysm-s1-center{left:31.0%;top:42.3%;width:39.0%;height:37.4%;clip-path:polygon(0 5%,100% 5%,78% 100%,22% 100%)}
+.nysm-s1-right{left:57.0%;top:42.0%;width:37.0%;height:38.2%;clip-path:polygon(0 8%,59% 0,100% 42%,56% 92%,14% 100%)}
+
+/* Section 2 rows J–P — lower/middle gold fan. */
+.nysm-jp-left{left:2.0%;top:12.5%;width:42.0%;height:30.4%;clip-path:polygon(66% 0,100% 22%,79% 100%,28% 93%,0 73%)}
+.nysm-jp-center{left:28.0%;top:11.7%;width:44.0%;height:31.0%;clip-path:polygon(14% 0,86% 0,100% 100%,0 100%)}
+.nysm-jp-right{left:56.0%;top:12.5%;width:42.0%;height:30.4%;clip-path:polygon(34% 0,100% 73%,72% 93%,21% 100%,0 22%)}
+
+/* Section 2 rows Q–S — uppermost gold rows. */
+.nysm-qs-left{left:30.0%;top:2.0%;width:21.0%;height:12.2%;clip-path:polygon(27% 17%,100% 0,92% 100%,0 100%)}
+.nysm-qs-center{left:40.0%;top:1.8%;width:29.0%;height:12.4%;clip-path:polygon(9% 0,91% 0,100% 100%,0 100%)}
+.nysm-qs-right{left:63.0%;top:2.0%;width:29.0%;height:13.1%;clip-path:polygon(0 0,70% 14%,100% 100%,8% 100%)}
+
+@media(max-width:820px){
+  .nysm-seat-map .approved-seat-hit{border-radius:8px}
+}
