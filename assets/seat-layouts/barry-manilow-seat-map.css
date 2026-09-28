@@ -3,10 +3,10 @@
 .bm-seat-map .approved-seat-hit{border-radius:12px}
 .bm-seat-map .approved-seat-hit:hover{background:rgba(255,176,0,.12)}
 .bm-seat-map .approved-seat-hit.is-active{background:rgba(255,176,0,.24)!important;filter:drop-shadow(0 0 8px rgba(255,176,0,.58))}
-.bm-seat-guide .approved-seat-detail{background:#101d35;border-color:rgba(255,255,255,.14);color:#fff}
-.bm-seat-guide .approved-seat-detail p,.bm-seat-guide .approved-seat-note{color:#c3cde0}
-.bm-seat-guide .approved-seat-tag{color:#ffcf66}
-#photos .gallery.gallery-4 button{border:1px solid rgba(255,255,255,.12);padding:0;background:#07101f;border-radius:16px;overflow:hidden;cursor:pointer}
+.bm-seat-guide .approved-seat-detail{background:#fff;border-color:#e9e2f2;color:#17082e}
+.bm-seat-guide .approved-seat-detail p,.bm-seat-guide .approved-seat-note{color:#62596d}
+.bm-seat-guide .approved-seat-tag{color:#855900}
+#photos .gallery.gallery-4 button{border:1px solid #e9e2f2;padding:0;background:#fff;border-radius:16px;overflow:hidden;cursor:pointer}
 .gallery .approved-chart-gallery img{object-fit:contain!important;background:#08050f}
 
 .bm-s1{left:28.0%;top:17.6%;width:23.8%;height:26.3%;clip-path:polygon(18% 7%,82% 0,100% 78%,10% 100%,0 65%)}
