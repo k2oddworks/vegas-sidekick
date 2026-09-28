@@ -743,7 +743,14 @@ def main():
     ap.add_argument("paths", nargs="*")
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--force-current", action="store_true", help="Allow rebuilding pages that already match the current benchmark structure.")
+    ap.add_argument("--legacy-generator", action="store_true", help="Explicitly allow the pre-Nathan legacy generator. Do not use for current active show pages.")
     args = ap.parse_args()
+    if not args.legacy_generator:
+        raise SystemExit(
+            "canonicalize-show-pages.py is a legacy migration helper and does not implement the current "
+            "Nathan Burton / SHOW-PAGE-BENCHMARK system. Use the current shared show-page system instead. "
+            "Pass --legacy-generator only for an intentional historical migration."
+        )
     ensure_assets()
     todo = targets(args)
     if args.limit:
