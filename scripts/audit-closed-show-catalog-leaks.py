@@ -2,7 +2,7 @@
 from pathlib import Path
 import re,sys
 
-closed = {'mad-apple','david-goldrake'}
+closed = {'mad-apple','david-goldrake','marriage-can-be-murder'}
 issues=[]
 catalogs=[Path('shows/index.html'), *sorted(Path('shows').glob('*/index.html'))]
 for p in catalogs:
