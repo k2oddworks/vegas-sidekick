@@ -1,62 +1,6 @@
 (function(){
   'use strict';
 
-  const approvedSeatChartUpgrades={
-    '/shows/spectaculars/absinthe/':{
-      image:'/images/absinthe-seating-chart.webp?v=aed2ac49',
-      alt:'Absinthe seating chart at the Spiegeltent at Caesars Palace showing Reserved 1, Reserved 2, Reserved 3, Reserved 4 and VIP sections',
-      layoutUrl:'/data/seat-layouts/spiegeltent-caesars-palace.json',
-      layoutId:'spiegeltent-caesars-palace',
-      ticketUrl:'https://spotlight.vegas/shows/production/absinthe/ref/vegassidekick',
-      heading:'Find your seat at the Spiegeltent',
-      summary:'Reserved 2 and Reserved 3 are the Vegas Sidekick Sweet Spot / Our Pick.'
-    }
-  };
-
-  function upgradeApprovedSeatChart(){
-    const path=location.pathname.endsWith('/')?location.pathname:location.pathname+'/';
-    const cfg=approvedSeatChartUpgrades[path];
-    if(!cfg)return;
-
-    if(!document.querySelector('link[data-vs-room-map]')){
-      const link=document.createElement('link');
-      link.rel='stylesheet';
-      link.href='/assets/seat-layouts/room-map.css?v=6';
-      link.dataset.vsRoomMap='1';
-      document.head.appendChild(link);
-    }
-
-    const gallery=document.querySelector('#photos .gallery');
-    if(gallery&&!gallery.querySelector('.vs-chart-gallery')){
-      const button=document.createElement('button');
-      button.type='button';
-      button.className='vs-chart-gallery';
-      button.setAttribute('aria-label','Open Absinthe seating chart');
-      const img=document.createElement('img');
-      img.loading='lazy';
-      img.src=cfg.image;
-      img.alt=cfg.alt;
-      button.appendChild(img);
-      gallery.appendChild(button);
-      gallery.classList.remove('gallery-1','gallery-2','gallery-3');
-      gallery.classList.add('gallery-4');
-    }
-
-    const seats=document.querySelector('#seats .wrap');
-    if(seats){
-      seats.innerHTML=`<div class="eyebrow">Seat guide</div><h2>${cfg.heading}</h2><p class="vs-room-summary">${cfg.summary}</p><div class="vs-room-seat-guide" data-layout-url="${cfg.layoutUrl}" data-seat-layout="${cfg.layoutId}" data-ticket-url="${cfg.ticketUrl}"></div>`;
-    }
-
-    if(!document.querySelector('script[data-vs-room-map]')){
-      const script=document.createElement('script');
-      script.src='/assets/seat-layouts/room-map.js?v=6';
-      script.dataset.vsRoomMap='1';
-      document.body.appendChild(script);
-    }
-  }
-
-  upgradeApprovedSeatChart();
-
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const progress=document.querySelector('.progress'),mobileProgress=document.getElementById('mobileProgress');
   function prog(){

@@ -1,109 +1,106 @@
 {
   "venue": "Spiegeltent at Caesars Palace",
   "address": "3570 S Las Vegas Blvd, Las Vegas, NV 89109",
-  "viewBox": "0 0 1200 1200",
-  "image": "/images/absinthe-seating-chart.webp?v=aed2ac49",
+  "viewBox": "0 0 1536 1024",
+  "image": "/images/absinthe-seating-chart.jpg",
   "highlightMode": "precise-outline",
   "zones": [
-    {
-      "id": "reserved-1",
-      "label": "Reserved 1",
-      "badge": "Reserved seating",
-      "our_pick": false,
-      "color": "#8d3cff",
-      "hitPaths": [
-        "M309 404 L317 433 L394 468 L399 479 L433 485 L474 505 L528 459 L591 441 L673 451 L721 484 L732 501 L832 457 L846 458 L852 443 L889 426 L842 368 L758 310 L631 280 L564 281 L517 295 L500 281 L495 293 L456 306 L391 343 L327 406 Z",
-        "M479 110 L472 104 L364 141 L301 183 L289 201 L335 242 L344 241 L416 196 L477 177 L483 169 Z",
-        "M505 99 L528 162 L586 154 L667 159 L693 102 L685 90 L630 81 L544 85 Z",
-        "M719 107 L716 169 L804 206 L827 206 L832 212 L825 219 L833 225 L851 219 L841 216 L842 207 L865 206 L890 181 L862 156 L800 122 L730 100 Z"
-      ],
-      "description": "Reserved 1 wraps the upper side of the room and gives you a clear view across the circular stage."
-    },
-    {
-      "id": "reserved-2",
-      "label": "Reserved 2",
-      "badge": "Sweet Spot / Our Pick",
-      "our_pick": true,
-      "color": "#20c7d9",
-      "hitPaths": [
-        "M847 463 L828 463 L677 528 L681 565 L700 569 L846 514 L852 474 Z",
-        "M793 740 L777 770 L885 880 L922 841 L940 807 L827 749 Z"
-      ],
-      "description": "Reserved 2 is one of the Vegas Sidekick Sweet Spot / Our Pick sections for Absinthe."
-    },
-    {
-      "id": "reserved-3",
-      "label": "Reserved 3",
-      "badge": "Sweet Spot / Our Pick",
-      "our_pick": true,
-      "color": "#ff2e7e",
-      "hitPaths": [
-        "M862 886 L851 864 L806 823 L804 812 L741 744 L743 723 L680 686 L658 685 L658 670 L648 665 L600 686 L601 699 L593 705 L538 685 L473 731 L310 823 L357 880 L399 916 L481 962 L554 986 L574 981 L600 990 L625 984 L656 988 L732 970 L814 930 Z",
-        "M321 1005 L325 1016 L396 1060 L458 1085 L500 1089 L494 1026 L422 1000 L360 962 L347 964 Z",
-        "M778 1072 L735 1015 L652 1033 L583 1033 L557 1047 L541 1104 L591 1114 L673 1110 L763 1088 Z",
-        "M956 947 L902 909 L825 978 L795 990 L810 1056 L826 1062 L893 1021 L948 972 L948 962 L958 962 Z"
-      ],
-      "description": "Reserved 3 is one of the Vegas Sidekick Sweet Spot / Our Pick sections for Absinthe."
-    },
-    {
-      "id": "reserved-4",
-      "label": "Reserved 4",
-      "badge": "Reserved seating",
-      "our_pick": false,
-      "color": "#12c7b1",
-      "hitPaths": [
-        "M228 667 L184 672 L170 684 L175 720 L185 731 L180 744 L204 812 L212 815 L269 794 L275 785 L244 733 L249 717 L243 674 Z"
-      ],
-      "description": "Reserved 4 is the compact reserved section beside VIP 4 on the piano-stage side of the room."
-    },
     {
       "id": "vip-1",
       "label": "VIP 1",
       "badge": "VIP seating",
       "our_pick": false,
-      "color": "#ffb000",
+      "color": "#ff2e7e",
       "hitPaths": [
-        "M480 221 L515 286 L570 272 L625 268 L669 272 L728 289 L770 232 L751 215 L726 215 L711 201 L651 190 L560 194 Z",
-        "M496 500 L553 527 L594 516 L652 525 L711 500 L714 493 L664 460 L600 449 L542 463 L519 475 Z"
+        "M 604 369 L 760 387 L 742 500 L 627 476 Z",
+        "M 760 387 L 922 369 L 897 476 L 780 500 Z"
       ],
-      "description": "VIP 1 covers the upper VIP areas nearest Reserved 1, with a close view toward the center stage."
+      "description": "VIP 1 curves around the upper side of the center stage, directly inside Reserved 1."
     },
     {
       "id": "vip-2",
       "label": "VIP 2",
       "badge": "VIP seating",
       "our_pick": false,
-      "color": "#ffb000",
+      "color": "#ff2e7e",
       "hitPaths": [
-        "M911 215 L881 264 L956 341 L1006 321 L1007 306 L973 262 L925 215 Z",
-        "M752 563 L702 583 L700 656 L757 675 L767 646 L768 607 L760 568 Z",
-        "M848 526 L772 558 L780 595 L773 679 L853 706 L867 669 L872 593 L859 532 Z",
-        "M959 447 L862 493 L881 569 L884 638 L857 743 L964 789 L999 681 L1002 594 L990 515 L969 452 Z"
+        "M 1025 348 L 1189 372 L 1189 718 L 1012 741 L 978 557 Z"
       ],
-      "description": "VIP 2 covers the right-side VIP sections shown on the chart, including the seats closest to that side of the circular stage."
+      "description": "VIP 2 is the table-style section on the main-entrance side of the center stage."
     },
     {
       "id": "vip-3",
       "label": "VIP 3",
       "badge": "VIP seating",
       "our_pick": false,
-      "color": "#ffb000",
+      "color": "#ff2e7e",
       "hitPaths": [
-        "M490 728 L525 764 L590 786 L664 777 L696 759 L725 731 L678 701 L625 719 L596 720 L546 699 Z"
+        "M 630 591 L 745 614 L 763 717 L 607 698 Z",
+        "M 779 614 L 896 591 L 920 698 L 760 717 Z"
       ],
-      "description": "VIP 3 sits directly off the lower edge of the circular stage for a very close view."
+      "description": "VIP 3 curves around the lower side of the center stage, directly inside Reserved 3."
     },
     {
       "id": "vip-4",
       "label": "VIP 4",
       "badge": "VIP seating",
       "our_pick": false,
+      "color": "#ff2e7e",
+      "hitPaths": [
+        "M 472 383 L 626 383 L 680 519 L 630 654 L 472 654 Z"
+      ],
+      "description": "VIP 4 is the table-style section on the piano-stage side of the center stage."
+    },
+    {
+      "id": "reserved-1",
+      "label": "Reserved 1",
+      "badge": "Reserved seating",
+      "our_pick": false,
       "color": "#ffb000",
       "hitPaths": [
-        "M406 610 L390 611 L393 637 L385 642 L363 636 L242 649 L269 760 L386 706 L395 691 L407 694 Z",
-        "M516 564 L414 516 L393 575 L393 637 L357 638 L357 719 L386 706 L395 691 L412 694 L505 649 Z"
+        "M 493 169 L 766 169 L 766 248 L 441 327 Z",
+        "M 770 171 L 1018 171 L 1058 219 L 989 308 L 770 244 Z",
+        "M 461 253 L 765 253 L 765 439 L 528 439 Z",
+        "M 771 256 L 1021 285 L 969 434 L 771 434 Z"
       ],
-      "description": "VIP 4 includes the orange sections immediately left of the center stage, beside the piano-stage side of the room."
+      "description": "Reserved 1 wraps across the upper half of the room behind VIP 1."
+    },
+    {
+      "id": "reserved-2",
+      "label": "Reserved 2",
+      "badge": "Reserved seating",
+      "our_pick": false,
+      "color": "#ffb000",
+      "hitPaths": [
+        "M 888 441 L 1002 465 L 1032 541 L 1000 636 L 888 636 Z"
+      ],
+      "description": "Reserved 2 sits on the main-entrance side between the center stage and VIP 2."
+    },
+    {
+      "id": "reserved-3",
+      "label": "Reserved 3",
+      "badge": "Reserved seating",
+      "our_pick": false,
+      "color": "#ffb000",
+      "hitPaths": [
+        "M 513 635 L 765 635 L 765 852 L 450 806 Z",
+        "M 771 638 L 996 638 L 1052 792 L 771 843 Z",
+        "M 432 745 L 607 809 L 555 921 L 382 838 Z",
+        "M 608 844 L 885 844 L 849 968 L 641 968 Z",
+        "M 914 805 L 1084 744 L 1132 833 L 964 911 Z"
+      ],
+      "description": "Reserved 3 wraps across the lower half of the room behind VIP 3."
+    },
+    {
+      "id": "reserved-4",
+      "label": "Reserved 4",
+      "badge": "Reserved seating",
+      "our_pick": false,
+      "color": "#ffb000",
+      "hitPaths": [
+        "M 300 537 L 485 557 L 485 663 L 331 691 Z"
+      ],
+      "description": "Reserved 4 is the compact reserved section beside VIP 4 on the piano-stage side."
     }
   ]
 }
