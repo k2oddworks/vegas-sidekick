@@ -44,6 +44,6 @@
 .vs-gallery-heading{line-height:1.2}
 .vs-gallery-heading>span{background:#ffe0ee;border-radius:.16em;padding:.06em .2em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 @media(max-width:800px){
- .vs-show-gallery .vs-gallery-arrow{background:#d6f33c;border-color:#c4df2d;color:#17082e;box-shadow:0 3px 10px rgba(109,40,217,.12);font-weight:700}
- .vs-show-gallery .vs-gallery-arrow:hover,.vs-show-gallery .vs-gallery-arrow:active{background:#e3ff59;border-color:#d6f33c}
+ .vs-show-gallery .vs-gallery-arrow{background:#d6f33c;border:2px solid #17082e;color:#17082e;box-shadow:0 3px 10px rgba(109,40,217,.12);font-weight:700}
+ .vs-show-gallery .vs-gallery-arrow:hover,.vs-show-gallery .vs-gallery-arrow:active{background:#e3ff59;border-color:#17082e}
 }
