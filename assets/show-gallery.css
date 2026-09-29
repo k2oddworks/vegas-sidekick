@@ -39,3 +39,11 @@
 @media(prefers-reduced-motion:reduce){.vs-gallery-track{scroll-behavior:auto}}
 .vs-show-gallery [hidden],.vs-gallery-dialog [hidden]{display:none}
 .vs-show-gallery:has(.vs-gallery-slide:only-child) .vs-gallery-track{padding-right:0}
+
+/* Gallery heading highlight and bright mobile navigation. */
+.vs-gallery-heading{line-height:1.2}
+.vs-gallery-heading>span{background:#ffe0ee;border-radius:.16em;padding:.06em .2em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@media(max-width:800px){
+ .vs-show-gallery .vs-gallery-arrow{background:#d6f33c;border-color:#c4df2d;color:#17082e;box-shadow:0 3px 10px rgba(109,40,217,.12);font-weight:700}
+ .vs-show-gallery .vs-gallery-arrow:hover,.vs-show-gallery .vs-gallery-arrow:active{background:#e3ff59;border-color:#d6f33c}
+}
