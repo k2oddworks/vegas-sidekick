@@ -24,7 +24,7 @@
   dialog.append(full,close,back,forward,caption);document.body.append(dialog);
   function update(){
    const label=slides[current].dataset.chart?'Seating chart':'Photo '+(current+1);
-   position.textContent=(current+1)+' / '+slides.length+(slides[current].dataset.chart?' · Seating chart':'');
+   position.textContent=(current+1)+' / '+slides.length;
    slides.forEach((s,i)=>s.tabIndex=i===current?0:-1);
    thumbButtons.forEach((b,i)=>b.setAttribute('aria-current',String(i===current)));
    if(dialog.open){full.src=images[current].currentSrc||images[current].src;full.alt=images[current].alt;caption.textContent=label+' · '+(current+1)+' / '+slides.length;}
