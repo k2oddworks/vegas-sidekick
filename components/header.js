@@ -1,5 +1,5 @@
 // Vegas Sidekick — Shared Header Component
-// v20 — unique image URL to bypass stale Cloudflare logo cache
+// v21 — first-class mobile search beside hamburger
 (function () {
   'use strict';
 
@@ -42,18 +42,19 @@
     </div>
 
     <a href="/shows/" class="nav-cta">All Shows</a>
+    <button class="nav-mobile-search" id="vsMobileSearchButton" type="button" onclick="vsToggleMobileSearch(event)" aria-label="Search Vegas Sidekick" aria-expanded="false" aria-controls="vsMobileSearchPanel">&#128269;</button>
     <button class="nav-mobile-menu" id="vsMobileMenuButton" type="button" onclick="vsToggleMenu()" aria-label="Open menu" aria-expanded="false" aria-controls="vsMobileDrawer">&#9776;</button>
   </div>
+
+  <form class="nav-mobile-search-panel" id="vsMobileSearchPanel" role="search" onsubmit="return vsMobileSearch(event)" aria-hidden="true">
+    <label class="sr-only" for="vsMobileHeaderSearchInput">Search shows</label>
+    <input id="vsMobileHeaderSearchInput" type="search" name="q" placeholder="Search shows&hellip;" autocomplete="off">
+    <button type="submit" aria-label="Search">&#128269;</button>
+  </form>
 </nav>
 
 <div class="nav-mobile-drawer" id="vsMobileDrawer" aria-hidden="true">
   <button class="drawer-x" type="button" onclick="vsToggleMenu()" aria-label="Close menu">&times;</button>
-
-  <form class="drawer-search" role="search" onsubmit="return vsMobileSearch(event)">
-    <label class="sr-only" for="vsDrawerSearch">Search shows</label>
-    <input id="vsDrawerSearch" type="search" name="q" placeholder="Search shows&hellip;" autocomplete="off">
-    <button type="submit" aria-label="Search">&#128269;</button>
-  </form>
 
   <div class="drawer-priority" aria-label="Popular destinations">
     <a href="/shows/" class="drawer-primary primary-all"><span>&#127915;</span> All Shows <b>&#8594;</b></a>
@@ -98,6 +99,13 @@
 .nav-spacer{flex:1}
 .nav-cta{display:inline-flex;align-items:center;background:#ff2e7e;color:#fff!important;font:700 .9rem 'Plus Jakarta Sans',sans-serif;text-decoration:none;padding:10px 20px;border-radius:100px;box-shadow:0 8px 20px rgba(255,46,126,.28);transition:.18s;white-space:nowrap}
 .nav-cta:hover{background:#ff1f72;transform:translateY(-2px)}
+.nav-mobile-search{display:none;place-items:center;width:38px;height:38px;border:0;border-radius:50%;background:transparent;color:#fff;font-size:1.05rem;cursor:pointer;padding:0;line-height:1}
+.nav-mobile-search:hover,.nav-mobile-search[aria-expanded="true"]{background:rgba(255,255,255,.1)}
+.nav-mobile-search-panel{display:none;position:absolute;left:0;right:0;top:64px;z-index:235;gap:8px;padding:12px 15px 14px;background:rgba(20,8,40,.98);border-bottom:1px solid rgba(198,242,46,.2);box-shadow:0 16px 30px rgba(7,3,18,.28)}
+.nav-mobile-search-panel.open{display:flex}
+.nav-mobile-search-panel input{flex:1;min-width:0;border:1px solid rgba(255,255,255,.24);border-radius:12px;padding:12px 14px;background:#fff;color:#171225;font:600 1rem Inter,sans-serif;outline:none}
+.nav-mobile-search-panel input:focus{border-color:#c6f22e;box-shadow:0 0 0 3px rgba(198,242,46,.18)}
+.nav-mobile-search-panel button{flex:0 0 48px;border:0;border-radius:12px;background:#ff2e7e;color:#fff;font-size:1.05rem;cursor:pointer}
 .nav-mobile-menu{display:none;background:none;border:0;color:#fff;font-size:1.55rem;cursor:pointer;padding:4px 7px;line-height:1}
 
 .nav-dropdown-wrap{position:relative}
@@ -127,9 +135,6 @@
 .nav-mobile-drawer{display:none;position:fixed;top:0;right:0;width:min(390px,91vw);height:100dvh;z-index:300;flex-direction:column;padding:18px 20px 28px;transform:translateX(100%);transition:transform .28s ease;overflow-y:auto;background:linear-gradient(180deg,#1c0a3a 0%,#12061f 100%);border-left:1px solid rgba(198,242,46,.14);box-shadow:-12px 0 40px rgba(10,4,26,.55)}
 .nav-mobile-drawer.open{transform:none}
 .drawer-x{align-self:flex-end;background:none;border:0;color:#fff;font-size:1.85rem;line-height:1;cursor:pointer;padding:2px 6px;margin:0 0 8px}
-.drawer-search{display:flex;gap:7px;margin-bottom:14px}
-.drawer-search input{flex:1;min-width:0;border:0;border-radius:11px;padding:13px 14px;font:500 1rem Inter,sans-serif;outline:none;color:#171225;background:#fff}
-.drawer-search button{flex:0 0 54px;border:0;border-radius:11px;background:#ff2e7e;color:#fff;font-size:1.1rem;cursor:pointer}
 .drawer-priority{display:grid;gap:9px;margin-bottom:21px}
 .drawer-primary{display:flex;align-items:center;gap:9px;border-radius:11px;padding:14px 15px;color:#fff!important;text-decoration:none;font:800 .94rem 'Plus Jakarta Sans',sans-serif;letter-spacing:.015em;box-shadow:0 7px 20px rgba(0,0,0,.14);transition:.18s}
 .drawer-primary:hover{transform:translateY(-1px);filter:brightness(1.06)}
@@ -147,12 +152,13 @@
 @media(max-width:980px){
   .vs-announce{display:none}
   .nav-desktop,.nav-search-wrap{display:none}
-  .vs-nav-row{padding:0 20px;height:64px;gap:13px}
+  .vs-nav-row{padding:0 20px;height:64px;gap:8px}
+  .nav-mobile-search{display:grid}
   .nav-mobile-menu{display:block}
   .nav-mobile-drawer{display:flex}
   .nav-cta{padding:9px 16px;font-size:.85rem}
 }
-@media(max-width:460px){.nav-logo{height:52px;overflow:visible}.nav-logo img{width:230px;height:auto;max-width:calc(100vw - 92px)}.nav-cta{display:none}.vs-nav-row{height:64px;padding:0 15px;overflow:visible}}
+@media(max-width:460px){.nav-logo{height:52px;overflow:visible}.nav-logo img{width:230px;height:auto;max-width:calc(100vw - 130px)}.nav-cta{display:none}.vs-nav-row{height:64px;padding:0 15px;overflow:visible}}
 @media(prefers-reduced-motion:reduce){.nav-dropdown,.nav-search-popover,.nav-mobile-drawer,.drawer-primary,.drawer-categories a,.nav-cta{transition:none!important}}
 </style>`;
 
@@ -186,6 +192,15 @@
     const button = document.getElementById('vsMobileMenuButton');
     if (!drawer || !overlay) return;
     const opening = !drawer.classList.contains('open');
+    if (opening) {
+      const searchPanel = document.getElementById('vsMobileSearchPanel');
+      const searchButton = document.getElementById('vsMobileSearchButton');
+      if (searchPanel) {
+        searchPanel.classList.remove('open');
+        searchPanel.setAttribute('aria-hidden','true');
+      }
+      if (searchButton) searchButton.setAttribute('aria-expanded','false');
+    }
     drawer.classList.toggle('open', opening);
     overlay.classList.toggle('visible', opening);
     drawer.setAttribute('aria-hidden', opening ? 'false' : 'true');
@@ -194,12 +209,41 @@
       button.setAttribute('aria-label', opening ? 'Close menu' : 'Open menu');
     }
     document.documentElement.style.overflow = opening ? 'hidden' : '';
-    if (opening) setTimeout(function () { const input = document.getElementById('vsDrawerSearch'); if (input) input.focus({preventScroll:true}); }, 120);
+  };
+
+  window.vsToggleMobileSearch = function (e) {
+    if (e) e.stopPropagation();
+    const panel = document.getElementById('vsMobileSearchPanel');
+    const button = document.getElementById('vsMobileSearchButton');
+    const drawer = document.getElementById('vsMobileDrawer');
+    const overlay = document.getElementById('vsNavOverlay');
+    const menuButton = document.getElementById('vsMobileMenuButton');
+    if (!panel || !button) return;
+    const opening = !panel.classList.contains('open');
+
+    if (opening && drawer && drawer.classList.contains('open')) {
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden','true');
+      if (overlay) overlay.classList.remove('visible');
+      if (menuButton) {
+        menuButton.setAttribute('aria-expanded','false');
+        menuButton.setAttribute('aria-label','Open menu');
+      }
+      document.documentElement.style.overflow='';
+    }
+
+    panel.classList.toggle('open',opening);
+    panel.setAttribute('aria-hidden',opening?'false':'true');
+    button.setAttribute('aria-expanded',opening?'true':'false');
+    if (opening) setTimeout(function(){
+      const input=document.getElementById('vsMobileHeaderSearchInput');
+      if(input) input.focus({preventScroll:true});
+    },60);
   };
 
   window.vsMobileSearch = function (e) {
     if (e) e.preventDefault();
-    const input = document.getElementById('vsDrawerSearch');
+    const input = document.getElementById('vsMobileHeaderSearchInput');
     const q = input ? input.value.trim() : '';
     window.location.href = '/search/' + (q ? '?q=' + encodeURIComponent(q) : '');
     return false;
@@ -247,6 +291,8 @@
     const showsButton = document.getElementById('vsShowsButton');
     const search = document.getElementById('vsDesktopSearch');
     const searchButton = document.getElementById('vsDesktopSearchButton');
+    const mobileSearch = document.getElementById('vsMobileSearchPanel');
+    const mobileSearchButton = document.getElementById('vsMobileSearchButton');
     if (menu && !menu.contains(e.target) && e.target !== showsButton) {
       menu.classList.remove('open');
       if (showsButton) showsButton.setAttribute('aria-expanded', 'false');
@@ -254,6 +300,11 @@
     if (search && !search.contains(e.target) && e.target !== searchButton) {
       search.classList.remove('open');
       if (searchButton) searchButton.setAttribute('aria-expanded', 'false');
+    }
+    if (mobileSearch && mobileSearch.classList.contains('open') && !mobileSearch.contains(e.target) && e.target !== mobileSearchButton) {
+      mobileSearch.classList.remove('open');
+      mobileSearch.setAttribute('aria-hidden','true');
+      if (mobileSearchButton) mobileSearchButton.setAttribute('aria-expanded','false');
     }
   });
 
@@ -265,10 +316,17 @@
     const showsButton = document.getElementById('vsShowsButton');
     const search = document.getElementById('vsDesktopSearch');
     const searchButton = document.getElementById('vsDesktopSearchButton');
+    const mobileSearch = document.getElementById('vsMobileSearchPanel');
+    const mobileSearchButton = document.getElementById('vsMobileSearchButton');
     if (menu) menu.classList.remove('open');
     if (search) search.classList.remove('open');
     if (showsButton) showsButton.setAttribute('aria-expanded', 'false');
     if (searchButton) searchButton.setAttribute('aria-expanded', 'false');
+    if (mobileSearch) {
+      mobileSearch.classList.remove('open');
+      mobileSearch.setAttribute('aria-hidden','true');
+    }
+    if (mobileSearchButton) mobileSearchButton.setAttribute('aria-expanded','false');
   });
 
   // Google Analytics — injected once via shared header.
