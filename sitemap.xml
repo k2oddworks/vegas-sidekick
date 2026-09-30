@@ -1232,6 +1232,13 @@
       <image:loc>https://vegassidekick.com/images/barry-manilow-hero.webp</image:loc>
     </image:image>
   </url>
+  <url>
+    <loc>https://vegassidekick.com/news/las-vegas-2027-john-mayer-lisa-santana-comedy/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://vegassidekick.com/images/john-mayer-live-at-sphere-las-vegas.jpg</image:loc></image:image>
+  </url>
 </urlset>
 
 
