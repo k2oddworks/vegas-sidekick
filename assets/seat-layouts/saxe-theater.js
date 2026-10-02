@@ -84,8 +84,12 @@
       }
     });
 
-    const galleryChart=document.querySelector('.saxe-chart-gallery img');
-    if(galleryChart){galleryChart.src=chartUrl;galleryChart.alt='VEGAS! The Show seating chart at Saxe Theater showing Center, Side and Rear sections, with Center as the Vegas Sidekick Sweet Spot'}
+    const galleryChart=document.querySelector('.saxe-chart-gallery img, #photos [data-chart="true"] img');
+    if(galleryChart){
+      galleryChart.src=chartUrl;
+      galleryChart.alt='VEGAS! The Show seating chart at Saxe Theater showing Center, Side and Rear sections, with Center as the Vegas Sidekick Sweet Spot';
+      document.querySelectorAll('#photos .vs-gallery-thumb[data-chart="true"] img').forEach(img=>{img.src=chartUrl});
+    }
   }
 
   function enhanceGallery(){
