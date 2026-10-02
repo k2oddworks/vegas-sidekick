@@ -148,7 +148,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
     <p>Upcoming Las Vegas headliners, residencies and limited engagements. Browse by date, act or venue, with source-linked event information and a visible verification date.</p>
     <div class="stats" id="stats" aria-label="Index summary">
       <div class="stat"><strong>—</strong><span>acts</span></div>
-      <div class="stat"><strong>—</strong><span>announced performances</span></div>
+      <div class="stat"><strong>—</strong><span>listed dates</span></div>
       <div class="stat"><strong>—</strong><span>venues</span></div>
       <div class="stat"><strong>Oct 2</strong><span>verified</span></div>
     </div>
@@ -385,7 +385,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
     const venueStat=activeVenue==='all' ? dataset.venues.length+' venues' : venueById(activeVenue).short_name;
     document.getElementById('stats').innerHTML=
       '<div class="stat"><strong>'+entries.length+'</strong><span>acts / engagements</span></div>'+
-      '<div class="stat"><strong>'+performances+'</strong><span>announced performances</span></div>'+
+      '<div class="stat"><strong>'+performances+'</strong><span>listed dates</span></div>'+
       '<div class="stat"><strong>'+escapeHtml(venueStat)+'</strong><span>current scope</span></div>'+
       '<div class="stat"><strong>Oct 2</strong><span>verified</span></div>';
   }
