@@ -95,7 +95,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
 </head>
 <body>
 <div id="vs-header"></div>
-<div class="preview-strip">Prototype · Vegas Sidekick Index · 3 venues</div>
+<div class="preview-strip">Prototype · Vegas Sidekick Index · 5 venues</div>
 
 <header class="hero">
   <div class="wrap">
@@ -318,7 +318,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   }
 
   function updateViewCopy(){
-    const venueName=activeVenue==='all'?'all three venues':venueById(activeVenue).name;
+    const venueName=activeVenue==='all'?'all '+dataset.venues.length+' venues':venueById(activeVenue).name;
     const typeName=activeType==='all'?'all engagement types':activeType==='residency'?'residencies':'limited engagements';
     if(activeView==='agenda'){
       titleEl.textContent='The agenda';
