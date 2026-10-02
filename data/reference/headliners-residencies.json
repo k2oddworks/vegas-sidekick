@@ -33,6 +33,19 @@
       "name": "Dolby Live at Park MGM",
       "short_name": "Dolby Live",
       "official_url": "https://parkmgm.mgmresorts.com/en/entertainment/dolby-live.html"
+    },
+    {
+      "id": "mgm-grand-garden-arena",
+      "name": "MGM Grand Garden Arena",
+      "short_name": "MGM Grand Garden Arena",
+      "official_url": "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839"
+    },
+    {
+      "id": "mgm-grand-theater",
+      "name": "MGM Grand Theater",
+      "short_name": "MGM Grand Theater",
+      "former_name": "David Copperfield Theater",
+      "official_url": "https://www.ticketmaster.com/David-Copperfield-Theater-at-MGM-Grand-tickets-Las-Vegas/venue/376869"
     }
   ],
   "entries": [
@@ -873,6 +886,148 @@
       ],
       "sources": [
         "https://www.ticketmaster.com/george-lam-sally-yeh-tickets/artist/927276?venueId=376930"
+      ]
+    },
+    {
+      "act": "The Smashing Pumpkins",
+      "venue_id": "mgm-grand-garden-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839",
+      "dates": [
+        "2026-10-30"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839"
+      ]
+    },
+    {
+      "act": "KATSEYE",
+      "venue_id": "mgm-grand-garden-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839",
+      "dates": [
+        "2026-11-14"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839"
+      ]
+    },
+    {
+      "act": "Journey",
+      "venue_id": "mgm-grand-garden-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839",
+      "dates": [
+        "2026-11-27"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839"
+      ]
+    },
+    {
+      "act": "Jonas Brothers",
+      "venue_id": "mgm-grand-garden-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839",
+      "dates": [
+        "2026-11-28"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839"
+      ]
+    },
+    {
+      "act": "The Red Clay Strays",
+      "venue_id": "mgm-grand-garden-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839",
+      "dates": [
+        "2026-12-05"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839"
+      ]
+    },
+    {
+      "act": "Now You See Me LIVE",
+      "venue_id": "mgm-grand-theater",
+      "type": "Resident production",
+      "official_url": "https://mgmgrand.mgmresorts.com/en/entertainment/now-you-see-me-live.html",
+      "citywide_calendar": false,
+      "dates": [
+        "2026-10-15",
+        "2026-10-16",
+        "2026-10-17",
+        "2026-10-18",
+        "2026-10-19",
+        "2026-10-20",
+        "2026-10-22",
+        "2026-10-23",
+        "2026-10-24",
+        "2026-10-25",
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01",
+        "2026-11-02",
+        "2026-11-03",
+        "2026-11-05",
+        "2026-11-06",
+        "2026-11-07",
+        "2026-11-08",
+        "2026-11-09",
+        "2026-11-10",
+        "2026-11-12",
+        "2026-11-13",
+        "2026-11-14",
+        "2026-11-15",
+        "2026-11-16",
+        "2026-11-17",
+        "2026-11-22",
+        "2026-11-23",
+        "2026-11-24",
+        "2026-11-26",
+        "2026-11-27",
+        "2026-11-28",
+        "2026-11-29",
+        "2026-11-30",
+        "2026-12-01",
+        "2026-12-03",
+        "2026-12-04",
+        "2026-12-05",
+        "2026-12-06",
+        "2026-12-07",
+        "2026-12-08",
+        "2026-12-10",
+        "2026-12-11",
+        "2026-12-12",
+        "2026-12-13",
+        "2026-12-14",
+        "2026-12-15",
+        "2026-12-17",
+        "2026-12-18",
+        "2026-12-19",
+        "2026-12-20",
+        "2026-12-21",
+        "2026-12-22",
+        "2026-12-24",
+        "2026-12-25",
+        "2026-12-26",
+        "2026-12-27",
+        "2026-12-28",
+        "2026-12-29",
+        "2026-12-31",
+        "2027-01-01",
+        "2027-01-02",
+        "2027-01-03",
+        "2027-01-04",
+        "2027-01-05"
+      ],
+      "sources": [
+        "https://mgmgrand.mgmresorts.com/en/entertainment/now-you-see-me-live.html",
+        "https://www.ticketmaster.com/David-Copperfield-Theater-at-MGM-Grand-tickets-Las-Vegas/venue/376869"
       ]
     }
   ]
