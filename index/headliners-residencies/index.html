@@ -102,6 +102,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
 .venue-list-row:last-child{border-bottom:0}.venue-list-dates{display:flex;flex-wrap:wrap;gap:6px}
 .room-badge{display:inline-flex;align-items:center;border-radius:999px;padding:4px 8px;font:700 .59rem var(--mono);letter-spacing:.02em;background:#eef6ff;color:#245ea8;border:1px solid #dbeafe}
 .section-intro{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}.section-intro h2{font-size:clamp(1.65rem,3vw,2.25rem)}.section-intro p{max-width:560px;margin:0;color:var(--muted);font-size:.9rem}
+.month-jump{display:none}
 .month{margin-top:32px}.month:first-child{margin-top:0}
 .month-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
 .month-head h3{font:800 1.02rem var(--display);letter-spacing:.01em;text-transform:uppercase}
@@ -132,10 +133,30 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   .act-grid{grid-template-columns:1fr}
 }
 @media(max-width:720px){
-  .wrap{width:min(100% - 28px,1160px)}.hero{padding:44px 0 42px}.hero p{font-size:.98rem}.filter-stack{margin-top:-12px}.filter-row{display:block}.filter-row-label{display:block;padding:0 0 7px}.venue-btn,.type-btn{padding:8px 11px}
-  .toolbar{align-items:flex-start;flex-direction:column;top:64px}.scope{display:none}.section-intro{display:block}.section-intro p{margin-top:8px}
-  .event-row{display:block;padding:17px}.act-name{margin-top:0}.act-meta{margin-bottom:0}.event-row .date-cluster{margin:14px 0}.venue{display:block;margin:0 0 12px!important}.official{width:100%}
-  .date-pill{min-width:46px;height:52px}.date-group{grid-template-columns:1fr;gap:6px}.act-card-top{display:block}.act-card-top .official{margin-top:14px;width:100%}.venue-section-head{display:block}.venue-section-head a{display:inline-block;margin-top:6px}.venue-list-row{display:block}.venue-list-row .act-meta{margin-bottom:12px}.venue-list-row .official{margin-top:12px}
+  .wrap{width:min(100% - 24px,1160px)}
+  .hero{padding:40px 0 38px}.hero p{font-size:.96rem}
+  .toolbar{top:64px;margin-bottom:18px;padding:9px 10px;overflow-x:auto;align-items:center;flex-direction:row;scrollbar-width:none}.toolbar::-webkit-scrollbar{display:none}.scope{display:none}
+  .view-group{flex:0 0 auto}.view-label{margin-right:1px}.view-btn{padding:8px 12px;font-size:.72rem}
+  .filter-stack{margin:-4px 0 20px;padding:11px 10px;gap:9px;overflow:hidden}
+  .filter-row{display:block;min-width:0}.filter-row-label{display:block;padding:0 0 6px}
+  .venue-filter,.type-filter{flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:none;padding-bottom:2px}.venue-filter::-webkit-scrollbar,.type-filter::-webkit-scrollbar{display:none}
+  .venue-btn,.type-btn{flex:0 0 auto;padding:7px 10px;font-size:.68rem}.venue-count{height:18px;min-width:18px;font-size:.54rem}
+  .section-intro{display:block;margin-bottom:12px}.section-intro p{display:none}.section-intro h2{font-size:1.5rem}
+  .month-jump{position:sticky;top:126px;z-index:28;display:flex;gap:7px;overflow-x:auto;margin:0 -12px 16px;padding:8px 12px;background:rgba(255,255,255,.96);border-top:1px solid var(--line);border-bottom:1px solid var(--line);backdrop-filter:blur(10px);scrollbar-width:none}.month-jump::-webkit-scrollbar{display:none}
+  .month-jump a{flex:0 0 auto;border:1px solid #ddd7e8;border-radius:999px;padding:7px 10px;background:#fff;color:var(--ink);text-decoration:none;font:800 .66rem var(--display)}
+  .month{scroll-margin-top:176px;margin-top:24px}.month-head{margin-bottom:7px}.month-head h3{font-size:.95rem}
+  .agenda{border-radius:14px}
+  .event-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 10px;padding:13px 14px}
+  .event-row>div:first-child{grid-column:1 / -1;grid-row:auto}
+  .event-row .date-cluster{grid-column:1 / -1;grid-row:auto;margin:1px 0 2px;gap:5px}
+  .event-row .venue{grid-column:1;grid-row:auto;align-self:center;display:block;margin:0!important;font-size:.72rem;line-height:1.25;color:#5b5565}
+  .event-row .official{grid-column:2;grid-row:auto;align-self:center;width:auto!important;min-height:31px;padding:5px 9px;font-size:0}
+  .event-row .official::after{content:'Tickets ↗';font:800 .65rem var(--display)}
+  .act-name{font-size:.94rem;line-height:1.18}.act-meta{margin-top:5px;margin-bottom:0}.badge,.room-badge{padding:3px 7px;font-size:.54rem}
+  .date-pill{min-width:38px;height:43px;border-radius:9px;padding:3px 6px}.date-pill strong{font-size:.9rem}.date-pill small{font-size:.52rem;margin-top:2px}
+  .date-group{grid-template-columns:1fr;gap:6px}.act-card{padding:15px}.act-card-top{display:block}.act-card-top .official{margin-top:11px;width:100%}
+  .venue-section-head{display:block}.venue-section-head a{display:inline-block;margin-top:6px}
+  .venue-list-row{display:block;padding:14px}.venue-list-row .act-meta{margin-bottom:10px}.venue-list-row .official{margin-top:10px;width:100%}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.toolbar{backdrop-filter:none}}
 </style>
@@ -188,6 +209,8 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
       <p id="view-description">Dates are grouped into short runs so the page stays chronological without repeating the same act dozens of times.</p>
     </section>
 
+    <nav class="month-jump" id="month-jump" aria-label="Jump to month" hidden></nav>
+
     <div id="agenda-view"><div class="loading">Loading announced dates…</div></div>
     <div id="acts-view" hidden></div>
     <div id="venues-view" hidden></div>
@@ -212,6 +235,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   const descEl=document.getElementById('view-description');
   const venueFilterEl=document.getElementById('venue-filter');
   const typeFilterEl=document.getElementById('type-filter');
+  const monthJumpEl=document.getElementById('month-jump');
   let dataset=null;
   let activeVenue='all';
   let activeType='all';
@@ -347,7 +371,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
         rows.sort(function(a,b){return a.first.localeCompare(b.first)||a.entry.act.localeCompare(b.entry.act)});
       }
       if(!rows.length)return;
-      html+='<section class="month"><div class="month-head"><h3>'+escapeHtml(monthLabel(key))+'</h3></div><div class="agenda">';
+      html+='<section class="month" id="month-'+escapeHtml(key)+'"><div class="month-head"><h3>'+escapeHtml(monthLabel(key))+'</h3></div><div class="agenda">';
       rows.forEach(function(row){
         const venue=venueById(row.entry.venue_id);
         const datePills=row.dates.map(function(d){return '<span class="date-pill"><strong>'+dayNum(d)+'</strong><small>'+escapeHtml(weekday(d))+'</small></span>'}).join('');
@@ -361,6 +385,27 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
       html+='</div></section>';
     });
     agendaEl.innerHTML=html||'<div class="error">No upcoming dates match these filters.</div>';
+  }
+
+  function renderMonthJump(){
+    if(activeView!=='agenda'){
+      monthJumpEl.hidden=true;
+      monthJumpEl.innerHTML='';
+      return;
+    }
+    const months=[...agendaEl.querySelectorAll('.month')];
+    if(months.length<2){
+      monthJumpEl.hidden=true;
+      monthJumpEl.innerHTML='';
+      return;
+    }
+    monthJumpEl.innerHTML=months.map(function(section){
+      const key=section.id.replace('month-','');
+      const parts=key.split('-').map(Number);
+      const label=new Intl.DateTimeFormat('en-US',{month:'short',year:'numeric'}).format(new Date(parts[0],parts[1]-1,1,12));
+      return '<a href="#'+escapeHtml(section.id)+'">'+escapeHtml(label)+'</a>';
+    }).join('');
+    monthJumpEl.hidden=false;
   }
 
   function renderActs(){
@@ -444,6 +489,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
     updateStats();
     updateViewCopy();
     renderAgenda();
+    renderMonthJump();
     renderActs();
     renderVenues();
   }
@@ -459,6 +505,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
       agendaEl.hidden=activeView!=='agenda';
       actsEl.hidden=activeView!=='acts';
       venuesEl.hidden=activeView!=='venues';
+      renderMonthJump();
       updateViewCopy();
     });
   });
