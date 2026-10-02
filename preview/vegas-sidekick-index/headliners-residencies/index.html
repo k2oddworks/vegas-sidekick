@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Headliners & Residencies | Vegas Sidekick Index Preview</title>
+<meta name="description" content="Prototype of the Vegas Sidekick Index headliners and residencies reference, starting with announced Sphere dates.">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#171225;--muted:#6d6779;--line:#e8e4ef;--soft:#f7f6fa;--purple:#7c3aed;
+  --pink:#ff2e7e;--lime:#c6f22e;--teal:#0fb5c9;--amber:#ffb000;--navy:#12061f;
+  --display:'Plus Jakarta Sans',sans-serif;--body:'Inter',sans-serif;--mono:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+.preview-strip{margin-top:88px;background:#dff56e;color:#171225;border-bottom:1px solid #bfd451;text-align:center;padding:8px 16px;font:700 .68rem var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.hero{position:relative;overflow:hidden;padding:58px 0 54px;color:#fff;background:
+ radial-gradient(850px 420px at 88% -15%,rgba(124,58,237,.6),transparent 62%),
+ radial-gradient(650px 360px at 0 115%,rgba(15,181,201,.22),transparent 60%),
+ linear-gradient(145deg,#1c0a3a 0%,#2b0f5c 58%,#12061f 100%)}
+.hero:after{content:"";position:absolute;inset:0;opacity:.8;pointer-events:none;background-image:
+ linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),
+ linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);background-size:34px 34px}
+.hero .wrap{position:relative;z-index:1}
+.eyebrow{font:700 .7rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--lime)}
+h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.035em}
+h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:.98}
+.hero p{max-width:760px;margin:17px 0 0;color:#ded6e8;font-size:1.08rem}
+.stats{display:flex;flex-wrap:wrap;gap:9px;margin-top:25px}
+.stat{display:flex;align-items:baseline;gap:7px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.07);border-radius:10px;padding:8px 11px}
+.stat strong{font:800 .98rem var(--display);color:#fff}.stat span{font:600 .68rem var(--mono);color:#cfc6d9}
+.main{padding:36px 0 70px}
+.toolbar{position:sticky;top:88px;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 26px;padding:12px 14px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);box-shadow:0 10px 28px rgba(23,18,37,.07)}
+.view-group{display:flex;align-items:center;gap:6px}.view-label{margin-right:4px;font:700 .62rem var(--mono);color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.view-btn{border:1px solid #ddd7e8;background:#fff;color:var(--ink);border-radius:999px;padding:9px 14px;font:800 .75rem var(--display);cursor:pointer}
+.view-btn.active{border-color:#24103d;background:#24103d;color:#fff}.scope{font:600 .69rem var(--mono);color:var(--muted)}.scope b{color:var(--ink)}
+.section-intro{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}.section-intro h2{font-size:clamp(1.65rem,3vw,2.25rem)}.section-intro p{max-width:560px;margin:0;color:var(--muted);font-size:.9rem}
+.month{margin-top:32px}.month:first-child{margin-top:0}
+.month-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.month-head h3{font:800 1.02rem var(--display);letter-spacing:.01em;text-transform:uppercase}
+.month-head:after{content:"";height:1px;flex:1;background:var(--line)}
+.agenda{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 12px 30px rgba(23,18,37,.055)}
+.event-row{display:grid;grid-template-columns:minmax(250px,1.25fr) minmax(250px,1fr) 150px 130px;gap:18px;align-items:center;padding:18px;border-bottom:1px solid var(--line)}
+.event-row:last-child{border-bottom:0}.date-cluster{display:flex;flex-wrap:wrap;gap:7px}
+.date-pill{display:grid;place-items:center;min-width:49px;height:54px;padding:4px 7px;border:1px solid #ddd6e8;border-radius:12px;background:#faf9fc}
+.date-pill strong{font:800 1.05rem var(--display);line-height:1}.date-pill small{margin-top:4px;font:600 .6rem var(--mono);color:var(--muted);text-transform:uppercase}
+.act-name{font:800 1.05rem var(--display);line-height:1.2}.act-meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:7px}
+.badge{display:inline-flex;align-items:center;border-radius:999px;padding:4px 8px;font:700 .61rem var(--mono);letter-spacing:.02em;background:#efeafd;color:#5e35a5}
+.venue{font:700 .82rem var(--display);color:#423c4c}.official{display:inline-flex;justify-content:center;align-items:center;min-height:38px;border:1px solid #d8d1e2;border-radius:999px;padding:8px 12px;text-decoration:none;font:800 .72rem var(--display);white-space:nowrap}.official:hover{border-color:#9f87ca;background:#f7f3ff}
+.act-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.act-card{border:1px solid var(--line);border-radius:18px;padding:20px;background:#fff;box-shadow:0 10px 26px rgba(23,18,37,.05)}
+.act-card-top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.act-card h3{font-size:1.18rem}.act-card .venue{display:block;margin-top:5px}
+.date-groups{display:grid;gap:12px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.date-group{display:grid;grid-template-columns:100px 1fr;gap:12px;align-items:start}.date-group-label{font:700 .66rem var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}.date-line{display:flex;flex-wrap:wrap;gap:6px}.mini-date{border-radius:8px;background:var(--soft);padding:5px 8px;font:700 .7rem var(--mono);color:#332d3d}
+.method{margin-top:42px;padding:20px;border-radius:17px;background:#171225;color:#fff}.method h2{font-size:1.15rem}.method p{margin:7px 0 0;max-width:850px;color:#d1c9da;font-size:.86rem}.method a{color:var(--lime);text-underline-offset:3px}
+.loading,.error{padding:40px 0;text-align:center;color:var(--muted);font:600 .82rem var(--mono)}
+[hidden]{display:none!important}
+@media(max-width:980px){
+  .preview-strip{margin-top:64px}.toolbar{top:64px}
+  .event-row{grid-template-columns:minmax(210px,.9fr) 1.2fr 110px}.event-row .official{grid-column:3}.event-row .venue{grid-column:3;grid-row:1}
+  .act-grid{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .wrap{width:min(100% - 28px,1160px)}.hero{padding:44px 0 42px}.hero p{font-size:.98rem}
+  .toolbar{align-items:flex-start;flex-direction:column;top:64px}.scope{display:none}.section-intro{display:block}.section-intro p{margin-top:8px}
+  .event-row{display:block;padding:17px}.act-name{margin-top:14px}.act-meta{margin-bottom:14px}.venue{display:block;margin:0 0 12px!important}.official{width:100%}
+  .date-pill{min-width:46px;height:52px}.date-group{grid-template-columns:1fr;gap:6px}.act-card-top{display:block}.act-card-top .official{margin-top:14px;width:100%}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.toolbar{backdrop-filter:none}}
+</style>
+</head>
+<body>
+<div id="vs-header"></div>
+<div class="preview-strip">Prototype · Vegas Sidekick Index · Sphere only</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Vegas Sidekick Index</div>
+    <h1>Headliners &amp; residencies</h1>
+    <p>Upcoming announced Las Vegas dates, sorted by when they happen. No rankings, no tourist copy — just the act, the dates, the venue and the official source.</p>
+    <div class="stats" id="stats" aria-label="Index summary">
+      <div class="stat"><strong>—</strong><span>acts</span></div>
+      <div class="stat"><strong>—</strong><span>announced performances</span></div>
+      <div class="stat"><strong>Sphere</strong><span>prototype venue</span></div>
+      <div class="stat"><strong>Oct 2</strong><span>verified</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <div class="wrap">
+    <div class="toolbar" aria-label="Index view controls">
+      <div class="view-group">
+        <span class="view-label">View</span>
+        <button class="view-btn active" type="button" data-view="agenda" aria-pressed="true">By date</button>
+        <button class="view-btn" type="button" data-view="acts" aria-pressed="false">By act</button>
+      </div>
+      <div class="scope"><b>Scope:</b> currently announced Sphere headliners and live engagements</div>
+    </div>
+
+    <section class="section-intro">
+      <div><div class="eyebrow" style="color:var(--purple)">Upcoming dates</div><h2 id="view-title">The agenda</h2></div>
+      <p id="view-description">Dates are grouped into short runs so the page stays chronological without repeating the same act dozens of times.</p>
+    </section>
+
+    <div id="agenda-view"><div class="loading">Loading announced dates…</div></div>
+    <div id="acts-view" hidden></div>
+
+    <aside class="method">
+      <h2>Source standard</h2>
+      <p>Dates in this prototype are taken from current official venue, artist and promoter sources and were checked October 2, 2026. The public version of the Index will keep a visible verification date and source trail instead of relying on unsourced calendar copy.</p>
+    </aside>
+  </div>
+</main>
+
+<div id="vs-footer"></div>
+<script src="/components/header.js?v=21"></script>
+<script src="/components/footer.js?v=33"></script>
+<script>
+(function(){
+  const DATA_URL='/data/reference/headliners-residencies-sphere.json';
+  const agendaEl=document.getElementById('agenda-view');
+  const actsEl=document.getElementById('acts-view');
+  const titleEl=document.getElementById('view-title');
+  const descEl=document.getElementById('view-description');
+  let dataset=null;
+
+  function parseDate(iso){
+    const p=iso.split('-').map(Number);
+    return new Date(p[0],p[1]-1,p[2],12,0,0);
+  }
+  function monthKey(iso){return iso.slice(0,7)}
+  function monthLabel(key){
+    const p=key.split('-').map(Number);
+    return new Intl.DateTimeFormat('en-US',{month:'long',year:'numeric'}).format(new Date(p[0],p[1]-1,1,12));
+  }
+  function weekday(iso){return new Intl.DateTimeFormat('en-US',{weekday:'short'}).format(parseDate(iso))}
+  function dayNum(iso){return String(parseInt(iso.slice(8,10),10))}
+  function monthShort(iso){return new Intl.DateTimeFormat('en-US',{month:'short'}).format(parseDate(iso))}
+  function escapeHtml(s){return String(s).replace(/[&<>"']/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]})}
+
+  function clustersForMonth(entry,key){
+    const dates=entry.dates.filter(d=>monthKey(d)===key).sort();
+    const clusters=[];
+    dates.forEach(function(d){
+      const last=clusters[clusters.length-1];
+      if(!last){clusters.push([d]);return}
+      const diff=(parseDate(d)-parseDate(last[last.length-1]))/86400000;
+      if(diff<=2){last.push(d)}else{clusters.push([d])}
+    });
+    return clusters;
+  }
+
+  function renderAgenda(){
+    const months=[...new Set(dataset.entries.flatMap(e=>e.dates.map(monthKey)))].sort();
+    let html='';
+    months.forEach(function(key){
+      const rows=[];
+      dataset.entries.forEach(function(entry){
+        clustersForMonth(entry,key).forEach(function(cluster){
+          rows.push({entry:entry,dates:cluster,first:cluster[0]});
+        });
+      });
+      rows.sort((a,b)=>a.first.localeCompare(b.first)||a.entry.act.localeCompare(b.entry.act));
+      if(!rows.length)return;
+      html+='<section class="month"><div class="month-head"><h3>'+escapeHtml(monthLabel(key))+'</h3></div><div class="agenda">';
+      rows.forEach(function(row){
+        const datePills=row.dates.map(function(d){return '<span class="date-pill"><strong>'+dayNum(d)+'</strong><small>'+escapeHtml(weekday(d))+'</small></span>'}).join('');
+        html+='<article class="event-row">'+
+          '<div class="date-cluster">'+datePills+'</div>'+
+          '<div><div class="act-name">'+escapeHtml(row.entry.act)+'</div><div class="act-meta"><span class="badge">'+escapeHtml(row.entry.type)+'</span></div></div>'+
+          '<div class="venue">Sphere</div>'+
+          '<a class="official" href="'+escapeHtml(row.entry.official_url)+'" target="_blank" rel="noopener">Official page ↗</a>'+
+        '</article>';
+      });
+      html+='</div></section>';
+    });
+    agendaEl.innerHTML=html||'<div class="error">No upcoming dates found.</div>';
+  }
+
+  function renderActs(){
+    const entries=dataset.entries.slice().sort(function(a,b){return a.dates[0].localeCompare(b.dates[0])});
+    let html='<div class="act-grid">';
+    entries.forEach(function(entry){
+      const groups={};
+      entry.dates.forEach(function(d){(groups[monthKey(d)]||(groups[monthKey(d)]=[])).push(d)});
+      html+='<article class="act-card"><div class="act-card-top"><div><h3>'+escapeHtml(entry.act)+'</h3><span class="venue">Sphere</span><div class="act-meta"><span class="badge">'+escapeHtml(entry.type)+'</span></div></div>'+
+      '<a class="official" href="'+escapeHtml(entry.official_url)+'" target="_blank" rel="noopener">Official page ↗</a></div><div class="date-groups">';
+      Object.keys(groups).sort().forEach(function(key){
+        html+='<div class="date-group"><div class="date-group-label">'+escapeHtml(monthLabel(key))+'</div><div class="date-line">'+
+          groups[key].map(function(d){return '<span class="mini-date">'+escapeHtml(monthShort(d))+' '+dayNum(d)+'</span>'}).join('')+
+        '</div></div>';
+      });
+      html+='</div></article>';
+    });
+    html+='</div>';
+    actsEl.innerHTML=html;
+  }
+
+  function updateStats(){
+    const performances=dataset.entries.reduce((n,e)=>n+e.dates.length,0);
+    document.getElementById('stats').innerHTML=
+      '<div class="stat"><strong>'+dataset.entries.length+'</strong><span>acts</span></div>'+
+      '<div class="stat"><strong>'+performances+'</strong><span>announced performances</span></div>'+
+      '<div class="stat"><strong>Sphere</strong><span>prototype venue</span></div>'+
+      '<div class="stat"><strong>Oct 2</strong><span>verified</span></div>';
+  }
+
+  document.querySelectorAll('.view-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      const view=btn.dataset.view;
+      document.querySelectorAll('.view-btn').forEach(function(b){const active=b===btn;b.classList.toggle('active',active);b.setAttribute('aria-pressed',active?'true':'false')});
+      const agenda=view==='agenda';
+      agendaEl.hidden=!agenda;actsEl.hidden=agenda;
+      titleEl.textContent=agenda?'The agenda':'Browse by act';
+      descEl.textContent=agenda?'Dates are grouped into short runs so the page stays chronological without repeating the same act dozens of times.':'Each act appears once, with every currently announced Sphere date grouped by month.';
+    });
+  });
+
+  fetch(DATA_URL,{cache:'no-store'})
+    .then(function(r){if(!r.ok)throw new Error('Data request failed');return r.json()})
+    .then(function(data){dataset=data;updateStats();renderAgenda();renderActs()})
+    .catch(function(){agendaEl.innerHTML='<div class="error">The prototype data could not be loaded.</div>'});
+})();
+</script>
+</body>
+</html>
