@@ -1,5 +1,5 @@
 // Vegas Sidekick — Shared Footer Component
-// v18 — persistent footer show search
+// v19 — add Sidekick Index to Explore
 (function () {
   'use strict';
 
@@ -63,6 +63,7 @@
           <button type="submit" aria-label="Search">&#128269;</button>
         </form>
         <a href="/venues/">Shows by Venue</a>
+        <a href="/sidekick-index/">Sidekick Index</a>
         <a href="/guides/" class="vs-footer-feature vs-feature-guides"><span>●</span> Vegas Guides</a>
         <a href="/guides/best-shows-for-first-timers/">Best Shows for First-Timers</a>
         <a href="/shows/deals/" class="vs-footer-feature vs-feature-deals"><span>●</span> Current Show Deals</a>
