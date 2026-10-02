@@ -46,6 +46,30 @@
       "short_name": "MGM Grand Theater",
       "former_name": "David Copperfield Theater",
       "official_url": "https://www.ticketmaster.com/David-Copperfield-Theater-at-MGM-Grand-tickets-Las-Vegas/venue/376869"
+    },
+    {
+      "id": "t-mobile-arena",
+      "name": "T-Mobile Arena",
+      "short_name": "T-Mobile Arena",
+      "official_url": "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926"
+    },
+    {
+      "id": "venetian-theatre",
+      "name": "The Venetian Theatre at The Venetian Resort",
+      "short_name": "Venetian Theatre",
+      "official_url": "https://www.ticketmaster.com/The-Venetian-Theatre-at-The-Venetian-tickets-Las-Vegas/venue/189345"
+    },
+    {
+      "id": "palazzo-theatre",
+      "name": "The Palazzo Theatre at The Venetian Resort",
+      "short_name": "Palazzo Theatre",
+      "official_url": "https://www.ticketmaster.com/palazzo-theatre-at-the-venetian-resort-tickets-las-vegas/venue/189346"
+    },
+    {
+      "id": "voltaire",
+      "name": "Voltaire at The Venetian Resort",
+      "short_name": "Voltaire",
+      "official_url": "https://www.ticketmaster.com/voltaire-at-the-venetian-resort-tickets-las-vegas/venue/189545"
     }
   ],
   "entries": [
@@ -949,85 +973,371 @@
       ]
     },
     {
-      "act": "Now You See Me LIVE",
-      "venue_id": "mgm-grand-theater",
-      "type": "Resident production",
-      "official_url": "https://mgmgrand.mgmresorts.com/en/entertainment/now-you-see-me-live.html",
-      "citywide_calendar": false,
+      "act": "Wu-Tang Forever: The Final Chamber",
+      "venue_id": "t-mobile-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926",
       "dates": [
+        "2026-10-03"
+      ],
+      "sources": [
+        "https://www.t-mobilearena.com/",
+        "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926"
+      ]
+    },
+    {
+      "act": "Weezer — The Gathering",
+      "venue_id": "t-mobile-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926",
+      "dates": [
+        "2026-10-23"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926"
+      ]
+    },
+    {
+      "act": "Doja Cat",
+      "venue_id": "t-mobile-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926",
+      "dates": [
+        "2026-10-31"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926"
+      ]
+    },
+    {
+      "act": "Teddy Swims",
+      "venue_id": "t-mobile-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926",
+      "dates": [
+        "2026-11-14"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926"
+      ]
+    },
+    {
+      "act": "Olivia Rodrigo",
+      "venue_id": "t-mobile-arena",
+      "type": "Limited engagement",
+      "official_url": "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926",
+      "dates": [
+        "2026-12-19",
+        "2026-12-20"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926"
+      ]
+    },
+    {
+      "act": "Earth, Wind & Fire",
+      "venue_id": "venetian-theatre",
+      "type": "Residency",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/earth-wind-and-fire.html",
+      "dates": [
+        "2026-10-16",
+        "2026-10-17",
+        "2026-10-18",
+        "2026-10-21",
+        "2026-10-23",
+        "2026-10-24",
+        "2026-10-28",
+        "2026-10-30",
+        "2026-10-31"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/earth-wind-and-fire.html",
+        "https://www.ticketmaster.com/The-Venetian-Theatre-at-The-Venetian-tickets-Las-Vegas/venue/189345"
+      ]
+    },
+    {
+      "act": "Clay Walker",
+      "venue_id": "venetian-theatre",
+      "type": "Headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/clay-walker.html",
+      "dates": [
+        "2026-12-05"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/clay-walker.html"
+      ]
+    },
+    {
+      "act": "Lindsey Stirling",
+      "venue_id": "venetian-theatre",
+      "type": "Limited engagement",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/lindsey-stirling.html",
+      "dates": [
+        "2026-12-16",
+        "2026-12-18",
+        "2026-12-19"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/lindsey-stirling.html",
+        "https://www.ticketmaster.com/The-Venetian-Theatre-at-The-Venetian-tickets-Las-Vegas/venue/189345"
+      ]
+    },
+    {
+      "act": "Styx",
+      "venue_id": "venetian-theatre",
+      "type": "Limited engagement",
+      "official_url": "https://www.venetianlasvegas.com/media/news-releases/2026/09-14-styx-announce-return-to-the-venetian-resort.html",
+      "dates": [
+        "2027-01-29",
+        "2027-01-30",
+        "2027-02-03",
+        "2027-02-05",
+        "2027-02-06"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/media/news-releases/2026/09-14-styx-announce-return-to-the-venetian-resort.html",
+        "https://www.ticketmaster.com/The-Venetian-Theatre-at-The-Venetian-tickets-Las-Vegas/venue/189345"
+      ]
+    },
+    {
+      "act": "Zoltan Kaszas",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/zoltan-kaszas.html",
+      "dates": [
+        "2026-10-02"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/zoltan-kaszas.html",
+        "https://www.ticketmaster.com/palazzo-theatre-at-the-venetian-resort-tickets-las-vegas/venue/189346"
+      ]
+    },
+    {
+      "act": "Becky Robinson",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www-cloud.venetianlasvegas.com/entertainment/becky-robinson.html",
+      "dates": [
+        "2026-10-03"
+      ],
+      "sources": [
+        "https://www-cloud.venetianlasvegas.com/entertainment/becky-robinson.html",
+        "https://www.ticketmaster.com/palazzo-theatre-at-the-venetian-resort-tickets-las-vegas/venue/189346"
+      ]
+    },
+    {
+      "act": "Tumua",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/tumua.html",
+      "dates": [
+        "2026-10-09"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/tumua.html"
+      ]
+    },
+    {
+      "act": "Heather McMahan",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/heather-mcmahan.html",
+      "dates": [
+        "2026-10-10"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/heather-mcmahan.html"
+      ]
+    },
+    {
+      "act": "Jay & Silent Bob",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/jay-and-silent-bob.html",
+      "dates": [
+        "2026-10-16"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/jay-and-silent-bob.html"
+      ]
+    },
+    {
+      "act": "Daniel Sloss",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/daniel-sloss.html",
+      "dates": [
+        "2026-10-23"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/daniel-sloss.html"
+      ]
+    },
+    {
+      "act": "Mario Adrion",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/mario-adrion.html",
+      "dates": [
+        "2026-10-24"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/mario-adrion.html"
+      ]
+    },
+    {
+      "act": "Lewis Black",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/lewis-black.html",
+      "dates": [
+        "2026-10-30"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/lewis-black.html"
+      ]
+    },
+    {
+      "act": "Brad Williams",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/brad-williams.html",
+      "dates": [
+        "2026-11-07"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/brad-williams.html"
+      ]
+    },
+    {
+      "act": "Brian Regan",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.ticketmaster.com/palazzo-theatre-at-the-venetian-resort-tickets-las-vegas/venue/189346",
+      "dates": [
+        "2026-11-14"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/palazzo-theatre-at-the-venetian-resort-tickets-las-vegas/venue/189346",
+        "https://www.venetianlasvegas.com/entertainment/brian-regan.html"
+      ]
+    },
+    {
+      "act": "Mark Normand",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/mark-normand.html",
+      "dates": [
+        "2026-12-04"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/mark-normand.html"
+      ]
+    },
+    {
+      "act": "Kathleen Madigan",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/kathleen-madigan.html",
+      "dates": [
+        "2026-12-05"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/kathleen-madigan.html"
+      ]
+    },
+    {
+      "act": "Iliza Shlesinger",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/iliza-shlesinger.html",
+      "dates": [
+        "2026-12-12"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/iliza-shlesinger.html"
+      ]
+    },
+    {
+      "act": "Usama Siddiquee",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/usama-siddiquee.html",
+      "dates": [
+        "2027-01-02"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/usama-siddiquee.html"
+      ]
+    },
+    {
+      "act": "Morgan Jay",
+      "venue_id": "palazzo-theatre",
+      "type": "Limited engagement",
+      "official_url": "https://www-cloud.venetianlasvegas.com/entertainment/morgan-jay.html",
+      "dates": [
+        "2027-01-22",
+        "2027-01-23"
+      ],
+      "sources": [
+        "https://www-cloud.venetianlasvegas.com/entertainment/morgan-jay.html",
+        "https://www.venetianlasvegas.com/media/news-releases/2026/09-14-morgan-jay-brings-his-last-time-in-america-tour-to-the-venetian-resort-las-vegas.html"
+      ]
+    },
+    {
+      "act": "Jimmy Jam & Terry Lewis",
+      "venue_id": "voltaire",
+      "type": "Limited engagement",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/jimmy-jam-terry-lewis.html",
+      "dates": [
+        "2026-10-02",
+        "2026-10-03"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/jimmy-jam-terry-lewis.html",
+        "https://www.ticketmaster.com/voltaire-at-the-venetian-resort-tickets-las-vegas/venue/189545"
+      ]
+    },
+    {
+      "act": "Dita Von Teese",
+      "venue_id": "voltaire",
+      "type": "Residency",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/dita-von-teese.html",
+      "dates": [
+        "2026-10-08",
+        "2026-10-09",
+        "2026-10-10",
+        "2026-10-11",
         "2026-10-15",
         "2026-10-16",
         "2026-10-17",
         "2026-10-18",
-        "2026-10-19",
-        "2026-10-20",
         "2026-10-22",
         "2026-10-23",
         "2026-10-24",
         "2026-10-25",
-        "2026-10-26",
-        "2026-10-27",
-        "2026-10-29",
-        "2026-10-30",
-        "2026-10-31",
-        "2026-11-01",
-        "2026-11-02",
-        "2026-11-03",
-        "2026-11-05",
         "2026-11-06",
         "2026-11-07",
         "2026-11-08",
-        "2026-11-09",
-        "2026-11-10",
         "2026-11-12",
         "2026-11-13",
         "2026-11-14",
         "2026-11-15",
-        "2026-11-16",
-        "2026-11-17",
-        "2026-11-22",
-        "2026-11-23",
-        "2026-11-24",
-        "2026-11-26",
-        "2026-11-27",
-        "2026-11-28",
-        "2026-11-29",
-        "2026-11-30",
-        "2026-12-01",
-        "2026-12-03",
         "2026-12-04",
         "2026-12-05",
         "2026-12-06",
-        "2026-12-07",
-        "2026-12-08",
         "2026-12-10",
         "2026-12-11",
         "2026-12-12",
         "2026-12-13",
-        "2026-12-14",
-        "2026-12-15",
         "2026-12-17",
         "2026-12-18",
         "2026-12-19",
-        "2026-12-20",
-        "2026-12-21",
-        "2026-12-22",
-        "2026-12-24",
-        "2026-12-25",
-        "2026-12-26",
-        "2026-12-27",
-        "2026-12-28",
-        "2026-12-29",
-        "2026-12-31",
-        "2027-01-01",
-        "2027-01-02",
-        "2027-01-03",
-        "2027-01-04",
-        "2027-01-05"
+        "2026-12-20"
       ],
       "sources": [
-        "https://mgmgrand.mgmresorts.com/en/entertainment/now-you-see-me-live.html",
-        "https://www.ticketmaster.com/David-Copperfield-Theater-at-MGM-Grand-tickets-Las-Vegas/venue/376869"
+        "https://www.venetianlasvegas.com/entertainment/dita-von-teese.html",
+        "https://www.ticketmaster.com/voltaire-at-the-venetian-resort-tickets-las-vegas/venue/189545"
       ]
     }
   ]
