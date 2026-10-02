@@ -106,7 +106,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
 .month-head h3{font:800 1.02rem var(--display);letter-spacing:.01em;text-transform:uppercase}
 .month-head:after{content:"";height:1px;flex:1;background:var(--line)}
 .agenda{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 12px 30px rgba(23,18,37,.055)}
-.event-row{display:grid;grid-template-columns:minmax(250px,1.25fr) minmax(250px,1fr) 150px 130px;gap:18px;align-items:center;padding:18px;border-bottom:1px solid var(--line)}
+.event-row{display:grid;grid-template-columns:minmax(230px,1fr) minmax(260px,1.25fr) 150px 130px;gap:18px;align-items:center;padding:18px;border-bottom:1px solid var(--line)}
 .event-row:last-child{border-bottom:0}.date-cluster{display:flex;flex-wrap:wrap;gap:7px}
 .date-pill{display:grid;place-items:center;min-width:49px;height:54px;padding:4px 7px;border:1px solid #ddd6e8;border-radius:12px;background:#faf9fc}
 .date-pill strong{font:800 1.05rem var(--display);line-height:1}.date-pill small{margin-top:4px;font:600 .6rem var(--mono);color:var(--muted);text-transform:uppercase}
@@ -124,16 +124,16 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
 @media(max-width:980px){
   .hero{margin-top:64px}.toolbar{top:64px}
   .event-row{grid-template-columns:minmax(190px,.8fr) 1fr 130px;gap:10px 16px}
-  .event-row .date-cluster{grid-column:1;grid-row:1 / span 2}
-  .event-row>div:nth-child(2){grid-column:2;grid-row:1}
-  .event-row .venue{grid-column:2;grid-row:2}
+  .event-row>div:first-child{grid-column:1;grid-row:1}
+  .event-row .date-cluster{grid-column:2;grid-row:1}
+  .event-row .venue{grid-column:1 / span 2;grid-row:2}
   .event-row .official{grid-column:3;grid-row:1 / span 2}
   .act-grid{grid-template-columns:1fr}
 }
 @media(max-width:720px){
   .wrap{width:min(100% - 28px,1160px)}.hero{padding:44px 0 42px}.hero p{font-size:.98rem}.filter-stack{margin-top:-12px}.filter-row{display:block}.filter-row-label{display:block;padding:0 0 7px}.venue-btn,.type-btn{padding:8px 11px}
   .toolbar{align-items:flex-start;flex-direction:column;top:64px}.scope{display:none}.section-intro{display:block}.section-intro p{margin-top:8px}
-  .event-row{display:block;padding:17px}.act-name{margin-top:14px}.act-meta{margin-bottom:14px}.venue{display:block;margin:0 0 12px!important}.official{width:100%}
+  .event-row{display:block;padding:17px}.act-name{margin-top:0}.act-meta{margin-bottom:0}.event-row .date-cluster{margin:14px 0}.venue{display:block;margin:0 0 12px!important}.official{width:100%}
   .date-pill{min-width:46px;height:52px}.date-group{grid-template-columns:1fr;gap:6px}.act-card-top{display:block}.act-card-top .official{margin-top:14px;width:100%}.venue-section-head{display:block}.venue-section-head a{display:inline-block;margin-top:6px}.venue-list-row{display:block}.venue-list-row .act-meta{margin-bottom:12px}.venue-list-row .official{margin-top:12px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.toolbar{backdrop-filter:none}}
@@ -232,7 +232,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   function venueById(id){return dataset.venues.find(function(v){return v.id===id})}
   function engagementBucket(entry){
     const type=entry.type.toLowerCase();
-    if(type==='residency'||type==='limited residency') return 'residency';
+    if(type==='residency'||type==='limited residency'||type==='resident production') return 'residency';
     if(type==='limited engagement'||type==='headliner'||type==='comedy headliner'||type==='special engagement') return 'limited';
     return 'other';
   }
@@ -304,7 +304,10 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   });
 
   function renderAgenda(){
-    const entries=currentEntries();
+    const scopedEntries=currentEntries();
+    const entries=activeVenue==='all'
+      ? scopedEntries.filter(function(e){return e.citywide_calendar!==false})
+      : scopedEntries;
     const months=[...new Set(entries.flatMap(function(e){return e.dates.map(monthKey)}))].sort();
     let html='';
     months.forEach(function(key){
@@ -325,8 +328,8 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
         const venue=venueById(row.entry.venue_id);
         const datePills=row.dates.map(function(d){return '<span class="date-pill"><strong>'+dayNum(d)+'</strong><small>'+escapeHtml(weekday(d))+'</small></span>'}).join('');
         html+='<article class="event-row">'+
-          '<div class="date-cluster">'+datePills+'</div>'+
           '<div><div class="act-name">'+escapeHtml(row.entry.act)+'</div><div class="act-meta"><span class="badge">'+escapeHtml(row.entry.type)+'</span></div></div>'+
+          '<div class="date-cluster">'+datePills+'</div>'+
           '<div class="venue">'+escapeHtml(venue.name)+'</div>'+
           '<a class="official" href="'+escapeHtml(row.entry.official_url)+'" target="_blank" rel="noopener">Tickets / venue ↗</a>'+
         '</article>';
