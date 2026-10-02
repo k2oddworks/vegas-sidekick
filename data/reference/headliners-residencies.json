@@ -86,6 +86,26 @@
       "short_name": "Encore Theater",
       "group_id": "wynn",
       "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows"
+    },
+    {
+      "id": "allegiant-stadium",
+      "name": "Allegiant Stadium",
+      "short_name": "Allegiant Stadium",
+      "official_url": "https://www.allegiantstadium.com/events/category/concerts"
+    },
+    {
+      "id": "resorts-world-theatre",
+      "name": "Resorts World Theatre",
+      "short_name": "Resorts World Theatre",
+      "group_id": "resorts-world",
+      "official_url": "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre"
+    },
+    {
+      "id": "stage-at-zouk",
+      "name": "The Stage at Zouk",
+      "short_name": "The Stage at Zouk",
+      "group_id": "resorts-world",
+      "official_url": "https://www.rwlasvegas.com/entertainment/"
     }
   ],
   "entries": [
@@ -1584,6 +1604,240 @@
       "sources": [
         "https://www.wynnlasvegas.com/entertainment/upcoming-shows/love-actually-in-concert"
       ]
+    },
+    {
+      "act": "UNDERTALE Determination Symphony World Tour",
+      "venue_id": "resorts-world-theatre",
+      "type": "Special engagement",
+      "official_url": "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
+      "dates": [
+        "2026-10-10"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/press/latest-news/",
+        "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre"
+      ]
+    },
+    {
+      "act": "Ms. Lauryn Hill & Wyclef Jean",
+      "venue_id": "resorts-world-theatre",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/ms-lauryn-hill-wyclef-jean-celebrating-30-years-of-the-score/",
+      "dates": [
+        "2026-11-06"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/press/ms-lauryn-hill-wyclef-jean-celebrate-30-years-of-their-groundbreaking-album-the-score-at-resorts-world-theatre-on-november-6-2026/"
+      ]
+    },
+    {
+      "act": "Danny Elfman’s Music from the Films of Tim Burton",
+      "venue_id": "resorts-world-theatre",
+      "type": "Limited engagement",
+      "official_url": "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
+      "dates": [
+        "2026-11-13",
+        "2026-11-14"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/press/latest-news/",
+        "https://www.axs.com/venues/128058/resorts-world-theatre-las-vegas-tickets?page=2"
+      ]
+    },
+    {
+      "act": "Feng Wang: HORIZON",
+      "venue_id": "resorts-world-theatre",
+      "type": "Headliner",
+      "official_url": "https://www.axs.com/venues/128058/resorts-world-theatre-las-vegas-tickets?page=2",
+      "dates": [
+        "2026-11-28"
+      ],
+      "sources": [
+        "https://www.axs.com/venues/128058/resorts-world-theatre-las-vegas-tickets?page=2"
+      ]
+    },
+    {
+      "act": "Dwight Yoakam",
+      "venue_id": "resorts-world-theatre",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
+      "dates": [
+        "2026-12-03"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/press/resorts-world-las-vegas-packs-rodeo-world-2026-with-10-days-of-headline-entertainment-and-nfr-action/"
+      ]
+    },
+    {
+      "act": "Gary Allan",
+      "venue_id": "resorts-world-theatre",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
+      "dates": [
+        "2026-12-04"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/press/resorts-world-las-vegas-packs-rodeo-world-2026-with-10-days-of-headline-entertainment-and-nfr-action/"
+      ]
+    },
+    {
+      "act": "Chris Young",
+      "venue_id": "resorts-world-theatre",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
+      "dates": [
+        "2026-12-05"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/press/resorts-world-las-vegas-packs-rodeo-world-2026-with-10-days-of-headline-entertainment-and-nfr-action/"
+      ]
+    },
+    {
+      "act": "Riley Green",
+      "venue_id": "resorts-world-theatre",
+      "type": "Limited engagement",
+      "official_url": "https://www.rwlasvegas.com/press/riley-green-brings-cowboy-as-it-gets-tour-2026-to-resorts-world-theatre-december-6-10/",
+      "dates": [
+        "2026-12-06",
+        "2026-12-10"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/press/riley-green-brings-cowboy-as-it-gets-tour-2026-to-resorts-world-theatre-december-6-10/"
+      ]
+    },
+    {
+      "act": "Lee Brice",
+      "venue_id": "resorts-world-theatre",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
+      "dates": [
+        "2026-12-09"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/",
+        "https://www.rwlasvegas.com/press/resorts-world-las-vegas-packs-rodeo-world-2026-with-10-days-of-headline-entertainment-and-nfr-action/"
+      ]
+    },
+    {
+      "act": "Sheryl Crow",
+      "venue_id": "resorts-world-theatre",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
+      "dates": [
+        "2026-12-12"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/",
+        "https://www.rwlasvegas.com/press/resorts-world-las-vegas-packs-rodeo-world-2026-with-10-days-of-headline-entertainment-and-nfr-action/"
+      ]
+    },
+    {
+      "act": "The Piano Guys",
+      "venue_id": "resorts-world-theatre",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/the-piano-guys/",
+      "dates": [
+        "2027-01-27"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/press/the-piano-guys-bring-west-coast-tour-2027-to-resorts-world-theatre-january-27-2027/"
+      ]
+    },
+    {
+      "act": "Michelle Branch",
+      "venue_id": "stage-at-zouk",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/",
+      "dates": [
+        "2026-10-09"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/"
+      ]
+    },
+    {
+      "act": "The Wallflowers",
+      "venue_id": "stage-at-zouk",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/",
+      "dates": [
+        "2026-10-10"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/"
+      ]
+    },
+    {
+      "act": "Big Head Todd & The Monsters",
+      "venue_id": "stage-at-zouk",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/",
+      "dates": [
+        "2026-10-24"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/"
+      ]
+    },
+    {
+      "act": "The Psychedelic Furs",
+      "venue_id": "stage-at-zouk",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/",
+      "dates": [
+        "2026-11-06"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/"
+      ]
+    },
+    {
+      "act": "Gente de Zona",
+      "venue_id": "stage-at-zouk",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/",
+      "dates": [
+        "2026-11-07"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/"
+      ]
+    },
+    {
+      "act": "Todd Rundgren",
+      "venue_id": "stage-at-zouk",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/",
+      "dates": [
+        "2026-11-13"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/"
+      ]
+    },
+    {
+      "act": "Toad the Wet Sprocket",
+      "venue_id": "stage-at-zouk",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/",
+      "dates": [
+        "2026-11-14"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/"
+      ]
+    },
+    {
+      "act": "Third Eye Blind",
+      "venue_id": "stage-at-zouk",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/",
+      "dates": [
+        "2026-12-31"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/"
+      ]
     }
   ],
   "venue_groups": [
@@ -1598,6 +1852,12 @@
       "name": "Wynn Las Vegas",
       "short_name": "Wynn",
       "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows"
+    },
+    {
+      "id": "resorts-world",
+      "name": "Resorts World Las Vegas",
+      "short_name": "Resorts World",
+      "official_url": "https://www.rwlasvegas.com/entertainment/"
     }
   ]
 }
