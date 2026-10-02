@@ -51,8 +51,7 @@
       "@type":"BreadcrumbList",
       "itemListElement":[
         {"@type":"ListItem","position":1,"name":"Home","item":"https://vegassidekick.com/"},
-        {"@type":"ListItem","position":2,"name":"Vegas Sidekick Index","item":"https://vegassidekick.com/index/headliners-residencies/"},
-        {"@type":"ListItem","position":3,"name":"Headliners & Residencies","item":"https://vegassidekick.com/index/headliners-residencies/"}
+        {"@type":"ListItem","position":2,"name":"Vegas Sidekick Index — Headliners & Residencies","item":"https://vegassidekick.com/index/headliners-residencies/"}
       ]
     }
   ]
@@ -150,7 +149,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
     <div class="stats" id="stats" aria-label="Index summary">
       <div class="stat"><strong>—</strong><span>acts</span></div>
       <div class="stat"><strong>—</strong><span>announced performances</span></div>
-      <div class="stat"><strong>3</strong><span>venues</span></div>
+      <div class="stat"><strong>—</strong><span>venues</span></div>
       <div class="stat"><strong>Oct 2</strong><span>verified</span></div>
     </div>
   </div>
@@ -433,7 +432,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
       renderVenueFilters();
       renderAll();
     })
-    .catch(function(){agendaEl.innerHTML='<div class="error">The prototype data could not be loaded.</div>'});
+    .catch(function(){agendaEl.innerHTML='<div class="error">The index data could not be loaded.</div>'});
 })();
 </script>
 </body>
