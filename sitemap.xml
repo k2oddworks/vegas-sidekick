@@ -1240,6 +1240,12 @@
     <image:image><image:loc>https://vegassidekick.com/images/vegas-dispatch-calendar-update-2026-09-30.png</image:loc></image:image>
   </url>
   <url>
+    <loc>https://vegassidekick.com/sidekick-index/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://vegassidekick.com/sidekick-index/headliners-residencies/</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>daily</changefreq>
