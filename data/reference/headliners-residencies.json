@@ -106,6 +106,13 @@
       "short_name": "The Stage at Zouk",
       "group_id": "resorts-world",
       "official_url": "https://www.rwlasvegas.com/entertainment/"
+    },
+    {
+      "id": "bleaulive-theater",
+      "name": "BleauLive Theater",
+      "short_name": "BleauLive Theater",
+      "group_id": "fontainebleau",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/"
     }
   ],
   "entries": [
@@ -1838,6 +1845,192 @@
       "sources": [
         "https://www.rwlasvegas.com/entertainment/"
       ]
+    },
+    {
+      "act": "Jack White",
+      "venue_id": "bleaulive-theater",
+      "type": "Headliner",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-10-02"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-10/"
+      ]
+    },
+    {
+      "act": "TLC & Salt-N-Pepa",
+      "venue_id": "bleaulive-theater",
+      "type": "Headliner",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-10-09"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-10/"
+      ]
+    },
+    {
+      "act": "Keith Urban",
+      "venue_id": "bleaulive-theater",
+      "type": "Limited engagement",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-10-16",
+        "2026-10-17"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-10/"
+      ]
+    },
+    {
+      "act": "Logic & G-Eazy",
+      "venue_id": "bleaulive-theater",
+      "type": "Headliner",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-10-18"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-10/"
+      ]
+    },
+    {
+      "act": "Ricky Martin",
+      "venue_id": "bleaulive-theater",
+      "type": "Limited engagement",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-10-30",
+        "2026-10-31"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/month/"
+      ]
+    },
+    {
+      "act": "Marc Anthony",
+      "venue_id": "bleaulive-theater",
+      "type": "Residency",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-11-20",
+        "2026-11-21",
+        "2027-02-12",
+        "2027-02-13",
+        "2027-02-17",
+        "2027-02-19",
+        "2027-02-20",
+        "2027-09-10",
+        "2027-09-11",
+        "2027-09-17",
+        "2027-09-18",
+        "2027-09-19"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/entertainment/",
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-11/"
+      ]
+    },
+    {
+      "act": "Grasshopper",
+      "venue_id": "bleaulive-theater",
+      "type": "Limited engagement",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-11-27",
+        "2026-11-28"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-11/"
+      ]
+    },
+    {
+      "act": "Triumph",
+      "venue_id": "bleaulive-theater",
+      "type": "Headliner",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-12-01"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
+      ]
+    },
+    {
+      "act": "Dierks Bentley",
+      "venue_id": "bleaulive-theater",
+      "type": "Limited engagement",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-12-04",
+        "2026-12-05"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
+      ]
+    },
+    {
+      "act": "Victoria Monét",
+      "venue_id": "bleaulive-theater",
+      "type": "Headliner",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-12-09"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
+      ]
+    },
+    {
+      "act": "Creed",
+      "venue_id": "bleaulive-theater",
+      "type": "Limited engagement",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-12-11",
+        "2026-12-12"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
+      ]
+    },
+    {
+      "act": "Tyla",
+      "venue_id": "bleaulive-theater",
+      "type": "Headliner",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-12-19"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
+      ]
+    },
+    {
+      "act": "Derek Hough — Dance for the Holidays",
+      "venue_id": "bleaulive-theater",
+      "type": "Special engagement",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-12-29"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
+      ]
+    },
+    {
+      "act": "A Perfect Circle",
+      "venue_id": "bleaulive-theater",
+      "type": "Limited engagement",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2027-06-10",
+        "2027-06-11"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/list/?tribe-bar-date=2026-12-01"
+      ]
     }
   ],
   "venue_groups": [
@@ -1858,6 +2051,12 @@
       "name": "Resorts World Las Vegas",
       "short_name": "Resorts World",
       "official_url": "https://www.rwlasvegas.com/entertainment/"
+    },
+    {
+      "id": "fontainebleau",
+      "name": "Fontainebleau Las Vegas",
+      "short_name": "Fontainebleau",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/"
     }
   ]
 }
