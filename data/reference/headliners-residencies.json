@@ -78,7 +78,8 @@
       "id": "michelob-ultra-arena",
       "name": "Michelob ULTRA Arena",
       "short_name": "Michelob ULTRA Arena",
-      "official_url": "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837"
+      "official_url": "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837",
+      "group_id": "mandalay-bay"
     },
     {
       "id": "encore-theater-wynn",
@@ -113,6 +114,34 @@
       "short_name": "BleauLive Theater",
       "group_id": "fontainebleau",
       "official_url": "https://www.fontainebleaulasvegas.com/entertainment/"
+    },
+    {
+      "id": "house-of-blues-mandalay-bay",
+      "name": "House of Blues Music Hall",
+      "short_name": "House of Blues",
+      "group_id": "mandalay-bay",
+      "official_url": "https://mandalaybay.mgmresorts.com/en/entertainment/house-of-blues-music-hall.html"
+    },
+    {
+      "id": "the-chelsea-cosmopolitan",
+      "name": "The Chelsea at The Cosmopolitan of Las Vegas",
+      "short_name": "The Chelsea",
+      "group_id": "cosmopolitan",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+    },
+    {
+      "id": "the-theater-virgin-hotels",
+      "name": "The Theater at Virgin Hotels Las Vegas",
+      "short_name": "The Theater",
+      "group_id": "virgin-hotels",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/"
+    },
+    {
+      "id": "westgate-international-theater",
+      "name": "International Theater at Westgate Las Vegas",
+      "short_name": "International Theater",
+      "group_id": "westgate",
+      "official_url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/"
     }
   ],
   "entries": [
@@ -2031,6 +2060,468 @@
       "sources": [
         "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/list/?tribe-bar-date=2026-12-01"
       ]
+    },
+    {
+      "act": "Santana",
+      "venue_id": "house-of-blues-mandalay-bay",
+      "type": "Residency",
+      "official_url": "https://mandalaybay.mgmresorts.com/en/entertainment/house-of-blues-music-hall/santana.html",
+      "dates": [
+        "2026-11-04",
+        "2026-11-05",
+        "2026-11-07",
+        "2026-11-08",
+        "2026-11-11",
+        "2026-11-12",
+        "2026-11-14",
+        "2026-11-15",
+        "2027-01-20",
+        "2027-01-21",
+        "2027-01-23",
+        "2027-01-24",
+        "2027-01-27",
+        "2027-01-28",
+        "2027-01-30",
+        "2027-01-31",
+        "2027-05-12",
+        "2027-05-13",
+        "2027-05-15",
+        "2027-05-16",
+        "2027-05-19",
+        "2027-05-20",
+        "2027-05-22",
+        "2027-05-23"
+      ],
+      "sources": [
+        "https://mandalaybay.mgmresorts.com/en/entertainment/house-of-blues-music-hall/santana.html",
+        "https://mandalaybay.mgmresorts.com/en/entertainment/house-of-blues-music-hall.html"
+      ]
+    },
+    {
+      "act": "Julieta Venegas",
+      "venue_id": "the-chelsea-cosmopolitan",
+      "type": "Headliner",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/julieta-venegas.html",
+      "dates": [
+        "2026-10-06"
+      ],
+      "sources": [
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/julieta-venegas.html",
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
+      "act": "Mo Amer",
+      "venue_id": "the-chelsea-cosmopolitan",
+      "type": "Comedy headliner",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/mo-amer.html",
+      "dates": [
+        "2026-10-10"
+      ],
+      "sources": [
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/mo-amer.html",
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
+      "act": "Deorro",
+      "venue_id": "the-chelsea-cosmopolitan",
+      "type": "Headliner",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html",
+      "dates": [
+        "2026-10-16"
+      ],
+      "sources": [
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html",
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
+      "act": "Ron White",
+      "venue_id": "the-chelsea-cosmopolitan",
+      "type": "Comedy headliner",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/ron-white.html",
+      "dates": [
+        "2026-10-23",
+        "2026-12-05"
+      ],
+      "sources": [
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/ron-white.html",
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
+      "act": "Daniel Tosh",
+      "venue_id": "the-chelsea-cosmopolitan",
+      "type": "Limited engagement",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/daniel-tosh.html",
+      "dates": [
+        "2026-11-07",
+        "2027-02-12",
+        "2027-04-24",
+        "2027-09-25",
+        "2027-11-06"
+      ],
+      "sources": [
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/daniel-tosh.html",
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
+      "act": "Steve Lacy",
+      "venue_id": "the-chelsea-cosmopolitan",
+      "type": "Headliner",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/steve-lacy.html",
+      "dates": [
+        "2026-11-13"
+      ],
+      "sources": [
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/steve-lacy.html",
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
+      "act": "Hudson Westbrook",
+      "venue_id": "the-chelsea-cosmopolitan",
+      "type": "Headliner",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html",
+      "dates": [
+        "2026-12-12"
+      ],
+      "sources": [
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html",
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
+      "act": "Boyz II Men",
+      "venue_id": "the-chelsea-cosmopolitan",
+      "type": "Limited engagement",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/boyz-ii-men.html",
+      "dates": [
+        "2027-03-12",
+        "2027-03-13",
+        "2027-03-19",
+        "2027-03-20"
+      ],
+      "sources": [
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/boyz-ii-men.html",
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
+      "act": "Andrew Santino",
+      "venue_id": "the-chelsea-cosmopolitan",
+      "type": "Comedy headliner",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/andrew-santino.html",
+      "dates": [
+        "2027-03-27"
+      ],
+      "sources": [
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/andrew-santino.html",
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
+      "act": "Carly Rae Jepsen",
+      "venue_id": "the-chelsea-cosmopolitan",
+      "type": "Headliner",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/carly-rae-jepsen.html",
+      "dates": [
+        "2027-04-30"
+      ],
+      "sources": [
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/carly-rae-jepsen.html",
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
+      "act": "The Rock Orchestra by Candlelight",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Special engagement",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-10-03"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Legends of Gospel",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Limited engagement",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-10-08",
+        "2026-10-09",
+        "2026-10-11"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Brincos Dieras",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Comedy headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-10-10"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "BEAT: Belew/Vai/Levin/Bozzio",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-10-13"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Treaty Oak Revival",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-10-23"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Tucker Wetmore",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-10-24"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Taste of Chaos — In This Moment & Hollywood Undead",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Special engagement",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-10-25"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Los Parras",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-10-30"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Brand New",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-11-06"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Marcus King Band",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-12-03"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Casey Donahew & Josh Abbott Band",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-12-09"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Gavin Adcock",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-12-10"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Sam Barber",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-12-12"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Lord Huron",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2027-01-02"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "FLANS40",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2027-03-11"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Engelbert Humperdinck",
+      "venue_id": "westgate-international-theater",
+      "type": "Limited engagement",
+      "official_url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/engelbert-humperdinck/",
+      "dates": [
+        "2026-10-02",
+        "2026-10-03"
+      ],
+      "sources": [
+        "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/engelbert-humperdinck/"
+      ]
+    },
+    {
+      "act": "Barry Manilow",
+      "venue_id": "westgate-international-theater",
+      "type": "Residency",
+      "official_url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/barry-manilow-greatest-hits-concert-tour/",
+      "dates": [
+        "2026-10-08",
+        "2026-10-09",
+        "2026-10-10",
+        "2026-10-15",
+        "2026-10-16",
+        "2026-10-17",
+        "2026-11-05",
+        "2026-11-06",
+        "2026-11-07",
+        "2026-11-12",
+        "2026-11-13",
+        "2026-11-14",
+        "2026-12-03",
+        "2026-12-04",
+        "2026-12-05",
+        "2026-12-10",
+        "2026-12-11",
+        "2026-12-12",
+        "2026-12-17",
+        "2026-12-18",
+        "2026-12-19",
+        "2027-02-18",
+        "2027-02-19",
+        "2027-02-20",
+        "2027-02-25",
+        "2027-02-26",
+        "2027-02-27",
+        "2027-03-25",
+        "2027-03-26",
+        "2027-03-27",
+        "2027-04-01",
+        "2027-04-02",
+        "2027-04-03"
+      ],
+      "sources": [
+        "https://www.westgateresorts.com/news/westgate-las-vegas-resort-and-casino-announces-new-2027-dates-for-barry-manilows-record-breaking-las-vegas-residency/",
+        "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/barry-manilow-greatest-hits-concert-tour/"
+      ]
+    },
+    {
+      "act": "Three Dog Night",
+      "venue_id": "westgate-international-theater",
+      "type": "Headliner",
+      "official_url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/",
+      "dates": [
+        "2026-10-31"
+      ],
+      "sources": [
+        "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/"
+      ]
+    },
+    {
+      "act": "Frankie Moreno featuring Lacey Schwimmer",
+      "venue_id": "westgate-international-theater",
+      "type": "Headliner",
+      "official_url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/",
+      "dates": [
+        "2026-11-27"
+      ],
+      "sources": [
+        "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/"
+      ]
+    },
+    {
+      "act": "Lou Gramm",
+      "venue_id": "westgate-international-theater",
+      "type": "Headliner",
+      "official_url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/",
+      "dates": [
+        "2027-01-30"
+      ],
+      "sources": [
+        "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/"
+      ]
+    },
+    {
+      "act": "Blood, Sweat & Tears",
+      "venue_id": "westgate-international-theater",
+      "type": "Headliner",
+      "official_url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/",
+      "dates": [
+        "2027-02-06"
+      ],
+      "sources": [
+        "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/"
+      ]
     }
   ],
   "venue_groups": [
@@ -2057,6 +2548,30 @@
       "name": "Fontainebleau Las Vegas",
       "short_name": "Fontainebleau",
       "official_url": "https://www.fontainebleaulasvegas.com/entertainment/"
+    },
+    {
+      "id": "mandalay-bay",
+      "name": "Mandalay Bay",
+      "short_name": "Mandalay Bay",
+      "official_url": "https://mandalaybay.mgmresorts.com/en/entertainment.html"
+    },
+    {
+      "id": "cosmopolitan",
+      "name": "The Cosmopolitan of Las Vegas",
+      "short_name": "Cosmopolitan",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+    },
+    {
+      "id": "virgin-hotels",
+      "name": "Virgin Hotels Las Vegas",
+      "short_name": "Virgin Hotels",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/"
+    },
+    {
+      "id": "westgate",
+      "name": "Westgate Las Vegas Resort & Casino",
+      "short_name": "Westgate",
+      "official_url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/"
     }
   ]
 }
