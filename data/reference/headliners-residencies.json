@@ -21,6 +21,18 @@
       "name": "Pearl Theater at Palms Casino Resort",
       "short_name": "Palms",
       "official_url": "https://www.palms.com/entertainment/pearl-theater"
+    },
+    {
+      "id": "planet-hollywood-ph-live",
+      "name": "PH Live at Planet Hollywood",
+      "short_name": "Planet Hollywood",
+      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893"
+    },
+    {
+      "id": "dolby-live",
+      "name": "Dolby Live at Park MGM",
+      "short_name": "Dolby Live",
+      "official_url": "https://parkmgm.mgmresorts.com/en/entertainment/dolby-live.html"
     }
   ],
   "entries": [
@@ -591,6 +603,276 @@
       "sources": [
         "https://www.palms.com/entertainment/pearl-theater/roger-waters-presents-legacy-a-pink-floyd-show",
         "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Jeff Dunham",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
+      "dates": [
+        "2026-10-04",
+        "2026-11-08",
+        "2026-12-06"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
+        "https://newsroom.caesars.com/press-releases/press-release-details/2026/Summer-Savings-Starts-Now-Caesars-Entertainments-Las-Vegas-Resorts-Introduce-More-Value-Options/default.aspx"
+      ]
+    },
+    {
+      "act": "Empire of the Sun",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/empire-of-the-sun-tickets/artist/1439524?venueId=467893",
+      "dates": [
+        "2026-10-09"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/empire-of-the-sun-tickets/artist/1439524?venueId=467893",
+        "https://newsroom.caesars.com/press-releases/press-release-details/2026/Caesars-Entertainment-Brings-Hotel-Savings-50-Show-Tickets-and-More-to-the-Vegas-5-Day-Sale/default.aspx"
+      ]
+    },
+    {
+      "act": "Yandel",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
+      "dates": [
+        "2026-10-29"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893"
+      ]
+    },
+    {
+      "act": "Jeezy",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Residency",
+      "official_url": "https://www.ticketmaster.com/jeezy-tickets/artist/973006",
+      "dates": [
+        "2026-11-06",
+        "2026-11-07",
+        "2026-11-13",
+        "2026-11-14",
+        "2026-12-18",
+        "2026-12-19",
+        "2026-12-20",
+        "2026-12-30",
+        "2026-12-31"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/jeezy-tickets/artist/973006",
+        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893"
+      ]
+    },
+    {
+      "act": "Vũ Trụ Say Hi",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Special engagement",
+      "official_url": "https://newsroom.caesars.com/press-releases/press-release-details/2026/TWO-NIGHTS--TWO-WORLDS--ONE-UNFORGETTABLE-LAS-VEGAS-WEEKEND---V-TR-SAY-HI--HIEUTHUHAI-LIVE-CONCERT-MT-NHM-MT-M-2026-HVOrl5_u_t/default.aspx",
+      "dates": [
+        "2026-11-28"
+      ],
+      "sources": [
+        "https://newsroom.caesars.com/press-releases/press-release-details/2026/TWO-NIGHTS--TWO-WORLDS--ONE-UNFORGETTABLE-LAS-VEGAS-WEEKEND---V-TR-SAY-HI--HIEUTHUHAI-LIVE-CONCERT-MT-NHM-MT-M-2026-HVOrl5_u_t/default.aspx"
+      ]
+    },
+    {
+      "act": "HIEUTHUHAI",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Special engagement",
+      "official_url": "https://newsroom.caesars.com/press-releases/press-release-details/2026/TWO-NIGHTS--TWO-WORLDS--ONE-UNFORGETTABLE-LAS-VEGAS-WEEKEND---V-TR-SAY-HI--HIEUTHUHAI-LIVE-CONCERT-MT-NHM-MT-M-2026-HVOrl5_u_t/default.aspx",
+      "dates": [
+        "2026-11-29"
+      ],
+      "sources": [
+        "https://newsroom.caesars.com/press-releases/press-release-details/2026/TWO-NIGHTS--TWO-WORLDS--ONE-UNFORGETTABLE-LAS-VEGAS-WEEKEND---V-TR-SAY-HI--HIEUTHUHAI-LIVE-CONCERT-MT-NHM-MT-M-2026-HVOrl5_u_t/default.aspx"
+      ]
+    },
+    {
+      "act": "Jeff Foxworthy & Larry the Cable Guy",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Limited engagement",
+      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
+      "dates": [
+        "2026-12-04"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
+        "https://newsroom.caesars.com/press-releases/press-release-details/2026/Caesars-Entertainment-Brings-Hotel-Savings-50-Show-Tickets-and-More-to-the-Vegas-5-Day-Sale/default.aspx"
+      ]
+    },
+    {
+      "act": "Bailey Zimmerman",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
+      "dates": [
+        "2026-12-05"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893"
+      ]
+    },
+    {
+      "act": "Koe Wetzel",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
+      "dates": [
+        "2026-12-11"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893"
+      ]
+    },
+    {
+      "act": "Ali Siddiq",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Comedy headliner",
+      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
+      "dates": [
+        "2027-01-23"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893"
+      ]
+    },
+    {
+      "act": "Yuridia",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/artist/1169217?venueId=467893",
+      "dates": [
+        "2027-02-18"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/artist/1169217?venueId=467893"
+      ]
+    },
+    {
+      "act": "Letterkenny Live",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Limited engagement",
+      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893?page=2",
+      "dates": [
+        "2027-02-26"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893?page=2"
+      ]
+    },
+    {
+      "act": "Franco Escamilla",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Comedy headliner",
+      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893?page=2",
+      "dates": [
+        "2027-05-08"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893?page=2"
+      ]
+    },
+    {
+      "act": "Scorpions",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Residency",
+      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893?page=2",
+      "dates": [
+        "2027-09-09",
+        "2027-09-11",
+        "2027-09-14",
+        "2027-09-16",
+        "2027-09-18",
+        "2027-09-21",
+        "2027-09-23",
+        "2027-09-25"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893?page=2",
+        "https://newsroom.caesars.com/press-releases/press-release-details/2026/Scorpions-Return-to-Las-Vegas-With-New-Headlining-Residency-at-PH-Live-at-Planet-Hollywood-Resort--Casino-Celebrating-the-Bands-60th-Anniversary/default.aspx"
+      ]
+    },
+    {
+      "act": "New Kids on the Block",
+      "venue_id": "dolby-live",
+      "type": "Residency",
+      "official_url": "https://parkmgm.mgmresorts.com/en/entertainment/new-kids-on-the-block.html",
+      "dates": [
+        "2026-10-02",
+        "2026-10-03",
+        "2026-10-07",
+        "2026-10-09",
+        "2026-10-10",
+        "2026-10-14",
+        "2026-10-16",
+        "2026-10-17"
+      ],
+      "sources": [
+        "https://parkmgm.mgmresorts.com/en/entertainment/new-kids-on-the-block.html"
+      ]
+    },
+    {
+      "act": "Mary J. Blige",
+      "venue_id": "dolby-live",
+      "type": "Residency",
+      "official_url": "https://parkmgm.mgmresorts.com/en/entertainment/mary-j-blige.html",
+      "dates": [
+        "2026-10-23",
+        "2026-10-24",
+        "2026-10-28",
+        "2026-10-30",
+        "2026-10-31",
+        "2027-02-12",
+        "2027-02-13",
+        "2027-02-17",
+        "2027-02-19",
+        "2027-02-20"
+      ],
+      "sources": [
+        "https://parkmgm.mgmresorts.com/en/entertainment/mary-j-blige.html",
+        "https://newsroom.mgmresorts.com/press-releases?item=122881"
+      ]
+    },
+    {
+      "act": "Kill Tony",
+      "venue_id": "dolby-live",
+      "type": "Limited engagement",
+      "official_url": "https://www.ticketmaster.com/dolby-live-tickets-las-vegas/venue/376930?page=1",
+      "dates": [
+        "2026-11-13",
+        "2026-11-14"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/dolby-live-tickets-las-vegas/venue/376930?page=1"
+      ]
+    },
+    {
+      "act": "Matt Rife",
+      "venue_id": "dolby-live",
+      "type": "Comedy headliner",
+      "official_url": "https://www.ticketmaster.com/dolby-live-tickets-las-vegas/venue/376930?page=1",
+      "dates": [
+        "2026-12-04"
+      ],
+      "sources": [
+        "https://newsroom.mgmresorts.com/press-releases?item=122889",
+        "https://www.ticketmaster.com/dolby-live-tickets-las-vegas/venue/376930?page=1"
+      ]
+    },
+    {
+      "act": "George Lam & Sally Yeh",
+      "venue_id": "dolby-live",
+      "type": "Limited engagement",
+      "official_url": "https://www.ticketmaster.com/george-lam-sally-yeh-tickets/artist/927276?venueId=376930",
+      "dates": [
+        "2026-12-19",
+        "2026-12-20"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/george-lam-sally-yeh-tickets/artist/927276?venueId=376930"
       ]
     }
   ]
