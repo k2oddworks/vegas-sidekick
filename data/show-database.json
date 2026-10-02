@@ -3865,12 +3865,12 @@
       "age_summary": "All ages",
       "venue": "Saxe Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat · 7 PM",
+      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat · 5:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/production/vegas-the-show/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/vegas-the-show/",
-      "verified_on": "2026-09-08",
-      "freshness_label": "September 2026",
+      "verified_on": "2026-10-02",
+      "freshness_label": "October 2026",
       "verification": "verified_spotlight",
       "notes": "",
       "spotlight": {
@@ -3883,34 +3883,33 @@
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater. Additional Information The showroom is located inside the Miracle Mile Shops (the mall area) located at the Planet Hollywood Hotel.",
         "schedule_days": {
           "Monday": [
-            "7 PM"
+            "5:30 PM"
           ],
           "Tuesday": [
-            "7 PM"
+            "5:30 PM"
           ],
           "Wednesday": [
-            "7 PM"
+            "5:30 PM"
           ],
           "Thursday": [
-            "7 PM"
+            "5:30 PM"
           ],
           "Friday": [
-            "7 PM"
+            "5:30 PM"
           ],
           "Saturday": [
-            "7 PM"
+            "5:30 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat · 7 PM",
+        "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat · 5:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Monday – 7:00pm",
-          "Tuesday – 7:00pm",
-          "Wednesday – 7:00pm",
-          "Thursday – 7:00pm",
-          "Friday – 7:00pm",
-          "Saturday – 7:00pm",
-          "On September 21, 2026, show will move to 5:30pm."
+          "Monday – 5:30pm",
+          "Tuesday – 5:30pm",
+          "Wednesday – 5:30pm",
+          "Thursday – 5:30pm",
+          "Friday – 5:30pm",
+          "Saturday – 5:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/production/vegas-the-show/",
         "affiliate_url": "https://spotlight.vegas/shows/production/vegas-the-show/ref/vegassidekick",
