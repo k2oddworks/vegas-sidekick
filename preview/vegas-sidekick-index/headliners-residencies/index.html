@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Headliners & Residencies | Vegas Sidekick Index Preview</title>
-<meta name="description" content="Prototype of the Vegas Sidekick Index headliners and residencies reference, starting with announced Sphere dates.">
+<meta name="description" content="Prototype of the Vegas Sidekick Index headliners and residencies reference, organized by date, act and venue.">
 <meta name="robots" content="noindex,nofollow,noarchive">
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +39,12 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
 .view-group{display:flex;align-items:center;gap:6px}.view-label{margin-right:4px;font:700 .62rem var(--mono);color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
 .view-btn{border:1px solid #ddd7e8;background:#fff;color:var(--ink);border-radius:999px;padding:9px 14px;font:800 .75rem var(--display);cursor:pointer}
 .view-btn.active{border-color:#24103d;background:#24103d;color:#fff}.scope{font:600 .69rem var(--mono);color:var(--muted)}.scope b{color:var(--ink)}
+.venue-filter{display:flex;flex-wrap:wrap;gap:8px;margin:-10px 0 28px}
+.venue-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid #ddd7e8;background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;font:800 .73rem var(--display);cursor:pointer}
+.venue-btn:hover{border-color:#a890ce;background:#faf7ff}
+.venue-btn.active{border-color:#24103d;background:#24103d;color:#fff}
+.venue-count{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 5px;border-radius:999px;background:rgba(124,58,237,.1);color:#6d28d9;font:700 .58rem var(--mono)}
+.venue-btn.active .venue-count{background:rgba(255,255,255,.14);color:#fff}
 .section-intro{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}.section-intro h2{font-size:clamp(1.65rem,3vw,2.25rem)}.section-intro p{max-width:560px;margin:0;color:var(--muted);font-size:.9rem}
 .month{margin-top:32px}.month:first-child{margin-top:0}
 .month-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
@@ -70,7 +76,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   .act-grid{grid-template-columns:1fr}
 }
 @media(max-width:720px){
-  .wrap{width:min(100% - 28px,1160px)}.hero{padding:44px 0 42px}.hero p{font-size:.98rem}
+  .wrap{width:min(100% - 28px,1160px)}.hero{padding:44px 0 42px}.hero p{font-size:.98rem}.venue-filter{margin-top:-12px}.venue-btn{padding:8px 11px}
   .toolbar{align-items:flex-start;flex-direction:column;top:64px}.scope{display:none}.section-intro{display:block}.section-intro p{margin-top:8px}
   .event-row{display:block;padding:17px}.act-name{margin-top:14px}.act-meta{margin-bottom:14px}.venue{display:block;margin:0 0 12px!important}.official{width:100%}
   .date-pill{min-width:46px;height:52px}.date-group{grid-template-columns:1fr;gap:6px}.act-card-top{display:block}.act-card-top .official{margin-top:14px;width:100%}
@@ -80,7 +86,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
 </head>
 <body>
 <div id="vs-header"></div>
-<div class="preview-strip">Prototype · Vegas Sidekick Index · Sphere only</div>
+<div class="preview-strip">Prototype · Vegas Sidekick Index · 3 venues</div>
 
 <header class="hero">
   <div class="wrap">
@@ -90,7 +96,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
     <div class="stats" id="stats" aria-label="Index summary">
       <div class="stat"><strong>—</strong><span>acts</span></div>
       <div class="stat"><strong>—</strong><span>announced performances</span></div>
-      <div class="stat"><strong>Sphere</strong><span>prototype venue</span></div>
+      <div class="stat"><strong>3</strong><span>venues</span></div>
       <div class="stat"><strong>Oct 2</strong><span>verified</span></div>
     </div>
   </div>
@@ -104,8 +110,10 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
         <button class="view-btn active" type="button" data-view="agenda" aria-pressed="true">By date</button>
         <button class="view-btn" type="button" data-view="acts" aria-pressed="false">By act</button>
       </div>
-      <div class="scope"><b>Scope:</b> currently announced Sphere headliners and live engagements</div>
+      <div class="scope"><b>Scope:</b> announced headliners, residencies and notable live engagements</div>
     </div>
+
+    <div class="venue-filter" id="venue-filter" aria-label="Filter by venue"></div>
 
     <section class="section-intro">
       <div><div class="eyebrow" style="color:var(--purple)">Upcoming dates</div><h2 id="view-title">The agenda</h2></div>
@@ -117,7 +125,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
 
     <aside class="method">
       <h2>Source standard</h2>
-      <p>Dates in this prototype are taken from current official venue, artist and promoter sources and were checked October 2, 2026. The public version of the Index will keep a visible verification date and source trail instead of relying on unsourced calendar copy. <a href="/data/reference/headliners-residencies-sphere.json">View the prototype JSON →</a></p>
+      <p>Dates in this prototype are taken from current venue, ticketing, artist and promoter sources and were checked October 2, 2026. The public version of the Index will keep a visible verification date and source trail instead of relying on unsourced calendar copy. <a href="/data/reference/headliners-residencies.json">View the prototype JSON →</a></p>
     </aside>
   </div>
 </main>
@@ -127,12 +135,15 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
 <script src="/components/footer.js?v=33"></script>
 <script>
 (function(){
-  const DATA_URL='/data/reference/headliners-residencies-sphere.json';
+  const DATA_URL='/data/reference/headliners-residencies.json';
   const agendaEl=document.getElementById('agenda-view');
   const actsEl=document.getElementById('acts-view');
   const titleEl=document.getElementById('view-title');
   const descEl=document.getElementById('view-description');
+  const venueFilterEl=document.getElementById('venue-filter');
   let dataset=null;
+  let activeVenue='all';
+  let activeView='agenda';
 
   function parseDate(iso){
     const p=iso.split('-').map(Number);
@@ -146,10 +157,12 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   function weekday(iso){return new Intl.DateTimeFormat('en-US',{weekday:'short'}).format(parseDate(iso))}
   function dayNum(iso){return String(parseInt(iso.slice(8,10),10))}
   function monthShort(iso){return new Intl.DateTimeFormat('en-US',{month:'short'}).format(parseDate(iso))}
-  function escapeHtml(s){return String(s).replace(/[&<>"']/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]})}
+  function escapeHtml(s){return String(s).replace(/[&<>"']/g,function(ch){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[ch]})}
+  function venueById(id){return dataset.venues.find(function(v){return v.id===id})}
+  function currentEntries(){return dataset.entries.filter(function(e){return activeVenue==='all'||e.venue_id===activeVenue})}
 
   function clustersForMonth(entry,key){
-    const dates=entry.dates.filter(d=>monthKey(d)===key).sort();
+    const dates=entry.dates.filter(function(d){return monthKey(d)===key}).sort();
     const clusters=[];
     dates.forEach(function(d){
       const last=clusters[clusters.length-1];
@@ -160,26 +173,45 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
     return clusters;
   }
 
+  function renderVenueFilters(){
+    const allCount=dataset.entries.length;
+    let html='<button class="venue-btn active" type="button" data-venue="all">All venues <span class="venue-count">'+allCount+'</span></button>';
+    dataset.venues.forEach(function(venue){
+      const count=dataset.entries.filter(function(e){return e.venue_id===venue.id}).length;
+      html+='<button class="venue-btn" type="button" data-venue="'+escapeHtml(venue.id)+'">'+escapeHtml(venue.short_name)+' <span class="venue-count">'+count+'</span></button>';
+    });
+    venueFilterEl.innerHTML=html;
+    venueFilterEl.querySelectorAll('.venue-btn').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        activeVenue=btn.dataset.venue;
+        venueFilterEl.querySelectorAll('.venue-btn').forEach(function(b){b.classList.toggle('active',b===btn)});
+        renderAll();
+      });
+    });
+  }
+
   function renderAgenda(){
-    const months=[...new Set(dataset.entries.flatMap(e=>e.dates.map(monthKey)))].sort();
+    const entries=currentEntries();
+    const months=[...new Set(entries.flatMap(function(e){return e.dates.map(monthKey)}))].sort();
     let html='';
     months.forEach(function(key){
       const rows=[];
-      dataset.entries.forEach(function(entry){
+      entries.forEach(function(entry){
         clustersForMonth(entry,key).forEach(function(cluster){
           rows.push({entry:entry,dates:cluster,first:cluster[0]});
         });
       });
-      rows.sort((a,b)=>a.first.localeCompare(b.first)||a.entry.act.localeCompare(b.entry.act));
+      rows.sort(function(a,b){return a.first.localeCompare(b.first)||a.entry.act.localeCompare(b.entry.act)});
       if(!rows.length)return;
       html+='<section class="month"><div class="month-head"><h3>'+escapeHtml(monthLabel(key))+'</h3></div><div class="agenda">';
       rows.forEach(function(row){
+        const venue=venueById(row.entry.venue_id);
         const datePills=row.dates.map(function(d){return '<span class="date-pill"><strong>'+dayNum(d)+'</strong><small>'+escapeHtml(weekday(d))+'</small></span>'}).join('');
         html+='<article class="event-row">'+
           '<div class="date-cluster">'+datePills+'</div>'+
           '<div><div class="act-name">'+escapeHtml(row.entry.act)+'</div><div class="act-meta"><span class="badge">'+escapeHtml(row.entry.type)+'</span></div></div>'+
-          '<div class="venue">Sphere</div>'+
-          '<a class="official" href="'+escapeHtml(row.entry.official_url)+'" target="_blank" rel="noopener">Official page ↗</a>'+
+          '<div class="venue">'+escapeHtml(venue.name)+'</div>'+
+          '<a class="official" href="'+escapeHtml(row.entry.official_url)+'" target="_blank" rel="noopener">Tickets / venue ↗</a>'+
         '</article>';
       });
       html+='</div></section>';
@@ -188,16 +220,19 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   }
 
   function renderActs(){
-    const entries=dataset.entries.slice().sort(function(a,b){return a.dates[0].localeCompare(b.dates[0])});
+    const entries=currentEntries().slice().sort(function(a,b){
+      return a.act.localeCompare(b.act,'en',{sensitivity:'base'});
+    });
     let html='<div class="act-grid">';
     entries.forEach(function(entry){
+      const venue=venueById(entry.venue_id);
       const groups={};
       entry.dates.forEach(function(d){(groups[monthKey(d)]||(groups[monthKey(d)]=[])).push(d)});
-      html+='<article class="act-card"><div class="act-card-top"><div><h3>'+escapeHtml(entry.act)+'</h3><span class="venue">Sphere</span><div class="act-meta"><span class="badge">'+escapeHtml(entry.type)+'</span></div></div>'+
-      '<a class="official" href="'+escapeHtml(entry.official_url)+'" target="_blank" rel="noopener">Official page ↗</a></div><div class="date-groups">';
+      html+='<article class="act-card"><div class="act-card-top"><div><h3>'+escapeHtml(entry.act)+'</h3><span class="venue">'+escapeHtml(venue.name)+'</span><div class="act-meta"><span class="badge">'+escapeHtml(entry.type)+'</span></div></div>'+
+      '<a class="official" href="'+escapeHtml(entry.official_url)+'" target="_blank" rel="noopener">Tickets / venue ↗</a></div><div class="date-groups">';
       Object.keys(groups).sort().forEach(function(key){
         html+='<div class="date-group"><div class="date-group-label">'+escapeHtml(monthLabel(key))+'</div><div class="date-line">'+
-          groups[key].map(function(d){return '<span class="mini-date">'+escapeHtml(monthShort(d))+' '+dayNum(d)+'</span>'}).join('')+
+          groups[key].sort().map(function(d){return '<span class="mini-date">'+escapeHtml(monthShort(d))+' '+dayNum(d)+'</span>'}).join('')+
         '</div></div>';
       });
       html+='</div></article>';
@@ -207,28 +242,56 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   }
 
   function updateStats(){
-    const performances=dataset.entries.reduce((n,e)=>n+e.dates.length,0);
+    const entries=currentEntries();
+    const performances=entries.reduce(function(n,e){return n+e.dates.length},0);
+    const venueStat=activeVenue==='all' ? dataset.venues.length+' venues' : venueById(activeVenue).short_name;
     document.getElementById('stats').innerHTML=
-      '<div class="stat"><strong>'+dataset.entries.length+'</strong><span>acts</span></div>'+
+      '<div class="stat"><strong>'+entries.length+'</strong><span>acts / engagements</span></div>'+
       '<div class="stat"><strong>'+performances+'</strong><span>announced performances</span></div>'+
-      '<div class="stat"><strong>Sphere</strong><span>prototype venue</span></div>'+
+      '<div class="stat"><strong>'+escapeHtml(venueStat)+'</strong><span>current scope</span></div>'+
       '<div class="stat"><strong>Oct 2</strong><span>verified</span></div>';
+  }
+
+  function updateViewCopy(){
+    const venueName=activeVenue==='all'?'all three venues':venueById(activeVenue).name;
+    if(activeView==='agenda'){
+      titleEl.textContent='The agenda';
+      descEl.textContent='Dates are grouped into short runs so the page stays chronological without repeating the same act dozens of times. Showing '+venueName+'.';
+    }else{
+      titleEl.textContent='Browse by act';
+      descEl.textContent='Acts are alphabetical A–Z, with every currently announced date grouped by month. Showing '+venueName+'.';
+    }
+  }
+
+  function renderAll(){
+    updateStats();
+    updateViewCopy();
+    renderAgenda();
+    renderActs();
   }
 
   document.querySelectorAll('.view-btn').forEach(function(btn){
     btn.addEventListener('click',function(){
-      const view=btn.dataset.view;
-      document.querySelectorAll('.view-btn').forEach(function(b){const active=b===btn;b.classList.toggle('active',active);b.setAttribute('aria-pressed',active?'true':'false')});
-      const agenda=view==='agenda';
-      agendaEl.hidden=!agenda;actsEl.hidden=agenda;
-      titleEl.textContent=agenda?'The agenda':'Browse by act';
-      descEl.textContent=agenda?'Dates are grouped into short runs so the page stays chronological without repeating the same act dozens of times.':'Each act appears once, with every currently announced Sphere date grouped by month.';
+      activeView=btn.dataset.view;
+      document.querySelectorAll('.view-btn').forEach(function(b){
+        const active=b===btn;
+        b.classList.toggle('active',active);
+        b.setAttribute('aria-pressed',active?'true':'false');
+      });
+      const agenda=activeView==='agenda';
+      agendaEl.hidden=!agenda;
+      actsEl.hidden=agenda;
+      updateViewCopy();
     });
   });
 
   fetch(DATA_URL,{cache:'no-store'})
     .then(function(r){if(!r.ok)throw new Error('Data request failed');return r.json()})
-    .then(function(data){dataset=data;updateStats();renderAgenda();renderActs()})
+    .then(function(data){
+      dataset=data;
+      renderVenueFilters();
+      renderAll();
+    })
     .catch(function(){agendaEl.innerHTML='<div class="error">The prototype data could not be loaded.</div>'});
 })();
 </script>
