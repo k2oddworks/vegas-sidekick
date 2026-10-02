@@ -1,0 +1,90 @@
+{
+  "name": "Vegas Sidekick Index — Headliners & Residencies",
+  "scope": "Sphere",
+  "verified_on": "2026-10-02",
+  "venue": {
+    "name": "Sphere",
+    "city": "Las Vegas",
+    "state": "NV",
+    "official_url": "https://www.thesphere.com/shows"
+  },
+  "entries": [
+    {
+      "act": "Metallica",
+      "type": "Residency",
+      "official_url": "https://www.thesphere.com/shows/metallica",
+      "dates": [
+        "2026-10-03","2026-10-08","2026-10-10","2026-10-15","2026-10-17","2026-10-22","2026-10-24","2026-10-29","2026-10-31",
+        "2026-11-05","2026-11-07",
+        "2027-01-28","2027-01-30",
+        "2027-02-04","2027-02-06","2027-02-18","2027-02-20","2027-02-25","2027-02-27",
+        "2027-03-04","2027-03-06","2027-03-11","2027-03-13"
+      ],
+      "sources": [
+        "https://www.metallica.com/help-tour-2026-sphere-tickets.html",
+        "https://www.thesphere.com/shows/metallica"
+      ]
+    },
+    {
+      "act": "Eagles",
+      "type": "Residency",
+      "official_url": "https://www.thesphere.com/shows/eagles",
+      "dates": [
+        "2026-11-13","2026-11-14","2026-11-27","2026-11-28",
+        "2026-12-04","2026-12-05","2026-12-11","2026-12-12",
+        "2027-01-15","2027-01-16","2027-01-22","2027-01-23"
+      ],
+      "sources": [
+        "https://www.sphereentertainmentco.com/eagles-live-in-concert-at-sphere-due-to-demand-more-shows-added-2/",
+        "https://www.thesphere.com/shows/eagles"
+      ]
+    },
+    {
+      "act": "F1 Afterparty Featuring Backstreet Boys",
+      "type": "Special event",
+      "official_url": "https://www.thesphere.com/shows/backstreet-boys/f1",
+      "dates": ["2026-11-21"],
+      "sources": ["https://www.thesphere.com/shows/backstreet-boys/f1"]
+    },
+    {
+      "act": "Backstreet Boys",
+      "type": "Residency",
+      "official_url": "https://www.thesphere.com/shows/backstreet-boys",
+      "dates": ["2026-12-26","2026-12-27","2026-12-31","2027-01-01","2027-01-02"],
+      "sources": [
+        "https://sphere.backstreetboys.com/",
+        "https://www.thesphere.com/shows/backstreet-boys"
+      ]
+    },
+    {
+      "act": "Oprah Winfrey’s AHA",
+      "type": "Limited engagement",
+      "official_url": "https://www.thesphere.com/shows/oprah-winfrey",
+      "dates": ["2027-04-02","2027-04-03","2027-04-04"],
+      "sources": [
+        "https://www.sphereentertainmentco.com/oprah-winfreys-aha-a-first-of-its-kind-immersive-experience-debuts-live-at-sphere-for-one-weekend-april-2-4-2027/",
+        "https://www.thesphere.com/shows/oprah-winfrey"
+      ]
+    },
+    {
+      "act": "John Mayer",
+      "type": "Limited engagement",
+      "official_url": "https://www.thesphere.com/shows/john-mayer",
+      "dates": ["2027-04-08","2027-04-10","2027-04-11","2027-04-15","2027-04-17","2027-04-18"],
+      "sources": [
+        "https://www.sphereentertainmentco.com/john-mayer-live-at-sphere/",
+        "https://www.thesphere.com/shows/john-mayer"
+      ]
+    },
+    {
+      "act": "Carín León",
+      "type": "Limited residency",
+      "official_url": "https://www.thesphere.com/shows/carin-leon",
+      "dates": ["2027-09-16","2027-09-17","2027-09-18"],
+      "sources": [
+        "https://carinleon.com/en-us/pages/tour",
+        "https://www.sphereentertainmentco.com/carin-leon-announces-his-return-to-las-vegas-sphere-in-2027-after-becoming-the-first-latin-artist-to-debut-at-the-groundbreaking-venue/"
+      ]
+    }
+  ]
+}
