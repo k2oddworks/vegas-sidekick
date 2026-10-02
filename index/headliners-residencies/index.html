@@ -100,6 +100,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
 .venue-list{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 12px 30px rgba(23,18,37,.055)}
 .venue-list-row{display:grid;grid-template-columns:minmax(230px,1fr) minmax(260px,1.2fr) 140px;gap:18px;align-items:center;padding:17px 18px;border-bottom:1px solid var(--line)}
 .venue-list-row:last-child{border-bottom:0}.venue-list-dates{display:flex;flex-wrap:wrap;gap:6px}
+.room-badge{display:inline-flex;align-items:center;border-radius:999px;padding:4px 8px;font:700 .59rem var(--mono);letter-spacing:.02em;background:#eef6ff;color:#245ea8;border:1px solid #dbeafe}
 .section-intro{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}.section-intro h2{font-size:clamp(1.65rem,3vw,2.25rem)}.section-intro p{max-width:560px;margin:0;color:var(--muted);font-size:.9rem}
 .month{margin-top:32px}.month:first-child{margin-top:0}
 .month-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
@@ -230,6 +231,30 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   function monthShort(iso){return new Intl.DateTimeFormat('en-US',{month:'short'}).format(parseDate(iso))}
   function escapeHtml(s){return String(s).replace(/[&<>"']/g,function(ch){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[ch]})}
   function venueById(id){return dataset.venues.find(function(v){return v.id===id})}
+  function groupById(id){
+    return (dataset.venue_groups||[]).find(function(g){return g.id===id});
+  }
+  function groupForVenue(venue){
+    if(venue.group_id){
+      const group=groupById(venue.group_id);
+      if(group)return group;
+    }
+    return {id:venue.id,name:venue.name,short_name:venue.short_name,official_url:venue.official_url};
+  }
+  function groupForEntry(entry){return groupForVenue(venueById(entry.venue_id))}
+  function visibleGroups(entries){
+    const groups=[];
+    const seen=new Set();
+    dataset.venues.forEach(function(venue){
+      const group=groupForVenue(venue);
+      if(seen.has(group.id))return;
+      const count=entries.filter(function(e){return groupForEntry(e).id===group.id}).length;
+      if(!count)return;
+      seen.add(group.id);
+      groups.push({group:group,count:count});
+    });
+    return groups;
+  }
   function engagementBucket(entry){
     const type=entry.type.toLowerCase();
     if(type==='residency'||type==='limited residency'||type==='resident production') return 'residency';
@@ -238,7 +263,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   }
   function currentEntries(){
     return dataset.entries.filter(function(e){
-      const venueMatch=activeVenue==='all'||e.venue_id===activeVenue;
+      const venueMatch=activeVenue==='all'||groupForEntry(e).id===activeVenue;
       const typeMatch=activeType==='all'||engagementBucket(e)===activeType;
       return venueMatch&&typeMatch;
     });
@@ -281,10 +306,8 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   function renderVenueFilters(){
     const allCount=dataset.entries.length;
     let html='<button class="venue-btn active" type="button" data-venue="all">All venues <span class="venue-count">'+allCount+'</span></button>';
-    dataset.venues.forEach(function(venue){
-      const count=dataset.entries.filter(function(e){return e.venue_id===venue.id}).length;
-      if(!count)return;
-      html+='<button class="venue-btn" type="button" data-venue="'+escapeHtml(venue.id)+'">'+escapeHtml(venue.short_name)+' <span class="venue-count">'+count+'</span></button>';
+    visibleGroups(dataset.entries).forEach(function(item){
+      html+='<button class="venue-btn" type="button" data-venue="'+escapeHtml(item.group.id)+'">'+escapeHtml(item.group.short_name)+' <span class="venue-count">'+item.count+'</span></button>';
     });
     venueFilterEl.innerHTML=html;
     venueFilterEl.querySelectorAll('.venue-btn').forEach(function(btn){
@@ -365,15 +388,21 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   function renderVenues(){
     const entries=currentEntries();
     let html='';
-    dataset.venues.forEach(function(venue){
-      const venueEntries=entries.filter(function(e){return e.venue_id===venue.id}).sort(function(a,b){
+    visibleGroups(entries).forEach(function(item){
+      const group=item.group;
+      const groupEntries=entries.filter(function(e){return groupForEntry(e).id===group.id}).sort(function(a,b){
         return a.act.localeCompare(b.act,'en',{sensitivity:'base'});
       });
-      if(!venueEntries.length)return;
-      html+='<section class="venue-section"><div class="venue-section-head"><div><div class="eyebrow" style="color:var(--purple)">Venue</div><h3>'+escapeHtml(venue.name)+'</h3></div><a href="'+escapeHtml(venue.official_url)+'" target="_blank" rel="noopener">Venue site ↗</a></div><div class="venue-list">';
-      venueEntries.forEach(function(entry){
+      if(!groupEntries.length)return;
+      const roomIds=new Set(groupEntries.map(function(e){return e.venue_id}));
+      html+='<section class="venue-section"><div class="venue-section-head"><div><div class="eyebrow" style="color:var(--purple)">Venue</div><h3>'+escapeHtml(group.name)+'</h3></div><a href="'+escapeHtml(group.official_url)+'" target="_blank" rel="noopener">Venue site ↗</a></div><div class="venue-list">';
+      groupEntries.forEach(function(entry){
+        const venue=venueById(entry.venue_id);
         const dates=entry.dates.slice().sort().map(function(d){return '<span class="mini-date">'+escapeHtml(monthShort(d))+' '+dayNum(d)+'</span>'}).join('');
-        html+='<article class="venue-list-row"><div><div class="act-name">'+escapeHtml(entry.act)+'</div><div class="act-meta"><span class="badge">'+escapeHtml(entry.type)+'</span></div></div><div class="venue-list-dates">'+dates+'</div><a class="official" href="'+escapeHtml(entry.official_url)+'" target="_blank" rel="noopener">Tickets / venue ↗</a></article>';
+        const roomPill=(roomIds.size>1||group.id!==venue.id)
+          ? '<span class="room-badge">'+escapeHtml(venue.short_name)+'</span>'
+          : '';
+        html+='<article class="venue-list-row"><div><div class="act-name">'+escapeHtml(entry.act)+'</div><div class="act-meta"><span class="badge">'+escapeHtml(entry.type)+'</span>'+roomPill+'</div></div><div class="venue-list-dates">'+dates+'</div><a class="official" href="'+escapeHtml(entry.official_url)+'" target="_blank" rel="noopener">Tickets / venue ↗</a></article>';
       });
       html+='</div></section>';
     });
@@ -384,8 +413,8 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
     const entries=currentEntries();
     const performances=entries.reduce(function(n,e){return n+e.dates.length},0);
     const venueStat=activeVenue==='all'
-      ? new Set(entries.map(function(e){return e.venue_id})).size+' venues'
-      : venueById(activeVenue).short_name;
+      ? visibleGroups(entries).length+' venues'
+      : (visibleGroups(entries)[0] ? visibleGroups(entries)[0].group.short_name : activeVenue);
     document.getElementById('stats').innerHTML=
       '<div class="stat"><strong>'+entries.length+'</strong><span>acts / engagements</span></div>'+
       '<div class="stat"><strong>'+performances+'</strong><span>listed dates</span></div>'+
@@ -394,9 +423,10 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   }
 
   function updateViewCopy(){
+    const groups=visibleGroups(currentEntries());
     const venueName=activeVenue==='all'
-      ? 'all '+new Set(currentEntries().map(function(e){return e.venue_id})).size+' venues'
-      : venueById(activeVenue).name;
+      ? 'all '+groups.length+' venues'
+      : (groups[0] ? groups[0].group.name : activeVenue);
     const typeName=activeType==='all'?'all engagement types':activeType==='residency'?'residencies':'limited engagements';
     if(activeView==='agenda'){
       titleEl.textContent='The agenda';
@@ -406,7 +436,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
       descEl.textContent='Acts are alphabetical A–Z, with every currently announced date grouped by month. Showing '+venueName+' · '+typeName+'.';
     }else{
       titleEl.textContent='Browse by venue';
-      descEl.textContent='Venues are grouped separately, with acts alphabetical inside each room. Showing '+venueName+' · '+typeName+'.';
+      descEl.textContent='Venues and resort groups are separated, with acts alphabetical inside each section. Showing '+venueName+' · '+typeName+'.';
     }
   }
 
