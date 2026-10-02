@@ -283,6 +283,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
     let html='<button class="venue-btn active" type="button" data-venue="all">All venues <span class="venue-count">'+allCount+'</span></button>';
     dataset.venues.forEach(function(venue){
       const count=dataset.entries.filter(function(e){return e.venue_id===venue.id}).length;
+      if(!count)return;
       html+='<button class="venue-btn" type="button" data-venue="'+escapeHtml(venue.id)+'">'+escapeHtml(venue.short_name)+' <span class="venue-count">'+count+'</span></button>';
     });
     venueFilterEl.innerHTML=html;
@@ -382,7 +383,9 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   function updateStats(){
     const entries=currentEntries();
     const performances=entries.reduce(function(n,e){return n+e.dates.length},0);
-    const venueStat=activeVenue==='all' ? dataset.venues.length+' venues' : venueById(activeVenue).short_name;
+    const venueStat=activeVenue==='all'
+      ? new Set(entries.map(function(e){return e.venue_id})).size+' venues'
+      : venueById(activeVenue).short_name;
     document.getElementById('stats').innerHTML=
       '<div class="stat"><strong>'+entries.length+'</strong><span>acts / engagements</span></div>'+
       '<div class="stat"><strong>'+performances+'</strong><span>listed dates</span></div>'+
@@ -391,7 +394,9 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   }
 
   function updateViewCopy(){
-    const venueName=activeVenue==='all'?'all '+dataset.venues.length+' venues':venueById(activeVenue).name;
+    const venueName=activeVenue==='all'
+      ? 'all '+new Set(currentEntries().map(function(e){return e.venue_id})).size+' venues'
+      : venueById(activeVenue).name;
     const typeName=activeType==='all'?'all engagement types':activeType==='residency'?'residencies':'limited engagements';
     if(activeView==='agenda'){
       titleEl.textContent='The agenda';
