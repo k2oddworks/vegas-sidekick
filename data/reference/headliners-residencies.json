@@ -57,19 +57,35 @@
       "id": "venetian-theatre",
       "name": "The Venetian Theatre at The Venetian Resort",
       "short_name": "Venetian Theatre",
-      "official_url": "https://www.ticketmaster.com/The-Venetian-Theatre-at-The-Venetian-tickets-Las-Vegas/venue/189345"
+      "official_url": "https://www.ticketmaster.com/The-Venetian-Theatre-at-The-Venetian-tickets-Las-Vegas/venue/189345",
+      "group_id": "venetian"
     },
     {
       "id": "palazzo-theatre",
       "name": "The Palazzo Theatre at The Venetian Resort",
       "short_name": "Palazzo Theatre",
-      "official_url": "https://www.ticketmaster.com/palazzo-theatre-at-the-venetian-resort-tickets-las-vegas/venue/189346"
+      "official_url": "https://www.ticketmaster.com/palazzo-theatre-at-the-venetian-resort-tickets-las-vegas/venue/189346",
+      "group_id": "venetian"
     },
     {
       "id": "voltaire",
       "name": "Voltaire at The Venetian Resort",
       "short_name": "Voltaire",
-      "official_url": "https://www.ticketmaster.com/voltaire-at-the-venetian-resort-tickets-las-vegas/venue/189545"
+      "official_url": "https://www.ticketmaster.com/voltaire-at-the-venetian-resort-tickets-las-vegas/venue/189545",
+      "group_id": "venetian"
+    },
+    {
+      "id": "michelob-ultra-arena",
+      "name": "Michelob ULTRA Arena",
+      "short_name": "Michelob ULTRA Arena",
+      "official_url": "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837"
+    },
+    {
+      "id": "encore-theater-wynn",
+      "name": "Encore Theater at Wynn Las Vegas",
+      "short_name": "Encore Theater",
+      "group_id": "wynn",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows"
     }
   ],
   "entries": [
@@ -1339,6 +1355,249 @@
         "https://www.venetianlasvegas.com/entertainment/dita-von-teese.html",
         "https://www.ticketmaster.com/voltaire-at-the-venetian-resort-tickets-las-vegas/venue/189545"
       ]
+    },
+    {
+      "act": "Breaking Benjamin",
+      "venue_id": "michelob-ultra-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837",
+      "dates": [
+        "2026-10-02"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837"
+      ]
+    },
+    {
+      "act": "Chayanne",
+      "venue_id": "michelob-ultra-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837",
+      "dates": [
+        "2026-10-16"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/Chayanne-tickets/artist/754853",
+        "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837"
+      ]
+    },
+    {
+      "act": "Don Omar",
+      "venue_id": "michelob-ultra-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837",
+      "dates": [
+        "2026-10-30"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/don-omar-tickets/artist/1031846",
+        "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837"
+      ]
+    },
+    {
+      "act": "Nick Cannon Presents: Wild 'N Out Live — The Next Generation",
+      "venue_id": "michelob-ultra-arena",
+      "type": "Comedy headliner",
+      "official_url": "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837",
+      "dates": [
+        "2026-11-14"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/nick-cannon-presents%3A-wild-%27n-out-live-tickets/artist/2502535",
+        "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837"
+      ]
+    },
+    {
+      "act": "Trans-Siberian Orchestra — The Ghosts of Christmas Eve",
+      "venue_id": "michelob-ultra-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837",
+      "dates": [
+        "2026-12-04"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/search?q=michelob+ultra+arena",
+        "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837"
+      ]
+    },
+    {
+      "act": "Diana Ross",
+      "venue_id": "encore-theater-wynn",
+      "type": "Limited engagement",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows",
+      "dates": [
+        "2026-10-02",
+        "2026-10-03",
+        "2026-10-04"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows"
+      ]
+    },
+    {
+      "act": "Brandon Flowers",
+      "venue_id": "encore-theater-wynn",
+      "type": "Limited engagement",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/brandon-flowers",
+      "dates": [
+        "2026-10-05",
+        "2026-10-06"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/brandon-flowers"
+      ]
+    },
+    {
+      "act": "Ludovico Einaudi",
+      "venue_id": "encore-theater-wynn",
+      "type": "Headliner",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/ludovico-einaudi",
+      "dates": [
+        "2026-10-07"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/ludovico-einaudi"
+      ]
+    },
+    {
+      "act": "Sebastian Maniscalco",
+      "venue_id": "encore-theater-wynn",
+      "type": "Residency",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/sebastian-maniscalco",
+      "dates": [
+        "2026-10-09",
+        "2026-10-10"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/sebastian-maniscalco"
+      ]
+    },
+    {
+      "act": "Max Amini",
+      "venue_id": "encore-theater-wynn",
+      "type": "Comedy headliner",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/max-amini",
+      "dates": [
+        "2026-10-11",
+        "2026-12-26",
+        "2026-12-27"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/max-amini"
+      ]
+    },
+    {
+      "act": "Lionel Richie",
+      "venue_id": "encore-theater-wynn",
+      "type": "Residency",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/lionel-richie",
+      "dates": [
+        "2026-10-14",
+        "2026-10-16",
+        "2026-10-17",
+        "2026-11-11",
+        "2026-11-13",
+        "2026-11-14"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/lionel-richie"
+      ]
+    },
+    {
+      "act": "Tom Jones",
+      "venue_id": "encore-theater-wynn",
+      "type": "Limited engagement",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/tom-jones",
+      "dates": [
+        "2026-10-21",
+        "2026-10-23",
+        "2026-10-24"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/tom-jones"
+      ]
+    },
+    {
+      "act": "Bryan Adams",
+      "venue_id": "encore-theater-wynn",
+      "type": "Limited engagement",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/bryan-adams",
+      "dates": [
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/bryan-adams"
+      ]
+    },
+    {
+      "act": "Brad Paisley",
+      "venue_id": "encore-theater-wynn",
+      "type": "Limited engagement",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/brad-paisley",
+      "dates": [
+        "2026-11-06",
+        "2026-11-07"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/brad-paisley"
+      ]
+    },
+    {
+      "act": "Scott Bradlee’s Postmodern Jukebox",
+      "venue_id": "encore-theater-wynn",
+      "type": "Headliner",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/scott-bradlees-postmodern-jukebox",
+      "dates": [
+        "2026-11-27"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/scott-bradlees-postmodern-jukebox"
+      ]
+    },
+    {
+      "act": "Nate Bargatze",
+      "venue_id": "encore-theater-wynn",
+      "type": "Limited engagement",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/nate-bargatze",
+      "dates": [
+        "2026-12-09",
+        "2026-12-10",
+        "2026-12-11",
+        "2026-12-12"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/nate-bargatze"
+      ]
+    },
+    {
+      "act": "Love Actually In Concert",
+      "venue_id": "encore-theater-wynn",
+      "type": "Special engagement",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/love-actually-in-concert",
+      "dates": [
+        "2026-12-17"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/love-actually-in-concert"
+      ]
+    }
+  ],
+  "venue_groups": [
+    {
+      "id": "venetian",
+      "name": "The Venetian Resort",
+      "short_name": "Venetian",
+      "official_url": "https://www.venetianlasvegas.com/entertainment.html"
+    },
+    {
+      "id": "wynn",
+      "name": "Wynn Las Vegas",
+      "short_name": "Wynn",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows"
     }
   ]
 }
