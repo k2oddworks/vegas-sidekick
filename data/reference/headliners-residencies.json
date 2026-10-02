@@ -1,0 +1,597 @@
+{
+  "name": "Vegas Sidekick Index — Headliners & Residencies",
+  "verified_on": "2026-10-02",
+  "city": "Las Vegas",
+  "state": "NV",
+  "venues": [
+    {
+      "id": "sphere",
+      "name": "Sphere",
+      "short_name": "Sphere",
+      "official_url": "https://www.thesphere.com/shows"
+    },
+    {
+      "id": "caesars-colosseum",
+      "name": "The Colosseum at Caesars Palace",
+      "short_name": "Caesars Palace",
+      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
+    },
+    {
+      "id": "palms-pearl",
+      "name": "Pearl Theater at Palms Casino Resort",
+      "short_name": "Palms",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater"
+    }
+  ],
+  "entries": [
+    {
+      "act": "Metallica",
+      "venue_id": "sphere",
+      "type": "Residency",
+      "official_url": "https://www.thesphere.com/shows/metallica",
+      "dates": [
+        "2026-10-03",
+        "2026-10-08",
+        "2026-10-10",
+        "2026-10-15",
+        "2026-10-17",
+        "2026-10-22",
+        "2026-10-24",
+        "2026-10-29",
+        "2026-10-31",
+        "2026-11-05",
+        "2026-11-07",
+        "2027-01-28",
+        "2027-01-30",
+        "2027-02-04",
+        "2027-02-06",
+        "2027-02-18",
+        "2027-02-20",
+        "2027-02-25",
+        "2027-02-27",
+        "2027-03-04",
+        "2027-03-06",
+        "2027-03-11",
+        "2027-03-13"
+      ],
+      "sources": [
+        "https://www.metallica.com/help-tour-2026-sphere-tickets.html",
+        "https://www.thesphere.com/shows/metallica"
+      ]
+    },
+    {
+      "act": "Eagles",
+      "venue_id": "sphere",
+      "type": "Residency",
+      "official_url": "https://www.thesphere.com/shows/eagles",
+      "dates": [
+        "2026-11-13",
+        "2026-11-14",
+        "2026-11-27",
+        "2026-11-28",
+        "2026-12-04",
+        "2026-12-05",
+        "2026-12-11",
+        "2026-12-12",
+        "2027-01-15",
+        "2027-01-16",
+        "2027-01-22",
+        "2027-01-23"
+      ],
+      "sources": [
+        "https://www.sphereentertainmentco.com/eagles-live-in-concert-at-sphere-due-to-demand-more-shows-added-2/",
+        "https://www.thesphere.com/shows/eagles"
+      ]
+    },
+    {
+      "act": "F1 Afterparty Featuring Backstreet Boys",
+      "venue_id": "sphere",
+      "type": "Special event",
+      "official_url": "https://www.thesphere.com/shows/backstreet-boys/f1",
+      "dates": [
+        "2026-11-21"
+      ],
+      "sources": [
+        "https://www.thesphere.com/shows/backstreet-boys/f1"
+      ]
+    },
+    {
+      "act": "Backstreet Boys",
+      "venue_id": "sphere",
+      "type": "Residency",
+      "official_url": "https://www.thesphere.com/shows/backstreet-boys",
+      "dates": [
+        "2026-12-26",
+        "2026-12-27",
+        "2026-12-31",
+        "2027-01-01",
+        "2027-01-02"
+      ],
+      "sources": [
+        "https://sphere.backstreetboys.com/",
+        "https://www.thesphere.com/shows/backstreet-boys"
+      ]
+    },
+    {
+      "act": "Oprah Winfrey’s AHA",
+      "venue_id": "sphere",
+      "type": "Limited engagement",
+      "official_url": "https://www.thesphere.com/shows/oprah-winfrey",
+      "dates": [
+        "2027-04-02",
+        "2027-04-03",
+        "2027-04-04"
+      ],
+      "sources": [
+        "https://www.sphereentertainmentco.com/oprah-winfreys-aha-a-first-of-its-kind-immersive-experience-debuts-live-at-sphere-for-one-weekend-april-2-4-2027/",
+        "https://www.thesphere.com/shows/oprah-winfrey"
+      ]
+    },
+    {
+      "act": "John Mayer",
+      "venue_id": "sphere",
+      "type": "Limited engagement",
+      "official_url": "https://www.thesphere.com/shows/john-mayer",
+      "dates": [
+        "2027-04-08",
+        "2027-04-10",
+        "2027-04-11",
+        "2027-04-15",
+        "2027-04-17",
+        "2027-04-18"
+      ],
+      "sources": [
+        "https://www.sphereentertainmentco.com/john-mayer-live-at-sphere/",
+        "https://www.thesphere.com/shows/john-mayer"
+      ]
+    },
+    {
+      "act": "Carín León",
+      "venue_id": "sphere",
+      "type": "Limited residency",
+      "official_url": "https://www.thesphere.com/shows/carin-leon",
+      "dates": [
+        "2027-09-16",
+        "2027-09-17",
+        "2027-09-18"
+      ],
+      "sources": [
+        "https://carinleon.com/en-us/pages/tour",
+        "https://www.sphereentertainmentco.com/carin-leon-announces-his-return-to-las-vegas-sphere-in-2027-after-becoming-the-first-latin-artist-to-debut-at-the-groundbreaking-venue/"
+      ]
+    },
+    {
+      "act": "Josh Groban",
+      "venue_id": "caesars-colosseum",
+      "type": "Residency",
+      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
+      "dates": [
+        "2026-10-02",
+        "2026-10-03",
+        "2026-10-07",
+        "2026-10-09",
+        "2026-10-10"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/explore/joshgrobanvegas",
+        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
+      ]
+    },
+    {
+      "act": "Tim McGraw",
+      "venue_id": "caesars-colosseum",
+      "type": "Residency",
+      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
+      "dates": [
+        "2026-10-23",
+        "2026-10-24",
+        "2026-11-04",
+        "2026-11-06",
+        "2026-11-07"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/tim-mcgraw-tickets/artist/762799",
+        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
+      ]
+    },
+    {
+      "act": "Hello America",
+      "venue_id": "caesars-colosseum",
+      "type": "Special event",
+      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
+      "dates": [
+        "2026-10-31"
+      ],
+      "sources": [
+        "https://helloamericaglobal.com/",
+        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
+      ]
+    },
+    {
+      "act": "LISA",
+      "venue_id": "caesars-colosseum",
+      "type": "Residency",
+      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
+      "dates": [
+        "2026-11-12",
+        "2026-11-13",
+        "2026-11-14",
+        "2026-11-27",
+        "2026-11-28",
+        "2026-11-29"
+      ],
+      "sources": [
+        "https://newsroom.caesars.com/press-releases/press-release-details/2026/LISA-ADDS-TWO-NEW-DATES-TO-HER-SOLD-OUT-LAS-VEGAS-RESIDENCY-DUE-TO-OVERWHELMING-DEMAND-VIVA-LA-LISA-AT-THE-COLOSSEUM-AT-CAESARS-PALACE--NOV-12-13-14-27-28--29-2026--2026-eGkXjvCgqE/default.aspx",
+        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
+      ]
+    },
+    {
+      "act": "Rascal Flatts",
+      "venue_id": "caesars-colosseum",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
+      "dates": [
+        "2026-12-05"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
+      ]
+    },
+    {
+      "act": "Thomas Rhett",
+      "venue_id": "caesars-colosseum",
+      "type": "Limited engagement",
+      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
+      "dates": [
+        "2026-12-10",
+        "2026-12-12"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
+      ]
+    },
+    {
+      "act": "Eric Moo",
+      "venue_id": "caesars-colosseum",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
+      "dates": [
+        "2026-12-26"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/artist/2252349",
+        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
+      ]
+    },
+    {
+      "act": "Alex Warren",
+      "venue_id": "caesars-colosseum",
+      "type": "Limited engagement",
+      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
+      "dates": [
+        "2026-12-30",
+        "2026-12-31"
+      ],
+      "sources": [
+        "https://newsroom.caesars.com/press-releases/press-release-details/2026/Alex-Warren-Set-to-Celebrate-New-Years-Eve-With-Two-Night-Engagement-at-The-Colosseum-at-Caesars-Palace-December-30--31-2026/default.aspx",
+        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
+      ]
+    },
+    {
+      "act": "Nikki Glaser & David Spade",
+      "venue_id": "caesars-colosseum",
+      "type": "Residency",
+      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
+      "dates": [
+        "2027-01-22",
+        "2027-01-23",
+        "2027-04-16",
+        "2027-04-17"
+      ],
+      "sources": [
+        "https://newsroom.caesars.com/press-releases/press-release-details/2026/NIKKI-GLASER-AND-DAVID-SPADE-ANNOUNCE-2027-DATES-FOR-LAS-VEGAS-RESIDENCY-AT-THE-COLOSSEUM-AT-CAESARS-PALACE--2026-9Z1dph1q2O/default.aspx",
+        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
+      ]
+    },
+    {
+      "act": "The War on Drugs",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-10-02"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Lynyrd Skynyrd",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-10-03"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "For KING + COUNTRY",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-10-08"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Juanes",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-10-10"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Big Boy's Comedy Fiesta with George Lopez & Marlon Wayans",
+      "venue_id": "palms-pearl",
+      "type": "Comedy headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-10-15"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Rise Against",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-10-17"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Taking Back Sunday",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-10-18"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Jim Henson’s Labyrinth: In Concert 40th Anniversary",
+      "venue_id": "palms-pearl",
+      "type": "Special engagement",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-10-25"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/jim-hensons-labyrinth-in-concert-40th-anniversary",
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Richard Marx",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-10-30"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Jodeci",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-10-31"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/jodeci",
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Moenia + Maria Jose",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-11-01"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/moenia-maria-jose-us-tour-2026",
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Mon Laferte",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-11-05"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Daughtry",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-11-07"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Pedro Fernández",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-11-12"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/pedro-fernandez-ave-fenix-twor",
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Babyface",
+      "venue_id": "palms-pearl",
+      "type": "Residency",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater/babyface-live-in-las-vegas-2026",
+      "dates": [
+        "2026-11-13",
+        "2026-11-14"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/babyface-live-in-las-vegas-2026",
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Alicia Villarreal",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-11-28"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Trivium",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-12-03"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Sin Bandera",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-12-04"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Tom Segura",
+      "venue_id": "palms-pearl",
+      "type": "Comedy headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater/tom-segura-preposterous",
+      "dates": [
+        "2027-01-30"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/tom-segura-preposterous",
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Joe",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater/joe",
+      "dates": [
+        "2027-02-27"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/joe",
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Aries Spears",
+      "venue_id": "palms-pearl",
+      "type": "Comedy headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater/aries-spears",
+      "dates": [
+        "2027-04-02"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/aries-spears",
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "The Warning",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater/the-warning-everythings-falling-world-tour",
+      "dates": [
+        "2027-04-17"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/the-warning-everythings-falling-world-tour",
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Ha*Ash",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater/haash-no-me-hablen-de-amor",
+      "dates": [
+        "2027-05-09"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/haash-no-me-hablen-de-amor",
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Roger Waters Presents Legacy — A Pink Floyd Show",
+      "venue_id": "palms-pearl",
+      "type": "Special engagement",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater/roger-waters-presents-legacy-a-pink-floyd-show",
+      "dates": [
+        "2027-09-16"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/roger-waters-presents-legacy-a-pink-floyd-show",
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    }
+  ]
+}
