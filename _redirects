@@ -43,3 +43,9 @@
 /preview/carrot-top-v3 /shows/comedy/carrot-top/ 301
 /preview/carrot-top-v3/ /shows/comedy/carrot-top/ 301
 /preview/carrot-top-v3/index.html /shows/comedy/carrot-top/ 301
+
+# Vegas Sidekick Index promoted from preview
+/preview/vegas-sidekick-index/headliners-residencies /index/headliners-residencies/ 301
+/preview/vegas-sidekick-index/headliners-residencies/ /index/headliners-residencies/ 301
+/preview/vegas-sidekick-index/headliners-residencies/index.html /index/headliners-residencies/ 301
+/index/headliners-residencies /index/headliners-residencies/ 301
