@@ -33,6 +33,7 @@
 /play/:slug /play/:slug/ 301
 /shows/:category /shows/:category/ 301
 /shows/:category/:slug /shows/:category/:slug/ 301
+/sidekick-index/:slug /sidekick-index/:slug/ 301
 
 # Old private pages consolidated into the HQ hub
 /brand-bible/* /hq/ 301
@@ -45,7 +46,6 @@
 /preview/carrot-top-v3/index.html /shows/comedy/carrot-top/ 301
 
 # Vegas Sidekick Index promoted from preview
-/preview/vegas-sidekick-index/headliners-residencies /index/headliners-residencies/ 301
-/preview/vegas-sidekick-index/headliners-residencies/ /index/headliners-residencies/ 301
-/preview/vegas-sidekick-index/headliners-residencies/index.html /index/headliners-residencies/ 301
-/index/headliners-residencies /index/headliners-residencies/ 301
+/preview/vegas-sidekick-index/headliners-residencies /sidekick-index/headliners-residencies/ 301
+/preview/vegas-sidekick-index/headliners-residencies/ /sidekick-index/headliners-residencies/ 301
+/preview/vegas-sidekick-index/headliners-residencies/index.html /sidekick-index/headliners-residencies/ 301
