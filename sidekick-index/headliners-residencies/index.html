@@ -118,16 +118,18 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
 .agenda{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 12px 30px rgba(23,18,37,.055)}
 .event-row{display:grid;grid-template-columns:minmax(230px,1fr) minmax(260px,1.25fr) 150px 130px;gap:18px;align-items:center;padding:18px;border-bottom:1px solid var(--line)}
 .event-row:last-child{border-bottom:0}.date-cluster{display:flex;flex-wrap:wrap;gap:7px}
-.date-pill{display:grid;place-items:center;min-width:49px;height:54px;padding:4px 7px;border:1px solid #ddd6e8;border-radius:12px;background:#faf9fc}
-.date-pill strong{font:800 1.05rem var(--display);line-height:1}.date-pill small{margin-top:4px;font:600 .6rem var(--mono);color:var(--muted);text-transform:uppercase}
-.act-name{font:800 1.05rem var(--display);line-height:1.2}.act-meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:7px}
-.badge{display:inline-flex;align-items:center;border-radius:999px;padding:4px 8px;font:700 .61rem var(--mono);letter-spacing:.02em;background:#efeafd;color:#5e35a5}
-.venue{font:700 .82rem var(--display);color:#423c4c}.official{display:inline-flex;justify-content:center;align-items:center;min-height:38px;border:1px solid #d8d1e2;border-radius:999px;padding:8px 12px;text-decoration:none;font:800 .72rem var(--display);white-space:nowrap}.official:hover{border-color:#9f87ca;background:#f7f3ff}
+.date-pill{display:grid;place-items:center;min-width:49px;height:54px;padding:4px 7px;border:1px solid #d8d0ec;border-radius:12px;background:linear-gradient(180deg,#faf7ff 0%,#f1f5ff 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.8)}
+.date-pill strong{font:800 1.08rem var(--display);line-height:1;color:#2f1457}.date-pill small{margin-top:4px;font:700 .6rem var(--mono);color:#7458a5;text-transform:uppercase}
+.act-name,.act-card h3{display:inline-block;font:800 1.12rem var(--display);line-height:1.17;letter-spacing:-.025em}
+.act-name::after,.act-card h3::after{content:"";display:block;width:28px;height:3px;margin-top:6px;border-radius:999px;background:linear-gradient(90deg,#7c3aed,#ff2e7e)}
+.act-meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:7px}
+.badge{display:inline-flex;align-items:center;border-radius:999px;padding:4px 8px;font:700 .59rem var(--mono);letter-spacing:.02em;background:#f3effb;color:#715d91;border:1px solid #ebe3f6}
+.venue{font:700 .82rem var(--display);color:#423c4c}.official{display:inline-flex;justify-content:center;align-items:center;min-height:38px;border:1px solid #d6c9ef;border-radius:999px;padding:8px 13px;background:#f2ecff;color:#43206e;text-decoration:none;font:800 .72rem var(--display);white-space:nowrap;box-shadow:0 2px 7px rgba(68,32,110,.07);transition:background .16s,border-color .16s,transform .16s,box-shadow .16s}.official:hover{border-color:#b9a4e2;background:#e9deff;transform:translateY(-1px);box-shadow:0 4px 10px rgba(68,32,110,.12)}
 .act-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .act-card{border:1px solid var(--line);border-radius:18px;padding:20px;background:#fff;box-shadow:0 10px 26px rgba(23,18,37,.05)}
 .act-card-top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.act-card h3{font-size:1.18rem}.act-card .venue{display:block;margin-top:5px}
 .date-groups{display:grid;gap:12px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
-.date-group{display:grid;grid-template-columns:100px 1fr;gap:12px;align-items:start}.date-group-label{font:700 .66rem var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}.date-line{display:flex;flex-wrap:wrap;gap:6px}.mini-date{border-radius:8px;background:var(--soft);padding:5px 8px;font:700 .7rem var(--mono);color:#332d3d}
+.date-group{display:grid;grid-template-columns:100px 1fr;gap:12px;align-items:start}.date-group-label{font:700 .66rem var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}.date-line{display:flex;flex-wrap:wrap;gap:6px}.mini-date{border:1px solid #e1daf0;border-radius:8px;background:#f6f2ff;padding:5px 8px;font:700 .7rem var(--mono);color:#4a2b73}
 .method{margin-top:42px;padding:20px;border-radius:17px;background:#171225;color:#fff}.method h2{font-size:1.15rem}.method p{margin:7px 0 0;max-width:850px;color:#d1c9da;font-size:.86rem}.method a{color:var(--lime);text-underline-offset:3px}
 .loading,.error{padding:40px 0;text-align:center;color:var(--muted);font:600 .82rem var(--mono)}
 [hidden]{display:none!important}
@@ -160,7 +162,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   .event-row .venue{grid-column:1;grid-row:auto;align-self:center;display:block;margin:0!important;font-size:.72rem;line-height:1.25;color:#5b5565}
   .event-row .official{grid-column:2;grid-row:auto;align-self:center;width:auto!important;min-height:31px;padding:5px 9px;font-size:0}
   .event-row .official::after{content:'Tickets ↗';font:800 .65rem var(--display)}
-  .act-name{font-size:.94rem;line-height:1.18}.act-meta{margin-top:5px;margin-bottom:0}.badge,.room-badge{padding:3px 7px;font-size:.54rem}
+  .act-name,.act-card h3{font-size:1.02rem;line-height:1.16}.act-name::after,.act-card h3::after{width:24px;height:3px;margin-top:5px}.act-meta{margin-top:5px;margin-bottom:0}.badge,.room-badge{padding:3px 7px;font-size:.54rem}
   .date-pill{min-width:38px;height:43px;border-radius:9px;padding:3px 6px}.date-pill strong{font-size:.9rem}.date-pill small{font-size:.52rem;margin-top:2px}
   .date-group{grid-template-columns:1fr;gap:6px}.act-card{padding:15px}.act-card-top{display:block}.act-card-top .official{margin-top:11px;width:100%}
   .venue-section-head{display:block}.venue-section-head a{display:inline-block;margin-top:6px}
