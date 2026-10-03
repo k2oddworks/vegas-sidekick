@@ -124,3 +124,15 @@ that reason, not because the upside is small.
 
 **#2 and #3 together** — one pass, roughly half a day, fixes eight live pages. Then
 **#1**, which is the actual money. Both are blocked on the same thing: data from Kris.
+
+---
+
+## Good to Know social-series reference
+
+Vegas Sidekick's recurring **Good to Know** social series is governed by `GOOD-TO-KNOW.md`.
+
+- It is the customer-service social layer for verified show changes that affect planning or booking: start times, venue moves, return dates, performance-day changes, meaningful added dates, closing dates and similar material updates.
+- It is distinct from **Vegas Dispatch**, which is the editorial/news product.
+- Use approved repo photography, artwork, show logos and Vegas Sidekick branding exactly as supplied. Do not generate replacements or lookalikes.
+- Store recurring series assets under `/images/good-to-know/`.
+
