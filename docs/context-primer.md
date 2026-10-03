@@ -56,3 +56,14 @@
 - **5 heavy non-image pages** (all-shook-up, fantasy, x-country, x-burlesque, chippendales) are large from inline CSS/SVG, not images — separate cleanup opportunity.
 - **Social profiles:** the `sameAs` schema points at brand FB/IG/Reddit/Pinterest — strongest signal once those profiles exist and link back.
 - Set up the brand's real social accounts if not done.
+
+---
+
+## Good to Know social-series reference
+
+Vegas Sidekick's recurring **Good to Know** social series is governed by `GOOD-TO-KNOW.md`.
+
+- It is the customer-service social layer for verified show changes that affect planning or booking: start times, venue moves, return dates, performance-day changes, meaningful added dates, closing dates and similar material updates.
+- It is distinct from **Vegas Dispatch**, which is the editorial/news product.
+- Use approved repo photography, artwork, show logos and Vegas Sidekick branding exactly as supplied. Do not generate replacements or lookalikes.
+- Store recurring series assets under `/images/good-to-know/`.
