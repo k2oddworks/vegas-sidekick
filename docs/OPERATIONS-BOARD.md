@@ -181,3 +181,15 @@ Keep these core measures visible:
 ## Shipping rule
 
 `Ready to Ship` means implementation and repo validation are complete. `Shipped / Verify` means the change is on `main` but public deployment has not yet been independently confirmed. Move to `Done` only after the intended result is verified.
+
+---
+
+## Good to Know social-series reference
+
+Vegas Sidekick's recurring **Good to Know** social series is governed by `GOOD-TO-KNOW.md`.
+
+- It is the customer-service social layer for verified show changes that affect planning or booking: start times, venue moves, return dates, performance-day changes, meaningful added dates, closing dates and similar material updates.
+- It is distinct from **Vegas Dispatch**, which is the editorial/news product.
+- Use approved repo photography, artwork, show logos and Vegas Sidekick branding exactly as supplied. Do not generate replacements or lookalikes.
+- Store recurring series assets under `/images/good-to-know/`.
+
