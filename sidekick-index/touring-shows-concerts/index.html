@@ -134,7 +134,7 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
     <a class="eyebrow" href="/sidekick-index/" style="text-decoration:none">Sidekick Index</a>
     <h1>More Touring Shows &amp; Concerts</h1>
     <p>Visiting concerts, touring shows and limited-run events that are in Las Vegas briefly — separate from the major residency/headliner calendar and the regular productions that play here week after week.</p>
-    <div class="hero-note">Now tracking Brooklyn Bowl and House of Blues, with more touring venues to come.</div>
+    <div class="hero-note">Now tracking Brooklyn Bowl, House of Blues, 24 Oxford and Fremont Country Club, with more touring venues to come.</div>
     <div class="stats" id="stats" aria-label="Index summary">
       <div class="stat"><strong>—</strong><span>events</span></div>
       <div class="stat"><strong>—</strong><span>venues</span></div>
@@ -197,7 +197,7 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   let activeVenue='all';
   let activeView='dates';
 
-  const VENUE_COLORS={'brooklyn-bowl-las-vegas':['#006f88','#fff'],'house-of-blues-las-vegas':['#d94f1f','#fff']};
+  const VENUE_COLORS={'brooklyn-bowl-las-vegas':['#006f88','#fff'],'house-of-blues-las-vegas':['#d94f1f','#fff'],'24-oxford':['#d81b60','#fff'],'fremont-country-club':['#b91c1c','#fff']};
   const FALLBACK=[['#125fd1','#fff'],['#6d28d9','#fff'],['#c2185b','#fff'],['#087f23','#fff'],['#ffb000','#171225']];
   function venueStyle(id){
     let pair=VENUE_COLORS[id];
@@ -309,7 +309,7 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   function updateCopy(){
     if(activeView==='dates'){titleEl.textContent='Upcoming dates';descEl.textContent='A date-first list of visiting events, with official venue links and doors times where published.'}
     else if(activeView==='acts'){titleEl.textContent='Browse by act';descEl.textContent='Alphabetical A–Z, with the event date, doors time and official venue listing.'}
-    else{titleEl.textContent='Browse by venue';descEl.textContent='Touring events grouped by venue. Currently tracking Brooklyn Bowl and House of Blues, with more venues to come.'}
+    else{titleEl.textContent='Browse by venue';descEl.textContent='Touring events grouped by venue. Currently tracking Brooklyn Bowl, House of Blues, 24 Oxford and Fremont Country Club, with more venues to come.'}
   }
 
   function renderAll(){updateStats();updateCopy();renderDates();renderMonthJump();renderActs();renderVenues()}
