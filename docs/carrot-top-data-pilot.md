@@ -24,3 +24,14 @@ Pilot validation on September 7, 2026 passed:
 - internal-link graph audit
 
 The initial test also caught two failure modes before merge: markup assumptions and unsafe broad string replacement inside JSON-LD. The final sync uses strict visible-markup matches and parsed JSON-LD updates instead.
+
+---
+
+## Good to Know social-series reference
+
+Vegas Sidekick's recurring **Good to Know** social series is governed by `GOOD-TO-KNOW.md`.
+
+- It is the customer-service social layer for verified show changes that affect planning or booking: start times, venue moves, return dates, performance-day changes, meaningful added dates, closing dates and similar material updates.
+- It is distinct from **Vegas Dispatch**, which is the editorial/news product.
+- Use approved repo photography, artwork, show logos and Vegas Sidekick branding exactly as supplied. Do not generate replacements or lookalikes.
+- Store recurring series assets under `/images/good-to-know/`.
