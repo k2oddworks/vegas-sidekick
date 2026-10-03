@@ -84,7 +84,7 @@ function row(img,y,accent,show,label,main1,main2){
   roundRect(79,164,240,4,2,colors.amber);
   row(vegas,192,colors.lime,'VEGAS! THE SHOW','NOW AT','5:30 PM');
   row(mj,424,colors.amber,'MJ LIVE','NOW AT','SAXE THEATER','7 PM');
-  row(carrot,656,colors.lime,'CARROT TOP','SCHEDULED TO RETURN','OCTOBER 19');
+  ctx.save();ctx.shadowColor='rgba(0,0,0,.35)';ctx.shadowBlur=24;ctx.shadowOffsetY=9;roundRect(42,656,996,218,18,colors.panel,colors.border);ctx.restore();ctx.save();ctx.beginPath();ctx.roundRect(42,656,996,218,18);ctx.clip();cover(carrot,42,656,640,218,.5,.18);const cg=ctx.createLinearGradient(470,0,720,0);cg.addColorStop(0,'rgba(16,21,29,0)');cg.addColorStop(.42,'rgba(16,21,29,.12)');cg.addColorStop(1,'rgba(16,21,29,1)');ctx.fillStyle=cg;ctx.fillRect(470,656,250,218);ctx.fillStyle=colors.lime;ctx.fillRect(42,656,8,218);ctx.restore();text('CARROT TOP',666,700,22,800,colors.white);text('SCHEDULED TO RETURN',666,750,18,800,colors.lime);text('OCTOBER 19',666,826,51,900,colors.amber);
   ctx.fillStyle='#232A34';ctx.fillRect(42,908,996,2);
   const lw=564,lh=98;const r=logo.width/logo.height;let dw=lw,dh=dw/r;if(dh>lh){dh=lh;dw=dh*r;}ctx.drawImage(logo,540-dw/2,946+(lh-dh)/2,dw,dh);
 })();
