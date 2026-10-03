@@ -134,7 +134,7 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
     <a class="eyebrow" href="/sidekick-index/" style="text-decoration:none">Sidekick Index</a>
     <h1>More Touring Shows &amp; Concerts</h1>
     <p>Visiting concerts, touring shows and limited-run events that are in Las Vegas briefly — separate from the major residency/headliner calendar and the regular productions that play here week after week.</p>
-    <div class="hero-note">Now tracking six venues across the Strip, Fremont and Downtown, with more touring venues to come.</div>
+    <div class="hero-note">Now tracking touring calendars across the Strip, Fremont, Downtown and nearby venues.</div>
     <div class="stats" id="stats" aria-label="Index summary">
       <div class="stat"><strong>—</strong><span>events</span></div>
       <div class="stat"><strong>—</strong><span>venues</span></div>
@@ -197,7 +197,7 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   let activeVenue='all';
   let activeView='dates';
 
-  const VENUE_COLORS={'brooklyn-bowl-las-vegas':['#006f88','#fff'],'house-of-blues-las-vegas':['#d94f1f','#fff'],'24-oxford':['#d81b60','#fff'],'fremont-country-club':['#b91c1c','#fff'],'backstage-bar-billiards':['#3f3f46','#fff'],'swan-dive-las-vegas':['#7c3aed','#fff']};
+  const VENUE_COLORS={'brooklyn-bowl-las-vegas':['#006f88','#fff'],'house-of-blues-las-vegas':['#d94f1f','#fff'],'24-oxford':['#d81b60','#fff'],'fremont-country-club':['#b91c1c','#fff'],'backstage-bar-billiards':['#3f3f46','#fff'],'swan-dive-las-vegas':['#7c3aed','#fff'],'the-space-las-vegas':['#2563eb','#fff'],'area15':['#c026d3','#fff'],'hard-rock-live-las-vegas':['#111111','#fff'],'smith-center':['#b7791f','#fff'],'downtown-las-vegas-events-center':['#0f766e','#fff'],'notoriety-live':['#e11d48','#fff']};
   const FALLBACK=[['#125fd1','#fff'],['#6d28d9','#fff'],['#c2185b','#fff'],['#087f23','#fff'],['#ffb000','#171225']];
   function venueStyle(id){
     let pair=VENUE_COLORS[id];
@@ -221,6 +221,7 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
     let html='<button class="venue-btn active" type="button" data-venue="all" aria-pressed="true">All venues <span class="venue-count">'+dataset.entries.length+'</span></button>';
     dataset.venues.forEach(function(v){
       const count=dataset.entries.filter(function(e){return e.venue_id===v.id}).length;
+      if(!count)return;
       html+='<button class="venue-btn" type="button" data-venue="'+escapeHtml(v.id)+'" aria-pressed="false" style="'+venueStyle(v.id)+'">'+escapeHtml(v.short_name)+' <span class="venue-count">'+count+'</span></button>';
     });
     venueFilterEl.innerHTML=html;
@@ -309,7 +310,7 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   function updateCopy(){
     if(activeView==='dates'){titleEl.textContent='Upcoming dates';descEl.textContent='A date-first list of visiting events, with official venue links and doors times where published.'}
     else if(activeView==='acts'){titleEl.textContent='Browse by act';descEl.textContent='Alphabetical A–Z, with the event date, doors time and official venue listing.'}
-    else{titleEl.textContent='Browse by venue';descEl.textContent='Touring events grouped by venue. Currently tracking six venues across the Strip, Fremont and Downtown, with more venues to come.'}
+    else{titleEl.textContent='Browse by venue';descEl.textContent='Touring events grouped by venue across the Strip, Fremont, Downtown and nearby venues.'}
   }
 
   function renderAll(){updateStats();updateCopy();renderDates();renderMonthJump();renderActs();renderVenues()}
