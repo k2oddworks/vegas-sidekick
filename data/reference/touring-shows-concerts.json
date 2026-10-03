@@ -3,7 +3,7 @@
   "verified_on": "2026-10-03",
   "city": "Las Vegas",
   "state": "Nevada",
-  "source_note": "Official venue calendars and event pages. This index is for visiting and limited-run shows that are not ongoing Vegas productions and are not currently classified in the Headliners & Residencies index.",
+  "source_note": "Official venue calendars and event pages. This index tracks visiting and limited-run shows that are not ongoing Vegas productions and are not currently classified in the Headliners & Residencies index. Recurring restaurant/bar entertainment and recurring venue productions are excluded.",
   "venues": [
     {
       "id": "brooklyn-bowl-las-vegas",
@@ -11,6 +11,13 @@
       "short_name": "Brooklyn Bowl",
       "property": "The LINQ Promenade",
       "official_url": "https://www.brooklynbowl.com/las-vegas/shows"
+    },
+    {
+      "id": "house-of-blues-las-vegas",
+      "name": "House of Blues Las Vegas",
+      "short_name": "House of Blues",
+      "property": "Mandalay Bay",
+      "official_url": "https://lasvegas.houseofblues.com/shows"
     }
   ],
   "entries": [
@@ -22,6 +29,17 @@
       "type": "Theme night",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/emo-night-brooklyn-1avjz_ogknbkcue"
+    },
+    {
+      "name": "The Aquabats!",
+      "subtitle": "Trick Or Treat To The Beat",
+      "date": "2026-10-03",
+      "doors": "6:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
     },
     {
       "name": "Roger Clyne & the Peacemakers",
@@ -42,6 +60,17 @@
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/snarky-puppy-1a9zkokgkeonqos"
     },
     {
+      "name": "Paige Fish",
+      "subtitle": "On Tour",
+      "date": "2026-10-08",
+      "doors": "7:30 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "B Side",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/b-side",
+      "venue_id": "house-of-blues-las-vegas"
+    },
+    {
       "name": "Dinosaur Jr.",
       "subtitle": "Fall Tour 2026",
       "support": "Stef Chura",
@@ -52,6 +81,28 @@
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/dinosaur-jr-fall-tour-2026-with-special-guest-stef-chura-17ayv0g6ujiqnhu"
     },
     {
+      "name": "Loathe",
+      "subtitle": "A Stranger to You",
+      "date": "2026-10-09",
+      "doors": "6:30 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
+    },
+    {
+      "name": "RIN",
+      "subtitle": "Dearest Diary Tour",
+      "date": "2026-10-09",
+      "doors": "7:30 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "B Side",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/b-side",
+      "venue_id": "house-of-blues-las-vegas"
+    },
+    {
       "name": "EsDeeKid",
       "subtitle": "Council House Rat Tour",
       "support": "Rico Ace",
@@ -60,6 +111,37 @@
       "type": "Concert",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/esdeekid-council-house-rat-tour-17ayv0g628hi5fj"
+    },
+    {
+      "name": "Madeon",
+      "subtitle": "Victory Live",
+      "date": "2026-10-10",
+      "doors": "8:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
+    },
+    {
+      "name": "Beauty School Dropout",
+      "date": "2026-10-11",
+      "doors": "7:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "B Side",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/b-side",
+      "venue_id": "house-of-blues-las-vegas"
+    },
+    {
+      "name": "Pouya",
+      "date": "2026-10-14",
+      "doors": "7:30 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
     },
     {
       "name": "Steel Pulse",
@@ -82,6 +164,17 @@
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/easy-star-all-stars-17ayv0g6277pwlu"
     },
     {
+      "name": "MICO",
+      "subtitle": "Running From A Feeling Tour",
+      "date": "2026-10-17",
+      "doors": "7:30 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
+    },
+    {
       "name": "SCHOOLBOY Q",
       "subtitle": "10 Years of Blank Face LP",
       "date": "2026-10-17",
@@ -89,6 +182,66 @@
       "type": "Concert",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/schoolboy-q-10-years-of-blank-face-lp-17ayv0g62ssmfow"
+    },
+    {
+      "name": "Countess Luann de Lesseps",
+      "date": "2026-10-18",
+      "doors": "7:00 PM",
+      "time_label": "Time",
+      "type": "Touring show",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
+    },
+    {
+      "name": "Free Throw / Microwave",
+      "date": "2026-10-19",
+      "doors": "6:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
+    },
+    {
+      "name": "Boy Harsher",
+      "date": "2026-10-20",
+      "doors": "7:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
+    },
+    {
+      "name": "Deltron 3030",
+      "date": "2026-10-21",
+      "doors": "7:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
+    },
+    {
+      "name": "ARTMS",
+      "date": "2026-10-23",
+      "doors": "6:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
+    },
+    {
+      "name": "Fastball",
+      "date": "2026-10-23",
+      "doors": "7:30 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "B Side",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/b-side",
+      "venue_id": "house-of-blues-las-vegas"
     },
     {
       "name": "The Iron Maidens",
@@ -100,6 +253,26 @@
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/the-iron-maidens-17ayv0g62krnymh"
     },
     {
+      "name": "Honey Revenge x Dead Poet Society",
+      "date": "2026-10-24",
+      "doors": "6:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
+    },
+    {
+      "name": "T.3",
+      "date": "2026-10-24",
+      "doors": "7:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "B Side",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/b-side",
+      "venue_id": "house-of-blues-las-vegas"
+    },
+    {
       "name": "Thrillerween: Michael Jackson Night",
       "subtitle": "Club 90's Presents",
       "date": "2026-10-24",
@@ -107,6 +280,38 @@
       "type": "Theme night",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/club-90-s-presents-thrillerween-michael-jackson-night-1a9zkfigkebkdbs"
+    },
+    {
+      "name": "The Click Five",
+      "date": "2026-10-25",
+      "doors": "7:30 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "B Side",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/b-side",
+      "venue_id": "house-of-blues-las-vegas"
+    },
+    {
+      "name": "EPIK HIGH",
+      "subtitle": "3.0 North American Tour",
+      "date": "2026-10-27",
+      "doors": "7:30 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
+    },
+    {
+      "name": "Jose Madero",
+      "subtitle": "USA Tour 2026",
+      "date": "2026-10-28",
+      "doors": "7:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
     },
     {
       "name": "CHIEF KEEF",
@@ -118,6 +323,17 @@
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/chief-keef-17ayv0g6u6vkhw1"
     },
     {
+      "name": "WAGE WAR",
+      "subtitle": "Emergency Broadcast Tour",
+      "date": "2026-10-29",
+      "doors": "7:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
+    },
+    {
       "name": "2000's Halloween",
       "subtitle": "Club 90's Presents",
       "date": "2026-10-30",
@@ -125,6 +341,17 @@
       "type": "Theme night",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/club-90-s-presents-y2k-halloween-1a9zkfigkebshtl"
+    },
+    {
+      "name": "W.A.S.P.",
+      "subtitle": "1984 To Headless",
+      "date": "2026-10-30",
+      "doors": "7:30 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
     },
     {
       "name": "Lenny Pearce",
@@ -142,6 +369,17 @@
       "type": "Concert",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/ub40-1kayv0uiga5hnxn"
+    },
+    {
+      "name": "KevOnStage",
+      "subtitle": "Grief Sucks: A One Man Show",
+      "date": "2026-11-06",
+      "doors": "6:30 PM",
+      "time_label": "Time",
+      "type": "Comedy",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
     },
     {
       "name": "Rival Sons",
@@ -170,6 +408,17 @@
       "type": "Concert",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/underoath-define-the-great-line-20th-anniversary-tour-17ayv0g6g5hzxax"
+    },
+    {
+      "name": "Gary Numan",
+      "subtitle": "North American Fall Tour 2026",
+      "date": "2026-11-13",
+      "doors": "7:30 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
     },
     {
       "name": "State Champs",
@@ -201,6 +450,17 @@
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/buzzcocks-celebrating-50-years-of-buzzcocks-17ayv0g6cliqufc"
     },
     {
+      "name": "Senses Fail",
+      "subtitle": "Still Searching",
+      "date": "2026-11-20",
+      "doors": "6:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
+    },
+    {
       "name": "The Amity Affliction",
       "subtitle": "HOUSE OF CARDS 2026",
       "support": "blessthefall · Orthodox · Buried in Spring",
@@ -211,12 +471,32 @@
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/the-amity-affliction-house-of-cards-2026-17ayv0g6cptapln"
     },
     {
+      "name": "Eres Emo?",
+      "date": "2026-11-27",
+      "doors": "9:00 PM",
+      "time_label": "Time",
+      "type": "Theme night",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
+    },
+    {
       "name": "Punchis Punchis: Banda Rave Experience",
       "date": "2026-11-28",
       "doors": "9:00 PM",
       "type": "Theme night",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/punchis-punchis-banda-rave-experience-1a9zkf_gke-d_oy"
+    },
+    {
+      "name": "Reggaetón Y2K",
+      "date": "2026-11-28",
+      "doors": "9:00 PM",
+      "time_label": "Time",
+      "type": "Theme night",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
     },
     {
       "name": "Cross Canadian Ragweed",
@@ -229,12 +509,33 @@
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/hooey-presents-cross-canadian-ragweed-17ayv0g62so7sdo"
     },
     {
+      "name": "Dweezil Zappa",
+      "subtitle": "DZ20: Like Father, Like Son",
+      "date": "2026-12-05",
+      "doors": "7:30 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
+    },
+    {
       "name": "Baby Bash, Lil Rob, NB Ridaz, Amanda Perez & Big Gemini",
       "date": "2026-12-06",
       "doors": "7:30 PM",
       "type": "Concert",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/baby-bash-lil-rob-nb-ridaz-amanda-perez-big-gemini-1a9zkfvgkdwj2d0"
+    },
+    {
+      "name": "Night Lovell",
+      "date": "2026-12-06",
+      "doors": "7:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
     },
     {
       "name": "Wyatt Flores",
@@ -255,6 +556,17 @@
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/hooey-presents-turnpike-troubadours-17ayv0g62soqkki"
     },
     {
+      "name": "Syd",
+      "subtitle": "Beard Tour",
+      "date": "2026-12-12",
+      "doors": "7:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
+    },
+    {
       "name": "Violent Femmes",
       "subtitle": "45 Years of Violent Femmes Tour",
       "date": "2026-12-13",
@@ -262,6 +574,16 @@
       "type": "Concert",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/violent-femmes-45-years-of-violent-femmes-tour-1a9zk3ogkeisxvi"
+    },
+    {
+      "name": "BenDeLaCreme Presents The Jinkx & DeLa Holiday Show",
+      "date": "2026-12-14",
+      "doors": "6:00 PM",
+      "time_label": "Time",
+      "type": "Touring show",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
     },
     {
       "name": "Trippie Redd",
@@ -273,6 +595,27 @@
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/trippie-redd-the-non-disclosure-agreement-tour-169zkfsopza5fkdv"
     },
     {
+      "name": "Smith & Myers",
+      "date": "2027-01-26",
+      "doors": "6:30 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
+    },
+    {
+      "name": "Polyphia",
+      "subtitle": "BE NOT AFRAID World Tour",
+      "date": "2027-02-06",
+      "doors": "6:30 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
+    },
+    {
       "name": "Blue October",
       "subtitle": "The Foiled 20th Anniversary World Tour",
       "date": "2027-02-13",
@@ -280,6 +623,18 @@
       "type": "Concert",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/blue-october-the-foiled-20th-anniversary-world-tour-17ayv0g61ppuqbc"
+    },
+    {
+      "name": "The Bouncing Souls",
+      "subtitle": "Born To Be Tour",
+      "support": "The Suicide Machines",
+      "date": "2027-02-15",
+      "doors": "6:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "room": "Music Hall",
+      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
+      "venue_id": "house-of-blues-las-vegas"
     }
   ]
 }
