@@ -134,7 +134,7 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
     <a class="eyebrow" href="/sidekick-index/" style="text-decoration:none">Sidekick Index</a>
     <h1>More Touring Shows &amp; Concerts</h1>
     <p>Visiting concerts, touring shows and limited-run events that are in Las Vegas briefly — separate from the major residency/headliner calendar and the regular productions that play here week after week.</p>
-    <div class="hero-note">Starting with Brooklyn Bowl. We’ll add more touring venues as the index grows.</div>
+    <div class="hero-note">Now tracking Brooklyn Bowl and House of Blues, with more touring venues to come.</div>
     <div class="stats" id="stats" aria-label="Index summary">
       <div class="stat"><strong>—</strong><span>events</span></div>
       <div class="stat"><strong>—</strong><span>venues</span></div>
@@ -165,7 +165,7 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
 
     <section class="section-intro">
       <div><h2 id="view-title">Upcoming dates</h2></div>
-      <p id="view-description">A date-first list of visiting events, with official venue links and doors times where published.</p>
+      <p id="view-description">A date-first list of visiting events, with official venue links and event times where published.</p>
     </section>
 
     <nav class="month-jump" id="month-jump" aria-label="Jump to month" hidden></nav>
@@ -197,7 +197,7 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   let activeVenue='all';
   let activeView='dates';
 
-  const VENUE_COLORS={'brooklyn-bowl-las-vegas':['#006f88','#fff']};
+  const VENUE_COLORS={'brooklyn-bowl-las-vegas':['#006f88','#fff'],'house-of-blues-las-vegas':['#d94f1f','#fff']};
   const FALLBACK=[['#125fd1','#fff'],['#6d28d9','#fff'],['#c2185b','#fff'],['#087f23','#fff'],['#ffb000','#171225']];
   function venueStyle(id){
     let pair=VENUE_COLORS[id];
@@ -238,11 +238,13 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
     const v=venueById(e.venue_id);
     const extra=(e.subtitle?'<span class="event-subtitle">'+escapeHtml(e.subtitle)+'</span>':'')+
       (e.support?'<span class="support"><b>With:</b> '+escapeHtml(e.support)+'</span>':'');
+    const locationDetail=[v.property,e.room].filter(Boolean).join(' · ');
+    const timeLabel=e.time_label||'Doors';
     return '<article class="event-row">'+
       '<div class="event-copy"><div class="event-name">'+escapeHtml(e.name)+'</div>'+extra+'<span class="badge">'+escapeHtml(e.type)+'</span></div>'+
       '<div class="date-wrap"><span class="date-pill"><strong>'+dayNum(e.date)+'</strong><small>'+escapeHtml(weekday(e.date))+'</small></span></div>'+
-      '<div class="venue">'+escapeHtml(v.name)+'<small>'+escapeHtml(v.property||'')+'</small></div>'+
-      '<div class="door"><span>Doors</span><b>'+escapeHtml(e.doors)+'</b></div>'+
+      '<div class="venue">'+escapeHtml(v.name)+'<small>'+escapeHtml(locationDetail)+'</small></div>'+
+      '<div class="door"><span>'+escapeHtml(timeLabel)+'</span><b>'+escapeHtml(e.doors)+'</b></div>'+
       '<a class="official" href="'+escapeHtml(e.official_url)+'" target="_blank" rel="noopener">Event / tickets ↗</a>'+
     '</article>';
   }
@@ -277,7 +279,7 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
       return '<article class="act-card"><h3>'+escapeHtml(e.name)+'</h3>'+
         (e.subtitle?'<span class="event-subtitle">'+escapeHtml(e.subtitle)+'</span>':'')+
         (e.support?'<span class="support"><b>With:</b> '+escapeHtml(e.support)+'</span>':'')+
-        '<span class="venue">'+escapeHtml(v.name)+'</span><div class="act-meta"><span class="mini-date">'+escapeHtml(monthShort(e.date))+' '+dayNum(e.date)+'</span><span class="mini-date">Doors '+escapeHtml(e.doors)+'</span><span class="badge">'+escapeHtml(e.type)+'</span></div>'+
+        '<span class="venue">'+escapeHtml(v.name)+(e.room?' · '+escapeHtml(e.room):'')+'</span><div class="act-meta"><span class="mini-date">'+escapeHtml(monthShort(e.date))+' '+dayNum(e.date)+'</span><span class="mini-date">'+escapeHtml(e.time_label||'Doors')+' '+escapeHtml(e.doors)+'</span><span class="badge">'+escapeHtml(e.type)+'</span></div>'+
         '<a class="official" href="'+escapeHtml(e.official_url)+'" target="_blank" rel="noopener">Event / tickets ↗</a></article>';
     }).join('')+'</div>';
   }
@@ -288,7 +290,7 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
       if(activeVenue!=='all'&&activeVenue!==v.id)return;
       const list=dataset.entries.filter(function(e){return e.venue_id===v.id}).sort(function(a,b){return a.date.localeCompare(b.date)});
       if(!list.length)return;
-      html+='<section class="venue-section"><div class="venue-section-head"><div><div class="eyebrow" style="color:var(--purple)">Venue</div><h3 class="venue-title-pill">'+escapeHtml(v.name)+'</h3></div><a href="'+escapeHtml(v.official_url)+'" target="_blank" rel="noopener">Venue calendar ↗</a></div><div class="event-list">'+list.map(cardMarkup).join('')+'</div></section>';
+      html+='<section class="venue-section"><div class="venue-section-head"><div><div class="eyebrow" style="color:var(--purple)">Venue</div><h3 class="venue-title-pill" style="'+venueStyle(v.id)+'">'+escapeHtml(v.name)+'</h3></div><a href="'+escapeHtml(v.official_url)+'" target="_blank" rel="noopener">Venue calendar ↗</a></div><div class="event-list">'+list.map(cardMarkup).join('')+'</div></section>';
     });
     venuesEl.innerHTML=html||'<div class="error">No upcoming events match this venue.</div>';
   }
@@ -307,7 +309,7 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   function updateCopy(){
     if(activeView==='dates'){titleEl.textContent='Upcoming dates';descEl.textContent='A date-first list of visiting events, with official venue links and doors times where published.'}
     else if(activeView==='acts'){titleEl.textContent='Browse by act';descEl.textContent='Alphabetical A–Z, with the event date, doors time and official venue listing.'}
-    else{titleEl.textContent='Browse by venue';descEl.textContent='Touring events grouped by venue. Brooklyn Bowl is the first calendar in the index; more venues will be added.'}
+    else{titleEl.textContent='Browse by venue';descEl.textContent='Touring events grouped by venue. Currently tracking Brooklyn Bowl and House of Blues, with more venues to come.'}
   }
 
   function renderAll(){updateStats();updateCopy();renderDates();renderMonthJump();renderActs();renderVenues()}
