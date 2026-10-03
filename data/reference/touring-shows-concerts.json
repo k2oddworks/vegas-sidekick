@@ -1,0 +1,285 @@
+{
+  "name": "Sidekick Index — More Touring Shows & Concerts",
+  "verified_on": "2026-10-03",
+  "city": "Las Vegas",
+  "state": "Nevada",
+  "source_note": "Official venue calendars and event pages. This index is for visiting and limited-run shows that are not ongoing Vegas productions and are not currently classified in the Headliners & Residencies index.",
+  "venues": [
+    {
+      "id": "brooklyn-bowl-las-vegas",
+      "name": "Brooklyn Bowl Las Vegas",
+      "short_name": "Brooklyn Bowl",
+      "property": "The LINQ Promenade",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/shows"
+    }
+  ],
+  "entries": [
+    {
+      "name": "Emo Night Brooklyn",
+      "subtitle": "Halloween Edition",
+      "date": "2026-10-03",
+      "doors": "9:30 PM",
+      "type": "Theme night",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/emo-night-brooklyn-1avjz_ogknbkcue"
+    },
+    {
+      "name": "Roger Clyne & the Peacemakers",
+      "support": "Ted Sablay",
+      "date": "2026-10-04",
+      "doors": "6:30 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/roger-clyne-the-peacemakers-1avjz_7gkuqnrm1"
+    },
+    {
+      "name": "Snarky Puppy",
+      "support": "Varijashree Venugopal",
+      "date": "2026-10-05",
+      "doors": "7:30 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/snarky-puppy-1a9zkokgkeonqos"
+    },
+    {
+      "name": "Dinosaur Jr.",
+      "subtitle": "Fall Tour 2026",
+      "support": "Stef Chura",
+      "date": "2026-10-09",
+      "doors": "7:00 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/dinosaur-jr-fall-tour-2026-with-special-guest-stef-chura-17ayv0g6ujiqnhu"
+    },
+    {
+      "name": "EsDeeKid",
+      "subtitle": "Council House Rat Tour",
+      "support": "Rico Ace",
+      "date": "2026-10-10",
+      "doors": "7:00 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/esdeekid-council-house-rat-tour-17ayv0g628hi5fj"
+    },
+    {
+      "name": "Steel Pulse",
+      "subtitle": "Reggae Against Racism Tour",
+      "support": "Jordan T",
+      "date": "2026-10-15",
+      "doors": "7:00 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/steel-pulse-reggae-against-racism-tour-17ayv0g6crlkyby"
+    },
+    {
+      "name": "Easy Star All-Stars",
+      "subtitle": "Dub Side of the Moon Live",
+      "support": "Red Eye Gin",
+      "date": "2026-10-16",
+      "doors": "7:30 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/easy-star-all-stars-17ayv0g6277pwlu"
+    },
+    {
+      "name": "SCHOOLBOY Q",
+      "subtitle": "10 Years of Blank Face LP",
+      "date": "2026-10-17",
+      "doors": "7:00 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/schoolboy-q-10-years-of-blank-face-lp-17ayv0g62ssmfow"
+    },
+    {
+      "name": "The Iron Maidens",
+      "support": "Crash Midnight",
+      "date": "2026-10-23",
+      "doors": "7:30 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/the-iron-maidens-17ayv0g62krnymh"
+    },
+    {
+      "name": "Thrillerween: Michael Jackson Night",
+      "subtitle": "Club 90's Presents",
+      "date": "2026-10-24",
+      "doors": "9:00 PM",
+      "type": "Theme night",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/club-90-s-presents-thrillerween-michael-jackson-night-1a9zkfigkebkdbs"
+    },
+    {
+      "name": "CHIEF KEEF",
+      "subtitle": "Presented by RYTHM",
+      "date": "2026-10-29",
+      "doors": "7:30 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/chief-keef-17ayv0g6u6vkhw1"
+    },
+    {
+      "name": "2000's Halloween",
+      "subtitle": "Club 90's Presents",
+      "date": "2026-10-30",
+      "doors": "9:00 PM",
+      "type": "Theme night",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/club-90-s-presents-y2k-halloween-1a9zkfigkebshtl"
+    },
+    {
+      "name": "Lenny Pearce",
+      "subtitle": "Toddler Rave World Tour",
+      "date": "2026-10-31",
+      "doors": "11:30 AM",
+      "type": "Family event",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/lenny-pearce-toddler-rave-world-tour-17ayv0g6g8qoold"
+    },
+    {
+      "name": "UB40",
+      "date": "2026-11-01",
+      "doors": "7:00 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/ub40-1kayv0uiga5hnxn"
+    },
+    {
+      "name": "Rival Sons",
+      "subtitle": "Domestic Bliss Tour",
+      "support": "The Blue Stones · The Velveteers",
+      "date": "2026-11-06",
+      "doors": "7:00 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/rival-sons-domestic-bliss-tour-17ayv0g6u5xr-qu"
+    },
+    {
+      "name": "Baby Smoove Live!",
+      "date": "2026-11-07",
+      "doors": "7:00 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/baby-smoove-live-1avjz_3gki-eben"
+    },
+    {
+      "name": "Underoath",
+      "subtitle": "Define the Great Line 20th Anniversary Tour",
+      "support": "August Burns Red · Atreyu · As Cities Burn",
+      "date": "2026-11-12",
+      "doors": "5:30 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/underoath-define-the-great-line-20th-anniversary-tour-17ayv0g6g5hzxax"
+    },
+    {
+      "name": "State Champs",
+      "subtitle": "10 Years of Around the World and Back",
+      "support": "Like Roses",
+      "date": "2026-11-13",
+      "doors": "6:00 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/state-champs-17ayv0g6gedpsl8"
+    },
+    {
+      "name": "GWAR",
+      "support": "Midnight · Mac Sabbath · Atomic Rule",
+      "date": "2026-11-14",
+      "doors": "6:00 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/gwar-1a9zk34gkdoxuhg"
+    },
+    {
+      "name": "Buzzcocks",
+      "subtitle": "Celebrating 50 Years of Buzzcocks",
+      "support": "Modern English · Grade 2",
+      "date": "2026-11-15",
+      "doors": "6:00 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/buzzcocks-celebrating-50-years-of-buzzcocks-17ayv0g6cliqufc"
+    },
+    {
+      "name": "The Amity Affliction",
+      "subtitle": "HOUSE OF CARDS 2026",
+      "support": "blessthefall · Orthodox · Buried in Spring",
+      "date": "2026-11-22",
+      "doors": "6:00 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/the-amity-affliction-house-of-cards-2026-17ayv0g6cptapln"
+    },
+    {
+      "name": "Punchis Punchis: Banda Rave Experience",
+      "date": "2026-11-28",
+      "doors": "9:00 PM",
+      "type": "Theme night",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/punchis-punchis-banda-rave-experience-1a9zkf_gke-d_oy"
+    },
+    {
+      "name": "Cross Canadian Ragweed",
+      "subtitle": "Hooey Presents",
+      "support": "Shelby Stone",
+      "date": "2026-12-04",
+      "doors": "9:00 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/hooey-presents-cross-canadian-ragweed-17ayv0g62so7sdo"
+    },
+    {
+      "name": "Baby Bash, Lil Rob, NB Ridaz, Amanda Perez & Big Gemini",
+      "date": "2026-12-06",
+      "doors": "7:30 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/baby-bash-lil-rob-nb-ridaz-amanda-perez-big-gemini-1a9zkfvgkdwj2d0"
+    },
+    {
+      "name": "Wyatt Flores",
+      "date": "2026-12-10",
+      "doors": "7:00 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/wyatt-flores-169zkf3jbza5agkk"
+    },
+    {
+      "name": "Turnpike Troubadours",
+      "subtitle": "Hooey Presents",
+      "support": "Red Shahan",
+      "date": "2026-12-11",
+      "doors": "9:00 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/hooey-presents-turnpike-troubadours-17ayv0g62soqkki"
+    },
+    {
+      "name": "Violent Femmes",
+      "subtitle": "45 Years of Violent Femmes Tour",
+      "date": "2026-12-13",
+      "doors": "7:00 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/violent-femmes-45-years-of-violent-femmes-tour-1a9zk3ogkeisxvi"
+    },
+    {
+      "name": "Trippie Redd",
+      "subtitle": "The Non-disclosure Agreement Tour",
+      "date": "2026-12-18",
+      "doors": "7:00 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/trippie-redd-the-non-disclosure-agreement-tour-169zkfsopza5fkdv"
+    },
+    {
+      "name": "Blue October",
+      "subtitle": "The Foiled 20th Anniversary World Tour",
+      "date": "2027-02-13",
+      "doors": "7:00 PM",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/blue-october-the-foiled-20th-anniversary-world-tour-17ayv0g61ppuqbc"
+    }
+  ]
+}
