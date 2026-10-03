@@ -3,7 +3,7 @@
   "verified_on": "2026-10-03",
   "city": "Las Vegas",
   "state": "Nevada",
-  "source_note": "Official venue calendars and event pages. This index tracks visiting and limited-run shows that are not ongoing Vegas productions and are not currently classified in the Headliners & Residencies index. Recurring restaurant/bar entertainment and recurring venue productions are excluded.",
+  "source_note": "Official venue calendars, ticketing pages and organizer pages. This index tracks visiting and limited-run shows that are not ongoing Vegas productions and are not currently classified in the Headliners & Residencies index. Recurring restaurant/bar entertainment and recurring venue productions are excluded.",
   "venues": [
     {
       "id": "brooklyn-bowl-las-vegas",
@@ -18,6 +18,20 @@
       "short_name": "House of Blues",
       "property": "Mandalay Bay",
       "official_url": "https://lasvegas.houseofblues.com/shows"
+    },
+    {
+      "id": "24-oxford",
+      "name": "24 Oxford",
+      "short_name": "24 Oxford",
+      "property": "Virgin Hotels Las Vegas",
+      "official_url": "https://virginhotelslv.com/venue/24-oxford/"
+    },
+    {
+      "id": "fremont-country-club",
+      "name": "Fremont Country Club",
+      "short_name": "Fremont Country Club",
+      "property": "Fremont East",
+      "official_url": "https://www.axs.com/venues/133268/fremont-country-club-las-vegas-tickets"
     }
   ],
   "entries": [
@@ -51,6 +65,16 @@
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/roger-clyne-the-peacemakers-1avjz_7gkuqnrm1"
     },
     {
+      "name": "Scene Queen",
+      "subtitle": "Metalicious Tour",
+      "support": "Wargasm · Bailey Spinn",
+      "date": "2026-10-04",
+      "doors": "7:00 PM",
+      "type": "Concert",
+      "venue_id": "24-oxford",
+      "official_url": "https://virginhotelslv.com/event/scene-queen-w-wargasm-bailey-spinn/"
+    },
+    {
       "name": "Snarky Puppy",
       "support": "Varijashree Venugopal",
       "date": "2026-10-05",
@@ -58,6 +82,16 @@
       "type": "Concert",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/snarky-puppy-1a9zkokgkeonqos"
+    },
+    {
+      "name": "Chad Gray",
+      "support": "Butcher Babies · Kissing Candice · Devil’s Cut",
+      "date": "2026-10-07",
+      "doors": "6:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "fremont-country-club",
+      "official_url": "https://www.jambase.com/show/chad-gray-fremont-country-club-20261007"
     },
     {
       "name": "Paige Fish",
@@ -113,6 +147,15 @@
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/esdeekid-council-house-rat-tour-17ayv0g628hi5fj"
     },
     {
+      "name": "High Watah",
+      "subtitle": "Hawaii’s Finest presents",
+      "date": "2026-10-10",
+      "doors": "7:00 PM",
+      "type": "Concert",
+      "venue_id": "24-oxford",
+      "official_url": "https://virginhotelslv.com/event/high-watah/"
+    },
+    {
       "name": "Madeon",
       "subtitle": "Victory Live",
       "date": "2026-10-10",
@@ -134,6 +177,14 @@
       "venue_id": "house-of-blues-las-vegas"
     },
     {
+      "name": "Akeem Ali",
+      "date": "2026-10-14",
+      "doors": "7:00 PM",
+      "type": "Concert",
+      "venue_id": "24-oxford",
+      "official_url": "https://virginhotelslv.com/event/akeem-ali/"
+    },
+    {
       "name": "Pouya",
       "date": "2026-10-14",
       "doors": "7:30 PM",
@@ -152,6 +203,15 @@
       "type": "Concert",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/steel-pulse-reggae-against-racism-tour-17ayv0g6crlkyby"
+    },
+    {
+      "name": "DJ Meredith Marks",
+      "subtitle": "YOU. CAN. DANCE. Tour",
+      "date": "2026-10-16",
+      "doors": "8:00 PM",
+      "type": "DJ / live event",
+      "venue_id": "24-oxford",
+      "official_url": "https://virginhotelslv.com/event/dj-meredith-marks/"
     },
     {
       "name": "Easy Star All-Stars",
@@ -182,6 +242,14 @@
       "type": "Concert",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/schoolboy-q-10-years-of-blank-face-lp-17ayv0g62ssmfow"
+    },
+    {
+      "name": "Corey Taylor",
+      "date": "2026-10-18",
+      "doors": "7:00 PM",
+      "type": "Concert",
+      "venue_id": "fremont-country-club",
+      "official_url": "https://www.eventim.com/event/corey-taylor-fremont-country-club-22177449/"
     },
     {
       "name": "Countess Luann de Lesseps",
@@ -244,6 +312,14 @@
       "venue_id": "house-of-blues-las-vegas"
     },
     {
+      "name": "Little Miss Nasty",
+      "date": "2026-10-23",
+      "doors": "8:00 PM",
+      "type": "Touring show",
+      "venue_id": "24-oxford",
+      "official_url": "https://virginhotelslv.com/event/little-miss-nasty-2026-07-18/"
+    },
+    {
       "name": "The Iron Maidens",
       "support": "Crash Midnight",
       "date": "2026-10-23",
@@ -261,6 +337,15 @@
       "room": "Music Hall",
       "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
       "venue_id": "house-of-blues-las-vegas"
+    },
+    {
+      "name": "Samantha Fish",
+      "subtitle": "Paper Doll Live",
+      "date": "2026-10-24",
+      "doors": "7:00 PM",
+      "type": "Concert",
+      "venue_id": "24-oxford",
+      "official_url": "https://virginhotelslv.com/event/samantha-fish/"
     },
     {
       "name": "T.3",
@@ -334,6 +419,15 @@
       "venue_id": "house-of-blues-las-vegas"
     },
     {
+      "name": "18th Annual Thriller Halloween Party",
+      "subtitle": "w/ Digital Underground",
+      "date": "2026-10-30",
+      "doors": "8:00 PM",
+      "type": "Special event",
+      "venue_id": "24-oxford",
+      "official_url": "https://virginhotelslv.com/event/18th-annual-thriller-halloween-party/"
+    },
+    {
       "name": "2000's Halloween",
       "subtitle": "Club 90's Presents",
       "date": "2026-10-30",
@@ -361,6 +455,16 @@
       "type": "Family event",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/lenny-pearce-toddler-rave-world-tour-17ayv0g6g8qoold"
+    },
+    {
+      "name": "Night of the Dead",
+      "subtitle": "Midnight Masquerade Ball",
+      "date": "2026-10-31",
+      "doors": "9:00 PM",
+      "time_label": "Starts",
+      "type": "Special event",
+      "venue_id": "fremont-country-club",
+      "official_url": "https://www.joyinthedark.com/event-details/joy-in-the-dark-presents-noche-de-los-muertos-2026-10-31-21-00"
     },
     {
       "name": "UB40",
@@ -398,6 +502,14 @@
       "type": "Concert",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/baby-smoove-live-1avjz_3gki-eben"
+    },
+    {
+      "name": "Kiss Kruise The Official Pre-Party",
+      "date": "2026-11-12",
+      "doors": "6:30 PM",
+      "type": "Special event",
+      "venue_id": "24-oxford",
+      "official_url": "https://virginhotelslv.com/event/kiss-kruise-the-official-pre-party/"
     },
     {
       "name": "Underoath",
@@ -509,6 +621,14 @@
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/hooey-presents-cross-canadian-ragweed-17ayv0g62so7sdo"
     },
     {
+      "name": "Whitey Morgan and the 78s",
+      "date": "2026-12-04",
+      "doors": "9:00 PM",
+      "type": "Concert",
+      "venue_id": "24-oxford",
+      "official_url": "https://virginhotelslv.com/event/whitey-morgan-and-the-78s/"
+    },
+    {
       "name": "Dweezil Zappa",
       "subtitle": "DZ20: Like Father, Like Son",
       "date": "2026-12-05",
@@ -565,6 +685,16 @@
       "room": "Music Hall",
       "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
       "venue_id": "house-of-blues-las-vegas"
+    },
+    {
+      "name": "XMAS IN THE DARK 2",
+      "subtitle": "The Nocturnal Affair & Austin Carlile",
+      "support": "Hikkari · Newslang · Requiemcore · Alura · Thuggernaut · Silent Throne",
+      "date": "2026-12-12",
+      "doors": "6:00 PM",
+      "type": "Concert",
+      "venue_id": "fremont-country-club",
+      "official_url": "https://www.eventim.us/event/xmas-in-the-dark-2/702891"
     },
     {
       "name": "Violent Femmes",
