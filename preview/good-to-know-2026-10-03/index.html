@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Good to Know — Vegas Sidekick Social Graphic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;800;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#070a0f;color:#fff;font-family:Inter,Arial,sans-serif}
+main{max-width:1080px;margin:auto;padding:20px}
+canvas{display:block;width:100%;height:auto;background:#070a0f;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.actions{display:flex;gap:12px;justify-content:center;padding:18px 0 6px}
+button,a{border:0;border-radius:999px;padding:12px 18px;font-weight:800;font:inherit;text-decoration:none;cursor:pointer}
+button{background:#ffb000;color:#070a0f}
+a{background:#c8ff2f;color:#070a0f}
+.note{text-align:center;color:#9ca3af;font-size:13px;margin:8px 0 0}
+</style>
+</head>
+<body>
+<main>
+<canvas id="c" width="1080" height="1080" aria-label="Vegas Sidekick Good to Know social graphic"></canvas>
+<div class="actions">
+<button id="download">Download PNG</button>
+<a href="/images/good-to-know-2026-10-03.svg" download>Download SVG</a>
+</div>
+<p class="note">1080 × 1080 · approved Vegas Sidekick show assets</p>
+</main>
+<script>
+const c=document.getElementById('c'),ctx=c.getContext('2d');
+const W=1080,H=1080;
+const colors={bg:'#070A0F',panel:'#10151D',border:'#252D38',lime:'#C8FF2F',amber:'#FFB000',white:'#FFFFFF',muted:'#B8C0CC'};
+const srcs=[
+  '/images/vegas-the-show-hero.webp',
+  '/images/mj-live-hero.webp',
+  '/images/carrot-top-show-2.jpg',
+  '/images/logo-horizontal.png'
+];
+function load(src){return new Promise((res,rej)=>{const im=new Image(); im.onload=()=>res(im); im.onerror=rej; im.src=src;});}
+function roundRect(x,y,w,h,r,fill,stroke){
+  ctx.beginPath();ctx.roundRect(x,y,w,h,r);
+  if(fill){ctx.fillStyle=fill;ctx.fill();}
+  if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=2;ctx.stroke();}
+}
+function cover(img,x,y,w,h,fx=.5,fy=.5){
+  const ir=img.width/img.height, r=w/h;
+  let sx=0,sy=0,sw=img.width,sh=img.height;
+  if(ir>r){sw=img.height*r;sx=(img.width-sw)*fx;}
+  else{sh=img.width/r;sy=(img.height-sh)*fy;}
+  ctx.drawImage(img,sx,sy,sw,sh,x,y,w,h);
+}
+function text(t,x,y,size,weight,color,align='left'){
+  ctx.font=`${weight} ${size}px Inter,Arial,sans-serif`;ctx.fillStyle=color;ctx.textAlign=align;ctx.textBaseline='alphabetic';ctx.fillText(t,x,y);
+}
+function row(img,y,accent,show,label,main1,main2){
+  ctx.save();
+  ctx.shadowColor='rgba(0,0,0,.35)';ctx.shadowBlur=24;ctx.shadowOffsetY=9;
+  roundRect(42,y,996,218,18,colors.panel,colors.border);
+  ctx.restore();
+  ctx.save();ctx.beginPath();ctx.roundRect(42,y,996,218,18);ctx.clip();
+  cover(img,42,y,640,218,.5,.5);
+  const g=ctx.createLinearGradient(470,0,720,0);g.addColorStop(0,'rgba(16,21,29,0)');g.addColorStop(.42,'rgba(16,21,29,.12)');g.addColorStop(1,'rgba(16,21,29,1)');
+  ctx.fillStyle=g;ctx.fillRect(470,y,250,218);
+  ctx.fillStyle=accent;ctx.fillRect(42,y,8,218);
+  ctx.restore();
+  text(show,666,y+44,22,800,colors.white);
+  text(label,666,y+94,label==='SCHEDULED TO RETURN'?18:21,800,colors.lime);
+  if(main2){
+    text(main1,666,y+134,40,900,colors.amber);
+    text(main2,666,y+196,61,900,colors.white);
+  }else{
+    const size=main1==='OCTOBER 19'?51:70;
+    text(main1,666,y+170,size,900,colors.amber);
+  }
+}
+(async()=>{
+  const [vegas,mj,carrot,logo]=await Promise.all(srcs.map(load));
+  await document.fonts.ready;
+  const bg=ctx.createLinearGradient(0,0,W,H);bg.addColorStop(0,'#070A0F');bg.addColorStop(1,'#0D1118');ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+  roundRect(42,44,16,76,8,colors.lime);
+  text('GOOD TO KNOW',78,102,66,900,colors.white);
+  text('Show changes you may have missed.',79,146,27,500,colors.muted);
+  roundRect(79,164,240,4,2,colors.amber);
+  row(vegas,192,colors.lime,'VEGAS! THE SHOW','NOW AT','5:30 PM');
+  row(mj,424,colors.amber,'MJ LIVE','NOW AT','SAXE THEATER','7 PM');
+  row(carrot,656,colors.lime,'CARROT TOP','SCHEDULED TO RETURN','OCTOBER 19');
+  ctx.fillStyle='#232A34';ctx.fillRect(42,908,996,2);
+  const lw=564,lh=98;const r=logo.width/logo.height;let dw=lw,dh=dw/r;if(dh>lh){dh=lh;dw=dh*r;}ctx.drawImage(logo,540-dw/2,946+(lh-dh)/2,dw,dh);
+})();
+document.getElementById('download').onclick=()=>{
+  const a=document.createElement('a');a.download='vegas-sidekick-good-to-know-2026-10-03.png';a.href=c.toDataURL('image/png');a.click();
+};
+</script>
+</body>
+</html>
