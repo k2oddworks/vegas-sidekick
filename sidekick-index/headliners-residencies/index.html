@@ -92,11 +92,16 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
 .filter-row{display:flex;align-items:flex-start;gap:12px}
 .filter-row-label{flex:0 0 84px;padding-top:9px;font:700 .62rem var(--mono);color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
 .venue-filter,.type-filter{display:flex;flex-wrap:wrap;gap:8px}
-.venue-btn,.type-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid #ddd7e8;background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;font:800 .73rem var(--display);cursor:pointer}
-.venue-btn:hover,.type-btn:hover{border-color:#a890ce;background:#faf7ff}
-.venue-btn.active,.type-btn.active{border-color:#24103d;background:#24103d;color:#fff}
-.venue-count{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 5px;border-radius:999px;background:rgba(124,58,237,.1);color:#6d28d9;font:700 .58rem var(--mono)}
-.venue-btn.active .venue-count{background:rgba(255,255,255,.14);color:#fff}
+.venue-btn,.type-btn{display:inline-flex;align-items:center;gap:8px;border:3px solid transparent;background:var(--pill-bg,#fff);color:var(--pill-fg,var(--ink));border-radius:999px;padding:7px 11px;font:800 .73rem var(--display);cursor:pointer;box-shadow:0 3px 10px rgba(23,18,37,.08);transition:transform .16s,filter .16s,box-shadow .16s}
+.venue-btn:hover,.type-btn:hover{filter:brightness(.96);transform:translateY(-1px)}
+.venue-btn.active,.type-btn.active{border-color:#171225;box-shadow:inset 0 0 0 2px rgba(255,255,255,.92),0 4px 12px rgba(23,18,37,.13)}
+.venue-btn.active::before,.type-btn.active::before{content:"✓";display:inline-grid;place-items:center;flex:0 0 auto;width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,.22);color:inherit;font:900 .68rem var(--display);line-height:1}
+.venue-btn[data-venue="all"]{--pill-bg:#24103d;--pill-fg:#fff}
+.type-btn[data-type="all"]{--pill-bg:#24103d;--pill-fg:#fff}
+.type-btn[data-type="residency"]{--pill-bg:#6d28d9;--pill-fg:#fff}
+.type-btn[data-type="limited"]{--pill-bg:#ffb000;--pill-fg:#171225}
+.venue-count{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 5px;border-radius:999px;background:rgba(255,255,255,.22);color:inherit;font:700 .58rem var(--mono)}
+.venue-btn.active .venue-count{background:rgba(255,255,255,.28);color:inherit}
 .venue-section{margin-top:32px}.venue-section:first-child{margin-top:0}
 .venue-section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:10px}
 .venue-section-head h3{font-size:1.18rem}.venue-section-head a{color:var(--purple);font:700 .7rem var(--display);text-underline-offset:3px}
@@ -200,15 +205,15 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
       <div class="filter-row">
         <span class="filter-row-label">Engagement</span>
         <div class="type-filter" id="type-filter" aria-label="Filter by engagement type">
-          <button class="type-btn active" type="button" data-type="all">All</button>
-          <button class="type-btn" type="button" data-type="residency">Residencies</button>
-          <button class="type-btn" type="button" data-type="limited">Limited engagements</button>
+          <button class="type-btn active" type="button" data-type="all" aria-pressed="true">All</button>
+          <button class="type-btn" type="button" data-type="residency" aria-pressed="false">Residencies</button>
+          <button class="type-btn" type="button" data-type="limited" aria-pressed="false">Limited engagements</button>
         </div>
       </div>
     </div>
 
     <section class="section-intro">
-      <div><div class="eyebrow" style="color:var(--purple)">Upcoming dates</div><h2 id="view-title">The agenda</h2></div>
+      <div><h2 id="view-title">Upcoming dates</h2></div>
       <p id="view-description">Dates are grouped into short runs so the page stays chronological without repeating the same act dozens of times.</p>
     </section>
 
@@ -243,6 +248,37 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   let activeVenue='all';
   let activeType='all';
   let activeView='agenda';
+
+  const VENUE_PILL_COLORS={
+    'sphere':['#125fd1','#fff'],
+    'caesars-colosseum':['#6d28d9','#fff'],
+    'palms-pearl':['#c2185b','#fff'],
+    'planet-hollywood-ph-live':['#ff6a00','#171225'],
+    'dolby-live':['#087f23','#fff'],
+    'mgm-grand-garden-arena':['#b91c1c','#fff'],
+    't-mobile-arena':['#007a83','#fff'],
+    'venetian':['#ffb000','#171225'],
+    'mandalay-bay':['#0c7a90','#fff'],
+    'wynn':['#111111','#fff'],
+    'resorts-world':['#4f46c7','#fff'],
+    'fontainebleau':['#2563eb','#fff'],
+    'cosmopolitan':['#d81b60','#fff'],
+    'virgin-hotels':['#c2410c','#fff'],
+    'westgate':['#c6f22e','#171225']
+  };
+  const FALLBACK_PILL_COLORS=[
+    ['#125fd1','#fff'],['#6d28d9','#fff'],['#c2185b','#fff'],['#087f23','#fff'],
+    ['#007a83','#fff'],['#c2410c','#fff'],['#ffb000','#171225'],['#c6f22e','#171225']
+  ];
+  function venuePillStyle(id){
+    let pair=VENUE_PILL_COLORS[id];
+    if(!pair){
+      let hash=0;
+      for(let i=0;i<id.length;i++)hash=((hash<<5)-hash)+id.charCodeAt(i);
+      pair=FALLBACK_PILL_COLORS[Math.abs(hash)%FALLBACK_PILL_COLORS.length];
+    }
+    return '--pill-bg:'+pair[0]+';--pill-fg:'+pair[1];
+  }
 
   function parseDate(iso){
     const p=iso.split('-').map(Number);
@@ -332,15 +368,20 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
 
   function renderVenueFilters(){
     const allCount=dataset.entries.length;
-    let html='<button class="venue-btn active" type="button" data-venue="all">All venues <span class="venue-count">'+allCount+'</span></button>';
+    let html='<button class="venue-btn active" type="button" data-venue="all" aria-pressed="true">All venues <span class="venue-count">'+allCount+'</span></button>';
     visibleGroups(dataset.entries).forEach(function(item){
-      html+='<button class="venue-btn" type="button" data-venue="'+escapeHtml(item.group.id)+'">'+escapeHtml(item.group.short_name)+' <span class="venue-count">'+item.count+'</span></button>';
+      html+='<button class="venue-btn" type="button" data-venue="'+escapeHtml(item.group.id)+'" aria-pressed="false" style="'+venuePillStyle(item.group.id)+'">'+escapeHtml(item.group.short_name)+' <span class="venue-count">'+item.count+'</span></button>';
     });
     venueFilterEl.innerHTML=html;
     venueFilterEl.querySelectorAll('.venue-btn').forEach(function(btn){
       btn.addEventListener('click',function(){
         activeVenue=btn.dataset.venue;
-        venueFilterEl.querySelectorAll('.venue-btn').forEach(function(b){b.classList.toggle('active',b===btn)});
+        venueFilterEl.querySelectorAll('.venue-btn').forEach(function(b){
+          const active=b===btn;
+          b.classList.toggle('active',active);
+          b.setAttribute('aria-pressed',active?'true':'false');
+        });
+        btn.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest',inline:'center'});
         renderAll();
       });
     });
@@ -349,7 +390,11 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   typeFilterEl.querySelectorAll('.type-btn').forEach(function(btn){
     btn.addEventListener('click',function(){
       activeType=btn.dataset.type;
-      typeFilterEl.querySelectorAll('.type-btn').forEach(function(b){b.classList.toggle('active',b===btn)});
+      typeFilterEl.querySelectorAll('.type-btn').forEach(function(b){
+        const active=b===btn;
+        b.classList.toggle('active',active);
+        b.setAttribute('aria-pressed',active?'true':'false');
+      });
       renderAll();
     });
   });
@@ -477,7 +522,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
       : (groups[0] ? groups[0].group.name : activeVenue);
     const typeName=activeType==='all'?'all engagement types':activeType==='residency'?'residencies':'limited engagements';
     if(activeView==='agenda'){
-      titleEl.textContent='The agenda';
+      titleEl.textContent='Upcoming dates';
       descEl.textContent=(activeVenue==='all'?'Dates are grouped into compact runs so the citywide view stays chronological. ':'Within one venue, consecutive dates stay together until another engagement takes over. ')+venueName+' · '+typeName+'.';
     }else if(activeView==='acts'){
       titleEl.textContent='Browse by act';
