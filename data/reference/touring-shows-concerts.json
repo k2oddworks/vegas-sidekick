@@ -3,7 +3,7 @@
   "verified_on": "2026-10-03",
   "city": "Las Vegas",
   "state": "Nevada",
-  "source_note": "Official venue calendars, ticketing pages and organizer pages. This index tracks visiting and limited-run shows that are not ongoing Vegas productions and are not currently classified in the Headliners & Residencies index. Recurring restaurant/bar entertainment and recurring venue productions are excluded.",
+  "source_note": "Official venue calendars, ticketing pages and established concert listings. This index tracks visiting and limited-run shows that are not ongoing Vegas productions and are not currently classified in the Headliners & Residencies index. Recurring restaurant/bar entertainment and recurring venue productions are excluded.",
   "venues": [
     {
       "id": "brooklyn-bowl-las-vegas",
@@ -32,9 +32,33 @@
       "short_name": "Fremont Country Club",
       "property": "Fremont East",
       "official_url": "https://www.axs.com/venues/133268/fremont-country-club-las-vegas-tickets"
+    },
+    {
+      "id": "backstage-bar-billiards",
+      "name": "Backstage Bar & Billiards",
+      "short_name": "Backstage Bar",
+      "property": "Fremont East",
+      "official_url": "https://www.axs.com/venues/133659/backstage-bar-billiards-las-vegas-tickets"
+    },
+    {
+      "id": "swan-dive-las-vegas",
+      "name": "Swan Dive",
+      "short_name": "Swan Dive",
+      "property": "Arts District",
+      "official_url": "https://swandivelasvegas.com/events/"
     }
   ],
   "entries": [
+    {
+      "name": "Combichrist",
+      "support": "Ludovico Technique · Dead Animal Assembly Plant · Spelling Hands",
+      "date": "2026-10-03",
+      "doors": "8:30 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "backstage-bar-billiards",
+      "official_url": "https://www.jambase.com/show/combichrist-backstage-bar-billiards-20261003"
+    },
     {
       "name": "Emo Night Brooklyn",
       "subtitle": "Halloween Edition",
@@ -43,6 +67,15 @@
       "type": "Theme night",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/emo-night-brooklyn-1avjz_ogknbkcue"
+    },
+    {
+      "name": "Galactic Empire",
+      "date": "2026-10-03",
+      "doors": "7:30 PM",
+      "time_label": "Show",
+      "type": "Concert",
+      "venue_id": "swan-dive-las-vegas",
+      "official_url": "https://swandivelasvegas.com/events/"
     },
     {
       "name": "The Aquabats!",
@@ -137,6 +170,15 @@
       "venue_id": "house-of-blues-las-vegas"
     },
     {
+      "name": "Soulfly",
+      "date": "2026-10-09",
+      "doors": "5:00 PM",
+      "time_label": "Show",
+      "type": "Concert",
+      "venue_id": "swan-dive-las-vegas",
+      "official_url": "https://swandivelasvegas.com/events/"
+    },
+    {
       "name": "EsDeeKid",
       "subtitle": "Council House Rat Tour",
       "support": "Rico Ace",
@@ -177,6 +219,15 @@
       "venue_id": "house-of-blues-las-vegas"
     },
     {
+      "name": "Bit Brigade Performs “Mega Man II” + “Castlevania” + “Tetris” LIVE",
+      "date": "2026-10-12",
+      "doors": "6:30 PM",
+      "time_label": "Show",
+      "type": "Concert",
+      "venue_id": "swan-dive-las-vegas",
+      "official_url": "https://swandivelasvegas.com/events/"
+    },
+    {
       "name": "Akeem Ali",
       "date": "2026-10-14",
       "doors": "7:00 PM",
@@ -205,6 +256,26 @@
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/steel-pulse-reggae-against-racism-tour-17ayv0g6crlkyby"
     },
     {
+      "name": "Black Cat Carnival",
+      "subtitle": "Benefit for United Brothel Workers",
+      "date": "2026-10-16",
+      "doors": "8:00 PM",
+      "time_label": "Show",
+      "type": "Special event",
+      "venue_id": "swan-dive-las-vegas",
+      "official_url": "https://swandivelasvegas.com/events/"
+    },
+    {
+      "name": "Buzz Kull",
+      "support": "Kontravoid",
+      "date": "2026-10-16",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "backstage-bar-billiards",
+      "official_url": "https://www.jambase.com/venue/backstage-bar-billiards"
+    },
+    {
       "name": "DJ Meredith Marks",
       "subtitle": "YOU. CAN. DANCE. Tour",
       "date": "2026-10-16",
@@ -222,6 +293,26 @@
       "type": "Concert",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/easy-star-all-stars-17ayv0g6277pwlu"
+    },
+    {
+      "name": "Black Champagne",
+      "support": "Super Black · 56 Hope Road",
+      "date": "2026-10-17",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "backstage-bar-billiards",
+      "official_url": "https://www.jambase.com/venue/backstage-bar-billiards"
+    },
+    {
+      "name": "BLITZKID",
+      "subtitle": "Modern Hel Tour 2026",
+      "date": "2026-10-17",
+      "doors": "8:00 PM",
+      "time_label": "Show",
+      "type": "Concert",
+      "venue_id": "swan-dive-las-vegas",
+      "official_url": "https://swandivelasvegas.com/events/"
     },
     {
       "name": "MICO",
@@ -320,6 +411,15 @@
       "official_url": "https://virginhotelslv.com/event/little-miss-nasty-2026-07-18/"
     },
     {
+      "name": "Mia Asano Music",
+      "date": "2026-10-23",
+      "doors": "7:30 PM",
+      "time_label": "Show",
+      "type": "Concert",
+      "venue_id": "swan-dive-las-vegas",
+      "official_url": "https://swandivelasvegas.com/events/"
+    },
+    {
       "name": "The Iron Maidens",
       "support": "Crash Midnight",
       "date": "2026-10-23",
@@ -367,6 +467,16 @@
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/club-90-s-presents-thrillerween-michael-jackson-night-1a9zkfigkebkdbs"
     },
     {
+      "name": "Wine Lips",
+      "support": "The Dirty Hooks",
+      "date": "2026-10-24",
+      "doors": "8:00 PM",
+      "time_label": "Show",
+      "type": "Concert",
+      "venue_id": "swan-dive-las-vegas",
+      "official_url": "https://swandivelasvegas.com/events/"
+    },
+    {
       "name": "The Click Five",
       "date": "2026-10-25",
       "doors": "7:30 PM",
@@ -408,6 +518,16 @@
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/chief-keef-17ayv0g6u6vkhw1"
     },
     {
+      "name": "Cydeways",
+      "support": "The Irie",
+      "date": "2026-10-29",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "backstage-bar-billiards",
+      "official_url": "https://www.jambase.com/venue/backstage-bar-billiards"
+    },
+    {
       "name": "WAGE WAR",
       "subtitle": "Emergency Broadcast Tour",
       "date": "2026-10-29",
@@ -435,6 +555,16 @@
       "type": "Theme night",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/club-90-s-presents-y2k-halloween-1a9zkfigkebshtl"
+    },
+    {
+      "name": "Havok",
+      "support": "Hellripper · Slackjaw · Xoth",
+      "date": "2026-10-30",
+      "doors": "9:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "backstage-bar-billiards",
+      "official_url": "https://www.axs.com/venues/133659/backstage-bar-billiards-las-vegas-tickets"
     },
     {
       "name": "W.A.S.P.",
@@ -467,12 +597,41 @@
       "official_url": "https://www.joyinthedark.com/event-details/joy-in-the-dark-presents-noche-de-los-muertos-2026-10-31-21-00"
     },
     {
+      "name": "Not Another Emo Night of the Living Dead 2",
+      "date": "2026-10-31",
+      "doors": "7:00 PM",
+      "time_label": "Show",
+      "type": "Theme night",
+      "venue_id": "swan-dive-las-vegas",
+      "official_url": "https://swandivelasvegas.com/events/"
+    },
+    {
       "name": "UB40",
       "date": "2026-11-01",
       "doors": "7:00 PM",
       "type": "Concert",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/ub40-1kayv0uiga5hnxn"
+    },
+    {
+      "name": "Hit the Lights",
+      "support": "Forever Came Calling · Fox Royale",
+      "date": "2026-11-05",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "backstage-bar-billiards",
+      "official_url": "https://www.jambase.com/venue/backstage-bar-billiards"
+    },
+    {
+      "name": "Holy Wave",
+      "support": "The Acid Sisters",
+      "date": "2026-11-06",
+      "doors": "8:00 PM",
+      "time_label": "Show",
+      "type": "Concert",
+      "venue_id": "swan-dive-las-vegas",
+      "official_url": "https://swandivelasvegas.com/events/"
     },
     {
       "name": "KevOnStage",
@@ -504,12 +663,32 @@
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/baby-smoove-live-1avjz_3gki-eben"
     },
     {
+      "name": "Born Without Bones",
+      "date": "2026-11-08",
+      "doors": "7:00 PM",
+      "time_label": "Show",
+      "type": "Concert",
+      "venue_id": "swan-dive-las-vegas",
+      "official_url": "https://swandivelasvegas.com/events/"
+    },
+    {
       "name": "Kiss Kruise The Official Pre-Party",
       "date": "2026-11-12",
       "doors": "6:30 PM",
       "type": "Special event",
       "venue_id": "24-oxford",
       "official_url": "https://virginhotelslv.com/event/kiss-kruise-the-official-pre-party/"
+    },
+    {
+      "name": "PRAYERS",
+      "subtitle": "No Tengo Calma Tour 2026",
+      "support": "DEVORA · EX LOVER · HALLOWS · CHRIZ AMAYA",
+      "date": "2026-11-12",
+      "doors": "6:30 PM",
+      "time_label": "Doors",
+      "type": "Concert",
+      "venue_id": "swan-dive-las-vegas",
+      "official_url": "https://swandivelasvegas.com/event/prayers-no-tengo-calma-tour-2026/swan-dive/las-vegas-nevada/"
     },
     {
       "name": "Underoath",
@@ -543,6 +722,15 @@
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/state-champs-17ayv0g6gedpsl8"
     },
     {
+      "name": "Cut Copy DJs",
+      "date": "2026-11-14",
+      "doors": "8:00 PM",
+      "time_label": "Show",
+      "type": "DJ / live event",
+      "venue_id": "swan-dive-las-vegas",
+      "official_url": "https://swandivelasvegas.com/events/"
+    },
+    {
       "name": "GWAR",
       "support": "Midnight · Mac Sabbath · Atomic Rule",
       "date": "2026-11-14",
@@ -562,6 +750,15 @@
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/buzzcocks-celebrating-50-years-of-buzzcocks-17ayv0g6cliqufc"
     },
     {
+      "name": "The Mainliners",
+      "date": "2026-11-15",
+      "doors": "6:30 PM",
+      "time_label": "Show",
+      "type": "Concert",
+      "venue_id": "swan-dive-las-vegas",
+      "official_url": "https://swandivelasvegas.com/events/"
+    },
+    {
       "name": "Senses Fail",
       "subtitle": "Still Searching",
       "date": "2026-11-20",
@@ -571,6 +768,36 @@
       "room": "Music Hall",
       "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
       "venue_id": "house-of-blues-las-vegas"
+    },
+    {
+      "name": "Wolf & Bear",
+      "support": "Coletta · Origami Button",
+      "date": "2026-11-20",
+      "doors": "8:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "backstage-bar-billiards",
+      "official_url": "https://www.axs.com/venues/133659/backstage-bar-billiards-las-vegas-tickets"
+    },
+    {
+      "name": "Ladrones",
+      "subtitle": "Arriba La L USA 2026 Tour",
+      "date": "2026-11-21",
+      "doors": "8:00 PM",
+      "time_label": "Show",
+      "type": "Concert",
+      "venue_id": "swan-dive-las-vegas",
+      "official_url": "https://swandivelasvegas.com/events/"
+    },
+    {
+      "name": "Shwayze",
+      "support": "Chiddy Bang",
+      "date": "2026-11-21",
+      "doors": "8:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "backstage-bar-billiards",
+      "official_url": "https://www.jambase.com/show/shwayze-backstage-bar-billiards-20261121"
     },
     {
       "name": "The Amity Affliction",
@@ -591,6 +818,26 @@
       "room": "Music Hall",
       "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
       "venue_id": "house-of-blues-las-vegas"
+    },
+    {
+      "name": "OURS",
+      "support": "Heroine Honey · special guests",
+      "date": "2026-11-27",
+      "doors": "8:00 PM",
+      "time_label": "Doors",
+      "type": "Concert",
+      "venue_id": "swan-dive-las-vegas",
+      "official_url": "https://swandivelasvegas.com/event/ours/swan-dive/las-vegas-nevada/"
+    },
+    {
+      "name": "MEGA-SCOPES",
+      "support": "CHKLZ · Electronic Ghost Machine",
+      "date": "2026-11-28",
+      "doors": "8:00 PM",
+      "time_label": "Doors",
+      "type": "Concert",
+      "venue_id": "swan-dive-las-vegas",
+      "official_url": "https://swandivelasvegas.com/event/mega-scopes/swan-dive/las-vegas-nevada/"
     },
     {
       "name": "Punchis Punchis: Banda Rave Experience",
@@ -695,6 +942,15 @@
       "type": "Concert",
       "venue_id": "fremont-country-club",
       "official_url": "https://www.eventim.us/event/xmas-in-the-dark-2/702891"
+    },
+    {
+      "name": "Mother Soki",
+      "date": "2026-12-13",
+      "doors": "8:00 PM",
+      "time_label": "Show",
+      "type": "Concert",
+      "venue_id": "swan-dive-las-vegas",
+      "official_url": "https://swandivelasvegas.com/events/"
     },
     {
       "name": "Violent Femmes",
