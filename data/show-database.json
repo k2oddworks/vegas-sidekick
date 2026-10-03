@@ -1984,52 +1984,50 @@
       "our_price": 82,
       "regular_price": null,
       "runtime_minutes": 75,
-      "age_summary": "12+",
+      "age_summary": "Ages 12–17 with a parent or guardian; guests 18+ with valid ID",
       "venue": "Azul Lounge - Fontainebleau Las Vegas",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Sun · 7 PM; Fri, Sat · 7 PM & 9:30 PM",
+      "schedule_summary": "Fri–Tue · 8 PM · doors 7:30 PM · one show nightly",
       "ticket_url": "https://spotlight.vegas/shows/magic/mind2mind/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/magic/mind2mind/",
-      "verified_on": "2026-09-08",
-      "freshness_label": "September 2026",
-      "verification": "verified_spotlight",
-      "notes": "",
+      "verified_on": "2026-10-03",
+      "freshness_label": "October 2026",
+      "verification": "verified_direct",
+      "notes": "Direct confirmation from MIND2MIND via email: performances Friday through Tuesday at 8 PM, doors 7:30 PM, one show nightly; residency began June 2026 and is extended through February 2, 2027; ages 12–17 require a parent or guardian and guests 18+ require valid ID.",
       "spotlight": {
         "name": "MIND2MIND",
         "our_price": 82,
         "regular_price": null,
         "location": "Azul Lounge - Fontainebleau Las Vegas",
         "runtime_minutes": 75,
-        "age_rule": "Must be 12 years of age or older, and accompanied by an adult.",
+        "age_rule": "Guests ages 12–17 must attend with a parent or guardian. Guests 18 and older must present valid photo ID.",
         "other_restrictions": "",
         "schedule_days": {
           "Monday": [
-            "7 PM"
+            "8 PM"
           ],
           "Tuesday": [
-            "7 PM"
+            "8 PM"
           ],
           "Friday": [
-            "7 PM",
-            "9:30 PM"
+            "8 PM"
           ],
           "Saturday": [
-            "7 PM",
-            "9:30 PM"
+            "8 PM"
           ],
           "Sunday": [
-            "7 PM"
+            "8 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Sun · 7 PM; Fri, Sat · 7 PM & 9:30 PM",
+        "schedule_summary": "Fri–Tue · 8 PM · doors 7:30 PM · one show nightly",
         "schedule_variable": false,
         "schedule_raw": [
-          "Monday - 7:00pm",
-          "Tuesday - 7:00pm",
-          "Friday - 7:00pm & 9:30pm",
-          "Saturday - 7:00pm & 9:30pm",
-          "Sunday - 7:00pm"
+          "Friday - 8:00pm (doors 7:30pm)",
+          "Saturday - 8:00pm (doors 7:30pm)",
+          "Sunday - 8:00pm (doors 7:30pm)",
+          "Monday - 8:00pm (doors 7:30pm)",
+          "Tuesday - 8:00pm (doors 7:30pm)"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/mind2mind/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/mind2mind/ref/vegassidekick",
