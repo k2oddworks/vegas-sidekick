@@ -725,3 +725,17 @@ Commit messages are imperative, descriptive, and scoped to what changed:
 - `Fix logo path and add all logo and mascot images`
 
 Branch naming: `claude/feature-description-<id>` for AI-assisted work.
+
+---
+
+## Good to Know social-series reference
+
+Vegas Sidekick's recurring **Good to Know** social series is governed by `GOOD-TO-KNOW.md`.
+
+- It is the customer-service social layer for verified show changes that affect planning or booking: start times, venue moves, return dates, performance-day changes, meaningful added dates, closing dates and similar material updates.
+- It is distinct from **Vegas Dispatch**, which is the editorial/news product.
+- Use approved repo photography, artwork, show logos and Vegas Sidekick branding exactly as supplied. Do not generate replacements or lookalikes.
+- Store recurring series assets under `/images/good-to-know/`.
+
+The social series is separate from the optional **Good to know** information card used on show pages. The shared name does not change show-page rules: only use that page card when there is a genuinely useful buyer fact.
+
