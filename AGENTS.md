@@ -80,6 +80,8 @@ Use the shared canonical assets and current page structure rather than rebuildin
 
 Primary ticket CTAs use Warm Amber `#FFB000`.
 
+Every current show product page uses the shared **Share this show** control in the hero. It is deliberately secondary to the ticket CTA. On supported mobile/browser environments it opens the native share sheet; otherwise it copies the canonical Vegas Sidekick show URL. It must share the Vegas Sidekick page, never the affiliate ticket URL. Do not add the control to the mobile sticky purchase bar.
+
 Mobile heroes use the established safe treatment unless a show-specific focal override is needed.
 
 ### Locked showtimes booking system

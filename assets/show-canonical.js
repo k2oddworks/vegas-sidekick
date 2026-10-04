@@ -122,6 +122,45 @@
   if(light)light.addEventListener('click',e=>{if(e.target===light)shut()});
   addEventListener('keydown',e=>{if(e.key==='Escape')shut()});
 
+  /* Show sharing: add the shared pilot control to current show product pages. */
+  function ensureShowShareControl(){
+    if(document.querySelector('[data-show-share]'))return;
+    if(!location.pathname.startsWith('/shows/'))return;
+    const hero=document.querySelector('.hero');
+    if(!hero)return;
+    const ticketAction=hero.querySelector('.vs-ticket-primary,.cta[href]');
+    const anchor=hero.querySelector('.updated')||hero.querySelector('.buybox');
+    if(!ticketAction||!anchor)return;
+
+    const canonical=document.querySelector('link[rel="canonical"]');
+    const heading=hero.querySelector('h1');
+    const url=canonical&&canonical.href?canonical.href:location.href;
+    const title=heading?heading.textContent.replace(/\s+/g,' ').trim():document.title;
+
+    const wrap=document.createElement('div');
+    wrap.className='show-share-wrap';
+    const btn=document.createElement('button');
+    btn.className='show-share';
+    btn.type='button';
+    btn.setAttribute('data-show-share','');
+    btn.dataset.shareTitle=title;
+    btn.dataset.shareUrl=url;
+    btn.setAttribute('aria-label','Share '+title);
+
+    const icon=document.createElement('span');
+    icon.className='show-share-icon';
+    icon.setAttribute('aria-hidden','true');
+    icon.textContent='↗';
+    const label=document.createElement('span');
+    label.setAttribute('data-share-label','');
+    label.textContent='Share this show';
+
+    btn.append(icon,label);
+    wrap.append(btn);
+    anchor.insertAdjacentElement('afterend',wrap);
+  }
+  ensureShowShareControl();
+
   /* Show sharing: native share sheet when available; copy the canonical show URL otherwise. */
   document.querySelectorAll('[data-show-share]').forEach(btn=>{
     const label=btn.querySelector('[data-share-label]');

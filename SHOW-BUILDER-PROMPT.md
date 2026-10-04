@@ -10,6 +10,8 @@ Paste this entire document at the start of a new chat session before requesting 
 >
 > **Booking module update — October 3, 2026:** compact v3 is the shared standard. Use the large solid category-color block around the white booking card, plus the compact day/time/Warm Amber CTA treatment in `assets/showtimes-booking.css` and `.js`. Palette: Music `#2563EB`, Magic `#6D28D9`, Comedy `#C2185B`, Adult `#C2410C`, Cirque + Spectaculars `#0C7A90`, Family `#087F23`. Do not restore the retired skyline art, old large secondary CTA, or generic Planning Ahead card.
 
+> **Show sharing update — October 4, 2026:** every current show product page uses the shared compact **↗ Share this show** hero control. Native share sheet where supported; canonical Vegas Sidekick URL copy fallback everywhere else. Keep it secondary to the Warm Amber ticket CTA, never share the affiliate URL, and do not add it to the mobile sticky purchase bar.
+
 ---
 
 ## What This Project Is

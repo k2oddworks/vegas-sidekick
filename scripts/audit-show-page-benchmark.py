@@ -9,8 +9,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DB = ROOT / "data" / "show-database.json"
 
 REQUIRED_SNIPPETS = {
-    "canonical CSS": "/assets/show-canonical.css",
-    "canonical JS": "/assets/show-canonical.js",
+    "canonical CSS / share styling": "/assets/show-canonical.css?v=7",
+    "canonical JS / share behavior": "/assets/show-canonical.js?v=5",
     "canonical layout flag": 'data-canonical-layout="2"',
     "quick facts": '<section class="facts"',
     "ticker": 'class="ticker"',

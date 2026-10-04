@@ -63,6 +63,19 @@ Optional sections simply collapse out. A page without a verified trailer should 
 - Preserve important artwork, logos, and performers rather than forcing `object-fit: cover`.
 - Fix unusual art through per-show focal positioning before changing the global mobile system.
 
+### Share this show
+
+Every current show product page includes one compact **↗ Share this show** utility in the hero, below the primary price/purchase information.
+
+- Keep it visually secondary to **Get Tickets**.
+- Use the browser/device native share sheet when `navigator.share` is available.
+- Otherwise copy the show's canonical Vegas Sidekick URL and briefly show **Link copied**.
+- Share the Vegas Sidekick show page, never the affiliate/ticket-partner URL.
+- Track the action through the shared `show_share` analytics event.
+- Do not add social-network-specific button rows.
+- Do not put sharing in the mobile sticky purchase bar.
+- Use the shared `assets/show-canonical.css` / `assets/show-canonical.js` system rather than show-specific share code.
+
 ---
 
 ## Sidekick Pick treatment
