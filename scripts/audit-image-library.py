@@ -45,6 +45,8 @@ if MANIFEST.exists():
     for path in ROOT.rglob("*"):
         if not path.is_file() or ".git" in path.parts:
             continue
+        if ".github" in path.parts and "workflows" in path.parts:
+            continue
         if path in {MANIFEST, ROOT / "_redirects"}:
             continue
         if path.suffix.lower() not in TEXT_EXTENSIONS and path.name not in TEXT_FILENAMES:
