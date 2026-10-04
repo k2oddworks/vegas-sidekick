@@ -155,7 +155,7 @@ jobs:
         run: |
           node --check hq/media-library/app.js
           node - <<'NODE'
-          const {matchesFilters} = require('./hq/media-library/app.js');
+          const {matchesFilters, groupItems} = require('./hq/media-library/app.js');
           const item = {
             filename: 'mat-franco-hero.jpg',
             path: '/images/product-photos/mat-franco/mat-franco-hero.jpg',
@@ -179,6 +179,11 @@ jobs:
           for (const [filters, expected] of cases) {
             if (matchesFilters(item, filters) !== expected) process.exit(1);
           }
+          const grouped = groupItems([
+            {...item, visualGroupKey:'images/product-photos/mat-franco/mat-franco', variantRole:'Hero', referenceFiles:['shows/magic/mat-franco/index.html'], referencePages:[{title:'Mat Franco',url:'/shows/magic/mat-franco/'}]},
+            {...item, filename:'mat-franco-og.jpg', path:'/images/product-photos/mat-franco/mat-franco-og.jpg', publicUrl:'https://vegassidekick.com/images/product-photos/mat-franco/mat-franco-og.jpg', visualGroupKey:'images/product-photos/mat-franco/mat-franco', variantRole:'OG/social', usage:['OG/social'], referenceFiles:['shows/magic/mat-franco/index.html'], referencePages:[{title:'Mat Franco',url:'/shows/magic/mat-franco/'}]}
+          ]);
+          if (grouped.length !== 1 || grouped[0].variantCount !== 2 || grouped[0].referencePages.length !== 1) process.exit(1);
           NODE
 
   mobile-show-heroes:
