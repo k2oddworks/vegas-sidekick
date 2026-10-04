@@ -1,4 +1,5 @@
 name: One-time image library migration
+# Validation rerun: class-safe mobile bar audit
 
 on:
   push:
