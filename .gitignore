@@ -6,5 +6,3 @@
 !.env.example
 .cloudinary
 
-# Generated HQ Media Library inventory
-hq/media-library/media-library.json

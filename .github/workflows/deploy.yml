@@ -20,6 +20,14 @@ jobs:
       - name: Generate Media Library inventory
         run: python3 scripts/generate-media-library.py
 
+      - name: Validate generated Media Library deploy asset
+        run: |
+          test -s hq/media-library/media-library.json
+          if git check-ignore -q hq/media-library/media-library.json; then
+            echo "Generated Media Library inventory is excluded from deploy inputs."
+            exit 1
+          fi
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
