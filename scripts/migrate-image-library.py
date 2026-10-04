@@ -138,6 +138,12 @@ def should_rewrite(path: Path) -> bool:
         return False
     if path == MANIFEST:
         return False
+    # GitHub Apps cannot push commits that modify workflow files without the
+    # separate workflows permission. Workflow YAML is operational config, not
+    # customer-facing image markup, so leave it untouched; legacy URLs remain
+    # protected by the migration redirects.
+    if ".github" in path.parts and "workflows" in path.parts:
+        return False
     return path.name in TEXT_FILENAMES or path.suffix.lower() in TEXT_EXTENSIONS
 
 
