@@ -122,6 +122,65 @@
   if(light)light.addEventListener('click',e=>{if(e.target===light)shut()});
   addEventListener('keydown',e=>{if(e.key==='Escape')shut()});
 
+  /* Show sharing: native share sheet when available; copy the canonical show URL otherwise. */
+  document.querySelectorAll('[data-show-share]').forEach(btn=>{
+    const label=btn.querySelector('[data-share-label]');
+    const defaultLabel=label?label.textContent:'Share this show';
+    const url=btn.dataset.shareUrl||document.querySelector('link[rel="canonical"]')?.href||location.href;
+    const title=btn.dataset.shareTitle||document.querySelector('h1')?.textContent.trim()||document.title;
+    let resetTimer=0;
+
+    function setStatus(message){
+      if(!label)return;
+      label.textContent=message;
+      clearTimeout(resetTimer);
+      resetTimer=setTimeout(()=>{label.textContent=defaultLabel},1800);
+    }
+    function track(method){
+      if(typeof window.gtag==='function'){
+        window.gtag('event','show_share',{
+          show_name:title,
+          share_method:method,
+          page_location:url
+        });
+      }
+    }
+    async function copyUrl(){
+      try{
+        if(navigator.clipboard&&window.isSecureContext){
+          await navigator.clipboard.writeText(url);
+        }else{
+          const area=document.createElement('textarea');
+          area.value=url;
+          area.setAttribute('readonly','');
+          area.style.position='fixed';
+          area.style.opacity='0';
+          document.body.append(area);
+          area.select();
+          document.execCommand('copy');
+          area.remove();
+        }
+        setStatus('Link copied');
+        track('copy_link');
+      }catch(err){
+        setStatus('Copy failed');
+      }
+    }
+
+    btn.addEventListener('click',async()=>{
+      if(navigator.share){
+        try{
+          await navigator.share({title:title,url:url});
+          track('native_share');
+          return;
+        }catch(err){
+          if(err&&err.name==='AbortError')return;
+        }
+      }
+      await copyUrl();
+    });
+  });
+
   /* Sidekick Pick: hand off the recommendation from the hero to the mobile sticky bar. */
   const heroSidekickPick=document.querySelector('.hero-sidekick-pick');
   const mobileSidekickBar=document.querySelector('.mobile-bar.has-sidekick-pick');
