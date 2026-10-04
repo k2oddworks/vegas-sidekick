@@ -19,6 +19,8 @@ If an older Carrot Top, Absinthe, V Theater, or other template conflicts with Na
 
 The shared showtimes booking module is a newer locked system and supersedes older Nathan/Carrot Top day-card schedule treatments where they conflict.
 
+For **Sidekick Index** work, read `SIDEKICK-INDEX.md` first. It is the canonical source for Index taxonomy, source files, shared navigation/signup behavior, data boundaries, and mobile horizontal-scroll rules.
+
 ## Repository
 
 - Repo: `k2oddworks/vegas-sidekick`

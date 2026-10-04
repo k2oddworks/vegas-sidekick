@@ -1,6 +1,6 @@
 # VS_CHAT_CONTEXT.md — Vegas Sidekick Living Project Context
 
-**As of:** September 9, 2026
+**As of:** October 3, 2026
 **Purpose:** Living source of project context, decisions, operating rules, architecture, and lessons learned for ChatGPT/Codex or any future AI collaborator working on Vegas Sidekick.
 
 > This file is not the coding-agent instruction file. `AGENTS.md` should eventually contain concise execution rules for coding agents. This file records what Vegas Sidekick is, how it currently works, what has already been decided, and the context needed to avoid repeating old mistakes.
@@ -865,3 +865,33 @@ Vegas Sidekick's recurring **Good to Know** social series is governed by `GOOD-T
 
 The social series is separate from the optional **Good to know** information card used on show pages. The shared name does not change show-page rules: only use that page card when there is a genuinely useful buyer fact.
 
+
+
+---
+
+## Sidekick Index — Current Reference System (October 3, 2026)
+
+The canonical Sidekick Index specification now lives in `SIDEKICK-INDEX.md`. Read that file before structural work on any `/sidekick-index/` page.
+
+Current public system:
+
+- `/sidekick-index/` — overview / reference hub
+- `/sidekick-index/headliners-residencies/` — major headliners, residencies and notable limited engagements
+- `/sidekick-index/show-price-index/` — dated advertised starting-price comparison
+- `/sidekick-index/touring-shows-concerts/` — visiting concerts, touring productions and short-run events outside the major headliner calendar and regular show catalog
+
+Shared reference-page navigation and the shared email signup placement are owned by `components/sidekick-index-shell.js`.
+
+Current data sources include:
+
+- `data/reference/headliners-residencies.json`
+- `data/reference/touring-shows-concerts.json`
+- dated files under `data/show-price-index/`
+
+The classification boundary matters: regular recurring Vegas productions remain in the normal show catalog; major residencies/headline engagements go in Headliners & Residencies; shorter visiting events and the expanded smaller/mid-size venue calendars go in More Touring Shows & Concerts. Avoid duplicating an event across both calendars by default.
+
+The touring index expanded to 12 venues on October 3, 2026, including House of Blues, 24 Oxford, Fremont Country Club, Backstage Bar & Billiards, Swan Dive, The Space, AREA15, Hard Rock Live, The Smith Center, Downtown Las Vegas Events Center and Notoriety Live in addition to Brooklyn Bowl.
+
+Mobile horizontal scrolling is now a locked Sidekick Index UX rule. Overflowing pill rails must allow the final item to become fully visible, use trailing space and a subtle edge fade, and show `Swipe for more →` only when additional content actually exists. Month-jump rails follow the same principle. The Show Price Index wide table uses a visible `Swipe table →` cue on mobile.
+
+Do not treat this section as the full spec; `SIDEKICK-INDEX.md` is the maintained source of truth.

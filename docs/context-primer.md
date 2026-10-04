@@ -1,7 +1,7 @@
 # Vegas Sidekick — Context Primer
 
-*A paste-ready briefing to bring a new AI conversation up to speed. Last updated: 2026-08-11.*
-*(For authoritative, always-loaded project rules see `CLAUDE.md`. This doc is the human-readable running log + orientation.)*
+*A paste-ready briefing to bring a new AI conversation up to speed. Last updated: 2026-10-03.*
+*(For current execution rules see `AGENTS.md`; for Sidekick Index work see `SIDEKICK-INDEX.md`. `CLAUDE.md` is legacy reference only.)*
 
 ---
 
@@ -67,3 +67,25 @@ Vegas Sidekick's recurring **Good to Know** social series is governed by `GOOD-T
 - It is distinct from **Vegas Dispatch**, which is the editorial/news product.
 - Use approved repo photography, artwork, show logos and Vegas Sidekick branding exactly as supplied. Do not generate replacements or lookalikes.
 - Store recurring series assets under `/images/good-to-know/`.
+
+
+---
+
+## Sidekick Index — October 2026
+
+Sidekick Index is Vegas Sidekick's public entertainment-reference layer. Its canonical project spec is `SIDEKICK-INDEX.md`.
+
+Current routes:
+
+- `/sidekick-index/`
+- `/sidekick-index/headliners-residencies/`
+- `/sidekick-index/show-price-index/`
+- `/sidekick-index/touring-shows-concerts/`
+
+The shared `components/sidekick-index-shell.js` adds the Reference Pages navigation and reuses the site's email signup above the footer.
+
+The touring index currently covers 12 venues. Source data lives in `data/reference/touring-shows-concerts.json`; the major headliner/residency calendar lives in `data/reference/headliners-residencies.json`; Show Price Index uses dated snapshot files under `data/show-price-index/`.
+
+Classification rule: recurring Vegas productions stay in the normal show catalog, major residency/headliner engagements go in Headliners & Residencies, and shorter visiting/touring events go in More Touring Shows & Concerts.
+
+Mobile rule: any overflowing Index pill rail must scroll all the way to the final item and visibly signal that more content is available. Current rails use an overflow-aware `Swipe for more →` cue plus a subtle edge fade; the price table uses `Swipe table →`.

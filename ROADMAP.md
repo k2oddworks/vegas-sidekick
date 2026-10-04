@@ -136,3 +136,25 @@ Vegas Sidekick's recurring **Good to Know** social series is governed by `GOOD-T
 - Use approved repo photography, artwork, show logos and Vegas Sidekick branding exactly as supplied. Do not generate replacements or lookalikes.
 - Store recurring series assets under `/images/good-to-know/`.
 
+
+
+---
+
+## Sidekick Index — shipped foundation / ongoing expansion
+
+The Sidekick Index reference system is now live as a product family rather than a future idea.
+
+Canonical documentation: `SIDEKICK-INDEX.md`.
+
+Current pages:
+
+- Overview
+- Headliners & Residencies
+- Show Price Index
+- More Touring Shows & Concerts
+
+The October 3 touring expansion now covers 12 venues, and the shared Index shell provides reference-page navigation plus the existing email signup placement.
+
+**Ongoing priority:** expand only when a new dataset answers a recurring useful question and has a maintainable source trail. Do not create empty categories for appearance.
+
+For future Index work, preserve the classification boundary between regular Vegas productions, major headliner/residency engagements, and smaller/shorter touring events. Preserve the mobile horizontal-scroll system so long venue/filter/month rails remain fully reachable and visibly swipeable.
