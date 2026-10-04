@@ -25,6 +25,9 @@ if PAGE.exists():
     for required in ("media-grid", "media-search", "show-filter", "venue-filter", "category-filters"):
         if f'id="{required}"' not in text:
             issues.append(f"Media Library page missing required UI id: {required}")
+    for required_class in ("variant-list", "used-on-links", "variant-count"):
+        if f'class="{required_class}"' not in text:
+            issues.append(f"Media Library page missing required UI class: {required_class}")
 
 if SITEMAP.exists() and "/hq/media-library" in SITEMAP.read_text(encoding="utf-8", errors="replace"):
     issues.append("Media Library must not appear in sitemap.xml")
