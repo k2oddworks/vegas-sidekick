@@ -1,4 +1,4 @@
-name: Roll Out Compact Showtimes V2
+name: Roll Out Compact Showtimes V3
 on:
   push:
     branches: [main]
@@ -24,7 +24,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Apply compact booking rollout
+      - name: Apply compact v3 booking rollout
         run: python3 scripts/rollout-compact-showtimes-v2.py
       - name: Check shared booking JavaScript
         run: node --check assets/showtimes-booking.js

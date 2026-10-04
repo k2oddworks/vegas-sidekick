@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CATS = ['adult', 'cirque', 'comedy', 'family', 'magic', 'music', 'spectaculars']
 
 PLAN_AHEAD = '<div class="vs-plan-ahead"><div aria-hidden="true" class="vs-calendar-icon">▦</div><div><strong>Planning ahead?</strong><p>You can book tickets weeks and months in advance.</p></div></div>'
-BOOKING_ART = '<div aria-hidden="true" class="vs-booking-art"><div class="vs-art-moon"></div><div class="vs-art-sphere"></div><div class="vs-art-strip"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>'
+BOOKING_ART = ''
 
 
 def ensure_barry_booking_module():
@@ -71,7 +71,15 @@ def update_show_pages():
             old = s
 
             s = s.replace('showtimes-booking.css?v=1', 'showtimes-booking.css?v=3')
+            s = s.replace('showtimes-booking.css?v=2', 'showtimes-booking.css?v=3')
             s = s.replace('showtimes-booking.js?v=1', 'showtimes-booking.js?v=2')
+            if f'data-booking-theme="{cat}"' not in s:
+                s = re.sub(
+                    r'(<section class="[^"]*\bvs-booking-section\b[^"]*")([^>]*\bid="showtimes"[^>]*>)',
+                    rf'\1 data-booking-theme="{cat}"\2',
+                    s,
+                    count=1,
+                )
 
             # Remove the Awakening-only experiment skin now that compact v2 is shared.
             s = re.sub(r'<style id="awakening-booking-experiment">.*?</style>', '', s, flags=re.S)
@@ -132,55 +140,17 @@ def apply_replacements(text, replacements, label):
 
 
 def update_docs():
-    changed = []
-
-    p = ROOT / 'AGENTS.md'
-    s = p.read_text(encoding='utf-8')
-    old = s
-    s = apply_replacements(s, {
-        '- Showtime buttons and the primary **Get Tickets for [day] →** CTA use the show’s existing verified affiliate URL.': '- Showtime buttons and the primary **Get Tickets →** CTA use the show’s existing verified affiliate URL.',
-        '- Keep **View all dates & times →** as a visually substantial filled lavender secondary CTA.': '- Keep **See all dates & times →** as a compact secondary text action beneath the primary purchase path.',
-        '- Include the compact **Planning ahead? You can book tickets weeks and months in advance.** treatment.': '- Put a compact booking pill above the headline. Default copy is **CHOOSE YOUR DAY** for regular schedules and **CHECK YOUR DATE** for variable schedules. Use show-specific factual copy only when it is verified, such as a closing date.',
-        '- Keep the shared Vegas dusk / skyline / Sphere artwork as the decorative footer treatment without a slogan.': '- Use the shared solid category-color block around the white booking card; do not restore the retired skyline / Sphere artwork.',
-    }, 'AGENTS.md')
-    if s != old:
-        p.write_text(s, encoding='utf-8')
-        changed.append(str(p.relative_to(ROOT)))
-
-    p = ROOT / 'SHOW-PAGE-BENCHMARK.md'
-    s = p.read_text(encoding='utf-8')
-    old = s
-    # The old lock line used a Markdown hard-break; compact v2 removes that trailing whitespace too.
-    s = re.sub(r'^\*\*Locked:\*\* September 13, 2026\s*$', '**Locked:** September 15, 2026', s, count=1, flags=re.M)
-    s = apply_replacements(s, {
-        '- **Pick your night** eyebrow': '- compact booking pill above the headline: **CHOOSE YOUR DAY** for regular schedules by default; verified show-specific facts may replace it',
-        '- one dominant Warm Amber **Get Tickets for [day] →** CTA': '- one dominant Warm Amber **Get Tickets →** CTA; the selected day remains obvious in the picker and available in the accessible label',
-        '- one substantial filled-lavender **View all dates & times →** secondary CTA': '- one compact **See all dates & times →** secondary text action',
-        '- a compact **Planning ahead? You can book tickets weeks and months in advance.** card': '- no generic planning-ahead card; omit filler unless there is a genuinely useful show-specific fact',
-        '- the shared decorative Vegas dusk / skyline / Sphere artwork at the bottom, with **no slogan**': '- the shared solid category-color block around the white booking card; do not restore the retired skyline / Sphere artwork',
-        '- retain the planning-ahead treatment and shared artwork': '- use the **CHECK YOUR DATE** pill inside the shared solid-color booking block; do not add generic planning filler',
-    }, 'SHOW-PAGE-BENCHMARK.md')
-    if '**Locked:** September 15, 2026' not in s:
-        raise RuntimeError('SHOW-PAGE-BENCHMARK.md lock date was not updated')
-    if s != old:
-        p.write_text(s, encoding='utf-8')
-        changed.append(str(p.relative_to(ROOT)))
-
-    p = ROOT / 'SHOW-BUILDER-PROMPT.md'
-    s = p.read_text(encoding='utf-8')
-    old = s
-    anchor = '> Key current rules: no formal downside/Think twice modules; Good to know only for real useful facts; Booking tip is optional and actionable only; no customer-facing “tradeoff”; no interaction/participation claims unless Kris explicitly confirms them; use Start time/Start times; prefer “See available dates & times”; use one visible “Show info confirmed Month YYYY” freshness line near the author card; galleries support arrows/keyboard/swipe; seating charts are room-based, geometrically faithful, slab-row when exact seat counts are unnecessary, and mobile tap feedback must appear immediately in view.'
-    note = '\n>\n> **Booking module update — October 3, 2026:** compact v3 is the shared standard. Use the solid category-color block + white booking card + compact day/time/amber CTA treatment in `assets/showtimes-booking.css` and `.js`; do not restore the old skyline art, large secondary CTA, or generic Planning Ahead card.'
-    if note.strip() not in s:
-        if anchor not in s:
-            raise RuntimeError('SHOW-BUILDER-PROMPT.md booking update anchor not found')
-        s = s.replace(anchor, anchor + note)
-    if s != old:
-        p.write_text(s, encoding='utf-8')
-        changed.append(str(p.relative_to(ROOT)))
-
-    return changed
-
+    """Current benchmark/docs already define compact v3; rollout must not rewrite them."""
+    required = {
+        'AGENTS.md': 'Music `#2563EB`',
+        'SHOW-PAGE-BENCHMARK.md': 'The solid block is the visual anchor',
+        'SHOW-BUILDER-PROMPT.md': 'compact v3 is the shared standard',
+    }
+    for rel, needle in required.items():
+        text = (ROOT / rel).read_text(encoding='utf-8')
+        if needle not in text:
+            raise RuntimeError(f'{rel} is missing the compact v3 source-of-truth rule')
+    return []
 
 def main():
     pages, regular, variable, custom = update_show_pages()
