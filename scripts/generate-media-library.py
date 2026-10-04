@@ -94,12 +94,60 @@ def iter_public_text_files():
         yield path
 
 
+def public_page_info(path: Path, rel: str):
+    """Return a browser URL/title for a real public HTML page, not a fragment."""
+    if path.suffix.lower() not in {".html", ".htm"}:
+        return None
+    parts = rel.split("/")
+    if parts[0] in {"components", "assets"}:
+        return None
+    if rel == "index.html":
+        url = "/"
+        fallback = "Vegas Sidekick"
+    elif rel.endswith("/index.html"):
+        url = "/" + rel[:-len("index.html")]
+        fallback = parts[-2] if len(parts) > 1 else "Vegas Sidekick"
+    else:
+        return None
+    return {
+        "url": url,
+        "title": page_label(path, fallback),
+        "file": rel,
+    }
+
+
+VARIANT_ROLE_RE = re.compile(
+    r"(?:[-_](hero|og|social|open-graph|twitter|share))$",
+    re.I,
+)
+
+
+def visual_variant_key(rel: str) -> str:
+    """Group only conservative delivery variants within the same image folder."""
+    path = Path(rel)
+    stem = path.stem.lower()
+    normalized = VARIANT_ROLE_RE.sub("", stem)
+    return f"{path.parent.as_posix().lower()}/{normalized}"
+
+
+def variant_role(rel: str) -> str | None:
+    stem = Path(rel).stem.lower()
+    match = VARIANT_ROLE_RE.search(stem)
+    if not match:
+        return None
+    role = match.group(1).lower()
+    if role == "hero":
+        return "Hero"
+    return "OG/social"
+
+
 def scan_references():
     ref_files = defaultdict(set)
     ref_occurrences = defaultdict(int)
     contextual_usage = defaultdict(set)
     show_refs = defaultdict(set)
     venue_refs = defaultdict(set)
+    reference_pages = defaultdict(dict)
 
     for path in iter_public_text_files():
         rel = path.relative_to(ROOT).as_posix()
@@ -115,11 +163,14 @@ def scan_references():
             show_slug = parts[2]
         if len(parts) >= 3 and parts[0] == "venues" and parts[-1] == "index.html":
             venue_slug = parts[1]
+        page_info = public_page_info(path, rel)
 
         for match in IMAGE_REF_RE.finditer(text):
             image_path = match.group(1)
             ref_files[image_path].add(rel)
             ref_occurrences[image_path] += 1
+            if page_info:
+                reference_pages[image_path][page_info["url"]] = page_info
             if show_slug:
                 show_refs[image_path].add(show_slug)
             if venue_slug:
@@ -133,7 +184,7 @@ def scan_references():
             if "gallery" in snippet or "lightbox" in snippet:
                 contextual_usage[image_path].add("Gallery")
 
-    return ref_files, ref_occurrences, contextual_usage, show_refs, venue_refs
+    return ref_files, ref_occurrences, contextual_usage, show_refs, venue_refs, reference_pages
 
 
 def png_dimensions(data: bytes):
@@ -295,11 +346,12 @@ def classify(rel: str, contextual):
 
 def build_inventory():
     shows, venues = build_entity_maps()
-    ref_files, ref_occ, contextual, show_refs, venue_refs = scan_references()
+    ref_files, ref_occ, contextual, show_refs, venue_refs, reference_pages = scan_references()
 
     items = []
     hashes = defaultdict(list)
     same_basename = defaultdict(list)
+    visual_groups = defaultdict(list)
 
     for path in sorted(p for p in IMAGES.rglob("*") if p.is_file() and p.suffix.lower() in IMAGE_EXTS):
         rel = path.relative_to(ROOT).as_posix()
@@ -361,12 +413,19 @@ def build_inventory():
             "referenceCount": len(ref_files.get(public_path, set())),
             "referenceOccurrences": ref_occ.get(public_path, 0),
             "referenceFiles": sorted(ref_files.get(public_path, set()))[:25],
+            "referencePages": sorted(
+                reference_pages.get(public_path, {}).values(),
+                key=lambda value: (value["title"].lower(), value["url"]),
+            )[:25],
             "sha256": digest,
             "duplicateHints": [],
+            "visualGroupKey": visual_variant_key(rel),
+            "variantRole": variant_role(rel),
         }
         items.append(item)
         hashes[digest].append(item)
         same_basename[(str(path.parent.relative_to(ROOT)).lower(), path.stem.lower())].append(item)
+        visual_groups[item["visualGroupKey"]].append(item)
 
     exact_groups = 0
     same_base_groups = 0
@@ -389,6 +448,17 @@ def build_inventory():
                 for item in group:
                     item["duplicateHints"].append("Hero has multiple format versions")
 
+    visual_variant_groups = 0
+    grouped_files = 0
+    for group in visual_groups.values():
+        if len(group) > 1:
+            visual_variant_groups += 1
+            grouped_files += len(group)
+            for item in group:
+                item["variantCount"] = len(group)
+        else:
+            group[0]["variantCount"] = 1
+
     used = sum(1 for item in items if item["referenced"])
     summary = {
         "totalImages": len(items),
@@ -397,9 +467,11 @@ def build_inventory():
         "exactDuplicateGroups": exact_groups,
         "sameBasenameFormatGroups": same_base_groups,
         "heroMultiFormatGroups": hero_format_groups,
+        "visualVariantGroups": visual_variant_groups,
+        "filesInVisualVariantGroups": grouped_files,
     }
     return {
-        "schemaVersion": 1,
+        "schemaVersion": 2,
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "baseUrl": BASE_URL,
         "summary": summary,
@@ -430,6 +502,11 @@ def validate(payload):
             issues.append(f"invalid category for {item['path']}: {item['category']}")
         if not (ROOT / item["path"].lstrip("/")).exists():
             issues.append(f"missing image path: {item['path']}")
+        if not item.get("visualGroupKey"):
+            issues.append(f"missing visual group key: {item['path']}")
+        for page in item.get("referencePages", []):
+            if not page.get("url", "").startswith("/"):
+                issues.append(f"invalid reference page URL for {item['path']}: {page}")
 
     encoded = json.dumps(payload, ensure_ascii=False)
     json.loads(encoded)
