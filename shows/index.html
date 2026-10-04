@@ -106,6 +106,7 @@
     .show-card.compare-disabled { opacity: 0.45; }
     .show-card.compare-disabled .card-cta { pointer-events: none; }
 
+    .card-media-col { position: relative; width: 100%; flex-shrink: 0; }
     .card-img-wrap { position: relative; aspect-ratio: 16/9; overflow: hidden; background: #1a2540; flex-shrink: 0; }
     .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
     .show-card:hover .card-img-wrap img { transform: scale(1.04); }
@@ -113,7 +114,7 @@
     .card-name-link { text-decoration: none; color: inherit; display: block; }
     .card-name-link:hover .card-name { color: var(--blue); }
 
-    .card-sp-badge { position: absolute; top: 10px; left: 10px; display: flex; align-items: center; gap: 4px; padding: 3px 9px; background:#bfe8ff; color:#171225; border:1px solid #eefaff; font-family: var(--font-mono); font-size: 0.58rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; border-radius: 100px; }
+    .card-sp-badge { position: absolute; z-index: 2; top: 10px; left: 10px; display: flex; align-items: center; gap: 4px; padding: 3px 9px; background:#bfe8ff; color:#171225; border:1px solid #eefaff; font-family: var(--font-mono); font-size: 0.58rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; border-radius: 100px; }
     .card-cat-tag { position: absolute; bottom: 10px; right: 10px; background: rgba(28,10,58,0.78); backdrop-filter: blur(4px); color: rgba(255,255,255,0.82); font-family: var(--font-mono); font-size: 0.57rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; }
 
     .cb-label { position: absolute; top: 10px; right: 10px; width: 24px; height: 24px; display: block; cursor: pointer; }
@@ -224,14 +225,15 @@
     /* MOBILE: list-row layout (thumbnail left, details right, whole row taps through) */
     @media (max-width: 520px) {
       .show-grid { grid-template-columns: 1fr; gap: 0; }
-      .show-card { flex-direction: row; align-items: center; gap: 13px; padding: 13px 2px; border: none; border-bottom: 1.5px solid var(--border); border-radius: 0; box-shadow: none; background: transparent; cursor: pointer; }
+      .show-card { flex-direction: row; align-items: flex-start; gap: 13px; padding: 13px 2px; border: none; border-bottom: 1.5px solid var(--border); border-radius: 0; box-shadow: none; background: transparent; cursor: pointer; }
       .show-card:first-child { border-top: 1.5px solid var(--border); }
       .show-card:hover { transform: none; box-shadow: none; }
       .show-card.selected { border-color: transparent; border-bottom-color: var(--blue); box-shadow: none; background: rgba(26,107,221,0.05); }
       .show-card:hover .card-img-wrap img { transform: none; }
-      .card-img-wrap { width: 132px; height: auto; aspect-ratio: 16/9; border-radius: 10px; flex-shrink: 0; align-self: center; }
+      .card-media-col { width: 132px; flex: 0 0 132px; display: flex; flex-direction: column; align-items: flex-start; }
+      .card-img-wrap { width: 132px; height: auto; aspect-ratio: 16/9; border-radius: 10px; flex-shrink: 0; }
       .card-cat-tag { display: none; }
-      .card-sp-badge { top: 5px; left: 5px; padding: 2px 6px; font-size: 0.48rem; gap: 2px; }
+      .card-sp-badge { position: static; margin: 0 0 5px 7px; padding: 2px 7px; font-size: 0.48rem; gap: 2px; line-height: 1.25; }
       .cb-label { top: 5px; right: 5px; width: 20px; height: 20px; }
       .card-body { padding: 0; display: grid; grid-template-columns: 1fr auto; column-gap: 12px; align-items: center; }
       .card-cat-eyebrow { display: block; grid-column: 1; grid-row: 1; font-family: var(--font-mono); font-size: 0.53rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--blue); margin-bottom: 2px; }
@@ -478,16 +480,18 @@ function renderGrid() {
   grid.innerHTML = shows.map(s => {
     const on = sel.has(s.slug);
     const dis = !on && sel.size >= 3;
-    return `<div class="show-card${on?' selected':''}${dis?' compare-disabled':''}" id="c-${s.slug}">
-  <div class="card-img-wrap">
-    <a href="/shows/${s.cat}/${s.slug}/" class="card-img-link"><img src="${s.img}" alt="${s.name} Las Vegas" loading="lazy" /></a>
+    return `<div class="show-card${on?' selected':''}${dis?' compare-disabled':''}${s.sp?' has-sidekick-pick':''}" id="c-${s.slug}">
+  <div class="card-media-col">
     ${s.sp ? '<div class="card-sp-badge">🌵 Sidekick Pick</div>' : ''}
-    <div class="card-cat-tag">${CAT_LABELS[s.cat]}</div>
-    <label class="cb-label" title="${dis?'Max 3 selected — deselect one to swap':'Compare'}">
-      <input type="checkbox" ${on?'checked':''} ${dis?'disabled':''} onchange="toggleSel('${s.slug}',this)" />
-      <span class="cb-custom"></span>
-      <span class="cb-check">✓</span>
-    </label>
+    <div class="card-img-wrap">
+      <a href="/shows/${s.cat}/${s.slug}/" class="card-img-link"><img src="${s.img}" alt="${s.name} Las Vegas" loading="lazy" /></a>
+      <div class="card-cat-tag">${CAT_LABELS[s.cat]}</div>
+      <label class="cb-label" title="${dis?'Max 3 selected — deselect one to swap':'Compare'}">
+        <input type="checkbox" ${on?'checked':''} ${dis?'disabled':''} onchange="toggleSel('${s.slug}',this)" />
+        <span class="cb-custom"></span>
+        <span class="cb-check">✓</span>
+      </label>
+    </div>
   </div>
   <div class="card-body">
     <div class="card-cat-eyebrow">${CAT_LABELS[s.cat]}</div>
