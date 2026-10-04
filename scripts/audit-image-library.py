@@ -8,6 +8,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 IMAGES = ROOT / "images"
 MANIFEST = ROOT / "docs" / "image-library-migration-2026-10-04.json"
+REDIRECTS = ROOT / "_redirects"
 IMAGE_EXT = re.compile(r"\.(?:jpe?g|png|webp|gif|svg)$", re.I)
 TEXT_EXTENSIONS = {
     ".html", ".htm", ".css", ".js", ".mjs", ".json", ".md", ".xml",
@@ -46,6 +47,19 @@ moves = []
 if MANIFEST.exists():
     data = json.loads(MANIFEST.read_text(encoding="utf-8"))
     moves = data.get("moves", [])
+    if data.get("moved_count") != len(moves):
+        issues.append(
+            f"manifest moved_count is {data.get('moved_count')} but contains {len(moves)} moves"
+        )
+
+    redirect_lines = set()
+    if REDIRECTS.exists():
+        redirect_lines = {
+            line.strip()
+            for line in REDIRECTS.read_text(encoding="utf-8").splitlines()
+            if line.strip() and not line.lstrip().startswith("#")
+        }
+
     for move in moves:
         old = ROOT / move["from"]
         new = ROOT / move["to"]
@@ -53,6 +67,9 @@ if MANIFEST.exists():
             issues.append(f"legacy source still exists: {move['from']}")
         if not new.exists():
             issues.append(f"migrated destination missing: {move['to']}")
+        expected_redirect = f"/{move['from']} /{move['to']} 301"
+        if expected_redirect not in redirect_lines:
+            issues.append(f"redirect map missing: {expected_redirect}")
 
     # A migrated legacy URL may remain only in the redirect map or migration manifest.
     old_urls = {"/" + move["from"] for move in moves}
