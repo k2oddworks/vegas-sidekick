@@ -122,6 +122,19 @@
   if(light)light.addEventListener('click',e=>{if(e.target===light)shut()});
   addEventListener('keydown',e=>{if(e.key==='Escape')shut()});
 
+  /* Sidekick Pick: close open explainers when the user clicks elsewhere or presses Escape. */
+  document.addEventListener('click',e=>{
+    if(e.target.closest('.sidekick-pick'))return;
+    document.querySelectorAll('.sidekick-pick[open]').forEach(d=>{d.open=false});
+  });
+  document.querySelectorAll('.sidekick-pick').forEach(d=>d.addEventListener('toggle',()=>{
+    if(!d.open)return;
+    document.querySelectorAll('.sidekick-pick[open]').forEach(o=>{if(o!==d)o.open=false});
+  }));
+  addEventListener('keydown',e=>{
+    if(e.key==='Escape')document.querySelectorAll('.sidekick-pick[open]').forEach(d=>{d.open=false});
+  });
+
   document.querySelectorAll('.faq details').forEach(d=>d.addEventListener('toggle',()=>{
     if(d.open)document.querySelectorAll('.faq details').forEach(o=>{if(o!==d)o.open=false});
   }));
