@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1440" viewBox="0 0 1200 1440">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#150922"/><stop offset="1" stop-color="#07070c"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="1200" height="1440" rx="42" fill="url(#bg)"/>
+<text x="70" y="75" fill="#fff" font-family="Arial,sans-serif" font-size="42" font-weight="800">vegas <tspan fill="#ff2e7e">sidekick</tspan></text>
+<text x="72" y="112" fill="#d9d1df" font-family="Arial,sans-serif" font-size="17" letter-spacing="5">SHOWS • TICKETS • GOOD TIMES</text>
+<text x="600" y="150" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="32" font-weight="800">O THEATRE SEATING GUIDE</text>
+<g transform="translate(100 175)">
+<path d="M785 900 Q855 930 900 995 L850 1060 Q805 1045 760 1015 Z" fill="#ff2e7e" stroke="rgba(255,255,255,.32)" stroke-width="2.5"/>
+<text x="835" y="985" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="800">101</text>
+<path d="M625 825 Q730 840 810 895 L760 1015 Q680 985 600 975 Z" fill="#ff2e7e" stroke="rgba(255,255,255,.32)" stroke-width="2.5"/>
+<text x="710" y="915" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="800">102</text>
+<path d="M375 800 Q500 755 625 800 L600 975 Q500 945 400 975 Z" fill="#ff2e7e" stroke="rgba(255,255,255,.32)" stroke-width="2.5"/>
+<text x="500" y="875" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="800">103</text>
+<path d="M190 895 Q270 840 375 825 L400 975 Q320 985 240 1015 Z" fill="#ff2e7e" stroke="rgba(255,255,255,.32)" stroke-width="2.5"/>
+<text x="290" y="915" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="800">104</text>
+<path d="M100 995 Q145 930 215 900 L240 1015 Q195 1045 150 1060 Z" fill="#ff2e7e" stroke="rgba(255,255,255,.32)" stroke-width="2.5"/>
+<text x="165" y="985" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="800">105</text>
+<path d="M835 790 L880 775 L900 900 L850 920 Z" fill="#12c7b1" stroke="rgba(255,255,255,.32)" stroke-width="2.5"/>
+<text x="870" y="845" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="800">100L</text>
+<path d="M120 775 L165 790 L150 920 L100 900 Z" fill="#12c7b1" stroke="rgba(255,255,255,.32)" stroke-width="2.5"/>
+<text x="130" y="845" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="800">100R</text>
+<path d="M805 625 Q870 680 900 760 L835 850 Q790 820 750 785 Z" fill="#8d3cff" stroke="#ffb000" stroke-width="7"/>
+<text x="842" y="745" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="800">201</text>
+<path d="M635 525 Q735 545 815 615 L750 785 Q680 750 610 735 Z" fill="#8d3cff" stroke="#ffb000" stroke-width="7"/>
+<text x="710" y="635" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="800">202</text>
+<path d="M365 500 Q500 455 635 500 L610 735 Q500 705 390 735 Z" fill="#8d3cff" stroke="#ffb000" stroke-width="7"/>
+<text x="500" y="610" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="800">203</text>
+<path d="M185 615 Q265 545 365 525 L390 735 Q320 750 250 785 Z" fill="#8d3cff" stroke="#ffb000" stroke-width="7"/>
+<text x="290" y="635" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="800">204</text>
+<path d="M100 760 Q130 680 195 625 L250 785 Q210 820 165 850 Z" fill="#8d3cff" stroke="#ffb000" stroke-width="7"/>
+<text x="158" y="745" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="800">205</text>
+<path d="M885 455 Q925 575 920 735 L875 720 Q878 585 845 480 Z" fill="#12c7b1" stroke="rgba(255,255,255,.32)" stroke-width="2.5"/>
+<text x="900" y="600" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="800">200L</text>
+<path d="M115 455 Q75 575 80 735 L125 720 Q122 585 155 480 Z" fill="#12c7b1" stroke="rgba(255,255,255,.32)" stroke-width="2.5"/>
+<text x="100" y="600" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="800">200R</text>
+<path d="M205 420 Q500 305 795 420 L765 470 Q500 375 235 470 Z" fill="#c6f22e" stroke="rgba(255,255,255,.32)" stroke-width="2.5"/>
+<text x="500" y="405" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="800">VIP</text>
+<path d="M660 145 Q790 165 875 235 L830 330 Q745 290 635 275 Z" fill="#a98569" stroke="rgba(255,255,255,.32)" stroke-width="2.5"/>
+<text x="755" y="230" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="800">302</text>
+<path d="M365 105 Q500 75 635 105 L635 275 Q500 245 365 275 Z" fill="#a98569" stroke="rgba(255,255,255,.32)" stroke-width="2.5"/>
+<text x="500" y="190" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="800">303</text>
+<path d="M125 235 Q210 165 340 145 L365 275 Q255 290 170 330 Z" fill="#a98569" stroke="rgba(255,255,255,.32)" stroke-width="2.5"/>
+<text x="245" y="230" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="800">304</text>
+<path d="M910 280 Q955 390 955 535 L925 535 Q925 400 885 300 Z" fill="#0fb5c9" stroke="rgba(255,255,255,.32)" stroke-width="2.5"/>
+<text x="940" y="410" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="800">300L</text>
+<path d="M90 280 Q45 390 45 535 L75 535 Q75 400 115 300 Z" fill="#0fb5c9" stroke="rgba(255,255,255,.32)" stroke-width="2.5"/>
+<text x="60" y="410" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="800">300R</text>
+<path d="M250 1050 Q500 830 750 1050 Z" fill="#111116" stroke="#ffb000" stroke-width="4" filter="url(#glow)"/>
+<text x="500" y="1015" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="28" font-weight="800" letter-spacing="7">STAGE</text>
+</g>
+<rect x="225" y="1320" width="750" height="50" rx="25" fill="#ffb000"/>
+<text x="600" y="1353" text-anchor="middle" fill="#171225" font-family="Arial,sans-serif" font-size="17" font-weight="900" letter-spacing="1.8">SECTIONS 201–205 · SWEET SPOT / OUR PICK</text>
+<text x="600" y="1400" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="28" font-weight="800">O Theatre – Bellagio</text>
+</svg>

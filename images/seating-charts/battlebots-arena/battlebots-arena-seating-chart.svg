@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 120 100" role="img">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#180d28"/><stop offset="1" stop-color="#09060e"/></linearGradient><filter id="g"><feGaussianBlur stdDeviation=".8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="120" height="100" fill="url(#bg)"/>
+<path d="M36 34 H84 V66 H36 Z" fill="#15131a" stroke="#ffb000" stroke-width="1.2" filter="url(#g)"/>
+<text x="60" y="50" fill="#fff" font-family="Arial,sans-serif" font-size="4" font-weight="800" text-anchor="middle" dominant-baseline="middle">BATTLEBOX</text>
+<path d="M36 19 H84 L80 31 H40 Z M40 69 H80 L84 81 H36 Z" fill="#ff3b8d" stroke="#fff" stroke-opacity=".55" stroke-width=".65"/>
+<text x="60" y="25" fill="#fff" font-family="Arial,sans-serif" font-size="3.8" font-weight="800" text-anchor="middle" dominant-baseline="middle">VIP</text>
+<path d="M18 18 H34 L30 32 H14 Z M86 18 H102 L106 32 H90 Z M14 68 H30 L34 82 H18 Z M90 68 H106 L102 82 H86 Z" fill="#ffb000" stroke="#fff" stroke-opacity=".55" stroke-width=".65"/>
+<text x="23" y="25" fill="#fff" font-family="Arial,sans-serif" font-size="3.8" font-weight="800" text-anchor="middle" dominant-baseline="middle">CENTER</text>
+<path d="M5 25 H13 L10 75 H5 Z M107 25 H115 V75 H110 Z" fill="#19c7dd" stroke="#fff" stroke-opacity=".55" stroke-width=".65"/>
+<text x="9" y="50" fill="#fff" font-family="Arial,sans-serif" font-size="3.8" font-weight="800" text-anchor="middle" dominant-baseline="middle">SIDE</text>
+<path d="M92 38 H116 V62 H92 L87 50 Z" fill="#c53cff" stroke="#fff" stroke-opacity=".55" stroke-width=".65"/>
+<text x="103" y="50" fill="#fff" font-family="Arial,sans-serif" font-size="3.8" font-weight="800" text-anchor="middle" dominant-baseline="middle">PLATINUM</text>
+<path d="M5 10 H26 L22 17 H5 Z M94 83 H115 V90 H98 Z" fill="#4dd9c7" stroke="#fff" stroke-opacity=".55" stroke-width=".65"/>
+<text x="15" y="14" fill="#fff" font-family="Arial,sans-serif" font-size="3.8" font-weight="800" text-anchor="middle" dominant-baseline="middle">VALUE</text>
+<rect x="28.8" y="92.5" width="62.4" height="5.5" rx="2.8" fill="#ffb000"/>
+<text x="60" y="95.3" fill="#201328" font-family="Arial,sans-serif" font-size="3.6" font-weight="900" text-anchor="middle" dominant-baseline="middle">SWEET SPOT / OUR PICK</text>
+</svg>

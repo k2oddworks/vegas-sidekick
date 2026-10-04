@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 120 104" role="img">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#180d28"/><stop offset="1" stop-color="#09060e"/></linearGradient><filter id="g"><feGaussianBlur stdDeviation=".8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="120" height="104" fill="url(#bg)"/>
+<path d="M27 86 Q60 80 93 86 L88 99 H32 Z M55 58 H65 V88 H55 Z" fill="#15131a" stroke="#ffb000" stroke-width="1.2" filter="url(#g)"/>
+<text x="60" y="93" fill="#fff" font-family="Arial,sans-serif" font-size="4" font-weight="800" text-anchor="middle" dominant-baseline="middle">STAGE</text>
+<path d="M44 57 Q50 52 55 50 V78 Q49 80 43 79 Z M65 50 Q70 52 76 57 L77 79 Q71 80 65 78 Z" fill="#ff3b8d" stroke="#fff" stroke-opacity=".55" stroke-width=".65"/>
+<text x="38" y="67" fill="#fff" font-family="Arial,sans-serif" font-size="3.8" font-weight="800" text-anchor="middle" dominant-baseline="middle">VERY VIP</text>
+<path d="M30 43 Q60 34 90 43 L82 66 Q60 60 38 66 Z" fill="#ffb000" stroke="#fff" stroke-opacity=".55" stroke-width=".65"/>
+<text x="60" y="50" fill="#fff" font-family="Arial,sans-serif" font-size="3.8" font-weight="800" text-anchor="middle" dominant-baseline="middle">HOT CENTER</text>
+<path d="M10 35 Q20 42 30 43 L38 66 Q22 63 11 53 Z M90 43 Q100 42 110 35 L109 53 Q98 63 82 66 Z" fill="#7b35ea" stroke="#fff" stroke-opacity=".55" stroke-width=".65"/>
+<text x="20" y="50" fill="#fff" font-family="Arial,sans-serif" font-size="3.8" font-weight="800" text-anchor="middle" dominant-baseline="middle">HOT SIDE</text>
+<path d="M16 12 Q60 24 104 12 L110 33 Q60 46 10 33 Z" fill="#16b9c8" stroke="#fff" stroke-opacity=".55" stroke-width=".65"/>
+<text x="60" y="27" fill="#fff" font-family="Arial,sans-serif" font-size="3.8" font-weight="800" text-anchor="middle" dominant-baseline="middle">REAR</text>
+<rect x="28.8" y="96.2" width="62.4" height="5.72" rx="2.8" fill="#ffb000"/>
+<text x="60" y="99.112" fill="#201328" font-family="Arial,sans-serif" font-size="3.6" font-weight="900" text-anchor="middle" dominant-baseline="middle">SWEET SPOT / OUR PICK</text>
+</svg>

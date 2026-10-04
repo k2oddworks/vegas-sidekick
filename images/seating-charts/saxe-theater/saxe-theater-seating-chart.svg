@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1400" viewBox="0 0 1000 1160">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#140923"/><stop offset="1" stop-color="#07070c"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="1000" height="1160" rx="36" fill="url(#bg)"/>
+<text x="55" y="64" fill="#fff" font-family="Arial,sans-serif" font-size="34" font-weight="800">vegas <tspan fill="#ff2e7e">sidekick</tspan></text>
+<text x="57" y="95" fill="#d9d1df" font-family="Arial,sans-serif" font-size="14" letter-spacing="4">SHOWS • TICKETS • GOOD TIMES</text>
+<path d="M42 92 L180 18 L560 208 L575 355 Q760 345 952 468 L862 770 H252 L205 602 L78 505 L42 330 Z" transform="translate(0 115)" fill="none" stroke="#d9d5de" stroke-opacity=".35" stroke-width="22" stroke-linejoin="round"/>
+<path d="M390 455 L710 485 L640 700 Q505 668 370 700 Z" transform="translate(0 115)" fill="#8d3cff" stroke="#ffb000" stroke-width="5"/>
+<text x="525" y="690" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="29" font-weight="800"><tspan x="525" dy="0">VIP</tspan><tspan x="525" dy="25">CENTER</tspan><tspan x="525" dy="25" font-size="18" opacity=".82">A–L</tspan></text>
+<path d="M198 515 L345 455 L382 690 L275 728 Z" transform="translate(0 115)" fill="#ff2e7e" stroke="#ffb000" stroke-width="5"/>
+<path d="M725 490 L870 535 L826 724 L655 700 Z" transform="translate(0 115)" fill="#ff2e7e" stroke="#ffb000" stroke-width="5"/>
+<text x="290" y="710" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="29" font-weight="800"><tspan x="290" dy="0">VIP</tspan><tspan x="290" dy="25">SIDE</tspan><tspan x="290" dy="25" font-size="18" opacity=".82">A–K</tspan></text>
+<text x="785" y="715" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="29" font-weight="800"><tspan x="785" dy="0">VIP</tspan><tspan x="785" dy="25">SIDE</tspan><tspan x="785" dy="25" font-size="18" opacity=".82">A–J</tspan></text>
+<path d="M92 290 L365 164 L536 248 L530 392 L180 472 Z" transform="translate(0 115)" fill="#12c7b1" stroke="rgba(255,255,255,.28)" stroke-width="2"/>
+<text x="318" y="435" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="29" font-weight="800"><tspan x="318" dy="0">MIDDLE</tspan><tspan x="318" dy="25" font-size="18" opacity=".82">M–S</tspan></text>
+<path d="M70 104 L180 36 L365 136 L112 258 Z" transform="translate(0 115)" fill="#64748b" stroke="rgba(255,255,255,.28)" stroke-width="2"/>
+<text x="192" y="260" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="29" font-weight="800"><tspan x="192" dy="0">REAR</tspan><tspan x="192" dy="25" font-size="18" opacity=".82">T–X</tspan></text>
+<path d="M255 760 Q500 650 745 760 L745 805 H255 Z" transform="translate(0 115)" fill="#101017" stroke="#ffb000" stroke-opacity=".8" stroke-width="3"/>
+<text x="500" y="867" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="31" font-weight="800" letter-spacing="8">STAGE</text>
+<rect x="275" y="1010" width="450" height="48" rx="24" fill="#ffb000"/>
+<text x="500" y="1041" text-anchor="middle" fill="#171225" font-family="Arial,sans-serif" font-size="18" font-weight="900" letter-spacing="2">OUR PICK · VIP CENTER + VIP SIDES</text>
+<text x="500" y="1100" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="27" font-weight="800">Saxe Theater • Miracle Mile • Planet Hollywood</text>
+<text x="500" y="1132" text-anchor="middle" fill="#d7cedd" font-family="Arial,sans-serif" font-size="17">3663 S Las Vegas Blvd, Las Vegas, NV 89109</text>
+</svg>

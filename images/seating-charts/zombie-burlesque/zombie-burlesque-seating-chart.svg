@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+<title id="title">Zombie Burlesque Seating Chart</title>
+<desc id="desc">V Theater seating chart with VIP rows A through L closest to the stage and Rear rows M through V behind them. VIP is the Vegas Sidekick Sweet Spot.</desc>
+<defs>
+  <radialGradient id="bg" cx="50%" cy="45%" r="72%"><stop offset="0" stop-color="#291447"/><stop offset="1" stop-color="#150b25"/></radialGradient>
+  <linearGradient id="rear" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#9a24ff"/><stop offset="1" stop-color="#3d2378"/></linearGradient>
+  <linearGradient id="vip" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffb000"/><stop offset="1" stop-color="#ff9800"/></linearGradient>
+  <filter id="cyanGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="pinkGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="1200" fill="url(#bg)"/>
+<!-- Rear rows V-M -->
+<g fill="url(#rear)" stroke="#00d8d8" stroke-width="2" filter="url(#cyanGlow)">
+  <rect x="448" y="78" width="312" height="36"/><rect x="448" y="115" width="276" height="36"/><rect x="448" y="152" width="276" height="36"/><rect x="448" y="189" width="312" height="36"/><rect x="448" y="226" width="312" height="36"/><rect x="448" y="263" width="312" height="36"/><rect x="448" y="300" width="312" height="36"/><rect x="448" y="337" width="312" height="36"/><rect x="480" y="374" width="280" height="36"/><rect x="552" y="411" width="208" height="36"/>
+</g>
+<text x="604" y="276" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="52" font-weight="800">Rear</text>
+<!-- VIP rows L-A -->
+<g fill="url(#vip)" stroke="#ff3b8d" stroke-width="2" filter="url(#pinkGlow)">
+  <rect x="480" y="448" width="280" height="36"/><rect x="448" y="485" width="312" height="36"/><rect x="448" y="522" width="312" height="36"/><rect x="448" y="559" width="312" height="36"/><rect x="448" y="596" width="344" height="36"/><rect x="448" y="633" width="344" height="36"/><rect x="448" y="670" width="344" height="36"/><rect x="448" y="707" width="344" height="36"/><rect x="448" y="744" width="312" height="36"/><rect x="448" y="781" width="312" height="36"/><rect x="448" y="818" width="312" height="36"/><rect x="448" y="855" width="312" height="36"/>
+</g>
+<text x="620" y="668" text-anchor="middle" fill="#111" font-family="Arial,sans-serif" font-size="58" font-weight="900">VIP</text>
+<!-- Row labels -->
+<g fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="800" text-anchor="middle">
+  <text x="422" y="104">V</text><text x="786" y="104">V</text><text x="422" y="141">U</text><text x="786" y="141">U</text><text x="422" y="178">T</text><text x="786" y="178">T</text><text x="422" y="215">S</text><text x="786" y="215">S</text><text x="422" y="252">R</text><text x="786" y="252">R</text><text x="422" y="289">Q</text><text x="786" y="289">Q</text><text x="422" y="326">P</text><text x="786" y="326">P</text><text x="422" y="363">O</text><text x="786" y="363">O</text><text x="422" y="400">N</text><text x="786" y="400">N</text><text x="422" y="437">M</text><text x="786" y="437">M</text>
+  <text x="422" y="474">L</text><text x="818" y="474">L</text><text x="422" y="511">K</text><text x="818" y="511">K</text><text x="422" y="548">J</text><text x="818" y="548">J</text><text x="422" y="585">I</text><text x="818" y="585">I</text><text x="422" y="622">H</text><text x="818" y="622">H</text><text x="422" y="659">G</text><text x="818" y="659">G</text><text x="422" y="696">F</text><text x="818" y="696">F</text><text x="422" y="733">E</text><text x="818" y="733">E</text><text x="422" y="770">D</text><text x="786" y="770">D</text><text x="422" y="807">C</text><text x="786" y="807">C</text><text x="422" y="844">B</text><text x="786" y="844">B</text><text x="422" y="881">A</text><text x="786" y="881">A</text>
+</g>
+<!-- Stage -->
+<path d="M280 930 L335 900 H470 L530 870 H760 L820 905 H885 V1008 H842 V1044 H720 V1085 H470 V1052 H280 Z" fill="#111116" stroke="#ff2e7e" stroke-width="4" filter="url(#pinkGlow)"/>
+<path d="M280 930 L335 900 H470" fill="none" stroke="#00d8d8" stroke-width="4" filter="url(#cyanGlow)"/>
+<text x="600" y="1000" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="72" font-weight="900">Stage</text>
+<text x="600" y="1138" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="43" font-weight="800">Zombie Burlesque Seating Chart</text>
+<text x="600" y="1182" text-anchor="middle" fill="#00d8c8" font-family="Arial,sans-serif" font-size="32" font-weight="800">VegasSidekick.com</text>
+</svg>

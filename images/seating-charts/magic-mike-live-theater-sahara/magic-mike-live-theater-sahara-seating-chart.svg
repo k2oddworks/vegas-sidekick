@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 120 100" role="img">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#180d28"/><stop offset="1" stop-color="#09060e"/></linearGradient><filter id="g"><feGaussianBlur stdDeviation=".8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="120" height="100" fill="url(#bg)"/>
+<path d="M48 38 Q60 31 72 38 L76 50 Q72 63 60 68 Q48 63 44 50 Z" fill="#15131a" stroke="#ffb000" stroke-width="1.2" filter="url(#g)"/>
+<text x="60" y="50" fill="#fff" font-family="Arial,sans-serif" font-size="4" font-weight="800" text-anchor="middle" dominant-baseline="middle">STAGE</text>
+<path d="M38 28 Q60 15 82 28 L88 37 Q82 29 75 26 L79 36 Q82 48 76 60 Q70 71 60 75 Q50 71 44 60 Q38 48 41 36 L45 26 Q38 29 32 37 Z" fill="#ff3b8d" stroke="#fff" stroke-opacity=".55" stroke-width=".65"/>
+<text x="60" y="23" fill="#fff" font-family="Arial,sans-serif" font-size="3.8" font-weight="800" text-anchor="middle" dominant-baseline="middle">100</text>
+<path d="M28 30 Q36 18 48 12 L52 21 Q43 25 37 34 Z M92 30 Q84 18 72 12 L68 21 Q77 25 83 34 Z" fill="#ffb000" stroke="#fff" stroke-opacity=".55" stroke-width=".65"/>
+<text x="60" y="12" fill="#fff" font-family="Arial,sans-serif" font-size="3.8" font-weight="800" text-anchor="middle" dominant-baseline="middle">201–202</text>
+<path d="M20 38 Q25 23 38 13 L44 22 Q34 30 31 43 L27 64 Q31 76 42 84 L36 91 Q20 80 16 64 Z M100 38 Q95 23 82 13 L76 22 Q86 30 89 43 L93 64 Q89 76 78 84 L84 91 Q100 80 104 64 Z" fill="#8d3cff" stroke="#fff" stroke-opacity=".55" stroke-width=".65"/>
+<text x="20" y="58" fill="#fff" font-family="Arial,sans-serif" font-size="3.8" font-weight="800" text-anchor="middle" dominant-baseline="middle">200</text>
+<path d="M12 34 Q18 16 35 6 L39 13 Q24 23 20 40 L17 66 Q22 84 39 95 L32 99 Q11 87 7 66 Z M108 34 Q102 16 85 6 L81 13 Q96 23 100 40 L103 66 Q98 84 81 95 L88 99 Q109 87 113 66 Z" fill="#c53cff" stroke="#fff" stroke-opacity=".55" stroke-width=".65"/>
+<text x="11" y="54" fill="#fff" font-family="Arial,sans-serif" font-size="3.8" font-weight="800" text-anchor="middle" dominant-baseline="middle">300</text>
+<path d="M40 4 Q60 -2 80 4 L77 10 Q60 6 43 10 Z M38 94 Q60 102 82 94 L87 99 H33 Z" fill="#19c7dd" stroke="#fff" stroke-opacity=".55" stroke-width=".65"/>
+<text x="60" y="6" fill="#fff" font-family="Arial,sans-serif" font-size="3.8" font-weight="800" text-anchor="middle" dominant-baseline="middle">400</text>
+<rect x="28.8" y="92.5" width="62.4" height="5.5" rx="2.8" fill="#ffb000"/>
+<text x="60" y="95.3" fill="#201328" font-family="Arial,sans-serif" font-size="3.6" font-weight="900" text-anchor="middle" dominant-baseline="middle">SWEET SPOT / OUR PICK</text>
+</svg>

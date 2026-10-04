@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 120 100" role="img">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#180d28"/><stop offset="1" stop-color="#09060e"/></linearGradient><filter id="g"><feGaussianBlur stdDeviation=".8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="120" height="100" fill="url(#bg)"/>
+<path d="M44 82 Q60 78 76 82 L72 94 H48 Z" fill="#15131a" stroke="#ffb000" stroke-width="1.2" filter="url(#g)"/>
+<text x="60" y="88" fill="#fff" font-family="Arial,sans-serif" font-size="4" font-weight="800" text-anchor="middle" dominant-baseline="middle">STAGE</text>
+<polygon points="51,24 94,24 92,33 90,33 91,39 87,39 88,45 84,45 85,51 80,51 81,58 55,58 55,63 48,63 48,58 43,58 44,52 39,52 40,46 35,46 37,39 33,39 35,33 31,33 34,24" fill="#ffb000" stroke="#fff" stroke-opacity=".55" stroke-width=".65"/>
+<polygon points="32,44 39,51 35,57 40,63 34,69 27,61 30,55 26,50" fill="#ffb000" stroke="#fff" stroke-opacity=".55" stroke-width=".65"/>
+<polygon points="84,44 90,50 87,56 92,61 86,68 79,62 82,56 78,51" fill="#ffb000" stroke="#fff" stroke-opacity=".55" stroke-width=".65"/>
+<polygon points="39,60 47,68 43,74 38,80 31,72" fill="#ffb000" stroke="#fff" stroke-opacity=".55" stroke-width=".65"/>
+<polygon points="76,60 82,68 87,75 80,81 73,73" fill="#ffb000" stroke="#fff" stroke-opacity=".55" stroke-width=".65"/>
+<polygon points="48,58 80,58 77,68 70,68 70,73 57,73 57,68 50,68" fill="#ffb000" stroke="#fff" stroke-opacity=".55" stroke-width=".65"/>
+<text x="60.0" y="44.24" fill="#fff" font-family="Arial,sans-serif" font-size="3.8" font-weight="800" text-anchor="middle" dominant-baseline="middle">VIP Seating</text>
+<polygon points="10,18 26,4 49,30 34,49" fill="#19c7dd" stroke="#fff" stroke-opacity=".55" stroke-width=".65"/>
+<polygon points="50,4 96,8 97,24 51,24" fill="#19c7dd" stroke="#fff" stroke-opacity=".55" stroke-width=".65"/>
+<polygon points="92,31 98,38 92,47 98,55 91,64 85,59 88,51 84,44" fill="#19c7dd" stroke="#fff" stroke-opacity=".55" stroke-width=".65"/>
+<text x="29.75" y="25.25" fill="#fff" font-family="Arial,sans-serif" font-size="3.8" font-weight="800" text-anchor="middle" dominant-baseline="middle">General Admission</text>
+<rect x="28.8" y="92.5" width="62.4" height="5.5" rx="2.8" fill="#ffb000"/>
+<text x="60" y="95.3" fill="#201328" font-family="Arial,sans-serif" font-size="3.6" font-weight="900" text-anchor="middle" dominant-baseline="middle">SWEET SPOT / OUR PICK</text>
+</svg>
