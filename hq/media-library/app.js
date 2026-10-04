@@ -17,6 +17,8 @@
     const category = filters.category || "all";
     if (category !== "all" && item.category !== category) return false;
 
+    const variants = Array.isArray(item.variants) ? item.variants : [];
+    const pages = Array.isArray(item.referencePages) ? item.referencePages : [];
     const search = normalize(filters.search);
     if (search) {
       const haystack = [
@@ -25,7 +27,15 @@
         item.publicUrl,
         item.show,
         item.venue,
-        ...(item.usage || [])
+        ...(item.usage || []),
+        ...variants.flatMap((variant) => [
+          variant.filename,
+          variant.path,
+          variant.publicUrl,
+          variant.variantRole,
+          ...(variant.usage || [])
+        ]),
+        ...pages.flatMap((page) => [page.title, page.url])
       ].map(normalize).join(" ");
       if (!haystack.includes(search)) return false;
     }
@@ -75,6 +85,75 @@
     return Promise.resolve();
   }
 
+  function uniqueBy(values, keyFn) {
+    const seen = new Set();
+    return values.filter((value) => {
+      const key = keyFn(value);
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }
+
+  function groupItems(items) {
+    const buckets = new Map();
+    items.forEach((item) => {
+      const key = item.visualGroupKey || item.path;
+      if (!buckets.has(key)) buckets.set(key, []);
+      buckets.get(key).push(item);
+    });
+
+    return [...buckets.entries()].map(([key, variants]) => {
+      variants.sort((a, b) => {
+        const score = (value) => value.variantRole === "Hero" ? 0 : value.variantRole === "OG/social" ? 1 : value.referenced ? 2 : 3;
+        return score(a) - score(b) || a.filename.localeCompare(b.filename);
+      });
+      const representative = variants[0];
+      const usage = [...new Set(variants.flatMap((item) => item.usage || []))];
+      const duplicateHints = [...new Set(variants.flatMap((item) => item.duplicateHints || []))];
+      const referenceFiles = [...new Set(variants.flatMap((item) => item.referenceFiles || []))];
+      const referencePages = uniqueBy(
+        variants.flatMap((item) => item.referencePages || []),
+        (page) => page.url
+      ).sort((a, b) => String(a.title || "").localeCompare(String(b.title || "")));
+      return {
+        ...representative,
+        visualGroupKey: key,
+        variants,
+        variantCount: variants.length,
+        referenced: variants.some((item) => item.referenced),
+        referenceCount: referenceFiles.length,
+        referenceOccurrences: variants.reduce((sum, item) => sum + Number(item.referenceOccurrences || 0), 0),
+        referenceFiles,
+        referencePages,
+        usage,
+        duplicateHints,
+        show: variants.map((item) => item.show).find(Boolean) || null,
+        venue: variants.map((item) => item.venue).find(Boolean) || null,
+        relatedShowUrl: variants.map((item) => item.relatedShowUrl).find(Boolean) || null,
+        relatedVenueUrl: variants.map((item) => item.relatedVenueUrl).find(Boolean) || null
+      };
+    });
+  }
+
+  function attachCopy(button, value) {
+    button.addEventListener("click", async () => {
+      const original = button.textContent;
+      try {
+        await copyText(value);
+        button.textContent = "Copied";
+        button.classList.add("copied");
+        window.setTimeout(() => {
+          button.textContent = original;
+          button.classList.remove("copied");
+        }, 1200);
+      } catch (_) {
+        button.textContent = "Copy failed";
+        window.setTimeout(() => { button.textContent = original; }, 1200);
+      }
+    });
+  }
+
   let started = false;
 
   async function start() {
@@ -108,12 +187,13 @@
       return;
     }
 
-    const items = payload.images;
+    const files = payload.images;
+    const items = groupItems(files);
     let category = "all";
     let renderLimit = 60;
 
-    const showNames = [...new Set(items.map((item) => item.show).filter(Boolean))].sort((a, b) => a.localeCompare(b));
-    const venueNames = [...new Set(items.map((item) => item.venue).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+    const showNames = [...new Set(files.map((item) => item.show).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+    const venueNames = [...new Set(files.map((item) => item.venue).filter(Boolean))].sort((a, b) => a.localeCompare(b));
 
     const fillDatalist = (id, values) => {
       const list = document.getElementById(id);
@@ -131,11 +211,11 @@
 
     const summary = payload.summary || {};
     const statRows = [
-      ["All images", summary.totalImages ?? items.length],
-      ["Used on site", summary.usedImages ?? items.filter((item) => item.referenced).length],
-      ["No references", summary.unreferencedImages ?? items.filter((item) => !item.referenced).length],
-      ["Exact dup groups", summary.exactDuplicateGroups ?? 0],
-      ["Format pairs", summary.sameBasenameFormatGroups ?? 0]
+      ["Image files", summary.totalImages ?? files.length],
+      ["Visual cards", items.length],
+      ["Used files", summary.usedImages ?? files.filter((item) => item.referenced).length],
+      ["No references", summary.unreferencedImages ?? files.filter((item) => !item.referenced).length],
+      ["Exact dup groups", summary.exactDuplicateGroups ?? 0]
     ];
     stats.innerHTML = statRows.map(([label, value]) =>
       '<div class="stat"><div class="number">' + String(value) + '</div><div class="label">' + label + '</div></div>'
@@ -153,6 +233,58 @@
       };
     }
 
+    function makeVariantRow(variant) {
+      const row = document.createElement("div");
+      row.className = "variant-row";
+
+      const header = document.createElement("div");
+      header.className = "variant-head";
+      const name = document.createElement("strong");
+      name.textContent = variant.filename;
+      header.appendChild(name);
+      if (variant.variantRole) {
+        const role = document.createElement("span");
+        role.className = "variant-role";
+        role.textContent = variant.variantRole;
+        header.appendChild(role);
+      }
+      row.appendChild(header);
+
+      const details = document.createElement("div");
+      details.className = "variant-details";
+      const dimension = variant.width && variant.height ? variant.width + " × " + variant.height : "Dimensions in browser";
+      details.textContent = dimension + " · " + String(variant.fileType || "").toUpperCase() + " · " + formatBytes(variant.sizeBytes);
+      row.appendChild(details);
+
+      const code = document.createElement("code");
+      code.className = "variant-path";
+      code.textContent = variant.path;
+      row.appendChild(code);
+
+      const actions = document.createElement("div");
+      actions.className = "variant-actions";
+      const copyUrl = document.createElement("button");
+      copyUrl.type = "button";
+      copyUrl.textContent = "Copy URL";
+      attachCopy(copyUrl, variant.publicUrl);
+      actions.appendChild(copyUrl);
+
+      const copyPath = document.createElement("button");
+      copyPath.type = "button";
+      copyPath.textContent = "Copy path";
+      attachCopy(copyPath, variant.path);
+      actions.appendChild(copyPath);
+
+      const open = document.createElement("a");
+      open.href = variant.publicUrl;
+      open.target = "_blank";
+      open.rel = "noopener";
+      open.textContent = "Open";
+      actions.appendChild(open);
+      row.appendChild(actions);
+      return row;
+    }
+
     function cardFor(item) {
       const card = template.content.firstElementChild.cloneNode(true);
       const thumb = card.querySelector(".thumb");
@@ -163,13 +295,18 @@
       const metadata = card.querySelector(".metadata");
       const categoryBadge = card.querySelector(".category-badge");
       const referenceBadge = card.querySelector(".reference-badge");
+      const variantCount = card.querySelector(".variant-count");
+      const variantList = card.querySelector(".variant-list");
       const usageBadges = card.querySelector(".usage-badges");
       const showRow = card.querySelector(".show-row");
       const showValue = card.querySelector(".show-value");
       const venueRow = card.querySelector(".venue-row");
       const venueValue = card.querySelector(".venue-value");
       const referenceValue = card.querySelector(".reference-value");
+      const usedOn = card.querySelector(".used-on");
+      const usedOnLinks = card.querySelector(".used-on-links");
       const duplicateNote = card.querySelector(".duplicate-note");
+      const mainActions = card.querySelector(".actions");
       const openImage = card.querySelector(".open-image");
       const openShow = card.querySelector(".open-show");
 
@@ -200,6 +337,17 @@
         }, { once: true });
       }
 
+      if (item.variantCount > 1) {
+        variantCount.hidden = false;
+        variantCount.textContent = item.variantCount + " variants";
+        path.hidden = true;
+        publicUrl.hidden = true;
+        metadata.hidden = true;
+        variantList.hidden = false;
+        item.variants.forEach((variant) => variantList.appendChild(makeVariantRow(variant)));
+        mainActions.querySelectorAll("[data-copy], .open-image").forEach((node) => { node.hidden = true; });
+      }
+
       (item.usage || []).forEach((label) => {
         const badge = document.createElement("span");
         badge.className = "usage-badge";
@@ -214,8 +362,29 @@
       else venueRow.hidden = true;
 
       referenceValue.textContent = item.referenceCount
-        ? item.referenceCount + (item.referenceCount === 1 ? " file" : " files")
-        : "0 files";
+        ? item.referenceCount + (item.referenceCount === 1 ? " site file" : " site files")
+        : "0 site files";
+
+      if ((item.referencePages || []).length) {
+        usedOn.hidden = false;
+        item.referencePages.forEach((page) => {
+          const link = document.createElement("a");
+          link.href = page.url;
+          link.target = "_blank";
+          link.rel = "noopener";
+          link.textContent = page.title || page.url;
+          const pathLabel = document.createElement("span");
+          pathLabel.textContent = page.url;
+          link.appendChild(pathLabel);
+          usedOnLinks.appendChild(link);
+        });
+      } else if (item.referenced) {
+        usedOn.hidden = false;
+        const note = document.createElement("div");
+        note.className = "used-on-note";
+        note.textContent = "Referenced by site assets or runtime files; no public page link detected.";
+        usedOnLinks.appendChild(note);
+      }
 
       if ((item.duplicateHints || []).length) {
         duplicateNote.hidden = false;
@@ -229,23 +398,9 @@
       }
 
       card.querySelectorAll("[data-copy]").forEach((button) => {
-        button.addEventListener("click", async () => {
-          const type = button.dataset.copy;
-          const value = type === "url" ? item.publicUrl : type === "path" ? item.path : item.filename;
-          const original = button.textContent;
-          try {
-            await copyText(value);
-            button.textContent = "Copied";
-            button.classList.add("copied");
-            window.setTimeout(() => {
-              button.textContent = original;
-              button.classList.remove("copied");
-            }, 1200);
-          } catch (_) {
-            button.textContent = "Copy failed";
-            window.setTimeout(() => { button.textContent = original; }, 1200);
-          }
-        });
+        const type = button.dataset.copy;
+        const value = type === "url" ? item.publicUrl : type === "path" ? item.path : item.filename;
+        attachCopy(button, value);
       });
 
       return card;
@@ -259,7 +414,8 @@
       visible.forEach((item) => fragment.appendChild(cardFor(item)));
       grid.replaceChildren(fragment);
 
-      count.textContent = "Showing " + visible.length + " of " + filtered.length + " matching images";
+      const matchingFiles = filtered.reduce((sum, item) => sum + item.variantCount, 0);
+      count.textContent = "Showing " + visible.length + " of " + filtered.length + " visual assets · " + matchingFiles + " files";
       empty.hidden = filtered.length !== 0;
       loadMore.hidden = visible.length >= filtered.length;
     }
@@ -307,9 +463,9 @@
   }
 
   if (typeof window !== "undefined") {
-    window.VSMediaLibrary = { start, matchesFilters, formatBytes };
+    window.VSMediaLibrary = { start, matchesFilters, formatBytes, groupItems };
   }
   if (typeof module !== "undefined" && module.exports) {
-    module.exports = { matchesFilters, formatBytes };
+    module.exports = { matchesFilters, formatBytes, groupItems };
   }
 })();
