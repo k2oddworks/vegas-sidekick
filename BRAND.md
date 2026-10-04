@@ -207,6 +207,26 @@ photography."* Use it even when the source listing says cameras are banned.
 write "Sidekick Pick — VIP"; that's a seating claim wearing the wrong badge. And
 `sp:true` is never set by default — only when Kris names that specific show.
 
+### Current approved Sidekick Picks
+
+Approved October 3, 2026. This list is editorial, not automatic; add or remove shows only when Kris explicitly changes it.
+
+- Carrot Top
+- VEGAS! The Show
+- Steve Falcon's Comedy Hypnosis Hour
+- Rouge
+- Marc Savard Comedy Hypnosis
+- Tape Face
+- Absinthe
+- Mac King Comedy Magic
+- Colin Cloud: Mastermind
+- Zombie Burlesque
+- The Australian Bee Gees Show
+- Donny Osmond
+- The Empire Strips Back
+- LA Comedy Club
+- Brad Garrett's Comedy Club
+
 **Closed shows never get deleted.** Shows come back. The page stays, gets a banner,
 and every buy CTA is neutralised. Current approved wording:
 
