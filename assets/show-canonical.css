@@ -144,7 +144,8 @@
   .sidekick-pick summary{padding:7px 10px}
   .mobile-bar.has-sidekick-pick{padding-top:8px;padding-bottom:calc(14px + env(safe-area-inset-bottom))}
   .mobile-bar.has-sidekick-pick .mobile-inner{align-items:flex-end}
-  .sidekick-pick-mobile{display:block;margin:0 0 5px 10px}
+  .sidekick-pick-mobile{display:none;margin:0 0 5px 10px}
+  .mobile-bar.has-sidekick-pick.show-sidekick-pick .sidekick-pick-mobile{display:block}
   .sidekick-pick-mobile summary{gap:5px;padding:4px 8px;background:#bfe8ff;color:#171225;border:1px solid #eefaff;font-size:.58rem;line-height:1.1;box-shadow:none}
   .sidekick-pick-mobile summary:hover,.sidekick-pick-mobile[open] summary{background:#d5f1ff;border-color:#ffffff}
   .sidekick-pick-mobile .sidekick-pick-info-icon{width:12px;height:12px;font-size:.48rem}
