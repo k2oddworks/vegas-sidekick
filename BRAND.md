@@ -142,6 +142,37 @@ two paragraphs. Show pages are long *in total* but never long *in a block*.
 Redesigned **August 2026** to the current neon system. Any page still showing navy +
 orange + Bebas Neue is stale and should be migrated, not matched.
 
+### Design style: Neon Postmodern
+
+**Neon Postmodern** is the name for the Vegas Sidekick visual language: modern product
+UI built from late-1970s through early-1990s postmodern graphic cues, filtered through
+clean contemporary UX. It should feel a little retro without looking vintage.
+
+The core visual move is **big, saturated blocks of solid color on a light/white
+ground**, with crisp functional white cards nested inside those color fields when
+useful. The color does the decorating; the interface stays easy to understand.
+
+Use:
+- bold solid color fields rather than gradients everywhere
+- oversized, confident Plus Jakarta Sans typography
+- rounded geometric panels, chunky pills and clear black/ink outlines
+- occasional offset shadows, asymmetric framing and simple geometric accents
+- IBM Plex Mono / utility labels for small wayfinding, metadata and ticket-system energy
+- strong white space between the loud moments
+- Warm Amber purchase CTAs that remain unmistakably functional
+- the Vegas Sidekick palette as a coordinated system, not a rainbow on every screen
+
+Avoid:
+- faux-vintage distress, sepia, casino-carpet nostalgia or literal 1950s Vegas pastiche
+- generic cyberpunk/neon-glow overload
+- Memphis confetti, squiggles and decorative shapes with no compositional purpose
+- making every section loud; the solid color blocks work because white space gives them room
+- sacrificing readability, hierarchy or conversion clarity for retro styling
+
+The test: **retro energy, modern interface.** It should look like Vegas Sidekick could
+have inherited a great late-20th-century graphic identity and then rebuilt it for a
+2026 product experience.
+
 **Palette**
 
 ```
