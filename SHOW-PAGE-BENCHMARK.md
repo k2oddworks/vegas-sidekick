@@ -348,6 +348,13 @@ If the tip is generic category copy or merely describes a seat, remove it. Never
 
 ## 12. Photo gallery
 
+### Image storage
+
+- Store show photography and show artwork under `/images/product-photos/<show-slug>/`.
+- Store seating charts separately under `/images/seating-charts/<show-or-room>/` so room assets can be reused without duplicating show photography.
+- Keep filenames descriptive even when the folder already identifies the show.
+- Do not upload new show assets directly into the root `/images/` directory.
+
 Nathan Burton is the gallery interaction benchmark.
 
 ### Page gallery
