@@ -6,6 +6,11 @@
 CLAUDE.md
 wrangler.jsonc
 
+# CI/runtime dependencies — never static site assets
+node_modules
+package.json
+package-lock.json
+
 # Internal working docs and tooling — never web pages
 BRAND.md
 SHOW-BUILDER-PROMPT.md
