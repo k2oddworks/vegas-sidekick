@@ -6,6 +6,7 @@ on:
       - image-library-migration-20261004
     paths:
       - scripts/migrate-image-library.py
+      - scripts/audit-image-library.py
       - .github/workflows/image-library-migration.yml
 
 permissions:
