@@ -1,0 +1,2791 @@
+{
+  "generated_on": "2026-10-04",
+  "purpose": "Vegas Sidekick image path migration from the flat /images directory into durable asset families.",
+  "rules": {
+    "product_photos": "images/product-photos/<show-slug>/",
+    "seating_charts": "images/seating-charts/<room-or-layout>/",
+    "venue_photos": "images/venue-photos/<venue-or-property>/",
+    "other": [
+      "images/brand/",
+      "images/guides/",
+      "images/news/",
+      "images/play/",
+      "images/sidekick-index/",
+      "images/site/"
+    ]
+  },
+  "moves": [
+    {
+      "old": "images/absinthe-2.webp",
+      "new": "images/product-photos/absinthe/absinthe-2.webp",
+      "sha": "8623e0453cb3b303644103a82a3302a6bb48bbcd",
+      "size": 87966
+    },
+    {
+      "old": "images/absinthe-3.webp",
+      "new": "images/product-photos/absinthe/absinthe-3.webp",
+      "sha": "5b962fa64a357f179bf3319480f69a28f0044e2b",
+      "size": 26948
+    },
+    {
+      "old": "images/absinthe-hero.webp",
+      "new": "images/product-photos/absinthe/absinthe-hero.webp",
+      "sha": "8ab6348c568b3cea84f703f06af4da0828aeb681",
+      "size": 132566
+    },
+    {
+      "old": "images/absinthe-las-vegas-acrobatic-duo.jpg",
+      "new": "images/product-photos/absinthe/absinthe-las-vegas-acrobatic-duo.jpg",
+      "sha": "d62d90f965e4044043d76905c74428e40f5ec3c2",
+      "size": 127092
+    },
+    {
+      "old": "images/absinthe-las-vegas-bathtub-act.jpg",
+      "new": "images/product-photos/absinthe/absinthe-las-vegas-bathtub-act.jpg",
+      "sha": "2e3191065daa137a8d627d5ed8d41098fc5fc55a",
+      "size": 259333
+    },
+    {
+      "old": "images/absinthe-seating-chart.jpg",
+      "new": "images/seating-charts/spiegeltent-caesars-palace/absinthe-seating-chart.jpg",
+      "sha": "4b47ba88bcf7ce4c20c1fc3836705a586942da9d",
+      "size": 541664
+    },
+    {
+      "old": "images/absinthe-seating-chart.webp",
+      "new": "images/seating-charts/spiegeltent-caesars-palace/absinthe-seating-chart.webp",
+      "sha": "c1f72dd88d283d0907899e069eb31b295b73b685",
+      "size": 163994
+    },
+    {
+      "old": "images/alexis-park-hero.webp",
+      "new": "images/venue-photos/alexis-park/alexis-park-hero.webp",
+      "sha": "a6ddce13ee5cf14a5dd473acea137e631b5b79bd",
+      "size": 93872
+    },
+    {
+      "old": "images/alexis-park-og.jpg",
+      "new": "images/venue-photos/alexis-park/alexis-park-og.jpg",
+      "sha": "48be776a6b90a5b7b3713a73f6a9d7006ac845df",
+      "size": 141114
+    },
+    {
+      "old": "images/all-motown-2.webp",
+      "new": "images/product-photos/all-motown/all-motown-2.webp",
+      "sha": "976722601a024d223dd65bfb2a8835f3a15cbafd",
+      "size": 49230
+    },
+    {
+      "old": "images/all-motown-3.webp",
+      "new": "images/product-photos/all-motown/all-motown-3.webp",
+      "sha": "d8345022a162164400ad4f668d79be646d0004dc",
+      "size": 68798
+    },
+    {
+      "old": "images/all-motown-hero.webp",
+      "new": "images/product-photos/all-motown/all-motown-hero.webp",
+      "sha": "1c3e5f80c3db5b869ee20f3ea6f3cad020366252",
+      "size": 88426
+    },
+    {
+      "old": "images/all-motown-las-vegas-group-performance.jpg",
+      "new": "images/product-photos/all-motown/all-motown-las-vegas-group-performance.jpg",
+      "sha": "30398527137c318aacc551f9ff846850d261e3c7",
+      "size": 228446
+    },
+    {
+      "old": "images/all-motown-las-vegas-solo-singer.jpg",
+      "new": "images/product-photos/all-motown/all-motown-las-vegas-solo-singer.jpg",
+      "sha": "2ebf842690eab33b6fdea4aae22b652424a62c9a",
+      "size": 398995
+    },
+    {
+      "old": "images/all-motown-seating-chart.jpg",
+      "new": "images/seating-charts/all-motown/all-motown-seating-chart.jpg",
+      "sha": "9f4a8f726e23924a99d0d096da2a9a960001663a",
+      "size": 217346
+    },
+    {
+      "old": "images/all-shook-up-2.webp",
+      "new": "images/product-photos/all-shook-up/all-shook-up-2.webp",
+      "sha": "4d27bcec7d974e5900dac3b04bf279c5637ca9d2",
+      "size": 73390
+    },
+    {
+      "old": "images/all-shook-up-3.webp",
+      "new": "images/product-photos/all-shook-up/all-shook-up-3.webp",
+      "sha": "0ce29a5fe41e84068a5ac03a0ee8d2872aead8c2",
+      "size": 114618
+    },
+    {
+      "old": "images/all-shook-up-4.webp",
+      "new": "images/product-photos/all-shook-up/all-shook-up-4.webp",
+      "sha": "f4667537c946a3622360f0b713c750a2d9cf0234",
+      "size": 9018
+    },
+    {
+      "old": "images/all-shook-up-5.webp",
+      "new": "images/product-photos/all-shook-up/all-shook-up-5.webp",
+      "sha": "2a2e2b526994d2ed2a6121d67318f36f7b9bdc4a",
+      "size": 32602
+    },
+    {
+      "old": "images/all-shook-up-hero.jpg",
+      "new": "images/product-photos/all-shook-up/all-shook-up-hero.jpg",
+      "sha": "fabd8396d0929b9f5d811946813d1dd1cb9fec70",
+      "size": 78936
+    },
+    {
+      "old": "images/all-shook-up-seating-chart.jpg",
+      "new": "images/seating-charts/all-shook-up/all-shook-up-seating-chart.jpg",
+      "sha": "ad84b10b2d3ddcf9db388594cad51ccd4e8a23cf",
+      "size": 337437
+    },
+    {
+      "old": "images/allstars-of-magic-2.jpg",
+      "new": "images/product-photos/allstars-of-magic/allstars-of-magic-2.jpg",
+      "sha": "49d3df9fb0555d950e90ae729da5e5698db79352",
+      "size": 157611
+    },
+    {
+      "old": "images/allstars-of-magic-3.jpg",
+      "new": "images/product-photos/allstars-of-magic/allstars-of-magic-3.jpg",
+      "sha": "3e13198c906e90f966862746afb94716869c3876",
+      "size": 61549
+    },
+    {
+      "old": "images/allstars-of-magic-hero.jpg",
+      "new": "images/product-photos/allstars-of-magic/allstars-of-magic-hero.jpg",
+      "sha": "821e6459e6f55f2ce20e4330a08fcd42bb349d40",
+      "size": 50354
+    },
+    {
+      "old": "images/allstars-of-magic-hero.webp",
+      "new": "images/product-photos/allstars-of-magic/allstars-of-magic-hero.webp",
+      "sha": "78bb90d13cf588be9be73fcdf6224104d4c89edb",
+      "size": 36694
+    },
+    {
+      "old": "images/allstars-of-magic-las-vegas-cat-act.jpg",
+      "new": "images/product-photos/allstars-of-magic/allstars-of-magic-las-vegas-cat-act.jpg",
+      "sha": "033f386e0a22fb9ab1b9550549e28e3339bb2c72",
+      "size": 285669
+    },
+    {
+      "old": "images/allstars-of-magic-las-vegas-saw-illusion.jpg",
+      "new": "images/product-photos/allstars-of-magic/allstars-of-magic-las-vegas-saw-illusion.jpg",
+      "sha": "7d8e3b3df53bd3bbe2157fc8527e6adc254a0850",
+      "size": 329606
+    },
+    {
+      "old": "images/america-the-show-2.webp",
+      "new": "images/product-photos/america-the-show/america-the-show-2.webp",
+      "sha": "4771a6693c76bffa5dd24fbe30b1fd6a1e443f7f",
+      "size": 132610
+    },
+    {
+      "old": "images/america-the-show-3.webp",
+      "new": "images/product-photos/america-the-show/america-the-show-3.webp",
+      "sha": "d2305195af17fc770d861d7c3e2fb7854ba24ead",
+      "size": 38454
+    },
+    {
+      "old": "images/america-the-show-4.webp",
+      "new": "images/product-photos/america-the-show/america-the-show-4.webp",
+      "sha": "8c12d7d09c280a0b6ea37ce7d05cd8224da249c5",
+      "size": 73238
+    },
+    {
+      "old": "images/america-the-show-5.webp",
+      "new": "images/product-photos/america-the-show/america-the-show-5.webp",
+      "sha": "bf2cf57f17f4d48d4658f96468fb8104320a4f69",
+      "size": 81500
+    },
+    {
+      "old": "images/america-the-show-hero.jpg",
+      "new": "images/product-photos/america-the-show/america-the-show-hero.jpg",
+      "sha": "889f439a25a33c0725238554bfd8f55fe084c14a",
+      "size": 116316
+    },
+    {
+      "old": "images/america-the-show-hero.webp",
+      "new": "images/product-photos/america-the-show/america-the-show-hero.webp",
+      "sha": "70cc16ad430043ddf79e5ed1c85c32753ffc2619",
+      "size": 87764
+    },
+    {
+      "old": "images/america-the-show-og.jpg",
+      "new": "images/product-photos/america-the-show/america-the-show-og.jpg",
+      "sha": "48be776a6b90a5b7b3713a73f6a9d7006ac845df",
+      "size": 141114
+    },
+    {
+      "old": "images/america-the-show-seating-chart.jpg",
+      "new": "images/seating-charts/america-the-show/america-the-show-seating-chart.jpg",
+      "sha": "488fccbb5d67da3fcdc16c6e420714fef78bef03",
+      "size": 233628
+    },
+    {
+      "old": "images/an-r-rated-magic-show-2.webp",
+      "new": "images/product-photos/an-r-rated-magic-show/an-r-rated-magic-show-2.webp",
+      "sha": "69dbe9cfecd24dc77e8ad14436b1c33901898280",
+      "size": 23518
+    },
+    {
+      "old": "images/an-r-rated-magic-show-3.webp",
+      "new": "images/product-photos/an-r-rated-magic-show/an-r-rated-magic-show-3.webp",
+      "sha": "3e3a42cf48aa9c99d40af3629a826bcb3e40e486",
+      "size": 13950
+    },
+    {
+      "old": "images/an-r-rated-magic-show-hero.webp",
+      "new": "images/product-photos/an-r-rated-magic-show/an-r-rated-magic-show-hero.webp",
+      "sha": "d18d060720094b68985fb1837bf02a35b73e9d6d",
+      "size": 45146
+    },
+    {
+      "old": "images/an-r-rated-magic-show-las-vegas-audience-volunteers.jpg",
+      "new": "images/product-photos/an-r-rated-magic-show/an-r-rated-magic-show-las-vegas-audience-volunteers.jpg",
+      "sha": "9fbee70f9114b6584b589335440860154405a820",
+      "size": 242833
+    },
+    {
+      "old": "images/an-r-rated-magic-show-las-vegas-performer-and-crowd.jpg",
+      "new": "images/product-photos/an-r-rated-magic-show/an-r-rated-magic-show-las-vegas-performer-and-crowd.jpg",
+      "sha": "07002b66b83322ab2c2022faeb792b053442c1d5",
+      "size": 218448
+    },
+    {
+      "old": "images/atomic-saloon-2.webp",
+      "new": "images/product-photos/atomic-saloon/atomic-saloon-2.webp",
+      "sha": "cbd0e10f7849844d60ba3781b3ccc9abf8b93d78",
+      "size": 66720
+    },
+    {
+      "old": "images/atomic-saloon-3.webp",
+      "new": "images/product-photos/atomic-saloon/atomic-saloon-3.webp",
+      "sha": "2fa26e83993cab93951e71b37fa8b721be8524af",
+      "size": 51474
+    },
+    {
+      "old": "images/atomic-saloon-hero.webp",
+      "new": "images/product-photos/atomic-saloon/atomic-saloon-hero.webp",
+      "sha": "d833e6ed838dad7eba99f5b1e32478f022ca2e23",
+      "size": 59978
+    },
+    {
+      "old": "images/atomic-saloon-las-vegas-cast-onstage.jpg",
+      "new": "images/product-photos/atomic-saloon/atomic-saloon-las-vegas-cast-onstage.jpg",
+      "sha": "150100cc79ee076c74049a00fb3ec31e5b9eec35",
+      "size": 337269
+    },
+    {
+      "old": "images/atomic-saloon-las-vegas-hula-hoop-act.jpg",
+      "new": "images/product-photos/atomic-saloon/atomic-saloon-las-vegas-hula-hoop-act.jpg",
+      "sha": "a0231ec228dc9501193a6c2ccbfda2df05a79d2d",
+      "size": 145052
+    },
+    {
+      "old": "images/atomic-saloon-seating-chart.jpg",
+      "new": "images/seating-charts/atomic-saloon/atomic-saloon-seating-chart.jpg",
+      "sha": "5a3b9e86fa85af290947e620485aa33ef0a85903",
+      "size": 356871
+    },
+    {
+      "old": "images/atrium-showroom-luxor-seating-chart.svg",
+      "new": "images/seating-charts/atrium-showroom-luxor/atrium-showroom-luxor-seating-chart.svg",
+      "sha": "c48f5097e5fbebeb29f07cf530e99ce35ecdba2e",
+      "size": 1802
+    },
+    {
+      "old": "images/australian-bee-gees-2.webp",
+      "new": "images/product-photos/australian-bee-gees/australian-bee-gees-2.webp",
+      "sha": "06359341094df346d75fcafa2d3b463aa45403ee",
+      "size": 32770
+    },
+    {
+      "old": "images/australian-bee-gees-3.webp",
+      "new": "images/product-photos/australian-bee-gees/australian-bee-gees-3.webp",
+      "sha": "ecfd8231599e644393f2b6cce8247b2c11283bde",
+      "size": 23008
+    },
+    {
+      "old": "images/australian-bee-gees-hero.webp",
+      "new": "images/product-photos/australian-bee-gees/australian-bee-gees-hero.webp",
+      "sha": "59369606a5c9537943875ac1d7fa6bec24aabb86",
+      "size": 42966
+    },
+    {
+      "old": "images/australian-bee-gees-seating-chart.jpg",
+      "new": "images/seating-charts/australian-bee-gees/australian-bee-gees-seating-chart.jpg",
+      "sha": "a8fa4c7c9b5a20f88d3f8cb2663b53eb8281754e",
+      "size": 292152
+    },
+    {
+      "old": "images/awakening-2.webp",
+      "new": "images/product-photos/awakening/awakening-2.webp",
+      "sha": "eb646400fd6417a87de49628861e2fb54bcf03f8",
+      "size": 71022
+    },
+    {
+      "old": "images/awakening-3.webp",
+      "new": "images/product-photos/awakening/awakening-3.webp",
+      "sha": "f3e681a1dbb3bda84a75f3ff14d1d359b2623bff",
+      "size": 41392
+    },
+    {
+      "old": "images/awakening-hero.webp",
+      "new": "images/product-photos/awakening/awakening-hero.webp",
+      "sha": "981d9d1b6680ee803efe17469ce1932a774f8630",
+      "size": 83778
+    },
+    {
+      "old": "images/barry-manilow-hero.webp",
+      "new": "images/product-photos/barry-manilow/barry-manilow-hero.webp",
+      "sha": "69faf3d96035265d252f67084a9a5a5712859da7",
+      "size": 8546
+    },
+    {
+      "old": "images/barry-manilow-performance.webp",
+      "new": "images/product-photos/barry-manilow/barry-manilow-performance.webp",
+      "sha": "a6fcaf7dd30196bfb46bd89601e35f0f51cd54bf",
+      "size": 4698
+    },
+    {
+      "old": "images/barry-manilow-piano.webp",
+      "new": "images/product-photos/barry-manilow/barry-manilow-piano.webp",
+      "sha": "b4a0811047d048e00305d158df6178468dc1b513",
+      "size": 8696
+    },
+    {
+      "old": "images/barry-manilow-seating-chart.jpg",
+      "new": "images/seating-charts/barry-manilow/barry-manilow-seating-chart.jpg",
+      "sha": "2f229ac204e6ffcc1297bf05d7643994900813b2",
+      "size": 351374
+    },
+    {
+      "old": "images/barry-manilow-social.jpg",
+      "new": "images/product-photos/barry-manilow/barry-manilow-social.jpg",
+      "sha": "4213e5f6a2c8fb141ce1c52dfb5da8c9a5ca5227",
+      "size": 7514
+    },
+    {
+      "old": "images/barry-manilow-stage.webp",
+      "new": "images/product-photos/barry-manilow/barry-manilow-stage.webp",
+      "sha": "4dacea4e9b261e81db88bf3a22adc6707b7059d3",
+      "size": 8620
+    },
+    {
+      "old": "images/barry-manilow-westgate.webp",
+      "new": "images/product-photos/barry-manilow/barry-manilow-westgate.webp",
+      "sha": "c523fc1467f5881d10a60f38dc67483d4da441bd",
+      "size": 14999
+    },
+    {
+      "old": "images/battlebots-arena-seating-chart.svg",
+      "new": "images/seating-charts/battlebots-arena/battlebots-arena-seating-chart.svg",
+      "sha": "72de07295614d5ddb18a67d579c0b1da86bc9ffa",
+      "size": 2428
+    },
+    {
+      "old": "images/battlebots-destruct-a-thon-hero.jpg",
+      "new": "images/product-photos/battlebots-destruct-a-thon/battlebots-destruct-a-thon-hero.jpg",
+      "sha": "937f86749b6b7f08ffd8d277bc05f5b5db77db7c",
+      "size": 165619
+    },
+    {
+      "old": "images/battlebots-destruct-a-thon-hero.webp",
+      "new": "images/product-photos/battlebots-destruct-a-thon/battlebots-destruct-a-thon-hero.webp",
+      "sha": "6cb2067af37872c86138ed6b7039e6926a1c2213",
+      "size": 41280
+    },
+    {
+      "old": "images/battlebots-destruct-a-thon-show-2.webp",
+      "new": "images/product-photos/battlebots-destruct-a-thon/battlebots-destruct-a-thon-show-2.webp",
+      "sha": "7a9f10eb26c0cd8027d74d8be84ea9ed2bef64f7",
+      "size": 51030
+    },
+    {
+      "old": "images/battlebots-destruct-a-thon-show-3.webp",
+      "new": "images/product-photos/battlebots-destruct-a-thon/battlebots-destruct-a-thon-show-3.webp",
+      "sha": "1fe1b325562525b80e90181424094b97f5d80ded",
+      "size": 56232
+    },
+    {
+      "old": "images/blue-man-group-2.webp",
+      "new": "images/product-photos/blue-man-group/blue-man-group-2.webp",
+      "sha": "f64c66462131c0ab3a26e5af77511f1519352744",
+      "size": 63244
+    },
+    {
+      "old": "images/blue-man-group-3.webp",
+      "new": "images/product-photos/blue-man-group/blue-man-group-3.webp",
+      "sha": "179f20216a47a28ab2a7aba840ae65f65afe8360",
+      "size": 34298
+    },
+    {
+      "old": "images/blue-man-group-hero.webp",
+      "new": "images/product-photos/blue-man-group/blue-man-group-hero.webp",
+      "sha": "b9f1e184e0b42ff0b8415116d051c7740e5be6e6",
+      "size": 19022
+    },
+    {
+      "old": "images/blue-man-group-seating-chart.jpg",
+      "new": "images/seating-charts/blue-man-theater/blue-man-group-seating-chart.jpg",
+      "sha": "fa08912b505021136a3ab273fe078d70aad98bfd",
+      "size": 203298
+    },
+    {
+      "old": "images/brad-garretts-comedy-club-2.jpg",
+      "new": "images/product-photos/brad-garretts-comedy-club/brad-garretts-comedy-club-2.jpg",
+      "sha": "42d8e4cf78b0e84c274dac6ee7570a5e1240036e",
+      "size": 59466
+    },
+    {
+      "old": "images/brad-garretts-comedy-club-3.jpg",
+      "new": "images/product-photos/brad-garretts-comedy-club/brad-garretts-comedy-club-3.jpg",
+      "sha": "484cc041fa20eafe7f3228b62a44ae8ceb13d4e0",
+      "size": 129608
+    },
+    {
+      "old": "images/brad-garretts-comedy-club-hero.jpg",
+      "new": "images/product-photos/brad-garretts-comedy-club/brad-garretts-comedy-club-hero.jpg",
+      "sha": "acecdc8a79f31ab89d2d4d450b85464d406cbc1a",
+      "size": 45928
+    },
+    {
+      "old": "images/brad-garretts-comedy-club-hero.webp",
+      "new": "images/product-photos/brad-garretts-comedy-club/brad-garretts-comedy-club-hero.webp",
+      "sha": "ae2b946769ebbd8832f73f6c45fc5576f89241e4",
+      "size": 24768
+    },
+    {
+      "old": "images/brad-garretts-comedy-club-seating-chart.jpg",
+      "new": "images/seating-charts/brad-garretts-comedy-club/brad-garretts-comedy-club-seating-chart.jpg",
+      "sha": "539107b7b8d1dda93ce6da103480f435d2715409",
+      "size": 214911
+    },
+    {
+      "old": "images/bugsys-cabaret-seating-chart.svg",
+      "new": "images/seating-charts/bugsys-cabaret/bugsys-cabaret-seating-chart.svg",
+      "sha": "e5bf15278b2ae43fd1f695ab4282b68f98cca723",
+      "size": 5538
+    },
+    {
+      "old": "images/carrot-top-atrium-showroom-seating-chart.svg",
+      "new": "images/seating-charts/atrium-showroom-luxor/carrot-top-atrium-showroom-seating-chart.svg",
+      "sha": "0f9e4fcae66954118f6da6d15bad51eb0bd8ef0d",
+      "size": 5401
+    },
+    {
+      "old": "images/carrot-top-hero.jpg",
+      "new": "images/product-photos/carrot-top/carrot-top-hero.jpg",
+      "sha": "e0dee40c1a280089a25abb9072fc602acfae6157",
+      "size": 76748
+    },
+    {
+      "old": "images/carrot-top-hero.webp",
+      "new": "images/product-photos/carrot-top/carrot-top-hero.webp",
+      "sha": "447ce9be92bdef865cae44f6d034966db4627589",
+      "size": 65230
+    },
+    {
+      "old": "images/carrot-top-las-vegas-comedy-closeup.jpg",
+      "new": "images/product-photos/carrot-top/carrot-top-las-vegas-comedy-closeup.jpg",
+      "sha": "f53098b33e307e9fd34c68201f1889ec366aa778",
+      "size": 227069
+    },
+    {
+      "old": "images/carrot-top-las-vegas-onstage-pointing.jpg",
+      "new": "images/product-photos/carrot-top/carrot-top-las-vegas-onstage-pointing.jpg",
+      "sha": "bcc4a9f32f5132dc63898b89e3a9a13e5dbbd0bc",
+      "size": 189155
+    },
+    {
+      "old": "images/carrot-top-show-2.jpg",
+      "new": "images/product-photos/carrot-top/carrot-top-show-2.jpg",
+      "sha": "cb7e779c19fb9c0003d99e98c9b6f78f1d7d5f23",
+      "size": 44642
+    },
+    {
+      "old": "images/carrot-top-show-3.jpg",
+      "new": "images/product-photos/carrot-top/carrot-top-show-3.jpg",
+      "sha": "b77bd8d8999791c728046b1541a18bf33012006f",
+      "size": 48756
+    },
+    {
+      "old": "images/chippendales-hero.jpg",
+      "new": "images/product-photos/chippendales/chippendales-hero.jpg",
+      "sha": "ea165e5ce3ec1f2d20f50b1a9957d7291ce8dfd4",
+      "size": 71502
+    },
+    {
+      "old": "images/chippendales-theatre-ph-seating-chart.svg",
+      "new": "images/seating-charts/chippendales-theatre-ph/chippendales-theatre-ph-seating-chart.svg",
+      "sha": "e9107f1a009fc3a816ae4bbcc3b121613a19bdac",
+      "size": 2217
+    },
+    {
+      "old": "images/clay-walker-og.jpg",
+      "new": "images/news/clay-walker-og.jpg",
+      "sha": "deffb7a566861ccfd0397b43e4ba62ce9c9f457d",
+      "size": 270142
+    },
+    {
+      "old": "images/colin-cloud-2.jpg",
+      "new": "images/product-photos/colin-cloud/colin-cloud-2.jpg",
+      "sha": "6a26e3e4d65789d1867ff277185b0a76ef40c2ad",
+      "size": 144076
+    },
+    {
+      "old": "images/colin-cloud-3.jpg",
+      "new": "images/product-photos/colin-cloud/colin-cloud-3.jpg",
+      "sha": "ce27dc5e86859b0ce999cd1c6c656d964c8cb857",
+      "size": 101184
+    },
+    {
+      "old": "images/colin-cloud-hero.jpg",
+      "new": "images/product-photos/colin-cloud/colin-cloud-hero.jpg",
+      "sha": "879ea55bb92723b5bc923183052b62b4ebbfdb8c",
+      "size": 56495
+    },
+    {
+      "old": "images/colin-cloud-seating-chart.jpg",
+      "new": "images/seating-charts/colin-cloud/colin-cloud-seating-chart.jpg",
+      "sha": "0259c254e173811441894021291bf6b6a5bfb659",
+      "size": 199080
+    },
+    {
+      "old": "images/comedy-cellar-2.png",
+      "new": "images/product-photos/comedy-cellar/comedy-cellar-2.png",
+      "sha": "647642bdd70dc8cd857ffa19616a791b58c05cce",
+      "size": 2001792
+    },
+    {
+      "old": "images/comedy-cellar-3.webp",
+      "new": "images/product-photos/comedy-cellar/comedy-cellar-3.webp",
+      "sha": "bef73b1532e4faa864f62f52a0b25163e9d87330",
+      "size": 21354
+    },
+    {
+      "old": "images/comedy-cellar-hero.jpg",
+      "new": "images/product-photos/comedy-cellar/comedy-cellar-hero.jpg",
+      "sha": "12f1e18b575734f02cd8d008b0b8a9d504eece80",
+      "size": 702015
+    },
+    {
+      "old": "images/comedy-cellar-hero.webp",
+      "new": "images/product-photos/comedy-cellar/comedy-cellar-hero.webp",
+      "sha": "ac8a243ec70bd10101c59faf7ae83af26ea8d232",
+      "size": 66618
+    },
+    {
+      "old": "images/comedy-cellar-rio-seating-chart.svg",
+      "new": "images/seating-charts/comedy-cellar-rio/comedy-cellar-rio-seating-chart.svg",
+      "sha": "c8bbfd9a118d34fca3c7e3bd147cd7f1bb436dcb",
+      "size": 3632
+    },
+    {
+      "old": "images/comedy-cellar-seating-chart.webp",
+      "new": "images/seating-charts/comedy-cellar-rio/comedy-cellar-seating-chart.webp",
+      "sha": "bdd28822b125de921d2f28ee9ed0e5344355ba9f",
+      "size": 210743
+    },
+    {
+      "old": "images/criss-angel-2.jpg",
+      "new": "images/product-photos/criss-angel/criss-angel-2.jpg",
+      "sha": "287b7b5c86034daf37e59d37775554e4b597b099",
+      "size": 111584
+    },
+    {
+      "old": "images/criss-angel-3.jpg",
+      "new": "images/product-photos/criss-angel/criss-angel-3.jpg",
+      "sha": "5dc6b51cfd0d1e932ebc019df906ecd28e3d0793",
+      "size": 117255
+    },
+    {
+      "old": "images/criss-angel-hero.jpg",
+      "new": "images/product-photos/criss-angel/criss-angel-hero.jpg",
+      "sha": "b0a1fd74a90b6faa362db22006ef01c1f5abf8ac",
+      "size": 45961
+    },
+    {
+      "old": "images/criss-angel-hero.webp",
+      "new": "images/product-photos/criss-angel/criss-angel-hero.webp",
+      "sha": "c2a90ae9b364b9d49dc31806bf025f8ca0f1e3a0",
+      "size": 35314
+    },
+    {
+      "old": "images/criss-angel-mindfreak-seating-chart.jpg",
+      "new": "images/seating-charts/criss-angel-theatre/criss-angel-mindfreak-seating-chart.jpg",
+      "sha": "72ee13433213c14ef18dad10a26490957b7c1697",
+      "size": 4850
+    },
+    {
+      "old": "images/criss-angel-mindfreak-seating-chart.webp",
+      "new": "images/seating-charts/criss-angel-theatre/criss-angel-mindfreak-seating-chart.webp",
+      "sha": "d7354d1e04a210b174835d55caa3844a4f92a579",
+      "size": 364486
+    },
+    {
+      "old": "images/criss-angel-theatre-seating-chart.svg",
+      "new": "images/seating-charts/criss-angel-theatre/criss-angel-theatre-seating-chart.svg",
+      "sha": "d9eb76f205f4d5608461b341610260038d47825b",
+      "size": 4054
+    },
+    {
+      "old": "images/david-goldrake-2.webp",
+      "new": "images/product-photos/david-goldrake/david-goldrake-2.webp",
+      "sha": "9cb93f1a3a20c8fa823fdaf3e31fcd64f5500063",
+      "size": 39732
+    },
+    {
+      "old": "images/david-goldrake-3.webp",
+      "new": "images/product-photos/david-goldrake/david-goldrake-3.webp",
+      "sha": "fd32e97361dcc099a10b8f2717470afd26612811",
+      "size": 34298
+    },
+    {
+      "old": "images/david-goldrake-hero.webp",
+      "new": "images/product-photos/david-goldrake/david-goldrake-hero.webp",
+      "sha": "064c34c3bb7b0d112b32435cca2249452372477b",
+      "size": 59184
+    },
+    {
+      "old": "images/david-spade-nikki-glaser-las-vegas-2027.jpg",
+      "new": "images/news/david-spade-nikki-glaser-las-vegas-2027.jpg",
+      "sha": "bc2ae865bd4516160e88fa7021a527fe75b8a179",
+      "size": 426189
+    },
+    {
+      "old": "images/donny-osmond-2.webp",
+      "new": "images/product-photos/donny-osmond/donny-osmond-2.webp",
+      "sha": "c4f61e0272ddcbe9b0987684745443429531031e",
+      "size": 38878
+    },
+    {
+      "old": "images/donny-osmond-3.webp",
+      "new": "images/product-photos/donny-osmond/donny-osmond-3.webp",
+      "sha": "250b8f80b4cf6ed1ae78a150f6abff593c392496",
+      "size": 8812
+    },
+    {
+      "old": "images/donny-osmond-hero.webp",
+      "new": "images/product-photos/donny-osmond/donny-osmond-hero.webp",
+      "sha": "80e7b022a27a70bac811a309d66405803a6d559d",
+      "size": 37444
+    },
+    {
+      "old": "images/donny-osmond-seating-chart.jpg",
+      "new": "images/seating-charts/donny-osmond/donny-osmond-seating-chart.jpg",
+      "sha": "cb7d1a13f321d724dec1fb67894cb16fa47b5190",
+      "size": 371823
+    },
+    {
+      "old": "images/elm-hero.webp",
+      "new": "images/venue-photos/excalibur-luxor-mandalay-bay/elm-hero.webp",
+      "sha": "05b58153e230eec9acd36a9307108d882798f4ee",
+      "size": 178152
+    },
+    {
+      "old": "images/elm-og.jpg",
+      "new": "images/venue-photos/excalibur-luxor-mandalay-bay/elm-og.jpg",
+      "sha": "8395d6d790d5c6b4b2641cae91c50c638bf52f34",
+      "size": 198012
+    },
+    {
+      "old": "images/empire-strips-back-2.webp",
+      "new": "images/product-photos/empire-strips-back/empire-strips-back-2.webp",
+      "sha": "1ba03db6efd0d6948518ffafaea1229e024d5fd4",
+      "size": 44908
+    },
+    {
+      "old": "images/empire-strips-back-3.webp",
+      "new": "images/product-photos/empire-strips-back/empire-strips-back-3.webp",
+      "sha": "f83e3af195b44594a0f1603e99f82924b68026e9",
+      "size": 100450
+    },
+    {
+      "old": "images/empire-strips-back-hero.webp",
+      "new": "images/product-photos/empire-strips-back/empire-strips-back-hero.webp",
+      "sha": "287510bb53c8bf0524cc83cf6da347ae094c1434",
+      "size": 34894
+    },
+    {
+      "old": "images/empire-strips-back-seating-chart.png",
+      "new": "images/seating-charts/empire-strips-back/empire-strips-back-seating-chart.png",
+      "sha": "600c30d3dbf076e975cfa358c22319811374dd5e",
+      "size": 244201
+    },
+    {
+      "old": "images/excalibur-banner.webp",
+      "new": "images/venue-photos/excalibur/excalibur-banner.webp",
+      "sha": "5c6117b5571ff5a741da4835fef335214675127c",
+      "size": 71982
+    },
+    {
+      "old": "images/fantasy-atrium-showroom-seating-chart.svg",
+      "new": "images/seating-charts/atrium-showroom-luxor/fantasy-atrium-showroom-seating-chart.svg",
+      "sha": "d1452883c88a7ff31533ea66579b941a5bccb05f",
+      "size": 3897
+    },
+    {
+      "old": "images/fantasy-hero.webp",
+      "new": "images/product-photos/fantasy/fantasy-hero.webp",
+      "sha": "c3a97f997b2fca0e39df65b9bfb719619dec44c8",
+      "size": 54742
+    },
+    {
+      "old": "images/flamingo-banner.webp",
+      "new": "images/venue-photos/flamingo/flamingo-banner.webp",
+      "sha": "05d6275840b0ea673a8d82d02ca9d3b6d30f6978",
+      "size": 103950
+    },
+    {
+      "old": "images/for-king-country-og.jpg",
+      "new": "images/news/for-king-country-og.jpg",
+      "sha": "5487220d9f68751ce5bfa8aaa57e831a8b37afc0",
+      "size": 116502
+    },
+    {
+      "old": "images/guide-adult-cover.jpg",
+      "new": "images/guides/guide-adult-cover.jpg",
+      "sha": "71be35b3d69f4be8438589b942f103e2947a7c80",
+      "size": 95939
+    },
+    {
+      "old": "images/guide-cheap-vegas-cover.jpg",
+      "new": "images/guides/guide-cheap-vegas-cover.jpg",
+      "sha": "bd04b805325df1e219b1e10363b981ac639bba17",
+      "size": 161127
+    },
+    {
+      "old": "images/guide-cirque-cover.jpg",
+      "new": "images/guides/guide-cirque-cover.jpg",
+      "sha": "777148f93266d021fb617da5d7f476f374bad7d4",
+      "size": 165765
+    },
+    {
+      "old": "images/guide-couples-cover.jpg",
+      "new": "images/guides/guide-couples-cover.jpg",
+      "sha": "be25ead674a17cc93dab6fd527a2304623dc28fc",
+      "size": 170190
+    },
+    {
+      "old": "images/guide-families-cover.jpg",
+      "new": "images/guides/guide-families-cover.jpg",
+      "sha": "2db24bd67de3226af0770b5d4e95b303e4e7ef10",
+      "size": 154932
+    },
+    {
+      "old": "images/guide-first-timers-cover.jpg",
+      "new": "images/guides/guide-first-timers-cover.jpg",
+      "sha": "21dfb8556dab0f85f7facc246788766b2dbdcd3f",
+      "size": 229795
+    },
+    {
+      "old": "images/guide-magic-cover.jpg",
+      "new": "images/guides/guide-magic-cover.jpg",
+      "sha": "ac5249a1025064da786f2dc0d79f80ca40077da5",
+      "size": 165636
+    },
+    {
+      "old": "images/guide-tribute-cover.jpg",
+      "new": "images/guides/guide-tribute-cover.jpg",
+      "sha": "f326401b6a0639c9301970c1e35fcb4ab69de4a1",
+      "size": 141493
+    },
+    {
+      "old": "images/harrahs-banner.webp",
+      "new": "images/venue-photos/harrahs/harrahs-banner.webp",
+      "sha": "68405187624062a9b8ec5a8d4b6e26f0341e7dd3",
+      "size": 88886
+    },
+    {
+      "old": "images/harrahs-cabaret-seating-chart.svg",
+      "new": "images/seating-charts/harrahs-cabaret/harrahs-cabaret-seating-chart.svg",
+      "sha": "dc00789432e1c32bbbf5e54f9cf57552a2de3732",
+      "size": 2121
+    },
+    {
+      "old": "images/home-og.jpg",
+      "new": "images/site/home-og.jpg",
+      "sha": "b873b5eb19d159acb82d46d5ef5713dfda137b9c",
+      "size": 121182
+    },
+    {
+      "old": "images/horseshoe-hero.webp",
+      "new": "images/venue-photos/horseshoe/horseshoe-hero.webp",
+      "sha": "d0bf5f52ee022d42e60e89c9d03057ff691a4352",
+      "size": 54854
+    },
+    {
+      "old": "images/horseshoe-og.jpg",
+      "new": "images/venue-photos/horseshoe/horseshoe-og.jpg",
+      "sha": "ac4c9a816c1b8d47fc82cf4f1234a0453be138f9",
+      "size": 78192
+    },
+    {
+      "old": "images/ikons-of-rock-2.webp",
+      "new": "images/product-photos/ikons-of-rock/ikons-of-rock-2.webp",
+      "sha": "5619280def548430f93afcb8032265604cb79f0f",
+      "size": 33346
+    },
+    {
+      "old": "images/ikons-of-rock-3.webp",
+      "new": "images/product-photos/ikons-of-rock/ikons-of-rock-3.webp",
+      "sha": "b7d14d583b45672202ec34d9563e7e81bc38971a",
+      "size": 73560
+    },
+    {
+      "old": "images/ikons-of-rock-hero.webp",
+      "new": "images/product-photos/ikons-of-rock/ikons-of-rock-hero.webp",
+      "sha": "b689345eb5bee7ed6dae7be2f8234ec52758116f",
+      "size": 79690
+    },
+    {
+      "old": "images/ikons-of-rock-seating-chart.jpg",
+      "new": "images/seating-charts/ikons-of-rock/ikons-of-rock-seating-chart.jpg",
+      "sha": "d7ed8dd400bfe12499c175d5ac9ad590d8ac2e83",
+      "size": 326776
+    },
+    {
+      "old": "images/jabbawockeez-hero.webp",
+      "new": "images/product-photos/jabbawockeez/jabbawockeez-hero.webp",
+      "sha": "3df9464434f31639dc2621f7db27a983fefba6d6",
+      "size": 26600
+    },
+    {
+      "old": "images/jabbawockeez-og.jpg",
+      "new": "images/product-photos/jabbawockeez/jabbawockeez-og.jpg",
+      "sha": "14777cc1ec24b619b1ce6f4c8ddd055068dc0b3f",
+      "size": 114395
+    },
+    {
+      "old": "images/jabbawockeez-show-2.webp",
+      "new": "images/product-photos/jabbawockeez/jabbawockeez-show-2.webp",
+      "sha": "014851cd8015b4b90e5eb6a6de8fb86fed34e703",
+      "size": 19908
+    },
+    {
+      "old": "images/jabbawockeez-show-3.webp",
+      "new": "images/product-photos/jabbawockeez/jabbawockeez-show-3.webp",
+      "sha": "9fb594d1c177f0b3496078572ee40012a5fd69e3",
+      "size": 53124
+    },
+    {
+      "old": "images/jabbawockeez-theater-mgm-seating-chart.svg",
+      "new": "images/seating-charts/jabbawockeez-theater-mgm/jabbawockeez-theater-mgm-seating-chart.svg",
+      "sha": "36b00d562b484f10e7082bea02414d0aeecd0090",
+      "size": 2303
+    },
+    {
+      "old": "images/jabbawockeez-theater-seating-chart.svg",
+      "new": "images/seating-charts/jabbawockeez-theater-mgm/jabbawockeez-theater-seating-chart.svg",
+      "sha": "3ce30fc8f3fcda92ec1a38df59ed873c8017ae18",
+      "size": 1923
+    },
+    {
+      "old": "images/jimmy-kimmels-comedy-club-2.webp",
+      "new": "images/product-photos/jimmy-kimmels-comedy-club/jimmy-kimmels-comedy-club-2.webp",
+      "sha": "9c6f0432fa895bbc3d06179bb1e3623c5c934a0b",
+      "size": 37654
+    },
+    {
+      "old": "images/jimmy-kimmels-comedy-club-3.webp",
+      "new": "images/product-photos/jimmy-kimmels-comedy-club/jimmy-kimmels-comedy-club-3.webp",
+      "sha": "9f28afbef2863c42292b0a2efab395ff5af784e0",
+      "size": 92352
+    },
+    {
+      "old": "images/jimmy-kimmels-comedy-club-hero.webp",
+      "new": "images/product-photos/jimmy-kimmels-comedy-club/jimmy-kimmels-comedy-club-hero.webp",
+      "sha": "e032a0313f83f9bf05777aa4450a141a85afa0dc",
+      "size": 31816
+    },
+    {
+      "old": "images/jimmy-kimmels-comedy-club-seating-chart.jpg",
+      "new": "images/seating-charts/jimmy-kimmels-comedy-club/jimmy-kimmels-comedy-club-seating-chart.jpg",
+      "sha": "0604168e5029dbeacd5d755463ec33565c4bd694",
+      "size": 254017
+    },
+    {
+      "old": "images/john-mayer-live-at-sphere-las-vegas.jpg",
+      "new": "images/news/john-mayer-live-at-sphere-las-vegas.jpg",
+      "sha": "04572a92b28d17928c93ce0d6b5ac459779ae7c5",
+      "size": 251803
+    },
+    {
+      "old": "images/ka-hero.jpg",
+      "new": "images/product-photos/ka/ka-hero.jpg",
+      "sha": "906a68054865549713db9a796a48f799f9d42bda",
+      "size": 156362
+    },
+    {
+      "old": "images/ka-hero.webp",
+      "new": "images/product-photos/ka/ka-hero.webp",
+      "sha": "9599d870523daa5fea7f6e2fa0b2564e78139697",
+      "size": 96828
+    },
+    {
+      "old": "images/ka-seating-chart.webp",
+      "new": "images/seating-charts/ka-theatre/ka-seating-chart.webp",
+      "sha": "47215921bc868eadb2792ae61f9dfdec8cff3a0e",
+      "size": 334034
+    },
+    {
+      "old": "images/ka-show-2.jpg",
+      "new": "images/product-photos/ka/ka-show-2.jpg",
+      "sha": "209f282eccbbf6e4b5c88d86412625aa1de286c2",
+      "size": 221746
+    },
+    {
+      "old": "images/ka-show-3.jpg",
+      "new": "images/product-photos/ka/ka-show-3.jpg",
+      "sha": "802a98f9fb7eb626bf0934a52411dae94fd1d02d",
+      "size": 103237
+    },
+    {
+      "old": "images/ka-theatre-seating-chart.svg",
+      "new": "images/seating-charts/ka-theatre/ka-theatre-seating-chart.svg",
+      "sha": "e59aeb0624bf1805cf7a7dc02020cfb28613f362",
+      "size": 2351
+    },
+    {
+      "old": "images/king-of-diamonds-2.webp",
+      "new": "images/product-photos/king-of-diamonds/king-of-diamonds-2.webp",
+      "sha": "5cf770ba73328f6da1dbc0d1128cbf0e9b349b64",
+      "size": 47116
+    },
+    {
+      "old": "images/king-of-diamonds-3.webp",
+      "new": "images/product-photos/king-of-diamonds/king-of-diamonds-3.webp",
+      "sha": "88acb6737b6e852262acd24a62fb42511c1d7b0d",
+      "size": 46892
+    },
+    {
+      "old": "images/king-of-diamonds-4.webp",
+      "new": "images/product-photos/king-of-diamonds/king-of-diamonds-4.webp",
+      "sha": "1dc782c14baad7e9339e09e2d28dc824ea9400a8",
+      "size": 46814
+    },
+    {
+      "old": "images/king-of-diamonds-5.webp",
+      "new": "images/product-photos/king-of-diamonds/king-of-diamonds-5.webp",
+      "sha": "bcc9b8a1808db5c1b00cb8f4c13bff7c87f8eee6",
+      "size": 37268
+    },
+    {
+      "old": "images/king-of-diamonds-hero.jpg",
+      "new": "images/product-photos/king-of-diamonds/king-of-diamonds-hero.jpg",
+      "sha": "4cf2181595a6a276ad9dad25b8a71eaf5d350a10",
+      "size": 48393
+    },
+    {
+      "old": "images/king-of-diamonds-hero.webp",
+      "new": "images/product-photos/king-of-diamonds/king-of-diamonds-hero.webp",
+      "sha": "f7e7a476ea3eb7a8f3f930969555eb94a10d0158",
+      "size": 28640
+    },
+    {
+      "old": "images/king-of-diamonds-og.jpg",
+      "new": "images/product-photos/king-of-diamonds/king-of-diamonds-og.jpg",
+      "sha": "997adfa6cdbc63150b9d4a5a95e649773b3f35af",
+      "size": 65143
+    },
+    {
+      "old": "images/king-of-diamonds-seating-chart.webp",
+      "new": "images/seating-charts/king-of-diamonds/king-of-diamonds-seating-chart.webp",
+      "sha": "b3db8d9e80af4fb5b1cc337e2dfe32b024b29c0b",
+      "size": 234886
+    },
+    {
+      "old": "images/koko-chip.webp",
+      "new": "images/play/koko-chip.webp",
+      "sha": "bb72f711e20b989e62ec89d7dea82aa30a814785",
+      "size": 10828
+    },
+    {
+      "old": "images/koko-plinko-og.jpg",
+      "new": "images/play/koko-plinko-og.jpg",
+      "sha": "2d62ba866798af48f4ec45b4e318e971e48685d7",
+      "size": 64120
+    },
+    {
+      "old": "images/kris-kidd-avatar.jpg",
+      "new": "images/brand/kris-kidd-avatar.jpg",
+      "sha": "03b7b56c4f81678aede9da7c9b6100aa6b0817e8",
+      "size": 15007
+    },
+    {
+      "old": "images/kris-kidd.png",
+      "new": "images/brand/kris-kidd.png",
+      "sha": "ae442eafeb10866b80399ce8520a32498083f333",
+      "size": 1574115
+    },
+    {
+      "old": "images/kris-kidd.webp",
+      "new": "images/brand/kris-kidd.webp",
+      "sha": "2a8ea0ad0ee442e3ff7e9d35120f717f36f0e0ed",
+      "size": 94512
+    },
+    {
+      "old": "images/la-comedy-club-2.jpg",
+      "new": "images/product-photos/la-comedy-club/la-comedy-club-2.jpg",
+      "sha": "83357875ed39ff7b88d687370233b79bae1826f4",
+      "size": 495594
+    },
+    {
+      "old": "images/la-comedy-club-3.jpg",
+      "new": "images/product-photos/la-comedy-club/la-comedy-club-3.jpg",
+      "sha": "f8b8c746f538b8e81d74e7c0fc6ddf8f8ac0b476",
+      "size": 372056
+    },
+    {
+      "old": "images/la-comedy-club-hero.jpg",
+      "new": "images/product-photos/la-comedy-club/la-comedy-club-hero.jpg",
+      "sha": "d28c9005e5887955b400fa95c271f4372625418d",
+      "size": 103394
+    },
+    {
+      "old": "images/la-comedy-club-hero.webp",
+      "new": "images/product-photos/la-comedy-club/la-comedy-club-hero.webp",
+      "sha": "8b0f73d797b1c43bc31d0c5087dfb0bb6307b758",
+      "size": 42904
+    },
+    {
+      "old": "images/la-comedy-club-seating-chart.png",
+      "new": "images/seating-charts/la-comedy-club/la-comedy-club-seating-chart.png",
+      "sha": "7cd6b326fb1692a284ea927f01067cf2259e4bf5",
+      "size": 482606
+    },
+    {
+      "old": "images/las-vegas-headliners-residencies-social.png",
+      "new": "images/sidekick-index/las-vegas-headliners-residencies-social.png",
+      "sha": "4200e9df98a4d14dde8ac02de07cab3bc224f254",
+      "size": 191667
+    },
+    {
+      "old": "images/las-vegas-live-comedy-club-2.jpg",
+      "new": "images/product-photos/las-vegas-live-comedy-club/las-vegas-live-comedy-club-2.jpg",
+      "sha": "53f123ea0d2d4ad7fdea5bca0f0b10c9656f6bf6",
+      "size": 23631
+    },
+    {
+      "old": "images/las-vegas-live-comedy-club-3.jpg",
+      "new": "images/product-photos/las-vegas-live-comedy-club/las-vegas-live-comedy-club-3.jpg",
+      "sha": "61a3314e3555cfcc305e643603fea91c14133d32",
+      "size": 18652
+    },
+    {
+      "old": "images/las-vegas-live-comedy-club-hero.jpg",
+      "new": "images/product-photos/las-vegas-live-comedy-club/las-vegas-live-comedy-club-hero.jpg",
+      "sha": "00df97a7ead1bbee517bd4fefd56009ca69deb3e",
+      "size": 60452
+    },
+    {
+      "old": "images/las-vegas-live-comedy-club-hero.webp",
+      "new": "images/product-photos/las-vegas-live-comedy-club/las-vegas-live-comedy-club-hero.webp",
+      "sha": "f43b85b6e45c9857118bdc8b26b4d199505fe032",
+      "size": 42794
+    },
+    {
+      "old": "images/laugh-factory-2.jpg",
+      "new": "images/product-photos/laugh-factory/laugh-factory-2.jpg",
+      "sha": "24ef280b114151ce82048660b0cfa894c372f25f",
+      "size": 1215335
+    },
+    {
+      "old": "images/laugh-factory-3.jpg",
+      "new": "images/product-photos/laugh-factory/laugh-factory-3.jpg",
+      "sha": "454034292fb9b72eeebe15a929b0c0ff36cb3451",
+      "size": 675277
+    },
+    {
+      "old": "images/laugh-factory-hero.jpg",
+      "new": "images/product-photos/laugh-factory/laugh-factory-hero.jpg",
+      "sha": "e41aa7c52e3bc0d8ed1736704d3eb018be3f8282",
+      "size": 37779
+    },
+    {
+      "old": "images/laugh-factory-hero.webp",
+      "new": "images/product-photos/laugh-factory/laugh-factory-hero.webp",
+      "sha": "2a97529430457314259d0138c1422a500f1f348f",
+      "size": 23918
+    },
+    {
+      "old": "images/laugh-factory-horseshoe-seating-chart.svg",
+      "new": "images/seating-charts/laugh-factory/laugh-factory-horseshoe-seating-chart.svg",
+      "sha": "376514664c827be67932bacee89de670b9d8ca5f",
+      "size": 1930
+    },
+    {
+      "old": "images/laugh-factory-seating-chart.jpg",
+      "new": "images/seating-charts/laugh-factory/laugh-factory-seating-chart.jpg",
+      "sha": "1171516151469943961d77a1b14fccbff8cd5f8a",
+      "size": 276260
+    },
+    {
+      "old": "images/lewis-black-og.jpg",
+      "new": "images/news/lewis-black-og.jpg",
+      "sha": "40885cbeb4bf3ed582e3b4fd317759016832fddc",
+      "size": 127135
+    },
+    {
+      "old": "images/lfh-hero.webp",
+      "new": "images/venue-photos/linq-flamingo-harrahs/lfh-hero.webp",
+      "sha": "17e9ee5913f0586b6726d6789c22b824695fdc32",
+      "size": 173286
+    },
+    {
+      "old": "images/lfh-og.jpg",
+      "new": "images/venue-photos/linq-flamingo-harrahs/lfh-og.jpg",
+      "sha": "a70c85b7180cebf267c9ffe754b4ba41fc576a71",
+      "size": 189423
+    },
+    {
+      "old": "images/linq-banner.webp",
+      "new": "images/venue-photos/linq/linq-banner.webp",
+      "sha": "5126c8c357cd0e7e4cb9d3cac238dfb14922d37c",
+      "size": 117550
+    },
+    {
+      "old": "images/logo-badge.png",
+      "new": "images/brand/logo-badge.png",
+      "sha": "9eaa148c0bbf7d996f0f69d93beb93776ebb280f",
+      "size": 1207936
+    },
+    {
+      "old": "images/logo-horizontal-header.png",
+      "new": "images/brand/logo-horizontal-header.png",
+      "sha": "a01c15669111ed6614dcee194ee6bbdda53021dc",
+      "size": 10080
+    },
+    {
+      "old": "images/logo-horizontal.png",
+      "new": "images/brand/logo-horizontal.png",
+      "sha": "cb509c2c7709675092c4b0956cb43853ca1ba355",
+      "size": 155396
+    },
+    {
+      "old": "images/logo-pill.png",
+      "new": "images/brand/logo-pill.png",
+      "sha": "dfd35aeb297bbe5a275077cdcb4025391b448b57",
+      "size": 365821
+    },
+    {
+      "old": "images/luxor-banner.webp",
+      "new": "images/venue-photos/luxor/luxor-banner.webp",
+      "sha": "4fd73534a5006a4ff5f1901a3de8accb56f28076",
+      "size": 131466
+    },
+    {
+      "old": "images/mac-king-2.jpg",
+      "new": "images/product-photos/mac-king/mac-king-2.jpg",
+      "sha": "8d3aeafb754234ee71ba71daf182d7324066c935",
+      "size": 226041
+    },
+    {
+      "old": "images/mac-king-3.jpg",
+      "new": "images/product-photos/mac-king/mac-king-3.jpg",
+      "sha": "07349dbd7c168ea1dbbfb9083865b331a1353c42",
+      "size": 114829
+    },
+    {
+      "old": "images/mac-king-hero.jpg",
+      "new": "images/product-photos/mac-king/mac-king-hero.jpg",
+      "sha": "c86bddb4904adbd35e4c6db07a6ae6d52ec1e25a",
+      "size": 32553
+    },
+    {
+      "old": "images/mac-king-hero.webp",
+      "new": "images/product-photos/mac-king/mac-king-hero.webp",
+      "sha": "a78dbd534d051d3b7abe3a7cf22600dde31a8a62",
+      "size": 23948
+    },
+    {
+      "old": "images/mac-king-seating-chart.jpg",
+      "new": "images/seating-charts/mac-king-theater/mac-king-seating-chart.jpg",
+      "sha": "53e042024bd58b0d536b19cb633c18535b86412b",
+      "size": 306494
+    },
+    {
+      "old": "images/mad-apple-hero.jpg",
+      "new": "images/product-photos/mad-apple/mad-apple-hero.jpg",
+      "sha": "2342fe1b7bc9496a063f08969aa0e3f970038c2e",
+      "size": 85132
+    },
+    {
+      "old": "images/mad-apple-hero.webp",
+      "new": "images/product-photos/mad-apple/mad-apple-hero.webp",
+      "sha": "950cf57fdca370e90a3b5dfb78766811ae8fe8ff",
+      "size": 59500
+    },
+    {
+      "old": "images/mad-apple-show-2.jpg",
+      "new": "images/product-photos/mad-apple/mad-apple-show-2.jpg",
+      "sha": "d427136bac3b8429f88e11b91b89b5461c2568ff",
+      "size": 53251
+    },
+    {
+      "old": "images/mad-apple-show-2.webp",
+      "new": "images/product-photos/mad-apple/mad-apple-show-2.webp",
+      "sha": "b4e88f87b160697eb438f580e21efffbdf339ae1",
+      "size": 38686
+    },
+    {
+      "old": "images/mad-apple-show-3.jpg",
+      "new": "images/product-photos/mad-apple/mad-apple-show-3.jpg",
+      "sha": "a6e1487d252effbac6a08b7bee006404ce43c149",
+      "size": 48692
+    },
+    {
+      "old": "images/mad-apple-show-3.webp",
+      "new": "images/product-photos/mad-apple/mad-apple-show-3.webp",
+      "sha": "cc7264edbe65a0bc5e279c7ce517c957bb6cd5c2",
+      "size": 30566
+    },
+    {
+      "old": "images/magic-mike-live-hero.jpg",
+      "new": "images/product-photos/magic-mike-live/magic-mike-live-hero.jpg",
+      "sha": "57e9d7cb5dd0cc862e0682daeb1e7c281dfa2631",
+      "size": 74888
+    },
+    {
+      "old": "images/magic-mike-live-hero.webp",
+      "new": "images/product-photos/magic-mike-live/magic-mike-live-hero.webp",
+      "sha": "6ab637367e48eb80a54a7444a40a712ccf667ac8",
+      "size": 86898
+    },
+    {
+      "old": "images/magic-mike-live-show-2.webp",
+      "new": "images/product-photos/magic-mike-live/magic-mike-live-show-2.webp",
+      "sha": "c3b0e0f35c3c0aa1730cbfe1a182759e3daa2df5",
+      "size": 43942
+    },
+    {
+      "old": "images/magic-mike-live-show-3.webp",
+      "new": "images/product-photos/magic-mike-live/magic-mike-live-show-3.webp",
+      "sha": "e83a8053f24ee9e92c714c0d663a26fd2aaeefb3",
+      "size": 71372
+    },
+    {
+      "old": "images/magic-mike-live-theater-sahara-seating-chart.svg",
+      "new": "images/seating-charts/magic-mike-live-theater-sahara/magic-mike-live-theater-sahara-seating-chart.svg",
+      "sha": "a5185e4e1f994f18ec23bcbcce46d9a89c361b18",
+      "size": 2797
+    },
+    {
+      "old": "images/magic-mike-live-theater-seating-chart.svg",
+      "new": "images/seating-charts/magic-mike-live-theater-sahara/magic-mike-live-theater-seating-chart.svg",
+      "sha": "bf447dabd6c940561d4a5aa031926d9f6460e0fd",
+      "size": 2399
+    },
+    {
+      "old": "images/magicians-room-seating-chart.svg",
+      "new": "images/seating-charts/magicians-room/magicians-room-seating-chart.svg",
+      "sha": "2d6cb5a3d272ac04e844b6c8ccb3bbfdbfcfdfba",
+      "size": 1637
+    },
+    {
+      "old": "images/mandalay-bay-banner.webp",
+      "new": "images/venue-photos/mandalay-bay/mandalay-bay-banner.webp",
+      "sha": "71d74ba75a7116f63bc020027b5b00d10e2ae166",
+      "size": 148562
+    },
+    {
+      "old": "images/mandalay-bay-theatre-seating-chart.svg",
+      "new": "images/seating-charts/mandalay-bay-theatre/mandalay-bay-theatre-seating-chart.svg",
+      "sha": "1d4f8856cf5d1949927b5f2528beb6f496264fa7",
+      "size": 6671
+    },
+    {
+      "old": "images/marc-savard-comedy-hypnosis-2.jpg",
+      "new": "images/product-photos/marc-savard-comedy-hypnosis/marc-savard-comedy-hypnosis-2.jpg",
+      "sha": "8845c69b796f387383fb7988ccb73ba59057e195",
+      "size": 70524
+    },
+    {
+      "old": "images/marc-savard-comedy-hypnosis-3.jpg",
+      "new": "images/product-photos/marc-savard-comedy-hypnosis/marc-savard-comedy-hypnosis-3.jpg",
+      "sha": "0485e1d2be5308f21fd91ce75db4c2c416bdd31d",
+      "size": 86795
+    },
+    {
+      "old": "images/marc-savard-comedy-hypnosis-hero.jpg",
+      "new": "images/product-photos/marc-savard-comedy-hypnosis/marc-savard-comedy-hypnosis-hero.jpg",
+      "sha": "f0597e38bbe301089c624859db8e5244a8659176",
+      "size": 68900
+    },
+    {
+      "old": "images/marc-savard-comedy-hypnosis-hero.webp",
+      "new": "images/product-photos/marc-savard-comedy-hypnosis/marc-savard-comedy-hypnosis-hero.webp",
+      "sha": "c890bf9a24d3df2ed0c5e967e2b33831c44e68ee",
+      "size": 58066
+    },
+    {
+      "old": "images/marco-antonio-solis-og.jpg",
+      "new": "images/news/marco-antonio-solis-og.jpg",
+      "sha": "9ad893cbc2b6fafe92124a30f56aba00b647d038",
+      "size": 151200
+    },
+    {
+      "old": "images/marriage-can-be-murder-2.jpg",
+      "new": "images/product-photos/marriage-can-be-murder/marriage-can-be-murder-2.jpg",
+      "sha": "caa67baab37ee254f7acedec31a6cd9a0c779c5e",
+      "size": 78866
+    },
+    {
+      "old": "images/marriage-can-be-murder-3.jpg",
+      "new": "images/product-photos/marriage-can-be-murder/marriage-can-be-murder-3.jpg",
+      "sha": "1e2a50811c7dddc0c76a7ae91057d96439e56e19",
+      "size": 66541
+    },
+    {
+      "old": "images/marriage-can-be-murder-hero.jpg",
+      "new": "images/product-photos/marriage-can-be-murder/marriage-can-be-murder-hero.jpg",
+      "sha": "5a464afd101c84cadd2980205e3b5c2ff246ac45",
+      "size": 73103
+    },
+    {
+      "old": "images/marriage-can-be-murder-hero.webp",
+      "new": "images/product-photos/marriage-can-be-murder/marriage-can-be-murder-hero.webp",
+      "sha": "af3b5a8588887eed24813448581e2f3a9c4c1189",
+      "size": 57914
+    },
+    {
+      "old": "images/mat-franco-2.jpg",
+      "new": "images/product-photos/mat-franco/mat-franco-2.jpg",
+      "sha": "141a7adc7001f4c7fff916ffdbbb5c88a8ab2594",
+      "size": 16112
+    },
+    {
+      "old": "images/mat-franco-3.jpg",
+      "new": "images/product-photos/mat-franco/mat-franco-3.jpg",
+      "sha": "f37cf11ef7970af2cfd73f5a847c9a674857c063",
+      "size": 40860
+    },
+    {
+      "old": "images/mat-franco-hero.jpg",
+      "new": "images/product-photos/mat-franco/mat-franco-hero.jpg",
+      "sha": "470d7df5f08d0099ec4aa087aebb5de9046ff4f6",
+      "size": 19508
+    },
+    {
+      "old": "images/mat-franco-hero.webp",
+      "new": "images/product-photos/mat-franco/mat-franco-hero.webp",
+      "sha": "e457fae0ab4fab46184f7c777a98081703c15363",
+      "size": 14738
+    },
+    {
+      "old": "images/mat-franco-theater-linq-seating-chart.svg",
+      "new": "images/seating-charts/mat-franco-theater-linq/mat-franco-theater-linq-seating-chart.svg",
+      "sha": "256e237228a294554c53aa81a48b4e7a202bc440",
+      "size": 2127
+    },
+    {
+      "old": "images/mgm-grand-banner.webp",
+      "new": "images/venue-photos/mgm-grand/mgm-grand-banner.webp",
+      "sha": "5d6cbe0525e6c63a5b17203574f24d3f54e18506",
+      "size": 67966
+    },
+    {
+      "old": "images/mgm-grand-hero.webp",
+      "new": "images/venue-photos/mgm-grand/mgm-grand-hero.webp",
+      "sha": "933c8cc550fffb256ccc6e1b919000bc6659d838",
+      "size": 61296
+    },
+    {
+      "old": "images/mgm-grand-og.jpg",
+      "new": "images/venue-photos/mgm-grand/mgm-grand-og.jpg",
+      "sha": "bd52d3f7cd60cf46e8560fd1004d6827075879db",
+      "size": 93364
+    },
+    {
+      "old": "images/michael-jackson-one-seating-chart.webp",
+      "new": "images/seating-charts/michael-jackson-one/michael-jackson-one-seating-chart.webp",
+      "sha": "238a49ee27193b67b01f91d720f49cba39c3c3fa",
+      "size": 404403
+    },
+    {
+      "old": "images/mind2mind-2.webp",
+      "new": "images/product-photos/mind2mind/mind2mind-2.webp",
+      "sha": "a19f5ecc52be881b598df1b045b5d8c388e9d0fe",
+      "size": 34186
+    },
+    {
+      "old": "images/mind2mind-3.webp",
+      "new": "images/product-photos/mind2mind/mind2mind-3.webp",
+      "sha": "8aebfae498715ce3b9dd6bf4d8707be108513023",
+      "size": 34302
+    },
+    {
+      "old": "images/mind2mind-gallery-1.webp",
+      "new": "images/product-photos/mind2mind/mind2mind-gallery-1.webp",
+      "sha": "96753efb6a15f4392cd65f89c9815fd66f87d01a",
+      "size": 75500
+    },
+    {
+      "old": "images/mind2mind-gallery-2.webp",
+      "new": "images/product-photos/mind2mind/mind2mind-gallery-2.webp",
+      "sha": "988270072aafab5e979b6123fe57de9cdc524ce0",
+      "size": 25234
+    },
+    {
+      "old": "images/mind2mind-gallery-3.webp",
+      "new": "images/product-photos/mind2mind/mind2mind-gallery-3.webp",
+      "sha": "0025b211fa57e6f170f470cf01745383c6288f44",
+      "size": 36926
+    },
+    {
+      "old": "images/mind2mind-hero.webp",
+      "new": "images/product-photos/mind2mind/mind2mind-hero.webp",
+      "sha": "3ead62adaf96d06cdb58aa850dc330dc82d4db42",
+      "size": 46538
+    },
+    {
+      "old": "images/mind2mind-seating-chart.jpg",
+      "new": "images/seating-charts/mind2mind/mind2mind-seating-chart.jpg",
+      "sha": "d2aeb89af03a4780c9e79764746f7d6a3216442d",
+      "size": 208212
+    },
+    {
+      "old": "images/mj-live-2.webp",
+      "new": "images/product-photos/mj-live/mj-live-2.webp",
+      "sha": "13f4aa8e145d1ee8353a2049931273afafcf320b",
+      "size": 84842
+    },
+    {
+      "old": "images/mj-live-3.webp",
+      "new": "images/product-photos/mj-live/mj-live-3.webp",
+      "sha": "5cf94e2fde47b44b4bdbace3acff8da24b891792",
+      "size": 82890
+    },
+    {
+      "old": "images/mj-live-hero.webp",
+      "new": "images/product-photos/mj-live/mj-live-hero.webp",
+      "sha": "1d4f0f9ef47d7559b2e2ec7bb4e4f10b47f1a794",
+      "size": 62532
+    },
+    {
+      "old": "images/mj-live-seating-chart.jpg",
+      "new": "images/seating-charts/mj-live/mj-live-seating-chart.jpg",
+      "sha": "8a98cab8a71dea0945ba5aa33755dda56be3f3ab",
+      "size": 281437
+    },
+    {
+      "old": "images/mj-one-hero.jpg",
+      "new": "images/product-photos/michael-jackson-one/mj-one-hero.jpg",
+      "sha": "83f33a320ba7d7644dfcbe200a1ff1e6884db6c5",
+      "size": 48001
+    },
+    {
+      "old": "images/mj-one-show-2.jpg",
+      "new": "images/product-photos/michael-jackson-one/mj-one-show-2.jpg",
+      "sha": "35369b5e9f78ad4a0733729dc8c6db29c3b25eec",
+      "size": 59467
+    },
+    {
+      "old": "images/mj-one-show-3.jpg",
+      "new": "images/product-photos/michael-jackson-one/mj-one-show-3.jpg",
+      "sha": "ceb8119728afa25e3089fd1e2c5fafe917700701",
+      "size": 49403
+    },
+    {
+      "old": "images/more-touring-shows-concerts-social.png",
+      "new": "images/sidekick-index/more-touring-shows-concerts-social.png",
+      "sha": "cbf3dfd16628f3f22634d02da53c5a90c27a4aa5",
+      "size": 202288
+    },
+    {
+      "old": "images/motown-brunch-2.webp",
+      "new": "images/product-photos/motown-brunch/motown-brunch-2.webp",
+      "sha": "1ebf6d67b5a3645038db5a8ccc3575135ac9d95a",
+      "size": 89558
+    },
+    {
+      "old": "images/motown-brunch-3.webp",
+      "new": "images/product-photos/motown-brunch/motown-brunch-3.webp",
+      "sha": "1e05ba5f17da78ec4acbe43df67f6c8ad968ce57",
+      "size": 76582
+    },
+    {
+      "old": "images/motown-brunch-4.webp",
+      "new": "images/product-photos/motown-brunch/motown-brunch-4.webp",
+      "sha": "6b5c73b5ebc97c68182051c9f30dec342e864534",
+      "size": 63686
+    },
+    {
+      "old": "images/motown-brunch-5.webp",
+      "new": "images/product-photos/motown-brunch/motown-brunch-5.webp",
+      "sha": "5b4b6239ba370268ab4629a71ee706b0efe37ea6",
+      "size": 45078
+    },
+    {
+      "old": "images/motown-brunch-hero.jpg",
+      "new": "images/product-photos/motown-brunch/motown-brunch-hero.jpg",
+      "sha": "492d0fd2dd9f21bdf810ee62df6ec87b954e57d7",
+      "size": 55917
+    },
+    {
+      "old": "images/motown-brunch-hero.webp",
+      "new": "images/product-photos/motown-brunch/motown-brunch-hero.webp",
+      "sha": "f6839af7c71a0b6dd93ddc7b25def1a2757a2d8a",
+      "size": 35490
+    },
+    {
+      "old": "images/motown-brunch-og.jpg",
+      "new": "images/product-photos/motown-brunch/motown-brunch-og.jpg",
+      "sha": "d08fcdf3696300a8410972eb16a42588ec453696",
+      "size": 66730
+    },
+    {
+      "old": "images/motown-brunch-seating-chart.jpg",
+      "new": "images/seating-charts/motown-brunch/motown-brunch-seating-chart.jpg",
+      "sha": "7c1d006e186b44420eaaf43ee4db653fb2b0689c",
+      "size": 219567
+    },
+    {
+      "old": "images/mystere-hero.jpg",
+      "new": "images/product-photos/mystere/mystere-hero.jpg",
+      "sha": "c6fbfada4f946ba41434c4b459eaa5914ac3cec5",
+      "size": 67583
+    },
+    {
+      "old": "images/mystere-hero.webp",
+      "new": "images/product-photos/mystere/mystere-hero.webp",
+      "sha": "9ef30027865ebf07771d049a3f7a87770b27dc0e",
+      "size": 59248
+    },
+    {
+      "old": "images/mystere-las-vegas-acrobatic-duo.jpg",
+      "new": "images/product-photos/mystere/mystere-las-vegas-acrobatic-duo.jpg",
+      "sha": "e4c0a58ce3dadee129afe266a0a8d44b4f729e0d",
+      "size": 138819
+    },
+    {
+      "old": "images/mystere-las-vegas-stilt-character.jpg",
+      "new": "images/product-photos/mystere/mystere-las-vegas-stilt-character.jpg",
+      "sha": "846964a938074477b909561b1a836ed878835dc3",
+      "size": 152357
+    },
+    {
+      "old": "images/mystere-show-2.jpg",
+      "new": "images/product-photos/mystere/mystere-show-2.jpg",
+      "sha": "5a401fc03575ef769ae00fad3523473fd5ee2b70",
+      "size": 80902
+    },
+    {
+      "old": "images/mystere-show-3.jpg",
+      "new": "images/product-photos/mystere/mystere-show-3.jpg",
+      "sha": "4ac5e5eaf1a00cf8a61d5fe34e089d1567a207c0",
+      "size": 65428
+    },
+    {
+      "old": "images/mystere-theatre-seating-chart.svg",
+      "new": "images/seating-charts/mystere-theatre/mystere-theatre-seating-chart.svg",
+      "sha": "9dbd8fcf95aad26c3a758b372cf9b7c2aa8d3baf",
+      "size": 17673
+    },
+    {
+      "old": "images/nathan-burton-comedy-magic-2.jpg",
+      "new": "images/product-photos/nathan-burton-comedy-magic/nathan-burton-comedy-magic-2.jpg",
+      "sha": "19061f2d37adb0b28e46396ed499cdd1a8ecc30d",
+      "size": 72177
+    },
+    {
+      "old": "images/nathan-burton-comedy-magic-3.jpg",
+      "new": "images/product-photos/nathan-burton-comedy-magic/nathan-burton-comedy-magic-3.jpg",
+      "sha": "da0c04da622df5752683101a785a49e4d50eb283",
+      "size": 119191
+    },
+    {
+      "old": "images/nathan-burton-comedy-magic-hero.jpg",
+      "new": "images/product-photos/nathan-burton-comedy-magic/nathan-burton-comedy-magic-hero.jpg",
+      "sha": "3e590d858f079c72e752e1f180fe519ff13ecbd0",
+      "size": 75720
+    },
+    {
+      "old": "images/nathan-burton-comedy-magic-hero.webp",
+      "new": "images/product-photos/nathan-burton-comedy-magic/nathan-burton-comedy-magic-hero.webp",
+      "sha": "95c2b30ed5ba5f7bddc242ca15dc57f7c3688072",
+      "size": 61220
+    },
+    {
+      "old": "images/nathan-burton-theater-seating-chart.svg",
+      "new": "images/seating-charts/nathan-burton-theater/nathan-burton-theater-seating-chart.svg",
+      "sha": "d49351233672fe4ef4f1a48f75391b99f2f2f816",
+      "size": 5031
+    },
+    {
+      "old": "images/new-york-new-york-banner.webp",
+      "new": "images/venue-photos/new-york-new-york/new-york-new-york-banner.webp",
+      "sha": "0dbac8306aad13978c6b299eed0263f872c4aac7",
+      "size": 111144
+    },
+    {
+      "old": "images/news-dispatch-og.jpg",
+      "new": "images/news/news-dispatch-og.jpg",
+      "sha": "e058f3ddca2a7987260d6e40d53229155d977ec8",
+      "size": 270836
+    },
+    {
+      "old": "images/now-you-see-me-live-2.webp",
+      "new": "images/product-photos/now-you-see-me-live/now-you-see-me-live-2.webp",
+      "sha": "49ad3e96bb9205e13ea6d7db44169c1f22203d65",
+      "size": 49300
+    },
+    {
+      "old": "images/now-you-see-me-live-3.webp",
+      "new": "images/product-photos/now-you-see-me-live/now-you-see-me-live-3.webp",
+      "sha": "15a950bd30ee365d6f47330d53364982b3bfdfb1",
+      "size": 59332
+    },
+    {
+      "old": "images/now-you-see-me-live-hero.webp",
+      "new": "images/product-photos/now-you-see-me-live/now-you-see-me-live-hero.webp",
+      "sha": "094dd51997a7095d86921a7380692a41ec616d36",
+      "size": 71696
+    },
+    {
+      "old": "images/now-you-see-me-live-seating-chart.jpg",
+      "new": "images/seating-charts/now-you-see-me-live/now-you-see-me-live-seating-chart.jpg",
+      "sha": "501e5868753c76ca08fb846ab93bc670efce1f75",
+      "size": 531693
+    },
+    {
+      "old": "images/o-cirque-du-soleil-las-vegas-aerial-ship.jpg",
+      "new": "images/product-photos/o/o-cirque-du-soleil-las-vegas-aerial-ship.jpg",
+      "sha": "3e25a41bf78f757ae72576b2aeacce1b3469c244",
+      "size": 285641
+    },
+    {
+      "old": "images/o-cirque-du-soleil-las-vegas-umbrella-boat.jpg",
+      "new": "images/product-photos/o/o-cirque-du-soleil-las-vegas-umbrella-boat.jpg",
+      "sha": "54928074d605769e7883a917a322a1de6ab5ebc6",
+      "size": 161343
+    },
+    {
+      "old": "images/o-hero.jpg",
+      "new": "images/product-photos/o/o-hero.jpg",
+      "sha": "8a87914e3f3461689fa6e54031ffc7408445b323",
+      "size": 22320
+    },
+    {
+      "old": "images/o-hero.webp",
+      "new": "images/product-photos/o/o-hero.webp",
+      "sha": "7f3d78c8e7c770e59522b2b7610e7bfb4ed78654",
+      "size": 17358
+    },
+    {
+      "old": "images/o-show-2.jpg",
+      "new": "images/product-photos/o/o-show-2.jpg",
+      "sha": "d777f62932c8faf64f7cf8976e47f862c8d9d371",
+      "size": 26905
+    },
+    {
+      "old": "images/o-show-3.jpg",
+      "new": "images/product-photos/o/o-show-3.jpg",
+      "sha": "3c9036e18bbd2511ff980f09b36ef4ba769e692d",
+      "size": 26187
+    },
+    {
+      "old": "images/o-theatre-bellagio-seating-chart.svg",
+      "new": "images/seating-charts/o-theatre-bellagio/o-theatre-bellagio-seating-chart.svg",
+      "sha": "0fb3675ab77a4b9712c68342a067da23491e3029",
+      "size": 7264
+    },
+    {
+      "old": "images/og-homepage.jpg",
+      "new": "images/site/og-homepage.jpg",
+      "sha": "8a67139b4e20527ce168ce8f1f28ba832525e6c0",
+      "size": 54940
+    },
+    {
+      "old": "images/palazzo-theatre-seating-chart.svg",
+      "new": "images/seating-charts/palazzo-theatre/palazzo-theatre-seating-chart.svg",
+      "sha": "fb2557f08da4cafe07b4c6acdc6348c7a9a47f15",
+      "size": 9250
+    },
+    {
+      "old": "images/paranormal-2.webp",
+      "new": "images/product-photos/paranormal/paranormal-2.webp",
+      "sha": "38f0f9f8137ec9bdce525015667371698babb255",
+      "size": 56792
+    },
+    {
+      "old": "images/paranormal-3.webp",
+      "new": "images/product-photos/paranormal/paranormal-3.webp",
+      "sha": "383add39a7a51860a083a29cd4bb51cb73e91b35",
+      "size": 37442
+    },
+    {
+      "old": "images/paranormal-gallery-1.webp",
+      "new": "images/product-photos/paranormal/paranormal-gallery-1.webp",
+      "sha": "575e33d23ee8b3acc1883cb04ba8b98d6dce7202",
+      "size": 42886
+    },
+    {
+      "old": "images/paranormal-hero.webp",
+      "new": "images/product-photos/paranormal/paranormal-hero.webp",
+      "sha": "5bc39ab6241ae9a372265b8870d60ac4a07c82bf",
+      "size": 26728
+    },
+    {
+      "old": "images/paranormal-og.jpg",
+      "new": "images/product-photos/paranormal/paranormal-og.jpg",
+      "sha": "7011508230cfa066f98a9301611e80ae9f0d61c1",
+      "size": 30017
+    },
+    {
+      "old": "images/paranormal-seating-chart.jpg",
+      "new": "images/seating-charts/paranormal/paranormal-seating-chart.jpg",
+      "sha": "fce4a1e15789a525168d9ac54403a5237ea4073b",
+      "size": 288303
+    },
+    {
+      "old": "images/penn-and-teller-2.jpg",
+      "new": "images/product-photos/penn-and-teller/penn-and-teller-2.jpg",
+      "sha": "fddcb0a904178db7c0acdbea3948c1e4daf1ee24",
+      "size": 72206
+    },
+    {
+      "old": "images/penn-and-teller-3.jpg",
+      "new": "images/product-photos/penn-and-teller/penn-and-teller-3.jpg",
+      "sha": "b064aa27a86945c06f40f9772eb7ad5cc48faa12",
+      "size": 102017
+    },
+    {
+      "old": "images/penn-and-teller-hero.jpg",
+      "new": "images/product-photos/penn-and-teller/penn-and-teller-hero.jpg",
+      "sha": "c4b77badfe3b2e4145a9724c9bdbddebf4538e99",
+      "size": 84644
+    },
+    {
+      "old": "images/penn-and-teller-hero.webp",
+      "new": "images/product-photos/penn-and-teller/penn-and-teller-hero.webp",
+      "sha": "924cccbfb5705fe16ed8270a5320b92d093aacc3",
+      "size": 77464
+    },
+    {
+      "old": "images/penn-teller-theater-rio-seating-chart.svg",
+      "new": "images/seating-charts/penn-teller-theater-rio/penn-teller-theater-rio-seating-chart.svg",
+      "sha": "23b57b09d16fa92307903ae3211ac69e7a3250fd",
+      "size": 4013
+    },
+    {
+      "old": "images/piano-man-2.webp",
+      "new": "images/product-photos/piano-man/piano-man-2.webp",
+      "sha": "58362232b4fe6f86bff9317aac90995f0c263bb9",
+      "size": 62392
+    },
+    {
+      "old": "images/piano-man-3.webp",
+      "new": "images/product-photos/piano-man/piano-man-3.webp",
+      "sha": "8e90fcf1088849706cdf13ad71227ad84edc3d27",
+      "size": 60082
+    },
+    {
+      "old": "images/piano-man-hero.webp",
+      "new": "images/product-photos/piano-man/piano-man-hero.webp",
+      "sha": "c76c956f8e7613d0d5668a418f3f996a79687199",
+      "size": 46914
+    },
+    {
+      "old": "images/piano-man-seating-chart.png",
+      "new": "images/seating-charts/piano-man/piano-man-seating-chart.png",
+      "sha": "f53d3941d25ac08954388a443344530b52e678b6",
+      "size": 224013
+    },
+    {
+      "old": "images/piff-the-magic-dragon-2.webp",
+      "new": "images/product-photos/piff-the-magic-dragon/piff-the-magic-dragon-2.webp",
+      "sha": "6b883764b1e890a751411a39acd423a0fd3280e1",
+      "size": 38152
+    },
+    {
+      "old": "images/piff-the-magic-dragon-3.webp",
+      "new": "images/product-photos/piff-the-magic-dragon/piff-the-magic-dragon-3.webp",
+      "sha": "f55c62a1b60424cc106772cf885de7235c0c50e7",
+      "size": 75888
+    },
+    {
+      "old": "images/piff-the-magic-dragon-hero.webp",
+      "new": "images/product-photos/piff-the-magic-dragon/piff-the-magic-dragon-hero.webp",
+      "sha": "a1954e670e05b505c8f05af19909a2f2137015d7",
+      "size": 106736
+    },
+    {
+      "old": "images/piff-the-magic-dragon-seating-chart.jpg",
+      "new": "images/seating-charts/flamingo-showroom/piff-the-magic-dragon-seating-chart.jpg",
+      "sha": "70501712c5bbf8f04562a5a443bd0c8648c6bd5a",
+      "size": 294411
+    },
+    {
+      "old": "images/planet-hollywood-hero.webp",
+      "new": "images/venue-photos/planet-hollywood/planet-hollywood-hero.webp",
+      "sha": "ea4a784c0bc5a512c0b941931689aae9a32932ad",
+      "size": 242356
+    },
+    {
+      "old": "images/planet-hollywood-og.jpg",
+      "new": "images/venue-photos/planet-hollywood/planet-hollywood-og.jpg",
+      "sha": "30c453cf351fe7b6a7fadf4f4c376e75e0ea8c62",
+      "size": 225643
+    },
+    {
+      "old": "images/popovich-comedy-pet-theater-2.jpg",
+      "new": "images/product-photos/popovich-comedy-pet-theater/popovich-comedy-pet-theater-2.jpg",
+      "sha": "2a2e4dcc3183a9eb479fca5c3e5694e656ddb42e",
+      "size": 37993
+    },
+    {
+      "old": "images/popovich-comedy-pet-theater-3.jpg",
+      "new": "images/product-photos/popovich-comedy-pet-theater/popovich-comedy-pet-theater-3.jpg",
+      "sha": "1c663b6ca104103e4a756bd8298b44212a68a1f1",
+      "size": 29576
+    },
+    {
+      "old": "images/popovich-comedy-pet-theater-hero.jpg",
+      "new": "images/product-photos/popovich-comedy-pet-theater/popovich-comedy-pet-theater-hero.jpg",
+      "sha": "4e5debb3ab44dff52a6045b67e64d16278680721",
+      "size": 85016
+    },
+    {
+      "old": "images/popovich-comedy-pet-theater-hero.webp",
+      "new": "images/product-photos/popovich-comedy-pet-theater/popovich-comedy-pet-theater-hero.webp",
+      "sha": "6e6ada41cac2026f5f3a1501252d3ef3183fc3ac",
+      "size": 71100
+    },
+    {
+      "old": "images/purple-reign-2.webp",
+      "new": "images/product-photos/purple-reign/purple-reign-2.webp",
+      "sha": "17eb3856f8ba58a981714f760474175891f67e7a",
+      "size": 66112
+    },
+    {
+      "old": "images/purple-reign-3.webp",
+      "new": "images/product-photos/purple-reign/purple-reign-3.webp",
+      "sha": "a9240a8ba07fc34e3d1c337d8aa808fd48827f28",
+      "size": 47044
+    },
+    {
+      "old": "images/purple-reign-hero.webp",
+      "new": "images/product-photos/purple-reign/purple-reign-hero.webp",
+      "sha": "f90cf31c3539a273a1cb354137608487b6608dec",
+      "size": 66624
+    },
+    {
+      "old": "images/purple-reign-seating-chart.jpg",
+      "new": "images/seating-charts/purple-reign/purple-reign-seating-chart.jpg",
+      "sha": "7be2396b9a47df20a8e71a13079741e402f77048",
+      "size": 146664
+    },
+    {
+      "old": "images/queen-selena-2.webp",
+      "new": "images/product-photos/queen-selena/queen-selena-2.webp",
+      "sha": "e28f51eb272923ac20ed2cd231d99fd904121916",
+      "size": 36448
+    },
+    {
+      "old": "images/queen-selena-3.webp",
+      "new": "images/product-photos/queen-selena/queen-selena-3.webp",
+      "sha": "4bf26dbe5ca9f069cbe9ffb823c975dbec38225a",
+      "size": 27370
+    },
+    {
+      "old": "images/queen-selena-4.webp",
+      "new": "images/product-photos/queen-selena/queen-selena-4.webp",
+      "sha": "3c64e3fa99beb70f523eaac74d1d3dfb1594e413",
+      "size": 53494
+    },
+    {
+      "old": "images/queen-selena-5.webp",
+      "new": "images/product-photos/queen-selena/queen-selena-5.webp",
+      "sha": "7fb0f6a05c4c37ba691c05dcb8ad93cfd2a2763b",
+      "size": 27166
+    },
+    {
+      "old": "images/queen-selena-hero.jpg",
+      "new": "images/product-photos/queen-selena/queen-selena-hero.jpg",
+      "sha": "1286457bc9eb7e1cb8f596d8af66192d48d5be83",
+      "size": 51648
+    },
+    {
+      "old": "images/queen-selena-hero.webp",
+      "new": "images/product-photos/queen-selena/queen-selena-hero.webp",
+      "sha": "c562d8188e4f0bfadf7d90adf0ec645c86d07b5c",
+      "size": 28772
+    },
+    {
+      "old": "images/queen-selena-og.jpg",
+      "new": "images/product-photos/queen-selena/queen-selena-og.jpg",
+      "sha": "7f3258a8f793a2f6c38423c927733ea611803736",
+      "size": 63711
+    },
+    {
+      "old": "images/queen-selena-seating-chart.webp",
+      "new": "images/seating-charts/queen-selena/queen-selena-seating-chart.webp",
+      "sha": "611ee3d2e8560bee59a3cbc6d11edf9ed51de366",
+      "size": 233851
+    },
+    {
+      "old": "images/rat-pack-is-back-2.webp",
+      "new": "images/product-photos/rat-pack-is-back/rat-pack-is-back-2.webp",
+      "sha": "370f3edd754303021961853d2bd8c27e5a934872",
+      "size": 23884
+    },
+    {
+      "old": "images/rat-pack-is-back-3.webp",
+      "new": "images/product-photos/rat-pack-is-back/rat-pack-is-back-3.webp",
+      "sha": "d2b3acb574affdb9a538c952bc7f08693c1ecc8c",
+      "size": 46828
+    },
+    {
+      "old": "images/rat-pack-is-back-gallery-1.webp",
+      "new": "images/product-photos/rat-pack-is-back/rat-pack-is-back-gallery-1.webp",
+      "sha": "bce358c686ecc264c3449a22410f4ccfcf79dc86",
+      "size": 63270
+    },
+    {
+      "old": "images/rat-pack-is-back-gallery-2.webp",
+      "new": "images/product-photos/rat-pack-is-back/rat-pack-is-back-gallery-2.webp",
+      "sha": "d272c3031c3aec62a7b1c1d88865732edfb8106c",
+      "size": 42558
+    },
+    {
+      "old": "images/rat-pack-is-back-hero.webp",
+      "new": "images/product-photos/rat-pack-is-back/rat-pack-is-back-hero.webp",
+      "sha": "458a4f7ae65ced5ade669853e13486dffff160d3",
+      "size": 34352
+    },
+    {
+      "old": "images/rat-pack-is-back-seating-chart-v2.jpg",
+      "new": "images/seating-charts/rat-pack-is-back/rat-pack-is-back-seating-chart-v2.jpg",
+      "sha": "e929ed3ebfcc9c8a13a21504996f1f795d19a173",
+      "size": 238988
+    },
+    {
+      "old": "images/rat-pack-is-back-seating-chart.jpg",
+      "new": "images/seating-charts/rat-pack-is-back/rat-pack-is-back-seating-chart.jpg",
+      "sha": "ef63c8e0c364a06794fbc87f024a2995407e9680",
+      "size": 260312
+    },
+    {
+      "old": "images/rio-hero.webp",
+      "new": "images/venue-photos/rio/rio-hero.webp",
+      "sha": "c2b2bcc90e185f985d15d82a376ac43a5a7e3036",
+      "size": 252174
+    },
+    {
+      "old": "images/rio-og.jpg",
+      "new": "images/venue-photos/rio/rio-og.jpg",
+      "sha": "12bcb59bfb9b9ede262fc967aac624d2bd83747c",
+      "size": 214520
+    },
+    {
+      "old": "images/rouge-2.webp",
+      "new": "images/product-photos/rouge/rouge-2.webp",
+      "sha": "c696de70e848bd8da81ffbb26aca1155b6e9223c",
+      "size": 106436
+    },
+    {
+      "old": "images/rouge-3.webp",
+      "new": "images/product-photos/rouge/rouge-3.webp",
+      "sha": "e7af3bea4485aa38b7cbab2aa1e1823c4e74417d",
+      "size": 62942
+    },
+    {
+      "old": "images/rouge-hero.webp",
+      "new": "images/product-photos/rouge/rouge-hero.webp",
+      "sha": "dd9c898666c78767528a86420f546d6bb68cd07a",
+      "size": 108608
+    },
+    {
+      "old": "images/rouge-seating-chart.jpg",
+      "new": "images/seating-charts/rouge/rouge-seating-chart.jpg",
+      "sha": "4e6988d5aa223ccc4ec5505f180dc1d1b2fffa0d",
+      "size": 269229
+    },
+    {
+      "old": "images/rupauls-drag-race-live-2.webp",
+      "new": "images/product-photos/rupauls-drag-race-live/rupauls-drag-race-live-2.webp",
+      "sha": "e32a2355987948f86ab4513078bd7c3084b51406",
+      "size": 38256
+    },
+    {
+      "old": "images/rupauls-drag-race-live-3.webp",
+      "new": "images/product-photos/rupauls-drag-race-live/rupauls-drag-race-live-3.webp",
+      "sha": "e26ed7c7c775fa28d1db3c92398087911253b1c6",
+      "size": 29524
+    },
+    {
+      "old": "images/rupauls-drag-race-live-hero.webp",
+      "new": "images/product-photos/rupauls-drag-race-live/rupauls-drag-race-live-hero.webp",
+      "sha": "0eee35c6a4224b24d8a2c02dcd71f9641979007f",
+      "size": 49786
+    },
+    {
+      "old": "images/rupauls-drag-race-live-seating-chart.jpg",
+      "new": "images/seating-charts/flamingo-showroom/rupauls-drag-race-live-seating-chart.jpg",
+      "sha": "1eb2811b17e699972dc0c6fa90405a1fc7fe7fe3",
+      "size": 295150
+    },
+    {
+      "old": "images/santana-greatest-hits-live-las-vegas.jpg",
+      "new": "images/news/santana-greatest-hits-live-las-vegas.jpg",
+      "sha": "e66320ea8ee7d7c450e5c621b490c3029416533f",
+      "size": 244930
+    },
+    {
+      "old": "images/saxe-theater-seating-chart.svg",
+      "new": "images/seating-charts/saxe-theater/saxe-theater-seating-chart.svg",
+      "sha": "493a46da4df3686eb8740c657a022f18cc3e4d6a",
+      "size": 3774
+    },
+    {
+      "old": "images/shin-lim-limitless-2.jpg",
+      "new": "images/product-photos/shin-lim/shin-lim-limitless-2.jpg",
+      "sha": "0b244bc704e2137e4b5a5aed18eaa208be2b1cc4",
+      "size": 17391
+    },
+    {
+      "old": "images/shin-lim-limitless-3.jpg",
+      "new": "images/product-photos/shin-lim/shin-lim-limitless-3.jpg",
+      "sha": "ea5a5b44919f2af91678b5b332fb0452c4d937e5",
+      "size": 19997
+    },
+    {
+      "old": "images/shin-lim-limitless-hero.jpg",
+      "new": "images/product-photos/shin-lim/shin-lim-limitless-hero.jpg",
+      "sha": "81b217f2a1c6f9ab349796885d926c024f29be65",
+      "size": 21788
+    },
+    {
+      "old": "images/shin-lim-limitless-hero.webp",
+      "new": "images/product-photos/shin-lim/shin-lim-limitless-hero.webp",
+      "sha": "1d07b266955e327cecfb11c4f9eb8a37628ef19f",
+      "size": 14576
+    },
+    {
+      "old": "images/shin-lim-limitless-seating-chart.png",
+      "new": "images/seating-charts/shin-lim/shin-lim-limitless-seating-chart.png",
+      "sha": "6f1f9c863bec92f952740298afa671f542e83961",
+      "size": 239193
+    },
+    {
+      "old": "images/sidekick-index-social.png",
+      "new": "images/sidekick-index/sidekick-index-social.png",
+      "sha": "17c44794a23f6eeb40827112c0bdcdbc8223194d",
+      "size": 261878
+    },
+    {
+      "old": "images/sinatra-live-2.webp",
+      "new": "images/product-photos/sinatra-live/sinatra-live-2.webp",
+      "sha": "a9ae43df9d5666f62c37d38930606aa6a3cf8544",
+      "size": 18186
+    },
+    {
+      "old": "images/sinatra-live-3.webp",
+      "new": "images/product-photos/sinatra-live/sinatra-live-3.webp",
+      "sha": "a0e472302f54edf15fac5ef059fe684a2dc2ea2f",
+      "size": 20328
+    },
+    {
+      "old": "images/sinatra-live-4.webp",
+      "new": "images/product-photos/sinatra-live/sinatra-live-4.webp",
+      "sha": "eea3ce016fbbc43c346511d84914b500c5410105",
+      "size": 17918
+    },
+    {
+      "old": "images/sinatra-live-5.webp",
+      "new": "images/product-photos/sinatra-live/sinatra-live-5.webp",
+      "sha": "f32767e828ead8295b3bf07c8733ab88d1e4a8ae",
+      "size": 14214
+    },
+    {
+      "old": "images/sinatra-live-hero.jpg",
+      "new": "images/product-photos/sinatra-live/sinatra-live-hero.jpg",
+      "sha": "9d90fff361955cd86312939ce99aa4e6b17d7559",
+      "size": 74242
+    },
+    {
+      "old": "images/sinatra-live-hero.webp",
+      "new": "images/product-photos/sinatra-live/sinatra-live-hero.webp",
+      "sha": "b77510c6c88a019f5ea7a7e47e60829a86d5ea81",
+      "size": 43418
+    },
+    {
+      "old": "images/sinatra-live-og.jpg",
+      "new": "images/product-photos/sinatra-live/sinatra-live-og.jpg",
+      "sha": "ee69519a24dd1c6f933a508ce8632ba5f0fc4b97",
+      "size": 89948
+    },
+    {
+      "old": "images/sinatra-live-seating-chart.webp",
+      "new": "images/seating-charts/sinatra-live/sinatra-live-seating-chart.webp",
+      "sha": "47f94c45fbc7c730e5d3319c6bd6e0c791983a01",
+      "size": 232563
+    },
+    {
+      "old": "images/sir-elton-2.webp",
+      "new": "images/product-photos/sir-elton/sir-elton-2.webp",
+      "sha": "4b920644f67a10180963874b5a6c95306d556fcf",
+      "size": 25604
+    },
+    {
+      "old": "images/sir-elton-3.webp",
+      "new": "images/product-photos/sir-elton/sir-elton-3.webp",
+      "sha": "3145df0d7447ccba4dec2d605b64c305f02221d0",
+      "size": 36212
+    },
+    {
+      "old": "images/sir-elton-4.webp",
+      "new": "images/product-photos/sir-elton/sir-elton-4.webp",
+      "sha": "54ffd030d2e31715a51530efd3aeb7b9d1aab4e8",
+      "size": 46132
+    },
+    {
+      "old": "images/sir-elton-5.webp",
+      "new": "images/product-photos/sir-elton/sir-elton-5.webp",
+      "sha": "3b48d4730b6e4c5176b86e001b94e0a73764bdea",
+      "size": 21152
+    },
+    {
+      "old": "images/sir-elton-hero.jpg",
+      "new": "images/product-photos/sir-elton/sir-elton-hero.jpg",
+      "sha": "f32d18a124d88a475d331a955047b1b215cb583c",
+      "size": 116119
+    },
+    {
+      "old": "images/sir-elton-hero.webp",
+      "new": "images/product-photos/sir-elton/sir-elton-hero.webp",
+      "sha": "346445ef04d8ec61954dde58527dfb542927d529",
+      "size": 72608
+    },
+    {
+      "old": "images/sir-elton-og.jpg",
+      "new": "images/product-photos/sir-elton/sir-elton-og.jpg",
+      "sha": "ba0b3d03e4d3c6fb91525fa583dfa36c3be0330a",
+      "size": 134224
+    },
+    {
+      "old": "images/sir-elton-seating-chart.webp",
+      "new": "images/seating-charts/sir-elton/sir-elton-seating-chart.webp",
+      "sha": "2a72b7b40cced21848707fc2eec9594151a1dff8",
+      "size": 232505
+    },
+    {
+      "old": "images/smashing-pumpkins-og.jpg",
+      "new": "images/news/smashing-pumpkins-og.jpg",
+      "sha": "898d2c5ebf19bb3e2c7712ee39bcf4e88871120e",
+      "size": 176827
+    },
+    {
+      "old": "images/sphere-las-vegas-seating-chart.svg",
+      "new": "images/seating-charts/sphere/sphere-las-vegas-seating-chart.svg",
+      "sha": "1eb5e45cc082441578a7164fd2440d9475c7e36c",
+      "size": 9918
+    },
+    {
+      "old": "images/spike-chill.png",
+      "new": "images/brand/spike-chill.png",
+      "sha": "5949be1dfe9ff29b8752df5f9b0b857341cc7cc9",
+      "size": 689981
+    },
+    {
+      "old": "images/spike-hero.png",
+      "new": "images/brand/spike-hero.png",
+      "sha": "4230ac81367b5095d37001a7472b8c7163395dcd",
+      "size": 680268
+    },
+    {
+      "old": "images/spike-icon.png",
+      "new": "images/brand/spike-icon.png",
+      "sha": "8876ed439e24be391f676755d7ff1792a1fce00f",
+      "size": 1088642
+    },
+    {
+      "old": "images/spike-mascot.jpg",
+      "new": "images/brand/spike-mascot.jpg",
+      "sha": "0f6e1bb86808fe551c91cb1d9ef68f7d2b4f5593",
+      "size": 248258
+    },
+    {
+      "old": "images/spike-podcast-badge.webp",
+      "new": "images/brand/spike-podcast-badge.webp",
+      "sha": "2c10ab1b30a79dd466bd5951cda6993a879ac67a",
+      "size": 36884
+    },
+    {
+      "old": "images/spike-podcast.jpg",
+      "new": "images/brand/spike-podcast.jpg",
+      "sha": "9dcaa4a3a72d21075a05ae1d7775354c57193f7f",
+      "size": 143138
+    },
+    {
+      "old": "images/spike-podcast.webp",
+      "new": "images/brand/spike-podcast.webp",
+      "sha": "658bb24979d25a183b1bcce9ed2c6ee9ee1f0d71",
+      "size": 81838
+    },
+    {
+      "old": "images/spike-qr-go-fb.png",
+      "new": "images/brand/spike-qr-go-fb.png",
+      "sha": "ee592f0bc3af114e1b27d7094b27bd2427511392",
+      "size": 542145
+    },
+    {
+      "old": "images/spike-qr-go-ig.png",
+      "new": "images/brand/spike-qr-go-ig.png",
+      "sha": "57f8d20aa3d71c82922a0adb72ca029d4d35d48a",
+      "size": 544887
+    },
+    {
+      "old": "images/spike-qr-go-pin.png",
+      "new": "images/brand/spike-qr-go-pin.png",
+      "sha": "cb501c15cc3cc5826b19e24f7635e516e92c8c88",
+      "size": 539137
+    },
+    {
+      "old": "images/spike-qr-go.png",
+      "new": "images/brand/spike-qr-go.png",
+      "sha": "0c20cc9fa38484e15d1a2e93709d40ffd41a09e6",
+      "size": 547204
+    },
+    {
+      "old": "images/steve-falcons-comedy-hypnosis-hour-hero.webp",
+      "new": "images/product-photos/steve-falcons-comedy-hypnosis-hour/steve-falcons-comedy-hypnosis-hour-hero.webp",
+      "sha": "c2eeb170591b1e4f353201f93bd6d1f2e314729f",
+      "size": 53542
+    },
+    {
+      "old": "images/steve-falcons-comedy-hypnosis-seating-chart.jpg",
+      "new": "images/seating-charts/steve-falcons-comedy-hypnosis-hour/steve-falcons-comedy-hypnosis-seating-chart.jpg",
+      "sha": "bd4c3021bfa17f7a4ee5473f2468d2dc7e39557a",
+      "size": 497533
+    },
+    {
+      "old": "images/tape-face-2.jpg",
+      "new": "images/product-photos/tape-face/tape-face-2.jpg",
+      "sha": "4efb019b749ebe506809694d81db894ca1af43a0",
+      "size": 39956
+    },
+    {
+      "old": "images/tape-face-3.jpg",
+      "new": "images/product-photos/tape-face/tape-face-3.jpg",
+      "sha": "50f8198123eac66729a549eb06202ea7041c717b",
+      "size": 20363
+    },
+    {
+      "old": "images/tape-face-hero.jpg",
+      "new": "images/product-photos/tape-face/tape-face-hero.jpg",
+      "sha": "09274dd8b8c30624f4ea7aaf102a880b98bd14bb",
+      "size": 53134
+    },
+    {
+      "old": "images/tape-face-hero.webp",
+      "new": "images/product-photos/tape-face/tape-face-hero.webp",
+      "sha": "e769bf202e059f329753a5e93e32f75d44c73fd1",
+      "size": 36094
+    },
+    {
+      "old": "images/tape-face-seating-chart.webp",
+      "new": "images/seating-charts/tape-face/tape-face-seating-chart.webp",
+      "sha": "a1a7d89cd75b8baac2f0756836438b794414b272",
+      "size": 122934
+    },
+    {
+      "old": "images/the-conjurors-hero.webp",
+      "new": "images/product-photos/the-conjurors/the-conjurors-hero.webp",
+      "sha": "5d0d858797e2448e06821714494c4cb08b2a6f41",
+      "size": 38262
+    },
+    {
+      "old": "images/the-conjurors-seating-chart.jpg",
+      "new": "images/seating-charts/the-conjurors/the-conjurors-seating-chart.jpg",
+      "sha": "2146445d54619eaaa17131d2d1c32a2c16743bb4",
+      "size": 205005
+    },
+    {
+      "old": "images/the-conjurors-show-2.webp",
+      "new": "images/product-photos/the-conjurors/the-conjurors-show-2.webp",
+      "sha": "d65f50b821da444af996e7a8404fc89d09bdcf7e",
+      "size": 33234
+    },
+    {
+      "old": "images/the-conjurors-show-3.webp",
+      "new": "images/product-photos/the-conjurors/the-conjurors-show-3.webp",
+      "sha": "6ad03c156ca26861a82f30f1d390d305444accad",
+      "size": 44736
+    },
+    {
+      "old": "images/the-king-comes-home-2.webp",
+      "new": "images/product-photos/the-king-comes-home/the-king-comes-home-2.webp",
+      "sha": "4309a20b9e4f12e13e89fedadfe7fce2218329f3",
+      "size": 54958
+    },
+    {
+      "old": "images/the-king-comes-home-3.webp",
+      "new": "images/product-photos/the-king-comes-home/the-king-comes-home-3.webp",
+      "sha": "46744aad04d781e4b2b04aa597808427bfe47c8b",
+      "size": 89714
+    },
+    {
+      "old": "images/the-king-comes-home-hero.webp",
+      "new": "images/product-photos/the-king-comes-home/the-king-comes-home-hero.webp",
+      "sha": "6a91e26f2adf3a7367f9b188043e90a15b79ee9d",
+      "size": 31954
+    },
+    {
+      "old": "images/the-king-comes-home-seating-chart.jpg",
+      "new": "images/seating-charts/the-king-comes-home/the-king-comes-home-seating-chart.jpg",
+      "sha": "db440cdf9394fd22d278ebf21142a29bd3f5bd58",
+      "size": 261250
+    },
+    {
+      "old": "images/the-mentalist-2.jpg",
+      "new": "images/product-photos/the-mentalist/the-mentalist-2.jpg",
+      "sha": "317104b9382462cd9a436bd6f2facbc5caa1c295",
+      "size": 30907
+    },
+    {
+      "old": "images/the-mentalist-3.jpg",
+      "new": "images/product-photos/the-mentalist/the-mentalist-3.jpg",
+      "sha": "f68eb4ca1fbda435f06d915d19c4bb931ab3bf0c",
+      "size": 34522
+    },
+    {
+      "old": "images/the-mentalist-hero.jpg",
+      "new": "images/product-photos/the-mentalist/the-mentalist-hero.jpg",
+      "sha": "04e3f1250e67ec79b0f19a7262f849ac77c6b38b",
+      "size": 134067
+    },
+    {
+      "old": "images/the-strat-hero.webp",
+      "new": "images/venue-photos/the-strat/the-strat-hero.webp",
+      "sha": "03c14462cbed5e25e199b03d1c5bca3a17b5ac3a",
+      "size": 28382
+    },
+    {
+      "old": "images/the-strat-og.jpg",
+      "new": "images/venue-photos/the-strat/the-strat-og.jpg",
+      "sha": "678a2e847addf82800d815fb2652b7956d822a6a",
+      "size": 48604
+    },
+    {
+      "old": "images/thunder-from-down-under-hero.webp",
+      "new": "images/product-photos/thunder-from-down-under/thunder-from-down-under-hero.webp",
+      "sha": "6276b18efe396ebadad4a73400f7b23b9dcbd2fc",
+      "size": 36220
+    },
+    {
+      "old": "images/thunder-from-down-under-seating-chart.png",
+      "new": "images/seating-charts/thunder-from-down-under/thunder-from-down-under-seating-chart.png",
+      "sha": "9b10a0ad1b008dc645068802061fc82fa473a110",
+      "size": 494960
+    },
+    {
+      "old": "images/thunder-from-down-under-show-2.webp",
+      "new": "images/product-photos/thunder-from-down-under/thunder-from-down-under-show-2.webp",
+      "sha": "c1a82fd0b7adeb046dd25ea829499da89149ee77",
+      "size": 52798
+    },
+    {
+      "old": "images/thunder-from-down-under-show-3.webp",
+      "new": "images/product-photos/thunder-from-down-under/thunder-from-down-under-show-3.webp",
+      "sha": "2d348bde9e9d91c51f8f9b55bf76c4cc27cf4145",
+      "size": 56502
+    },
+    {
+      "old": "images/thunder-from-down-under-show-4.webp",
+      "new": "images/product-photos/thunder-from-down-under/thunder-from-down-under-show-4.webp",
+      "sha": "d0bbbb38812547262344b173c56d566ce3e2c397",
+      "size": 34816
+    },
+    {
+      "old": "images/thunder-from-down-under-show-6.webp",
+      "new": "images/product-photos/thunder-from-down-under/thunder-from-down-under-show-6.webp",
+      "sha": "8b983fad32b83b35c0be78a51adbe19b57adde40",
+      "size": 24836
+    },
+    {
+      "old": "images/tournament-of-kings-2.webp",
+      "new": "images/product-photos/tournament-of-kings/tournament-of-kings-2.webp",
+      "sha": "535a42bc7101d20f2bfabb382e5a61dc7910a0c0",
+      "size": 40780
+    },
+    {
+      "old": "images/tournament-of-kings-3.webp",
+      "new": "images/product-photos/tournament-of-kings/tournament-of-kings-3.webp",
+      "sha": "68fba40141f10b92e10b586b1a77af85ea61fc46",
+      "size": 43848
+    },
+    {
+      "old": "images/tournament-of-kings-hero.webp",
+      "new": "images/product-photos/tournament-of-kings/tournament-of-kings-hero.webp",
+      "sha": "febc7867f571fb8fd26d84fe40418885ae82ca01",
+      "size": 30076
+    },
+    {
+      "old": "images/tournament-of-kings-seating-chart.jpg",
+      "new": "images/seating-charts/king-arthurs-arena/tournament-of-kings-seating-chart.jpg",
+      "sha": "f51e8c13e4ed27c40f9370ec2eb78f82b041c6be",
+      "size": 227842
+    },
+    {
+      "old": "images/tumua-das-og.jpg",
+      "new": "images/news/tumua-das-og.jpg",
+      "sha": "27277fb82660c115e6f29bf2882cdea713bcd77e",
+      "size": 210823
+    },
+    {
+      "old": "images/underground-theater-mgm-seating-chart.svg",
+      "new": "images/seating-charts/underground-theater-mgm/underground-theater-mgm-seating-chart.svg",
+      "sha": "3a0661a912f0a12f1dbd672e7dd508f26f3e332f",
+      "size": 229
+    },
+    {
+      "old": "images/v-the-ultimate-variety-show-hero.jpg",
+      "new": "images/product-photos/v-the-ultimate-variety-show/v-the-ultimate-variety-show-hero.jpg",
+      "sha": "115b3220136f920cf9c9b826f03fe4d6bbbce8f6",
+      "size": 139090
+    },
+    {
+      "old": "images/v-the-ultimate-variety-show-hero.webp",
+      "new": "images/product-photos/v-the-ultimate-variety-show/v-the-ultimate-variety-show-hero.webp",
+      "sha": "ac2a74fc7889ae1634cff8d4c20e8804601f2b6a",
+      "size": 54052
+    },
+    {
+      "old": "images/v-the-ultimate-variety-show-show-2.webp",
+      "new": "images/product-photos/v-the-ultimate-variety-show/v-the-ultimate-variety-show-show-2.webp",
+      "sha": "a4396a69f340c139c1b37f90fe8a4bfd2166f840",
+      "size": 42840
+    },
+    {
+      "old": "images/v-the-ultimate-variety-show-show-3.webp",
+      "new": "images/product-photos/v-the-ultimate-variety-show/v-the-ultimate-variety-show-show-3.webp",
+      "sha": "4bd34dda051a6d2befb6500c70d61393c6602633",
+      "size": 63640
+    },
+    {
+      "old": "images/v-the-ultimate-variety-show-v-theater-seating-chart.svg",
+      "new": "images/seating-charts/v-theater/v-the-ultimate-variety-show-v-theater-seating-chart.svg",
+      "sha": "059f44e8d722c293ffa1b8728ea8919ee8d71d8d",
+      "size": 2412
+    },
+    {
+      "old": "images/v-theater-main-floor-vip-ga-seating-chart.svg",
+      "new": "images/seating-charts/v-theater/v-theater-main-floor-vip-ga-seating-chart.svg",
+      "sha": "2a5c1e10d8b07f2ed1c520823530e90d6198fb7e",
+      "size": 2566
+    },
+    {
+      "old": "images/v2-theatre-seating-chart.svg",
+      "new": "images/seating-charts/v-theater/v2-theatre-seating-chart.svg",
+      "sha": "e661288f12223ed140b4424cafd2b914a48953b7",
+      "size": 1784
+    },
+    {
+      "old": "images/vegas-dispatch-calendar-update-2026-09-30.png",
+      "new": "images/news/vegas-dispatch-calendar-update-2026-09-30.png",
+      "sha": "45c596353e61795d953fe191df9f4413675b3190",
+      "size": 511396
+    },
+    {
+      "old": "images/vegas-the-show-2.webp",
+      "new": "images/product-photos/vegas-the-show/vegas-the-show-2.webp",
+      "sha": "7a8319828579a30c51d74b117cd66cf53c24759e",
+      "size": 128196
+    },
+    {
+      "old": "images/vegas-the-show-3.webp",
+      "new": "images/product-photos/vegas-the-show/vegas-the-show-3.webp",
+      "sha": "8cd25aad756711972c612285b4adaf73eca5812a",
+      "size": 98194
+    },
+    {
+      "old": "images/vegas-the-show-hero.webp",
+      "new": "images/product-photos/vegas-the-show/vegas-the-show-hero.webp",
+      "sha": "6d77d1d444c301ea6cf84839a84514f16c4eefe6",
+      "size": 81642
+    },
+    {
+      "old": "images/vegas-the-show-las-vegas-candy-costume-dancers.jpg",
+      "new": "images/product-photos/vegas-the-show/vegas-the-show-las-vegas-candy-costume-dancers.jpg",
+      "sha": "c28580b90d1259344bf1ecaa1940702fe2ce0387",
+      "size": 295731
+    },
+    {
+      "old": "images/vegas-the-show-las-vegas-singing-trio.jpg",
+      "new": "images/product-photos/vegas-the-show/vegas-the-show-las-vegas-singing-trio.jpg",
+      "sha": "24219920f96a4944f40ded7b0f0f3a2ca01ee1f8",
+      "size": 251010
+    },
+    {
+      "old": "images/vegas-the-show-seating-chart.webp",
+      "new": "images/seating-charts/saxe-theater/vegas-the-show-seating-chart.webp",
+      "sha": "3c9ca0f27ea661ca262c418a987d3abd8eff1a91",
+      "size": 14999
+    },
+    {
+      "old": "images/viva-la-lisa-las-vegas.jpg",
+      "new": "images/news/viva-la-lisa-las-vegas.jpg",
+      "sha": "b6b82d2f6e4debe89d29d657e0075661ea097403",
+      "size": 68170
+    },
+    {
+      "old": "images/walk-the-strip-og.jpg",
+      "new": "images/play/walk-the-strip-og.jpg",
+      "sha": "f94dc5a97441a1dc64cc99a5322f9db6e7aae721",
+      "size": 66830
+    },
+    {
+      "old": "images/wastin-away-hero.jpg",
+      "new": "images/product-photos/wastin-away/wastin-away-hero.jpg",
+      "sha": "533f5a123426f6f3cc732864693ec4ccc64c7434",
+      "size": 121774
+    },
+    {
+      "old": "images/wastin-away-hero.webp",
+      "new": "images/product-photos/wastin-away/wastin-away-hero.webp",
+      "sha": "5b0a7e37b2eb77c92c79f7e0106efe76fb9cf80f",
+      "size": 92240
+    },
+    {
+      "old": "images/wastin-away-og.jpg",
+      "new": "images/product-photos/wastin-away/wastin-away-og.jpg",
+      "sha": "321a42632de1d944fa489bfed0fc7258e5366237",
+      "size": 149812
+    },
+    {
+      "old": "images/wastin-away-pool.webp",
+      "new": "images/product-photos/wastin-away/wastin-away-pool.webp",
+      "sha": "b021fe84bba859e09bd370e890b2452b13a709af",
+      "size": 121530
+    },
+    {
+      "old": "images/wastin-away-poolside-layout.jpg",
+      "new": "images/seating-charts/wastin-away-poolside/wastin-away-poolside-layout.jpg",
+      "sha": "c003a377765544a1a553f50ceda66850e0499505",
+      "size": 305729
+    },
+    {
+      "old": "images/wastin-away-property.webp",
+      "new": "images/product-photos/wastin-away/wastin-away-property.webp",
+      "sha": "26a4681e511d61bbd6834501a403f44f2c82fba5",
+      "size": 33580
+    },
+    {
+      "old": "images/wayne-newton-2.jpg",
+      "new": "images/product-photos/wayne-newton/wayne-newton-2.jpg",
+      "sha": "57de540adb489e78c5c5a3036571869fc6aa785b",
+      "size": 55001
+    },
+    {
+      "old": "images/wayne-newton-3.jpg",
+      "new": "images/product-photos/wayne-newton/wayne-newton-3.jpg",
+      "sha": "aaa6282e0e655627c3d61696c92386f9707b6727",
+      "size": 77827
+    },
+    {
+      "old": "images/wayne-newton-hero.jpg",
+      "new": "images/product-photos/wayne-newton/wayne-newton-hero.jpg",
+      "sha": "650895c1353caa5171c78f443a74ad0520bdf701",
+      "size": 25705
+    },
+    {
+      "old": "images/wayne-newton-hero.webp",
+      "new": "images/product-photos/wayne-newton/wayne-newton-hero.webp",
+      "sha": "b39af28d003a7748ebf3b092673ec0f840cbb4dd",
+      "size": 15242
+    },
+    {
+      "old": "images/wayne-newton-seating-chart.jpg",
+      "new": "images/seating-charts/wayne-newton/wayne-newton-seating-chart.jpg",
+      "sha": "76fd60db683750c65ceafccfdedb6feec02e0422",
+      "size": 236892
+    },
+    {
+      "old": "images/wizard-of-oz-2.webp",
+      "new": "images/product-photos/wizard-of-oz/wizard-of-oz-2.webp",
+      "sha": "b7b0d3419a20b7b846e097be0597c061e5fa6b53",
+      "size": 25852
+    },
+    {
+      "old": "images/wizard-of-oz-3.webp",
+      "new": "images/product-photos/wizard-of-oz/wizard-of-oz-3.webp",
+      "sha": "ba374932f0153e330e7bb923a579c334a08e273c",
+      "size": 37998
+    },
+    {
+      "old": "images/wizard-of-oz-hero.webp",
+      "new": "images/product-photos/wizard-of-oz/wizard-of-oz-hero.webp",
+      "sha": "c8b2ce7a6d8e671e14e40ddc711b8a1b754625a5",
+      "size": 85272
+    },
+    {
+      "old": "images/wizard-of-oz-sphere-las-vegas-emerald-city.webp",
+      "new": "images/product-photos/wizard-of-oz/wizard-of-oz-sphere-las-vegas-emerald-city.webp",
+      "sha": "4de4320e327d0133fcc22870a95b743ea14abbd7",
+      "size": 252279
+    },
+    {
+      "old": "images/wizard-of-oz-sphere-las-vegas-flying-monkeys.webp",
+      "new": "images/product-photos/wizard-of-oz/wizard-of-oz-sphere-las-vegas-flying-monkeys.webp",
+      "sha": "bc623817851e803eb9949eaebdbaa14fd965ef12",
+      "size": 243149
+    },
+    {
+      "old": "images/wow-the-vegas-spectacular-hero.jpg",
+      "new": "images/product-photos/wow-the-vegas-spectacular/wow-the-vegas-spectacular-hero.jpg",
+      "sha": "33140029a5c5812aed4fdb683a2958e0fe8d3009",
+      "size": 190906
+    },
+    {
+      "old": "images/wow-the-vegas-spectacular-hero.webp",
+      "new": "images/product-photos/wow-the-vegas-spectacular/wow-the-vegas-spectacular-hero.webp",
+      "sha": "66684044292503a3c5c92c8c1d2a21d71eae4bf9",
+      "size": 92778
+    },
+    {
+      "old": "images/wow-the-vegas-spectacular-seating-chart.jpg",
+      "new": "images/seating-charts/wow-the-vegas-spectacular/wow-the-vegas-spectacular-seating-chart.jpg",
+      "sha": "2baa15488f4bdb960002dab3375635e4ba0a7ad4",
+      "size": 446991
+    },
+    {
+      "old": "images/wow-the-vegas-spectacular-show-2.webp",
+      "new": "images/product-photos/wow-the-vegas-spectacular/wow-the-vegas-spectacular-show-2.webp",
+      "sha": "48c48b05baef804cc21b4b235e36c9b5d42689b9",
+      "size": 37360
+    },
+    {
+      "old": "images/wow-the-vegas-spectacular-show-3.webp",
+      "new": "images/product-photos/wow-the-vegas-spectacular/wow-the-vegas-spectacular-show-3.webp",
+      "sha": "520a731446a2248a2a855172a4c68db99e1b7ff2",
+      "size": 64216
+    },
+    {
+      "old": "images/x-burlesque-2.webp",
+      "new": "images/product-photos/x-burlesque/x-burlesque-2.webp",
+      "sha": "390e09dacbc0bba78dc9a44c8d5c233e86b35f93",
+      "size": 20546
+    },
+    {
+      "old": "images/x-burlesque-3.webp",
+      "new": "images/product-photos/x-burlesque/x-burlesque-3.webp",
+      "sha": "8ba1f71960a591a6b9e76cbe617bb0d176090be2",
+      "size": 24408
+    },
+    {
+      "old": "images/x-burlesque-4.webp",
+      "new": "images/product-photos/x-burlesque/x-burlesque-4.webp",
+      "sha": "acf429c7e242cc4775302e73d0f0b9e644abd2f6",
+      "size": 29036
+    },
+    {
+      "old": "images/x-burlesque-5.webp",
+      "new": "images/product-photos/x-burlesque/x-burlesque-5.webp",
+      "sha": "09189e472c6e23dd5df680efd7354e0eba9cc0c0",
+      "size": 120714
+    },
+    {
+      "old": "images/x-burlesque-hero.webp",
+      "new": "images/product-photos/x-burlesque/x-burlesque-hero.webp",
+      "sha": "9ad2941a6a9ed3f237082b9f6accbf169341a70a",
+      "size": 67360
+    },
+    {
+      "old": "images/x-burlesque-seating-chart.webp",
+      "new": "images/seating-charts/bugsys-cabaret/x-burlesque-seating-chart.webp",
+      "sha": "9585c0102d4f05601e6a7e67017cfdafa8a013a3",
+      "size": 223042
+    },
+    {
+      "old": "images/x-country-hero.webp",
+      "new": "images/product-photos/x-country/x-country-hero.webp",
+      "sha": "e79b910b04ee8dd3b2af5cf13afe620a55646c12",
+      "size": 99126
+    },
+    {
+      "old": "images/x-country-og.jpg",
+      "new": "images/product-photos/x-country/x-country-og.jpg",
+      "sha": "a1306ed4d2da0073793b40bd8ada61d68b15b368",
+      "size": 113468
+    },
+    {
+      "old": "images/x-country-seating-chart.jpg",
+      "new": "images/seating-charts/x-country/x-country-seating-chart.jpg",
+      "sha": "b11ec08607fc286a065c5d63be7146ad4bdb0661",
+      "size": 308399
+    },
+    {
+      "old": "images/x-rocks-hero.jpg",
+      "new": "images/product-photos/x-rocks/x-rocks-hero.jpg",
+      "sha": "84a25376c9c30835e79c2a817c61fe304f40419c",
+      "size": 120141
+    },
+    {
+      "old": "images/x-rocks-hero.webp",
+      "new": "images/product-photos/x-rocks/x-rocks-hero.webp",
+      "sha": "5f9e353cbc81be88cc45119250a1eea59d87c704",
+      "size": 94796
+    },
+    {
+      "old": "images/x-rocks-seating-chart.jpg",
+      "new": "images/seating-charts/x-rocks/x-rocks-seating-chart.jpg",
+      "sha": "755fa4220cccd03c87826ad45d134c477269c38b",
+      "size": 424984
+    },
+    {
+      "old": "images/x-rocks-show-2.jpg",
+      "new": "images/product-photos/x-rocks/x-rocks-show-2.jpg",
+      "sha": "4043cbdb6a9474568ff009cab6ccdc8b617cbdad",
+      "size": 136585
+    },
+    {
+      "old": "images/x-rocks-show-3.jpg",
+      "new": "images/product-photos/x-rocks/x-rocks-show-3.jpg",
+      "sha": "7ac52ec7ce2eb6ac321ee190022b47ad002f4599",
+      "size": 103557
+    },
+    {
+      "old": "images/zombie-burlesque-hero.jpg",
+      "new": "images/product-photos/zombie-burlesque/zombie-burlesque-hero.jpg",
+      "sha": "9fb657b80b031daa9c48568cbf8b7c3d65941a0b",
+      "size": 94280
+    },
+    {
+      "old": "images/zombie-burlesque-hero.webp",
+      "new": "images/product-photos/zombie-burlesque/zombie-burlesque-hero.webp",
+      "sha": "18151f5a13bc459c5d1d74df3507189045f7afd6",
+      "size": 64026
+    },
+    {
+      "old": "images/zombie-burlesque-seating-chart.svg",
+      "new": "images/seating-charts/v-theater/zombie-burlesque-seating-chart.svg",
+      "sha": "e3d7b6afa4f613194bd0e7448e30ba5e7a0976d0",
+      "size": 4963
+    },
+    {
+      "old": "images/zombie-burlesque-show-2.jpg",
+      "new": "images/product-photos/zombie-burlesque/zombie-burlesque-show-2.jpg",
+      "sha": "85589f6a0b67868a741947c32f140e578b5b1056",
+      "size": 205170
+    },
+    {
+      "old": "images/zombie-burlesque-show-3.jpg",
+      "new": "images/product-photos/zombie-burlesque/zombie-burlesque-show-3.jpg",
+      "sha": "01e9d70233d761bbde6356c4f223b95aa512ab15",
+      "size": 80894
+    },
+    {
+      "old": "images/zombie-burlesque-v-theater-seating-chart.svg",
+      "new": "images/seating-charts/v-theater/zombie-burlesque-v-theater-seating-chart.svg",
+      "sha": "c433f90e853ec0c75fe2b12e80e26a6b7c83ce93",
+      "size": 4951
+    }
+  ]
+}
