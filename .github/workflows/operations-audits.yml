@@ -12,6 +12,10 @@ on:
       - 'news/**'
       - 'venues/**'
       - 'images/**'
+      - 'hq/media-library/**'
+      - 'scripts/generate-media-library.py'
+      - 'sitemap.xml'
+      - '_headers'
       - 'assets/showtimes-booking.css'
       - 'assets/showtimes-booking.js'
       - '_redirects'
@@ -135,6 +139,47 @@ jobs:
       - uses: actions/checkout@v4
       - name: Audit organized image library
         run: python3 scripts/audit-image-library.py
+
+  media-library:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate generated Media Library inventory
+        run: python3 scripts/generate-media-library.py --check
+      - name: Audit internal Media Library exposure and structure
+        run: python3 scripts/audit-media-library.py
+      - name: Check Media Library JavaScript
+        run: |
+          node --check hq/media-library/app.js
+          node - <<'NODE'
+          const {matchesFilters} = require('./hq/media-library/app.js');
+          const item = {
+            filename: 'mat-franco-hero.jpg',
+            path: '/images/product-photos/mat-franco/mat-franco-hero.jpg',
+            publicUrl: 'https://vegassidekick.com/images/product-photos/mat-franco/mat-franco-hero.jpg',
+            category: 'product-photos',
+            show: 'Mat Franco',
+            venue: 'The LINQ',
+            usage: ['Hero'],
+            referenced: true,
+            duplicateHints: ['Hero has multiple format versions']
+          };
+          const cases = [
+            [{category:'product-photos'}, true],
+            [{category:'seating-charts'}, false],
+            [{category:'all', search:'franco'}, true],
+            [{category:'all', show:'mat fran'}, true],
+            [{category:'all', venue:'linq'}, true],
+            [{category:'all', unusedOnly:true}, false],
+            [{category:'all', duplicatesOnly:true}, true]
+          ];
+          for (const [filters, expected] of cases) {
+            if (matchesFilters(item, filters) !== expected) process.exit(1);
+          }
+          NODE
 
   mobile-show-heroes:
     runs-on: ubuntu-latest

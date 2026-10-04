@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>Vegas Sidekick Media Library</title>
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/hq/media-library/style.css?v=1">
+</head>
+<body>
+  <section class="lock-screen" id="media-lock">
+    <div class="lock-card">
+      <div class="cactus">🌵</div>
+      <div class="eyebrow">Vegas Sidekick · HQ</div>
+      <h1>Media Library</h1>
+      <p>Use your Vegas Sidekick HQ passphrase.</p>
+      <form id="media-lock-form" autocomplete="off">
+        <label class="sr-only" for="media-password">HQ passphrase</label>
+        <input id="media-password" type="password" placeholder="Passphrase" autocomplete="current-password" autofocus>
+        <button type="submit" id="media-unlock">Unlock</button>
+        <div class="lock-error" id="media-lock-error" role="alert"></div>
+      </form>
+      <a class="back-link" href="/hq/">← Back to HQ</a>
+    </div>
+  </section>
+
+  <div class="library-shell" id="media-library" hidden>
+    <header class="topbar">
+      <div class="brand-block">
+        <a class="brand-mark" href="/hq/" aria-label="Vegas Sidekick HQ">
+          <img src="/images/brand/logo-horizontal.png" alt="Vegas Sidekick">
+        </a>
+        <div>
+          <div class="eyebrow">HQ · Internal media operations</div>
+          <h1>Media Library</h1>
+          <p class="sub">Browse every site image without digging through GitHub folders.</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <span class="readonly-pill">Read only</span>
+        <a class="hq-link" href="/hq/">HQ</a>
+      </div>
+    </header>
+
+    <section class="notice">
+      <strong>Reference status is operational guidance, not a deletion recommendation.</strong>
+      “No current references found” only means the inventory scan did not find the image in public/runtime site files.
+    </section>
+
+    <section class="stats" id="media-stats" aria-label="Media library summary"></section>
+
+    <section class="toolbar" aria-label="Media library filters">
+      <div class="search-wrap">
+        <span aria-hidden="true">⌕</span>
+        <input id="media-search" type="search" placeholder="Search filename or path…" autocomplete="off">
+      </div>
+
+      <div class="category-filters" id="category-filters" role="group" aria-label="Media category">
+        <button class="filter active" type="button" data-category="all">All</button>
+        <button class="filter" type="button" data-category="product-photos">Product photos</button>
+        <button class="filter" type="button" data-category="seating-charts">Seating charts</button>
+        <button class="filter" type="button" data-category="venue-photos">Venue photos</button>
+        <button class="filter" type="button" data-category="news">News / Dispatch</button>
+        <button class="filter" type="button" data-category="good-to-know">Good to Know</button>
+        <button class="filter" type="button" data-category="brand-site">Brand / site assets</button>
+        <button class="filter" type="button" data-category="other">Other</button>
+      </div>
+
+      <div class="select-row">
+        <label>
+          <span>Show</span>
+          <input id="show-filter" list="show-options" placeholder="Any show" autocomplete="off">
+          <datalist id="show-options"></datalist>
+        </label>
+        <label>
+          <span>Venue</span>
+          <input id="venue-filter" list="venue-options" placeholder="Any venue" autocomplete="off">
+          <datalist id="venue-options"></datalist>
+        </label>
+        <label class="check-label">
+          <input id="unused-filter" type="checkbox">
+          <span>No current references</span>
+        </label>
+        <label class="check-label">
+          <input id="duplicate-filter" type="checkbox">
+          <span>Duplicate hints</span>
+        </label>
+        <button class="reset-btn" id="reset-filters" type="button">Reset</button>
+      </div>
+    </section>
+
+    <div class="results-head">
+      <div>
+        <strong id="results-count">Loading…</strong>
+        <span id="generated-at"></span>
+      </div>
+      <div class="legend">
+        <span><i class="dot used"></i> Used on site</span>
+        <span><i class="dot unused"></i> No current references found</span>
+      </div>
+    </div>
+
+    <main>
+      <div class="media-grid" id="media-grid" aria-live="polite"></div>
+      <div class="empty-state" id="empty-state" hidden>No images match those filters.</div>
+      <div class="load-more-wrap">
+        <button class="load-more" id="load-more" type="button" hidden>Load more</button>
+      </div>
+    </main>
+  </div>
+
+  <template id="media-card-template">
+    <article class="media-card">
+      <a class="thumb-link" target="_blank" rel="noopener">
+        <div class="thumb-frame">
+          <img class="thumb" loading="lazy" decoding="async" alt="">
+        </div>
+      </a>
+      <div class="card-body">
+        <div class="card-topline">
+          <span class="category-badge"></span>
+          <span class="reference-badge"></span>
+        </div>
+        <h2 class="filename"></h2>
+        <code class="path"></code>
+        <div class="public-url"></div>
+        <div class="metadata"></div>
+        <div class="usage-badges"></div>
+        <dl class="entity-meta">
+          <div class="show-row"><dt>Show</dt><dd class="show-value"></dd></div>
+          <div class="venue-row"><dt>Venue</dt><dd class="venue-value"></dd></div>
+          <div><dt>References</dt><dd class="reference-value"></dd></div>
+        </dl>
+        <div class="duplicate-note" hidden></div>
+        <div class="actions">
+          <button type="button" data-copy="url">Copy URL</button>
+          <button type="button" data-copy="path">Copy path</button>
+          <button type="button" data-copy="filename">Copy filename</button>
+          <a class="open-image" target="_blank" rel="noopener">Open image</a>
+          <a class="open-show" target="_blank" rel="noopener" hidden>Open show</a>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="/hq/media-library/app.js?v=1"></script>
+  <script>
+    (() => {
+      const lock = document.getElementById('media-lock');
+      const library = document.getElementById('media-library');
+      const form = document.getElementById('media-lock-form');
+      const input = document.getElementById('media-password');
+      const button = document.getElementById('media-unlock');
+      const error = document.getElementById('media-lock-error');
+
+      function reveal() {
+        sessionStorage.setItem('vs_hq_media_unlocked', '1');
+        lock.hidden = true;
+        library.hidden = false;
+        window.VSMediaLibrary.start();
+      }
+
+      if (sessionStorage.getItem('vs_hq_media_unlocked') === '1') {
+        reveal();
+        return;
+      }
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        error.textContent = '';
+        button.disabled = true;
+        button.textContent = 'Unlocking…';
+
+        try {
+          const response = await fetch('/hq/', { cache: 'no-store' });
+          if (!response.ok) throw new Error('HQ unavailable');
+          const source = await response.text();
+          const salt = source.match(/SALT="([^"]+)"/)?.[1];
+          const iv = source.match(/IV="([^"]+)"/)?.[1];
+          const ciphertext = source.match(/CT="([^"]+)"/)?.[1];
+          if (!salt || !iv || !ciphertext) throw new Error('HQ credential check unavailable');
+
+          const decode = (value) => Uint8Array.from(atob(value), (char) => char.charCodeAt(0));
+          const encoder = new TextEncoder();
+          const baseKey = await crypto.subtle.importKey(
+            'raw',
+            encoder.encode(input.value),
+            'PBKDF2',
+            false,
+            ['deriveKey']
+          );
+          const key = await crypto.subtle.deriveKey(
+            { name: 'PBKDF2', salt: decode(salt), iterations: 200000, hash: 'SHA-256' },
+            baseKey,
+            { name: 'AES-GCM', length: 256 },
+            false,
+            ['decrypt']
+          );
+          await crypto.subtle.decrypt(
+            { name: 'AES-GCM', iv: decode(iv) },
+            key,
+            decode(ciphertext)
+          );
+          input.value = '';
+          reveal();
+        } catch (err) {
+          error.textContent = 'Incorrect passphrase.';
+          button.disabled = false;
+          button.textContent = 'Unlock';
+          input.select();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

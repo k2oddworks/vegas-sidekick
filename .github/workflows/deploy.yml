@@ -17,6 +17,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Generate Media Library inventory
+        run: python3 scripts/generate-media-library.py
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
