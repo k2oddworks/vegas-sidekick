@@ -65,6 +65,21 @@ Optional sections simply collapse out. A page without a verified trailer should 
 
 ---
 
+## Sidekick Pick treatment
+
+Sidekick Pick is a show-level editorial recommendation and is only used when Kris explicitly approves that show.
+
+For approved show pages:
+
+- use the shared powder-blue **Sidekick Pick** pill above the breadcrumbs in the hero copy area
+- tapping / clicking the pill opens the short explanation: **“If this show caught your eye, it’s one we’d feel good recommending.”**
+- clicking outside the explanation or pressing Escape closes it
+- on mobile, do not show the hero and sticky-bar badges at the same time
+- the sticky-bar mini badge appears only after the hero badge has scrolled out of view
+- use `data-sidekick-pick="true"` on the page body and the shared `assets/show-canonical.css` / `assets/show-canonical.js` behavior rather than page-specific badge code
+- catalog cards use the existing `sp:true` flag and the same powder-blue visual family
+- Sidekick Pick recommends the **show**; Sweet Spot / Our Pick recommends a **seating section**. Do not combine the two labels.
+
 ## 4. Ticket price language
 
 Preferred visible price language:
