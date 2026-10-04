@@ -98,7 +98,8 @@ a{color:inherit}
 .table-headnote{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:15px 18px;border-bottom:1px solid var(--line);background:#fbfaff}
 .table-headnote span{font:500 .7rem var(--mono);color:var(--muted)}
 .table-headnote b{color:var(--ink)}
-.table-scroll{overflow-x:auto}
+.table-swipe-cue{display:none}
+.table-scroll{overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
 table{width:100%;min-width:900px;border-collapse:collapse}
 th,td{text-align:left;vertical-align:top;padding:17px 16px;border-bottom:1px solid var(--line)}
 tbody tr:last-child td{border-bottom:0}
@@ -158,6 +159,7 @@ body.all-view .row-cat{display:block}
   .hero{padding:42px 0 46px}
   .stats,.method-grid,.source-list{grid-template-columns:1fr}
   .table-headnote{align-items:flex-start;flex-direction:column}
+  .table-swipe-cue{display:inline-flex;align-items:center;border-radius:999px;background:#f1edfb;color:var(--purple)!important;padding:5px 9px;font:800 .62rem var(--display)!important}
   .section{padding-top:40px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -208,6 +210,7 @@ body.all-view .row-cat{display:block}
         <span><b>Observed:</b> September 27, 2026</span>
         <span><b>Price basis:</b> advertised total · mandatory fees included · LET as displayed</span>
         <span>Tap any price to inspect the source.</span>
+        <span class="table-swipe-cue">Swipe table →</span>
       </div>
       <div class="table-scroll">
         <table>

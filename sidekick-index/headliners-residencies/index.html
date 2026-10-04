@@ -31,7 +31,7 @@
       "url":"https://vegassidekick.com/sidekick-index/headliners-residencies/",
       "name":"Las Vegas Headliners & Residencies",
       "description":"Upcoming Las Vegas headliners, residencies and limited engagements organized by date, act and venue.",
-      "dateModified":"2026-10-02",
+      "dateModified":"2026-10-03",
       "isPartOf":{"@type":"WebSite","name":"Vegas Sidekick","url":"https://vegassidekick.com/"}
     },
     {
@@ -146,14 +146,18 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
 @media(max-width:720px){
   .wrap{width:min(100% - 24px,1160px)}
   .hero{padding:40px 0 38px}.hero p{font-size:.96rem}
-  .toolbar{top:64px;margin-bottom:18px;padding:9px 10px;overflow-x:auto;align-items:center;flex-direction:row;scrollbar-width:none}.toolbar::-webkit-scrollbar{display:none}.scope{display:none}
+  .toolbar{top:64px;margin-bottom:18px;padding:9px 10px;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;align-items:center;flex-direction:row;scrollbar-width:none}.toolbar::-webkit-scrollbar{display:none}.scope{display:none}
   .view-group{flex:0 0 auto}.view-label{margin-right:1px}.view-btn{padding:8px 12px;font-size:.72rem}
-  .filter-stack{margin:-4px 0 20px;padding:11px 10px;gap:9px;overflow:hidden}
-  .filter-row{display:block;min-width:0}.filter-row-label{display:block;padding:0 0 6px}
-  .venue-filter,.type-filter{flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:none;padding-bottom:2px}.venue-filter::-webkit-scrollbar,.type-filter::-webkit-scrollbar{display:none}
+  .filter-stack{margin:-4px 0 20px;padding:11px 10px;gap:9px;overflow:visible}
+  .filter-row{display:block;min-width:0}.filter-row-label{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 0 6px}
+  .filter-row.scrollable .filter-row-label::after{content:"Swipe for more →";font:700 .58rem var(--mono);letter-spacing:0;text-transform:none;color:var(--purple);white-space:nowrap}
+  .filter-row.scrollable.at-end .filter-row-label::after{content:"← Swipe back"}
+  .venue-filter,.type-filter{width:100%;max-width:100%;min-width:0;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 34px 3px 0;scroll-padding-inline:0 34px}
+  .venue-filter.scrollable:not(.at-end),.type-filter.scrollable:not(.at-end){-webkit-mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 42px),transparent 100%);mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 42px),transparent 100%)}
+  .venue-filter::-webkit-scrollbar,.type-filter::-webkit-scrollbar{display:none}
   .venue-btn,.type-btn{flex:0 0 auto;padding:7px 10px;font-size:.68rem}.venue-count{height:18px;min-width:18px;font-size:.54rem}
   .section-intro{display:block;margin-bottom:12px}.section-intro p{display:none}.section-intro h2{font-size:1.5rem}
-  .month-jump{position:sticky;top:126px;z-index:28;display:flex;gap:7px;overflow-x:auto;margin:0 -12px 16px;padding:8px 12px;background:rgba(255,255,255,.96);border-top:1px solid var(--line);border-bottom:1px solid var(--line);backdrop-filter:blur(10px);scrollbar-width:none}.month-jump::-webkit-scrollbar{display:none}
+  .month-jump{position:sticky;top:126px;z-index:28;display:flex;gap:7px;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;margin:0 -12px 16px;padding:8px 44px 8px 12px;background:rgba(255,255,255,.96);border-top:1px solid var(--line);border-bottom:1px solid var(--line);backdrop-filter:blur(10px);scrollbar-width:none;scroll-padding-inline:12px 44px}.month-jump.scrollable:not(.at-end){-webkit-mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 36px),transparent 100%);mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 36px),transparent 100%)}.month-jump::-webkit-scrollbar{display:none}
   .month-jump a{flex:0 0 auto;border:1px solid #ddd7e8;border-radius:999px;padding:7px 10px;background:#fff;color:var(--ink);text-decoration:none;font:800 .66rem var(--display)}
   .month{scroll-margin-top:176px;margin-top:24px}.month-head{margin-bottom:7px}.month-head h3{font-size:.95rem}
   .agenda{border-radius:14px}
@@ -252,6 +256,29 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   let activeVenue='all';
   let activeType='all';
   let activeView='agenda';
+  const boundRails=new WeakSet();
+
+  function setRailState(el){
+    if(!el)return;
+    const scrollable=el.scrollWidth>el.clientWidth+4;
+    const atEnd=!scrollable||el.scrollLeft>=el.scrollWidth-el.clientWidth-4;
+    el.classList.toggle('scrollable',scrollable);
+    el.classList.toggle('at-end',atEnd);
+    const row=el.closest('.filter-row');
+    if(row){
+      row.classList.toggle('scrollable',scrollable);
+      row.classList.toggle('at-end',atEnd);
+    }
+  }
+  function bindHorizontalRail(el){
+    if(!el)return;
+    if(!boundRails.has(el)){
+      boundRails.add(el);
+      el.addEventListener('scroll',function(){setRailState(el)},{passive:true});
+      window.addEventListener('resize',function(){setRailState(el)});
+    }
+    requestAnimationFrame(function(){setRailState(el)});
+  }
 
   const VENUE_PILL_COLORS={
     'sphere':['#125fd1','#fff'],
@@ -377,6 +404,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
       html+='<button class="venue-btn" type="button" data-venue="'+escapeHtml(item.group.id)+'" aria-pressed="false" style="'+venuePillStyle(item.group.id)+'">'+escapeHtml(item.group.short_name)+' <span class="venue-count">'+item.count+'</span></button>';
     });
     venueFilterEl.innerHTML=html;
+    bindHorizontalRail(venueFilterEl);
     venueFilterEl.querySelectorAll('.venue-btn').forEach(function(btn){
       btn.addEventListener('click',function(){
         activeVenue=btn.dataset.venue;
@@ -391,6 +419,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
     });
   }
 
+  bindHorizontalRail(typeFilterEl);
   typeFilterEl.querySelectorAll('.type-btn').forEach(function(btn){
     btn.addEventListener('click',function(){
       activeType=btn.dataset.type;
@@ -458,6 +487,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
       return '<a href="#'+escapeHtml(section.id)+'">'+escapeHtml(label)+'</a>';
     }).join('');
     monthJumpEl.hidden=false;
+    bindHorizontalRail(monthJumpEl);
   }
 
   function renderActs(){

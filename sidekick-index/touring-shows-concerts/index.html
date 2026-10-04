@@ -116,10 +116,16 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
 @media(max-width:980px){.hero{margin-top:64px}.toolbar{top:64px}.event-row{grid-template-columns:minmax(220px,1fr) 74px minmax(160px,.8fr) 118px}.act-grid{grid-template-columns:1fr}}
 @media(max-width:720px){
   .wrap{width:min(100% - 24px,1160px)}.hero{padding:40px 0 38px}.hero p{font-size:.96rem}.hero-note{font-size:.8rem}
-  .toolbar{top:64px;margin-bottom:18px;padding:9px 10px;overflow-x:auto;align-items:center;scrollbar-width:none}.toolbar::-webkit-scrollbar{display:none}.scope{display:none}.view-group{flex:0 0 auto}.view-btn{padding:8px 12px;font-size:.72rem}
-  .filter-stack{margin:-4px 0 20px;padding:11px 10px;overflow:hidden}.filter-row{display:block}.filter-row-label{display:block;padding:0 0 6px}.venue-filter{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.venue-filter::-webkit-scrollbar{display:none}.venue-btn{flex:0 0 auto;padding:7px 10px;font-size:.68rem}
+  .toolbar{top:64px;margin-bottom:18px;padding:9px 10px;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;align-items:center;scrollbar-width:none}.toolbar::-webkit-scrollbar{display:none}.scope{display:none}.view-group{flex:0 0 auto}.view-btn{padding:8px 12px;font-size:.72rem}
+  .filter-stack{margin:-4px 0 20px;padding:11px 10px;overflow:visible}
+  .filter-row{display:block;min-width:0}.filter-row-label{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 0 6px}
+  .filter-row.scrollable .filter-row-label::after{content:"Swipe for more →";font:700 .58rem var(--mono);letter-spacing:0;text-transform:none;color:var(--purple);white-space:nowrap}
+  .filter-row.scrollable.at-end .filter-row-label::after{content:"← Swipe back"}
+  .venue-filter{width:100%;max-width:100%;min-width:0;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 34px 3px 0;scroll-padding-inline:0 34px}
+  .venue-filter.scrollable:not(.at-end){-webkit-mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 42px),transparent 100%);mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 42px),transparent 100%)}
+  .venue-filter::-webkit-scrollbar{display:none}.venue-btn{flex:0 0 auto;padding:7px 10px;font-size:.68rem}
   .section-intro{display:block;margin-bottom:12px}.section-intro p{display:none}.section-intro h2{font-size:1.5rem}
-  .month-jump{position:sticky;top:126px;z-index:28;display:flex;gap:7px;overflow-x:auto;margin:0 -12px 16px;padding:8px 12px;background:rgba(255,255,255,.96);border-top:1px solid var(--line);border-bottom:1px solid var(--line);backdrop-filter:blur(10px);scrollbar-width:none}.month-jump::-webkit-scrollbar{display:none}.month-jump a{flex:0 0 auto;border:1px solid #ddd7e8;border-radius:999px;padding:7px 10px;background:#fff;color:var(--ink);text-decoration:none;font:800 .66rem var(--display)}
+  .month-jump{position:sticky;top:126px;z-index:28;display:flex;gap:7px;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;margin:0 -12px 16px;padding:8px 44px 8px 12px;background:rgba(255,255,255,.96);border-top:1px solid var(--line);border-bottom:1px solid var(--line);backdrop-filter:blur(10px);scrollbar-width:none;scroll-padding-inline:12px 44px}.month-jump.scrollable:not(.at-end){-webkit-mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 36px),transparent 100%);mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 36px),transparent 100%)}.month-jump::-webkit-scrollbar{display:none}.month-jump a{flex:0 0 auto;border:1px solid #ddd7e8;border-radius:999px;padding:7px 10px;background:#fff;color:var(--ink);text-decoration:none;font:800 .66rem var(--display)}
   .month{scroll-margin-top:176px;margin-top:24px}.month-head h3{font-size:.95rem}.event-list{border-radius:14px}
   .event-row{display:grid;grid-template-columns:74px minmax(0,1fr) auto;gap:9px 10px;padding:14px}.event-row .event-copy{grid-column:1/-1}.event-row .date-wrap{grid-column:1}.event-row .venue{grid-column:2;align-self:center;font-size:.72rem}.event-row .door{grid-column:2}.event-row .official{grid-column:3;grid-row:2 / span 2;align-self:center;min-height:32px;padding:6px 10px;font-size:0}.event-row .official:after{content:"Tickets ↗";font:800 .65rem var(--display)}.date-pill{width:58px;height:58px}.event-name{font-size:1.02rem}.event-name:after{width:24px;height:3px;margin-top:5px}
   .act-card{padding:15px}.venue-section-head{display:block}.venue-section-head a{display:inline-block;margin-top:8px}
@@ -197,6 +203,29 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   let dataset=null;
   let activeVenue='all';
   let activeView='dates';
+  const boundRails=new WeakSet();
+
+  function setRailState(el){
+    if(!el)return;
+    const scrollable=el.scrollWidth>el.clientWidth+4;
+    const atEnd=!scrollable||el.scrollLeft>=el.scrollWidth-el.clientWidth-4;
+    el.classList.toggle('scrollable',scrollable);
+    el.classList.toggle('at-end',atEnd);
+    const row=el.closest('.filter-row');
+    if(row){
+      row.classList.toggle('scrollable',scrollable);
+      row.classList.toggle('at-end',atEnd);
+    }
+  }
+  function bindHorizontalRail(el){
+    if(!el)return;
+    if(!boundRails.has(el)){
+      boundRails.add(el);
+      el.addEventListener('scroll',function(){setRailState(el)},{passive:true});
+      window.addEventListener('resize',function(){setRailState(el)});
+    }
+    requestAnimationFrame(function(){setRailState(el)});
+  }
 
   const VENUE_COLORS={'brooklyn-bowl-las-vegas':['#006f88','#fff'],'house-of-blues-las-vegas':['#d94f1f','#fff'],'24-oxford':['#d81b60','#fff'],'fremont-country-club':['#b91c1c','#fff'],'backstage-bar-billiards':['#3f3f46','#fff'],'swan-dive-las-vegas':['#7c3aed','#fff'],'the-space-las-vegas':['#2563eb','#fff'],'area15':['#c026d3','#fff'],'hard-rock-live-las-vegas':['#111111','#fff'],'smith-center':['#b7791f','#fff'],'downtown-las-vegas-events-center':['#0f766e','#fff'],'notoriety-live':['#e11d48','#fff']};
   const FALLBACK=[['#125fd1','#fff'],['#6d28d9','#fff'],['#c2185b','#fff'],['#087f23','#fff'],['#ffb000','#171225']];
@@ -226,6 +255,7 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
       html+='<button class="venue-btn" type="button" data-venue="'+escapeHtml(v.id)+'" aria-pressed="false" style="'+venueStyle(v.id)+'">'+escapeHtml(v.short_name)+' <span class="venue-count">'+count+'</span></button>';
     });
     venueFilterEl.innerHTML=html;
+    bindHorizontalRail(venueFilterEl);
     venueFilterEl.querySelectorAll('.venue-btn').forEach(function(btn){
       btn.addEventListener('click',function(){
         activeVenue=btn.dataset.venue;
@@ -272,6 +302,7 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
       return '<a href="#'+escapeHtml(section.id)+'">'+escapeHtml(label)+'</a>';
     }).join('');
     monthJumpEl.hidden=false;
+    bindHorizontalRail(monthJumpEl);
   }
 
   function renderActs(){
