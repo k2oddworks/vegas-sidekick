@@ -57,6 +57,13 @@
     .photo-badge{position:absolute;left:50%;transform:translateX(-50%);bottom:-16px;white-space:nowrap;background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.8rem;padding:9px 18px;border-radius:100px;box-shadow:0 10px 26px rgba(37,99,235,.35)}
     .meet .body .eyebrow{color:var(--pink)}
 
+    .pick-panel{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px;box-shadow:0 12px 34px rgba(23,18,37,.06)}
+    .pick-demo{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;background:#bfe8ff;color:#171225;border:2px solid #eefaff;border-radius:100px;padding:8px 12px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.78rem;font-weight:800;box-shadow:0 0 0 1px rgba(191,232,255,.2)}
+    .pick-copy h2{margin:0 0 4px}
+    .pick-copy p{margin-top:14px}
+    .pick-copy p:first-of-type{font-size:1.15rem;color:var(--ink);font-weight:600}
+    .pick-copy a{color:var(--blue-dk);font-weight:700}
+
     .ops-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
     .op{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;box-shadow:0 8px 24px rgba(23,18,37,.05)}
     .op .ic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;font-size:1.5rem;margin-bottom:16px}
@@ -83,6 +90,7 @@
       .hero{padding:108px 0 74px}
       .meet{grid-template-columns:1fr;gap:44px}
       .photo-wrap{position:static;max-width:400px;margin:0 auto}
+      .pick-panel{grid-template-columns:1fr;gap:18px;padding:24px}
       .ops-grid{grid-template-columns:1fr}
     }
     @media(prefers-reduced-motion:reduce){.fade-up{transition:none;opacity:1;transform:none}.progress{transition:none}}
@@ -139,6 +147,21 @@
   </section>
 
   <section class="sec alt">
+    <div class="wrap narrow">
+      <div class="eyebrow">How Recommendations Work</div>
+      <div class="pick-panel fade-up">
+        <div class="pick-demo">🌵 Sidekick Pick</div>
+        <div class="pick-copy">
+          <h2>What “Sidekick Pick” means.</h2>
+          <p>If this show caught your eye, it’s one we’d feel good recommending.</p>
+          <p>It isn’t a top-10 ranking, and it isn’t supposed to be ultra-exclusive. Different picks fit different people. We use the badge selectively for shows that deliver for the audience they’re built for and that we’re comfortable putting the Vegas Sidekick name behind.</p>
+          <p>No badge doesn’t mean “skip it.” It just means we reserve Sidekick Pick for shows we recommend with an extra level of confidence. And no show can buy the badge — it’s an editorial call, not a paid placement. <a href="/affiliate-disclosure/">See how our affiliate model works →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
     <div class="wrap meet">
       <div class="photo-wrap">
         <div class="photo-frame"><img src="/images/spike-podcast.webp" alt="Spike, the Vegas Sidekick cactus mascot, wearing aviators at his podcast microphone" width="900" height="900" loading="lazy"></div>
