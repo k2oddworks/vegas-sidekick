@@ -35,10 +35,12 @@ def main():
             if 'vs-booking-section' not in text:
                 errors.append(f'{rel}: active show is missing the shared booking module')
                 continue
-            if '/assets/showtimes-booking.css?v=2' not in text:
-                errors.append(f'{rel}: booking CSS is not on v2')
+            if '/assets/showtimes-booking.css?v=3' not in text:
+                errors.append(f'{rel}: booking CSS is not on v3')
             if '/assets/showtimes-booking.js?v=2' not in text:
                 errors.append(f'{rel}: booking JS is not on v2')
+            if f'data-booking-theme="{cat}"' not in text:
+                errors.append(f'{rel}: booking theme is missing or does not match category {cat}')
             if 'class="vs-booking-pill"' not in text:
                 errors.append(f'{rel}: booking pill is missing from static HTML')
             if 'Planning ahead?' in text:
@@ -67,7 +69,7 @@ def main():
         for e in errors:
             print(f'- {e}')
         sys.exit(1)
-    print('PASS: compact showtimes booking v2 is present across all active show pages')
+    print('PASS: compact showtimes booking v3 solid-color panels are present across all active show pages')
 
 
 if __name__ == '__main__':

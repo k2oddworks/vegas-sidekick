@@ -8,7 +8,7 @@ Paste this entire document at the start of a new chat session before requesting 
 >
 > Key current rules: active show pages include a compact **What is [Show]?** descriptive overview before Quick Take; write for entity completeness rather than keyword density and never pad to a word count; Hero, descriptive overview, and Quick Take must do different jobs; no formal downside/Think twice modules; Good to know only for real useful facts; Booking tip is optional and actionable only; no customer-facing “tradeoff”; no interaction/participation claims unless Kris explicitly confirms them; use Start time/Start times; prefer “See available dates & times”; use one visible “Show info confirmed Month YYYY” freshness line near the author card; galleries support arrows/keyboard/swipe; seating charts are room-based, geometrically faithful, slab-row when exact seat counts are unnecessary, and mobile tap feedback must appear immediately in view.
 >
-> **Booking module update — September 15, 2026:** compact v2 is the shared standard. Use the pill + compact day/time/amber CTA treatment in `assets/showtimes-booking.css` and `.js`; do not restore the old large secondary CTA or generic Planning Ahead card.
+> **Booking module update — October 3, 2026:** compact v3 is the shared standard. Use the large solid category-color block around the white booking card, plus the compact day/time/Warm Amber CTA treatment in `assets/showtimes-booking.css` and `.js`. Palette: Music `#2563EB`, Magic `#6D28D9`, Comedy `#C2185B`, Adult `#C2410C`, Cirque + Spectaculars `#0C7A90`, Family `#087F23`. Do not restore the retired skyline art, old large secondary CTA, or generic Planning Ahead card.
 
 ---
 

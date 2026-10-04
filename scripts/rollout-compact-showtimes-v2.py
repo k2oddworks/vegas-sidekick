@@ -19,7 +19,7 @@ def ensure_barry_booking_module():
     css_anchor = '<link rel="stylesheet" href="/assets/ticket-cta.css">'
     if css_anchor not in s:
         raise RuntimeError('Barry Manilow ticket CTA stylesheet anchor not found')
-    s = s.replace(css_anchor, css_anchor + '<link rel="stylesheet" href="/assets/showtimes-booking.css?v=2">', 1)
+    s = s.replace(css_anchor, css_anchor + '<link rel="stylesheet" href="/assets/showtimes-booking.css?v=3">', 1)
 
     nav_anchor = '<a href="#quick">Quick take</a>'
     if nav_anchor not in s:
@@ -28,7 +28,7 @@ def ensure_barry_booking_module():
 
     ticket = 'https://spotlight.vegas/shows/music/barry-manilow/ref/vegassidekick'
     module = (
-        '<section class="section vs-booking-section" id="showtimes"><div class="wrap">'
+        '<section class="section vs-booking-section" data-booking-theme="music" id="showtimes"><div class="wrap">'
         '<div class="vs-booking-shell"><div class="vs-booking-pill">CHECK YOUR DATE</div>'
         '<div class="vs-booking-copy"><h2>See available dates &amp; times</h2>'
         '<p class="vs-booking-summary"><strong>Schedule varies by date</strong>'
@@ -70,7 +70,7 @@ def update_show_pages():
                 continue
             old = s
 
-            s = s.replace('showtimes-booking.css?v=1', 'showtimes-booking.css?v=2')
+            s = s.replace('showtimes-booking.css?v=1', 'showtimes-booking.css?v=3')
             s = s.replace('showtimes-booking.js?v=1', 'showtimes-booking.js?v=2')
 
             # Remove the Awakening-only experiment skin now that compact v2 is shared.
@@ -141,7 +141,7 @@ def update_docs():
         '- Showtime buttons and the primary **Get Tickets for [day] →** CTA use the show’s existing verified affiliate URL.': '- Showtime buttons and the primary **Get Tickets →** CTA use the show’s existing verified affiliate URL.',
         '- Keep **View all dates & times →** as a visually substantial filled lavender secondary CTA.': '- Keep **See all dates & times →** as a compact secondary text action beneath the primary purchase path.',
         '- Include the compact **Planning ahead? You can book tickets weeks and months in advance.** treatment.': '- Put a compact booking pill above the headline. Default copy is **CHOOSE YOUR DAY** for regular schedules and **CHECK YOUR DATE** for variable schedules. Use show-specific factual copy only when it is verified, such as a closing date.',
-        '- Keep the shared Vegas dusk / skyline / Sphere artwork as the decorative footer treatment without a slogan.': '- Keep the shared Vegas dusk / skyline / Sphere artwork as a thin decorative footer treatment without a slogan.',
+        '- Keep the shared Vegas dusk / skyline / Sphere artwork as the decorative footer treatment without a slogan.': '- Use the shared solid category-color block around the white booking card; do not restore the retired skyline / Sphere artwork.',
     }, 'AGENTS.md')
     if s != old:
         p.write_text(s, encoding='utf-8')
@@ -157,8 +157,8 @@ def update_docs():
         '- one dominant Warm Amber **Get Tickets for [day] →** CTA': '- one dominant Warm Amber **Get Tickets →** CTA; the selected day remains obvious in the picker and available in the accessible label',
         '- one substantial filled-lavender **View all dates & times →** secondary CTA': '- one compact **See all dates & times →** secondary text action',
         '- a compact **Planning ahead? You can book tickets weeks and months in advance.** card': '- no generic planning-ahead card; omit filler unless there is a genuinely useful show-specific fact',
-        '- the shared decorative Vegas dusk / skyline / Sphere artwork at the bottom, with **no slogan**': '- the shared decorative Vegas dusk / skyline / Sphere artwork as a thin footer strip, with **no slogan**',
-        '- retain the planning-ahead treatment and shared artwork': '- use the **CHECK YOUR DATE** pill and retain the thin shared artwork; do not add generic planning filler',
+        '- the shared decorative Vegas dusk / skyline / Sphere artwork at the bottom, with **no slogan**': '- the shared solid category-color block around the white booking card; do not restore the retired skyline / Sphere artwork',
+        '- retain the planning-ahead treatment and shared artwork': '- use the **CHECK YOUR DATE** pill inside the shared solid-color booking block; do not add generic planning filler',
     }, 'SHOW-PAGE-BENCHMARK.md')
     if '**Locked:** September 15, 2026' not in s:
         raise RuntimeError('SHOW-PAGE-BENCHMARK.md lock date was not updated')
@@ -170,7 +170,7 @@ def update_docs():
     s = p.read_text(encoding='utf-8')
     old = s
     anchor = '> Key current rules: no formal downside/Think twice modules; Good to know only for real useful facts; Booking tip is optional and actionable only; no customer-facing “tradeoff”; no interaction/participation claims unless Kris explicitly confirms them; use Start time/Start times; prefer “See available dates & times”; use one visible “Show info confirmed Month YYYY” freshness line near the author card; galleries support arrows/keyboard/swipe; seating charts are room-based, geometrically faithful, slab-row when exact seat counts are unnecessary, and mobile tap feedback must appear immediately in view.'
-    note = '\n>\n> **Booking module update — September 15, 2026:** compact v2 is the shared standard. Use the pill + compact day/time/amber CTA treatment in `assets/showtimes-booking.css` and `.js`; do not restore the old large secondary CTA or generic Planning Ahead card.'
+    note = '\n>\n> **Booking module update — October 3, 2026:** compact v3 is the shared standard. Use the solid category-color block + white booking card + compact day/time/amber CTA treatment in `assets/showtimes-booking.css` and `.js`; do not restore the old skyline art, large secondary CTA, or generic Planning Ahead card.'
     if note.strip() not in s:
         if anchor not in s:
             raise RuntimeError('SHOW-BUILDER-PROMPT.md booking update anchor not found')
