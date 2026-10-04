@@ -11,6 +11,7 @@ on:
       - 'guides/**'
       - 'news/**'
       - 'venues/**'
+      - 'images/**'
       - 'assets/showtimes-booking.css'
       - 'assets/showtimes-booking.js'
       - '_redirects'
@@ -127,6 +128,13 @@ jobs:
           name: show-media-audit
           path: docs/show-media-audit-2026-09-07.md
           retention-days: 30
+
+  image-library:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit organized image library
+        run: python3 scripts/audit-image-library.py
 
   mobile-show-heroes:
     runs-on: ubuntu-latest
