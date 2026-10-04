@@ -95,7 +95,7 @@ For shows with a verified regular weekly schedule:
 - Keep the primary CTA Warm Amber `#FFB000`.
 - Keep **See all dates & times →** as a compact secondary text action beneath the primary purchase path.
 - Put a compact booking pill above the headline. Default copy is **CHOOSE YOUR DAY** for regular schedules and **CHECK YOUR DATE** for variable schedules. Use show-specific factual copy only when it is verified, such as a closing date.
-- Keep the shared Vegas dusk / skyline / Sphere artwork as a thin decorative footer treatment without a slogan.
+- Wrap the white booking card in the shared large solid category-color block. Use the locked palette: Music `#2563EB`, Magic `#6D28D9`, Comedy `#C2185B`, Adult `#C2410C`, Cirque + Spectaculars `#0C7A90`, Family `#087F23`. Do not restore the retired skyline / Sphere artwork.
 
 For genuinely variable schedules:
 

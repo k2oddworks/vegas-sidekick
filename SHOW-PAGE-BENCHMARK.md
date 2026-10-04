@@ -155,7 +155,7 @@ The module should include:
 - one dominant Warm Amber **Get Tickets →** CTA; the selected day remains obvious in the picker and available in the accessible label
 - one compact **See all dates & times →** secondary text action
 - no generic planning-ahead card; omit filler unless there is a genuinely useful show-specific fact
-- the shared decorative Vegas dusk / skyline / Sphere artwork as a thin footer strip, with **no slogan**
+- the shared large solid category-color block around the white booking card. Locked palette: Music `#2563EB`, Magic `#6D28D9`, Comedy `#C2185B`, Adult `#C2410C`, Cirque + Spectaculars `#0C7A90`, Family `#087F23`. The solid block is the visual anchor; do not restore the retired skyline / Sphere artwork
 
 The hierarchy matters:
 
@@ -174,7 +174,7 @@ Use the variable-date version of the shared module:
 
 - clearly state **Schedule varies by date**
 - use **See available dates & times →** as the primary ticket action
-- use the **CHECK YOUR DATE** pill and retain the thin shared artwork; do not add generic planning filler
+- use the **CHECK YOUR DATE** pill inside the shared solid-color booking block; do not add generic planning filler
 - link only to the existing verified affiliate URL
 
 ### Source-of-truth requirement

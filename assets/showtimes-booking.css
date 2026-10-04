@@ -1,8 +1,14 @@
-/* Vegas Sidekick reusable showtimes conversion module — compact v2 */
-.vs-booking-section{background:linear-gradient(180deg,#f8f4ff 0%,#f2eaff 100%);overflow:hidden;padding:42px 0 44px}
-.vs-booking-section .wrap{max-width:1080px}
+/* Vegas Sidekick reusable showtimes conversion module — compact v3 solid color panels */
+.vs-booking-section{--vs-booking-bg:#2563eb;background:#fff;overflow:hidden;padding:42px 0 44px}
+.vs-booking-section[data-booking-theme="music"]{--vs-booking-bg:#2563eb}
+.vs-booking-section[data-booking-theme="magic"]{--vs-booking-bg:#6d28d9}
+.vs-booking-section[data-booking-theme="comedy"]{--vs-booking-bg:#c2185b}
+.vs-booking-section[data-booking-theme="adult"]{--vs-booking-bg:#c2410c}
+.vs-booking-section[data-booking-theme="cirque"],.vs-booking-section[data-booking-theme="spectaculars"]{--vs-booking-bg:#0c7a90}
+.vs-booking-section[data-booking-theme="family"]{--vs-booking-bg:#087f23}
+.vs-booking-section .wrap{max-width:1080px;background:var(--vs-booking-bg);border-radius:30px;padding:70px 30px 74px;box-shadow:0 20px 52px rgba(23,18,37,.14)}
 .vs-booking-section>.wrap>.eyebrow{display:none}
-.vs-booking-shell{position:relative;border:1px solid #e6dcf5;border-radius:24px;padding:20px 24px 0;background:rgba(255,255,255,.76);box-shadow:0 18px 46px rgba(64,31,94,.09);overflow:hidden;color:#25133f;font-family:Inter,sans-serif}
+.vs-booking-shell{position:relative;border:1px solid rgba(255,255,255,.82);border-radius:24px;padding:21px 24px 22px;background:rgba(255,255,255,.98);box-shadow:0 22px 54px rgba(23,18,37,.22);overflow:visible;color:#25133f;font-family:Inter,sans-serif}
 .vs-booking-pill{width:max-content;max-width:100%;margin:0 auto 9px;padding:7px 12px;border-radius:999px;background:#171225;color:#FFB000;font:800 .7rem/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.09em;text-transform:uppercase;text-align:center}
 .vs-booking-copy{text-align:center}
 .vs-booking-copy h2{font:800 clamp(2rem,4vw,3rem)/1.05 'Plus Jakarta Sans',sans-serif;color:#17082e;margin:0 0 4px;letter-spacing:-.045em}
@@ -32,7 +38,7 @@
 .vs-plan-ahead{display:none!important}
 .vs-booking-note{display:flex;align-items:center;justify-content:center;gap:8px;margin:11px auto 0;color:#5d526a;font-size:.8rem;text-align:center}
 .vs-booking-note strong{color:#25133f}.vs-booking-note i{width:4px;height:4px;border-radius:50%;background:#ff2e7e;flex:0 0 4px}
-.vs-booking-art{position:relative;height:92px;margin:16px -24px 0;background:linear-gradient(180deg,#f0e5ff 0%,#c9a8f5 34%,#5c2f89 65%,#1a0c2c 100%);overflow:hidden;isolation:isolate}
+.vs-booking-art{display:none!important}
 .vs-booking-art:before{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(circle at 9% 20%,rgba(255,255,255,.8) 0 1px,transparent 1.8px),radial-gradient(circle at 25% 14%,rgba(255,255,255,.65) 0 1px,transparent 1.7px),radial-gradient(circle at 43% 24%,rgba(255,255,255,.7) 0 1px,transparent 1.8px),radial-gradient(circle at 70% 16%,rgba(255,255,255,.7) 0 1px,transparent 1.8px),radial-gradient(circle at 88% 28%,rgba(255,255,255,.75) 0 1px,transparent 1.8px),linear-gradient(108deg,transparent 0 24%,rgba(255,255,255,.13) 34%,transparent 45%),linear-gradient(72deg,transparent 0 58%,rgba(255,196,57,.13) 68%,transparent 78%)}
 .vs-booking-art:after{content:"";position:absolute;left:7%;right:7%;bottom:9px;height:13px;z-index:3;background:repeating-linear-gradient(90deg,rgba(255,46,126,.8) 0 5px,transparent 5px 11px);mask:linear-gradient(180deg,transparent 0 32%,#000 33%);opacity:.45;transform:skewX(-10deg)}
 .vs-art-moon{position:absolute;width:76px;height:76px;border-radius:50%;right:11%;top:5px;z-index:1;background:radial-gradient(circle at 32% 28%,#fffbe7 0 8%,#ffe28b 34%,#ffbf34 66%,#d98c00 100%);box-shadow:0 0 30px rgba(255,190,35,.38),0 0 70px rgba(255,105,180,.14)}
@@ -44,7 +50,8 @@
 .vs-art-strip i:nth-child(1){height:24px}.vs-art-strip i:nth-child(2){height:39px}.vs-art-strip i:nth-child(3){height:31px}.vs-art-strip i:nth-child(4){height:46px}.vs-art-strip i:nth-child(5){height:29px}.vs-art-strip i:nth-child(6){height:41px}.vs-art-strip i:nth-child(7){height:34px}.vs-art-strip i:nth-child(8){height:44px}
 @media(max-width:700px){
  .vs-booking-section{padding:34px 0 36px}
- .vs-booking-shell{padding:17px 13px 0;border-radius:20px}
+ .vs-booking-section .wrap{width:min(1080px,calc(100% - 28px));border-radius:26px;padding:54px 14px 58px}
+ .vs-booking-shell{padding:17px 13px 18px;border-radius:20px}
  .vs-booking-pill{font-size:.64rem;padding:7px 10px;margin-bottom:8px}
  .vs-booking-copy h2{font-size:2rem}
  .vs-booking-summary{font-size:.82rem;line-height:1.4}
