@@ -134,7 +134,7 @@ For current show hero photography, use the approved hero asset referenced by the
 
 Official Vegas Sidekick horizontal logo:
 
-`/images/logo-horizontal.png`
+`/images/brand/logo-horizontal.png`
 
 Use the actual transparent PNG. Do not recreate the wordmark, typography or cactus.
 

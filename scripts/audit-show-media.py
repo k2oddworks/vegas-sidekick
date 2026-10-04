@@ -27,7 +27,7 @@ def title_for(text,ev,slug):
 def photo_count(text,ev):
     img=ev.get('image') if ev else ''
     if isinstance(img,list):img=img[0] if img else ''
-    name=str(img or '').split('/images/')[-1].split('?')[0]
+    name=Path(str(img or '').split('?')[0]).name
     stem=re.sub(r'\.'+EXT+r'$','',name,flags=re.I)
     base=re.sub(r'-(?:hero|og)$','',stem,flags=re.I)
     refs=re.findall(r'/images/([^"\'<>?]+\.'+EXT+r')',text,re.I)

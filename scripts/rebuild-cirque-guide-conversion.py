@@ -4,10 +4,10 @@ p=Path(__file__).resolve().parents[1]/'guides/best-cirque-shows/index.html'
 s=p.read_text()
 # Current four-show ranking: KÀ, Mystère, Michael Jackson ONE, O.
 rank=[
-('KÀ','/shows/cirque/ka/','/images/ka-hero.jpg','$80','MGM Grand','Kris Kidd’s #1 pick','The one I’d choose first. Huge moving-stage spectacle, martial-arts energy and a production that feels built for Vegas.'),
-('Mystère','/shows/cirque/mystere/','/images/mystere-hero.jpg','$84','Treasure Island','The original Vegas Cirque','Colorful, physical and easy to recommend when you want classic Cirque without needing a story to follow.'),
-('Michael Jackson ONE','/shows/cirque/michael-jackson-one/','/images/mj-one-hero.jpg','$163','Mandalay Bay','Best for music + energy','The easiest pick for an MJ fan: familiar songs, big sound and Cirque staging built around the music.'),
-('“O”','/shows/cirque/o/','/images/o-hero.jpg','$156','Bellagio','Best aquatic spectacle','The water production is still singular in Las Vegas. Choose it when visual artistry and scale matter most.')]
+('KÀ','/shows/cirque/ka/','/images/product-photos/ka/ka-hero.jpg','$80','MGM Grand','Kris Kidd’s #1 pick','The one I’d choose first. Huge moving-stage spectacle, martial-arts energy and a production that feels built for Vegas.'),
+('Mystère','/shows/cirque/mystere/','/images/product-photos/mystere/mystere-hero.jpg','$84','Treasure Island','The original Vegas Cirque','Colorful, physical and easy to recommend when you want classic Cirque without needing a story to follow.'),
+('Michael Jackson ONE','/shows/cirque/michael-jackson-one/','/images/product-photos/michael-jackson-one/mj-one-hero.jpg','$163','Mandalay Bay','Best for music + energy','The easiest pick for an MJ fan: familiar songs, big sound and Cirque staging built around the music.'),
+('“O”','/shows/cirque/o/','/images/product-photos/o/o-hero.jpg','$156','Bellagio','Best aquatic spectacle','The water production is still singular in Las Vegas. Choose it when visual artistry and scale matter most.')]
 # Metadata/schema accuracy.
 s=s.replace('All four current Cirque du Soleil shows in Las Vegas ranked by experience, spectacle and fit, with prices and practical tradeoffs for choosing one.','All four current Cirque du Soleil shows in Las Vegas ranked by Kris Kidd, with real starting prices, show photos and practical help choosing the right Cirque night.')
 s=s.replace('All four current Cirque du Soleil shows in Las Vegas ranked — the icon, the crowd-pleaser, the epic and the original. Real prices and which is right for you.','KÀ is Kris Kidd’s #1 Cirque pick in Las Vegas. Compare KÀ, Mystère, Michael Jackson ONE and O with real starting prices and show photos.')

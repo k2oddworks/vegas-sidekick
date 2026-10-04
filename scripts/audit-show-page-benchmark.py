@@ -23,7 +23,7 @@ REQUIRED_SNIPPETS = {
     "FAQ": 'id="faq"',
     "author card": 'class="author-card"',
     "final CTA": "final-section",
-    "mobile ticket bar": 'class="mobile-bar"',
+    "mobile ticket bar": 'class="mobile-bar',
     "shared showtimes CSS": "/assets/showtimes-booking.css",
     "shared showtimes JS": "/assets/showtimes-booking.js",
 }

@@ -31,10 +31,10 @@
       <section class="vs-footer-brand" aria-labelledby="vsFooterBrandName">
         <div class="vs-footer-brand-stack" id="vsFooterBrandStack">
           <button class="vs-footer-badge-button" id="vsFooterBadge" type="button" aria-label="Bring the Vegas Sidekick badge to the front">
-            <img class="vs-footer-badge" src="/images/logo-badge.png?v=2" alt="" width="640" height="640" loading="lazy" decoding="async">
+            <img class="vs-footer-badge" src="/images/brand/logo-badge.png?v=2" alt="" width="640" height="640" loading="lazy" decoding="async">
           </button>
           <button class="vs-footer-spike-button" id="vsFooterSpike" type="button" aria-label="Bring Spike to the front">
-            <img class="vs-footer-spike" src="/images/spike-podcast-badge.webp" alt="" width="140" height="140" loading="lazy">
+            <img class="vs-footer-spike" src="/images/brand/spike-podcast-badge.webp" alt="" width="140" height="140" loading="lazy">
             <span class="vs-spike-ring" aria-hidden="true"></span>
           </button>
         </div>
@@ -193,7 +193,7 @@
       '@id':'https://vegassidekick.com/#organization',
       name:'Vegas Sidekick',
       url:'https://vegassidekick.com/',
-      logo:{'@type':'ImageObject',url:'https://vegassidekick.com/images/logo-badge.png'},
+      logo:{'@type':'ImageObject',url:'https://vegassidekick.com/images/brand/logo-badge.png'},
       founder:{'@type':'Person','@id':'https://vegassidekick.com/about/kris-kidd/#kris',name:'Kris Kidd',url:'https://vegassidekick.com/about/kris-kidd/'}
     });
     document.head.appendChild(script);

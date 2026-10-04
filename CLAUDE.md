@@ -694,7 +694,7 @@ Each entry is an object:
   "cat": "Music",                                  // category label (Title Case: Comedy, Magic, Cirque, Music, Family, Adult, Spectaculars)
   "price": 62,                                     // numeric price (for sort)
   "pd": "$62",                                     // display price string
-  "img": "/images/ikons-of-rock-hero.webp",        // hero image ("" falls back to name text)
+  "img": "/images/product-photos/ikons-of-rock/ikons-of-rock-hero.webp",        // hero image ("" falls back to name text)
   "kw": "Live Classic Rock ... Kiss Ozzy ...",     // free-text keyword blob — everything you want the show findable by
   "url": "/shows/music/ikons-of-rock/" }           // relative path to the show page
 ```

@@ -23,11 +23,11 @@
   Cache-Control: public, max-age=31536000, immutable
 
 # Stable brand URLs can change without a filename change, so always revalidate them.
-/images/logo-badge.png
+/images/brand/logo-badge.png
   ! Cache-Control
   Cache-Control: public, max-age=0, must-revalidate
 
-/images/logo-horizontal.png
+/images/brand/logo-horizontal.png
   ! Cache-Control
   Cache-Control: public, max-age=0, must-revalidate
 

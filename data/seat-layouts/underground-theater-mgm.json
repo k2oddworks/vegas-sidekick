@@ -2,7 +2,7 @@
   "venue": "The Underground Theater at MGM Grand",
   "address": "3799 S Las Vegas Blvd, Las Vegas, NV 89109",
   "viewBox": "0 0 1200 1200",
-  "image": "/images/tape-face-seating-chart.webp",
+  "image": "/images/seating-charts/tape-face/tape-face-seating-chart.webp",
   "zones": [
     {
       "id": "a",
