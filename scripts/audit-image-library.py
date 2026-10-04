@@ -14,6 +14,11 @@ TEXT_EXTENSIONS = {
     ".txt", ".py", ".yml", ".yaml", ".toml", ".ini", ".csv"
 }
 TEXT_FILENAMES = {"_redirects", "_headers", "robots.txt", "wrangler.toml"}
+ALLOWED_TOP_LEVEL_DIRS = {
+    "brand", "good-to-know", "guides", "misc", "news", "oddworks-digital",
+    "play", "podcast", "product-photos", "seating-charts", "sidekick-index",
+    "site", "venue-photos"
+}
 
 issues = []
 
@@ -26,6 +31,15 @@ if root_images:
     issues.append(
         f"{len(root_images)} image asset(s) still live directly in /images/: "
         + ", ".join(root_images[:12])
+    )
+
+unexpected_dirs = sorted(
+    p.name for p in IMAGES.iterdir()
+    if p.is_dir() and p.name not in ALLOWED_TOP_LEVEL_DIRS
+)
+if unexpected_dirs:
+    issues.append(
+        "unexpected top-level /images folder(s): " + ", ".join(unexpected_dirs)
     )
 
 moves = []
@@ -66,6 +80,7 @@ else:
 print("Image library audit")
 print(f"Root image files: {len(root_images)}")
 print(f"Manifest moves checked: {len(moves)}")
+print(f"Unexpected top-level folders: {len(unexpected_dirs)}")
 if issues:
     print("FAILED")
     for issue in issues[:100]:

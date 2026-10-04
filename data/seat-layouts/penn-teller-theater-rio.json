@@ -3,8 +3,8 @@
   "venue": "Penn & Teller Theater · Rio Las Vegas",
   "address": "3700 W Flamingo Rd, Las Vegas, NV 89103",
   "chart_parts": [
-    "/images/penn-teller-seating-chart/part-0.txt",
-    "/images/penn-teller-seating-chart/part-1.txt"
+    "/images/seating-charts/penn-teller-theater-rio/source/part-0.txt",
+    "/images/seating-charts/penn-teller-theater-rio/source/part-1.txt"
   ],
   "chart_source": "Kris-approved supplied seating chart; use this image directly and do not redraw or regenerate it",
   "zones": [

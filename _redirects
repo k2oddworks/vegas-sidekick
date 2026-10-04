@@ -514,3 +514,24 @@
 /images/zombie-burlesque-show-2.jpg /images/product-photos/zombie-burlesque/zombie-burlesque-show-2.jpg 301
 /images/zombie-burlesque-show-3.jpg /images/product-photos/zombie-burlesque/zombie-burlesque-show-3.jpg 301
 /images/zombie-burlesque-v-theater-seating-chart.svg /images/seating-charts/zombie-burlesque/zombie-burlesque-v-theater-seating-chart.svg 301
+
+# Seating-chart source cleanup — October 4, 2026
+/images/penn-teller-seating-chart/part-0.txt /images/seating-charts/penn-teller-theater-rio/source/part-0.txt 301
+/images/penn-teller-seating-chart/part-1.txt /images/seating-charts/penn-teller-theater-rio/source/part-1.txt 301
+/images/penn-teller-seating-chart/part-2.txt /images/seating-charts/penn-teller-theater-rio/source/part-2.txt 301
+/images/penn-teller-seating-chart/part-3.txt /images/seating-charts/penn-teller-theater-rio/source/part-3.txt 301
+/images/penn-teller-seating-chart/part-4.txt /images/seating-charts/penn-teller-theater-rio/source/part-4.txt 301
+/images/vegas-the-show-seating-chart/part-0.txt /images/seating-charts/saxe-theater/source/part-0.txt 301
+/images/vegas-the-show-seating-chart/part-1.txt /images/seating-charts/saxe-theater/source/part-1.txt 301
+/images/vegas-the-show-seating-chart/part-2.txt /images/seating-charts/saxe-theater/source/part-2.txt 301
+/images/vegas-the-show-seating-chart/part-3.txt /images/seating-charts/saxe-theater/source/part-3.txt 301
+/images/vegas-the-show-seating-chart/part-4.txt /images/seating-charts/saxe-theater/source/part-4.txt 301
+/images/vegas-the-show-seating-chart/part-5.txt /images/seating-charts/saxe-theater/source/part-5.txt 301
+/images/vegas-the-show-seating-chart/part-6.txt /images/seating-charts/saxe-theater/source/part-6.txt 301
+/images/mj-one-seating-chart/part-00.txt /images/seating-charts/michael-jackson-one/source/part-00.txt 301
+/images/mj-one-seating-chart/part-01.txt /images/seating-charts/michael-jackson-one/source/part-01.txt 301
+/images/mj-one-seating-chart/part-02.txt /images/seating-charts/michael-jackson-one/source/part-02.txt 301
+/images/mj-one-seating-chart/part-03.txt /images/seating-charts/michael-jackson-one/source/part-03.txt 301
+/images/mj-one-seating-chart/part-04.txt /images/seating-charts/michael-jackson-one/source/part-04.txt 301
+/images/mj-one-seating-chart/part-05.txt /images/seating-charts/michael-jackson-one/source/part-05.txt 301
+/images/mj-one-seating-chart/part-06.txt /images/seating-charts/michael-jackson-one/source/part-06.txt 301

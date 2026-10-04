@@ -3,13 +3,13 @@
   "venue": "Saxe Theater • Miracle Mile • Planet Hollywood",
   "address": "3663 S Las Vegas Blvd, Las Vegas, NV 89109",
   "chart_asset_chunks": [
-    "/images/vegas-the-show-seating-chart/part-0.txt",
-    "/images/vegas-the-show-seating-chart/part-1.txt",
-    "/images/vegas-the-show-seating-chart/part-2.txt",
-    "/images/vegas-the-show-seating-chart/part-3.txt",
-    "/images/vegas-the-show-seating-chart/part-4.txt",
-    "/images/vegas-the-show-seating-chart/part-5.txt",
-    "/images/vegas-the-show-seating-chart/part-6.txt"
+    "/images/seating-charts/saxe-theater/source/part-0.txt",
+    "/images/seating-charts/saxe-theater/source/part-1.txt",
+    "/images/seating-charts/saxe-theater/source/part-2.txt",
+    "/images/seating-charts/saxe-theater/source/part-3.txt",
+    "/images/seating-charts/saxe-theater/source/part-4.txt",
+    "/images/seating-charts/saxe-theater/source/part-5.txt",
+    "/images/seating-charts/saxe-theater/source/part-6.txt"
   ],
   "chart_source": "Kris-approved supplied seating chart; use this image directly and do not redraw or regenerate it",
   "sections": [

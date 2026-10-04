@@ -1,7 +1,7 @@
 {
   "migration_date": "2026-10-04",
-  "summary": "Legacy root /images assets moved into purpose-specific folders.",
-  "moved_count": 462,
+  "summary": "Legacy root /images assets and seating-chart source chunks moved into purpose-specific folders.",
+  "moved_count": 481,
   "moves": [
     {
       "from": "images/absinthe-2.webp",
@@ -1850,6 +1850,82 @@
     {
       "from": "images/zombie-burlesque-v-theater-seating-chart.svg",
       "to": "images/seating-charts/zombie-burlesque/zombie-burlesque-v-theater-seating-chart.svg"
+    },
+    {
+      "from": "images/penn-teller-seating-chart/part-0.txt",
+      "to": "images/seating-charts/penn-teller-theater-rio/source/part-0.txt"
+    },
+    {
+      "from": "images/penn-teller-seating-chart/part-1.txt",
+      "to": "images/seating-charts/penn-teller-theater-rio/source/part-1.txt"
+    },
+    {
+      "from": "images/penn-teller-seating-chart/part-2.txt",
+      "to": "images/seating-charts/penn-teller-theater-rio/source/part-2.txt"
+    },
+    {
+      "from": "images/penn-teller-seating-chart/part-3.txt",
+      "to": "images/seating-charts/penn-teller-theater-rio/source/part-3.txt"
+    },
+    {
+      "from": "images/penn-teller-seating-chart/part-4.txt",
+      "to": "images/seating-charts/penn-teller-theater-rio/source/part-4.txt"
+    },
+    {
+      "from": "images/vegas-the-show-seating-chart/part-0.txt",
+      "to": "images/seating-charts/saxe-theater/source/part-0.txt"
+    },
+    {
+      "from": "images/vegas-the-show-seating-chart/part-1.txt",
+      "to": "images/seating-charts/saxe-theater/source/part-1.txt"
+    },
+    {
+      "from": "images/vegas-the-show-seating-chart/part-2.txt",
+      "to": "images/seating-charts/saxe-theater/source/part-2.txt"
+    },
+    {
+      "from": "images/vegas-the-show-seating-chart/part-3.txt",
+      "to": "images/seating-charts/saxe-theater/source/part-3.txt"
+    },
+    {
+      "from": "images/vegas-the-show-seating-chart/part-4.txt",
+      "to": "images/seating-charts/saxe-theater/source/part-4.txt"
+    },
+    {
+      "from": "images/vegas-the-show-seating-chart/part-5.txt",
+      "to": "images/seating-charts/saxe-theater/source/part-5.txt"
+    },
+    {
+      "from": "images/vegas-the-show-seating-chart/part-6.txt",
+      "to": "images/seating-charts/saxe-theater/source/part-6.txt"
+    },
+    {
+      "from": "images/mj-one-seating-chart/part-00.txt",
+      "to": "images/seating-charts/michael-jackson-one/source/part-00.txt"
+    },
+    {
+      "from": "images/mj-one-seating-chart/part-01.txt",
+      "to": "images/seating-charts/michael-jackson-one/source/part-01.txt"
+    },
+    {
+      "from": "images/mj-one-seating-chart/part-02.txt",
+      "to": "images/seating-charts/michael-jackson-one/source/part-02.txt"
+    },
+    {
+      "from": "images/mj-one-seating-chart/part-03.txt",
+      "to": "images/seating-charts/michael-jackson-one/source/part-03.txt"
+    },
+    {
+      "from": "images/mj-one-seating-chart/part-04.txt",
+      "to": "images/seating-charts/michael-jackson-one/source/part-04.txt"
+    },
+    {
+      "from": "images/mj-one-seating-chart/part-05.txt",
+      "to": "images/seating-charts/michael-jackson-one/source/part-05.txt"
+    },
+    {
+      "from": "images/mj-one-seating-chart/part-06.txt",
+      "to": "images/seating-charts/michael-jackson-one/source/part-06.txt"
     }
   ],
   "rewritten_text_files": [
@@ -2062,5 +2138,12 @@
     "venues/planet-hollywood/index.html",
     "venues/rio/index.html",
     "venues/the-strat/index.html"
+  ],
+  "public_image_move_count": 462,
+  "supporting_source_move_count": 19,
+  "notes": [
+    "No image contents were changed as part of the migration.",
+    "Unused but potentially valuable approved assets were preserved.",
+    "Oddworks Digital remains in its own top-level namespace because it is a separate project, not Vegas Sidekick show photography."
   ]
 }
