@@ -3,13 +3,13 @@ import re
 ROOT=Path(__file__).resolve().parents[1]
 # High-value public index surfaces with incomplete share identity.
 targets={
-'guides/index.html':'https://vegassidekick.com/images/guide-first-timers-cover.jpg',
-'shows/magic/index.html':'https://vegassidekick.com/images/guide-magic-cover.jpg',
-'shows/cirque/index.html':'https://vegassidekick.com/images/guide-cirque-cover.jpg',
-'shows/comedy/index.html':'https://vegassidekick.com/images/home-og.jpg',
-'shows/music/index.html':'https://vegassidekick.com/images/home-og.jpg',
-'shows/family/index.html':'https://vegassidekick.com/images/guide-families-cover.jpg',
-'shows/spectaculars/index.html':'https://vegassidekick.com/images/home-og.jpg',
+'guides/index.html':'https://vegassidekick.com/images/guides/guide-first-timers-cover.jpg',
+'shows/magic/index.html':'https://vegassidekick.com/images/guides/guide-magic-cover.jpg',
+'shows/cirque/index.html':'https://vegassidekick.com/images/guides/guide-cirque-cover.jpg',
+'shows/comedy/index.html':'https://vegassidekick.com/images/site/home-og.jpg',
+'shows/music/index.html':'https://vegassidekick.com/images/site/home-og.jpg',
+'shows/family/index.html':'https://vegassidekick.com/images/guides/guide-families-cover.jpg',
+'shows/spectaculars/index.html':'https://vegassidekick.com/images/site/home-og.jpg',
 }
 for rel,img in targets.items():
  p=ROOT/rel

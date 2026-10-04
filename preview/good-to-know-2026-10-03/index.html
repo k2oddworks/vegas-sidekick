@@ -32,10 +32,10 @@ const c=document.getElementById('c'),ctx=c.getContext('2d');
 const W=1080,H=1080;
 const colors={bg:'#070A0F',panel:'#10151D',border:'#252D38',lime:'#C8FF2F',amber:'#FFB000',white:'#FFFFFF',muted:'#B8C0CC'};
 const srcs=[
-  '/images/vegas-the-show-hero.webp',
-  '/images/mj-live-hero.webp',
-  '/images/carrot-top-show-2.jpg',
-  '/images/logo-horizontal.png'
+  '/images/product-photos/vegas-the-show/vegas-the-show-hero.webp',
+  '/images/product-photos/mj-live/mj-live-hero.webp',
+  '/images/product-photos/carrot-top/carrot-top-show-2.jpg',
+  '/images/brand/logo-horizontal.png'
 ];
 function load(src){return new Promise((res,rej)=>{const im=new Image(); im.onload=()=>res(im); im.onerror=rej; im.src=src;});}
 function roundRect(x,y,w,h,r,fill,stroke){

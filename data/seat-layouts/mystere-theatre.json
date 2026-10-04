@@ -2,7 +2,7 @@
   "id": "mystere-theatre",
   "venue": "Mystère Theatre – TI Hotel",
   "address": "3300 S Las Vegas Blvd, Las Vegas, NV 89109",
-  "chart_asset": "/images/mystere-theatre-seating-chart.svg",
+  "chart_asset": "/images/seating-charts/mystere/mystere-theatre-seating-chart.svg",
   "chart_source": "Kris-approved supplied seating chart; do not redraw or regenerate",
   "sections": [
     {

@@ -7,7 +7,7 @@
     <priority>1.0</priority>
     <lastmod>2026-09-02</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/logo-badge.png</image:loc>
+      <image:loc>https://vegassidekick.com/images/brand/logo-badge.png</image:loc>
     </image:image>
   </url>
   <url>
@@ -22,7 +22,7 @@
     <priority>0.8</priority>
     <lastmod>2026-08-29</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/guide-cheap-vegas-cover.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/guides/guide-cheap-vegas-cover.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -31,7 +31,7 @@
     <priority>0.7</priority>
     <lastmod>2026-08-31</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/guide-cheap-vegas-cover.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/guides/guide-cheap-vegas-cover.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -40,7 +40,7 @@
     <priority>0.7</priority>
     <lastmod>2026-07-20</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/guide-magic-cover.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/guides/guide-magic-cover.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -49,7 +49,7 @@
     <priority>0.7</priority>
     <lastmod>2026-08-13</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/guide-cirque-cover.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/guides/guide-cirque-cover.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -58,7 +58,7 @@
     <priority>0.7</priority>
     <lastmod>2026-08-29</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/guide-tribute-cover.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/guides/guide-tribute-cover.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -67,7 +67,7 @@
     <priority>0.7</priority>
     <lastmod>2026-08-30</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/guide-adult-cover.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/guides/guide-adult-cover.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -76,7 +76,7 @@
     <priority>0.7</priority>
     <lastmod>2026-07-21</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/guide-couples-cover.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/guides/guide-couples-cover.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -85,7 +85,7 @@
     <priority>0.7</priority>
     <lastmod>2026-08-10</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/guide-families-cover.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/guides/guide-families-cover.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -94,7 +94,7 @@
     <priority>0.7</priority>
     <lastmod>2026-08-10</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/guide-first-timers-cover.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/guides/guide-first-timers-cover.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -145,7 +145,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/atomic-saloon-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/atomic-saloon/atomic-saloon-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -154,7 +154,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/chippendales-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/chippendales/chippendales-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -163,7 +163,7 @@
     <priority>0.8</priority>
     <lastmod>2026-08-11</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/fantasy-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/fantasy/fantasy-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -172,7 +172,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/magic-mike-live-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/magic-mike-live/magic-mike-live-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -181,7 +181,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/rouge-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/rouge/rouge-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -190,7 +190,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/thunder-from-down-under-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/thunder-from-down-under/thunder-from-down-under-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -199,7 +199,7 @@
     <priority>0.8</priority>
     <lastmod>2026-08-11</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/x-burlesque-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/x-burlesque/x-burlesque-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -208,7 +208,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/x-country-og.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/x-country/x-country-og.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -217,7 +217,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/x-rocks-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/x-rocks/x-rocks-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -226,7 +226,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/empire-strips-back-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/empire-strips-back/empire-strips-back-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -235,7 +235,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/zombie-burlesque-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/zombie-burlesque/zombie-burlesque-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -244,7 +244,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/ka-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/ka/ka-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -253,7 +253,7 @@
     <priority>0.8</priority>
     <lastmod>2026-08-11</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/mad-apple-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/mad-apple/mad-apple-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -262,7 +262,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/mj-one-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/michael-jackson-one/mj-one-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -271,7 +271,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-09</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/mystere-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/mystere/mystere-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -280,7 +280,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/o-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/o/o-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -289,7 +289,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/brad-garretts-comedy-club-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/brad-garretts-comedy-club/brad-garretts-comedy-club-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -298,7 +298,7 @@
     <priority>0.8</priority>
     
       <image:image>
-      <image:loc>https://vegassidekick.com/images/carrot-top-show-2.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/carrot-top/carrot-top-show-2.jpg</image:loc>
     </image:image>
   <lastmod>2026-09-28</lastmod></url>
   <url>
@@ -307,7 +307,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/comedy-cellar-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/comedy-cellar/comedy-cellar-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -316,7 +316,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/la-comedy-club-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/la-comedy-club/la-comedy-club-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -325,7 +325,7 @@
     <priority>0.3</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/las-vegas-live-comedy-club-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/las-vegas-live-comedy-club/las-vegas-live-comedy-club-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -334,7 +334,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/laugh-factory-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/laugh-factory/laugh-factory-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -343,7 +343,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/marc-savard-comedy-hypnosis-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/marc-savard-comedy-hypnosis/marc-savard-comedy-hypnosis-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -352,7 +352,7 @@
     <priority>0.3</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/marriage-can-be-murder-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/marriage-can-be-murder/marriage-can-be-murder-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -361,7 +361,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/popovich-comedy-pet-theater-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/popovich-comedy-pet-theater/popovich-comedy-pet-theater-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -370,7 +370,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/steve-falcons-comedy-hypnosis-hour-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/steve-falcons-comedy-hypnosis-hour/steve-falcons-comedy-hypnosis-hour-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -379,7 +379,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/jimmy-kimmels-comedy-club-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/jimmy-kimmels-comedy-club/jimmy-kimmels-comedy-club-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -388,7 +388,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/tape-face-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/tape-face/tape-face-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -397,7 +397,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/battlebots-destruct-a-thon-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/battlebots-destruct-a-thon/battlebots-destruct-a-thon-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -406,7 +406,7 @@
     <priority>0.8</priority>
     <lastmod>2026-08-11</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/tournament-of-kings-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/tournament-of-kings/tournament-of-kings-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -415,7 +415,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-10</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/v-the-ultimate-variety-show-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/v-the-ultimate-variety-show/v-the-ultimate-variety-show-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -424,7 +424,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/allstars-of-magic-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/allstars-of-magic/allstars-of-magic-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -433,7 +433,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/an-r-rated-magic-show-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/an-r-rated-magic-show/an-r-rated-magic-show-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -442,7 +442,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/colin-cloud-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/colin-cloud/colin-cloud-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -451,7 +451,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/the-conjurors-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/the-conjurors/the-conjurors-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -460,7 +460,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/mind2mind-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/mind2mind/mind2mind-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -469,7 +469,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/criss-angel-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/criss-angel/criss-angel-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -478,7 +478,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/mac-king-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/mac-king/mac-king-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -487,7 +487,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/mat-franco-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/mat-franco/mat-franco-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -496,7 +496,7 @@
     <priority>0.8</priority>
     <lastmod>2026-08-11</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/nathan-burton-comedy-magic-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/nathan-burton-comedy-magic/nathan-burton-comedy-magic-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -505,7 +505,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/now-you-see-me-live-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/now-you-see-me-live/now-you-see-me-live-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -514,7 +514,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/penn-and-teller-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/penn-and-teller/penn-and-teller-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -523,7 +523,7 @@
     <priority>0.8</priority>
     <lastmod>2026-08-11</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/shin-lim-limitless-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/shin-lim/shin-lim-limitless-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -532,7 +532,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/the-mentalist-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/the-mentalist/the-mentalist-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -541,7 +541,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/wayne-newton-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/wayne-newton/wayne-newton-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -550,7 +550,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/all-motown-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/all-motown/all-motown-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -559,7 +559,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/all-shook-up-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/all-shook-up/all-shook-up-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -568,7 +568,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/blue-man-group-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/blue-man-group/blue-man-group-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -577,7 +577,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/jabbawockeez-og.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/jabbawockeez/jabbawockeez-og.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -586,7 +586,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/rupauls-drag-race-live-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/rupauls-drag-race-live/rupauls-drag-race-live-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -595,7 +595,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/vegas-the-show-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/vegas-the-show/vegas-the-show-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -604,7 +604,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/ikons-of-rock-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/ikons-of-rock/ikons-of-rock-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -613,7 +613,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/mj-live-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/mj-live/mj-live-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -622,7 +622,7 @@
     <priority>0.3</priority>
     <lastmod>2026-08-26</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/david-goldrake-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/david-goldrake/david-goldrake-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -631,7 +631,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/the-king-comes-home-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/the-king-comes-home/the-king-comes-home-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -640,7 +640,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/piff-the-magic-dragon-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/piff-the-magic-dragon/piff-the-magic-dragon-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -649,7 +649,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/purple-reign-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/purple-reign/purple-reign-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -658,7 +658,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/australian-bee-gees-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/australian-bee-gees/australian-bee-gees-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -667,7 +667,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/donny-osmond-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/donny-osmond/donny-osmond-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -676,7 +676,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/piano-man-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/piano-man/piano-man-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -685,7 +685,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/absinthe-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/absinthe/absinthe-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -694,7 +694,7 @@
     <priority>0.8</priority>
     <lastmod>2026-08-11</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/awakening-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/awakening/awakening-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -703,7 +703,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/wizard-of-oz-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/wizard-of-oz/wizard-of-oz-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -712,7 +712,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/wow-the-vegas-spectacular-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/wow-the-vegas-spectacular/wow-the-vegas-spectacular-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -730,7 +730,7 @@
     <priority>0.6</priority>
     <lastmod>2026-07-20</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/logo-badge.png</image:loc>
+      <image:loc>https://vegassidekick.com/images/brand/logo-badge.png</image:loc>
     </image:image>
   </url>
   <url>
@@ -757,7 +757,7 @@
     <priority>0.6</priority>
     <lastmod>2026-08-20</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/mad-apple-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/mad-apple/mad-apple-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -766,7 +766,7 @@
     <priority>0.6</priority>
     <lastmod>2026-07-20</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/logo-badge.png</image:loc>
+      <image:loc>https://vegassidekick.com/images/brand/logo-badge.png</image:loc>
     </image:image>
   </url>
   <url>
@@ -775,7 +775,7 @@
     <priority>0.6</priority>
     <lastmod>2026-07-20</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/mystere-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/mystere/mystere-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -793,7 +793,7 @@
     <priority>0.6</priority>
     <lastmod>2026-07-20</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/logo-badge.png</image:loc>
+      <image:loc>https://vegassidekick.com/images/brand/logo-badge.png</image:loc>
     </image:image>
   </url>
   <url>
@@ -802,7 +802,7 @@
     <priority>0.6</priority>
     <lastmod>2026-07-20</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/clay-walker-og.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/news/clay-walker-og.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -811,7 +811,7 @@
     <priority>0.6</priority>
     <lastmod>2026-07-20</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/logo-badge.png</image:loc>
+      <image:loc>https://vegassidekick.com/images/brand/logo-badge.png</image:loc>
     </image:image>
   </url>
   <url>
@@ -829,7 +829,7 @@
     <priority>0.6</priority>
     <lastmod>2026-07-20</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/for-king-country-og.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/news/for-king-country-og.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -847,7 +847,7 @@
     <priority>0.6</priority>
     <lastmod>2026-07-20</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/logo-badge.png</image:loc>
+      <image:loc>https://vegassidekick.com/images/brand/logo-badge.png</image:loc>
     </image:image>
   </url>
   <url>
@@ -856,7 +856,7 @@
     <priority>0.6</priority>
     <lastmod>2026-07-20</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/lewis-black-og.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/news/lewis-black-og.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -874,7 +874,7 @@
     <priority>0.6</priority>
     <lastmod>2026-07-20</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/marco-antonio-solis-og.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/news/marco-antonio-solis-og.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -883,7 +883,7 @@
     <priority>0.6</priority>
     <lastmod>2026-07-20</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/logo-badge.png</image:loc>
+      <image:loc>https://vegassidekick.com/images/brand/logo-badge.png</image:loc>
     </image:image>
   </url>
   <url>
@@ -901,7 +901,7 @@
     <priority>0.6</priority>
     <lastmod>2026-07-20</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/news-dispatch-og.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/news/news-dispatch-og.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -910,7 +910,7 @@
     <priority>0.6</priority>
     <lastmod>2026-07-20</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/smashing-pumpkins-og.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/news/smashing-pumpkins-og.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -928,7 +928,7 @@
     <priority>0.6</priority>
     <lastmod>2026-07-20</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/tumua-das-og.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/news/tumua-das-og.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -937,7 +937,7 @@
     <priority>0.4</priority>
     <lastmod>2026-07-20</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/koko-plinko-og.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/play/koko-plinko-og.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -946,7 +946,7 @@
     <priority>0.4</priority>
     <lastmod>2026-07-16</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/logo-badge.png</image:loc>
+      <image:loc>https://vegassidekick.com/images/brand/logo-badge.png</image:loc>
     </image:image>
   </url>
   <url>
@@ -955,7 +955,7 @@
     <priority>0.4</priority>
     <lastmod>2026-07-20</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/walk-the-strip-og.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/play/walk-the-strip-og.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -964,7 +964,7 @@
     <priority>0.4</priority>
     <lastmod>2026-08-15</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/logo-badge.png</image:loc>
+      <image:loc>https://vegassidekick.com/images/brand/logo-badge.png</image:loc>
     </image:image>
   </url>
   <url>
@@ -973,7 +973,7 @@
     <priority>0.4</priority>
     <lastmod>2026-08-15</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/logo-badge.png</image:loc>
+      <image:loc>https://vegassidekick.com/images/brand/logo-badge.png</image:loc>
     </image:image>
   </url>
   <url>
@@ -982,7 +982,7 @@
     <priority>0.4</priority>
     <lastmod>2026-08-15</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/logo-badge.png</image:loc>
+      <image:loc>https://vegassidekick.com/images/brand/logo-badge.png</image:loc>
     </image:image>
   </url>
   <url>
@@ -991,7 +991,7 @@
     <priority>0.4</priority>
     <lastmod>2026-08-15</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/logo-badge.png</image:loc>
+      <image:loc>https://vegassidekick.com/images/brand/logo-badge.png</image:loc>
     </image:image>
   </url>
   <url>
@@ -1000,7 +1000,7 @@
     <priority>0.4</priority>
     <lastmod>2026-08-15</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/logo-badge.png</image:loc>
+      <image:loc>https://vegassidekick.com/images/brand/logo-badge.png</image:loc>
     </image:image>
   </url>
   <url>
@@ -1009,7 +1009,7 @@
     <priority>0.4</priority>
     <lastmod>2026-07-20</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/kris-kidd.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/brand/kris-kidd.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -1018,7 +1018,7 @@
     <priority>0.4</priority>
     <lastmod>2026-07-20</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/kris-kidd.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/brand/kris-kidd.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -1033,7 +1033,7 @@
     <priority>0.4</priority>
     <lastmod>2026-07-20</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/kris-kidd.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/brand/kris-kidd.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -1054,7 +1054,7 @@
     <priority>0.8</priority>
     <lastmod>2026-08-12</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/planet-hollywood-og.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/venue-photos/planet-hollywood/planet-hollywood-og.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -1063,7 +1063,7 @@
     <priority>0.8</priority>
     <lastmod>2026-08-12</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/mgm-grand-og.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/venue-photos/mgm-grand/mgm-grand-og.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -1072,7 +1072,7 @@
     <priority>0.7</priority>
     <lastmod>2026-08-27</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/planet-hollywood-og.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/venue-photos/planet-hollywood/planet-hollywood-og.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -1081,7 +1081,7 @@
     <priority>0.8</priority>
     <lastmod>2026-08-12</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/rio-og.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/venue-photos/rio/rio-og.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -1090,7 +1090,7 @@
     <priority>0.8</priority>
     <lastmod>2026-08-12</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/lfh-og.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/venue-photos/lfh/lfh-og.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -1099,7 +1099,7 @@
     <priority>0.8</priority>
     <lastmod>2026-08-12</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/elm-og.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/venue-photos/elm/elm-og.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -1114,7 +1114,7 @@
     <priority>0.8</priority>
     <lastmod>2026-08-26</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/alexis-park-og.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/venue-photos/alexis-park/alexis-park-og.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -1123,7 +1123,7 @@
     <priority>0.8</priority>
     <lastmod>2026-08-27</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/the-strat-og.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/venue-photos/the-strat/the-strat-og.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -1132,7 +1132,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-02</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/horseshoe-og.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/venue-photos/horseshoe/horseshoe-og.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -1141,7 +1141,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/sinatra-live-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/sinatra-live/sinatra-live-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -1150,7 +1150,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/queen-selena-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/queen-selena/queen-selena-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -1159,7 +1159,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/sir-elton-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/sir-elton/sir-elton-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -1168,7 +1168,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/king-of-diamonds-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/king-of-diamonds/king-of-diamonds-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -1177,7 +1177,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/america-the-show-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/america-the-show/america-the-show-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -1186,7 +1186,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/wastin-away-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/wastin-away/wastin-away-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -1195,7 +1195,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/motown-brunch-hero.jpg</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/motown-brunch/motown-brunch-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -1204,7 +1204,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/rat-pack-is-back-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/rat-pack-is-back/rat-pack-is-back-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -1213,7 +1213,7 @@
     <priority>0.8</priority>
     <lastmod>2026-09-28</lastmod>
       <image:image>
-      <image:loc>https://vegassidekick.com/images/paranormal-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/paranormal/paranormal-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -1229,7 +1229,7 @@
     <priority>0.8</priority>
     <lastmod>2026-10-03</lastmod>
     <image:image>
-      <image:loc>https://vegassidekick.com/images/barry-manilow-hero.webp</image:loc>
+      <image:loc>https://vegassidekick.com/images/product-photos/barry-manilow/barry-manilow-hero.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -1237,7 +1237,7 @@
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image><image:loc>https://vegassidekick.com/images/vegas-dispatch-calendar-update-2026-09-30.png</image:loc></image:image>
+    <image:image><image:loc>https://vegassidekick.com/images/news/vegas-dispatch-calendar-update-2026-09-30.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://vegassidekick.com/sidekick-index/</loc>

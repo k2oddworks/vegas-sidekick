@@ -118,7 +118,7 @@ def target_card(target_rel):
     img = re.search(r'<div class="hero-media"><img src="([^"]+)"', text)
     if not img:
         img = re.search(r'<meta property="og:image" content="https://vegassidekick.com([^"]+)"', text)
-    image = img.group(1) if img else "/images/logo-badge.png"
+    image = img.group(1) if img else "/images/brand/logo-badge.png"
     price = re.search(r'<div class="price"><small>Tickets from</small>\$([0-9]+(?:\.[0-9]+)?)</div>', text)
     if not price:
         price = re.search(r'"price"\s*:\s*"?([0-9]+(?:\.[0-9]+)?)"?', text)

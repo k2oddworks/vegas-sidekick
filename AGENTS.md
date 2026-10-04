@@ -138,6 +138,22 @@ Rules when using generated room geometry:
 - Do not add generic seating disclaimers.
 - Static seating-chart gallery assets should come from the same underlying geometry as the interactive chart unless an approved supplied chart image is the source of truth.
 
+## Image library organization
+
+The image library is organized by purpose rather than as a flat /images folder.
+
+- Show photography / artwork: `/images/product-photos/<show-slug>/`
+- Seating charts: `/images/seating-charts/<show-or-room>/`
+- Venue imagery: `/images/venue-photos/<venue-slug>/`
+- Brand / Spike / Kris assets: `/images/brand/`
+- Guide covers: `/images/guides/`
+- Sidekick Index social assets: `/images/sidekick-index/`
+- News / Dispatch assets: `/images/news/`
+- Play / game assets: `/images/play/`
+- Site-level social imagery: `/images/site/`
+
+Do not add new image files directly to the root `/images/` directory. Keep descriptive filenames even inside named folders.
+
 ## Photos / gallery
 
 Show photo viewers should support:

@@ -333,9 +333,9 @@ Do not add an unpublished/empty reference page to the sitemap just to reserve a 
 
 Current dedicated social images include:
 
-- `/images/sidekick-index-social.png`
-- `/images/las-vegas-headliners-residencies-social.png`
-- `/images/more-touring-shows-concerts-social.png`
+- `/images/sidekick-index/sidekick-index-social.png`
+- `/images/sidekick-index/las-vegas-headliners-residencies-social.png`
+- `/images/sidekick-index/more-touring-shows-concerts-social.png`
 
 The Show Price Index currently uses its configured page metadata and should get a dedicated share image only when one is intentionally created.
 
