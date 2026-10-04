@@ -127,26 +127,26 @@
 
 /* Sidekick Pick — show-level editorial recommendation */
 .sidekick-pick{position:relative;width:max-content;max-width:100%}
-.sidekick-pick summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;font:800 .72rem 'Inter',sans-serif;letter-spacing:.01em;color:#171225;background:#c6f22e;border:2px solid #efffb0;border-radius:999px;padding:7px 11px;user-select:none;box-shadow:0 0 0 1px rgba(198,242,46,.18)}
+.sidekick-pick summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;font:800 .72rem 'Inter',sans-serif;letter-spacing:.01em;color:#171225;background:#bfe8ff;border:2px solid #eefaff;border-radius:999px;padding:7px 11px;user-select:none;box-shadow:0 0 0 1px rgba(191,232,255,.20)}
 .sidekick-pick summary::-webkit-details-marker{display:none}
-.sidekick-pick summary:hover,.sidekick-pick[open] summary{background:#d4f94f;border-color:#f6ffd3}
+.sidekick-pick summary:hover,.sidekick-pick[open] summary{background:#d5f1ff;border-color:#ffffff}
 .sidekick-pick summary:focus-visible{outline:3px solid rgba(255,255,255,.9);outline-offset:3px}
 .sidekick-pick-info-icon{display:inline-grid;place-items:center;width:15px;height:15px;border:1px solid currentColor;border-radius:50%;font:800 .58rem/1 'Inter',sans-serif;opacity:.8}
 .sidekick-pick-popover{position:absolute;z-index:1200;left:0;top:calc(100% + 8px);width:min(310px,calc(100vw - 52px));padding:12px 14px;border:1px solid rgba(23,18,37,.12);border-radius:12px;background:#fff;color:#171225;box-shadow:0 12px 34px rgba(10,3,18,.24);font-size:.78rem;line-height:1.45}
 .sidekick-pick-popover strong{display:block;font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:3px}
-.hero-sidekick-pick{margin:-6px 0 20px}
+.hero-sidekick-pick{margin:0 0 8px}
 .mobile-action{flex:1;min-width:0}
 .mobile-action>.cta{width:100%}
 .sidekick-pick-mobile{display:none}
 @media(max-width:800px){
   body[data-sidekick-pick="true"]{padding-bottom:calc(118px + env(safe-area-inset-bottom))}
-  .hero-sidekick-pick{margin:-5px 0 20px}
+  .hero-sidekick-pick{margin:0 0 8px}
   .sidekick-pick summary{padding:7px 10px}
   .mobile-bar.has-sidekick-pick{padding-top:8px;padding-bottom:calc(14px + env(safe-area-inset-bottom))}
   .mobile-bar.has-sidekick-pick .mobile-inner{align-items:flex-end}
   .sidekick-pick-mobile{display:block;margin:0 0 5px 10px}
-  .sidekick-pick-mobile summary{gap:5px;padding:4px 8px;background:#c6f22e;color:#171225;border:1px solid #efffb0;font-size:.58rem;line-height:1.1;box-shadow:none}
-  .sidekick-pick-mobile summary:hover,.sidekick-pick-mobile[open] summary{background:#d4f94f;border-color:#f6ffd3}
+  .sidekick-pick-mobile summary{gap:5px;padding:4px 8px;background:#bfe8ff;color:#171225;border:1px solid #eefaff;font-size:.58rem;line-height:1.1;box-shadow:none}
+  .sidekick-pick-mobile summary:hover,.sidekick-pick-mobile[open] summary{background:#d5f1ff;border-color:#ffffff}
   .sidekick-pick-mobile .sidekick-pick-info-icon{width:12px;height:12px;font-size:.48rem}
   .sidekick-pick-mobile .sidekick-pick-popover{position:fixed;left:14px;right:14px;top:auto;bottom:calc(104px + env(safe-area-inset-bottom));width:auto;max-width:none;text-align:left}
   .mobile-bar.has-sidekick-pick .cta{padding:10px 11px}
