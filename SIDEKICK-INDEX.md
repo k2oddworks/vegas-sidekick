@@ -312,6 +312,15 @@ Where appropriate, use:
 
 Dataset schema should point to the current underlying downloadable/reference data when a stable public data file exists.
 
+All Sidekick Index factual datasets are published under **Creative Commons Attribution 4.0 International (CC BY 4.0)**. Every `Dataset` JSON-LD block must include:
+
+- `"license":"https://creativecommons.org/licenses/by/4.0/"`
+- `"usageInfo":"https://vegassidekick.com/data-license/"`
+
+Every public dataset page must also include a visible **Data reuse** note linking to `/data-license/`. Downloadable JSON files should carry license and attribution metadata when the format allows it.
+
+The license applies only to factual Sidekick Index dataset material and any Vegas Sidekick rights in the compilation/organization of that data. It does **not** license Vegas Sidekick editorial copy, show recommendations, trademarks, logos, Spike, photography, graphics, page design, or third-party source material.
+
 Keep `dateModified`, observation dates, and verification language honest.
 
 ### Sitemap
@@ -345,12 +354,13 @@ Before shipping a new Index page:
 3. Build the public page under `/sidekick-index/`.
 4. Add it to the overview page.
 5. Add it to `components/sidekick-index-shell.js`.
-6. Add appropriate schema and metadata.
-7. Add it to `sitemap.xml`.
-8. Add a social share image if useful and actually created.
-9. Reuse the shared email signup placement.
-10. Test mobile filters, horizontal rails, sticky elements, and any wide tables.
-11. Update this file if the new dataset changes the Sidekick Index taxonomy or maintenance rules.
+6. Add appropriate schema and metadata, including the CC BY 4.0 `license` and Vegas Sidekick `usageInfo` fields for any `Dataset`.
+7. Add a visible Data reuse note linking to `/data-license/`, and include license/attribution metadata in downloadable JSON when possible.
+8. Add it to `sitemap.xml`.
+9. Add a social share image if useful and actually created.
+10. Reuse the shared email signup placement.
+11. Test mobile filters, horizontal rails, sticky elements, and any wide tables.
+12. Update this file if the new dataset changes the Sidekick Index taxonomy or maintenance rules.
 
 Do not add a new top-level Index category if it is just a thin wrapper around one or two facts.
 
