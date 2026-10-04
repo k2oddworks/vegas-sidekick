@@ -387,7 +387,7 @@ function selectZone(id) {
 
 ```html
 <div class="hero-slider">
-  <div class="slide active" style="background-image:url('/images/{slug}-hero.jpg')"></div>
+  <div class="slide active" style="background-image:url('/images/product-photos/{slug}/{slug}-hero.jpg')"></div>
   <div class="slide" style="background-image:url('/images/{slug}-2.jpg')"></div>
   <div class="slide" style="background-image:url('/images/{slug}-3.jpg')"></div>
   <div class="slide-dots">
@@ -569,7 +569,7 @@ Standard FAQ questions for every show (adapt answers per show):
 ```html
 <div class="also-grid">
   <a href="/shows/{category}/{slug}/" class="also-card" target="_blank">
-    <div class="also-img" style="background-image:url('/images/{slug}-hero.jpg')"></div>
+    <div class="also-img" style="background-image:url('/images/product-photos/{slug}/{slug}-hero.jpg')"></div>
     <div class="also-body">
       <div class="also-venue">Venue Name</div>
       <div class="also-name">Show Name</div>
@@ -583,7 +583,7 @@ Standard FAQ questions for every show (adapt answers per show):
 
 ## Image Handling
 
-Images live in `/images/` and are referenced with root-relative paths.
+Show photography and artwork live under `/images/product-photos/<show-slug>/`. Seating charts live separately under `/images/seating-charts/<show-or-room>/`. Keep root-relative URLs, but do not add new show assets directly to the root `/images/` directory.
 
 **`cwebp` is NOT available in this environment.** Use PIL instead:
 
@@ -597,7 +597,7 @@ w, h = img.size
 target_h = int(w * 9 / 16)
 img = img.crop((0, (h - target_h) // 2, w, (h - target_h) // 2 + target_h))
 img = img.resize((1200, 675), Image.LANCZOS)
-img.save("images/show-name-hero.jpg", format="JPEG", quality=82, optimize=True)
+img.save("images/product-photos/show-name/show-name-hero.jpg", format="JPEG", quality=82, optimize=True)
 ```
 
 For slider images embedded as data URLs (when MCP push is needed):
@@ -646,7 +646,7 @@ Data object pattern:
 { order:39, slug:'show-name', cat:'comedy', name:'Show Name', subtitle:'', venue:'Venue · Hotel',
   price:41, pd:'$41', sp:false,  // sp:true = Sidekick Pick badge — explicit only
   pills:['Award 2024','Tag Two'],
-  img:'/images/show-name-hero.jpg',
+  img:'/images/product-photos/show-name/show-name-hero.jpg',
   duration:'90 min', age:'All ages', schedule:'Tue–Sun · 7:30 PM' }
 ```
 
@@ -662,7 +662,7 @@ Data object pattern:
 <link rel="canonical" href="https://vegassidekick.com/shows/{category}/{slug}/" />
 <meta property="og:title" content="Show Name | Vegas Sidekick" />
 <meta property="og:description" content="[One punchy sentence]. From $XX at [Venue]." />
-<meta property="og:image" content="https://vegassidekick.com/images/{slug}-hero.jpg" />
+<meta property="og:image" content="https://vegassidekick.com/images/product-photos/{slug}/{slug}-hero.jpg" />
 <meta property="og:url" content="https://vegassidekick.com/shows/{category}/{slug}/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Vegas Sidekick" />
@@ -676,7 +676,7 @@ Schema (EventSeries type):
   "@type": "EventSeries",
   "name": "Show Name",
   "description": "...",
-  "image": "https://vegassidekick.com/images/{slug}-hero.jpg",
+  "image": "https://vegassidekick.com/images/product-photos/{slug}/{slug}-hero.jpg",
   "url": "https://vegassidekick.com/shows/{category}/{slug}/",
   "eventStatus": "https://schema.org/EventScheduled",
   "organizer": { "@type": "Organization", "name": "Show Name at Venue" },
@@ -773,7 +773,7 @@ Images: 3 attached — hero + 2 more
 
 ```bash
 # Stage specific files — never use git add -A
-git add shows/family/show-name/index.html images/show-name-hero.jpg
+git add shows/family/show-name/index.html images/product-photos/show-name/show-name-hero.jpg
 
 # Commit
 git commit -m "Add Show Name show page"
