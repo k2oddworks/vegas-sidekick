@@ -122,6 +122,23 @@
   if(light)light.addEventListener('click',e=>{if(e.target===light)shut()});
   addEventListener('keydown',e=>{if(e.key==='Escape')shut()});
 
+  /* Sidekick Pick: hand off the recommendation from the hero to the mobile sticky bar. */
+  const heroSidekickPick=document.querySelector('.hero-sidekick-pick');
+  const mobileSidekickBar=document.querySelector('.mobile-bar.has-sidekick-pick');
+  const mobileSidekickPick=document.querySelector('.sidekick-pick-mobile');
+  function syncSidekickPickHandoff(){
+    if(!heroSidekickPick||!mobileSidekickBar)return;
+    const mobile=innerWidth<=800;
+    const passed=mobile&&heroSidekickPick.getBoundingClientRect().bottom<=72;
+    mobileSidekickBar.classList.toggle('show-sidekick-pick',passed);
+    if(!passed&&mobileSidekickPick)mobileSidekickPick.open=false;
+  }
+  if(heroSidekickPick&&mobileSidekickBar){
+    addEventListener('scroll',syncSidekickPickHandoff,{passive:true});
+    addEventListener('resize',syncSidekickPickHandoff);
+    syncSidekickPickHandoff();
+  }
+
   /* Sidekick Pick: close open explainers when the user clicks elsewhere or presses Escape. */
   document.addEventListener('click',e=>{
     if(e.target.closest('.sidekick-pick'))return;
