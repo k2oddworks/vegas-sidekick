@@ -22,12 +22,19 @@ if PAGE.exists():
     text = PAGE.read_text(encoding="utf-8", errors="replace")
     if not re.search(r'<meta[^>]+name=["\']robots["\'][^>]+content=["\'][^"\']*noindex[^"\']*nofollow', text, re.I):
         issues.append("Media Library page is missing noindex,nofollow meta robots")
-    for required in ("media-grid", "media-search", "show-filter", "venue-filter", "category-filters"):
+    for required in ("media-grid", "media-search", "show-filter", "venue-filter", "category-filters", "reference-modal", "reference-modal-list", "reference-modal-close"):
         if f'id="{required}"' not in text:
             issues.append(f"Media Library page missing required UI id: {required}")
-    for required_class in ("variant-list", "used-on-links", "variant-count"):
+    for required_class in ("variant-list", "used-on-summary", "variant-count", "preview-fallback", "preview-error-badge"):
         if f'class="{required_class}"' not in text:
             issues.append(f"Media Library page missing required UI class: {required_class}")
+
+if APP.exists():
+    app_text = APP.read_text(encoding="utf-8", errors="replace")
+    if 'thumb.addEventListener("error"' not in app_text:
+        issues.append("Media Library thumbnails are missing error handling")
+    if "openReferenceModal" not in app_text or "used-on-trigger" not in app_text:
+        issues.append("Media Library is missing compact page-reference modal behavior")
 
 if SITEMAP.exists() and "/hq/media-library" in SITEMAP.read_text(encoding="utf-8", errors="replace"):
     issues.append("Media Library must not appear in sitemap.xml")
