@@ -3,7 +3,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "Vegas Sidekick — https://vegassidekick.com/sidekick-index/headliners-residencies/",
-  "verified_on": "2026-10-02",
+  "verified_on": "2026-10-05",
   "city": "Las Vegas",
   "state": "NV",
   "venues": [
@@ -149,6 +149,42 @@
   ],
   "entries": [
     {
+      "act": "Josh Groban",
+      "venue_id": "caesars-colosseum",
+      "type": "Residency",
+      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
+      "dates": [
+        "2026-10-02",
+        "2026-10-03",
+        "2026-10-07",
+        "2026-10-09",
+        "2026-10-10"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/explore/joshgrobanvegas",
+        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
+      ]
+    },
+    {
+      "act": "New Kids on the Block",
+      "venue_id": "dolby-live",
+      "type": "Residency",
+      "official_url": "https://parkmgm.mgmresorts.com/en/entertainment/new-kids-on-the-block.html",
+      "dates": [
+        "2026-10-02",
+        "2026-10-03",
+        "2026-10-07",
+        "2026-10-09",
+        "2026-10-10",
+        "2026-10-14",
+        "2026-10-16",
+        "2026-10-17"
+      ],
+      "sources": [
+        "https://parkmgm.mgmresorts.com/en/entertainment/new-kids-on-the-block.html"
+      ]
+    },
+    {
       "act": "Metallica",
       "venue_id": "sphere",
       "type": "Residency",
@@ -184,540 +220,6 @@
       ]
     },
     {
-      "act": "Eagles",
-      "venue_id": "sphere",
-      "type": "Residency",
-      "official_url": "https://www.thesphere.com/shows/eagles",
-      "dates": [
-        "2026-11-13",
-        "2026-11-14",
-        "2026-11-27",
-        "2026-11-28",
-        "2026-12-04",
-        "2026-12-05",
-        "2026-12-11",
-        "2026-12-12",
-        "2027-01-15",
-        "2027-01-16",
-        "2027-01-22",
-        "2027-01-23"
-      ],
-      "sources": [
-        "https://www.sphereentertainmentco.com/eagles-live-in-concert-at-sphere-due-to-demand-more-shows-added-2/",
-        "https://www.thesphere.com/shows/eagles"
-      ]
-    },
-    {
-      "act": "F1 Afterparty Featuring Backstreet Boys",
-      "venue_id": "sphere",
-      "type": "Special event",
-      "official_url": "https://www.thesphere.com/shows/backstreet-boys/f1",
-      "dates": [
-        "2026-11-21"
-      ],
-      "sources": [
-        "https://www.thesphere.com/shows/backstreet-boys/f1"
-      ]
-    },
-    {
-      "act": "Backstreet Boys",
-      "venue_id": "sphere",
-      "type": "Residency",
-      "official_url": "https://www.thesphere.com/shows/backstreet-boys",
-      "dates": [
-        "2026-12-26",
-        "2026-12-27",
-        "2026-12-31",
-        "2027-01-01",
-        "2027-01-02"
-      ],
-      "sources": [
-        "https://sphere.backstreetboys.com/",
-        "https://www.thesphere.com/shows/backstreet-boys"
-      ]
-    },
-    {
-      "act": "Oprah Winfrey’s AHA",
-      "venue_id": "sphere",
-      "type": "Limited engagement",
-      "official_url": "https://www.thesphere.com/shows/oprah-winfrey",
-      "dates": [
-        "2027-04-02",
-        "2027-04-03",
-        "2027-04-04"
-      ],
-      "sources": [
-        "https://www.sphereentertainmentco.com/oprah-winfreys-aha-a-first-of-its-kind-immersive-experience-debuts-live-at-sphere-for-one-weekend-april-2-4-2027/",
-        "https://www.thesphere.com/shows/oprah-winfrey"
-      ]
-    },
-    {
-      "act": "John Mayer",
-      "venue_id": "sphere",
-      "type": "Limited engagement",
-      "official_url": "https://www.thesphere.com/shows/john-mayer",
-      "dates": [
-        "2027-04-08",
-        "2027-04-10",
-        "2027-04-11",
-        "2027-04-15",
-        "2027-04-17",
-        "2027-04-18"
-      ],
-      "sources": [
-        "https://www.sphereentertainmentco.com/john-mayer-live-at-sphere/",
-        "https://www.thesphere.com/shows/john-mayer"
-      ]
-    },
-    {
-      "act": "Carín León",
-      "venue_id": "sphere",
-      "type": "Limited residency",
-      "official_url": "https://www.thesphere.com/shows/carin-leon",
-      "dates": [
-        "2027-09-16",
-        "2027-09-17",
-        "2027-09-18"
-      ],
-      "sources": [
-        "https://carinleon.com/en-us/pages/tour",
-        "https://www.sphereentertainmentco.com/carin-leon-announces-his-return-to-las-vegas-sphere-in-2027-after-becoming-the-first-latin-artist-to-debut-at-the-groundbreaking-venue/"
-      ]
-    },
-    {
-      "act": "Josh Groban",
-      "venue_id": "caesars-colosseum",
-      "type": "Residency",
-      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
-      "dates": [
-        "2026-10-02",
-        "2026-10-03",
-        "2026-10-07",
-        "2026-10-09",
-        "2026-10-10"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/explore/joshgrobanvegas",
-        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
-      ]
-    },
-    {
-      "act": "Tim McGraw",
-      "venue_id": "caesars-colosseum",
-      "type": "Residency",
-      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
-      "dates": [
-        "2026-10-23",
-        "2026-10-24",
-        "2026-11-04",
-        "2026-11-06",
-        "2026-11-07"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/tim-mcgraw-tickets/artist/762799",
-        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
-      ]
-    },
-    {
-      "act": "Hello America",
-      "venue_id": "caesars-colosseum",
-      "type": "Special event",
-      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
-      "dates": [
-        "2026-10-31"
-      ],
-      "sources": [
-        "https://helloamericaglobal.com/",
-        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
-      ]
-    },
-    {
-      "act": "LISA",
-      "venue_id": "caesars-colosseum",
-      "type": "Residency",
-      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
-      "dates": [
-        "2026-11-12",
-        "2026-11-13",
-        "2026-11-14",
-        "2026-11-27",
-        "2026-11-28",
-        "2026-11-29"
-      ],
-      "sources": [
-        "https://newsroom.caesars.com/press-releases/press-release-details/2026/LISA-ADDS-TWO-NEW-DATES-TO-HER-SOLD-OUT-LAS-VEGAS-RESIDENCY-DUE-TO-OVERWHELMING-DEMAND-VIVA-LA-LISA-AT-THE-COLOSSEUM-AT-CAESARS-PALACE--NOV-12-13-14-27-28--29-2026--2026-eGkXjvCgqE/default.aspx",
-        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
-      ]
-    },
-    {
-      "act": "Rascal Flatts",
-      "venue_id": "caesars-colosseum",
-      "type": "Headliner",
-      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
-      "dates": [
-        "2026-12-05"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
-      ]
-    },
-    {
-      "act": "Thomas Rhett",
-      "venue_id": "caesars-colosseum",
-      "type": "Limited engagement",
-      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
-      "dates": [
-        "2026-12-10",
-        "2026-12-12"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
-      ]
-    },
-    {
-      "act": "Eric Moo",
-      "venue_id": "caesars-colosseum",
-      "type": "Headliner",
-      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
-      "dates": [
-        "2026-12-26"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/artist/2252349",
-        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
-      ]
-    },
-    {
-      "act": "Alex Warren",
-      "venue_id": "caesars-colosseum",
-      "type": "Limited engagement",
-      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
-      "dates": [
-        "2026-12-30",
-        "2026-12-31"
-      ],
-      "sources": [
-        "https://newsroom.caesars.com/press-releases/press-release-details/2026/Alex-Warren-Set-to-Celebrate-New-Years-Eve-With-Two-Night-Engagement-at-The-Colosseum-at-Caesars-Palace-December-30--31-2026/default.aspx",
-        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
-      ]
-    },
-    {
-      "act": "Nikki Glaser & David Spade",
-      "venue_id": "caesars-colosseum",
-      "type": "Residency",
-      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
-      "dates": [
-        "2027-01-22",
-        "2027-01-23",
-        "2027-04-16",
-        "2027-04-17"
-      ],
-      "sources": [
-        "https://newsroom.caesars.com/press-releases/press-release-details/2026/NIKKI-GLASER-AND-DAVID-SPADE-ANNOUNCE-2027-DATES-FOR-LAS-VEGAS-RESIDENCY-AT-THE-COLOSSEUM-AT-CAESARS-PALACE--2026-9Z1dph1q2O/default.aspx",
-        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
-      ]
-    },
-    {
-      "act": "The War on Drugs",
-      "venue_id": "palms-pearl",
-      "type": "Headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater",
-      "dates": [
-        "2026-10-02"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Lynyrd Skynyrd",
-      "venue_id": "palms-pearl",
-      "type": "Headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater",
-      "dates": [
-        "2026-10-03"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "For KING + COUNTRY",
-      "venue_id": "palms-pearl",
-      "type": "Headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater",
-      "dates": [
-        "2026-10-08"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Juanes",
-      "venue_id": "palms-pearl",
-      "type": "Headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater",
-      "dates": [
-        "2026-10-10"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Big Boy's Comedy Fiesta with George Lopez & Marlon Wayans",
-      "venue_id": "palms-pearl",
-      "type": "Comedy headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater",
-      "dates": [
-        "2026-10-15"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Rise Against",
-      "venue_id": "palms-pearl",
-      "type": "Headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater",
-      "dates": [
-        "2026-10-17"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Taking Back Sunday",
-      "venue_id": "palms-pearl",
-      "type": "Headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater",
-      "dates": [
-        "2026-10-18"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Jim Henson’s Labyrinth: In Concert 40th Anniversary",
-      "venue_id": "palms-pearl",
-      "type": "Special engagement",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater",
-      "dates": [
-        "2026-10-25"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater/jim-hensons-labyrinth-in-concert-40th-anniversary",
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Richard Marx",
-      "venue_id": "palms-pearl",
-      "type": "Headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater",
-      "dates": [
-        "2026-10-30"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Jodeci",
-      "venue_id": "palms-pearl",
-      "type": "Headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater",
-      "dates": [
-        "2026-10-31"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater/jodeci",
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Moenia + Maria Jose",
-      "venue_id": "palms-pearl",
-      "type": "Headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater",
-      "dates": [
-        "2026-11-01"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater/moenia-maria-jose-us-tour-2026",
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Mon Laferte",
-      "venue_id": "palms-pearl",
-      "type": "Headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater",
-      "dates": [
-        "2026-11-05"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Daughtry",
-      "venue_id": "palms-pearl",
-      "type": "Headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater",
-      "dates": [
-        "2026-11-07"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Pedro Fernández",
-      "venue_id": "palms-pearl",
-      "type": "Headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater",
-      "dates": [
-        "2026-11-12"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater/pedro-fernandez-ave-fenix-twor",
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Babyface",
-      "venue_id": "palms-pearl",
-      "type": "Residency",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater/babyface-live-in-las-vegas-2026",
-      "dates": [
-        "2026-11-13",
-        "2026-11-14"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater/babyface-live-in-las-vegas-2026",
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Alicia Villarreal",
-      "venue_id": "palms-pearl",
-      "type": "Headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater",
-      "dates": [
-        "2026-11-28"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Trivium",
-      "venue_id": "palms-pearl",
-      "type": "Headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater",
-      "dates": [
-        "2026-12-03"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Sin Bandera",
-      "venue_id": "palms-pearl",
-      "type": "Headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater",
-      "dates": [
-        "2026-12-04"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Tom Segura",
-      "venue_id": "palms-pearl",
-      "type": "Comedy headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater/tom-segura-preposterous",
-      "dates": [
-        "2027-01-30"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater/tom-segura-preposterous",
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Joe",
-      "venue_id": "palms-pearl",
-      "type": "Headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater/joe",
-      "dates": [
-        "2027-02-27"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater/joe",
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Aries Spears",
-      "venue_id": "palms-pearl",
-      "type": "Comedy headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater/aries-spears",
-      "dates": [
-        "2027-04-02"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater/aries-spears",
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "The Warning",
-      "venue_id": "palms-pearl",
-      "type": "Headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater/the-warning-everythings-falling-world-tour",
-      "dates": [
-        "2027-04-17"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater/the-warning-everythings-falling-world-tour",
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Ha*Ash",
-      "venue_id": "palms-pearl",
-      "type": "Headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater/haash-no-me-hablen-de-amor",
-      "dates": [
-        "2027-05-09"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater/haash-no-me-hablen-de-amor",
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Roger Waters Presents Legacy — A Pink Floyd Show",
-      "venue_id": "palms-pearl",
-      "type": "Special engagement",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater/roger-waters-presents-legacy-a-pink-floyd-show",
-      "dates": [
-        "2027-09-16"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater/roger-waters-presents-legacy-a-pink-floyd-show",
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
       "act": "Jeff Dunham",
       "venue_id": "planet-hollywood-ph-live",
       "type": "Headliner",
@@ -730,767 +232,6 @@
       "sources": [
         "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
         "https://newsroom.caesars.com/press-releases/press-release-details/2026/Summer-Savings-Starts-Now-Caesars-Entertainments-Las-Vegas-Resorts-Introduce-More-Value-Options/default.aspx"
-      ]
-    },
-    {
-      "act": "Empire of the Sun",
-      "venue_id": "planet-hollywood-ph-live",
-      "type": "Headliner",
-      "official_url": "https://www.ticketmaster.com/empire-of-the-sun-tickets/artist/1439524?venueId=467893",
-      "dates": [
-        "2026-10-09"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/empire-of-the-sun-tickets/artist/1439524?venueId=467893",
-        "https://newsroom.caesars.com/press-releases/press-release-details/2026/Caesars-Entertainment-Brings-Hotel-Savings-50-Show-Tickets-and-More-to-the-Vegas-5-Day-Sale/default.aspx"
-      ]
-    },
-    {
-      "act": "Yandel",
-      "venue_id": "planet-hollywood-ph-live",
-      "type": "Headliner",
-      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
-      "dates": [
-        "2026-10-29"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893"
-      ]
-    },
-    {
-      "act": "Jeezy",
-      "venue_id": "planet-hollywood-ph-live",
-      "type": "Residency",
-      "official_url": "https://www.ticketmaster.com/jeezy-tickets/artist/973006",
-      "dates": [
-        "2026-11-06",
-        "2026-11-07",
-        "2026-11-13",
-        "2026-11-14",
-        "2026-12-18",
-        "2026-12-19",
-        "2026-12-20",
-        "2026-12-30",
-        "2026-12-31"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/jeezy-tickets/artist/973006",
-        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893"
-      ]
-    },
-    {
-      "act": "Vũ Trụ Say Hi",
-      "venue_id": "planet-hollywood-ph-live",
-      "type": "Special engagement",
-      "official_url": "https://newsroom.caesars.com/press-releases/press-release-details/2026/TWO-NIGHTS--TWO-WORLDS--ONE-UNFORGETTABLE-LAS-VEGAS-WEEKEND---V-TR-SAY-HI--HIEUTHUHAI-LIVE-CONCERT-MT-NHM-MT-M-2026-HVOrl5_u_t/default.aspx",
-      "dates": [
-        "2026-11-28"
-      ],
-      "sources": [
-        "https://newsroom.caesars.com/press-releases/press-release-details/2026/TWO-NIGHTS--TWO-WORLDS--ONE-UNFORGETTABLE-LAS-VEGAS-WEEKEND---V-TR-SAY-HI--HIEUTHUHAI-LIVE-CONCERT-MT-NHM-MT-M-2026-HVOrl5_u_t/default.aspx"
-      ]
-    },
-    {
-      "act": "HIEUTHUHAI",
-      "venue_id": "planet-hollywood-ph-live",
-      "type": "Special engagement",
-      "official_url": "https://newsroom.caesars.com/press-releases/press-release-details/2026/TWO-NIGHTS--TWO-WORLDS--ONE-UNFORGETTABLE-LAS-VEGAS-WEEKEND---V-TR-SAY-HI--HIEUTHUHAI-LIVE-CONCERT-MT-NHM-MT-M-2026-HVOrl5_u_t/default.aspx",
-      "dates": [
-        "2026-11-29"
-      ],
-      "sources": [
-        "https://newsroom.caesars.com/press-releases/press-release-details/2026/TWO-NIGHTS--TWO-WORLDS--ONE-UNFORGETTABLE-LAS-VEGAS-WEEKEND---V-TR-SAY-HI--HIEUTHUHAI-LIVE-CONCERT-MT-NHM-MT-M-2026-HVOrl5_u_t/default.aspx"
-      ]
-    },
-    {
-      "act": "Jeff Foxworthy & Larry the Cable Guy",
-      "venue_id": "planet-hollywood-ph-live",
-      "type": "Limited engagement",
-      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
-      "dates": [
-        "2026-12-04"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
-        "https://newsroom.caesars.com/press-releases/press-release-details/2026/Caesars-Entertainment-Brings-Hotel-Savings-50-Show-Tickets-and-More-to-the-Vegas-5-Day-Sale/default.aspx"
-      ]
-    },
-    {
-      "act": "Bailey Zimmerman",
-      "venue_id": "planet-hollywood-ph-live",
-      "type": "Headliner",
-      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
-      "dates": [
-        "2026-12-05"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893"
-      ]
-    },
-    {
-      "act": "Koe Wetzel",
-      "venue_id": "planet-hollywood-ph-live",
-      "type": "Headliner",
-      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
-      "dates": [
-        "2026-12-11"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893"
-      ]
-    },
-    {
-      "act": "Ali Siddiq",
-      "venue_id": "planet-hollywood-ph-live",
-      "type": "Comedy headliner",
-      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
-      "dates": [
-        "2027-01-23"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893"
-      ]
-    },
-    {
-      "act": "Yuridia",
-      "venue_id": "planet-hollywood-ph-live",
-      "type": "Headliner",
-      "official_url": "https://www.ticketmaster.com/artist/1169217?venueId=467893",
-      "dates": [
-        "2027-02-18"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/artist/1169217?venueId=467893"
-      ]
-    },
-    {
-      "act": "Letterkenny Live",
-      "venue_id": "planet-hollywood-ph-live",
-      "type": "Limited engagement",
-      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893?page=2",
-      "dates": [
-        "2027-02-26"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893?page=2"
-      ]
-    },
-    {
-      "act": "Franco Escamilla",
-      "venue_id": "planet-hollywood-ph-live",
-      "type": "Comedy headliner",
-      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893?page=2",
-      "dates": [
-        "2027-05-08"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893?page=2"
-      ]
-    },
-    {
-      "act": "Scorpions",
-      "venue_id": "planet-hollywood-ph-live",
-      "type": "Residency",
-      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893?page=2",
-      "dates": [
-        "2027-09-09",
-        "2027-09-11",
-        "2027-09-14",
-        "2027-09-16",
-        "2027-09-18",
-        "2027-09-21",
-        "2027-09-23",
-        "2027-09-25"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893?page=2",
-        "https://newsroom.caesars.com/press-releases/press-release-details/2026/Scorpions-Return-to-Las-Vegas-With-New-Headlining-Residency-at-PH-Live-at-Planet-Hollywood-Resort--Casino-Celebrating-the-Bands-60th-Anniversary/default.aspx"
-      ]
-    },
-    {
-      "act": "New Kids on the Block",
-      "venue_id": "dolby-live",
-      "type": "Residency",
-      "official_url": "https://parkmgm.mgmresorts.com/en/entertainment/new-kids-on-the-block.html",
-      "dates": [
-        "2026-10-02",
-        "2026-10-03",
-        "2026-10-07",
-        "2026-10-09",
-        "2026-10-10",
-        "2026-10-14",
-        "2026-10-16",
-        "2026-10-17"
-      ],
-      "sources": [
-        "https://parkmgm.mgmresorts.com/en/entertainment/new-kids-on-the-block.html"
-      ]
-    },
-    {
-      "act": "Mary J. Blige",
-      "venue_id": "dolby-live",
-      "type": "Residency",
-      "official_url": "https://parkmgm.mgmresorts.com/en/entertainment/mary-j-blige.html",
-      "dates": [
-        "2026-10-23",
-        "2026-10-24",
-        "2026-10-28",
-        "2026-10-30",
-        "2026-10-31",
-        "2027-02-12",
-        "2027-02-13",
-        "2027-02-17",
-        "2027-02-19",
-        "2027-02-20"
-      ],
-      "sources": [
-        "https://parkmgm.mgmresorts.com/en/entertainment/mary-j-blige.html",
-        "https://newsroom.mgmresorts.com/press-releases?item=122881"
-      ]
-    },
-    {
-      "act": "Kill Tony",
-      "venue_id": "dolby-live",
-      "type": "Limited engagement",
-      "official_url": "https://www.ticketmaster.com/dolby-live-tickets-las-vegas/venue/376930?page=1",
-      "dates": [
-        "2026-11-13",
-        "2026-11-14"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/dolby-live-tickets-las-vegas/venue/376930?page=1"
-      ]
-    },
-    {
-      "act": "Matt Rife",
-      "venue_id": "dolby-live",
-      "type": "Comedy headliner",
-      "official_url": "https://www.ticketmaster.com/dolby-live-tickets-las-vegas/venue/376930?page=1",
-      "dates": [
-        "2026-12-04"
-      ],
-      "sources": [
-        "https://newsroom.mgmresorts.com/press-releases?item=122889",
-        "https://www.ticketmaster.com/dolby-live-tickets-las-vegas/venue/376930?page=1"
-      ]
-    },
-    {
-      "act": "George Lam & Sally Yeh",
-      "venue_id": "dolby-live",
-      "type": "Limited engagement",
-      "official_url": "https://www.ticketmaster.com/george-lam-sally-yeh-tickets/artist/927276?venueId=376930",
-      "dates": [
-        "2026-12-19",
-        "2026-12-20"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/george-lam-sally-yeh-tickets/artist/927276?venueId=376930"
-      ]
-    },
-    {
-      "act": "The Smashing Pumpkins",
-      "venue_id": "mgm-grand-garden-arena",
-      "type": "Headliner",
-      "official_url": "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839",
-      "dates": [
-        "2026-10-30"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839"
-      ]
-    },
-    {
-      "act": "KATSEYE",
-      "venue_id": "mgm-grand-garden-arena",
-      "type": "Headliner",
-      "official_url": "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839",
-      "dates": [
-        "2026-11-14"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839"
-      ]
-    },
-    {
-      "act": "Journey",
-      "venue_id": "mgm-grand-garden-arena",
-      "type": "Headliner",
-      "official_url": "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839",
-      "dates": [
-        "2026-11-27"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839"
-      ]
-    },
-    {
-      "act": "Jonas Brothers",
-      "venue_id": "mgm-grand-garden-arena",
-      "type": "Headliner",
-      "official_url": "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839",
-      "dates": [
-        "2026-11-28"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839"
-      ]
-    },
-    {
-      "act": "The Red Clay Strays",
-      "venue_id": "mgm-grand-garden-arena",
-      "type": "Headliner",
-      "official_url": "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839",
-      "dates": [
-        "2026-12-05"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839"
-      ]
-    },
-    {
-      "act": "Wu-Tang Forever: The Final Chamber",
-      "venue_id": "t-mobile-arena",
-      "type": "Headliner",
-      "official_url": "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926",
-      "dates": [
-        "2026-10-03"
-      ],
-      "sources": [
-        "https://www.t-mobilearena.com/",
-        "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926"
-      ]
-    },
-    {
-      "act": "Weezer — The Gathering",
-      "venue_id": "t-mobile-arena",
-      "type": "Headliner",
-      "official_url": "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926",
-      "dates": [
-        "2026-10-23"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926"
-      ]
-    },
-    {
-      "act": "Doja Cat",
-      "venue_id": "t-mobile-arena",
-      "type": "Headliner",
-      "official_url": "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926",
-      "dates": [
-        "2026-10-31"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926"
-      ]
-    },
-    {
-      "act": "Teddy Swims",
-      "venue_id": "t-mobile-arena",
-      "type": "Headliner",
-      "official_url": "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926",
-      "dates": [
-        "2026-11-14"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926"
-      ]
-    },
-    {
-      "act": "Olivia Rodrigo",
-      "venue_id": "t-mobile-arena",
-      "type": "Limited engagement",
-      "official_url": "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926",
-      "dates": [
-        "2026-12-19",
-        "2026-12-20"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926"
-      ]
-    },
-    {
-      "act": "Earth, Wind & Fire",
-      "venue_id": "venetian-theatre",
-      "type": "Residency",
-      "official_url": "https://www.venetianlasvegas.com/entertainment/earth-wind-and-fire.html",
-      "dates": [
-        "2026-10-16",
-        "2026-10-17",
-        "2026-10-18",
-        "2026-10-21",
-        "2026-10-23",
-        "2026-10-24",
-        "2026-10-28",
-        "2026-10-30",
-        "2026-10-31"
-      ],
-      "sources": [
-        "https://www.venetianlasvegas.com/entertainment/earth-wind-and-fire.html",
-        "https://www.ticketmaster.com/The-Venetian-Theatre-at-The-Venetian-tickets-Las-Vegas/venue/189345"
-      ]
-    },
-    {
-      "act": "Clay Walker",
-      "venue_id": "venetian-theatre",
-      "type": "Headliner",
-      "official_url": "https://www.venetianlasvegas.com/entertainment/clay-walker.html",
-      "dates": [
-        "2026-12-05"
-      ],
-      "sources": [
-        "https://www.venetianlasvegas.com/entertainment/clay-walker.html"
-      ]
-    },
-    {
-      "act": "Lindsey Stirling",
-      "venue_id": "venetian-theatre",
-      "type": "Limited engagement",
-      "official_url": "https://www.venetianlasvegas.com/entertainment/lindsey-stirling.html",
-      "dates": [
-        "2026-12-16",
-        "2026-12-18",
-        "2026-12-19"
-      ],
-      "sources": [
-        "https://www.venetianlasvegas.com/entertainment/lindsey-stirling.html",
-        "https://www.ticketmaster.com/The-Venetian-Theatre-at-The-Venetian-tickets-Las-Vegas/venue/189345"
-      ]
-    },
-    {
-      "act": "Styx",
-      "venue_id": "venetian-theatre",
-      "type": "Limited engagement",
-      "official_url": "https://www.venetianlasvegas.com/media/news-releases/2026/09-14-styx-announce-return-to-the-venetian-resort.html",
-      "dates": [
-        "2027-01-29",
-        "2027-01-30",
-        "2027-02-03",
-        "2027-02-05",
-        "2027-02-06"
-      ],
-      "sources": [
-        "https://www.venetianlasvegas.com/media/news-releases/2026/09-14-styx-announce-return-to-the-venetian-resort.html",
-        "https://www.ticketmaster.com/The-Venetian-Theatre-at-The-Venetian-tickets-Las-Vegas/venue/189345"
-      ]
-    },
-    {
-      "act": "Zoltan Kaszas",
-      "venue_id": "palazzo-theatre",
-      "type": "Comedy headliner",
-      "official_url": "https://www.venetianlasvegas.com/entertainment/zoltan-kaszas.html",
-      "dates": [
-        "2026-10-02"
-      ],
-      "sources": [
-        "https://www.venetianlasvegas.com/entertainment/zoltan-kaszas.html",
-        "https://www.ticketmaster.com/palazzo-theatre-at-the-venetian-resort-tickets-las-vegas/venue/189346"
-      ]
-    },
-    {
-      "act": "Becky Robinson",
-      "venue_id": "palazzo-theatre",
-      "type": "Comedy headliner",
-      "official_url": "https://www-cloud.venetianlasvegas.com/entertainment/becky-robinson.html",
-      "dates": [
-        "2026-10-03"
-      ],
-      "sources": [
-        "https://www-cloud.venetianlasvegas.com/entertainment/becky-robinson.html",
-        "https://www.ticketmaster.com/palazzo-theatre-at-the-venetian-resort-tickets-las-vegas/venue/189346"
-      ]
-    },
-    {
-      "act": "Tumua",
-      "venue_id": "palazzo-theatre",
-      "type": "Comedy headliner",
-      "official_url": "https://www.venetianlasvegas.com/entertainment/tumua.html",
-      "dates": [
-        "2026-10-09"
-      ],
-      "sources": [
-        "https://www.venetianlasvegas.com/entertainment/tumua.html"
-      ]
-    },
-    {
-      "act": "Heather McMahan",
-      "venue_id": "palazzo-theatre",
-      "type": "Comedy headliner",
-      "official_url": "https://www.venetianlasvegas.com/entertainment/heather-mcmahan.html",
-      "dates": [
-        "2026-10-10"
-      ],
-      "sources": [
-        "https://www.venetianlasvegas.com/entertainment/heather-mcmahan.html"
-      ]
-    },
-    {
-      "act": "Jay & Silent Bob",
-      "venue_id": "palazzo-theatre",
-      "type": "Comedy headliner",
-      "official_url": "https://www.venetianlasvegas.com/entertainment/jay-and-silent-bob.html",
-      "dates": [
-        "2026-10-16"
-      ],
-      "sources": [
-        "https://www.venetianlasvegas.com/entertainment/jay-and-silent-bob.html"
-      ]
-    },
-    {
-      "act": "Daniel Sloss",
-      "venue_id": "palazzo-theatre",
-      "type": "Comedy headliner",
-      "official_url": "https://www.venetianlasvegas.com/entertainment/daniel-sloss.html",
-      "dates": [
-        "2026-10-23"
-      ],
-      "sources": [
-        "https://www.venetianlasvegas.com/entertainment/daniel-sloss.html"
-      ]
-    },
-    {
-      "act": "Mario Adrion",
-      "venue_id": "palazzo-theatre",
-      "type": "Comedy headliner",
-      "official_url": "https://www.venetianlasvegas.com/entertainment/mario-adrion.html",
-      "dates": [
-        "2026-10-24"
-      ],
-      "sources": [
-        "https://www.venetianlasvegas.com/entertainment/mario-adrion.html"
-      ]
-    },
-    {
-      "act": "Lewis Black",
-      "venue_id": "palazzo-theatre",
-      "type": "Comedy headliner",
-      "official_url": "https://www.venetianlasvegas.com/entertainment/lewis-black.html",
-      "dates": [
-        "2026-10-30"
-      ],
-      "sources": [
-        "https://www.venetianlasvegas.com/entertainment/lewis-black.html"
-      ]
-    },
-    {
-      "act": "Brad Williams",
-      "venue_id": "palazzo-theatre",
-      "type": "Comedy headliner",
-      "official_url": "https://www.venetianlasvegas.com/entertainment/brad-williams.html",
-      "dates": [
-        "2026-11-07"
-      ],
-      "sources": [
-        "https://www.venetianlasvegas.com/entertainment/brad-williams.html"
-      ]
-    },
-    {
-      "act": "Brian Regan",
-      "venue_id": "palazzo-theatre",
-      "type": "Comedy headliner",
-      "official_url": "https://www.ticketmaster.com/palazzo-theatre-at-the-venetian-resort-tickets-las-vegas/venue/189346",
-      "dates": [
-        "2026-11-14"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/palazzo-theatre-at-the-venetian-resort-tickets-las-vegas/venue/189346",
-        "https://www.venetianlasvegas.com/entertainment/brian-regan.html"
-      ]
-    },
-    {
-      "act": "Mark Normand",
-      "venue_id": "palazzo-theatre",
-      "type": "Comedy headliner",
-      "official_url": "https://www.venetianlasvegas.com/entertainment/mark-normand.html",
-      "dates": [
-        "2026-12-04"
-      ],
-      "sources": [
-        "https://www.venetianlasvegas.com/entertainment/mark-normand.html"
-      ]
-    },
-    {
-      "act": "Kathleen Madigan",
-      "venue_id": "palazzo-theatre",
-      "type": "Comedy headliner",
-      "official_url": "https://www.venetianlasvegas.com/entertainment/kathleen-madigan.html",
-      "dates": [
-        "2026-12-05"
-      ],
-      "sources": [
-        "https://www.venetianlasvegas.com/entertainment/kathleen-madigan.html"
-      ]
-    },
-    {
-      "act": "Iliza Shlesinger",
-      "venue_id": "palazzo-theatre",
-      "type": "Comedy headliner",
-      "official_url": "https://www.venetianlasvegas.com/entertainment/iliza-shlesinger.html",
-      "dates": [
-        "2026-12-12"
-      ],
-      "sources": [
-        "https://www.venetianlasvegas.com/entertainment/iliza-shlesinger.html"
-      ]
-    },
-    {
-      "act": "Usama Siddiquee",
-      "venue_id": "palazzo-theatre",
-      "type": "Comedy headliner",
-      "official_url": "https://www.venetianlasvegas.com/entertainment/usama-siddiquee.html",
-      "dates": [
-        "2027-01-02"
-      ],
-      "sources": [
-        "https://www.venetianlasvegas.com/entertainment/usama-siddiquee.html"
-      ]
-    },
-    {
-      "act": "Morgan Jay",
-      "venue_id": "palazzo-theatre",
-      "type": "Limited engagement",
-      "official_url": "https://www-cloud.venetianlasvegas.com/entertainment/morgan-jay.html",
-      "dates": [
-        "2027-01-22",
-        "2027-01-23"
-      ],
-      "sources": [
-        "https://www-cloud.venetianlasvegas.com/entertainment/morgan-jay.html",
-        "https://www.venetianlasvegas.com/media/news-releases/2026/09-14-morgan-jay-brings-his-last-time-in-america-tour-to-the-venetian-resort-las-vegas.html"
-      ]
-    },
-    {
-      "act": "Jimmy Jam & Terry Lewis",
-      "venue_id": "voltaire",
-      "type": "Limited engagement",
-      "official_url": "https://www.venetianlasvegas.com/entertainment/jimmy-jam-terry-lewis.html",
-      "dates": [
-        "2026-10-02",
-        "2026-10-03"
-      ],
-      "sources": [
-        "https://www.venetianlasvegas.com/entertainment/jimmy-jam-terry-lewis.html",
-        "https://www.ticketmaster.com/voltaire-at-the-venetian-resort-tickets-las-vegas/venue/189545"
-      ]
-    },
-    {
-      "act": "Dita Von Teese",
-      "venue_id": "voltaire",
-      "type": "Residency",
-      "official_url": "https://www.venetianlasvegas.com/entertainment/dita-von-teese.html",
-      "dates": [
-        "2026-10-08",
-        "2026-10-09",
-        "2026-10-10",
-        "2026-10-11",
-        "2026-10-15",
-        "2026-10-16",
-        "2026-10-17",
-        "2026-10-18",
-        "2026-10-22",
-        "2026-10-23",
-        "2026-10-24",
-        "2026-10-25",
-        "2026-11-06",
-        "2026-11-07",
-        "2026-11-08",
-        "2026-11-12",
-        "2026-11-13",
-        "2026-11-14",
-        "2026-11-15",
-        "2026-12-04",
-        "2026-12-05",
-        "2026-12-06",
-        "2026-12-10",
-        "2026-12-11",
-        "2026-12-12",
-        "2026-12-13",
-        "2026-12-17",
-        "2026-12-18",
-        "2026-12-19",
-        "2026-12-20"
-      ],
-      "sources": [
-        "https://www.venetianlasvegas.com/entertainment/dita-von-teese.html",
-        "https://www.ticketmaster.com/voltaire-at-the-venetian-resort-tickets-las-vegas/venue/189545"
-      ]
-    },
-    {
-      "act": "Breaking Benjamin",
-      "venue_id": "michelob-ultra-arena",
-      "type": "Headliner",
-      "official_url": "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837",
-      "dates": [
-        "2026-10-02"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837"
-      ]
-    },
-    {
-      "act": "Chayanne",
-      "venue_id": "michelob-ultra-arena",
-      "type": "Headliner",
-      "official_url": "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837",
-      "dates": [
-        "2026-10-16"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/Chayanne-tickets/artist/754853",
-        "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837"
-      ]
-    },
-    {
-      "act": "Don Omar",
-      "venue_id": "michelob-ultra-arena",
-      "type": "Headliner",
-      "official_url": "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837",
-      "dates": [
-        "2026-10-30"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/don-omar-tickets/artist/1031846",
-        "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837"
-      ]
-    },
-    {
-      "act": "Nick Cannon Presents: Wild 'N Out Live — The Next Generation",
-      "venue_id": "michelob-ultra-arena",
-      "type": "Comedy headliner",
-      "official_url": "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837",
-      "dates": [
-        "2026-11-14"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/nick-cannon-presents%3A-wild-%27n-out-live-tickets/artist/2502535",
-        "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837"
-      ]
-    },
-    {
-      "act": "Trans-Siberian Orchestra — The Ghosts of Christmas Eve",
-      "venue_id": "michelob-ultra-arena",
-      "type": "Headliner",
-      "official_url": "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837",
-      "dates": [
-        "2026-12-04"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/search?q=michelob+ultra+arena",
-        "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837"
-      ]
-    },
-    {
-      "act": "Diana Ross",
-      "venue_id": "encore-theater-wynn",
-      "type": "Limited engagement",
-      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows",
-      "dates": [
-        "2026-10-02",
-        "2026-10-03",
-        "2026-10-04"
-      ],
-      "sources": [
-        "https://www.wynnlasvegas.com/entertainment/upcoming-shows"
       ]
     },
     {
@@ -1507,600 +248,6 @@
       ]
     },
     {
-      "act": "Ludovico Einaudi",
-      "venue_id": "encore-theater-wynn",
-      "type": "Headliner",
-      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/ludovico-einaudi",
-      "dates": [
-        "2026-10-07"
-      ],
-      "sources": [
-        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/ludovico-einaudi"
-      ]
-    },
-    {
-      "act": "Sebastian Maniscalco",
-      "venue_id": "encore-theater-wynn",
-      "type": "Residency",
-      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/sebastian-maniscalco",
-      "dates": [
-        "2026-10-09",
-        "2026-10-10"
-      ],
-      "sources": [
-        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/sebastian-maniscalco"
-      ]
-    },
-    {
-      "act": "Max Amini",
-      "venue_id": "encore-theater-wynn",
-      "type": "Comedy headliner",
-      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/max-amini",
-      "dates": [
-        "2026-10-11",
-        "2026-12-26",
-        "2026-12-27"
-      ],
-      "sources": [
-        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/max-amini"
-      ]
-    },
-    {
-      "act": "Lionel Richie",
-      "venue_id": "encore-theater-wynn",
-      "type": "Residency",
-      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/lionel-richie",
-      "dates": [
-        "2026-10-14",
-        "2026-10-16",
-        "2026-10-17",
-        "2026-11-11",
-        "2026-11-13",
-        "2026-11-14"
-      ],
-      "sources": [
-        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/lionel-richie"
-      ]
-    },
-    {
-      "act": "Tom Jones",
-      "venue_id": "encore-theater-wynn",
-      "type": "Limited engagement",
-      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/tom-jones",
-      "dates": [
-        "2026-10-21",
-        "2026-10-23",
-        "2026-10-24"
-      ],
-      "sources": [
-        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/tom-jones"
-      ]
-    },
-    {
-      "act": "Bryan Adams",
-      "venue_id": "encore-theater-wynn",
-      "type": "Limited engagement",
-      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/bryan-adams",
-      "dates": [
-        "2026-10-28",
-        "2026-10-29",
-        "2026-10-30",
-        "2026-10-31",
-        "2026-11-01"
-      ],
-      "sources": [
-        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/bryan-adams"
-      ]
-    },
-    {
-      "act": "Brad Paisley",
-      "venue_id": "encore-theater-wynn",
-      "type": "Limited engagement",
-      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/brad-paisley",
-      "dates": [
-        "2026-11-06",
-        "2026-11-07"
-      ],
-      "sources": [
-        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/brad-paisley"
-      ]
-    },
-    {
-      "act": "Scott Bradlee’s Postmodern Jukebox",
-      "venue_id": "encore-theater-wynn",
-      "type": "Headliner",
-      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/scott-bradlees-postmodern-jukebox",
-      "dates": [
-        "2026-11-27"
-      ],
-      "sources": [
-        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/scott-bradlees-postmodern-jukebox"
-      ]
-    },
-    {
-      "act": "Nate Bargatze",
-      "venue_id": "encore-theater-wynn",
-      "type": "Limited engagement",
-      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/nate-bargatze",
-      "dates": [
-        "2026-12-09",
-        "2026-12-10",
-        "2026-12-11",
-        "2026-12-12"
-      ],
-      "sources": [
-        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/nate-bargatze"
-      ]
-    },
-    {
-      "act": "Love Actually In Concert",
-      "venue_id": "encore-theater-wynn",
-      "type": "Special engagement",
-      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/love-actually-in-concert",
-      "dates": [
-        "2026-12-17"
-      ],
-      "sources": [
-        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/love-actually-in-concert"
-      ]
-    },
-    {
-      "act": "UNDERTALE Determination Symphony World Tour",
-      "venue_id": "resorts-world-theatre",
-      "type": "Special engagement",
-      "official_url": "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
-      "dates": [
-        "2026-10-10"
-      ],
-      "sources": [
-        "https://www.rwlasvegas.com/press/latest-news/",
-        "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre"
-      ]
-    },
-    {
-      "act": "Ms. Lauryn Hill & Wyclef Jean",
-      "venue_id": "resorts-world-theatre",
-      "type": "Headliner",
-      "official_url": "https://www.rwlasvegas.com/entertainment/ms-lauryn-hill-wyclef-jean-celebrating-30-years-of-the-score/",
-      "dates": [
-        "2026-11-06"
-      ],
-      "sources": [
-        "https://www.rwlasvegas.com/press/ms-lauryn-hill-wyclef-jean-celebrate-30-years-of-their-groundbreaking-album-the-score-at-resorts-world-theatre-on-november-6-2026/"
-      ]
-    },
-    {
-      "act": "Danny Elfman’s Music from the Films of Tim Burton",
-      "venue_id": "resorts-world-theatre",
-      "type": "Limited engagement",
-      "official_url": "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
-      "dates": [
-        "2026-11-13",
-        "2026-11-14"
-      ],
-      "sources": [
-        "https://www.rwlasvegas.com/press/latest-news/",
-        "https://www.axs.com/venues/128058/resorts-world-theatre-las-vegas-tickets?page=2"
-      ]
-    },
-    {
-      "act": "Feng Wang: HORIZON",
-      "venue_id": "resorts-world-theatre",
-      "type": "Headliner",
-      "official_url": "https://www.axs.com/venues/128058/resorts-world-theatre-las-vegas-tickets?page=2",
-      "dates": [
-        "2026-11-28"
-      ],
-      "sources": [
-        "https://www.axs.com/venues/128058/resorts-world-theatre-las-vegas-tickets?page=2"
-      ]
-    },
-    {
-      "act": "Dwight Yoakam",
-      "venue_id": "resorts-world-theatre",
-      "type": "Headliner",
-      "official_url": "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
-      "dates": [
-        "2026-12-03"
-      ],
-      "sources": [
-        "https://www.rwlasvegas.com/press/resorts-world-las-vegas-packs-rodeo-world-2026-with-10-days-of-headline-entertainment-and-nfr-action/"
-      ]
-    },
-    {
-      "act": "Gary Allan",
-      "venue_id": "resorts-world-theatre",
-      "type": "Headliner",
-      "official_url": "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
-      "dates": [
-        "2026-12-04"
-      ],
-      "sources": [
-        "https://www.rwlasvegas.com/press/resorts-world-las-vegas-packs-rodeo-world-2026-with-10-days-of-headline-entertainment-and-nfr-action/"
-      ]
-    },
-    {
-      "act": "Chris Young",
-      "venue_id": "resorts-world-theatre",
-      "type": "Headliner",
-      "official_url": "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
-      "dates": [
-        "2026-12-05"
-      ],
-      "sources": [
-        "https://www.rwlasvegas.com/press/resorts-world-las-vegas-packs-rodeo-world-2026-with-10-days-of-headline-entertainment-and-nfr-action/"
-      ]
-    },
-    {
-      "act": "Riley Green",
-      "venue_id": "resorts-world-theatre",
-      "type": "Limited engagement",
-      "official_url": "https://www.rwlasvegas.com/press/riley-green-brings-cowboy-as-it-gets-tour-2026-to-resorts-world-theatre-december-6-10/",
-      "dates": [
-        "2026-12-06",
-        "2026-12-10"
-      ],
-      "sources": [
-        "https://www.rwlasvegas.com/press/riley-green-brings-cowboy-as-it-gets-tour-2026-to-resorts-world-theatre-december-6-10/"
-      ]
-    },
-    {
-      "act": "Lee Brice",
-      "venue_id": "resorts-world-theatre",
-      "type": "Headliner",
-      "official_url": "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
-      "dates": [
-        "2026-12-09"
-      ],
-      "sources": [
-        "https://www.rwlasvegas.com/entertainment/",
-        "https://www.rwlasvegas.com/press/resorts-world-las-vegas-packs-rodeo-world-2026-with-10-days-of-headline-entertainment-and-nfr-action/"
-      ]
-    },
-    {
-      "act": "Sheryl Crow",
-      "venue_id": "resorts-world-theatre",
-      "type": "Headliner",
-      "official_url": "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
-      "dates": [
-        "2026-12-12"
-      ],
-      "sources": [
-        "https://www.rwlasvegas.com/entertainment/",
-        "https://www.rwlasvegas.com/press/resorts-world-las-vegas-packs-rodeo-world-2026-with-10-days-of-headline-entertainment-and-nfr-action/"
-      ]
-    },
-    {
-      "act": "The Piano Guys",
-      "venue_id": "resorts-world-theatre",
-      "type": "Headliner",
-      "official_url": "https://www.rwlasvegas.com/entertainment/the-piano-guys/",
-      "dates": [
-        "2027-01-27"
-      ],
-      "sources": [
-        "https://www.rwlasvegas.com/press/the-piano-guys-bring-west-coast-tour-2027-to-resorts-world-theatre-january-27-2027/"
-      ]
-    },
-    {
-      "act": "Michelle Branch",
-      "venue_id": "stage-at-zouk",
-      "type": "Headliner",
-      "official_url": "https://www.rwlasvegas.com/entertainment/",
-      "dates": [
-        "2026-10-09"
-      ],
-      "sources": [
-        "https://www.rwlasvegas.com/entertainment/"
-      ]
-    },
-    {
-      "act": "The Wallflowers",
-      "venue_id": "stage-at-zouk",
-      "type": "Headliner",
-      "official_url": "https://www.rwlasvegas.com/entertainment/",
-      "dates": [
-        "2026-10-10"
-      ],
-      "sources": [
-        "https://www.rwlasvegas.com/entertainment/"
-      ]
-    },
-    {
-      "act": "Big Head Todd & The Monsters",
-      "venue_id": "stage-at-zouk",
-      "type": "Headliner",
-      "official_url": "https://www.rwlasvegas.com/entertainment/",
-      "dates": [
-        "2026-10-24"
-      ],
-      "sources": [
-        "https://www.rwlasvegas.com/entertainment/"
-      ]
-    },
-    {
-      "act": "The Psychedelic Furs",
-      "venue_id": "stage-at-zouk",
-      "type": "Headliner",
-      "official_url": "https://www.rwlasvegas.com/entertainment/",
-      "dates": [
-        "2026-11-06"
-      ],
-      "sources": [
-        "https://www.rwlasvegas.com/entertainment/"
-      ]
-    },
-    {
-      "act": "Gente de Zona",
-      "venue_id": "stage-at-zouk",
-      "type": "Headliner",
-      "official_url": "https://www.rwlasvegas.com/entertainment/",
-      "dates": [
-        "2026-11-07"
-      ],
-      "sources": [
-        "https://www.rwlasvegas.com/entertainment/"
-      ]
-    },
-    {
-      "act": "Todd Rundgren",
-      "venue_id": "stage-at-zouk",
-      "type": "Headliner",
-      "official_url": "https://www.rwlasvegas.com/entertainment/",
-      "dates": [
-        "2026-11-13"
-      ],
-      "sources": [
-        "https://www.rwlasvegas.com/entertainment/"
-      ]
-    },
-    {
-      "act": "Toad the Wet Sprocket",
-      "venue_id": "stage-at-zouk",
-      "type": "Headliner",
-      "official_url": "https://www.rwlasvegas.com/entertainment/",
-      "dates": [
-        "2026-11-14"
-      ],
-      "sources": [
-        "https://www.rwlasvegas.com/entertainment/"
-      ]
-    },
-    {
-      "act": "Third Eye Blind",
-      "venue_id": "stage-at-zouk",
-      "type": "Headliner",
-      "official_url": "https://www.rwlasvegas.com/entertainment/",
-      "dates": [
-        "2026-12-31"
-      ],
-      "sources": [
-        "https://www.rwlasvegas.com/entertainment/"
-      ]
-    },
-    {
-      "act": "Jack White",
-      "venue_id": "bleaulive-theater",
-      "type": "Headliner",
-      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
-      "dates": [
-        "2026-10-02"
-      ],
-      "sources": [
-        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-10/"
-      ]
-    },
-    {
-      "act": "TLC & Salt-N-Pepa",
-      "venue_id": "bleaulive-theater",
-      "type": "Headliner",
-      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
-      "dates": [
-        "2026-10-09"
-      ],
-      "sources": [
-        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-10/"
-      ]
-    },
-    {
-      "act": "Keith Urban",
-      "venue_id": "bleaulive-theater",
-      "type": "Limited engagement",
-      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
-      "dates": [
-        "2026-10-16",
-        "2026-10-17"
-      ],
-      "sources": [
-        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-10/"
-      ]
-    },
-    {
-      "act": "Logic & G-Eazy",
-      "venue_id": "bleaulive-theater",
-      "type": "Headliner",
-      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
-      "dates": [
-        "2026-10-18"
-      ],
-      "sources": [
-        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-10/"
-      ]
-    },
-    {
-      "act": "Ricky Martin",
-      "venue_id": "bleaulive-theater",
-      "type": "Limited engagement",
-      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
-      "dates": [
-        "2026-10-30",
-        "2026-10-31"
-      ],
-      "sources": [
-        "https://www.fontainebleaulasvegas.com/upcoming-events/month/"
-      ]
-    },
-    {
-      "act": "Marc Anthony",
-      "venue_id": "bleaulive-theater",
-      "type": "Residency",
-      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
-      "dates": [
-        "2026-11-20",
-        "2026-11-21",
-        "2027-02-12",
-        "2027-02-13",
-        "2027-02-17",
-        "2027-02-19",
-        "2027-02-20",
-        "2027-09-10",
-        "2027-09-11",
-        "2027-09-17",
-        "2027-09-18",
-        "2027-09-19"
-      ],
-      "sources": [
-        "https://www.fontainebleaulasvegas.com/entertainment/",
-        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-11/"
-      ]
-    },
-    {
-      "act": "Grasshopper",
-      "venue_id": "bleaulive-theater",
-      "type": "Limited engagement",
-      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
-      "dates": [
-        "2026-11-27",
-        "2026-11-28"
-      ],
-      "sources": [
-        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-11/"
-      ]
-    },
-    {
-      "act": "Triumph",
-      "venue_id": "bleaulive-theater",
-      "type": "Headliner",
-      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
-      "dates": [
-        "2026-12-01"
-      ],
-      "sources": [
-        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
-      ]
-    },
-    {
-      "act": "Dierks Bentley",
-      "venue_id": "bleaulive-theater",
-      "type": "Limited engagement",
-      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
-      "dates": [
-        "2026-12-04",
-        "2026-12-05"
-      ],
-      "sources": [
-        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
-      ]
-    },
-    {
-      "act": "Victoria Monét",
-      "venue_id": "bleaulive-theater",
-      "type": "Headliner",
-      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
-      "dates": [
-        "2026-12-09"
-      ],
-      "sources": [
-        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
-      ]
-    },
-    {
-      "act": "Creed",
-      "venue_id": "bleaulive-theater",
-      "type": "Limited engagement",
-      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
-      "dates": [
-        "2026-12-11",
-        "2026-12-12"
-      ],
-      "sources": [
-        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
-      ]
-    },
-    {
-      "act": "Tyla",
-      "venue_id": "bleaulive-theater",
-      "type": "Headliner",
-      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
-      "dates": [
-        "2026-12-19"
-      ],
-      "sources": [
-        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
-      ]
-    },
-    {
-      "act": "Derek Hough — Dance for the Holidays",
-      "venue_id": "bleaulive-theater",
-      "type": "Special engagement",
-      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
-      "dates": [
-        "2026-12-29"
-      ],
-      "sources": [
-        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
-      ]
-    },
-    {
-      "act": "A Perfect Circle",
-      "venue_id": "bleaulive-theater",
-      "type": "Limited engagement",
-      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
-      "dates": [
-        "2027-06-10",
-        "2027-06-11"
-      ],
-      "sources": [
-        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/list/?tribe-bar-date=2026-12-01"
-      ]
-    },
-    {
-      "act": "Santana",
-      "venue_id": "house-of-blues-mandalay-bay",
-      "type": "Residency",
-      "official_url": "https://mandalaybay.mgmresorts.com/en/entertainment/house-of-blues-music-hall/santana.html",
-      "dates": [
-        "2026-11-04",
-        "2026-11-05",
-        "2026-11-07",
-        "2026-11-08",
-        "2026-11-11",
-        "2026-11-12",
-        "2026-11-14",
-        "2026-11-15",
-        "2027-01-20",
-        "2027-01-21",
-        "2027-01-23",
-        "2027-01-24",
-        "2027-01-27",
-        "2027-01-28",
-        "2027-01-30",
-        "2027-01-31",
-        "2027-05-12",
-        "2027-05-13",
-        "2027-05-15",
-        "2027-05-16",
-        "2027-05-19",
-        "2027-05-20",
-        "2027-05-22",
-        "2027-05-23"
-      ],
-      "sources": [
-        "https://mandalaybay.mgmresorts.com/en/entertainment/house-of-blues-music-hall/santana.html",
-        "https://mandalaybay.mgmresorts.com/en/entertainment/house-of-blues-music-hall.html"
-      ]
-    },
-    {
       "act": "Julieta Venegas",
       "venue_id": "the-chelsea-cosmopolitan",
       "type": "Headliner",
@@ -2114,323 +261,15 @@
       ]
     },
     {
-      "act": "Mo Amer",
-      "venue_id": "the-chelsea-cosmopolitan",
-      "type": "Comedy headliner",
-      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/mo-amer.html",
-      "dates": [
-        "2026-10-10"
-      ],
-      "sources": [
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/mo-amer.html",
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
-      ]
-    },
-    {
-      "act": "Deorro",
-      "venue_id": "the-chelsea-cosmopolitan",
+      "act": "Ludovico Einaudi",
+      "venue_id": "encore-theater-wynn",
       "type": "Headliner",
-      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/ludovico-einaudi",
       "dates": [
-        "2026-10-16"
+        "2026-10-07"
       ],
       "sources": [
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html",
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
-      ]
-    },
-    {
-      "act": "Ron White",
-      "venue_id": "the-chelsea-cosmopolitan",
-      "type": "Comedy headliner",
-      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/ron-white.html",
-      "dates": [
-        "2026-10-23",
-        "2026-12-05"
-      ],
-      "sources": [
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/ron-white.html",
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
-      ]
-    },
-    {
-      "act": "Daniel Tosh",
-      "venue_id": "the-chelsea-cosmopolitan",
-      "type": "Limited engagement",
-      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/daniel-tosh.html",
-      "dates": [
-        "2026-11-07",
-        "2027-02-12",
-        "2027-04-24",
-        "2027-09-25",
-        "2027-11-06"
-      ],
-      "sources": [
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/daniel-tosh.html",
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
-      ]
-    },
-    {
-      "act": "Steve Lacy",
-      "venue_id": "the-chelsea-cosmopolitan",
-      "type": "Headliner",
-      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/steve-lacy.html",
-      "dates": [
-        "2026-11-13"
-      ],
-      "sources": [
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/steve-lacy.html",
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
-      ]
-    },
-    {
-      "act": "Hudson Westbrook",
-      "venue_id": "the-chelsea-cosmopolitan",
-      "type": "Headliner",
-      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html",
-      "dates": [
-        "2026-12-12"
-      ],
-      "sources": [
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html",
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
-      ]
-    },
-    {
-      "act": "Boyz II Men",
-      "venue_id": "the-chelsea-cosmopolitan",
-      "type": "Limited engagement",
-      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/boyz-ii-men.html",
-      "dates": [
-        "2027-03-12",
-        "2027-03-13",
-        "2027-03-19",
-        "2027-03-20"
-      ],
-      "sources": [
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/boyz-ii-men.html",
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
-      ]
-    },
-    {
-      "act": "Andrew Santino",
-      "venue_id": "the-chelsea-cosmopolitan",
-      "type": "Comedy headliner",
-      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/andrew-santino.html",
-      "dates": [
-        "2027-03-27"
-      ],
-      "sources": [
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/andrew-santino.html",
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
-      ]
-    },
-    {
-      "act": "Carly Rae Jepsen",
-      "venue_id": "the-chelsea-cosmopolitan",
-      "type": "Headliner",
-      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/carly-rae-jepsen.html",
-      "dates": [
-        "2027-04-30"
-      ],
-      "sources": [
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/carly-rae-jepsen.html",
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
-      ]
-    },
-    {
-      "act": "The Rock Orchestra by Candlelight",
-      "venue_id": "the-theater-virgin-hotels",
-      "type": "Special engagement",
-      "official_url": "https://virginhotelslv.com/venue/the-theater/",
-      "dates": [
-        "2026-10-03"
-      ],
-      "sources": [
-        "https://virginhotelslv.com/venue/the-theater/"
-      ]
-    },
-    {
-      "act": "Legends of Gospel",
-      "venue_id": "the-theater-virgin-hotels",
-      "type": "Limited engagement",
-      "official_url": "https://virginhotelslv.com/venue/the-theater/",
-      "dates": [
-        "2026-10-08",
-        "2026-10-09",
-        "2026-10-11"
-      ],
-      "sources": [
-        "https://virginhotelslv.com/venue/the-theater/"
-      ]
-    },
-    {
-      "act": "Brincos Dieras",
-      "venue_id": "the-theater-virgin-hotels",
-      "type": "Comedy headliner",
-      "official_url": "https://virginhotelslv.com/venue/the-theater/",
-      "dates": [
-        "2026-10-10"
-      ],
-      "sources": [
-        "https://virginhotelslv.com/venue/the-theater/"
-      ]
-    },
-    {
-      "act": "BEAT: Belew/Vai/Levin/Bozzio",
-      "venue_id": "the-theater-virgin-hotels",
-      "type": "Headliner",
-      "official_url": "https://virginhotelslv.com/venue/the-theater/",
-      "dates": [
-        "2026-10-13"
-      ],
-      "sources": [
-        "https://virginhotelslv.com/venue/the-theater/"
-      ]
-    },
-    {
-      "act": "Treaty Oak Revival",
-      "venue_id": "the-theater-virgin-hotels",
-      "type": "Headliner",
-      "official_url": "https://virginhotelslv.com/venue/the-theater/",
-      "dates": [
-        "2026-10-23"
-      ],
-      "sources": [
-        "https://virginhotelslv.com/venue/the-theater/"
-      ]
-    },
-    {
-      "act": "Tucker Wetmore",
-      "venue_id": "the-theater-virgin-hotels",
-      "type": "Headliner",
-      "official_url": "https://virginhotelslv.com/venue/the-theater/",
-      "dates": [
-        "2026-10-24"
-      ],
-      "sources": [
-        "https://virginhotelslv.com/venue/the-theater/"
-      ]
-    },
-    {
-      "act": "Taste of Chaos — In This Moment & Hollywood Undead",
-      "venue_id": "the-theater-virgin-hotels",
-      "type": "Special engagement",
-      "official_url": "https://virginhotelslv.com/venue/the-theater/",
-      "dates": [
-        "2026-10-25"
-      ],
-      "sources": [
-        "https://virginhotelslv.com/venue/the-theater/"
-      ]
-    },
-    {
-      "act": "Los Parras",
-      "venue_id": "the-theater-virgin-hotels",
-      "type": "Headliner",
-      "official_url": "https://virginhotelslv.com/venue/the-theater/",
-      "dates": [
-        "2026-10-30"
-      ],
-      "sources": [
-        "https://virginhotelslv.com/venue/the-theater/"
-      ]
-    },
-    {
-      "act": "Brand New",
-      "venue_id": "the-theater-virgin-hotels",
-      "type": "Headliner",
-      "official_url": "https://virginhotelslv.com/venue/the-theater/",
-      "dates": [
-        "2026-11-06"
-      ],
-      "sources": [
-        "https://virginhotelslv.com/venue/the-theater/"
-      ]
-    },
-    {
-      "act": "Marcus King Band",
-      "venue_id": "the-theater-virgin-hotels",
-      "type": "Headliner",
-      "official_url": "https://virginhotelslv.com/venue/the-theater/",
-      "dates": [
-        "2026-12-03"
-      ],
-      "sources": [
-        "https://virginhotelslv.com/venue/the-theater/"
-      ]
-    },
-    {
-      "act": "Casey Donahew & Josh Abbott Band",
-      "venue_id": "the-theater-virgin-hotels",
-      "type": "Headliner",
-      "official_url": "https://virginhotelslv.com/venue/the-theater/",
-      "dates": [
-        "2026-12-09"
-      ],
-      "sources": [
-        "https://virginhotelslv.com/venue/the-theater/"
-      ]
-    },
-    {
-      "act": "Gavin Adcock",
-      "venue_id": "the-theater-virgin-hotels",
-      "type": "Headliner",
-      "official_url": "https://virginhotelslv.com/venue/the-theater/",
-      "dates": [
-        "2026-12-10"
-      ],
-      "sources": [
-        "https://virginhotelslv.com/venue/the-theater/"
-      ]
-    },
-    {
-      "act": "Sam Barber",
-      "venue_id": "the-theater-virgin-hotels",
-      "type": "Headliner",
-      "official_url": "https://virginhotelslv.com/venue/the-theater/",
-      "dates": [
-        "2026-12-12"
-      ],
-      "sources": [
-        "https://virginhotelslv.com/venue/the-theater/"
-      ]
-    },
-    {
-      "act": "Lord Huron",
-      "venue_id": "the-theater-virgin-hotels",
-      "type": "Headliner",
-      "official_url": "https://virginhotelslv.com/venue/the-theater/",
-      "dates": [
-        "2027-01-02"
-      ],
-      "sources": [
-        "https://virginhotelslv.com/venue/the-theater/"
-      ]
-    },
-    {
-      "act": "FLANS40",
-      "venue_id": "the-theater-virgin-hotels",
-      "type": "Headliner",
-      "official_url": "https://virginhotelslv.com/venue/the-theater/",
-      "dates": [
-        "2027-03-11"
-      ],
-      "sources": [
-        "https://virginhotelslv.com/venue/the-theater/"
-      ]
-    },
-    {
-      "act": "Engelbert Humperdinck",
-      "venue_id": "westgate-international-theater",
-      "type": "Limited engagement",
-      "official_url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/engelbert-humperdinck/",
-      "dates": [
-        "2026-10-02",
-        "2026-10-03"
-      ],
-      "sources": [
-        "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/engelbert-humperdinck/"
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/ludovico-einaudi"
       ]
     },
     {
@@ -2479,6 +318,677 @@
       ]
     },
     {
+      "act": "Dita Von Teese",
+      "venue_id": "voltaire",
+      "type": "Residency",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/dita-von-teese.html",
+      "dates": [
+        "2026-10-08",
+        "2026-10-09",
+        "2026-10-10",
+        "2026-10-11",
+        "2026-10-15",
+        "2026-10-16",
+        "2026-10-17",
+        "2026-10-18",
+        "2026-10-22",
+        "2026-10-23",
+        "2026-10-24",
+        "2026-10-25",
+        "2026-11-06",
+        "2026-11-07",
+        "2026-11-08",
+        "2026-11-12",
+        "2026-11-13",
+        "2026-11-14",
+        "2026-11-15",
+        "2026-12-04",
+        "2026-12-05",
+        "2026-12-06",
+        "2026-12-10",
+        "2026-12-11",
+        "2026-12-12",
+        "2026-12-13",
+        "2026-12-17",
+        "2026-12-18",
+        "2026-12-19",
+        "2026-12-20"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/dita-von-teese.html",
+        "https://www.ticketmaster.com/voltaire-at-the-venetian-resort-tickets-las-vegas/venue/189545"
+      ]
+    },
+    {
+      "act": "For KING + COUNTRY",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-10-08"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Legends of Gospel",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Limited engagement",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-10-08",
+        "2026-10-09",
+        "2026-10-11"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Empire of the Sun",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/empire-of-the-sun-tickets/artist/1439524?venueId=467893",
+      "dates": [
+        "2026-10-09"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/empire-of-the-sun-tickets/artist/1439524?venueId=467893",
+        "https://newsroom.caesars.com/press-releases/press-release-details/2026/Caesars-Entertainment-Brings-Hotel-Savings-50-Show-Tickets-and-More-to-the-Vegas-5-Day-Sale/default.aspx"
+      ]
+    },
+    {
+      "act": "Michelle Branch",
+      "venue_id": "stage-at-zouk",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/",
+      "dates": [
+        "2026-10-09"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/"
+      ]
+    },
+    {
+      "act": "Sebastian Maniscalco",
+      "venue_id": "encore-theater-wynn",
+      "type": "Residency",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/sebastian-maniscalco",
+      "dates": [
+        "2026-10-09",
+        "2026-10-10"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/sebastian-maniscalco"
+      ]
+    },
+    {
+      "act": "TLC & Salt-N-Pepa",
+      "venue_id": "bleaulive-theater",
+      "type": "Headliner",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-10-09"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-10/"
+      ]
+    },
+    {
+      "act": "Tumua",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/tumua.html",
+      "dates": [
+        "2026-10-09"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/tumua.html"
+      ]
+    },
+    {
+      "act": "Brincos Dieras",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Comedy headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-10-10"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Heather McMahan",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/heather-mcmahan.html",
+      "dates": [
+        "2026-10-10"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/heather-mcmahan.html"
+      ]
+    },
+    {
+      "act": "Juanes",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-10-10"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Mo Amer",
+      "venue_id": "the-chelsea-cosmopolitan",
+      "type": "Comedy headliner",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/mo-amer.html",
+      "dates": [
+        "2026-10-10"
+      ],
+      "sources": [
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/mo-amer.html",
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
+      "act": "The Wallflowers",
+      "venue_id": "stage-at-zouk",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/",
+      "dates": [
+        "2026-10-10"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/"
+      ]
+    },
+    {
+      "act": "UNDERTALE Determination Symphony World Tour",
+      "venue_id": "resorts-world-theatre",
+      "type": "Special engagement",
+      "official_url": "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
+      "dates": [
+        "2026-10-10"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/press/latest-news/",
+        "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre"
+      ]
+    },
+    {
+      "act": "Max Amini",
+      "venue_id": "encore-theater-wynn",
+      "type": "Comedy headliner",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/max-amini",
+      "dates": [
+        "2026-10-11",
+        "2026-12-26",
+        "2026-12-27"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/max-amini"
+      ]
+    },
+    {
+      "act": "BEAT: Belew/Vai/Levin/Bozzio",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-10-13"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Lionel Richie",
+      "venue_id": "encore-theater-wynn",
+      "type": "Residency",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/lionel-richie",
+      "dates": [
+        "2026-10-14",
+        "2026-10-16",
+        "2026-10-17",
+        "2026-11-11",
+        "2026-11-13",
+        "2026-11-14"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/lionel-richie"
+      ]
+    },
+    {
+      "act": "Big Boy's Comedy Fiesta with George Lopez & Marlon Wayans",
+      "venue_id": "palms-pearl",
+      "type": "Comedy headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-10-15"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Chayanne",
+      "venue_id": "michelob-ultra-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837",
+      "dates": [
+        "2026-10-16"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/Chayanne-tickets/artist/754853",
+        "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837"
+      ]
+    },
+    {
+      "act": "Deorro",
+      "venue_id": "the-chelsea-cosmopolitan",
+      "type": "Headliner",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html",
+      "dates": [
+        "2026-10-16"
+      ],
+      "sources": [
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html",
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
+      "act": "Earth, Wind & Fire",
+      "venue_id": "venetian-theatre",
+      "type": "Residency",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/earth-wind-and-fire.html",
+      "dates": [
+        "2026-10-16",
+        "2026-10-17",
+        "2026-10-18",
+        "2026-10-21",
+        "2026-10-23",
+        "2026-10-24",
+        "2026-10-28",
+        "2026-10-30",
+        "2026-10-31"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/earth-wind-and-fire.html",
+        "https://www.ticketmaster.com/The-Venetian-Theatre-at-The-Venetian-tickets-Las-Vegas/venue/189345"
+      ]
+    },
+    {
+      "act": "Jay & Silent Bob",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/jay-and-silent-bob.html",
+      "dates": [
+        "2026-10-16"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/jay-and-silent-bob.html"
+      ]
+    },
+    {
+      "act": "Keith Urban",
+      "venue_id": "bleaulive-theater",
+      "type": "Limited engagement",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-10-16",
+        "2026-10-17"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-10/"
+      ]
+    },
+    {
+      "act": "Rise Against",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-10-17"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Logic & G-Eazy",
+      "venue_id": "bleaulive-theater",
+      "type": "Headliner",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-10-18"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-10/"
+      ]
+    },
+    {
+      "act": "Taking Back Sunday",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-10-18"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Tom Jones",
+      "venue_id": "encore-theater-wynn",
+      "type": "Limited engagement",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/tom-jones",
+      "dates": [
+        "2026-10-21",
+        "2026-10-23",
+        "2026-10-24"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/tom-jones"
+      ]
+    },
+    {
+      "act": "Daniel Sloss",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/daniel-sloss.html",
+      "dates": [
+        "2026-10-23"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/daniel-sloss.html"
+      ]
+    },
+    {
+      "act": "Mary J. Blige",
+      "venue_id": "dolby-live",
+      "type": "Residency",
+      "official_url": "https://parkmgm.mgmresorts.com/en/entertainment/mary-j-blige.html",
+      "dates": [
+        "2026-10-23",
+        "2026-10-24",
+        "2026-10-28",
+        "2026-10-30",
+        "2026-10-31",
+        "2027-02-12",
+        "2027-02-13",
+        "2027-02-17",
+        "2027-02-19",
+        "2027-02-20"
+      ],
+      "sources": [
+        "https://parkmgm.mgmresorts.com/en/entertainment/mary-j-blige.html",
+        "https://newsroom.mgmresorts.com/press-releases?item=122881"
+      ]
+    },
+    {
+      "act": "Ron White",
+      "venue_id": "the-chelsea-cosmopolitan",
+      "type": "Comedy headliner",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/ron-white.html",
+      "dates": [
+        "2026-10-23",
+        "2026-12-05"
+      ],
+      "sources": [
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/ron-white.html",
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
+      "act": "Tim McGraw",
+      "venue_id": "caesars-colosseum",
+      "type": "Residency",
+      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
+      "dates": [
+        "2026-10-23",
+        "2026-10-24",
+        "2026-11-04",
+        "2026-11-06",
+        "2026-11-07"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/tim-mcgraw-tickets/artist/762799",
+        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
+      ]
+    },
+    {
+      "act": "Treaty Oak Revival",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-10-23"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Weezer — The Gathering",
+      "venue_id": "t-mobile-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926",
+      "dates": [
+        "2026-10-23"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926"
+      ]
+    },
+    {
+      "act": "Big Head Todd & The Monsters",
+      "venue_id": "stage-at-zouk",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/",
+      "dates": [
+        "2026-10-24"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/"
+      ]
+    },
+    {
+      "act": "Mario Adrion",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/mario-adrion.html",
+      "dates": [
+        "2026-10-24"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/mario-adrion.html"
+      ]
+    },
+    {
+      "act": "Tucker Wetmore",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-10-24"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Jim Henson’s Labyrinth: In Concert 40th Anniversary",
+      "venue_id": "palms-pearl",
+      "type": "Special engagement",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-10-25"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/jim-hensons-labyrinth-in-concert-40th-anniversary",
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Taste of Chaos — In This Moment & Hollywood Undead",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Special engagement",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-10-25"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Bryan Adams",
+      "venue_id": "encore-theater-wynn",
+      "type": "Limited engagement",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/bryan-adams",
+      "dates": [
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/bryan-adams"
+      ]
+    },
+    {
+      "act": "Yandel",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
+      "dates": [
+        "2026-10-29"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893"
+      ]
+    },
+    {
+      "act": "Don Omar",
+      "venue_id": "michelob-ultra-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837",
+      "dates": [
+        "2026-10-30"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/don-omar-tickets/artist/1031846",
+        "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837"
+      ]
+    },
+    {
+      "act": "Lewis Black",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/lewis-black.html",
+      "dates": [
+        "2026-10-30"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/lewis-black.html"
+      ]
+    },
+    {
+      "act": "Los Parras",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-10-30"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Richard Marx",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-10-30"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Ricky Martin",
+      "venue_id": "bleaulive-theater",
+      "type": "Limited engagement",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-10-30",
+        "2026-10-31"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/month/"
+      ]
+    },
+    {
+      "act": "The Smashing Pumpkins",
+      "venue_id": "mgm-grand-garden-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839",
+      "dates": [
+        "2026-10-30"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839"
+      ]
+    },
+    {
+      "act": "Doja Cat",
+      "venue_id": "t-mobile-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926",
+      "dates": [
+        "2026-10-31"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926"
+      ]
+    },
+    {
+      "act": "Hello America",
+      "venue_id": "caesars-colosseum",
+      "type": "Special event",
+      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
+      "dates": [
+        "2026-10-31"
+      ],
+      "sources": [
+        "https://helloamericaglobal.com/",
+        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
+      ]
+    },
+    {
+      "act": "Jodeci",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-10-31"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/jodeci",
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
       "act": "Three Dog Night",
       "venue_id": "westgate-international-theater",
       "type": "Headliner",
@@ -2488,6 +998,409 @@
       ],
       "sources": [
         "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/"
+      ]
+    },
+    {
+      "act": "Moenia + Maria Jose",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-11-01"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/moenia-maria-jose-us-tour-2026",
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Santana",
+      "venue_id": "house-of-blues-mandalay-bay",
+      "type": "Residency",
+      "official_url": "https://mandalaybay.mgmresorts.com/en/entertainment/house-of-blues-music-hall/santana.html",
+      "dates": [
+        "2026-11-04",
+        "2026-11-05",
+        "2026-11-07",
+        "2026-11-08",
+        "2026-11-11",
+        "2026-11-12",
+        "2026-11-14",
+        "2026-11-15",
+        "2027-01-20",
+        "2027-01-21",
+        "2027-01-23",
+        "2027-01-24",
+        "2027-01-27",
+        "2027-01-28",
+        "2027-01-30",
+        "2027-01-31",
+        "2027-05-12",
+        "2027-05-13",
+        "2027-05-15",
+        "2027-05-16",
+        "2027-05-19",
+        "2027-05-20",
+        "2027-05-22",
+        "2027-05-23"
+      ],
+      "sources": [
+        "https://mandalaybay.mgmresorts.com/en/entertainment/house-of-blues-music-hall/santana.html",
+        "https://mandalaybay.mgmresorts.com/en/entertainment/house-of-blues-music-hall.html"
+      ]
+    },
+    {
+      "act": "Mon Laferte",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-11-05"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Brad Paisley",
+      "venue_id": "encore-theater-wynn",
+      "type": "Limited engagement",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/brad-paisley",
+      "dates": [
+        "2026-11-06",
+        "2026-11-07"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/brad-paisley"
+      ]
+    },
+    {
+      "act": "Brand New",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-11-06"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Jeezy",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Residency",
+      "official_url": "https://www.ticketmaster.com/jeezy-tickets/artist/973006",
+      "dates": [
+        "2026-11-06",
+        "2026-11-07",
+        "2026-11-13",
+        "2026-11-14",
+        "2026-12-18",
+        "2026-12-19",
+        "2026-12-20",
+        "2026-12-30",
+        "2026-12-31"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/jeezy-tickets/artist/973006",
+        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893"
+      ]
+    },
+    {
+      "act": "Ms. Lauryn Hill & Wyclef Jean",
+      "venue_id": "resorts-world-theatre",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/ms-lauryn-hill-wyclef-jean-celebrating-30-years-of-the-score/",
+      "dates": [
+        "2026-11-06"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/press/ms-lauryn-hill-wyclef-jean-celebrate-30-years-of-their-groundbreaking-album-the-score-at-resorts-world-theatre-on-november-6-2026/"
+      ]
+    },
+    {
+      "act": "The Psychedelic Furs",
+      "venue_id": "stage-at-zouk",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/",
+      "dates": [
+        "2026-11-06"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/"
+      ]
+    },
+    {
+      "act": "Brad Williams",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/brad-williams.html",
+      "dates": [
+        "2026-11-07"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/brad-williams.html"
+      ]
+    },
+    {
+      "act": "Daniel Tosh",
+      "venue_id": "the-chelsea-cosmopolitan",
+      "type": "Limited engagement",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/daniel-tosh.html",
+      "dates": [
+        "2026-11-07",
+        "2027-02-12",
+        "2027-04-24",
+        "2027-09-25",
+        "2027-11-06"
+      ],
+      "sources": [
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/daniel-tosh.html",
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
+      "act": "Daughtry",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-11-07"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Gente de Zona",
+      "venue_id": "stage-at-zouk",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/",
+      "dates": [
+        "2026-11-07"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/"
+      ]
+    },
+    {
+      "act": "LISA",
+      "venue_id": "caesars-colosseum",
+      "type": "Residency",
+      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
+      "dates": [
+        "2026-11-12",
+        "2026-11-13",
+        "2026-11-14",
+        "2026-11-27",
+        "2026-11-28",
+        "2026-11-29"
+      ],
+      "sources": [
+        "https://newsroom.caesars.com/press-releases/press-release-details/2026/LISA-ADDS-TWO-NEW-DATES-TO-HER-SOLD-OUT-LAS-VEGAS-RESIDENCY-DUE-TO-OVERWHELMING-DEMAND-VIVA-LA-LISA-AT-THE-COLOSSEUM-AT-CAESARS-PALACE--NOV-12-13-14-27-28--29-2026--2026-eGkXjvCgqE/default.aspx",
+        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
+      ]
+    },
+    {
+      "act": "Pedro Fernández",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-11-12"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/pedro-fernandez-ave-fenix-twor",
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Babyface",
+      "venue_id": "palms-pearl",
+      "type": "Residency",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater/babyface-live-in-las-vegas-2026",
+      "dates": [
+        "2026-11-13",
+        "2026-11-14"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/babyface-live-in-las-vegas-2026",
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Danny Elfman’s Music from the Films of Tim Burton",
+      "venue_id": "resorts-world-theatre",
+      "type": "Limited engagement",
+      "official_url": "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
+      "dates": [
+        "2026-11-13",
+        "2026-11-14"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/press/latest-news/",
+        "https://www.axs.com/venues/128058/resorts-world-theatre-las-vegas-tickets?page=2"
+      ]
+    },
+    {
+      "act": "Eagles",
+      "venue_id": "sphere",
+      "type": "Residency",
+      "official_url": "https://www.thesphere.com/shows/eagles",
+      "dates": [
+        "2026-11-13",
+        "2026-11-14",
+        "2026-11-27",
+        "2026-11-28",
+        "2026-12-04",
+        "2026-12-05",
+        "2026-12-11",
+        "2026-12-12",
+        "2027-01-15",
+        "2027-01-16",
+        "2027-01-22",
+        "2027-01-23"
+      ],
+      "sources": [
+        "https://www.sphereentertainmentco.com/eagles-live-in-concert-at-sphere-due-to-demand-more-shows-added-2/",
+        "https://www.thesphere.com/shows/eagles"
+      ]
+    },
+    {
+      "act": "Kill Tony",
+      "venue_id": "dolby-live",
+      "type": "Limited engagement",
+      "official_url": "https://www.ticketmaster.com/dolby-live-tickets-las-vegas/venue/376930?page=1",
+      "dates": [
+        "2026-11-13",
+        "2026-11-14"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/dolby-live-tickets-las-vegas/venue/376930?page=1"
+      ]
+    },
+    {
+      "act": "Steve Lacy",
+      "venue_id": "the-chelsea-cosmopolitan",
+      "type": "Headliner",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/steve-lacy.html",
+      "dates": [
+        "2026-11-13"
+      ],
+      "sources": [
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/steve-lacy.html",
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
+      "act": "Todd Rundgren",
+      "venue_id": "stage-at-zouk",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/",
+      "dates": [
+        "2026-11-13"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/"
+      ]
+    },
+    {
+      "act": "Brian Regan",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.ticketmaster.com/palazzo-theatre-at-the-venetian-resort-tickets-las-vegas/venue/189346",
+      "dates": [
+        "2026-11-14"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/palazzo-theatre-at-the-venetian-resort-tickets-las-vegas/venue/189346",
+        "https://www.venetianlasvegas.com/entertainment/brian-regan.html"
+      ]
+    },
+    {
+      "act": "KATSEYE",
+      "venue_id": "mgm-grand-garden-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839",
+      "dates": [
+        "2026-11-14"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839"
+      ]
+    },
+    {
+      "act": "Nick Cannon Presents: Wild 'N Out Live — The Next Generation",
+      "venue_id": "michelob-ultra-arena",
+      "type": "Comedy headliner",
+      "official_url": "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837",
+      "dates": [
+        "2026-11-14"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/nick-cannon-presents%3A-wild-%27n-out-live-tickets/artist/2502535",
+        "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837"
+      ]
+    },
+    {
+      "act": "Teddy Swims",
+      "venue_id": "t-mobile-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926",
+      "dates": [
+        "2026-11-14"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926"
+      ]
+    },
+    {
+      "act": "Toad the Wet Sprocket",
+      "venue_id": "stage-at-zouk",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/",
+      "dates": [
+        "2026-11-14"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/"
+      ]
+    },
+    {
+      "act": "Marc Anthony",
+      "venue_id": "bleaulive-theater",
+      "type": "Residency",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-11-20",
+        "2026-11-21",
+        "2027-02-12",
+        "2027-02-13",
+        "2027-02-17",
+        "2027-02-19",
+        "2027-02-20",
+        "2027-09-10",
+        "2027-09-11",
+        "2027-09-17",
+        "2027-09-18",
+        "2027-09-19"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/entertainment/",
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-11/"
+      ]
+    },
+    {
+      "act": "F1 Afterparty Featuring Backstreet Boys",
+      "venue_id": "sphere",
+      "type": "Special event",
+      "official_url": "https://www.thesphere.com/shows/backstreet-boys/f1",
+      "dates": [
+        "2026-11-21"
+      ],
+      "sources": [
+        "https://www.thesphere.com/shows/backstreet-boys/f1"
       ]
     },
     {
@@ -2503,6 +1416,704 @@
       ]
     },
     {
+      "act": "Grasshopper",
+      "venue_id": "bleaulive-theater",
+      "type": "Limited engagement",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-11-27",
+        "2026-11-28"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-11/"
+      ]
+    },
+    {
+      "act": "Journey",
+      "venue_id": "mgm-grand-garden-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839",
+      "dates": [
+        "2026-11-27"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839"
+      ]
+    },
+    {
+      "act": "Scott Bradlee’s Postmodern Jukebox",
+      "venue_id": "encore-theater-wynn",
+      "type": "Headliner",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/scott-bradlees-postmodern-jukebox",
+      "dates": [
+        "2026-11-27"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/scott-bradlees-postmodern-jukebox"
+      ]
+    },
+    {
+      "act": "Alicia Villarreal",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-11-28"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Feng Wang: HORIZON",
+      "venue_id": "resorts-world-theatre",
+      "type": "Headliner",
+      "official_url": "https://www.axs.com/venues/128058/resorts-world-theatre-las-vegas-tickets?page=2",
+      "dates": [
+        "2026-11-28"
+      ],
+      "sources": [
+        "https://www.axs.com/venues/128058/resorts-world-theatre-las-vegas-tickets?page=2"
+      ]
+    },
+    {
+      "act": "Jonas Brothers",
+      "venue_id": "mgm-grand-garden-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839",
+      "dates": [
+        "2026-11-28"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839"
+      ]
+    },
+    {
+      "act": "Vũ Trụ Say Hi",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Special engagement",
+      "official_url": "https://newsroom.caesars.com/press-releases/press-release-details/2026/TWO-NIGHTS--TWO-WORLDS--ONE-UNFORGETTABLE-LAS-VEGAS-WEEKEND---V-TR-SAY-HI--HIEUTHUHAI-LIVE-CONCERT-MT-NHM-MT-M-2026-HVOrl5_u_t/default.aspx",
+      "dates": [
+        "2026-11-28"
+      ],
+      "sources": [
+        "https://newsroom.caesars.com/press-releases/press-release-details/2026/TWO-NIGHTS--TWO-WORLDS--ONE-UNFORGETTABLE-LAS-VEGAS-WEEKEND---V-TR-SAY-HI--HIEUTHUHAI-LIVE-CONCERT-MT-NHM-MT-M-2026-HVOrl5_u_t/default.aspx"
+      ]
+    },
+    {
+      "act": "HIEUTHUHAI",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Special engagement",
+      "official_url": "https://newsroom.caesars.com/press-releases/press-release-details/2026/TWO-NIGHTS--TWO-WORLDS--ONE-UNFORGETTABLE-LAS-VEGAS-WEEKEND---V-TR-SAY-HI--HIEUTHUHAI-LIVE-CONCERT-MT-NHM-MT-M-2026-HVOrl5_u_t/default.aspx",
+      "dates": [
+        "2026-11-29"
+      ],
+      "sources": [
+        "https://newsroom.caesars.com/press-releases/press-release-details/2026/TWO-NIGHTS--TWO-WORLDS--ONE-UNFORGETTABLE-LAS-VEGAS-WEEKEND---V-TR-SAY-HI--HIEUTHUHAI-LIVE-CONCERT-MT-NHM-MT-M-2026-HVOrl5_u_t/default.aspx"
+      ]
+    },
+    {
+      "act": "Triumph",
+      "venue_id": "bleaulive-theater",
+      "type": "Headliner",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-12-01"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
+      ]
+    },
+    {
+      "act": "Dwight Yoakam",
+      "venue_id": "resorts-world-theatre",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
+      "dates": [
+        "2026-12-03"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/press/resorts-world-las-vegas-packs-rodeo-world-2026-with-10-days-of-headline-entertainment-and-nfr-action/"
+      ]
+    },
+    {
+      "act": "Marcus King Band",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-12-03"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Trivium",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-12-03"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Dierks Bentley",
+      "venue_id": "bleaulive-theater",
+      "type": "Limited engagement",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-12-04",
+        "2026-12-05"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
+      ]
+    },
+    {
+      "act": "Gary Allan",
+      "venue_id": "resorts-world-theatre",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
+      "dates": [
+        "2026-12-04"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/press/resorts-world-las-vegas-packs-rodeo-world-2026-with-10-days-of-headline-entertainment-and-nfr-action/"
+      ]
+    },
+    {
+      "act": "Jeff Foxworthy & Larry the Cable Guy",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Limited engagement",
+      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
+      "dates": [
+        "2026-12-04"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
+        "https://newsroom.caesars.com/press-releases/press-release-details/2026/Caesars-Entertainment-Brings-Hotel-Savings-50-Show-Tickets-and-More-to-the-Vegas-5-Day-Sale/default.aspx"
+      ]
+    },
+    {
+      "act": "Mark Normand",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/mark-normand.html",
+      "dates": [
+        "2026-12-04"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/mark-normand.html"
+      ]
+    },
+    {
+      "act": "Matt Rife",
+      "venue_id": "dolby-live",
+      "type": "Comedy headliner",
+      "official_url": "https://www.ticketmaster.com/dolby-live-tickets-las-vegas/venue/376930?page=1",
+      "dates": [
+        "2026-12-04"
+      ],
+      "sources": [
+        "https://newsroom.mgmresorts.com/press-releases?item=122889",
+        "https://www.ticketmaster.com/dolby-live-tickets-las-vegas/venue/376930?page=1"
+      ]
+    },
+    {
+      "act": "Sin Bandera",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-12-04"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Trans-Siberian Orchestra — The Ghosts of Christmas Eve",
+      "venue_id": "michelob-ultra-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837",
+      "dates": [
+        "2026-12-04"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/search?q=michelob+ultra+arena",
+        "https://www.ticketmaster.com/Michelob-ULTRA-Arena-tickets-Las-Vegas/venue/376837"
+      ]
+    },
+    {
+      "act": "Bailey Zimmerman",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
+      "dates": [
+        "2026-12-05"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893"
+      ]
+    },
+    {
+      "act": "Chris Young",
+      "venue_id": "resorts-world-theatre",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
+      "dates": [
+        "2026-12-05"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/press/resorts-world-las-vegas-packs-rodeo-world-2026-with-10-days-of-headline-entertainment-and-nfr-action/"
+      ]
+    },
+    {
+      "act": "Clay Walker",
+      "venue_id": "venetian-theatre",
+      "type": "Headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/clay-walker.html",
+      "dates": [
+        "2026-12-05"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/clay-walker.html"
+      ]
+    },
+    {
+      "act": "Kathleen Madigan",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/kathleen-madigan.html",
+      "dates": [
+        "2026-12-05"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/kathleen-madigan.html"
+      ]
+    },
+    {
+      "act": "Rascal Flatts",
+      "venue_id": "caesars-colosseum",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
+      "dates": [
+        "2026-12-05"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
+      ]
+    },
+    {
+      "act": "The Red Clay Strays",
+      "venue_id": "mgm-grand-garden-arena",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839",
+      "dates": [
+        "2026-12-05"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/MGM-Grand-Garden-Arena-tickets-Las-Vegas/venue/376839"
+      ]
+    },
+    {
+      "act": "Riley Green",
+      "venue_id": "resorts-world-theatre",
+      "type": "Limited engagement",
+      "official_url": "https://www.rwlasvegas.com/press/riley-green-brings-cowboy-as-it-gets-tour-2026-to-resorts-world-theatre-december-6-10/",
+      "dates": [
+        "2026-12-06",
+        "2026-12-10"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/press/riley-green-brings-cowboy-as-it-gets-tour-2026-to-resorts-world-theatre-december-6-10/"
+      ]
+    },
+    {
+      "act": "Casey Donahew & Josh Abbott Band",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-12-09"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Lee Brice",
+      "venue_id": "resorts-world-theatre",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
+      "dates": [
+        "2026-12-09"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/",
+        "https://www.rwlasvegas.com/press/resorts-world-las-vegas-packs-rodeo-world-2026-with-10-days-of-headline-entertainment-and-nfr-action/"
+      ]
+    },
+    {
+      "act": "Nate Bargatze",
+      "venue_id": "encore-theater-wynn",
+      "type": "Limited engagement",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/nate-bargatze",
+      "dates": [
+        "2026-12-09",
+        "2026-12-10",
+        "2026-12-11",
+        "2026-12-12"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/nate-bargatze"
+      ]
+    },
+    {
+      "act": "Victoria Monét",
+      "venue_id": "bleaulive-theater",
+      "type": "Headliner",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-12-09"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
+      ]
+    },
+    {
+      "act": "Gavin Adcock",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-12-10"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Thomas Rhett",
+      "venue_id": "caesars-colosseum",
+      "type": "Limited engagement",
+      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
+      "dates": [
+        "2026-12-10",
+        "2026-12-12"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
+      ]
+    },
+    {
+      "act": "Creed",
+      "venue_id": "bleaulive-theater",
+      "type": "Limited engagement",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-12-11",
+        "2026-12-12"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
+      ]
+    },
+    {
+      "act": "Koe Wetzel",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
+      "dates": [
+        "2026-12-11"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893"
+      ]
+    },
+    {
+      "act": "Hudson Westbrook",
+      "venue_id": "the-chelsea-cosmopolitan",
+      "type": "Headliner",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html",
+      "dates": [
+        "2026-12-12"
+      ],
+      "sources": [
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html",
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
+      "act": "Iliza Shlesinger",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/iliza-shlesinger.html",
+      "dates": [
+        "2026-12-12"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/iliza-shlesinger.html"
+      ]
+    },
+    {
+      "act": "Sam Barber",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-12-12"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Sheryl Crow",
+      "venue_id": "resorts-world-theatre",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
+      "dates": [
+        "2026-12-12"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/",
+        "https://www.rwlasvegas.com/press/resorts-world-las-vegas-packs-rodeo-world-2026-with-10-days-of-headline-entertainment-and-nfr-action/"
+      ]
+    },
+    {
+      "act": "Lindsey Stirling",
+      "venue_id": "venetian-theatre",
+      "type": "Limited engagement",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/lindsey-stirling.html",
+      "dates": [
+        "2026-12-16",
+        "2026-12-18",
+        "2026-12-19"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/lindsey-stirling.html",
+        "https://www.ticketmaster.com/The-Venetian-Theatre-at-The-Venetian-tickets-Las-Vegas/venue/189345"
+      ]
+    },
+    {
+      "act": "Love Actually In Concert",
+      "venue_id": "encore-theater-wynn",
+      "type": "Special engagement",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/love-actually-in-concert",
+      "dates": [
+        "2026-12-17"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/love-actually-in-concert"
+      ]
+    },
+    {
+      "act": "George Lam & Sally Yeh",
+      "venue_id": "dolby-live",
+      "type": "Limited engagement",
+      "official_url": "https://www.ticketmaster.com/george-lam-sally-yeh-tickets/artist/927276?venueId=376930",
+      "dates": [
+        "2026-12-19",
+        "2026-12-20"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/george-lam-sally-yeh-tickets/artist/927276?venueId=376930"
+      ]
+    },
+    {
+      "act": "Olivia Rodrigo",
+      "venue_id": "t-mobile-arena",
+      "type": "Limited engagement",
+      "official_url": "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926",
+      "dates": [
+        "2026-12-19",
+        "2026-12-20"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/tmobile-arena-tickets-las-vegas/venue/376926"
+      ]
+    },
+    {
+      "act": "Tyla",
+      "venue_id": "bleaulive-theater",
+      "type": "Headliner",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-12-19"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
+      ]
+    },
+    {
+      "act": "Backstreet Boys",
+      "venue_id": "sphere",
+      "type": "Residency",
+      "official_url": "https://www.thesphere.com/shows/backstreet-boys",
+      "dates": [
+        "2026-12-26",
+        "2026-12-27",
+        "2026-12-31",
+        "2027-01-01",
+        "2027-01-02"
+      ],
+      "sources": [
+        "https://sphere.backstreetboys.com/",
+        "https://www.thesphere.com/shows/backstreet-boys"
+      ]
+    },
+    {
+      "act": "Eric Moo",
+      "venue_id": "caesars-colosseum",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
+      "dates": [
+        "2026-12-26"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/artist/2252349",
+        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
+      ]
+    },
+    {
+      "act": "Derek Hough — Dance for the Holidays",
+      "venue_id": "bleaulive-theater",
+      "type": "Special engagement",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2026-12-29"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
+      ]
+    },
+    {
+      "act": "Alex Warren",
+      "venue_id": "caesars-colosseum",
+      "type": "Limited engagement",
+      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
+      "dates": [
+        "2026-12-30",
+        "2026-12-31"
+      ],
+      "sources": [
+        "https://newsroom.caesars.com/press-releases/press-release-details/2026/Alex-Warren-Set-to-Celebrate-New-Years-Eve-With-Two-Night-Engagement-at-The-Colosseum-at-Caesars-Palace-December-30--31-2026/default.aspx",
+        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
+      ]
+    },
+    {
+      "act": "Third Eye Blind",
+      "venue_id": "stage-at-zouk",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/",
+      "dates": [
+        "2026-12-31"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/"
+      ]
+    },
+    {
+      "act": "Lord Huron",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2027-01-02"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Usama Siddiquee",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/usama-siddiquee.html",
+      "dates": [
+        "2027-01-02"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/usama-siddiquee.html"
+      ]
+    },
+    {
+      "act": "Morgan Jay",
+      "venue_id": "palazzo-theatre",
+      "type": "Limited engagement",
+      "official_url": "https://www-cloud.venetianlasvegas.com/entertainment/morgan-jay.html",
+      "dates": [
+        "2027-01-22",
+        "2027-01-23"
+      ],
+      "sources": [
+        "https://www-cloud.venetianlasvegas.com/entertainment/morgan-jay.html",
+        "https://www.venetianlasvegas.com/media/news-releases/2026/09-14-morgan-jay-brings-his-last-time-in-america-tour-to-the-venetian-resort-las-vegas.html"
+      ]
+    },
+    {
+      "act": "Nikki Glaser & David Spade",
+      "venue_id": "caesars-colosseum",
+      "type": "Residency",
+      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
+      "dates": [
+        "2027-01-22",
+        "2027-01-23",
+        "2027-04-16",
+        "2027-04-17"
+      ],
+      "sources": [
+        "https://newsroom.caesars.com/press-releases/press-release-details/2026/NIKKI-GLASER-AND-DAVID-SPADE-ANNOUNCE-2027-DATES-FOR-LAS-VEGAS-RESIDENCY-AT-THE-COLOSSEUM-AT-CAESARS-PALACE--2026-9Z1dph1q2O/default.aspx",
+        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
+      ]
+    },
+    {
+      "act": "Ali Siddiq",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Comedy headliner",
+      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
+      "dates": [
+        "2027-01-23"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893"
+      ]
+    },
+    {
+      "act": "The Piano Guys",
+      "venue_id": "resorts-world-theatre",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/the-piano-guys/",
+      "dates": [
+        "2027-01-27"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/press/the-piano-guys-bring-west-coast-tour-2027-to-resorts-world-theatre-january-27-2027/"
+      ]
+    },
+    {
+      "act": "Styx",
+      "venue_id": "venetian-theatre",
+      "type": "Limited engagement",
+      "official_url": "https://www.venetianlasvegas.com/media/news-releases/2026/09-14-styx-announce-return-to-the-venetian-resort.html",
+      "dates": [
+        "2027-01-29",
+        "2027-01-30",
+        "2027-02-03",
+        "2027-02-05",
+        "2027-02-06"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/media/news-releases/2026/09-14-styx-announce-return-to-the-venetian-resort.html",
+        "https://www.ticketmaster.com/The-Venetian-Theatre-at-The-Venetian-tickets-Las-Vegas/venue/189345"
+      ]
+    },
+    {
       "act": "Lou Gramm",
       "venue_id": "westgate-international-theater",
       "type": "Headliner",
@@ -2515,6 +2126,19 @@
       ]
     },
     {
+      "act": "Tom Segura",
+      "venue_id": "palms-pearl",
+      "type": "Comedy headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater/tom-segura-preposterous",
+      "dates": [
+        "2027-01-30"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/tom-segura-preposterous",
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
       "act": "Blood, Sweat & Tears",
       "venue_id": "westgate-international-theater",
       "type": "Headliner",
@@ -2524,6 +2148,259 @@
       ],
       "sources": [
         "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/"
+      ]
+    },
+    {
+      "act": "Yuridia",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/artist/1169217?venueId=467893",
+      "dates": [
+        "2027-02-18"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/artist/1169217?venueId=467893"
+      ]
+    },
+    {
+      "act": "Letterkenny Live",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Limited engagement",
+      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893?page=2",
+      "dates": [
+        "2027-02-26"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893?page=2"
+      ]
+    },
+    {
+      "act": "Joe",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater/joe",
+      "dates": [
+        "2027-02-27"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/joe",
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "TESLA",
+      "venue_id": "house-of-blues-mandalay-bay",
+      "type": "Residency",
+      "official_url": "https://teslatheband.com/news/",
+      "dates": [
+        "2027-03-05",
+        "2027-03-06",
+        "2027-03-10",
+        "2027-03-12",
+        "2027-03-13"
+      ],
+      "sources": [
+        "https://teslatheband.com/news/",
+        "https://lasvegas.houseofblues.com/"
+      ]
+    },
+    {
+      "act": "FLANS40",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2027-03-11"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Boyz II Men",
+      "venue_id": "the-chelsea-cosmopolitan",
+      "type": "Limited engagement",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/boyz-ii-men.html",
+      "dates": [
+        "2027-03-12",
+        "2027-03-13",
+        "2027-03-19",
+        "2027-03-20"
+      ],
+      "sources": [
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/boyz-ii-men.html",
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
+      "act": "Andrew Santino",
+      "venue_id": "the-chelsea-cosmopolitan",
+      "type": "Comedy headliner",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/andrew-santino.html",
+      "dates": [
+        "2027-03-27"
+      ],
+      "sources": [
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/andrew-santino.html",
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
+      "act": "Aries Spears",
+      "venue_id": "palms-pearl",
+      "type": "Comedy headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater/aries-spears",
+      "dates": [
+        "2027-04-02"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/aries-spears",
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Oprah Winfrey’s AHA",
+      "venue_id": "sphere",
+      "type": "Limited engagement",
+      "official_url": "https://www.thesphere.com/shows/oprah-winfrey",
+      "dates": [
+        "2027-04-02",
+        "2027-04-03",
+        "2027-04-04"
+      ],
+      "sources": [
+        "https://www.sphereentertainmentco.com/oprah-winfreys-aha-a-first-of-its-kind-immersive-experience-debuts-live-at-sphere-for-one-weekend-april-2-4-2027/",
+        "https://www.thesphere.com/shows/oprah-winfrey"
+      ]
+    },
+    {
+      "act": "John Mayer",
+      "venue_id": "sphere",
+      "type": "Limited engagement",
+      "official_url": "https://www.thesphere.com/shows/john-mayer",
+      "dates": [
+        "2027-04-08",
+        "2027-04-10",
+        "2027-04-11",
+        "2027-04-15",
+        "2027-04-17",
+        "2027-04-18"
+      ],
+      "sources": [
+        "https://www.sphereentertainmentco.com/john-mayer-live-at-sphere/",
+        "https://www.thesphere.com/shows/john-mayer"
+      ]
+    },
+    {
+      "act": "The Warning",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater/the-warning-everythings-falling-world-tour",
+      "dates": [
+        "2027-04-17"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/the-warning-everythings-falling-world-tour",
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Carly Rae Jepsen",
+      "venue_id": "the-chelsea-cosmopolitan",
+      "type": "Headliner",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/carly-rae-jepsen.html",
+      "dates": [
+        "2027-04-30"
+      ],
+      "sources": [
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/carly-rae-jepsen.html",
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
+      "act": "Franco Escamilla",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Comedy headliner",
+      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893?page=2",
+      "dates": [
+        "2027-05-08"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893?page=2"
+      ]
+    },
+    {
+      "act": "Ha*Ash",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater/haash-no-me-hablen-de-amor",
+      "dates": [
+        "2027-05-09"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/haash-no-me-hablen-de-amor",
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "A Perfect Circle",
+      "venue_id": "bleaulive-theater",
+      "type": "Limited engagement",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2027-06-10",
+        "2027-06-11"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/list/?tribe-bar-date=2026-12-01"
+      ]
+    },
+    {
+      "act": "Scorpions",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Residency",
+      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893?page=2",
+      "dates": [
+        "2027-09-09",
+        "2027-09-11",
+        "2027-09-14",
+        "2027-09-16",
+        "2027-09-18",
+        "2027-09-21",
+        "2027-09-23",
+        "2027-09-25"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893?page=2",
+        "https://newsroom.caesars.com/press-releases/press-release-details/2026/Scorpions-Return-to-Las-Vegas-With-New-Headlining-Residency-at-PH-Live-at-Planet-Hollywood-Resort--Casino-Celebrating-the-Bands-60th-Anniversary/default.aspx"
+      ]
+    },
+    {
+      "act": "Carín León",
+      "venue_id": "sphere",
+      "type": "Limited residency",
+      "official_url": "https://www.thesphere.com/shows/carin-leon",
+      "dates": [
+        "2027-09-16",
+        "2027-09-17",
+        "2027-09-18"
+      ],
+      "sources": [
+        "https://carinleon.com/en-us/pages/tour",
+        "https://www.sphereentertainmentco.com/carin-leon-announces-his-return-to-las-vegas-sphere-in-2027-after-becoming-the-first-latin-artist-to-debut-at-the-groundbreaking-venue/"
+      ]
+    },
+    {
+      "act": "Roger Waters Presents Legacy — A Pink Floyd Show",
+      "venue_id": "palms-pearl",
+      "type": "Special engagement",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater/roger-waters-presents-legacy-a-pink-floyd-show",
+      "dates": [
+        "2027-09-16"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/roger-waters-presents-legacy-a-pink-floyd-show",
+        "https://www.palms.com/entertainment/pearl-theater"
       ]
     }
   ],
