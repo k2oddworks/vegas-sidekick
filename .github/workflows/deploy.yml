@@ -56,7 +56,7 @@ jobs:
 
       - name: Verify production Media Library inventory
         env:
-          MEDIA_LIBRARY_URL: https://vegassidekick.com/hq/media-library/media-library.json?deploy=\${{ github.sha }}
+          MEDIA_LIBRARY_URL: https://vegassidekick.com/hq/media-library/media-library.json?deploy=${{ github.sha }}
         run: |
           python3 - <<'PY'
           import json
