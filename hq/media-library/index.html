@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/hq/media-library/style.css?v=2">
+  <link rel="stylesheet" href="/hq/media-library/style.css?v=3">
 </head>
 <body>
   <section class="lock-screen" id="media-lock">
@@ -119,6 +119,11 @@
       <a class="thumb-link" target="_blank" rel="noopener">
         <div class="thumb-frame">
           <img class="thumb" loading="lazy" decoding="async" alt="">
+          <span class="preview-error-badge" hidden>Preview error</span>
+          <div class="preview-fallback" hidden>
+            <strong>Preview unavailable</strong>
+            <span>Open image to inspect file.</span>
+          </div>
         </div>
       </a>
       <div class="card-body">
@@ -139,7 +144,7 @@
         </dl>
         <section class="used-on" hidden>
           <div class="used-on-label">Used on</div>
-          <div class="used-on-links"></div>
+          <div class="used-on-summary"></div>
         </section>
         <div class="duplicate-note" hidden></div>
         <div class="actions">
@@ -153,7 +158,22 @@
     </article>
   </template>
 
-  <script src="/hq/media-library/app.js?v=2"></script>
+  <div class="reference-modal" id="reference-modal" hidden>
+    <button class="reference-modal-backdrop" type="button" data-reference-close aria-label="Close page references"></button>
+    <section class="reference-panel" role="dialog" aria-modal="true" aria-labelledby="reference-modal-title">
+      <header class="reference-panel-head">
+        <div>
+          <div class="eyebrow">Media Library · Used on</div>
+          <h2 id="reference-modal-title">Referenced pages</h2>
+          <p id="reference-modal-count"></p>
+        </div>
+        <button class="reference-modal-close" id="reference-modal-close" type="button" data-reference-close aria-label="Close">×</button>
+      </header>
+      <div class="reference-modal-list" id="reference-modal-list"></div>
+    </section>
+  </div>
+
+  <script src="/hq/media-library/app.js?v=3"></script>
   <script>
     (() => {
       const lock = document.getElementById('media-lock');
