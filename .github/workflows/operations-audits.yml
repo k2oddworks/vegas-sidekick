@@ -155,7 +155,12 @@ jobs:
         run: |
           node --check hq/media-library/app.js
           node - <<'NODE'
+          const fs = require('fs');
           const {matchesFilters, groupItems} = require('./hq/media-library/app.js');
+          const appSource = fs.readFileSync('./hq/media-library/app.js', 'utf8');
+          for (const required of ['thumb.addEventListener("error"', 'openReferenceModal', 'used-on-trigger']) {
+            if (!appSource.includes(required)) process.exit(1);
+          }
           const item = {
             filename: 'mat-franco-hero.jpg',
             path: '/images/product-photos/mat-franco/mat-franco-hero.jpg',
