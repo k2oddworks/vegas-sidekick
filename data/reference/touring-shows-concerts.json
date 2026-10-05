@@ -3,7 +3,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "Vegas Sidekick — https://vegassidekick.com/sidekick-index/touring-shows-concerts/",
-  "verified_on": "2026-10-03",
+  "verified_on": "2026-10-05",
   "city": "Las Vegas",
   "state": "Nevada",
   "source_note": "Official venue calendars, official ticketing pages and established concert listings. This index tracks visiting and limited-run shows that are not ongoing Vegas productions and are not currently classified in the Headliners & Residencies index. Recurring restaurant/bar entertainment, resident productions and recurring local series are excluded.",
@@ -94,73 +94,6 @@
     }
   ],
   "entries": [
-    {
-      "name": "Combichrist",
-      "support": "Ludovico Technique · Dead Animal Assembly Plant · Spelling Hands",
-      "date": "2026-10-03",
-      "doors": "8:30 PM",
-      "time_label": "Time",
-      "type": "Concert",
-      "venue_id": "backstage-bar-billiards",
-      "official_url": "https://www.jambase.com/show/combichrist-backstage-bar-billiards-20261003"
-    },
-    {
-      "name": "Emo Night Brooklyn",
-      "subtitle": "Halloween Edition",
-      "date": "2026-10-03",
-      "doors": "9:30 PM",
-      "type": "Theme night",
-      "venue_id": "brooklyn-bowl-las-vegas",
-      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/emo-night-brooklyn-1avjz_ogknbkcue"
-    },
-    {
-      "name": "Galactic Empire",
-      "date": "2026-10-03",
-      "doors": "7:30 PM",
-      "time_label": "Show",
-      "type": "Concert",
-      "venue_id": "swan-dive-las-vegas",
-      "official_url": "https://swandivelasvegas.com/events/"
-    },
-    {
-      "name": "The Aquabats!",
-      "subtitle": "Trick Or Treat To The Beat",
-      "date": "2026-10-03",
-      "doors": "6:00 PM",
-      "time_label": "Time",
-      "type": "Concert",
-      "room": "Music Hall",
-      "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
-      "venue_id": "house-of-blues-las-vegas"
-    },
-    {
-      "name": "This is Stan",
-      "date": "2026-10-03",
-      "doors": "8:00 PM",
-      "time_label": "Show",
-      "type": "Special event",
-      "venue_id": "notoriety-live",
-      "official_url": "https://www.notorietylive.com/"
-    },
-    {
-      "name": "Roger Clyne & the Peacemakers",
-      "support": "Ted Sablay",
-      "date": "2026-10-04",
-      "doors": "6:30 PM",
-      "type": "Concert",
-      "venue_id": "brooklyn-bowl-las-vegas",
-      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/roger-clyne-the-peacemakers-1avjz_7gkuqnrm1"
-    },
-    {
-      "name": "Scene Queen",
-      "subtitle": "Metalicious Tour",
-      "support": "Wargasm · Bailey Spinn",
-      "date": "2026-10-04",
-      "doors": "7:00 PM",
-      "type": "Concert",
-      "venue_id": "24-oxford",
-      "official_url": "https://virginhotelslv.com/event/scene-queen-w-wargasm-bailey-spinn/"
-    },
     {
       "name": "Snarky Puppy",
       "support": "Varijashree Venugopal",
