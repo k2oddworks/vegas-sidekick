@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "tracked-placeholder",
+  "baseUrl": "https://vegassidekick.com",
+  "summary": {
+    "totalImages": 0,
+    "usedImages": 0,
+    "unreferencedImages": 0,
+    "exactDuplicateGroups": 0,
+    "sameBasenameFormatGroups": 0,
+    "heroMultiFormatGroups": 0,
+    "visualVariantGroups": 0,
+    "filesInVisualVariantGroups": 0
+  },
+  "images": []
+}
