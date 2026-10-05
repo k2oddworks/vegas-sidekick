@@ -23,10 +23,21 @@ jobs:
       - name: Validate generated Media Library deploy asset
         run: |
           test -s hq/media-library/media-library.json
+          git ls-files --error-unmatch hq/media-library/media-library.json
           if git check-ignore -q hq/media-library/media-library.json; then
             echo "Generated Media Library inventory is excluded from deploy inputs."
             exit 1
           fi
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          payload = json.loads(Path("hq/media-library/media-library.json").read_text())
+          count = payload.get("summary", {}).get("totalImages")
+          images = payload.get("images")
+          if not isinstance(count, int) or count < 1 or not isinstance(images, list) or len(images) != count:
+              raise SystemExit("Generated Media Library inventory is incomplete.")
+          print(f"Validated tracked Media Library deploy asset: {count} images")
+          PY
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -42,3 +53,46 @@ jobs:
           # with no `main` script), which Wrangler v3 rejects as "missing entry-point".
           wranglerVersion: "4"
           command: deploy
+
+      - name: Verify production Media Library inventory
+        env:
+          MEDIA_LIBRARY_URL: https://vegassidekick.com/hq/media-library/media-library.json?deploy=\${{ github.sha }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import time
+          import urllib.request
+          from pathlib import Path
+
+          expected = json.loads(Path("hq/media-library/media-library.json").read_text())
+          expected_count = expected["summary"]["totalImages"]
+          url = os.environ["MEDIA_LIBRARY_URL"]
+          last_error = None
+
+          for attempt in range(1, 13):
+              try:
+                  request = urllib.request.Request(
+                      url,
+                      headers={
+                          "User-Agent": "VegasSidekick-Deploy-Verify/1.0",
+                          "Cache-Control": "no-cache",
+                      },
+                  )
+                  with urllib.request.urlopen(request, timeout=20) as response:
+                      live = json.loads(response.read().decode("utf-8"))
+                  live_count = live.get("summary", {}).get("totalImages")
+                  live_images = live.get("images")
+                  if live_count == expected_count and isinstance(live_images, list) and len(live_images) == expected_count:
+                      print(f"Production Media Library verified: {live_count} images")
+                      break
+                  last_error = f"live count {live_count!r}; expected {expected_count}"
+              except Exception as exc:
+                  last_error = repr(exc)
+
+              print(f"Production verification attempt {attempt}/12 failed: {last_error}")
+              if attempt < 12:
+                  time.sleep(5)
+          else:
+              raise SystemExit(f"Production Media Library verification failed: {last_error}")
+          PY
