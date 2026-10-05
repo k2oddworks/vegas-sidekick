@@ -174,6 +174,60 @@
     const stats = document.getElementById("media-stats");
     const categoryFilters = document.getElementById("category-filters");
     const reset = document.getElementById("reset-filters");
+    const referenceModal = document.getElementById("reference-modal");
+    const referenceModalTitle = document.getElementById("reference-modal-title");
+    const referenceModalCount = document.getElementById("reference-modal-count");
+    const referenceModalList = document.getElementById("reference-modal-list");
+    const referenceModalClose = document.getElementById("reference-modal-close");
+    let lastReferenceTrigger = null;
+
+    function makeReferenceLink(page) {
+      const link = document.createElement("a");
+      link.href = page.url;
+      link.target = "_blank";
+      link.rel = "noopener";
+
+      const title = document.createElement("strong");
+      title.textContent = page.title || page.url;
+      link.appendChild(title);
+
+      const path = document.createElement("span");
+      path.textContent = page.url;
+      link.appendChild(path);
+      return link;
+    }
+
+    function closeReferenceModal() {
+      if (!referenceModal || referenceModal.hidden) return;
+      referenceModal.hidden = true;
+      document.body.classList.remove("reference-modal-open");
+      if (lastReferenceTrigger) {
+        lastReferenceTrigger.setAttribute("aria-expanded", "false");
+        lastReferenceTrigger.focus({ preventScroll: true });
+      }
+      lastReferenceTrigger = null;
+    }
+
+    function openReferenceModal(item, trigger) {
+      if (!referenceModal) return;
+      const pages = item.referencePages || [];
+      referenceModalTitle.textContent = item.filename || "Referenced pages";
+      referenceModalCount.textContent = pages.length + (pages.length === 1 ? " public page" : " public pages");
+      referenceModalList.replaceChildren(...pages.map(makeReferenceLink));
+      referenceModalList.scrollTop = 0;
+      lastReferenceTrigger = trigger || null;
+      if (lastReferenceTrigger) lastReferenceTrigger.setAttribute("aria-expanded", "true");
+      referenceModal.hidden = false;
+      document.body.classList.add("reference-modal-open");
+      window.requestAnimationFrame(() => referenceModalClose?.focus({ preventScroll: true }));
+    }
+
+    referenceModal?.querySelectorAll("[data-reference-close]").forEach((node) => {
+      node.addEventListener("click", closeReferenceModal);
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && referenceModal && !referenceModal.hidden) closeReferenceModal();
+    });
 
     let payload;
     try {
@@ -289,6 +343,9 @@
       const card = template.content.firstElementChild.cloneNode(true);
       const thumb = card.querySelector(".thumb");
       const thumbLink = card.querySelector(".thumb-link");
+      const thumbFrame = card.querySelector(".thumb-frame");
+      const previewFallback = card.querySelector(".preview-fallback");
+      const previewErrorBadge = card.querySelector(".preview-error-badge");
       const filename = card.querySelector(".filename");
       const path = card.querySelector(".path");
       const publicUrl = card.querySelector(".public-url");
@@ -304,17 +361,42 @@
       const venueValue = card.querySelector(".venue-value");
       const referenceValue = card.querySelector(".reference-value");
       const usedOn = card.querySelector(".used-on");
-      const usedOnLinks = card.querySelector(".used-on-links");
+      const usedOnSummary = card.querySelector(".used-on-summary");
       const duplicateNote = card.querySelector(".duplicate-note");
       const mainActions = card.querySelector(".actions");
       const openImage = card.querySelector(".open-image");
       const openShow = card.querySelector(".open-show");
 
       card.dataset.path = item.path;
-      thumb.src = item.path;
       thumb.alt = item.filename;
       thumbLink.href = item.publicUrl;
       filename.textContent = item.filename;
+
+      const previewCandidates = uniqueBy(
+        (item.variants && item.variants.length ? item.variants : [item]).filter((variant) => variant && variant.path),
+        (variant) => variant.path
+      );
+      let previewIndex = 0;
+
+      function loadPreviewCandidate(index) {
+        const candidate = previewCandidates[index];
+        if (!candidate) return false;
+        thumb.src = candidate.path;
+        thumbLink.href = candidate.publicUrl || candidate.path;
+        return true;
+      }
+
+      thumb.addEventListener("error", () => {
+        previewIndex += 1;
+        if (previewIndex < previewCandidates.length && loadPreviewCandidate(previewIndex)) return;
+        thumb.hidden = true;
+        previewFallback.hidden = false;
+        previewErrorBadge.hidden = false;
+        thumbFrame.classList.add("preview-failed");
+        thumbLink.href = item.publicUrl;
+      });
+
+      loadPreviewCandidate(0);
       path.textContent = item.path;
       publicUrl.textContent = item.publicUrl;
       categoryBadge.textContent = CATEGORY_LABELS[item.category] || "Other";
@@ -365,25 +447,30 @@
         ? item.referenceCount + (item.referenceCount === 1 ? " site file" : " site files")
         : "0 site files";
 
-      if ((item.referencePages || []).length) {
+      const referencePages = item.referencePages || [];
+      if (referencePages.length === 1) {
         usedOn.hidden = false;
-        item.referencePages.forEach((page) => {
-          const link = document.createElement("a");
-          link.href = page.url;
-          link.target = "_blank";
-          link.rel = "noopener";
-          link.textContent = page.title || page.url;
-          const pathLabel = document.createElement("span");
-          pathLabel.textContent = page.url;
-          link.appendChild(pathLabel);
-          usedOnLinks.appendChild(link);
-        });
+        const link = makeReferenceLink(referencePages[0]);
+        link.classList.add("used-on-direct");
+        const title = link.querySelector("strong");
+        if (title) title.textContent = "Used on 1 page →";
+        usedOnSummary.appendChild(link);
+      } else if (referencePages.length > 1) {
+        usedOn.hidden = false;
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "used-on-trigger";
+        button.textContent = "Used on " + referencePages.length + " pages →";
+        button.setAttribute("aria-haspopup", "dialog");
+        button.setAttribute("aria-expanded", "false");
+        button.addEventListener("click", () => openReferenceModal(item, button));
+        usedOnSummary.appendChild(button);
       } else if (item.referenced) {
         usedOn.hidden = false;
         const note = document.createElement("div");
         note.className = "used-on-note";
         note.textContent = "Referenced by site assets or runtime files; no public page link detected.";
-        usedOnLinks.appendChild(note);
+        usedOnSummary.appendChild(note);
       }
 
       if ((item.duplicateHints || []).length) {
