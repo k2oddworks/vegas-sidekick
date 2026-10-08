@@ -141,7 +141,7 @@ The venue list is expected to grow. Do not hard-code marketing copy that becomes
 
 As verified October 8, 2026:
 
-- 167 act / engagement records
+- 173 act / engagement records
 - 22 underlying venue records
 - 9 resort/venue groups used to simplify customer-facing venue filtering where appropriate
 

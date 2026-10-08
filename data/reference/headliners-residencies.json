@@ -401,10 +401,12 @@
       "type": "Comedy headliner",
       "official_url": "https://virginhotelslv.com/venue/the-theater/",
       "dates": [
-        "2026-10-10"
+        "2026-10-10",
+        "2027-02-13"
       ],
       "sources": [
-        "https://virginhotelslv.com/venue/the-theater/"
+        "https://virginhotelslv.com/venue/the-theater/",
+        "https://virginhotelslv.com/event/brincos-dieras/"
       ]
     },
     {
@@ -646,6 +648,20 @@
       ],
       "sources": [
         "https://www.wynnlasvegas.com/entertainment/upcoming-shows/tom-jones"
+      ]
+    },
+    {
+      "act": "Charli xcx",
+      "venue_id": "mgm-grand-garden-arena",
+      "type": "Headliner",
+      "official_url": "https://www.axs.com/events/1479419/charli-xcx-tickets",
+      "dates": [
+        "2026-10-23"
+      ],
+      "sources": [
+        "https://mgmgrand.mgmresorts.com/en/entertainment/charli-xcx.html",
+        "https://www.livenation.com/event/G5ezZ_GQvSYVM/charli-xcx-music-fashion-film-tour",
+        "https://www.axs.com/events/1479419/charli-xcx-tickets"
       ]
     },
     {
@@ -1818,6 +1834,19 @@
       ]
     },
     {
+      "act": "Luke Bryan & Jason Aldean",
+      "venue_id": "allegiant-stadium",
+      "type": "Headliner",
+      "official_url": "https://www.allegiantstadium.com/events/category/concerts",
+      "dates": [
+        "2026-12-11"
+      ],
+      "sources": [
+        "https://www.allegiantstadium.com/news/detail/luke-bryan-and-jason-aldean-bringing-the-double-down-tour-2026-to-allegiant-stadium",
+        "https://www.allegiantstadium.com/events/category/concerts"
+      ]
+    },
+    {
       "act": "Hudson Westbrook",
       "venue_id": "the-chelsea-cosmopolitan",
       "type": "Headliner",
@@ -2256,6 +2285,19 @@
       ]
     },
     {
+      "act": "Clint Black",
+      "venue_id": "westgate-international-theater",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/event/17006538010573B0",
+      "dates": [
+        "2027-03-06"
+      ],
+      "sources": [
+        "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/guest-services/amenities/clint-black/",
+        "https://www.ticketmaster.com/event/17006538010573B0"
+      ]
+    },
+    {
       "act": "FLANS40",
       "venue_id": "the-theater-virgin-hotels",
       "type": "Headliner",
@@ -2368,6 +2410,19 @@
       ]
     },
     {
+      "act": "Engelbert Humperdinck",
+      "venue_id": "westgate-international-theater",
+      "type": "Headliner",
+      "official_url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/engelbert-humperdinck/",
+      "dates": [
+        "2027-04-17",
+        "2027-10-30"
+      ],
+      "sources": [
+        "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/engelbert-humperdinck/"
+      ]
+    },
+    {
       "act": "The Warning",
       "venue_id": "palms-pearl",
       "type": "Headliner",
@@ -2381,6 +2436,18 @@
       ]
     },
     {
+      "act": "Fantasia",
+      "venue_id": "mgm-grand-garden-arena",
+      "type": "Headliner",
+      "official_url": "https://mgmgrand.mgmresorts.com/en/entertainment/fantasia.html",
+      "dates": [
+        "2027-04-24"
+      ],
+      "sources": [
+        "https://mgmgrand.mgmresorts.com/en/entertainment/fantasia.html"
+      ]
+    },
+    {
       "act": "Carly Rae Jepsen",
       "venue_id": "the-chelsea-cosmopolitan",
       "type": "Headliner",
@@ -2391,6 +2458,19 @@
       "sources": [
         "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/carly-rae-jepsen.html",
         "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
+      "act": "Priscilla Presley",
+      "venue_id": "westgate-international-theater",
+      "type": "Special engagement",
+      "official_url": "https://www.ticketmaster.com/event/17006514DF893F03",
+      "dates": [
+        "2027-05-01"
+      ],
+      "sources": [
+        "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/guest-services/amenities/priscilla-presley/",
+        "https://www.ticketmaster.com/event/17006514DF893F03"
       ]
     },
     {
@@ -2472,13 +2552,15 @@
       "type": "Limited residency",
       "official_url": "https://www.thesphere.com/shows/carin-leon",
       "dates": [
+        "2027-09-15",
         "2027-09-16",
         "2027-09-17",
         "2027-09-18"
       ],
       "sources": [
         "https://carinleon.com/en-us/pages/tour",
-        "https://www.sphereentertainmentco.com/carin-leon-announces-his-return-to-las-vegas-sphere-in-2027-after-becoming-the-first-latin-artist-to-debut-at-the-groundbreaking-venue/"
+        "https://www.sphereentertainmentco.com/carin-leon-announces-his-return-to-las-vegas-sphere-in-2027-after-becoming-the-first-latin-artist-to-debut-at-the-groundbreaking-venue/",
+        "https://carinleonlive.com/"
       ]
     },
     {
