@@ -14,6 +14,24 @@ The source of truth for price and regular price is `data/show-database.json`. Sa
 
 New guard: `python3 scripts/audit-final-savings-banners.py`, included in `savings-audit.yml`. The original `audit-savings-system.py` remains, including previously known unrelated pricing errors.
 
+
+## Stage 2 — October 8, 2026
+
+Added eight more pages with the same All Shook Up hero savings treatment, compact mobile sticky reminder, and final green savings panel before the Warm Amber booking CTA. Updated category and Deals-page card badges; unchanged affiliate destinations:
+
+- King of Diamonds — $60 (60%)
+- Wastin' Away — $60 (60%)
+- Penn & Teller — $41 (38%)
+- KÀ — $38 (32%)
+- VEGAS! The Show — $38 (38%)
+- MJ Live — $36 (40%)
+- Motown Brunch — $35 (35%)
+- Shin Lim: LIMITLESS — $35 (34%)
+
+**Held for price reconciliation:** Las Vegas LIVE Comedy Club (hero $122; lower-page $29), Purple Reign (hero $51; lower-page $56), and Wayne Newton (hero $84; lower-page $93). Do not apply green savings banners or update comparisons for these until the current starting price and regular price have been verified and synchronized sitewide. This is separate from the legacy savings audit mismatches for Atomic Saloon, Blue Man Group and Tournament of Kings.
+
+Stage 2 checks: `scripts/audit-final-savings-banners.py` now requires the original All Shook Up benchmark, Stage 1 and Stage 2 pages. Also run ticket CTA and operational audits; don't claim source prices were reverified merely because display markup changed.
+
 ## Next
 
-Stage 2: review remaining shows with verified savings of $20+ and apply approved shared treatment in another small group, after checking any stale price comparisons. Smaller discounts can keep compact green savings pills until an explicit expansion is approved.
+Stage 3: review remaining qualifying $20+ offers, prioritizing price reconciliation before any rollout. Smaller discounts stay compact until separately approved.

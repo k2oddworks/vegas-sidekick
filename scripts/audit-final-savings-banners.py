@@ -9,6 +9,8 @@ db = json.loads((ROOT / "data/show-database.json").read_text())
 stage_one = {"piano-man", "all-motown", "america-the-show",
              "zombie-burlesque", "v-the-ultimate-variety-show",
              "the-mentalist", "paranormal", "tape-face"}
+stage_two = {"king-of-diamonds", "wastin-away", "penn-and-teller", "ka",
+             "vegas-the-show", "mj-live", "motown-brunch", "shin-lim"}
 issues = []
 checked = []
 for record in db["records"]:
@@ -50,7 +52,7 @@ for record in db["records"]:
         issues.append(f"{slug}: missing hero savings style class")
     checked.append(slug)
 
-for slug in stage_one | {"all-shook-up"}:
+for slug in stage_one | stage_two | {"all-shook-up"}:
     if slug not in checked:
         issues.append(f"{slug}: required final savings treatment missing")
 
