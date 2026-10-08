@@ -18,7 +18,10 @@ def event(text):
 
 
 def main():
+    records = json.loads((ROOT / 'data/show-database.json').read_text(encoding='utf-8'))['records']
+    by_path = {r['page_path']: r for r in records}
     active = 0
+    unavailable = 0
     regular = 0
     variable = 0
     errors = []
@@ -29,8 +32,20 @@ def main():
             ev = event(text)
             if not ev or ev.get('eventStatus') != 'https://schema.org/EventScheduled':
                 continue
-            active += 1
             rel = str(p.relative_to(ROOT))
+            url = '/' + p.parent.relative_to(ROOT).as_posix() + '/'
+            row = by_path.get(url)
+            if row and row.get('status') != 'active':
+                if row.get('status') == 'needs_review':
+                    unavailable += 1
+                    if ('vs-booking-unavailable-section' not in text
+                            or 'Tickets currently unavailable' not in text
+                            or 'https://schema.org/OutOfStock' not in text):
+                        errors.append(f'{rel}: paused ticketing page missing unavailable state')
+                    if 'data-ticket-url=' in text or 'class="vs-booking-shell"' in text:
+                        errors.append(f'{rel}: paused ticketing page still exposes booking picker')
+                continue
+            active += 1
 
             if 'vs-booking-section' not in text:
                 errors.append(f'{rel}: active show is missing the shared booking module')
@@ -62,6 +77,7 @@ def main():
                     errors.append(f'{rel}: regular schedule is missing the compact all-dates link')
 
     print(f'Active show pages audited: {active}')
+    print(f'Ticketing-paused information pages audited: {unavailable}')
     print(f'Regular booking modules: {regular}')
     print(f'Variable booking modules: {variable}')
     if errors:
@@ -69,7 +85,7 @@ def main():
         for e in errors:
             print(f'- {e}')
         sys.exit(1)
-    print('PASS: compact showtimes booking v3 solid-color panels are present across all active show pages')
+    print('PASS: compact booking modules for active shows; paused ticketing pages safely excluded')
 
 
 if __name__ == '__main__':
