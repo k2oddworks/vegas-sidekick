@@ -13,6 +13,7 @@ on:
       - 'assets/catalog-savings.css'
       - 'assets/catalog-savings.js'
       - 'scripts/audit-savings-system.py'
+      - 'scripts/audit-final-savings-banners.py'
 
 permissions:
   contents: read
@@ -22,5 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Audit final purchase savings banners
+        run: python3 scripts/audit-final-savings-banners.py
       - name: Audit show savings calculations and customer-facing surfaces
         run: python3 scripts/audit-savings-system.py
