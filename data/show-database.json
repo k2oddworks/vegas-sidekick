@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-09-28",
+  "updated_on": "2026-10-08",
   "source": "Vegas Sidekick Show Database",
   "records": [
     {
@@ -376,7 +376,7 @@
       "category": "adult",
       "status": "active",
       "our_price": 100,
-      "regular_price": 100,
+      "regular_price": null,
       "runtime_minutes": 75,
       "age_summary": "18+",
       "venue": "Waterfall Atrium Level 2M - Venetian",
@@ -385,14 +385,14 @@
       "ticket_url": "https://spotlight.vegas/shows/adult/atomic-saloon/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/adult/atomic-saloon/",
-      "verified_on": "2026-09-15",
+      "verified_on": "2026-10-08",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
-      "notes": "",
+      "notes": "Spotlight lists from $100 with no regular-price comparison as of October 8, 2026. No verified discount.",
       "spotlight": {
         "name": "Atomic Saloon Show",
         "our_price": 100,
-        "regular_price": 100,
+        "regular_price": null,
         "location": "Waterfall Atrium Level 2M - Venetian",
         "runtime_minutes": 75,
         "age_rule": "Must be 18 years of age or older",
@@ -431,9 +431,9 @@
         "affiliate_url": "https://spotlight.vegas/shows/adult/atomic-saloon/ref/vegassidekick",
         "age_label": "18+"
       },
-      "savings_amount": 10,
-      "savings_percent": 10,
-      "is_deal": true
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
     },
     {
       "slug": "awakening",
@@ -611,7 +611,7 @@
       "category": "music",
       "status": "active",
       "our_price": 68,
-      "regular_price": 92,
+      "regular_price": 90,
       "runtime_minutes": 90,
       "age_summary": "3+",
       "venue": "Blue Man Theater - Luxor Hotel",
@@ -620,14 +620,14 @@
       "ticket_url": "https://spotlight.vegas/shows/production/blue-man-group/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/blue-man-group/",
-      "verified_on": "2026-09-15",
+      "verified_on": "2026-10-08",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
       "notes": "",
       "spotlight": {
         "name": "Blue Man Group Las Vegas",
         "our_price": 68,
-        "regular_price": 92,
+        "regular_price": 90,
         "location": "Blue Man Theater - Luxor Hotel",
         "runtime_minutes": 90,
         "age_rule": "Recommended Age: 3 years and older Children under the age of 3 are permitted and do not require a paid ticket if they are sitting on a parent’s lap. Children aged 4 and above will continue to require a paid ticket for admission.",
@@ -678,8 +678,8 @@
         "affiliate_url": "https://spotlight.vegas/shows/production/blue-man-group/ref/vegassidekick",
         "age_label": "3+"
       },
-      "savings_amount": 27,
-      "savings_percent": 29,
+      "savings_amount": 22,
+      "savings_percent": 24,
       "is_deal": true
     },
     {
@@ -1540,9 +1540,9 @@
       "slug": "las-vegas-live-comedy-club",
       "name": "Las Vegas LIVE Comedy Club",
       "category": "comedy",
-      "status": "active",
-      "our_price": 122,
-      "regular_price": 178,
+      "status": "needs_review",
+      "our_price": 29,
+      "regular_price": null,
       "runtime_minutes": 75,
       "age_summary": "16+",
       "venue": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
@@ -1551,14 +1551,14 @@
       "ticket_url": "https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/comedy/las-vegas-live-comedy-club/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-10-08",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
-      "notes": "",
+      "notes": "Spotlight advertises $29 / regular $34 but marks booking Not Available on October 8, 2026. Page retained, purchase CTAs and deal promotion paused. Recheck availability before reactivating.",
       "spotlight": {
         "name": "Las Vegas Live Comedy Club",
-        "our_price": 122,
-        "regular_price": 178,
+        "our_price": 29,
+        "regular_price": 34,
         "location": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
         "runtime_minutes": 75,
         "age_rule": "Must be 16 years of age or older",
@@ -1601,9 +1601,9 @@
         "affiliate_url": "https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick",
         "age_label": "16+"
       },
-      "savings_amount": 56,
-      "savings_percent": 31,
-      "is_deal": true
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false
     },
     {
       "slug": "laugh-factory",
@@ -2709,7 +2709,7 @@
       "ticket_url": "https://spotlight.vegas/shows/tribute/purple-reign/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/purple-reign/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-10-08",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
       "notes": "",
@@ -3731,7 +3731,7 @@
       "ticket_url": "https://spotlight.vegas/shows/production/tournament-of-kings/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/family/tournament-of-kings/",
-      "verified_on": "2026-09-15",
+      "verified_on": "2026-10-08",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
       "notes": "",
@@ -3778,8 +3778,8 @@
         "affiliate_url": "https://spotlight.vegas/shows/production/tournament-of-kings/ref/vegassidekick",
         "age_label": "All ages"
       },
-      "savings_amount": 14,
-      "savings_percent": 16,
+      "savings_amount": 10,
+      "savings_percent": 11,
       "is_deal": true
     },
     {
@@ -3985,7 +3985,7 @@
       "ticket_url": "https://spotlight.vegas/shows/music/wayne-newton/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/wayne-newton/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-10-08",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
       "notes": "",

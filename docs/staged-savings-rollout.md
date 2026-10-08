@@ -35,3 +35,28 @@ Stage 2 checks: `scripts/audit-final-savings-banners.py` now requires the origin
 ## Next
 
 Stage 3: review remaining qualifying $20+ offers, prioritizing price reconciliation before any rollout. Smaller discounts stay compact until separately approved.
+
+## Price reconciliation — October 8, 2026 (pre-Stage 3)
+
+Cross-checked advertised starting prices and regular-price comparisons against Spotlight.Vegas product listings. These are advertised starting prices, not a booking-level guaranteed total. Keep historical show-price-index snapshots dated as historical; do not rewrite September snapshots.
+
+- **Atomic Saloon:** Spotlight shows $100 with no regular comparison. Regular price now unknown/null, not a discount. Remove stale $10 deal from database and Deals listing.
+- **Blue Man Group:** Spotlight shows $68 compared with $90. Replace stale $92 and recompute savings to $22 (24%).
+- **Tournament of Kings:** Spotlight shows $78 compared with $88. Correct derived savings to $10 (11%).
+- **Purple Reign:** Spotlight shows $51 compared with $95. Synchronize hero, FAQ, final section and mobile sticky price at $51; savings remain $44 (46%).
+- **Wayne Newton:** Spotlight shows $84 compared with $121. Synchronize hero, FAQ, final section and mobile sticky price at $84; savings remain $37 (31%).
+- **Las Vegas LIVE Comedy Club:** Spotlight currently says **Not Available**, while the product listing shows historical/advertised $29 compared with $34. Internal record marked `needs_review`. Preserve show information; remove active offers, booking controls and deal marketing from the page, and exclude from Deals until source bookability returns. The database keeps the last advertised $29 and underlying Spotlight price comparison ($34) for future review without presenting it as a currently bookable deal. Do not mark the show permanently closed on this evidence alone.
+
+Rebuilt `shows/deals/index.html` to show 49 qualified active offers and remove unsupported cards for Michael Jackson ONE, Awakening and Marriage Can Be Murder, in addition to Atomic Saloon and unavailable Las Vegas LIVE Comedy Club. Fixed the missing Paranormal savings label. All listings are now calculated against the active Show Database.
+
+Permanent guard: `scripts/audit-price-reconciliation.py` checks price integrity, all Deals listings and the unavailable-booking surface. It runs alongside existing audits in `.github/workflows/savings-audit.yml`.
+
+Spotlight source pages checked:
+- https://spotlight.vegas/shows/adult/atomic-saloon/
+- https://spotlight.vegas/shows/production/blue-man-group/
+- https://spotlight.vegas/shows/production/tournament-of-kings/
+- https://spotlight.vegas/shows/tribute/purple-reign/
+- https://spotlight.vegas/shows/music/wayne-newton/
+- https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/
+
+Stage 3 may proceed on other qualifying offers after verifying source availability and price comparisons. Recheck Las Vegas LIVE Comedy Club before reinstating active tickets.
