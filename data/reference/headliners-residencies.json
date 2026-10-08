@@ -1470,12 +1470,13 @@
       "act": "Triumph",
       "venue_id": "bleaulive-theater",
       "type": "Headliner",
-      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/triumph/",
       "dates": [
-        "2026-12-01"
+        "2026-12-13"
       ],
       "sources": [
-        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
+        "https://www.fontainebleaulasvegas.com/entertainment/triumph/",
+        "https://www.fontainebleaulasvegas.com/event/triumph-the-rock-roll-machine-reloaded-tour/"
       ]
     },
     {
