@@ -88,3 +88,38 @@ body.vs-savings-pilot .mobile-bar .vs-mobile-save{grid-column:2;display:inline-b
 body.vs-savings-pilot .mobile-bar a.cta{min-width:0}
 }
 @media(max-width:355px){body.vs-savings-pilot .mobile-bar .mobile-price{font-size:1.6rem;column-gap:5px}body.vs-savings-pilot .mobile-bar .vs-mobile-save{font-size:.55rem;padding:3px 5px}}
+
+/* Large savings reinforcement at the final purchase decision.
+   Only renders on show pages that opt into this module. */
+.vs-final-savings-section .vs-final-savings{
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  width:min(100%,640px);min-height:88px;margin:20px auto 16px;padding:16px 22px;
+  border:1px solid #9bd24e;border-radius:17px;
+  background:linear-gradient(105deg,#a9e94b,#ddffab);color:#214e25;
+  box-shadow:0 4px 16px rgba(38,80,15,.10);
+  text-align:center;
+}
+.vs-final-savings-section .vs-final-savings-icon{
+  flex:none;display:grid;place-items:center;
+  width:42px;height:42px;border:2px solid #367a39;border-radius:50%;
+  font:800 23px/1 Inter,sans-serif;color:#205d2b;
+}
+.vs-final-savings-section .vs-final-savings-copy{display:flex;flex-direction:column;gap:4px;align-items:center;min-width:0}
+.vs-final-savings-section .vs-final-savings-copy strong{
+  font:800 clamp(1.1rem,2.2vw,1.65rem)/1.2 'Plus Jakarta Sans',sans-serif;letter-spacing:-.025em;
+}
+.vs-final-savings-section .vs-final-savings-copy span{
+  font:600 .82rem/1.4 Inter,sans-serif;color:#36652e;
+}
+.vs-final-savings-section a.cta.vs-ticket-primary{
+  display:flex;align-items:center;justify-content:center;
+  width:min(100%,640px);min-height:54px;margin:0 auto;border-radius:15px;
+}
+@media(max-width:520px){
+  .vs-final-savings-section .vs-final-savings{
+    min-height:80px;gap:10px;padding:14px 10px;margin:18px auto 14px;
+  }
+  .vs-final-savings-section .vs-final-savings-icon{width:36px;height:36px;font-size:20px}
+  .vs-final-savings-section .vs-final-savings-copy strong{font-size:1.25rem}
+  .vs-final-savings-section .vs-final-savings-copy span{font-size:.71rem}
+}
