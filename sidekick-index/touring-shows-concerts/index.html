@@ -147,7 +147,7 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
       <div class="stat"><strong>—</strong><span>events</span></div>
       <div class="stat"><strong>—</strong><span>venues</span></div>
       <div class="stat"><strong>—</strong><span>months</span></div>
-      <div class="stat"><strong>Oct 5</strong><span>verified</span></div>
+      <div class="stat"><strong>Oct 8</strong><span>verified</span></div>
     </div>
   </div>
 </header>
@@ -183,7 +183,7 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
 
     <aside class="method">
       <h2>What belongs here</h2>
-      <p>This index tracks visiting concerts, touring productions and short-run events. Ongoing Vegas productions belong in the regular show catalog, while major residencies and notable headliner engagements belong in <a href="/sidekick-index/headliners-residencies/">Headliners &amp; Residencies</a>. Current entries were checked against official venue listings on October 5, 2026. <a href="/data/reference/touring-shows-concerts.json">View the underlying JSON data →</a></p>
+      <p>This index tracks visiting concerts, touring productions and short-run events. Ongoing Vegas productions belong in the regular show catalog, while major residencies and notable headliner engagements belong in <a href="/sidekick-index/headliners-residencies/">Headliners &amp; Residencies</a>. Current entries were checked against official venue listings on October 8, 2026. <a href="/data/reference/touring-shows-concerts.json">View the underlying JSON data →</a></p>
       <p><strong>Data reuse:</strong> The Sidekick Index factual dataset is published under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Reuse and adapt the licensed data with attribution to Vegas Sidekick. <a href="/data-license/">Data license →</a></p>
     </aside>
   </div>
@@ -230,7 +230,7 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
     requestAnimationFrame(function(){setRailState(el)});
   }
 
-  const VENUE_COLORS={'brooklyn-bowl-las-vegas':['#006f88','#fff'],'house-of-blues-las-vegas':['#d94f1f','#fff'],'24-oxford':['#d81b60','#fff'],'fremont-country-club':['#b91c1c','#fff'],'backstage-bar-billiards':['#3f3f46','#fff'],'swan-dive-las-vegas':['#7c3aed','#fff'],'the-space-las-vegas':['#2563eb','#fff'],'area15':['#c026d3','#fff'],'hard-rock-live-las-vegas':['#111111','#fff'],'smith-center':['#b7791f','#fff'],'downtown-las-vegas-events-center':['#0f766e','#fff'],'notoriety-live':['#e11d48','#fff']};
+  const VENUE_COLORS={'brooklyn-bowl-las-vegas':['#006f88','#fff'],'house-of-blues-las-vegas':['#d94f1f','#fff'],'24-oxford':['#d81b60','#fff'],'fremont-country-club':['#b91c1c','#fff'],'backstage-bar-billiards':['#3f3f46','#fff'],'swan-dive-las-vegas':['#7c3aed','#fff'],'the-space-las-vegas':['#2563eb','#fff'],'area15':['#c026d3','#fff'],'hard-rock-live-las-vegas':['#111111','#fff'],'smith-center':['#b7791f','#fff'],'downtown-las-vegas-events-center':['#0f766e','#fff'],'notoriety-live':['#e11d48','#fff'],'desert-breeze-event-center':['#2563eb','#fff']};
   const FALLBACK=[['#125fd1','#fff'],['#6d28d9','#fff'],['#c2185b','#fff'],['#087f23','#fff'],['#ffb000','#171225']];
   function venueStyle(id){
     let pair=VENUE_COLORS[id];
@@ -339,7 +339,7 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
       '<div class="stat"><strong>'+list.length+'</strong><span>events</span></div>'+
       '<div class="stat"><strong>'+venueCount+'</strong><span>venue'+(venueCount===1?'':'s')+'</span></div>'+
       '<div class="stat"><strong>'+months+'</strong><span>months</span></div>'+
-      '<div class="stat"><strong>Oct 3</strong><span>verified</span></div>';
+      '<div class="stat"><strong>Oct 8</strong><span>verified</span></div>';
   }
 
   function updateCopy(){

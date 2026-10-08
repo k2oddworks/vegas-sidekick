@@ -114,10 +114,10 @@ These counts are a **dated snapshot**, not permanent product rules.
 
 ### More Touring Shows & Concerts
 
-As of the October 8, 2026 expiry cleanup:
+As verified October 8, 2026:
 
-- 148 indexed event entries
-- 12 covered venues
+- 149 indexed event entries
+- 13 covered venues
 
 Current venue set:
 
@@ -133,16 +133,17 @@ Current venue set:
 - The Smith Center
 - Downtown Las Vegas Events Center
 - Notoriety Live
+- Desert Breeze Event Center
 
 The venue list is expected to grow. Do not hard-code marketing copy that becomes wrong when more venues are added.
 
 ### Headliners & Residencies
 
-As of the October 8, 2026 expiry cleanup:
+As verified October 8, 2026:
 
-- 159 act / engagement records
-- 21 underlying venue records
-- 8 resort/venue groups used to simplify customer-facing venue filtering where appropriate
+- 167 act / engagement records
+- 22 underlying venue records
+- 9 resort/venue groups used to simplify customer-facing venue filtering where appropriate
 
 The JSON supports grouped resort presentation so multiple rooms at one property do not have to become separate top-level filter pills.
 

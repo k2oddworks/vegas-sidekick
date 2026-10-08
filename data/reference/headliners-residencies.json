@@ -3,7 +3,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "Vegas Sidekick — https://vegassidekick.com/sidekick-index/headliners-residencies/",
-  "verified_on": "2026-10-05",
+  "verified_on": "2026-10-08",
   "city": "Las Vegas",
   "state": "NV",
   "venues": [
@@ -29,7 +29,8 @@
       "id": "planet-hollywood-ph-live",
       "name": "PH Live at Planet Hollywood",
       "short_name": "Planet Hollywood",
-      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893"
+      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
+      "group_id": "planet-hollywood"
     },
     {
       "id": "dolby-live",
@@ -145,87 +146,16 @@
       "short_name": "International Theater",
       "group_id": "westgate",
       "official_url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/"
+    },
+    {
+      "id": "criss-angel-theater",
+      "name": "Criss Angel Theater at Planet Hollywood",
+      "short_name": "Criss Angel Theater",
+      "group_id": "planet-hollywood",
+      "official_url": "https://www.ticketmaster.com/criss-angel-theater-at-planet-hollywood-tickets-las-vegas/venue/467931"
     }
   ],
   "entries": [
-    {
-      "act": "Josh Groban",
-      "venue_id": "caesars-colosseum",
-      "type": "Residency",
-      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
-      "dates": [
-        "2026-10-09",
-        "2026-10-10"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/explore/joshgrobanvegas",
-        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
-      ]
-    },
-    {
-      "act": "New Kids on the Block",
-      "venue_id": "dolby-live",
-      "type": "Residency",
-      "official_url": "https://parkmgm.mgmresorts.com/en/entertainment/new-kids-on-the-block.html",
-      "dates": [
-        "2026-10-09",
-        "2026-10-10",
-        "2026-10-14",
-        "2026-10-16",
-        "2026-10-17"
-      ],
-      "sources": [
-        "https://parkmgm.mgmresorts.com/en/entertainment/new-kids-on-the-block.html"
-      ]
-    },
-    {
-      "act": "Metallica",
-      "venue_id": "sphere",
-      "type": "Residency",
-      "official_url": "https://www.thesphere.com/shows/metallica",
-      "dates": [
-        "2026-10-08",
-        "2026-10-10",
-        "2026-10-15",
-        "2026-10-17",
-        "2026-10-22",
-        "2026-10-24",
-        "2026-10-29",
-        "2026-10-31",
-        "2026-11-05",
-        "2026-11-07",
-        "2027-01-28",
-        "2027-01-30",
-        "2027-02-04",
-        "2027-02-06",
-        "2027-02-18",
-        "2027-02-20",
-        "2027-02-25",
-        "2027-02-27",
-        "2027-03-04",
-        "2027-03-06",
-        "2027-03-11",
-        "2027-03-13"
-      ],
-      "sources": [
-        "https://www.metallica.com/help-tour-2026-sphere-tickets.html",
-        "https://www.thesphere.com/shows/metallica"
-      ]
-    },
-    {
-      "act": "Jeff Dunham",
-      "venue_id": "planet-hollywood-ph-live",
-      "type": "Headliner",
-      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
-      "dates": [
-        "2026-11-08",
-        "2026-12-06"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
-        "https://newsroom.caesars.com/press-releases/press-release-details/2026/Summer-Savings-Starts-Now-Caesars-Entertainments-Las-Vegas-Resorts-Introduce-More-Value-Options/default.aspx"
-      ]
-    },
     {
       "act": "Barry Manilow",
       "venue_id": "westgate-international-theater",
@@ -340,6 +270,40 @@
       ]
     },
     {
+      "act": "Metallica",
+      "venue_id": "sphere",
+      "type": "Residency",
+      "official_url": "https://www.thesphere.com/shows/metallica",
+      "dates": [
+        "2026-10-08",
+        "2026-10-10",
+        "2026-10-15",
+        "2026-10-17",
+        "2026-10-22",
+        "2026-10-24",
+        "2026-10-29",
+        "2026-10-31",
+        "2026-11-05",
+        "2026-11-07",
+        "2027-01-28",
+        "2027-01-30",
+        "2027-02-04",
+        "2027-02-06",
+        "2027-02-18",
+        "2027-02-20",
+        "2027-02-25",
+        "2027-02-27",
+        "2027-03-04",
+        "2027-03-06",
+        "2027-03-11",
+        "2027-03-13"
+      ],
+      "sources": [
+        "https://www.metallica.com/help-tour-2026-sphere-tickets.html",
+        "https://www.thesphere.com/shows/metallica"
+      ]
+    },
+    {
       "act": "Empire of the Sun",
       "venue_id": "planet-hollywood-ph-live",
       "type": "Headliner",
@@ -353,6 +317,20 @@
       ]
     },
     {
+      "act": "Josh Groban",
+      "venue_id": "caesars-colosseum",
+      "type": "Residency",
+      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
+      "dates": [
+        "2026-10-09",
+        "2026-10-10"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/explore/joshgrobanvegas",
+        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
+      ]
+    },
+    {
       "act": "Michelle Branch",
       "venue_id": "stage-at-zouk",
       "type": "Headliner",
@@ -362,6 +340,22 @@
       ],
       "sources": [
         "https://www.rwlasvegas.com/entertainment/"
+      ]
+    },
+    {
+      "act": "New Kids on the Block",
+      "venue_id": "dolby-live",
+      "type": "Residency",
+      "official_url": "https://parkmgm.mgmresorts.com/en/entertainment/new-kids-on-the-block.html",
+      "dates": [
+        "2026-10-09",
+        "2026-10-10",
+        "2026-10-14",
+        "2026-10-16",
+        "2026-10-17"
+      ],
+      "sources": [
+        "https://parkmgm.mgmresorts.com/en/entertainment/new-kids-on-the-block.html"
       ]
     },
     {
@@ -419,10 +413,12 @@
       "type": "Comedy headliner",
       "official_url": "https://www.venetianlasvegas.com/entertainment/heather-mcmahan.html",
       "dates": [
-        "2026-10-10"
+        "2026-10-10",
+        "2027-02-13"
       ],
       "sources": [
-        "https://www.venetianlasvegas.com/entertainment/heather-mcmahan.html"
+        "https://www.venetianlasvegas.com/entertainment/heather-mcmahan.html",
+        "https://www.venetianlasvegas.com/entertainment/the-palazzo-theatre-presents.html"
       ]
     },
     {
@@ -1139,6 +1135,20 @@
       ]
     },
     {
+      "act": "Jeff Dunham",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Headliner",
+      "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
+      "dates": [
+        "2026-11-08",
+        "2026-12-06"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
+        "https://newsroom.caesars.com/press-releases/press-release-details/2026/Summer-Savings-Starts-Now-Caesars-Entertainments-Las-Vegas-Resorts-Introduce-More-Value-Options/default.aspx"
+      ]
+    },
+    {
       "act": "LISA",
       "venue_id": "caesars-colosseum",
       "type": "Residency",
@@ -1322,6 +1332,18 @@
       ]
     },
     {
+      "act": "Ivy Queen",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater/ivy-queen",
+      "dates": [
+        "2026-11-20"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/ivy-queen"
+      ]
+    },
+    {
       "act": "Marc Anthony",
       "venue_id": "bleaulive-theater",
       "type": "Residency",
@@ -1355,6 +1377,24 @@
       ],
       "sources": [
         "https://www.thesphere.com/shows/backstreet-boys/f1"
+      ]
+    },
+    {
+      "act": "Alice Cooper & Criss Angel — WELCOME TO OUR NIGHTMARE",
+      "venue_id": "criss-angel-theater",
+      "type": "Limited engagement",
+      "official_url": "https://www.ticketmaster.com/crissangel",
+      "dates": [
+        "2026-11-27",
+        "2026-11-28",
+        "2026-11-29",
+        "2026-12-04",
+        "2026-12-05",
+        "2026-12-06"
+      ],
+      "sources": [
+        "https://newsroom.caesars.com/press-releases/press-release-details/2026/ALICE-COOPER--CRISS-ANGEL-ANNOUNCE-ADDITIONAL-DATES-FOR-WELCOME-TO-OUR-NIGHTMARE-AT-PLANET-HOLLYWOOD-RESORT--CASINO--2026-Sz7iALbPbI/default.aspx",
+        "https://www.ticketmaster.com/welcome-to-our-nightmare-tickets/artist/4435264"
       ]
     },
     {
@@ -1464,19 +1504,6 @@
       ],
       "sources": [
         "https://newsroom.caesars.com/press-releases/press-release-details/2026/TWO-NIGHTS--TWO-WORLDS--ONE-UNFORGETTABLE-LAS-VEGAS-WEEKEND---V-TR-SAY-HI--HIEUTHUHAI-LIVE-CONCERT-MT-NHM-MT-M-2026-HVOrl5_u_t/default.aspx"
-      ]
-    },
-    {
-      "act": "Triumph",
-      "venue_id": "bleaulive-theater",
-      "type": "Headliner",
-      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/triumph/",
-      "dates": [
-        "2026-12-13"
-      ],
-      "sources": [
-        "https://www.fontainebleaulasvegas.com/entertainment/triumph/",
-        "https://www.fontainebleaulasvegas.com/event/triumph-the-rock-roll-machine-reloaded-tour/"
       ]
     },
     {
@@ -1841,6 +1868,19 @@
       ]
     },
     {
+      "act": "Triumph",
+      "venue_id": "bleaulive-theater",
+      "type": "Headliner",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/triumph/",
+      "dates": [
+        "2026-12-13"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/entertainment/triumph/",
+        "https://www.fontainebleaulasvegas.com/event/triumph-the-rock-roll-machine-reloaded-tour/"
+      ]
+    },
+    {
       "act": "Lindsey Stirling",
       "venue_id": "venetian-theatre",
       "type": "Limited engagement",
@@ -2094,6 +2134,20 @@
       ]
     },
     {
+      "act": "Jeff Arcuri",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/jeff-arcuri.html",
+      "dates": [
+        "2027-02-05",
+        "2027-02-06"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/jeff-arcuri.html",
+        "https://www.ticketmaster.com/palazzo-theatre-at-the-venetian-resort-tickets-las-vegas/venue/189346?page=4"
+      ]
+    },
+    {
       "act": "Blood, Sweat & Tears",
       "venue_id": "westgate-international-theater",
       "type": "Headliner",
@@ -2103,6 +2157,48 @@
       ],
       "sources": [
         "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/"
+      ]
+    },
+    {
+      "act": "Collective Soul",
+      "venue_id": "venetian-theatre",
+      "type": "Limited engagement",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/collective-soul.html",
+      "dates": [
+        "2027-02-10",
+        "2027-02-12",
+        "2027-02-13"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/collective-soul.html"
+      ]
+    },
+    {
+      "act": "John Fogerty",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Limited engagement",
+      "official_url": "https://johnfogerty.com/",
+      "dates": [
+        "2027-02-11",
+        "2027-02-12",
+        "2027-02-13"
+      ],
+      "sources": [
+        "https://johnfogerty.com/",
+        "https://www.ticketmaster.com/ph-live-at-planet-hollywood-tickets-las-vegas/venue/467893"
+      ]
+    },
+    {
+      "act": "Zarna Garg",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.ticketmaster.com/zarna-garg-the-million-dollar-excuses-las-vegas-nevada-02-12-2027/event/1700653ED58A8C9D",
+      "dates": [
+        "2027-02-12"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/zarna-garg-the-million-dollar-excuses-las-vegas-nevada-02-12-2027/event/1700653ED58A8C9D",
+        "https://www.venetianlasvegas.com/entertainment/the-palazzo-theatre-presents.html"
       ]
     },
     {
@@ -2201,6 +2297,18 @@
       ]
     },
     {
+      "act": "Michelle Wolf",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/michelle-wolf.html",
+      "dates": [
+        "2027-03-27"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/michelle-wolf.html"
+      ]
+    },
+    {
       "act": "Aries Spears",
       "venue_id": "palms-pearl",
       "type": "Comedy headliner",
@@ -2239,11 +2347,24 @@
         "2027-04-11",
         "2027-04-15",
         "2027-04-17",
-        "2027-04-18"
+        "2027-04-18",
+        "2027-04-28",
+        "2027-04-30",
+        "2027-05-01",
+        "2027-05-05",
+        "2027-05-07",
+        "2027-05-08",
+        "2027-05-12",
+        "2027-05-14",
+        "2027-05-15",
+        "2027-06-02",
+        "2027-06-04",
+        "2027-06-05"
       ],
       "sources": [
         "https://www.sphereentertainmentco.com/john-mayer-live-at-sphere/",
-        "https://www.thesphere.com/shows/john-mayer"
+        "https://www.thesphere.com/shows/john-mayer",
+        "https://www.ticketmaster.com/john-mayer-tickets/artist/770494"
       ]
     },
     {
@@ -2308,6 +2429,21 @@
       ],
       "sources": [
         "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/list/?tribe-bar-date=2026-12-01"
+      ]
+    },
+    {
+      "act": "Oasis",
+      "venue_id": "allegiant-stadium",
+      "type": "Limited engagement",
+      "official_url": "https://www.allegiantstadium.com/events/detail/oasis_live_27",
+      "dates": [
+        "2027-08-20",
+        "2027-08-21",
+        "2027-08-24"
+      ],
+      "sources": [
+        "https://www.allegiantstadium.com/events/detail/oasis_live_27",
+        "https://www.allegiantstadium.com/news/detail/oasis-bringing-oasis-live-27-to-allegiant-stadium"
       ]
     },
     {
@@ -2407,6 +2543,12 @@
       "name": "Westgate Las Vegas Resort & Casino",
       "short_name": "Westgate",
       "official_url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/"
+    },
+    {
+      "id": "planet-hollywood",
+      "name": "Planet Hollywood Resort & Casino",
+      "short_name": "Planet Hollywood",
+      "official_url": "https://www.caesars.com/planet-hollywood/shows"
     }
   ]
 }

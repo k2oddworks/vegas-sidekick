@@ -3,7 +3,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "Vegas Sidekick — https://vegassidekick.com/sidekick-index/touring-shows-concerts/",
-  "verified_on": "2026-10-05",
+  "verified_on": "2026-10-08",
   "city": "Las Vegas",
   "state": "Nevada",
   "source_note": "Official venue calendars, official ticketing pages and established concert listings. This index tracks visiting and limited-run shows that are not ongoing Vegas productions and are not currently classified in the Headliners & Residencies index. Recurring restaurant/bar entertainment, resident productions and recurring local series are excluded.",
@@ -91,6 +91,13 @@
       "short_name": "Notoriety",
       "property": "Neonopolis · Fremont Street",
       "official_url": "https://www.notorietylive.com/events/"
+    },
+    {
+      "id": "desert-breeze-event-center",
+      "name": "Desert Breeze Event Center",
+      "short_name": "Desert Breeze",
+      "property": "Desert Breeze Park",
+      "official_url": "https://www.clarkcountynv.gov/government/departments/parks___recreation/events/special-event-services"
     }
   ],
   "entries": [
@@ -1552,6 +1559,16 @@
       "room": "Myron’s",
       "venue_id": "smith-center",
       "official_url": "https://thesmithcenter.com/tickets/myrons/"
+    },
+    {
+      "name": "Extreme Thing 2027",
+      "subtitle": "25th Anniversary",
+      "date": "2027-03-20",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Festival",
+      "venue_id": "desert-breeze-event-center",
+      "official_url": "https://www.extremethinglv.com/"
     },
     {
       "name": "Matthew Morrison",
