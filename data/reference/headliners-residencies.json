@@ -154,9 +154,6 @@
       "type": "Residency",
       "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
       "dates": [
-        "2026-10-02",
-        "2026-10-03",
-        "2026-10-07",
         "2026-10-09",
         "2026-10-10"
       ],
@@ -171,9 +168,6 @@
       "type": "Residency",
       "official_url": "https://parkmgm.mgmresorts.com/en/entertainment/new-kids-on-the-block.html",
       "dates": [
-        "2026-10-02",
-        "2026-10-03",
-        "2026-10-07",
         "2026-10-09",
         "2026-10-10",
         "2026-10-14",
@@ -190,7 +184,6 @@
       "type": "Residency",
       "official_url": "https://www.thesphere.com/shows/metallica",
       "dates": [
-        "2026-10-03",
         "2026-10-08",
         "2026-10-10",
         "2026-10-15",
@@ -225,51 +218,12 @@
       "type": "Headliner",
       "official_url": "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
       "dates": [
-        "2026-10-04",
         "2026-11-08",
         "2026-12-06"
       ],
       "sources": [
         "https://www.ticketmaster.com/zappos-theater-at-planet-hollywood-tickets-las-vegas/venue/467893",
         "https://newsroom.caesars.com/press-releases/press-release-details/2026/Summer-Savings-Starts-Now-Caesars-Entertainments-Las-Vegas-Resorts-Introduce-More-Value-Options/default.aspx"
-      ]
-    },
-    {
-      "act": "Brandon Flowers",
-      "venue_id": "encore-theater-wynn",
-      "type": "Limited engagement",
-      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/brandon-flowers",
-      "dates": [
-        "2026-10-05",
-        "2026-10-06"
-      ],
-      "sources": [
-        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/brandon-flowers"
-      ]
-    },
-    {
-      "act": "Julieta Venegas",
-      "venue_id": "the-chelsea-cosmopolitan",
-      "type": "Headliner",
-      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/julieta-venegas.html",
-      "dates": [
-        "2026-10-06"
-      ],
-      "sources": [
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/julieta-venegas.html",
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
-      ]
-    },
-    {
-      "act": "Ludovico Einaudi",
-      "venue_id": "encore-theater-wynn",
-      "type": "Headliner",
-      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/ludovico-einaudi",
-      "dates": [
-        "2026-10-07"
-      ],
-      "sources": [
-        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/ludovico-einaudi"
       ]
     },
     {

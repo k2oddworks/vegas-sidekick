@@ -95,15 +95,6 @@
   ],
   "entries": [
     {
-      "name": "Snarky Puppy",
-      "support": "Varijashree Venugopal",
-      "date": "2026-10-05",
-      "doors": "7:30 PM",
-      "type": "Concert",
-      "venue_id": "brooklyn-bowl-las-vegas",
-      "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/snarky-puppy-1a9zkokgkeonqos"
-    },
-    {
       "name": "Oh, Mary!",
       "subtitle": "Runs Oct 6–11",
       "date": "2026-10-06",
@@ -113,16 +104,6 @@
       "room": "Reynolds Hall",
       "venue_id": "smith-center",
       "official_url": "https://thesmithcenter.com/tickets/broadway-las-vegas-series/"
-    },
-    {
-      "name": "Chad Gray",
-      "support": "Butcher Babies · Kissing Candice · Devil’s Cut",
-      "date": "2026-10-07",
-      "doors": "6:00 PM",
-      "time_label": "Time",
-      "type": "Concert",
-      "venue_id": "fremont-country-club",
-      "official_url": "https://www.jambase.com/show/chad-gray-fremont-country-club-20261007"
     },
     {
       "name": "An Evening with Acoustic Alchemy",

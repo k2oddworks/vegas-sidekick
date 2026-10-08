@@ -1,7 +1,7 @@
 # SIDEKICK-INDEX.md — Vegas Sidekick Reference System
 
 **Status:** Current production system  
-**Last updated:** October 5, 2026  
+**Last updated:** October 8, 2026  
 **Canonical scope:** `/sidekick-index/`
 
 This file is the source of truth for the **Sidekick Index** project: its purpose, page taxonomy, data boundaries, shared UX, source files, mobile behavior, and maintenance rules.
@@ -114,9 +114,9 @@ These counts are a **dated snapshot**, not permanent product rules.
 
 ### More Touring Shows & Concerts
 
-As verified October 5, 2026:
+As of the October 8, 2026 expiry cleanup:
 
-- 150 indexed event entries
+- 148 indexed event entries
 - 12 covered venues
 
 Current venue set:
@@ -138,9 +138,9 @@ The venue list is expected to grow. Do not hard-code marketing copy that becomes
 
 ### Headliners & Residencies
 
-As verified October 5, 2026:
+As of the October 8, 2026 expiry cleanup:
 
-- 162 act / engagement records
+- 159 act / engagement records
 - 21 underlying venue records
 - 8 resort/venue groups used to simplify customer-facing venue filtering where appropriate
 
@@ -179,6 +179,8 @@ Sidekick Index is only useful if a reader can trust where the information came f
 ### Touring index
 
 Each event entry should contain the best available event-level or venue-level source URL and enough structured information to render the date-first, act-first, and venue-first views.
+
+For multi-day touring productions, do not treat the stored opening/start date as the expiration date. Confirm the final performance date before removing the entry.
 
 ### Headliners & Residencies
 
