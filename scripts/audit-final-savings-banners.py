@@ -11,7 +11,7 @@ stage_one = {"piano-man", "all-motown", "america-the-show",
              "the-mentalist", "paranormal", "tape-face"}
 stage_two = {"king-of-diamonds", "wastin-away", "penn-and-teller", "ka",
              "vegas-the-show", "mj-live", "motown-brunch", "shin-lim"}
-stage_three = {"purple-reign"}
+stage_three = {"purple-reign", "wayne-newton", "rouge", "marc-savard-comedy-hypnosis", "piff-the-magic-dragon", "la-comedy-club"}
 issues = []
 checked = []
 for record in db["records"]:

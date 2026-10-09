@@ -71,3 +71,26 @@ Stage 3 may proceed on other qualifying offers after verifying source availabili
 - Recorded the October 2026 confirmation and added Purple Reign to the permanent final savings-banner audit.
 
 This rollout covers **one page**, not the remaining Stage 3 list. Show price and regular price remain unchanged; no claim about every date or seating tier.
+
+## Stage 3 — second batch, October 9, 2026
+
+Added five pages using the All Shook Up-approved lime treatment, including the green hero presentation, compact unchanged-height mobile savings message and full green final purchase banner above the Warm Amber Get Tickets CTA. Added the five matching green category and Deals badges, refreshed the database price-check dates and expanded the permanent banner audit.
+
+| Show | Advertised starting price | Regular | Savings |
+| --- | ---: | ---: | ---: |
+| Wayne Newton | $84 | $121 | $37 (31%) |
+| Rouge | $54 | $86 | $32 (37%) |
+| Marc Savard Comedy Hypnosis | $28 | $55 | $27 (49%) |
+| Piff The Magic Dragon | $45 | $70 | $25 (36%) |
+| LA Comedy Club | $35 | $59 | $24 (41%) |
+
+Spotlight product pages were reviewed October 9, 2026 and supported the recorded comparisons. Only starting-price savings are described; individual dates and seats may differ. For Piff, fixed three outdated visible $53 price occurrences (FAQ, final booking copy, mobile). For Marc Savard, fixed malformed mobile markup that embedded a duplicate ticket button inside the price figure.
+
+**Not included / needs separate price reconciliation**: Magic Mike Live (current Spotlight $69/$87 versus site database $58/$87); Thunder From Down Under (current source $70/$71 versus recorded $70/$99); Blue Man Group (current source $65/$74 versus recorded $68/$90); “O” by Cirque du Soleil (current product shows $121 with no comparable regular price versus $156/$179 recorded); RuPaul's Drag Race LIVE! (current $55/$82 versus recorded $80/$102). Do not amplify their existing savings claims until the database, show pages, and catalogs are reconciled. Use the source product page for the current comparison, not other recommendation cards, which may conflict.
+
+Source pages:
+- https://spotlight.vegas/shows/music/wayne-newton/
+- https://spotlight.vegas/shows/adult/rouge/
+- https://spotlight.vegas/shows/comedy/marc-savard-comedy-hypnosis/
+- https://spotlight.vegas/shows/magic/piff-the-magic-dragon/
+- https://spotlight.vegas/shows/comedy/la-comedy-club/
