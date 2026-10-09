@@ -1,6 +1,6 @@
 # VS_CHAT_CONTEXT.md — Vegas Sidekick Living Project Context
 
-**As of:** October 3, 2026
+**As of:** October 9, 2026
 **Purpose:** Living source of project context, decisions, operating rules, architecture, and lessons learned for ChatGPT/Codex or any future AI collaborator working on Vegas Sidekick.
 
 > This file is not the coding-agent instruction file. `AGENTS.md` should eventually contain concise execution rules for coding agents. This file records what Vegas Sidekick is, how it currently works, what has already been decided, and the context needed to avoid repeating old mistakes.
@@ -819,27 +819,34 @@ Do not create a second later **Who it fits best** / **Good fit** section. Do not
 
 ---
 
-## Savings / Discount System — September 2026
+## Savings / Discount System — current as of October 9, 2026
 
-Savings are a first-class Vegas Sidekick conversion feature, but only when they are based on a verified regular/list price.
+Savings are a conversion feature **only when the starting-price comparison is source-verified**. The complete chronological record of the Stage 1–5 rollout, reconciliations and Spotlight source examples is in `docs/staged-savings-rollout.md`.
 
-### Rules
+### Rules and product treatment
 
-- `data/show-database.json` owns `our_price` and `regular_price`.
-- `savings_amount`, `savings_percent`, and `is_deal` are **derived fields**. Never hand-enter the savings math.
-- A show qualifies for customer-facing deal treatment only when `regular_price > our_price` by at least **$5**.
-- If the difference is under $5, the regular price is missing, or the regular price is not trustworthy, show the normal ticket price without a deal badge.
-- Warm Amber is the customer-facing value/deal language while pink remains brand/accent.
-- Preferred presentation: current price + struck-through regular price + **Save $X**. Dollar savings lead; percentage savings is secondary.
-- Do not use countdowns, fake urgency, inflated comparison prices, or claims of exclusivity unless explicitly verified.
-- Current discounted inventory lives at `/shows/deals/`.
-- Catalogs can show deal badges and sort by **Biggest Savings**; `/shows/` also has a Deals filter.
-- The Show Database UI calculates Savings $ / Savings % automatically as prices are edited.
-- `scripts/audit-savings-system.py` is the permanent consistency guard.
-- `.github/workflows/savings-audit.yml` runs the recurring savings safeguard.
+- **Canonical data:** `data/show-database.json` owns `our_price`, nullable `regular_price`, `price_source_last_checked_on` and calculated `savings_amount`, `savings_percent`, `is_deal`. Reconcile actual source prices first; never hand-invent a list price or a verified-on date.
+- **Qualifying deal:** verified `regular_price - our_price >= $5`. If the comparison is missing, unreliable or under $5, show the ordinary starting ticket price without discount marketing.
+- **Compact savings ($5–$19):** show the dollar amount first, using the existing restrained amber savings styling.
+- **Large verified savings ($20+):** use the approved lime-green treatment modeled by `shows/music/all-shook-up/index.html`: hero comparison, compact mobile sticky savings reminder, and large final savings banner **before** the primary Warm Amber `#FFB000` Get Tickets action. Do not replace the purchase CTA color with green.
+- **Starting-price honesty:** a comparison is between listed starting ticket prices, not a guarantee for every performance, seating section or checkout.
+- Do not add countdowns, fake scarcity, invented percentage claims, inflated comparisons or unverified exclusive-deal language.
 
-The September 8 implementation found 54 of 71 active shows meeting the $5 threshold after the Spotlight reconciliation. Treat that count as time-sensitive; the rule and calculation are permanent, the count is not.
+### Stage 5 — self-healing category cards
 
+- `assets/catalog-savings.js` uses live active records from the Show Database; it **no longer has a hand-maintained green-show allowlist**.
+- The category cards update their visible current price, struck-through regular price and savings badge after the database loads and whenever their grid rerenders. Old badges are changed or removed if the database comparison changes.
+- **Large category-card claims** require an explicit `price_source_last_checked_on` no more than **30 days** old; absent/expired checks suppress that catalog-card discount. Smaller qualifying deals retain their compact treatment.
+- This does **not** rewrite the underlying static category `SHOWS` price literals, the show pages, the Deals-page HTML, or other price references. Price changes still require sitewide reconciliation.
+- October 9 corrections included Atomic Saloon's Adult Shows card at **$100**, with no unsupported regular-price comparison.
+
+### Freshness safeguards and audit coverage
+
+- **Do not confuse client-side suppression with sitewide automatic removal.** Large show-page banners remain static and are **not** hidden automatically when the evidence expires. The freshness audit warns after **14 days** and fails after **30 days**; a failure requires source re-verification or removal/correction of the claim.
+- As of October 9, 2026, after the full discount review: **22** active show pages carry large lime-green savings banners and **46** active shows appear in `/shows/deals/`. These are a dated snapshot, not permanent totals.
+- Permanent checks: `scripts/audit-savings-system.py`, `scripts/audit-final-savings-banners.py`, `scripts/audit-price-reconciliation.py`, `scripts/audit-savings-freshness.py`, and `scripts/audit-category-catalog-prices.py` (all seven category catalogs; 108 card-price references at Stage 5). The existing `.github/workflows/savings-audit.yml` runs these and checks `assets/catalog-savings.js` syntax.
+- Verification of a ticket price is distinct from the visible author-card `Show info confirmed Month YYYY` label; never refresh either signal without checking the relevant information.
+- Existing Sidekick Index historical price snapshots retain their historical values. Booking affiliate URLs remain verified and unchanged unless the destination itself has been rechecked.
 
 ### Approved mobile ticket purchase layout — Option 1
 
