@@ -3,7 +3,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "Vegas Sidekick — https://vegassidekick.com/sidekick-index/headliners-residencies/",
-  "verified_on": "2026-10-08",
+  "verified_on": "2026-10-09",
   "city": "Las Vegas",
   "state": "NV",
   "venues": [
@@ -2574,6 +2574,54 @@
       "sources": [
         "https://www.palms.com/entertainment/pearl-theater/roger-waters-presents-legacy-a-pink-floyd-show",
         "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Nickelback",
+      "venue_id": "t-mobile-arena",
+      "type": "Headliner",
+      "official_url": "https://www.t-mobilearena.com/events",
+      "dates": [
+        "2027-04-16"
+      ],
+      "sources": [
+        "https://www.t-mobilearena.com/events"
+      ]
+    },
+    {
+      "act": "Leon Bridges",
+      "venue_id": "the-chelsea-cosmopolitan",
+      "type": "Headliner",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html",
+      "dates": [
+        "2027-04-07"
+      ],
+      "sources": [
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
+      "act": "Dancing with the Stars: Live! 2027 Tour",
+      "venue_id": "michelob-ultra-arena",
+      "type": "Touring production",
+      "official_url": "https://mandalaybay.mgmresorts.com/en/entertainment.html",
+      "dates": [
+        "2027-04-03"
+      ],
+      "sources": [
+        "https://mandalaybay.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
+      "act": "62nd Academy of Country Music Awards",
+      "venue_id": "mgm-grand-garden-arena",
+      "type": "Special event",
+      "official_url": "https://www.acmcountry.com/",
+      "dates": [
+        "2027-05-16"
+      ],
+      "sources": [
+        "https://www.acmcountry.com/"
       ]
     }
   ],
