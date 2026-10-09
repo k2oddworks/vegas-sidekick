@@ -897,18 +897,32 @@ Use **Good fit** as the core buyer decision aid inside **Quick Take**. On deskto
 
 ## Ticket Savings / Deal Treatment
 
-When the Show Database contains both a verified Vegas Sidekick price and a verified regular/list price, calculate savings rather than writing a discount manually.
+Use `data/show-database.json` as the source of truth for ticket starting prices and defensible regular-price comparisons. The general show-page UX benchmark remains Nathan Burton; **All Shook Up** (`shows/music/all-shook-up/index.html`) is the approved visual reference **only for verified large savings**.
 
-- Minimum customer-facing deal threshold: **$5**.
-- `savings_amount = regular_price - our_price`.
-- `savings_percent = round(savings_amount / regular_price * 100)`.
-- Lead with **Save $X**; percentage savings is secondary.
-- Show the regular price struck through only when the comparison is current and defensible.
-- If no valid regular price exists, do not imply a discount.
-- Never use fake scarcity, countdowns, or “limited time” language unless independently verified.
-- Warm Amber (`#FFB000`) is the sitewide visual language for primary ticket actions and deal/value emphasis. Pink remains brand/accent.
-- Reuse `assets/show-savings.css` and the existing savings system instead of creating page-specific deal styling.
-- Run `python3 scripts/audit-savings-system.py` when show pricing or savings surfaces change.
+1. **Check the source before claiming savings.** Verify the advertised `our_price` and optional `regular_price` against the current Spotlight product listing (or clearly identified equivalent listing). Record `price_source_last_checked_on` only when checked; no guessed prices, reference values or verification dates. This is a **starting-ticket comparison**, not a discount guaranteed for each date or seat.
+2. **Calculate rather than invent:** `savings_amount = regular_price - our_price`, `savings_percent = round(savings_amount / regular_price * 100)`, and `is_deal` only when the difference is at least **$5**. Null/unsupported regular comparisons mean **no savings claim**.
+3. **Choose the right treatment:**
+   - **$5–$19:** compact amber savings badge; no oversized green hero or final savings banner.
+   - **$20+:** when recently source-verified, use the established lime-green savings treatment on the show-page hero, a compact savings reminder in the existing mobile sticky bar, and a large final savings banner directly above the Warm Amber Get Tickets button. Use the shared `assets/show-savings.css` and the existing `vs-savings-pilot` / `vs-final-savings-section` treatment; do not invent show-specific styles.
+   - **Under $5 / no valid comparison:** normal starting-price presentation. Do not display a crossed-out regular price or imply an offer.
+4. **Preserve purchase behavior.** Primary Get Tickets buttons stay **Warm Amber `#FFB000`** and keep the show's existing verified affiliate URL. Savings should never look like a second competing purchase action. Dollar savings lead; percent is secondary; no countdowns, fake urgency, or unsupported exclusivity.
+5. **Synchronize the entire site.** The category card script (`assets/catalog-savings.js`) computes badges and eligible large-green cards from active Show Database records; **never add a manual green-show slug allowlist**. It suppresses large catalog-card discounts when `price_source_last_checked_on` is missing or over 30 days old. This browser logic does **not** automatically edit show-page markup, static Deals-page HTML, embedded catalog-price literals, FAQs, JSON-LD, homepage, guides, or venue pages.
+6. **Respect the freshness boundary.** Large show-page savings banners do **not** disappear automatically at 30 days: `scripts/audit-savings-freshness.py` warns after 14 days and fails after 30 days. Reverify or remove expired comparisons, and do not mistake the price-check date for the visible `Show info confirmed Month YYYY` label.
+
+**Required checks for show-price or savings updates:**
+
+```bash
+python3 scripts/audit-savings-system.py
+python3 scripts/audit-final-savings-banners.py
+python3 scripts/audit-price-reconciliation.py
+python3 scripts/audit-savings-freshness.py
+python3 scripts/audit-category-catalog-prices.py
+node --check assets/catalog-savings.js
+python3 scripts/audit-event-schema.py
+python3 scripts/audit-ticket-cta-color.py
+```
+
+Use any additional active-show benchmark/hero/mobile checks appropriate to the page. Full implementation history and source-verification decisions: `docs/staged-savings-rollout.md`.
 
 ---
 
