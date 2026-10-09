@@ -94,3 +94,28 @@ Source pages:
 - https://spotlight.vegas/shows/comedy/marc-savard-comedy-hypnosis/
 - https://spotlight.vegas/shows/magic/piff-the-magic-dragon/
 - https://spotlight.vegas/shows/comedy/la-comedy-club/
+
+## Price changes reconciled — October 9, 2026 (no additional savings banners)
+
+Spotlight.Vegas product prices were rechecked directly on October 9, 2026. Values are advertised starting prices and optional crossed-out regular-price comparisons; seat/date-specific checkout totals may vary.
+
+| Show | Starting price | Regular comparison | Qualifying savings |
+| --- | ---: | ---: | ---: |
+| Magic Mike Live | $69 | $87 | $18 (21%) |
+| Thunder From Down Under | $70 | $71 | none advertised — $1 is below the $5 deal threshold |
+| Blue Man Group | $65 | $74 | $9 (12%) |
+| “O” by Cirque du Soleil | $121 | none shown | none advertised |
+| RuPaul's Drag Race LIVE! | $55 | $82 | $27 (33%) |
+
+Sources:
+- https://spotlight.vegas/shows/adult/magic-mike-live/
+- https://spotlight.vegas/shows/adult/thunder-from-down-under/
+- https://spotlight.vegas/shows/production/blue-man-group/
+- https://spotlight.vegas/shows/cirque-du-soleil/o/
+- https://spotlight.vegas/shows/production/rupauls-drag-race-live/
+
+Updated source-of-truth Show Database (including nested Spotlight snapshots, savings calculations and verification dates); each show page's hero/FAQ/structured Event offer/final ticket section/sticky mobile price; active catalogues, homepage, venue and guide price references; and the Deals page. Deals page now has **47** qualified cards (Thunder and “O” are not deals).
+
+The 2026-09-27 Sidekick Index price snapshot and older archived reports remain unchanged as historical records. The purchase URLs, venue, show schedule and ticket CTA styling remain unchanged. Do not roll out additional lime-green savings banners as part of this price-only reconciliation.
+
+The guarded price reconciliation audit now covers all five newly changed shows, along with the original discrepancy cases; the savings listing is regenerated from the data.

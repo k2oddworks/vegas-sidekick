@@ -42,23 +42,31 @@ if not count_label or int(count_label[1]) != len(cards):
 
 cases = {
     "atomic-saloon": (100, None, None),
-    "blue-man-group": (68, 90, 22),
+    "blue-man-group": (65, 74, 9),
     "tournament-of-kings": (78, 88, 10),
     "purple-reign": (51, 95, 44),
     "wayne-newton": (84, 121, 37),
+    "magic-mike-live": (69, 87, 18),
+    "thunder-from-down-under": (70, 71, None),
+    "o": (121, None, None),
+    "rupauls-drag-race-live": (55, 82, 27),
 }
 for slug, (price, regular, save) in cases.items():
     record = next(r for r in db["records"] if r["slug"] == slug)
     html = (ROOT / record["page_path"].lstrip("/") / "index.html").read_text(encoding="utf-8")
     if record["our_price"] != price or record["regular_price"] != regular:
         issues.append(f"{slug}: database price mismatch")
+    if record["spotlight"]["our_price"] != price or record["spotlight"]["regular_price"] != regular:
+        issues.append(f"{slug}: nested Spotlight source snapshot mismatch")
+    if record.get("is_deal") != (save is not None) or record.get("savings_amount") != save:
+        issues.append(f"{slug}: recorded deal threshold/savings mismatch")
     if f'<small>Tickets from</small>${price}' not in html:
         issues.append(f"{slug}: hero starting price mismatch")
     sticky_old = f'<small>FROM</small>${price}'
     sticky_green = f'<small>FROM</small><span class="vs-mobile-price-amount">${price}</span>'
     if sticky_old not in html and sticky_green not in html:
         issues.append(f"{slug}: mobile sticky price mismatch")
-    if f"Starting at ${price}." not in html:
+    if f"Starting at ${price}" not in html:
         issues.append(f"{slug}: final purchase starting price mismatch")
     if save is None:
         if 'vs-deal-line' in html or record.get("is_deal"):
@@ -88,4 +96,4 @@ if issues:
     for issue in issues:
         print(" - " + issue)
     sys.exit(1)
-print(f"Price reconciliation audit passed: {len(cards)} verified deals; all six discrepancies guarded.")
+print(f"Price reconciliation audit passed: {len(cards)} verified deals; all monitored price discrepancies guarded.")
