@@ -54,15 +54,21 @@ for slug, (price, regular, save) in cases.items():
         issues.append(f"{slug}: database price mismatch")
     if f'<small>Tickets from</small>${price}' not in html:
         issues.append(f"{slug}: hero starting price mismatch")
-    if f'<small>FROM</small>${price}' not in html:
+    sticky_old = f'<small>FROM</small>${price}'
+    sticky_green = f'<small>FROM</small><span class="vs-mobile-price-amount">${price}</span>'
+    if sticky_old not in html and sticky_green not in html:
         issues.append(f"{slug}: mobile sticky price mismatch")
     if f"Starting at ${price}." not in html:
         issues.append(f"{slug}: final purchase starting price mismatch")
     if save is None:
         if 'vs-deal-line' in html or record.get("is_deal"):
             issues.append(f"{slug}: unsupported deal presentation")
-    elif f'Regular ${regular}</span><span class="vs-save-badge">Save ${save}</span>' not in html:
-        issues.append(f"{slug}: hero savings calculation mismatch")
+    else:
+        badge_old = f'Regular ${regular}</span><span class="vs-save-badge">Save ${save}</span>'
+        badge_green = (f'<span class="vs-save-badge">Save ${save} on starting tickets</span>'
+                       f'<span class="vs-regular-price">Regular ${regular}</span>')
+        if badge_old not in html and badge_green not in html:
+            issues.append(f"{slug}: hero savings calculation mismatch")
 
 live = next(r for r in db["records"] if r["slug"] == "las-vegas-live-comedy-club")
 html = (ROOT / live["page_path"].lstrip("/") / "index.html").read_text(encoding="utf-8")
