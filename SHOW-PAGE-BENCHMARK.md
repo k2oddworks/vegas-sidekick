@@ -107,6 +107,16 @@ Do not use:
 
 Primary ticket CTAs use **Warm Amber `#FFB000`**.
 
+### Verified starting-price savings (approved October 2026)
+
+This is a **conditional price presentation**, not a new default show-page section. Nathan Burton remains the overall UX benchmark. For qualifying large savings, use `shows/music/all-shook-up/index.html` as the **savings-specific** visual reference and reuse `assets/show-savings.css`.
+
+- Advertise a savings comparison only with a source-verified starting `our_price` and `regular_price` from `data/show-database.json`. The minimum deal difference is **$5**; a missing, unsupported or smaller comparison gets the ordinary ticket-price treatment.
+- **$5–$19:** retain a compact amber savings badge. **$20 or more:** a current verified comparison qualifies for the approved lime-green hero savings treatment, a compact reminder in the existing mobile sticky ticket bar, and the large green savings banner directly **before** the final **amber** Get Tickets CTA. Do not turn the purchase button green or add a second competing CTA.
+- Copy must say or clearly imply the comparison applies to **starting tickets**, not all dates/seats. Lead with `Save $X`; keep percent secondary, and never manufacture urgency, scarcity or reference prices.
+- The category browser script `assets/catalog-savings.js` derives green card eligibility from active Show Database records and hides **large catalog-card claims** after 30 days without an explicit price-source check. It does **not** automatically remove aging static show-page banners or Deals entries. The savings-freshness audit warns after 14 days and fails after 30; then reverify the source or correct/remove those claims.
+- Keep price check dates and the visible author-card **Show info confirmed Month YYYY** line separate. Use the savings, price-reconciliation, freshness and category-price audits from `AGENTS.md`; detailed rollout history is in `docs/staged-savings-rollout.md`.
+
 ---
 
 ## 5. Freshness language
