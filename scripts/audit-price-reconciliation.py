@@ -50,6 +50,9 @@ cases = {
     "thunder-from-down-under": (70, 71, None),
     "o": (121, None, None),
     "rupauls-drag-race-live": (55, 82, 27),
+    "v-the-ultimate-variety-show": (41, 101, 60),
+    "tape-face": (57, 71, 14),
+    "ka": (80, None, None),
 }
 for slug, (price, regular, save) in cases.items():
     record = next(r for r in db["records"] if r["slug"] == slug)
@@ -66,7 +69,7 @@ for slug, (price, regular, save) in cases.items():
     sticky_green = f'<small>FROM</small><span class="vs-mobile-price-amount">${price}</span>'
     if sticky_old not in html and sticky_green not in html:
         issues.append(f"{slug}: mobile sticky price mismatch")
-    if f"Starting at ${price}" not in html:
+    if f"Starting at ${price}" not in html and f"Tickets start at ${price}" not in html:
         issues.append(f"{slug}: final purchase starting price mismatch")
     if save is None:
         if 'vs-deal-line' in html or record.get("is_deal"):

@@ -6,13 +6,15 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 db = json.loads((ROOT / "data/show-database.json").read_text())
-stage_one = {"piano-man", "all-motown", "america-the-show",
-             "zombie-burlesque", "v-the-ultimate-variety-show",
-             "the-mentalist", "paranormal", "tape-face"}
-stage_two = {"king-of-diamonds", "wastin-away", "penn-and-teller", "ka",
-             "vegas-the-show", "mj-live", "motown-brunch", "shin-lim"}
-stage_three = {"purple-reign", "wayne-newton", "rouge", "marc-savard-comedy-hypnosis", "piff-the-magic-dragon", "la-comedy-club"}
-stage_four = {"rupauls-drag-race-live"}
+# Require the shared large-banner treatment only while the current database
+# comparison qualifies (not a frozen rollout list).
+large_banner_min_savings = 20
+required = {
+    r["slug"] for r in db["records"]
+    if r.get("status") == "active"
+    and isinstance(r.get("savings_amount"), (int, float))
+    and r["savings_amount"] >= large_banner_min_savings
+}
 issues = []
 checked = []
 for record in db["records"]:
@@ -26,7 +28,7 @@ for record in db["records"]:
         continue
     slug = record["slug"]
     a, b = record.get("our_price"), record.get("regular_price")
-    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)) or b <= a or b - a < 20:
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)) or b <= a or b - a < large_banner_min_savings:
         issues.append(f"{slug}: insufficient or absent price comparison")
         continue
     save = round(b - a)
@@ -54,9 +56,9 @@ for record in db["records"]:
         issues.append(f"{slug}: missing hero savings style class")
     checked.append(slug)
 
-for slug in stage_one | stage_two | stage_three | stage_four | {"all-shook-up"}:
+for slug in required:
     if slug not in checked:
-        issues.append(f"{slug}: required final savings treatment missing")
+        issues.append(f"{slug}: qualifying $20+ show missing final savings treatment")
 
 if issues:
     print("Final savings audit FAILED")

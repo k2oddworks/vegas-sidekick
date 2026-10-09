@@ -130,3 +130,29 @@ Added RuPaul's Drag Race LIVE! as the next qualifying show, using the approved A
 - No other newly eligible show clears the established $20 minimum with a currently verified comparison. Magic Mike Live ($18) and Colin Cloud ($18) stay on the existing compact treatment; do not lower the established threshold without approval.
 
 This is a one-page stage. Do not treat September-only price comparisons as recently verified simply because their original banner was deployed. Existing banners should be reviewed against fresh source pricing during ongoing audits.
+
+## Full savings verification review — October 9, 2026
+
+Reviewed all 24 existing large-banner starting-price comparisons against available Spotlight product listings and category listings. These are source-page advertised comparisons, not a claim of real-time availability for every date, section, or final checkout total. Some search snapshots are cached and should be periodically refreshed. Wastin' Away's direct product page was inaccessible; its current Spotlight Music Shows category listing explicitly confirms $40/$100, so it was retained.
+
+Three material adjustments:
+- **V – The Ultimate Variety Show:** now $41 against $101 regular; Save $60 (59%) instead of $55 (54%). Updated its show page, structured offers, Deals listing, family/spectacular catalogues, All Shows, family/cheap guides and Planet Hollywood venue page.
+- **Tape Face:** now $57 against $71 regular; Save $14 (20%) instead of $41 (42%). Kept a small amber savings label, removed the large green hero/final section and sticky savings reminder. Removed from green-card allowlist but retained in Deals as a verified small discount.
+- **KÀ:** $80 advertised with *no regular price*. Removed unsupported $38 (32%) claim from hero, final panel, sticky bar, the database, and Deals. KÀ remains bookable.
+
+Other existing large-banner comparisons matched the accessible Spotlight product/category content reviewed. 22 active show pages now qualify for large banners. The Deals page contains 46 eligible cards. Affiliate ticket destinations remain unchanged.
+
+Source examples:
+- https://spotlight.vegas/shows/production/v-the-ultimate-variety-show/
+- https://spotlight.vegas/shows/comedy/tape-face/
+- https://spotlight.vegas/shows/cirque-du-soleil/ka/
+- https://spotlight.vegas/shows/music/
+- https://spotlight.vegas/shows
+
+Future drift prevention:
+- `scripts/audit-final-savings-banners.py` now requires banners dynamically for active $20+ savings, rather than a stale hardcoded rollout list.
+- `scripts/audit-price-reconciliation.py` guards corrected V, Tape Face, and KÀ comparisons in addition to previous discrepancy cases.
+- `scripts/audit-savings-freshness.py` requires check dates for $20+ claims, warns after 14 days, and fails after 30 days without a fresh verification. The weekly savings audit workflow executes it.
+- Front-end catalog savings script cache versions were bumped to remove former green pilot styling for KÀ and Tape Face.
+
+The historical September price-index snapshot remains untouched. Desktop/mobile structural and markup QA should be supplemented by a production visual pass; a successful Cloudflare deploy is not independently verified page rendering.

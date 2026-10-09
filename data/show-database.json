@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-11",
+  "updated_on": "2026-10-09",
   "source": "Vegas Sidekick Show Database",
   "records": [
     {
@@ -96,7 +96,7 @@
       "ticket_url": "https://spotlight.vegas/shows/tribute/all-motown/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/all-motown/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-10-09",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
       "notes": "",
@@ -140,7 +140,8 @@
       },
       "savings_amount": 60,
       "savings_percent": 60,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "all-shook-up",
@@ -157,7 +158,7 @@
       "ticket_url": "https://spotlight.vegas/shows/tribute/all-shook-up/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/all-shook-up/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-10-09",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
       "notes": "",
@@ -209,7 +210,8 @@
       },
       "savings_amount": 68,
       "savings_percent": 59,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "allstars-of-magic",
@@ -279,7 +281,7 @@
       "ticket_url": "https://spotlight.vegas/shows/tribute/america-the-show/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/spectaculars/america-the-show/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-10-09",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
       "notes": "",
@@ -311,7 +313,8 @@
       },
       "savings_amount": 60,
       "savings_percent": 60,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "an-r-rated-magic-show",
@@ -1384,7 +1387,7 @@
       "ticket_url": "https://spotlight.vegas/shows/tribute/neil-diamond/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/king-of-diamonds/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-10-09",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
       "notes": "",
@@ -1424,7 +1427,8 @@
       },
       "savings_amount": 60,
       "savings_percent": 60,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "ka",
@@ -1432,7 +1436,7 @@
       "category": "cirque",
       "status": "active",
       "our_price": 80,
-      "regular_price": 118,
+      "regular_price": null,
       "runtime_minutes": 90,
       "age_summary": "3+",
       "venue": "KÀ Theatre – MGM Grand",
@@ -1441,14 +1445,14 @@
       "ticket_url": "https://spotlight.vegas/shows/cirque-du-soleil/ka/ref/vegassidekick",
       "official_trailer": "https://youtu.be/mFbh6dhPqz4",
       "page_path": "/shows/cirque/ka/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-10-09",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
-      "notes": "",
+      "notes": "Spotlight product page and current Cirque category list $80 without verified regular comparison; remove savings claim.",
       "spotlight": {
         "name": "KÀ by Cirque du Soleil",
         "our_price": 80,
-        "regular_price": 118,
+        "regular_price": null,
         "location": "KÀ Theatre – MGM Grand",
         "runtime_minutes": 90,
         "age_rule": "Everyone must be 3 years of age or older to attend the event. Guests under the age of 18 must be accompanied by an adult.",
@@ -1488,9 +1492,10 @@
         "affiliate_url": "https://spotlight.vegas/shows/cirque-du-soleil/ka/ref/vegassidekick",
         "age_label": "3+"
       },
-      "savings_amount": 38,
-      "savings_percent": 32,
-      "is_deal": true
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "la-comedy-club",
@@ -1534,7 +1539,8 @@
       },
       "savings_amount": 24,
       "savings_percent": 41,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "las-vegas-live-comedy-club",
@@ -1820,7 +1826,8 @@
       },
       "savings_amount": 27,
       "savings_percent": 49,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "marriage-can-be-murder",
@@ -2052,7 +2059,7 @@
       "ticket_url": "https://spotlight.vegas/shows/tribute/mj-live-at-planet-hollywood/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/mj-live/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-10-09",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
       "notes": "",
@@ -2104,7 +2111,8 @@
       },
       "savings_amount": 36,
       "savings_percent": 40,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "motown-brunch",
@@ -2121,7 +2129,7 @@
       "ticket_url": "https://spotlight.vegas/shows/music/motown-brunch/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/motown-brunch/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-10-09",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
       "notes": "",
@@ -2149,7 +2157,8 @@
       },
       "savings_amount": 35,
       "savings_percent": 35,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "mystere",
@@ -2411,7 +2420,7 @@
       "ticket_url": "https://spotlight.vegas/shows/magic/paranormal/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/magic/paranormal/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-10-09",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
       "notes": "",
@@ -2451,7 +2460,8 @@
       },
       "savings_amount": 48,
       "savings_percent": 61,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "penn-and-teller",
@@ -2468,7 +2478,7 @@
       "ticket_url": "https://spotlight.vegas/shows/magic/penn-and-teller/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/magic/penn-and-teller/",
-      "verified_on": "2026-09-12",
+      "verified_on": "2026-10-09",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
       "notes": "Schedule times intentionally treated as variable after Rio and Spotlight showed conflicting current start times on 2026-09-12. Keep Thu–Sun days; do not restore a fixed hour without re-verifying both sources.",
@@ -2497,7 +2507,8 @@
       },
       "savings_amount": 41,
       "savings_percent": 38,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "piano-man",
@@ -2514,7 +2525,7 @@
       "ticket_url": "https://spotlight.vegas/shows/tribute/piano-man/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/piano-man/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-10-09",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
       "notes": "",
@@ -2566,7 +2577,8 @@
       },
       "savings_amount": 66,
       "savings_percent": 57,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "piff-the-magic-dragon",
@@ -2631,7 +2643,8 @@
       },
       "savings_amount": 25,
       "savings_percent": 36,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "popovich-comedy-pet-theater",
@@ -2745,7 +2758,8 @@
       },
       "savings_amount": 44,
       "savings_percent": 46,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "queen-selena",
@@ -2865,7 +2879,8 @@
       },
       "savings_amount": 32,
       "savings_percent": 37,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "rupauls-drag-race-live",
@@ -2927,7 +2942,8 @@
       },
       "savings_amount": 27,
       "savings_percent": 33,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "shin-lim",
@@ -2944,7 +2960,7 @@
       "ticket_url": "https://spotlight.vegas/shows/magic/shin-lim/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/magic/shin-lim/",
-      "verified_on": "2026-09-12",
+      "verified_on": "2026-10-09",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
       "notes": "Official Venetian guidance: audiences 4+ (verified 2026-09-12).",
@@ -2989,7 +3005,8 @@
       },
       "savings_amount": 35,
       "savings_percent": 34,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "sinatra-live",
@@ -3180,7 +3197,7 @@
       "category": "comedy",
       "status": "active",
       "our_price": 57,
-      "regular_price": 98,
+      "regular_price": 71,
       "runtime_minutes": 75,
       "age_summary": "All ages",
       "venue": "The Underground Theater - MGM Grand",
@@ -3189,14 +3206,14 @@
       "ticket_url": "https://spotlight.vegas/shows/comedy/tape-face/ref/vegassidekick",
       "official_trailer": "https://youtu.be/TqGNzwWV03M",
       "page_path": "/shows/comedy/tape-face/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-10-09",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
-      "notes": "",
+      "notes": "Spotlight product and current category show $57 compared with $71; reserve large green banner for $20+ only.",
       "spotlight": {
         "name": "Tape Face Las Vegas",
         "our_price": 57,
-        "regular_price": 98,
+        "regular_price": 71,
         "location": "The Underground Theater - MGM Grand",
         "runtime_minutes": 75,
         "age_rule": "All Ages. 3 and older must purchase a ticket, 2 and under can be admitted as a lap seat.",
@@ -3235,9 +3252,10 @@
         "affiliate_url": "https://spotlight.vegas/shows/comedy/tape-face/ref/vegassidekick",
         "age_label": "All ages"
       },
-      "savings_amount": 41,
-      "savings_percent": 42,
-      "is_deal": true
+      "savings_amount": 14,
+      "savings_percent": 20,
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "australian-bee-gees",
@@ -3493,7 +3511,7 @@
       "ticket_url": "https://spotlight.vegas/shows/magic/the-mentalist/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/magic/the-mentalist/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-10-09",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
       "notes": "",
@@ -3541,7 +3559,8 @@
       },
       "savings_amount": 50,
       "savings_percent": 56,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "rat-pack-is-back",
@@ -3787,7 +3806,7 @@
       "name": "V – The Ultimate Variety Show",
       "category": "family",
       "status": "active",
-      "our_price": 46,
+      "our_price": 41,
       "regular_price": 101,
       "runtime_minutes": 75,
       "age_summary": "All ages",
@@ -3797,13 +3816,13 @@
       "ticket_url": "https://spotlight.vegas/shows/production/v-the-ultimate-variety-show/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/family/v-the-ultimate-variety-show/",
-      "verified_on": "2026-09-10",
+      "verified_on": "2026-10-09",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
-      "notes": "",
+      "notes": "Spotlight product and current category show $41 against $101, save $60 (59%).",
       "spotlight": {
         "name": "V - The Ultimate Variety Show",
-        "our_price": 46,
+        "our_price": 41,
         "regular_price": 101,
         "location": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
         "runtime_minutes": 75,
@@ -3848,9 +3867,10 @@
         "affiliate_url": "https://spotlight.vegas/shows/production/v-the-ultimate-variety-show/ref/vegassidekick",
         "age_label": "All ages"
       },
-      "savings_amount": 55,
-      "savings_percent": 54,
-      "is_deal": true
+      "savings_amount": 60,
+      "savings_percent": 59,
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "vegas-the-show",
@@ -3867,7 +3887,7 @@
       "ticket_url": "https://spotlight.vegas/shows/production/vegas-the-show/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/vegas-the-show/",
-      "verified_on": "2026-10-02",
+      "verified_on": "2026-10-09",
       "freshness_label": "October 2026",
       "verification": "verified_spotlight",
       "notes": "",
@@ -3915,7 +3935,8 @@
       },
       "savings_amount": 38,
       "savings_percent": 38,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "wastin-away",
@@ -3932,7 +3953,7 @@
       "ticket_url": "https://spotlight.vegas/shows/music/wastin-away/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/wastin-away/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-10-09",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
       "notes": "",
@@ -3968,7 +3989,8 @@
       },
       "savings_amount": 60,
       "savings_percent": 60,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "wayne-newton",
@@ -4021,7 +4043,8 @@
       },
       "savings_amount": 37,
       "savings_percent": 31,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "wow-the-vegas-spectacular",
@@ -4266,7 +4289,7 @@
       "ticket_url": "https://spotlight.vegas/shows/adult/zombie-burlesque/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/adult/zombie-burlesque/",
-      "verified_on": "2026-09-10",
+      "verified_on": "2026-10-09",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
       "notes": "",
@@ -4314,7 +4337,8 @@
       },
       "savings_amount": 59,
       "savings_percent": 54,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "david-goldrake",

@@ -15,6 +15,7 @@ on:
       - 'scripts/audit-savings-system.py'
       - 'scripts/audit-final-savings-banners.py'
       - 'scripts/audit-price-reconciliation.py'
+      - 'scripts/audit-savings-freshness.py'
 
 permissions:
   contents: read
@@ -28,5 +29,7 @@ jobs:
         run: python3 scripts/audit-final-savings-banners.py
       - name: Audit verified deal listings and price reconciliation
         run: python3 scripts/audit-price-reconciliation.py
+      - name: Audit savings verification freshness
+        run: python3 scripts/audit-savings-freshness.py
       - name: Audit show savings calculations and customer-facing surfaces
         run: python3 scripts/audit-savings-system.py
