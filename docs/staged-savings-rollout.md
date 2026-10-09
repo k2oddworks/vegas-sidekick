@@ -156,3 +156,15 @@ Future drift prevention:
 - Front-end catalog savings script cache versions were bumped to remove former green pilot styling for KÀ and Tape Face.
 
 The historical September price-index snapshot remains untouched. Desktop/mobile structural and markup QA should be supplemented by a production visual pass; a successful Cloudflare deploy is not independently verified page rendering.
+
+## Stage 5 — catalog self-healing and price parity, October 9, 2026
+
+Removed the handwritten show-slug allowlist from `assets/catalog-savings.js`. Category cards now calculate their savings and lime-green eligibility from the active Show Database. The previously approved $20 large-savings threshold has not changed. Green category badges require an explicit `price_source_last_checked_on` date no more than 30 days old; expired large comparisons are hidden in category cards pending reverification. Eligible $5–$19 savings retain compact amber styling.
+
+After the Show Database loads, category cards update the displayed starting price, regular-price comparison and savings badge. Removed or reduced discounts remove or update prior badges, including after native grid rerenders. DOM changes are idempotent to avoid endless MutationObserver cycles.
+
+Corrected the Adult Shows category's Atomic Saloon card from $90 to the already-verified $100 starting price. Its regular comparison remains unknown; no savings claim was added.
+
+New guard: `scripts/audit-category-catalog-prices.py` checks embedded card prices across all seven category catalogues against `data/show-database.json`. It runs in the existing savings workflow, alongside a JavaScript syntax check. All seven catalogues use a fresh cache version for both catalog-savings assets.
+
+No new price comparison was assumed, no active affiliate destination was changed, and the established totals remain 22 large banners and 46 Deals listings. A Cloudflare deployment and responsive visual pass must be independently verified.
