@@ -119,3 +119,14 @@ Updated source-of-truth Show Database (including nested Spotlight snapshots, sav
 The 2026-09-27 Sidekick Index price snapshot and older archived reports remain unchanged as historical records. The purchase URLs, venue, show schedule and ticket CTA styling remain unchanged. Do not roll out additional lime-green savings banners as part of this price-only reconciliation.
 
 The guarded price reconciliation audit now covers all five newly changed shows, along with the original discrepancy cases; the savings listing is regenerated from the data.
+
+## Stage 4 — October 9, 2026
+
+Added RuPaul's Drag Race LIVE! as the next qualifying show, using the approved All Shook Up lime-green hero treatment, large in-flow savings banner above the final Warm Amber ticket CTA, and compact savings reminder inside the mobile sticky ticket bar.
+
+- **Current advertised starting-price comparison:** $55 versus $82 regular; **save $27 (33%)**, rechecked against https://spotlight.vegas/shows/production/rupauls-drag-race-live/ on October 9, 2026.
+- Promoted green savings pills on its Music and Spectaculars category cards, All Shows listing, and Deals page.
+- Updated the permanent final-banner audit to include RuPaul. Original ticket URLs and schedule are unchanged.
+- No other newly eligible show clears the established $20 minimum with a currently verified comparison. Magic Mike Live ($18) and Colin Cloud ($18) stay on the existing compact treatment; do not lower the established threshold without approval.
+
+This is a one-page stage. Do not treat September-only price comparisons as recently verified simply because their original banner was deployed. Existing banners should be reviewed against fresh source pricing during ongoing audits.

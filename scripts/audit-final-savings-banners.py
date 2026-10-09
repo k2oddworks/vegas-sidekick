@@ -12,6 +12,7 @@ stage_one = {"piano-man", "all-motown", "america-the-show",
 stage_two = {"king-of-diamonds", "wastin-away", "penn-and-teller", "ka",
              "vegas-the-show", "mj-live", "motown-brunch", "shin-lim"}
 stage_three = {"purple-reign", "wayne-newton", "rouge", "marc-savard-comedy-hypnosis", "piff-the-magic-dragon", "la-comedy-club"}
+stage_four = {"rupauls-drag-race-live"}
 issues = []
 checked = []
 for record in db["records"]:
@@ -53,7 +54,7 @@ for record in db["records"]:
         issues.append(f"{slug}: missing hero savings style class")
     checked.append(slug)
 
-for slug in stage_one | stage_two | stage_three | {"all-shook-up"}:
+for slug in stage_one | stage_two | stage_three | stage_four | {"all-shook-up"}:
     if slug not in checked:
         issues.append(f"{slug}: required final savings treatment missing")
 
