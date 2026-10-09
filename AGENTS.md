@@ -174,6 +174,18 @@ Odd-aspect images must not break the desktop gallery. Preserve descriptive alt t
 - For verified official trailers, use the shared `assets/show-video.css` + `assets/show-video.js` component with `.vs-video[data-youtube-id]`; load the YouTube iframe only after an explicit play click.
 - Use real approved show/event photography. Do not generate fake event imagery for real shows.
 
+## Savings and price comparisons
+
+- **Source of truth:** `data/show-database.json` holds starting `our_price`, optional `regular_price`, derived `savings_amount` / `savings_percent` / `is_deal`, and the evidence date `price_source_last_checked_on`. Verify the Spotlight comparison before adding or extending a savings claim; never invent a regular price or claim an entire date/seat selection receives the starting-price discount.
+- **Deal threshold:** show a comparison only when the valid regular starting price exceeds our starting price by at least **$5**. Savings from **$5–$19** use the compact amber treatment.
+- **Large treatment:** currently verified savings of **$20 or more** qualify for the approved lime-green show-page hero treatment, compact mobile reminder and final savings panel before the unchanged **Warm Amber `#FFB000`** ticket CTA. Use `shows/music/all-shook-up/index.html` as the savings-specific visual reference and shared `assets/show-savings.css`. Nathan Burton remains the overall show-page benchmark.
+- **Stage 5 catalog system:** `assets/catalog-savings.js` calculates savings and large green-card eligibility directly from active Show Database records. Do **not** restore a handwritten green-show slug allowlist. The catalog script updates price/badges on rerender, removes invalid comparisons and suppresses **large catalog-card savings** when `price_source_last_checked_on` is absent or older than **30 days**.
+- **Critical distinction:** show-page savings banners and the static Deals page do **not** automatically disappear at day 30. `scripts/audit-savings-freshness.py` warns after 14 days and fails after 30 days for large claims; update or remove stale show-page / Deals claims as part of the source-verification workflow. A source-check date is separate from the visible **Show info confirmed Month YYYY** author-card line. Never change verification dates without actually checking the source.
+- **Price propagation:** category page literal arrays, show pages, structured data, guides, homepage, venue pages and `/shows/deals/` may contain denormalized prices. The catalog browser script is **not** a substitute for editing those static sources after an actual price change.
+- **Checks for pricing/savings work:** run `python3 scripts/audit-savings-system.py`, `python3 scripts/audit-final-savings-banners.py`, `python3 scripts/audit-price-reconciliation.py`, `python3 scripts/audit-savings-freshness.py`, `python3 scripts/audit-category-catalog-prices.py`, `node --check assets/catalog-savings.js`, plus relevant show/schema/CTA checks. The recurring workflow is `.github/workflows/savings-audit.yml`.
+
+Detailed rollout history and exceptions: `docs/staged-savings-rollout.md`.
+
 ## Structured data
 
 For active shows:
