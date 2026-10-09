@@ -1,7 +1,7 @@
 # SIDEKICK-INDEX.md — Vegas Sidekick Reference System
 
 **Status:** Current production system  
-**Last updated:** October 8, 2026  
+**Last updated:** October 9, 2026  
 **Canonical scope:** `/sidekick-index/`
 
 This file is the source of truth for the **Sidekick Index** project: its purpose, page taxonomy, data boundaries, shared UX, source files, mobile behavior, and maintenance rules.
@@ -139,9 +139,9 @@ The venue list is expected to grow. Do not hard-code marketing copy that becomes
 
 ### Headliners & Residencies
 
-As verified October 8, 2026:
+As verified October 9, 2026:
 
-- 173 act / engagement records
+- 177 act / engagement records
 - 22 underlying venue records
 - 9 resort/venue groups used to simplify customer-facing venue filtering where appropriate
 
