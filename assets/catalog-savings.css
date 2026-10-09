@@ -1,3 +1,3 @@
 .card-save-badge{display:inline-flex;align-items:center;border-radius:999px;background:#fff1b8;color:#4c3200;border:1px solid rgba(255,176,0,.48);font-weight:800;font-size:.67rem;padding:5px 8px;margin-left:7px;white-space:nowrap}.card-regular{font-size:.72rem;color:#8b8295;text-decoration:line-through;margin-left:3px}.vs-savings-controls{display:flex;gap:8px;align-items:center}.vs-deals-btn{background:#ffb000!important;color:#171225!important;border-color:#ffb000!important}.vs-deals-btn:hover{filter:brightness(.96)}
-/* Lime savings pilot: only the two selected shows. */
+/* Green cards are reserved for recently verified $20+ starting-price differences. */
 .show-card.vs-savings-pilot .card-save-badge{background:#c7f37b;color:#245b24;border:1px solid #8bc63c;font-weight:800;padding:6px 9px;box-shadow:0 2px 5px rgba(40,88,18,.08)}
