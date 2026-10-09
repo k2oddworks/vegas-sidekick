@@ -60,3 +60,14 @@ Spotlight source pages checked:
 - https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/
 
 Stage 3 may proceed on other qualifying offers after verifying source availability and price comparisons. Recheck Las Vegas LIVE Comedy Club before reinstating active tickets.
+
+## Stage 3 — first individual page, October 9, 2026
+
+**Purple Reign — The Prince Tribute Show**: Spotlight.Vegas lists starting tickets at $51 against $95 regular as checked October 9, 2026 (savings $44, approximately 46%). Verified source: https://spotlight.vegas/shows/tribute/purple-reign/. The earlier starting-price discrepancies were already reconciled.
+
+- Applied the approved All Shook Up green hero treatment and final savings panel directly before the Warm Amber Get Tickets button.
+- Added a compact Save $44 mobile reminder inside the existing sticky bar; preserved its dimensions and original affiliate URL.
+- Promoted its music category-card savings pill and Deals-page card to the approved green style.
+- Recorded the October 2026 confirmation and added Purple Reign to the permanent final savings-banner audit.
+
+This rollout covers **one page**, not the remaining Stage 3 list. Show price and regular price remain unchanged; no claim about every date or seating tier.

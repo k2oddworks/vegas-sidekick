@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-08",
+  "updated_on": "2026-10-09",
   "source": "Vegas Sidekick Show Database",
   "records": [
     {
@@ -2709,8 +2709,8 @@
       "ticket_url": "https://spotlight.vegas/shows/tribute/purple-reign/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/purple-reign/",
-      "verified_on": "2026-10-08",
-      "freshness_label": "September 2026",
+      "verified_on": "2026-10-09",
+      "freshness_label": "October 2026",
       "verification": "verified_spotlight",
       "notes": "",
       "spotlight": {
