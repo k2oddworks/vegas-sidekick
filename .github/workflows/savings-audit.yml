@@ -16,6 +16,7 @@ on:
       - 'scripts/audit-final-savings-banners.py'
       - 'scripts/audit-price-reconciliation.py'
       - 'scripts/audit-savings-freshness.py'
+      - 'scripts/audit-show-seo-metadata.py'
       - 'scripts/audit-category-catalog-prices.py'
 
 permissions:
@@ -36,5 +37,7 @@ jobs:
         run: node --check assets/catalog-savings.js
       - name: Audit savings verification freshness
         run: python3 scripts/audit-savings-freshness.py
+      - name: Audit price-free SEO titles and verified discount language
+        run: python3 scripts/audit-show-seo-metadata.py
       - name: Audit show savings calculations and customer-facing surfaces
         run: python3 scripts/audit-savings-system.py

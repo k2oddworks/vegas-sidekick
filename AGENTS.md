@@ -188,15 +188,17 @@ Detailed rollout history and exceptions: `docs/staged-savings-rollout.md`.
 
 ## Show ticket SEO metadata (October 2026)
 
-Vegas Sidekick competes for **Las Vegas discounted show tickets**, not only general show discovery. Product-page metadata must sell the right *verified* offer without inventing savings.
+Vegas Sidekick competes for **discounted Las Vegas show tickets**, not only general show discovery. Keep search titles and descriptions **price-free** so ordinary starting-price updates do not leave stale dollar amounts in Google's results.
 
-- Each active show page needs a unique, legible, show-name-first HTML title and show-specific meta description. Preserve the production's recognizable name; keep "Las Vegas" and "| Vegas Sidekick" when length permits.
-- Use **Discount Tickets** in an active show-page title only with a source-verified starting-price comparison in `data/show-database.json`: `savings_amount >= 5`, `regular_price > our_price`, and `price_source_last_checked_on` no older than **30 days**. This is a starting-ticket comparison, never a promise that every performance or seat is discounted.
-- Otherwise prefer **Tickets from $X** using `our_price`. A historical `regular_price` without a recent check is **not** adequate support for a discount title.
-- Meta descriptions should lead with a verifiable price or starting-price savings where relevant, followed by a real, distinct show fact. Do not fall back to generic filler across dozens of shows.
-- Category, all-shows and Deals landing pages may target **ticket discounts** if they offer a mixture of verified deals and regularly priced shows; never imply every listing is discounted. Do not put an annual year (e.g. 2026) in evergreen category titles, social titles or visible category badges. Retain real event/closure years in archive or event dates.
-- On *every* price or savings change, reconcile the HTML title/meta description alongside the show database and existing category, homepage, Deals, guide and schema propagation paths. When a comparison expires, recheck the ticket source or remove the unverified savings language. Do not change the price verification date without checking.
-- Organic search titles are not the same as the customer-facing H1, hero, or social-copy voice. Do not rewrite the buyer journey merely to fit keywords.
+- Active show-page titles must be unique, show-name-first and legible. Include **Las Vegas** and **| Vegas Sidekick** where length allows; preserve recognizable production names.
+- With a **currently verified starting-ticket discount**, use **[Show] Las Vegas Discount Tickets | Vegas Sidekick** (or a shorter name-first version for long titles). The claim requires `savings_amount >= 5`, `regular_price > our_price`, and `price_source_last_checked_on` within **30 days** in `data/show-database.json`.
+- **Without a currently verified discount**, use **[Show] Las Vegas Tickets & Showtimes | Vegas Sidekick** (shorten as needed). Unverified or old regular prices do not justify **Discount Tickets** wording.
+- **Do not put dollar amounts or percentage savings in show-page title tags or meta descriptions.** Instead, write a unique, useful description with verified show-specific details and a clear ticket/showtime intent. **Discounted** wording in a description follows the same fresh-verification rule as the title.
+- Starting ticket prices, numeric savings and current price comparisons **still belong visibly on show pages and in their accurate structured data** where supported. Price-free metadata is not permission to hide or omit customer-facing prices.
+- Homepage, evergreen category and Deals landing pages may target **discount show tickets** while making it clear that not every show is discounted. Keep year numbers out of evergreen category title/social metadata and visible category badges; preserve actual schedule and closure dates elsewhere.
+- On a **price change**, update current visible prices, source-of-truth show database, applicable structured data, category/homepage/Deals/guide price literals and savings claims per normal audit rules. Do not rewrite price-free SEO metadata solely because the amount changed. **Do** update title/description when the show gains, loses, or can no longer verify a discount.
+- When a verification date gets old, recheck the ticket source or remove **discount** language from the affected product metadata. Never invent fresh checks or extend claims without comparing the actual source.
+- Search title/meta choices must not change H1s, show-page layout, verified affiliate links, or buyer journey. Archived/closed pages retain truthful archival titles.
 
 ## Structured data
 
