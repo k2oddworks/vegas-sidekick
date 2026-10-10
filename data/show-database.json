@@ -733,8 +733,8 @@
       "name": "Carrot Top",
       "category": "comedy",
       "status": "active",
-      "our_price": 62,
-      "regular_price": 68,
+      "our_price": 68,
+      "regular_price": null,
       "runtime_minutes": 75,
       "age_summary": "16+",
       "venue": "Atrium Showroom at Luxor",
@@ -749,8 +749,8 @@
       "notes": "",
       "spotlight": {
         "name": "Carrot Top",
-        "our_price": 62,
-        "regular_price": 68,
+        "our_price": 68,
+        "regular_price": null,
         "location": "Atrium Showroom at Luxor",
         "runtime_minutes": 75,
         "age_rule": "Must be 16 years of age or older. Guests 18 years of age and under must be accompanied by an adult 21+.",
@@ -789,9 +789,10 @@
         "affiliate_url": "https://spotlight.vegas/shows/comedy/carrot-top/ref/vegassidekick",
         "age_label": "16+"
       },
-      "savings_amount": 6,
-      "savings_percent": 9,
-      "is_deal": true
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-09"
     },
     {
       "slug": "chippendales",

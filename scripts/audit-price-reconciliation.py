@@ -27,6 +27,10 @@ for card in cards:
     pct = round(discount / r["regular_price"] * 100) if r["regular_price"] else 0
     if discount < db.get("deal_threshold_dollars", 5):
         issues.append(f"non-deal shown in catalog: {path}")
+    # All substantial savings get the same green strip; smaller ones stay compact amber.
+    has_large = 'vs-savings-large' in card.group(0).split('>', 1)[0]
+    if has_large != (discount >= 20):
+        issues.append(f"deals-card treatment incorrect on {path}: save {discount}")
     if amount != discount or f"Save ${discount} · {pct}%" not in body:
         issues.append(f"incorrect savings on {path}")
     if f"<strong>${r['our_price']}</strong>" not in body or f"Regular ${r['regular_price']}" not in body:
@@ -36,11 +40,18 @@ expected = {r["page_path"] for r in db["records"]
             and r["regular_price"] - r["our_price"] >= db.get("deal_threshold_dollars", 5)}
 for path in sorted(expected - found):
     issues.append(f"qualified deal missing from catalog: {path}")
+if "Highest dollar savings" in visible or "vs-savings-featured" in visible:
+    issues.append("outdated one-off Elvis featured deal design remains")
+if ".deal-card.vs-savings-large .deal-save" not in visible:
+    issues.append("shared large green savings-card treatment missing")
+if "/shows/comedy/carrot-top/" in found:
+    issues.append("carrot-top: unsupported discount included in Deals catalog")
 count_label = re.search(r'<div class="deal-count">(\d+) current discounted shows</div>', visible)
 if not count_label or int(count_label[1]) != len(cards):
     issues.append("deals-page count does not match rendered cards")
 
 cases = {
+    "carrot-top": (68, None, None),
     "atomic-saloon": (100, None, None),
     "blue-man-group": (65, 74, 9),
     "tournament-of-kings": (78, 88, 10),
@@ -71,6 +82,8 @@ for slug, (price, regular, save) in cases.items():
         issues.append(f"{slug}: mobile sticky price mismatch")
     if f"Starting at ${price}" not in html and f"Tickets start at ${price}" not in html:
         issues.append(f"{slug}: final purchase starting price mismatch")
+    if slug == "carrot-top" and any(t in html for t in ("vs-save-badge", "vs-mobile-save", "Save $6", "Regular $68")):
+        issues.append("carrot-top: stale discount or regular-price UI")
     if save is None:
         if 'vs-deal-line' in html or record.get("is_deal"):
             issues.append(f"{slug}: unsupported deal presentation")

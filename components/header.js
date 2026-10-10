@@ -152,7 +152,9 @@
 .drawer-dispatch>span:first-child{font-size:1rem}.drawer-dispatch b{display:block;font:800 .88rem 'Plus Jakarta Sans',sans-serif}.drawer-dispatch small{display:block;color:#9fcbd0;font-size:.68rem;margin-top:2px}.drawer-dispatch .cat-arrow{margin-left:auto}
 
 @media(max-width:980px){
-  .vs-announce{display:none}
+  .vs-announce{display:block;font-size:.73rem;line-height:1.35;white-space:normal;padding:8px 10px}
+  #vs-header{padding-top:var(--vs-mobile-announcement-height,34px)}
+  .subnav{top:calc(64px + var(--vs-mobile-announcement-height,34px))!important}
   .nav-desktop,.nav-search-wrap{display:none}
   .vs-nav-row{padding:0 20px;height:64px;gap:8px}
   .nav-mobile-search{display:grid}
@@ -167,6 +169,18 @@
   const target = document.getElementById('vs-header');
   if (!target) return;
   target.innerHTML = styles + html;
+  // The mobile announcement is part of the fixed header. Reserve its exact
+  // rendered height in document flow so hero images and other content are not covered.
+  const syncMobileAnnouncementHeight = function () {
+    const banner = target.querySelector('.vs-announce');
+    const pixels = window.matchMedia('(max-width: 980px)').matches && banner
+      ? Math.ceil(banner.getBoundingClientRect().height)
+      : 0;
+    document.documentElement.style.setProperty('--vs-mobile-announcement-height', pixels + 'px');
+  };
+  syncMobileAnnouncementHeight();
+  window.addEventListener('resize', syncMobileAnnouncementHeight, { passive: true });
+
 
   if (!document.getElementById('vs-fontlink')) {
     const fontLink = document.createElement('link');
