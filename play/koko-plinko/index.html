@@ -4,19 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Koko Plinko — Vegas Sidekick Break Room</title>
-<meta name="description" content="Drop Koko down the board, chase the JACKPOT slot, and rack up a chaotic score. A free arcade Easter egg from Vegas Sidekick.">
+<title>Spike’s Plinko — Vegas Sidekick Break Room</title>
+<meta name="description" content="Drop five glowing gold balls. Chase ridiculous arcade jackpots. No cash value.">
 <link rel="canonical" href="https://vegassidekick.com/play/koko-plinko/">
-<meta property="og:title" content="Koko Plinko — Vegas Sidekick Break Room">
-<meta property="og:description" content="Drop Koko down the board, chase the JACKPOT slot, and rack up a chaotic score. A free arcade Easter egg from Vegas Sidekick.">
-<meta property="og:image" content="https://vegassidekick.com/images/play/koko-plinko-og.jpg">
+<meta property="og:title" content="Spike’s Plinko — Vegas Sidekick Break Room">
+<meta property="og:description" content="Drop five glowing gold balls. Chase ridiculous arcade jackpots. No cash value.">
+<meta property="og:image" content="https://vegassidekick.com/images/play/../brand/spike-podcast-badge.webp">
 <meta property="og:url" content="https://vegassidekick.com/play/koko-plinko/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vegas Sidekick">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Koko Plinko — Vegas Sidekick Break Room">
-<meta name="twitter:description" content="Drop Koko down the board, chase the JACKPOT slot, and rack up a chaotic score.">
-<meta name="twitter:image" content="https://vegassidekick.com/images/play/koko-plinko-og.jpg">
+<meta name="twitter:title" content="Spike’s Plinko — Vegas Sidekick Break Room">
+<meta name="twitter:description" content="Five glowing gold balls. One ridiculous jackpot. No cash value.">
+<meta name="twitter:image" content="https://vegassidekick.com/images/play/../brand/spike-podcast-badge.webp">
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -235,6 +235,33 @@
     position:absolute; bottom:6px; right:10px;
     font-size:14px; opacity:0.5; z-index:5;
   }
+
+:root{--navy:#160d29;--blue:#7c3aed;--orange:#ffb000;--paper:#fff;--dim:#d4c2e2}
+body{background:radial-gradient(circle at 50% 0%,#482265 0%,#160d29 72%);padding-top:72px}
+@media(max-width:900px){body{padding-top:70px}}
+#game-app{height:calc(100dvh - 72px)}
+@media(max-width:900px){#game-app{height:calc(100dvh - 70px)}}
+header{padding:9px 12px 3px}
+h1{letter-spacing:.07em;background:none;color:#fff;animation:none;font-size:clamp(32px,8vw,48px)}
+.tagline{color:#c6f22e;font-size:10px;letter-spacing:.06em}
+.hud{padding:8px 14px 7px;background:#ffffff08;border-top:1px solid #ffffff13;border-bottom:1px solid #ffffff13}
+.hud .val.gold{color:#ffca46}.hud .val.orange{color:#c6f22e}
+.hud .val{font-size:clamp(17px,5vw,23px);font-variant-numeric:tabular-nums}
+#stage{min-height:0}canvas{background:linear-gradient(180deg,#291443 0%,#160d29 75%,#23123a 100%);border-radius:15px}
+#dropBar{padding:8px 12px max(12px,env(safe-area-inset-bottom))}
+#dropBtn,#overlay button{background:#ffb000;color:#241332;box-shadow:0 4px 0 #ac7412;font-weight:800}
+#dropBtn{width:min(390px,100%);padding:11px 18px}
+#overlay{background:#1a102ded}
+#overlay .badge{display:flex;align-items:center;justify-content:center;gap:8px;color:#c6f22e;border-color:#c6f22e;padding:6px 12px}
+.spike-badge{width:42px;height:42px;object-fit:cover;border-radius:50%}
+#overlay h2{color:#ffb000}#overlay .sub{color:#e1d3ed;max-width:320px}
+#cactusMark{bottom:10px;right:14px;opacity:.85}#cactusMark img{width:33px;height:33px;border-radius:50%;object-fit:cover}
+#toast{background:#ffb000;color:#241332}
+#overlay .bigscore{font-size:clamp(32px,9vw,46px)!important;overflow-wrap:anywhere}
+#overlay .spike-line{font-size:13px;color:#e9deef;line-height:1.45;max-width:290px;margin:12px auto}
+#overlay .share-score{margin:0 0 12px;background:transparent;color:#c6f22e;border:1px solid #c6f22e;box-shadow:none;padding:9px 23px}
+@media(max-width:420px){.hud{gap:10px}.hud .label{font-size:8px}#soundBtn{padding:4px 8px}}
+@media(prefers-reduced-motion:reduce){h1{animation:none}}
 </style>
 </head>
 <body>
@@ -242,13 +269,13 @@
 
 <div id="game-app">
 <header>
-  <h1>KOKO PLINKO</h1>
-  <div class="tagline">Vegas Sidekick Break Room</div>
+  <h1>SPIKE’S PLINKO</h1>
+  <div class="tagline">Five golden drops · Millions of imaginary points</div>
 </header>
 
 <div class="hud">
   <div><span class="label">Score</span><span class="val gold" id="scoreVal">0</span></div>
-  <div><span class="label">Drops</span><span class="val" id="dropsVal">3</span></div>
+  <div><span class="label">Drops</span><span class="val" id="dropsVal">5</span></div>
   <div><span class="label">Best</span><span class="val orange" id="bestVal">0</span></div>
   <button id="soundBtn">🔇</button>
 </div>
@@ -257,12 +284,12 @@
   <canvas id="game"></canvas>
   <div id="toast"></div>
   <div id="overlay">
-    <div class="badge">Vegas Sidekick Break Room</div>
-    <h2 id="overlayTitle">KOKO PLINKO</h2>
-    <div class="sub" id="overlaySub">Drag Koko across the top and let go to drop her exactly where you want. Land big, rack up the score, get more drops when you hit the JACKPOT.</div>
+    <div class="badge"><img class="spike-badge" src="/images/brand/spike-podcast-badge.webp" alt="Spike"> SPIKE’S PLINKO</div>
+    <h2 id="overlayTitle">SPIKE’S PLINKO</h2>
+    <div class="sub" id="overlaySub">Aim the glowing gold ball, then release. Or tap the board to choose a drop position. Five balls per round. No cash value.</div>
     <button id="mainBtn">START DROPPING</button>
   </div>
-  <div id="cactusMark">🌵</div>
+  <div id="cactusMark"><img src="/images/brand/spike-podcast-badge.webp" alt=""></div>
 </div>
 
 <div id="dropBar">
@@ -275,6 +302,7 @@
 <script src="/components/footer.js?v=16"></script>
 
 <script>
+const fmt=n=>Number(n).toLocaleString('en-US');
 const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
 const overlay = document.getElementById('overlay');
@@ -318,9 +346,8 @@ function computeSize(){
 }
 window.addEventListener('resize', computeSize);
 
-// ---------- Koko sprite ----------
-const kokoImg = new Image();
-kokoImg.src = "/images/play/koko-chip.webp";
+// ---------- Spike sprite ----------
+// Gold balls are drawn with canvas gradients.
 
 // ---------- Audio ----------
 let audioCtx = null;
@@ -353,18 +380,18 @@ soundBtn.onclick = () => {
 // ---------- Slots ----------
 // symmetric multiplier distribution, center low, edges high (classic plinko risk curve)
 const SLOTS = [
-  { mult: 50,  label: 'JACKPOT',    color: '#FF3CAC' },
-  { mult: 10,  label: 'ZOOMIES',    color: '#FF6B2B' },
-  { mult: 5,   label: 'TREAT',      color: '#FFD23F' },
-  { mult: 2,   label: 'GOOD GIRL',  color: '#1A6BFF' },
-  { mult: 1,   label: 'BELLY RUB',  color: '#7A5CFF' },
-  { mult: 2,   label: 'GOOD GIRL',  color: '#1A6BFF' },
-  { mult: 5,   label: 'TREAT',      color: '#FFD23F' },
-  { mult: 10,  label: 'ZOOMIES',    color: '#FF6B2B' },
-  { mult: 50,  label: 'JACKPOT',    color: '#FF3CAC' },
+{mult:50,label:'JACKPOT',color:'#ffb000'},
+{mult:10,label:'BIG WIN',color:'#c6f22e'},
+{mult:5,label:'NICE',color:'#9566e9'},
+{mult:2,label:'SOLID',color:'#0fb5c9'},
+{mult:1,label:'POINTS',color:'#ff2e7e'},
+{mult:2,label:'SOLID',color:'#0fb5c9'},
+{mult:5,label:'NICE',color:'#9566e9'},
+{mult:10,label:'BIG WIN',color:'#c6f22e'},
+{mult:50,label:'JACKPOT',color:'#ffb000'}
 ];
 
-const PEG_COLORS = ['#FF6B2B','#FFD23F','#1A6BFF','#FF3CAC','#7A5CFF','#3FE0C5'];
+const PEG_COLORS = ['#c6f22e','#ffb000','#9566e9','#0fb5c9','#ff2e7e'];
 
 let pegs = [];
 function buildPegs(){
@@ -393,9 +420,9 @@ function buildPegs(){
 // ---------- Game state ----------
 let state = 'menu';
 let score = 0;
-let best = parseInt(safeGet('plinko_best') || '0');
-let dropsLeft = 3;
-bestVal.textContent = best;
+let best = parseInt(safeGet('spike_plinko_best_v1') || '0');
+let dropsLeft = 5;
+bestVal.textContent = fmt(best);
 dropsVal.textContent = dropsLeft;
 
 let balls = []; // active falling balls
@@ -404,23 +431,23 @@ let slotFlash = new Array(SLOT_COUNT).fill(0);
 
 function resetGame(){
   score = 0;
-  dropsLeft = 3;
+  dropsLeft = 5;
   balls = [];
   confetti = [];
   slotFlash = new Array(SLOT_COUNT).fill(0);
-  scoreVal.textContent = score;
+  scoreVal.textContent = fmt(score);
   dropsVal.textContent = dropsLeft;
   updateDropBtn();
 }
 
 function updateDropBtn(){
-  dropBtn.disabled = (dropsLeft <= 0) || (state !== 'playing');
-  dropBtn.textContent = dropsLeft > 0 ? `OR TAP TO DROP CENTER (${dropsLeft})` : 'OUT OF DROPS';
+  dropBtn.disabled = (dropsLeft <= 0) || (state !== 'playing') || balls.some(b=>!b.settled);
+  dropBtn.textContent = dropsLeft > 0 ? `DROP GOLD BALL (${dropsLeft} LEFT)` : 'ROUND COMPLETE';
   dropsVal.textContent = Math.max(0, dropsLeft);
 }
 
 function dropBall(atX){
-  if (state !== 'playing' || dropsLeft <= 0) return;
+  if (state !== 'playing' || dropsLeft <= 0 || balls.some(b=>!b.settled)) return;
   initAudio();
   dropsLeft--;
   updateDropBtn();
@@ -434,11 +461,7 @@ function dropBall(atX){
     trail: [],
     settled: false,
     squashX: 1, squashY: 1, spin: 0, spinV: (Math.random()-0.5)*0.4,
-    phase: 'chaos',
-    chaosT: 0,
-    chaosDur: 2.6 + Math.random()*0.8,
-    chaosVX: (Math.random()-0.5)*14,
-    chaosVY: (Math.random()-0.5)*10
+    phase: 'falling'
   });
 }
 dropBtn.onclick = () => dropBall();
@@ -456,11 +479,10 @@ function chipHit(px, py){
 function startDrag(clientX, clientY){
   if (state !== 'playing' || dropsLeft <= 0) return;
   const p = canvasPoint(clientX, clientY);
-  if (chipHit(p.x, p.y)) {
-    dragging = true;
-    dragOffsetX = chipX - p.x;
-    initAudio();
-  }
+  dragging=true;
+  dragOffsetX=chipHit(p.x,p.y)?chipX-p.x:0;
+  chipX=Math.max(chipR+2,Math.min(W-chipR-2,p.x+dragOffsetX));
+  initAudio();
 }
 function moveDrag(clientX, clientY){
   if (!dragging) return;
@@ -657,10 +679,9 @@ function updateBalls(){
     }
   }
 
-  balls = balls.filter(b => !(b.settled && b._age > (b._settledAge||0) + 40) );
-  for (const b of balls) {
-    if (b.settled) b._settledAge = (b._settledAge||0) + 1;
-  }
+  for(const b of balls) if(b.settled)b._settledAge=(b._settledAge||0)+1;
+  balls=balls.filter(b=>!b.settled||b._settledAge<35);
+  updateDropBtn();
 
   for (const p of pegs) p.hitFlash *= 0.9;
   for (let i=0;i<SLOT_COUNT;i++) slotFlash[i] *= 0.92;
@@ -684,26 +705,21 @@ function squashBall(b, intensity){
 
 function landBall(b, slotIdx){
   const slot = SLOTS[slotIdx];
-  const gained = slot.mult * 10;
+  const gained = slot.mult * 100000;
   score += gained;
-  scoreVal.textContent = score;
+  scoreVal.textContent = fmt(score);
   slotFlash[slotIdx] = 1;
   sfxLand(slot.mult);
-  showToast(`${slot.label}! +${gained}`);
+  showToast(`${slot.label}! +${fmt(gained)} pts`);
   const burstScale = slot.mult >= 20 ? 2.2 : slot.mult >= 5 ? 1.4 : 1;
   spawnConfettiBurst(b.x, H-40, slot.color, burstScale);
   if (slot.mult >= 5) triggerShake(slot.mult >= 20 ? 14 : 6);
 
-  if (slot.mult >= 20) {
-    dropsLeft += 1;
-    updateDropBtn();
-    setTimeout(()=> showToast('BONUS DROP! +1'), 500);
-  }
 
   if (score > best) {
     best = score;
-    safeSet('plinko_best', best);
-    bestVal.textContent = best;
+    safeSet('spike_plinko_best_v1', best);
+    bestVal.textContent = fmt(best);
   }
 
   updateDropBtn();
@@ -787,31 +803,14 @@ function drawBallTrail(b){
   }
 }
 
-function drawBall(b){
-  drawBallTrail(b);
-  ctx.save();
-  ctx.translate(b.x, b.y);
-  ctx.rotate(b.spin || 0);
-  ctx.scale(b.squashX || 1, b.squashY || 1);
-  ctx.save();
-  ctx.beginPath();
-  ctx.arc(0,0,b.r,0,Math.PI*2);
-  ctx.clip();
-  if (kokoImg.complete && kokoImg.naturalWidth > 0) {
-    ctx.drawImage(kokoImg, -b.r, -b.r, b.r*2, b.r*2);
-  } else {
-    ctx.fillStyle = '#FF6B2B';
-    ctx.fillRect(-b.r,-b.r,b.r*2,b.r*2);
-  }
-  ctx.restore();
-  ctx.strokeStyle = '#FFD23F';
-  ctx.lineWidth = 1.5;
-  ctx.beginPath();
-  ctx.arc(0,0,b.r,0,Math.PI*2);
-  ctx.stroke();
-  ctx.restore();
+function drawGoldBall(x,y,r){
+ ctx.save();ctx.shadowColor='#ffce43';ctx.shadowBlur=20;
+ const g=ctx.createRadialGradient(x-r*.4,y-r*.5,1,x,y,r);
+ g.addColorStop(0,'#fff');g.addColorStop(.25,'#fff5b3');g.addColorStop(.6,'#ffd040');g.addColorStop(1,'#a6650b');
+ ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();
+ ctx.shadowBlur=0;ctx.strokeStyle='#fff0a0';ctx.lineWidth=1.2;ctx.stroke();ctx.restore();
 }
-
+function drawBall(b){drawBallTrail(b);drawGoldBall(b.x,b.y,b.r);}
 function drawConfetti(){
   for (const c of confetti) {
     ctx.save();
@@ -839,53 +838,10 @@ function drawAimLine(){
 }
 
 function drawChip(){
-  if (state !== 'playing' || dropsLeft <= 0) return;
-  const pulse = 1 + Math.sin(Date.now()/220)*0.06;
-  ctx.save();
-  ctx.translate(chipX, chipY);
-  ctx.scale(dragging ? 1.12 : pulse, dragging ? 1.12 : pulse);
-
-  // glow ring to signal draggability
-  ctx.save();
-  ctx.shadowColor = '#FFD23F';
-  ctx.shadowBlur = dragging ? 18 : 10;
-  ctx.strokeStyle = '#FFD23F';
-  ctx.lineWidth = 2;
-  ctx.beginPath();
-  ctx.arc(0,0,chipR+3,0,Math.PI*2);
-  ctx.stroke();
-  ctx.restore();
-
-  ctx.save();
-  ctx.beginPath();
-  ctx.arc(0,0,chipR,0,Math.PI*2);
-  ctx.clip();
-  if (kokoImg.complete && kokoImg.naturalWidth > 0) {
-    ctx.drawImage(kokoImg, -chipR, -chipR, chipR*2, chipR*2);
-  } else {
-    ctx.fillStyle = '#FF6B2B';
-    ctx.fillRect(-chipR,-chipR,chipR*2,chipR*2);
-  }
-  ctx.restore();
-  ctx.strokeStyle = '#fff';
-  ctx.lineWidth = 1.5;
-  ctx.beginPath();
-  ctx.arc(0,0,chipR,0,Math.PI*2);
-  ctx.stroke();
-  ctx.restore();
-
-  if (!dragging) {
-    ctx.save();
-    ctx.globalAlpha = 0.6 + Math.sin(Date.now()/300)*0.3;
-    ctx.fillStyle = '#8b96c4';
-    ctx.font = "800 10px 'Nunito', sans-serif";
-    ctx.textAlign = 'center';
-    ctx.fillText('DRAG ME', chipX, chipY + chipR + 16);
-    ctx.textAlign = 'left';
-    ctx.restore();
-  }
+ if(state!=='playing'||dropsLeft<=0||balls.some(b=>!b.settled))return;
+ drawGoldBall(chipX,chipY,chipR*(1+Math.sin(Date.now()/260)*.06));
+ ctx.save();ctx.fillStyle='#e2c779';ctx.font="800 10px Nunito,sans-serif";ctx.textAlign='center';ctx.fillText('DRAG TO AIM',chipX,chipY+chipR+17);ctx.restore();
 }
-
 function render(){
   ctx.clearRect(0,0,W,H);
   ctx.save();
@@ -910,10 +866,10 @@ function loop(){
 const overlayBody = document.querySelector('#overlay .badge').parentElement;
 
 function setOverlayMenu(){
-  overlayTitle.textContent = 'KOKO PLINKO';
-  overlaySub.textContent = "Drag Koko across the top and let go to drop her exactly where you want. Land big, rack up the score, get more drops when you hit the JACKPOT.";
+  overlayTitle.textContent = 'SPIKE’S PLINKO';
+  overlaySub.textContent = "Aim the glowing gold ball, then release. Or tap the board to choose a drop position. Five balls per round. No cash value.";
   overlaySub.style.display = '';
-  const extras = overlayBody.querySelectorAll('.bigscore, .best');
+  const extras = overlayBody.querySelectorAll('.bigscore, .best, .spike-line, .share-score');
   extras.forEach(el => el.remove());
   mainBtn.textContent = 'START DROPPING';
 }
@@ -921,7 +877,7 @@ function setOverlayMenu(){
 function setOverlayGameOver(){
   overlayTitle.textContent = 'ALL DROPPED!';
   overlaySub.style.display = 'none';
-  const extras = overlayBody.querySelectorAll('.bigscore, .best');
+  const extras = overlayBody.querySelectorAll('.bigscore, .best, .spike-line, .share-score');
   extras.forEach(el => el.remove());
 
   const bs = document.createElement('div');
@@ -930,7 +886,7 @@ function setOverlayGameOver(){
   bs.style.fontWeight = '800';
   bs.style.fontSize = '46px';
   bs.style.color = '#fff';
-  bs.textContent = score;
+  bs.textContent = fmt(score);
   const bestEl = document.createElement('div');
   bestEl.className = 'best';
   bestEl.style.color = '#FFD23F';
@@ -938,11 +894,21 @@ function setOverlayGameOver(){
   bestEl.style.fontWeight = '800';
   bestEl.style.marginBottom = '20px';
   bestEl.style.letterSpacing = '.05em';
-  bestEl.textContent = 'BEST: ' + best;
+  bestEl.textContent = 'BEST: '+fmt(best)+' · NO CASH VALUE';
   overlaySub.insertAdjacentElement('afterend', bs);
   bs.insertAdjacentElement('afterend', bestEl);
 
-  mainBtn.textContent = 'DROP AGAIN';
+  const quote=document.createElement('p');quote.className='spike-line';
+  quote.textContent=score>=10000000?'Spike says: “Call security. The cactus has been robbed.”':score>=3000000?'Spike says: “Look at you. Almost competent.”':'Spike says: “Those points are worth absolutely nothing. Enjoy.”';
+  bestEl.insertAdjacentElement('afterend',quote);
+  const share=document.createElement('button');share.type='button';share.className='share-score';share.textContent='SHARE SCORE ↗';
+  share.onclick=async()=>{
+   const result='SPIKE’S PLINKO 🎰\\n'+fmt(score)+' jackpot points · Five golden balls · No cash value\\nhttps://vegassidekick.com/play/koko-plinko/';
+   try{if(navigator.share){await navigator.share({title:'Spike’s Plinko',text:result});return;}await navigator.clipboard.writeText(result);share.textContent='SCORE COPIED';}
+   catch(e){if(e.name!=='AbortError')share.textContent='SHARE UNAVAILABLE';}
+  };
+  quote.insertAdjacentElement('afterend',share);
+  mainBtn.textContent='PLAY ANOTHER ROUND';
 }
 
 function gameOver(){
