@@ -127,6 +127,23 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(-
  .ladder{margin:12px 0;gap:5px}.rung{gap:7px;min-height:40px}.rung-label{width:43px}.tile{height:40px;width:40px}
  .spike-toast{font-size:.77rem}
 }
+
+/* The active challenge belongs between the word tiles and answer. */
+.clue-panel{background:#fff1c9;border:1px solid #e7bd5c;border-left:4px solid var(--amber);border-radius:16px;padding:15px 17px;margin:0 0 14px}
+.clue-label{display:flex;align-items:center;gap:7px;color:#81520a;font-weight:800;font-size:.69rem;letter-spacing:.11em}
+.clue-spark{color:#9e6100;font-size:1rem;line-height:1;letter-spacing:0}
+.clue{color:#2c1a33;margin:7px 0 5px;font-size:1.2rem;line-height:1.35}
+.clue-help{color:#765b38;font-size:.75rem}
+.ladder{margin-bottom:14px}
+.guess-row{margin-top:0}
+.feedback:empty{display:none}
+@media(max-width:440px){
+ .clue-panel{padding:13px 14px;margin:0 0 12px;border-radius:13px}
+ .clue{font-size:1.06rem;line-height:1.32}
+ .clue-label{font-size:.65rem}
+ .clue-help{font-size:.71rem}
+ .ladder{margin-bottom:12px}
+}
 </style>
 </head>
 <body>
@@ -159,13 +176,13 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(-
 <div id="game">
 <div class="progress-meta"><span id="stepLabel">Clue 1 of 4</span><span id="pointsLabel">400 possible points</span></div>
 <div class="track" aria-hidden="true"><div class="track-fill" id="progressFill"></div></div>
-<div class="clue-panel"><div class="clue-label" id="clueLabel">Your first clue</div><p class="clue" id="clue"></p><p class="clue-help" id="hintText">Change one letter in the starting word.</p></div>
 <div class="ladder" id="ladder" aria-label="Word ladder progress"></div>
+<div class="clue-panel" aria-label="Current word clue"><div class="clue-label"><span class="clue-spark" aria-hidden="true">✦</span><span id="clueLabel">Your clue</span></div><p class="clue" id="clue"></p><p class="clue-help" id="hintText">Change one letter in the starting word.</p></div>
 <form class="guess-row" id="guessForm" autocomplete="off">
 <div class="field-wrap"><label for="guess" class="card-eyebrow" style="display:block;margin:0 0 7px">Your four-letter answer</label><input id="guess" class="word-input" type="text" maxlength="4" inputmode="text" autocapitalize="characters" autocorrect="off" autocomplete="off" spellcheck="false" aria-describedby="feedback" required></div>
 <button class="submit" type="submit">Enter ↗</button>
 </form>
-<div class="feedback" role="status" aria-live="polite" id="feedback">Take your time. Spike has nowhere else to be.</div>
+<div class="feedback" role="status" aria-live="polite" id="feedback"></div>
 <div class="tools"><button class="tool" id="hintBtn" type="button">Get a hint −35 pts</button><button class="tool" id="skipBtn" type="button">Reveal word −100 pts</button></div>
 <div class="help">No timer, no sign-up. The same sample can be replayed; daily puzzles are not active yet.</div>
 </div>
@@ -223,7 +240,7 @@ function render(){
   var status=document.createElement("span");status.className="rung-status";status.textContent=i===0?"":i<=step?"✓":i===step+1?"← YOU":"";
   row.appendChild(status);ladder.appendChild(row);
  }
- if(step<4){byId("clueLabel").textContent=step===0?"Your first clue":"Next clue";
+ if(step<4){byId("clueLabel").textContent="Your clue";
  byId("clue").textContent=puzzle().steps[step].clue;
  byId("hintText").textContent=hints[step]===true?hintMessage():"Change exactly one letter in "+previous()+".";
  byId("hintBtn").disabled=!!hints[step];}
@@ -266,7 +283,7 @@ function reset(next){
  byId("game").hidden=false;byId("finish").classList.remove("show");
  byId("shareFeedback").textContent="";byId("guess").value="";
  byId("guess").disabled=false;byId("hintBtn").disabled=false;
- message("Change one letter to match the clue. You've got this. Probably.","");
+ message("","");
  say("");
  render();byId("guess").focus({preventScroll:true});
 }
