@@ -255,6 +255,30 @@
 .card-cta:hover { background: var(--primary-lt) !important; }
 .card-price { color: var(--primary) !important; }
 .sort-btn.active, .filter-btn.active:not([class*="fb-"]) { background: var(--navy) !important; color: #fff !important; border-color: var(--navy) !important; }
+
+    /* All Shows pilot: category-colored borders; leave the individual category pages untouched. */
+    .show-grid .show-card{--card-outline:#3b82f6;border:1.5px solid var(--card-outline);}
+    .show-grid .show-card[data-category="cirque"]{--card-outline:#0fb5c9;}
+    .show-grid .show-card[data-category="music"]{--card-outline:#3b82f6;}
+    .show-grid .show-card[data-category="comedy"]{--card-outline:#ff2e7e;}
+    .show-grid .show-card[data-category="magic"]{--card-outline:#7c3aed;}
+    .show-grid .show-card[data-category="spectaculars"]{--card-outline:#ffb000;}
+    .show-grid .show-card[data-category="family"]{--card-outline:#84bd33;}
+    .show-grid .show-card[data-category="adult"]{--card-outline:#e27a37;}
+    .show-grid .show-card.selected{border-color:var(--card-outline);box-shadow:0 0 0 3px rgba(59,130,246,.18),0 4px 16px rgba(0,0,0,.07);}
+    .show-grid .show-card:focus-within{outline:2px solid #1c0a3a;outline-offset:2px;}
+    @media(max-width:520px){
+      .grid-wrap{padding:20px 14px 48px;}
+      .show-grid{gap:11px;}
+      .show-grid .show-card{flex-direction:row;align-items:flex-start;gap:10px;padding:12px 9px;border:1.5px solid var(--card-outline);border-radius:13px;background:#fff;box-shadow:0 2px 10px rgba(28,10,58,.07);cursor:pointer;}
+      .show-grid .show-card:first-child{border-top:1.5px solid var(--card-outline);}
+      .show-grid .show-card:hover{transform:none;box-shadow:0 2px 10px rgba(28,10,58,.07);}
+      .show-grid .show-card.selected{border-color:var(--card-outline);background:#fbf9ff;box-shadow:0 0 0 2px rgba(59,130,246,.18);}
+      .show-grid .show-card .card-media-col{width:124px;flex:0 0 124px;}
+      .show-grid .show-card .card-img-wrap{width:124px;}
+      .show-grid .show-card .card-body{min-width:0;}
+      .show-grid .show-card .card-name{overflow-wrap:break-word;}
+    }
 </style>
 <link rel="stylesheet" href="/assets/catalog-savings.css?v=price-audit-20261009"></head>
 <body>
@@ -480,7 +504,7 @@ function renderGrid() {
   grid.innerHTML = shows.map(s => {
     const on = sel.has(s.slug);
     const dis = !on && sel.size >= 3;
-    return `<div class="show-card${on?' selected':''}${dis?' compare-disabled':''}${s.sp?' has-sidekick-pick':''}" id="c-${s.slug}">
+    return `<div class="show-card${on?' selected':''}${dis?' compare-disabled':''}${s.sp?' has-sidekick-pick':''}" data-category="${s.cat}" id="c-${s.slug}">
   <div class="card-media-col">
     ${s.sp ? '<div class="card-sp-badge">🌵 Sidekick Pick</div>' : ''}
     <div class="card-img-wrap">
