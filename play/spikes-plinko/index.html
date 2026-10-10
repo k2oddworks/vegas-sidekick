@@ -491,7 +491,9 @@ function dropBall(atX){
     trail: [],
     settled: false,
     squashX: 1, squashY: 1, spin: 0, spinV: (Math.random()-0.5)*0.4,
-    phase: 'falling',wild:dropsLeft===0,wildTicks:0
+    phase: 'falling',wild:dropsLeft===0,wildTicks:0,
+    wildSeed:Math.random()*Math.PI*2,
+    wildLandingX:Math.max(chipR+4,Math.min(W-chipR-4,clampedX+(Math.random()-.5)*W*.72))
   });
 }
 dropBtn.onclick = () => dropBall();
@@ -631,19 +633,24 @@ function updateBalls(){
       // It changes direction, hovers, teleports, then returns to real Plinko physics.
       if(t<=150){
         const span=Math.max(20,W-b.r*2);
-        if(t===1){b.y=H*.32;b.x=W*.2;showToast('SPIKE HAS LOST CONTROL');}
-        if(t<35){b.x+=Math.min(14,span*.04);b.y+=Math.sin(t*.4)*2;}
-        else if(t<65){b.x-=Math.min(20,span*.055);b.y-=3.6;}
-        else if(t===65){b.x=W*.82;b.y=H*.43;spawnConfettiBurst(b.x,b.y,'#c6f22e',1.2);triggerShake(6);}
-        else if(t<97){b.x+=Math.sin(t*.5)*9;b.y+=Math.sin(t*.28)*1.1;}
-        else if(t===97){b.x=W*.14;b.y=H*.53;triggerShake(7);}
-        else {b.x+=Math.cos(t*.4)*7;b.y+=2.5;}
+        if(t===1){b.y=H*.32;b.x=Math.max(b.r,Math.min(W-b.r,b.wildLandingX));showToast('SPIKE HAS LOST CONTROL');}
+        if(t<35){b.x+=Math.min(14,span*.04)*Math.cos(b.wildSeed);b.y+=Math.sin(t*.4+b.wildSeed)*2;}
+        else if(t<65){b.x-=Math.min(20,span*.055)*Math.cos(b.wildSeed);b.y-=3.6;}
+        else if(t===65){b.x=Math.max(b.r,Math.min(W-b.r,W-b.wildLandingX));b.y=H*.43;spawnConfettiBurst(b.x,b.y,'#c6f22e',1.2);triggerShake(6);}
+        else if(t<97){b.x+=Math.sin(t*.5+b.wildSeed)*9;b.y+=Math.sin(t*.28+b.wildSeed)*1.1;}
+        else if(t===97){b.x=b.wildLandingX;b.y=H*.53;triggerShake(7);}
+        else {b.x+=Math.cos(t*.4+b.wildSeed)*7;b.y+=2.5;}
         b.x=Math.max(b.r,Math.min(W-b.r,b.x));
         b.y=Math.max(b.r,Math.min(H-105,b.y));
         b.trail.push({x:b.x,y:b.y,color:'#c6f22e'});
         if(b.trail.length>22)b.trail.shift();
         if(t%18===0)triggerShake(2.5);
-        if(t===150){b.vx=(Math.random()-.5)*4;b.vy=3;b.y=Math.min(b.y,H-140);}
+        if(t===150){
+          // Relaunch through several real peg rows from a randomized lateral position.
+          b.x=Math.max(b.r,Math.min(W-b.r,b.wildLandingX));
+          b.y=Math.min(H-205,Math.max(65,H*.37));
+          b.vx=(Math.random()-.5)*7;b.vy=2+Math.random()*2;
+        }
         continue;
       }
     }
