@@ -329,7 +329,7 @@ function safeGet(k){ try{ return localStorage.getItem(k);}catch(e){return null;}
 function safeSet(k,v){ try{ localStorage.setItem(k,v);}catch(e){} }
 
 // ---------- Board layout ----------
-const ROWS = 11;       // peg rows
+const ROWS = 7;       // peg rows
 const SLOT_COUNT = 9;  // bottom slots
 let W, H, CELL;
 const chipR = 16;
@@ -407,16 +407,19 @@ const PEG_COLORS = ['#c6f22e','#ffb000','#9566e9','#0fb5c9','#ff2e7e'];
 let pegs = [];
 function buildPegs(){
  pegs=[];
- const sw=W/SLOT_COUNT,top=60,bottom=H-92,dy=(bottom-top)/Math.max(1,ROWS-1);
+ const top=78,bottom=Math.max(top+90,H-123),dy=(bottom-top)/(ROWS-1);
+ const cols=7,spacing=(W-64)/(cols-1);
  for(let row=0;row<ROWS;row++){
-  const y=top+row*dy, offset=row%2===0?.5:0;
-  for(let col=0;col<=SLOT_COUNT;col++){
-   const x=(col+offset)*sw;
-   if(x<8||x>W-8)continue;
-   pegs.push({x,y,r:Math.max(4,Math.min(5.4,sw*.105)),hitFlash:0,color:PEG_COLORS[(row+col)%PEG_COLORS.length]});
+  const y=top+row*dy,offset=(row%2)*spacing*.5;
+  for(let col=0;col<cols;col++){
+   const x=32+col*spacing+offset;
+   if(x>W-23)continue;
+   pegs.push({x,y,r:4.4,hitFlash:0,color:PEG_COLORS[(row+col)%PEG_COLORS.length]});
   }
-  pegs.push({x:12,y:y+dy*.43,r:5.6,hitFlash:0,color:'#ffb000'});
-  pegs.push({x:W-12,y:y+dy*.43,r:5.6,hitFlash:0,color:'#ffb000'});
+ }
+ for(const y of [top+dy*1.5,top+dy*4.5]){
+  pegs.push({x:13,y,r:5,hitFlash:0,color:'#ffb000'});
+  pegs.push({x:W-13,y,r:5,hitFlash:0,color:'#ffb000'});
  }
 }
 
@@ -544,7 +547,7 @@ let shakeMag = 0;
 function triggerShake(mag){ shakeMag = Math.max(shakeMag, mag); }
 
 // ---------- Physics update ----------
-const GRAVITY = 0.42;
+const GRAVITY = 0.66;
 function updateBalls(){
   const slotAreaTop = H - 70;
   const slotW = W / SLOT_COUNT;
@@ -600,8 +603,8 @@ function updateBalls(){
 
     if(b.wild){
       b.wildTicks++;
-      if(b.wildTicks<150){b.vx+=Math.sin(b.wildTicks*.31)*.78+(Math.random()-.5)*1.3;
-        if(b.wildTicks%24===0){b.vy=-Math.min(7,Math.abs(b.vy)*.65+2);triggerShake(3);}}
+      if(b.wildTicks<105){b.vx+=Math.sin(b.wildTicks*.31)*.78+(Math.random()-.5)*1.3;
+        if(b.wildTicks%32===0){b.vy=-Math.min(4.5,Math.abs(b.vy)*.4+1.5);triggerShake(3);}}
     }
     b.vy += GRAVITY*(b.wild?1.48:1);
     b.x += b.vx;
@@ -639,13 +642,14 @@ function updateBalls(){
         // sideways randomness only — vy is never re-randomized directly so gravity always
         // wins over time and the ball can't loop forever between two pegs
         const dot = b.vx*nx + b.vy*ny;
-        const restitution = 1.15;
+        const restitution = b.wild && b.wildTicks < 115 ? .72 : .48;
         b.vx -= (1+restitution)*dot*nx;
         b.vy -= (1+restitution)*dot*ny;
-        b.vx += (Math.random()-0.5)*2.4;
+        b.vx += (Math.random()-0.5)*(b.wild?2.2:1.25);
+        if(!b.wild)b.vy=Math.max(1.6,b.vy);
 
         const spd = Math.hypot(b.vx, b.vy);
-        if (spd < 1.8) { const boost = 1.8/(spd||0.01); b.vx*=boost; b.vy*=boost; }
+        if(spd<1.8)b.vy=Math.max(2,b.vy);
         if (spd > 15) { const cap = 15/spd; b.vx*=cap; b.vy*=cap; }
 
         b.spinV = (b.spinV||0) + (Math.random()-0.5)*1.4;
@@ -669,7 +673,8 @@ function updateBalls(){
     }
 
     // absolute failsafe
-    if (b._age > 900) {
+    if(b._age>220 && b.y<H-96){b.vy=Math.max(b.vy,5);b.vx*=.92;}
+    if (b._age > 420) {
       b.y = H - b.r - 6;
       b.settled = true;
       const slotIdx = Math.max(0, Math.min(SLOT_COUNT-1, Math.floor(b.x / slotW)));
@@ -733,14 +738,14 @@ function landBall(b, slotIdx){
 
   updateDropBtn();
   if (dropsLeft <= 0) {
-    setTimeout(checkGameEnd, 900);
+    setTimeout(checkGameEnd, 450);
   }
 }
 
 function checkGameEnd(){
-  if (dropsLeft <= 0 && balls.every(b => b.settled)) {
+  if (state === 'playing' && dropsLeft <= 0 && balls.every(b => b.settled)) {
     gameOver();
-  } else if (dropsLeft <= 0) {
+   } else if (state === 'playing' && dropsLeft <= 0) {
     // some ball still mid-chaos or falling — check again shortly instead of giving up
     setTimeout(checkGameEnd, 400);
   }
