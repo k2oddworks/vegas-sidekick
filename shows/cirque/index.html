@@ -253,6 +253,7 @@
 .sort-btn.active, .filter-btn.active:not([class*="fb-"]) { background: var(--navy) !important; color: #fff !important; border-color: var(--navy) !important; }
 </style>
 <link rel="stylesheet" href="/assets/catalog-savings.css?v=savings-stage5-20261009">
+<link rel="stylesheet" href="/assets/catalog-card-outlines.css?v=category-border-20261010">
 <meta property="og:image" content="https://vegassidekick.com/images/guides/guide-cirque-cover.jpg">
 <meta name="twitter:title" content="Las Vegas Cirque du Soleil Tickets &amp; Prices | Vegas Sidekick">
 <meta name="twitter:description" content="Compare Las Vegas Cirque du Soleil tickets for O, KÀ, Mystère and Michael Jackson ONE. Check starting prices, showtimes and seating guidance.">
@@ -376,7 +377,7 @@ function renderGrid() {
   document.getElementById('show-grid').innerHTML = shows.map(s => {
     const on = sel.has(s.slug);
     const dis = !on && sel.size >= 3;
-    return `<div class="show-card${on?' selected':''}${dis?' compare-disabled':''}${s.sp?' sp-pick':''}" id="c-${s.slug}">
+    return `<div class="show-card${on?' selected':''}${dis?' compare-disabled':''}${s.sp?' sp-pick':''}" data-category="${s.cat||'cirque'}" id="c-${s.slug}">
   <div class="card-img-wrap">
     <a href="/shows/cirque/${s.slug}/" class="card-img-link"><img src="${s.img}" alt="${s.name} Las Vegas" loading="lazy" /></a>
     ${s.sp ? '<div class="card-sp-badge">🌵 Sidekick Pick</div>' : ''}

@@ -318,7 +318,8 @@
 .card-price { color: var(--primary) !important; }
 .sort-btn.active, .filter-btn.active:not([class*="fb-"]) { background: var(--navy) !important; color: #fff !important; border-color: var(--navy) !important; }
 </style>
-<link rel="stylesheet" href="/assets/catalog-savings.css?v=savings-stage5-20261009"></head>
+<link rel="stylesheet" href="/assets/catalog-savings.css?v=savings-stage5-20261009">
+<link rel="stylesheet" href="/assets/catalog-card-outlines.css?v=category-border-20261010"></head>
 <body>
 <div id="vs-header"></div>
 
@@ -449,7 +450,7 @@ function renderGrid() {
   document.getElementById('show-grid').innerHTML = shows.map(s => {
     const on = sel.has(s.slug);
     const dis = !on && sel.size >= 3;
-    return `<div class="show-card${on?' selected':''}${dis?' compare-disabled':''}" id="c-${s.slug}">
+    return `<div class="show-card${on?' selected':''}${dis?' compare-disabled':''}" data-category="${s.cat||'adult'}" id="c-${s.slug}">
   <div class="card-img-wrap">
     <a href="/shows/adult/${s.slug}/" class="card-img-link"><img src="${s.img}" alt="${s.name} Las Vegas" loading="lazy" /></a>
     ${s.sp ? '<div class="card-sp-badge">🌵 Sidekick Pick</div>' : ''}
