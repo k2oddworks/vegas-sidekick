@@ -269,6 +269,14 @@ h1{letter-spacing:.07em;background:none;color:#fff;animation:none;font-size:clam
 #dropBar{flex-shrink:0;padding:7px 12px max(10px,env(safe-area-inset-bottom))}
 #dropBtn{min-height:48px}
 @media(max-width:480px){.game-title{gap:9px}.title-spike{width:39px;height:39px}h1{font-size:clamp(27px,7.5vw,39px)}header{padding:5px 8px 2px}.hud{padding:5px 12px}#dropBar{padding:5px 10px max(8px,env(safe-area-inset-bottom))}}
+
+/* Never let the canvas push the gold drop control below the mobile viewport. */
+#game-app{height:auto;min-height:0;overflow:hidden}
+#game-app>header,.hud,#dropBar{flex-shrink:0}
+#stage{flex:1 1 auto;min-height:0;overflow:hidden}
+#dropBar{position:relative;z-index:11;background:#160d29;padding:8px 12px max(12px,env(safe-area-inset-bottom))}
+#dropBtn{min-height:50px;width:min(390px,100%);display:block}
+@media(max-width:480px){#dropBar{padding:7px 10px max(12px,env(safe-area-inset-bottom))}}
 </style>
 </head>
 <body>
@@ -339,12 +347,21 @@ let dragging = false;
 let dragOffsetX = 0;
 
 function computeSize(){
-  const navSpace = parseFloat(getComputedStyle(document.body).paddingTop) || 0;
-  const maxW = Math.max(250, Math.min(560, window.innerWidth) - 16);
-  const viewportH = window.visualViewport ? window.visualViewport.height : window.innerHeight;
-  const maxH = viewportH - navSpace - 190;
-  W = maxW;
-  H = Math.max(260, Math.min(620, maxH));
+  const app = document.getElementById('game-app');
+  const viewport = window.visualViewport;
+  // Header height varies by device; use the game's actual on-screen position.
+  // Reserve the bottom button BEFORE sizing the canvas.
+  const viewportBottom = viewport ? viewport.offsetTop + viewport.height : window.innerHeight;
+  const top = app.getBoundingClientRect().top;
+  const available = Math.max(310, viewportBottom - top - 8);
+  app.style.height = Math.round(available) + 'px';
+  const stage = document.getElementById('stage');
+  const title = app.querySelector('header');
+  const hud = app.querySelector('.hud');
+  const controls = document.getElementById('dropBar');
+  const stageHeight = available - title.offsetHeight - hud.offsetHeight - controls.offsetHeight;
+  W = Math.max(250, Math.min(560, window.innerWidth) - 16);
+  H = Math.max(170, Math.min(620, stageHeight - 8));
   canvas.width = W * devicePixelRatio;
   canvas.height = H * devicePixelRatio;
   canvas.style.width = W+'px';
@@ -356,6 +373,12 @@ function computeSize(){
 }
 window.addEventListener('resize', computeSize);
 if(window.visualViewport)window.visualViewport.addEventListener('resize',computeSize);
+window.addEventListener('load',computeSize);
+// The shared site header is inserted after initial parsing, so remeasure when it appears.
+if(window.ResizeObserver){
+  const header = document.getElementById('vs-header');
+  if(header)new ResizeObserver(()=>requestAnimationFrame(computeSize)).observe(header);
+}
 
 // ---------- Glowing gold ball rendering ----------
 // Gold balls are drawn with canvas gradients.
