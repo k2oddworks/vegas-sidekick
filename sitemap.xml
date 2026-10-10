@@ -940,15 +940,7 @@
       <image:loc>https://vegassidekick.com/images/play/koko-plinko-og.jpg</image:loc>
     </image:image>
   </url>
-  <url>
-    <loc>https://vegassidekick.com/play/stephen-skates/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-    <lastmod>2026-07-16</lastmod>
-      <image:image>
-      <image:loc>https://vegassidekick.com/images/brand/logo-badge.png</image:loc>
-    </image:image>
-  </url>
+  
   <url>
     <loc>https://vegassidekick.com/play/walk-the-strip/</loc>
     <changefreq>monthly</changefreq>
