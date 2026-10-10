@@ -5,7 +5,7 @@
 
   const html = `
 <nav id="vs-nav" aria-label="Primary navigation">
-  <div class="vs-announce">&#127917; Real Vegas show savings, when the numbers support them &mdash; <span>compare current deals</span></div>
+  <a class="vs-announce" href="/shows/deals/">&#127915; Going to a Vegas show? <span>Check the deals first. &rarr;</span></a>
   <div class="vs-nav-row">
     <a class="nav-logo" href="/" aria-label="Vegas Sidekick home"><img src="/images/brand/logo-horizontal.png?v=72014685" alt="Vegas Sidekick" width="1425" height="249" loading="eager" fetchpriority="high" decoding="async"></a>
 
@@ -83,8 +83,10 @@
 #vs-nav{position:fixed;top:0;left:0;right:0;z-index:200;font-family:'Inter',sans-serif}
 #vs-nav *,.nav-mobile-drawer *{box-sizing:border-box}
 .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
-.vs-announce{background:#12061f;color:#efe9ff;text-align:center;font-size:.8rem;font-weight:500;line-height:1;padding:8px 16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vs-announce{display:block;background:#12061f;color:#efe9ff;text-align:center;text-decoration:none;font-size:.8rem;font-weight:500;line-height:1.3;padding:8px 16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:background .15s}
 .vs-announce span{color:#FFB000;font-weight:700}
+.vs-announce:hover{background:#201031}
+.vs-announce:focus-visible{outline:2px solid #FFB000;outline-offset:-2px}
 .vs-nav-row{position:relative;display:flex;align-items:center;gap:20px;height:56px;padding:0 40px;background:rgba(20,8,40,.94);backdrop-filter:saturate(160%) blur(14px)}
 .vs-nav-row::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,#ff2e7e 0%,#7c3aed 42%,#0fb5c9 70%,#c6f22e 100%);opacity:.95}
 .nav-logo{display:flex;align-items:center;flex:0 0 auto;text-decoration:none;line-height:0}
