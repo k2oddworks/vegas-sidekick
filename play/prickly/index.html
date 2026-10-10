@@ -144,6 +144,48 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(-
  .clue-help{font-size:.71rem}
  .ladder{margin-bottom:12px}
 }
+
+/* Vegas jackpot scoreboard: fictional points only. */
+.jackpot-scoreboard{border-color:#dfb35866;background:linear-gradient(130deg,#342046,#28123d 60%,#30183a)}
+.jackpot-scoreboard .side-bottom{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:end}
+.jackpot-heading{font-size:.66rem;font-weight:800;letter-spacing:.13em;color:var(--lime);line-height:1.35;margin-bottom:6px}
+.jackpot-scoreboard .stat-number{color:#ffcf5b;font-size:clamp(1.65rem,4.8vw,2.2rem);line-height:1.12;letter-spacing:-.055em;font-variant-numeric:tabular-nums;white-space:nowrap;text-shadow:0 1px 15px #ffb00020}
+.jackpot-scoreboard .stat-label{color:#d4c4da;font-size:.72rem;margin-top:5px}
+.jackpot-misses{text-align:right;padding-bottom:1px}
+.jackpot-misses .stat-number{color:#fff;font-size:1.5rem;letter-spacing:0}
+.finish{position:relative;isolation:isolate}
+.finish-mark{color:#e7a713;font-size:2rem;margin-bottom:2px}
+.finish-kicker{font-size:.7rem;font-weight:800;letter-spacing:.17em;color:#855b21;margin-bottom:8px}
+.finish .final-score{font-size:clamp(2.25rem,8.8vw,3.7rem);color:#a26a14;font-variant-numeric:tabular-nums;letter-spacing:-.07em;overflow-wrap:anywhere}
+.finish .final-label{color:#755b37;letter-spacing:.09em}
+.finish .finish-quote{max-width:440px;margin:20px auto 15px;padding:15px 18px;border-radius:14px;border:1px solid #eac77e;background:#fff3ce;color:#42293c;font-weight:800;line-height:1.5;font-size:1.02rem}
+.finish #finishText{font-size:.8rem;margin:0 auto 16px}
+.finish.perfect h2{color:#582d75}
+.finish.perfect .final-score{color:#a56d15;background:linear-gradient(110deg,#9f6510 0%,#dba62c 38%,#875115 65%,#b77b1d 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.jackpot-confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:-1;display:none}
+.finish.perfect .jackpot-confetti{display:block}
+.jackpot-confetti i{position:absolute;top:6%;left:50%;width:8px;height:14px;border-radius:2px;background:#ffb000;opacity:0;transform:rotate(25deg)}
+.jackpot-confetti i:nth-child(2n){background:#c6f22e}
+.jackpot-confetti i:nth-child(3n){background:#ff2e7e}
+.jackpot-confetti i:nth-child(1){--dx:-170px;--dy:135px;animation:jackpot-fall 1.4s .08s ease-out both}
+.jackpot-confetti i:nth-child(2){--dx:-100px;--dy:220px;animation:jackpot-fall 1.7s .25s ease-out both}
+.jackpot-confetti i:nth-child(3){--dx:8px;--dy:160px;animation:jackpot-fall 1.5s .12s ease-out both}
+.jackpot-confetti i:nth-child(4){--dx:110px;--dy:200px;animation:jackpot-fall 1.8s .04s ease-out both}
+.jackpot-confetti i:nth-child(5){--dx:165px;--dy:105px;animation:jackpot-fall 1.4s .22s ease-out both}
+.jackpot-confetti i:nth-child(6){--dx:-140px;--dy:245px;animation:jackpot-fall 1.85s .34s ease-out both}
+.jackpot-confetti i:nth-child(7){--dx:60px;--dy:258px;animation:jackpot-fall 1.9s .1s ease-out both}
+.jackpot-confetti i:nth-child(8){--dx:185px;--dy:245px;animation:jackpot-fall 1.8s .2s ease-out both}
+@keyframes jackpot-fall{0%{opacity:0;transform:translate(0,-18px) rotate(0)}12%{opacity:1}85%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(520deg)}}
+@media(max-width:440px){
+ .jackpot-scoreboard{padding:11px 13px}
+ .jackpot-scoreboard .side-bottom{gap:9px}
+ .jackpot-heading{font-size:.6rem;letter-spacing:.1em}
+ .jackpot-scoreboard .stat-number{font-size:clamp(1.5rem,7.8vw,1.95rem)}
+ .jackpot-scoreboard .stat-label{font-size:.63rem}
+ .jackpot-misses .stat-number{font-size:1.38rem}
+ .finish .finish-quote{font-size:.94rem}
+}
+@media(prefers-reduced-motion:reduce){.jackpot-confetti i{animation:none!important;display:none}}
 </style>
 </head>
 <body>
@@ -157,9 +199,9 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(-
 <img class="spike-badge" src="/images/brand/spike-podcast-badge.webp" alt="Spike, the Vegas Sidekick cactus, at his podcast microphone" width="100" height="100">
 </header>
 <section class="layout" aria-label="Prickly word game">
-<div class="sidebar" aria-label="Game statistics"><div class="side-bottom">
-<div><div class="stat-number" id="score">400</div><div class="stat-label">Points remaining</div></div>
-<div><div class="stat-number" id="mistakes">0</div><div class="stat-label">Wrong guesses</div></div>
+<div class="sidebar jackpot-scoreboard" aria-label="Game statistics"><div class="side-bottom">
+<div class="jackpot-total"><div class="jackpot-heading">✦ PRICKLY JACKPOT</div><div class="stat-number" id="score">4,000,000</div><div class="stat-label">Jackpot points remaining</div></div>
+<div class="jackpot-misses"><div class="stat-number" id="mistakes">0</div><div class="stat-label">Wrong guesses</div></div>
 </div></div>
 <div class="card">
 <div class="card-top">
@@ -169,12 +211,12 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(-
 <dialog class="rules-dialog" id="rulesDialog" aria-labelledby="rulesTitle">
 <div class="rules-head"><h2 id="rulesTitle">How to play</h2><button class="rules-close" id="closeRules" type="button" aria-label="Close instructions">×</button></div>
 <p>Start with the given four-letter word. Solve each clue by changing <strong>exactly one letter</strong> in the previous word, without rearranging any letters.</p>
-<p>For example, COLD → CORD changes one letter. Solve all four clues to finish the ladder. Wrong guesses and hints cost points. No timer, no sign-up.</p>
+<p>For example, COLD → CORD changes one letter. Solve all four clues to finish the ladder. Wrong guesses cost 250,000 points, hints cost 350,000, and revealed words cost 1,000,000. These are game points, not cash prizes. No timer, no sign-up.</p>
 <p class="rules-note">This prototype has three replayable sample puzzles. Daily puzzles are not active yet.</p>
 </dialog>
 <div class="card-body">
 <div id="game">
-<div class="progress-meta"><span id="stepLabel">Clue 1 of 4</span><span id="pointsLabel">400 possible points</span></div>
+<div class="progress-meta"><span id="stepLabel">Clue 1 of 4</span><span id="pointsLabel">4,000,000 pts remaining</span></div>
 <div class="track" aria-hidden="true"><div class="track-fill" id="progressFill"></div></div>
 <div class="ladder" id="ladder" aria-label="Word ladder progress"></div>
 <div class="clue-panel" aria-label="Current word clue"><div class="clue-label"><span class="clue-spark" aria-hidden="true">✦</span><span id="clueLabel">Your clue</span></div><p class="clue" id="clue"></p><p class="clue-help" id="hintText">Change one letter in the starting word.</p></div>
@@ -183,13 +225,14 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(-
 <button class="submit" type="submit">Enter ↗</button>
 </form>
 <div class="feedback" role="status" aria-live="polite" id="feedback"></div>
-<div class="tools"><button class="tool" id="hintBtn" type="button">Get a hint −35 pts</button><button class="tool" id="skipBtn" type="button">Reveal word −100 pts</button></div>
+<div class="tools"><button class="tool" id="hintBtn" type="button">Get a hint −350K pts</button><button class="tool" id="skipBtn" type="button">Reveal word −1M pts</button></div>
 <div class="help">No timer, no sign-up. The same sample can be replayed; daily puzzles are not active yet.</div>
 </div>
 <div class="finish" id="finish" aria-live="polite">
-<div class="finish-mark">🌵</div><h2 id="finishTitle">Ladder complete.</h2>
-<div class="final-score" id="finalScore">400</div><div class="final-label">Points</div>
-<p id="finishText"></p>
+<div class="jackpot-confetti" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="finish-mark" aria-hidden="true">✦ 🎰 ✦</div><div class="finish-kicker">PRICKLY JACKPOT</div><h2 id="finishTitle">Ladder complete.</h2>
+<div class="final-score" id="finalScore">4,000,000</div><div class="final-label">Jackpot points · No cash value</div>
+<p class="finish-quote" id="finishQuote"></p><p id="finishText"></p>
 <div class="finish-actions"><button class="primary" id="nextBtn" type="button">Try another puzzle →</button><button id="shareBtn" type="button">Share score ↗</button></div>
 <div class="feedback" id="shareFeedback" role="status"></div>
 </div>
@@ -218,17 +261,19 @@ var PUZZLES=[
 {word:"LAKE",clue:"A large body of water surrounded by land."},
 {word:"MAKE",clue:"To create or produce something."}]}
 ];
-var number=0,step=0,score=400,misses=0,hints=[],usedSkips=0,finished=false;
+var MAX_SCORE=4000000, WRONG_PENALTY=250000, HINT_PENALTY=350000, REVEAL_PENALTY=1000000;
+var number=0,step=0,score=MAX_SCORE,misses=0,hints=[],usedSkips=0,finished=false;
+var formatPoints=function(n){return n.toLocaleString("en-US");};
 var byId=function(id){return document.getElementById(id);};
 var puzzle=function(){return PUZZLES[number];};
 var previous=function(){return step===0?puzzle().start:puzzle().steps[step-1].word;};
 function differences(a,b){var n=0;for(var i=0;i<4;i++){if(a[i]!==b[i])n++;}return n;}
 function render(){
  byId("sampleTag").textContent="Sample puzzle "+(number+1)+" of "+PUZZLES.length;
- byId("score").textContent=String(score);
+ byId("score").textContent=formatPoints(score);
  byId("mistakes").textContent=String(misses);
  byId("stepLabel").textContent="Clue "+(step+1)+" of 4";
- byId("pointsLabel").textContent=score+" points remaining";
+ byId("pointsLabel").textContent=formatPoints(score)+" pts remaining";
  byId("progressFill").style.width=(step*25)+"%";
  var ladder=byId("ladder");ladder.replaceChildren();
  var words=[puzzle().start].concat(puzzle().steps.map(function(x){return x.word;}));
@@ -270,17 +315,20 @@ function completeWord(skipped){
  byId("guess").focus({preventScroll:true});
 }
 function complete(){
- finished=true;byId("game").hidden=true;byId("finish").classList.add("show");
- byId("score").textContent=String(score);
- byId("finalScore").textContent=String(score);
- byId("finishTitle").textContent=usedSkips?"You made it. Mostly.":"Ladder complete.";
- byId("finishText").textContent="Four clues cleared. "+misses+" wrong "+(misses===1?"guess":"guesses")+", "+hints.filter(Boolean).length+" "+(hints.filter(Boolean).length===1?"hint":"hints")+", "+usedSkips+" revealed. "+(score===400?"Not even Spike can complain about that.":score>=300?"Spike is grudgingly impressed.":"Spike has questions, but he's keeping them to himself.");
- say(score===400?"Okay, that was annoyingly perfect.":usedSkips?"I'm putting this on my résumé.":"I'll allow it.");
- try{var best=Number(localStorage.getItem("prickly-prototype-best")||0);if(score>best)localStorage.setItem("prickly-prototype-best",String(score));}catch(e){}
+ finished=true;
+ var perfect=score===MAX_SCORE,finish=byId("finish");
+ byId("game").hidden=true;finish.classList.add("show");finish.classList.toggle("perfect",perfect);
+ byId("score").textContent=formatPoints(score);
+ byId("finalScore").textContent=formatPoints(score);
+ byId("finishTitle").textContent=perfect?"JACKPOT!":usedSkips?"You made it. Mostly.":"Ladder complete.";
+ byId("finishQuote").textContent=perfect?"“FOUR MILLION POINTS. Unfortunately, the cashier says they're worthless.”":usedSkips?"“You won. I may have done some of the work.”":"“Not bad. The casino would still like its points back.”";
+ byId("finishText").textContent="Four clues cleared · "+misses+" wrong "+(misses===1?"guess":"guesses")+" · "+hints.filter(Boolean).length+" "+(hints.filter(Boolean).length===1?"hint":"hints")+" · "+usedSkips+" revealed.";
+ say("");
+ try{var best=Number(localStorage.getItem("prickly-jackpot-best")||0);if(score>best)localStorage.setItem("prickly-jackpot-best",String(score));}catch(e){}
 }
 function reset(next){
- number=next;step=0;score=400;misses=0;hints=[];usedSkips=0;finished=false;
- byId("game").hidden=false;byId("finish").classList.remove("show");
+ number=next;step=0;score=MAX_SCORE;misses=0;hints=[];usedSkips=0;finished=false;
+ byId("game").hidden=false;byId("finish").classList.remove("show","perfect");
  byId("shareFeedback").textContent="";byId("guess").value="";
  byId("guess").disabled=false;byId("hintBtn").disabled=false;
  message("","");
@@ -294,34 +342,34 @@ byId("guessForm").addEventListener("submit",function(e){
  if(guess.length!==4){message("Enter exactly four letters.","error");return;}
  if(differences(guess,previous())!==1){message("Change just ONE letter from "+previous()+". Keep the other three where they are.","error");say("One letter. It's right there in the rules.");return;}
  if(guess===puzzle().steps[step].word){completeWord(false);return;}
- deduct(25);misses++;render();
- message("That follows the one-letter rule, but doesn't fit Spike's clue. Try again. −25 points.","error");
+ deduct(WRONG_PENALTY);misses++;render();
+ message("That follows the one-letter rule, but doesn't fit Spike's clue. Try again. −250,000 points.","error");
  say(misses===1?"Good word. Wrong word.":misses===2?"My needles are starting to itch.":"The clue is doing its best.");
  byId("guess").select();
 });
 byId("hintBtn").addEventListener("click",function(){
  if(finished||hints[step])return;
- hints[step]=true;deduct(35);render();message("The changed letter's position is revealed. −35 points.");
+ hints[step]=true;deduct(HINT_PENALTY);render();message("The changed letter's position is revealed. −350,000 points.");
  say("I'm charging for tutoring now.");
  byId("guess").focus({preventScroll:true});
 });
 byId("skipBtn").addEventListener("click",function(){
  if(finished)return;
  var answer=puzzle().steps[step].word;
- deduct(100);
+ deduct(REVEAL_PENALTY);
  say("The word was "+answer+". Yes, I knew it.");
  completeWord(true);
- message("The answer was "+answer+". −100 points. Onward.","");
+ message("The answer was "+answer+". −1,000,000 points. Onward.","");
 });
 byId("rulesBtn").addEventListener("click",function(){byId("rulesDialog").showModal();});
 byId("closeRules").addEventListener("click",function(){byId("rulesDialog").close();});
 byId("rulesDialog").addEventListener("click",function(e){if(e.target===this)this.close();});
 byId("nextBtn").addEventListener("click",function(){reset((number+1)%PUZZLES.length);});
 byId("shareBtn").addEventListener("click",async function(){
- var result="PRICKLY • Sample "+(number+1)+"/3\n"+score+"/400 points\n"+misses+" wrong guesses • "+hints.filter(Boolean).length+" hints\nThink you can beat Spike?\nhttps://vegassidekick.com/play/prickly/";
+ var result="PRICKLY JACKPOT • Sample "+(number+1)+"/3\n"+formatPoints(score)+"/"+formatPoints(MAX_SCORE)+" jackpot points (no cash value)\n"+misses+" wrong guesses • "+hints.filter(Boolean).length+" hints\nThink you can beat Spike?\nhttps://vegassidekick.com/play/prickly/";
  if(navigator.share){try{await navigator.share({title:"Prickly — Vegas Sidekick",text:result});return;}catch(e){if(e.name==="AbortError")return;}}
  try{await navigator.clipboard.writeText(result);byId("shareFeedback").textContent="Score copied. Send it to someone competitive.";}
- catch(e){var el=document.createElement("textarea");el.value=result;el.style.position="fixed";el.style.opacity="0";document.body.appendChild(el);el.select();var ok=false;try{ok=document.execCommand("copy");}catch(err){}el.remove();byId("shareFeedback").textContent=ok?"Score copied.":"Copy your result: "+score+"/400 points";}
+ catch(e){var el=document.createElement("textarea");el.value=result;el.style.position="fixed";el.style.opacity="0";document.body.appendChild(el);el.select();var ok=false;try{ok=document.execCommand("copy");}catch(err){}el.remove();byId("shareFeedback").textContent=ok?"Score copied.":"Copy your result: "+formatPoints(score)+"/"+formatPoints(MAX_SCORE)+" points";}
 });
 PUZZLES.forEach(function(p){var prev=p.start;p.steps.forEach(function(s){if(!/^[A-Z]{4}$/.test(s.word)||differences(prev,s.word)!==1)throw new Error("Invalid word ladder");prev=s.word;});});
 render();
