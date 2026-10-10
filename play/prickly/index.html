@@ -14,7 +14,7 @@
 <meta property="og:title" content="Prickly — A Word Game with Spike">
 <meta property="og:description" content="One letter. One clue. One very opinionated cactus. Play the Prickly prototype.">
 <meta property="og:url" content="https://vegassidekick.com/play/prickly/">
-<meta property="og:image" content="https://vegassidekick.com/images/brand/spike-hero.png">
+<meta property="og:image" content="https://vegassidekick.com/images/brand/spike-podcast-badge.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,39 +80,87 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(-
 @media(max-width:800px){.shell{margin-top:18px}.layout{grid-template-columns:1fr}.sidebar{min-height:auto;padding:18px 22px;display:grid;grid-template-columns:95px 1fr;align-items:center;gap:0 17px}.spike-stage{height:100px;grid-row:1/3;margin:0}.spike{max-height:110px;max-width:95px}.spike-glow{width:95px;height:95px}.speaker{margin-bottom:4px}.speech{font-size:.93rem;min-height:0}.side-bottom{grid-column:1/-1;margin-top:15px;padding-top:13px}.heading{font-size:clamp(3.5rem,13vw,5.3rem)}.subhead{margin-bottom:18px}.card-body{padding:21px 20px 22px}.card-top{padding:19px 20px}}
 @media(max-width:440px){.topbar{height:66px;padding:0 15px}.logo img{width:141px}.back{font-size:.71rem;padding:8px 11px}.shell{width:calc(100% - 22px)}.sidebar{grid-template-columns:76px 1fr;padding:14px}.spike-stage{height:90px}.spike{max-width:75px;max-height:95px}.speech{font-size:.84rem}.stat-number{font-size:1.22rem}.stat-label{font-size:.69rem}.card{border-radius:19px}.card-top{gap:6px}.card-title{font-size:1.05rem}.tile{height:43px;width:43px;border-radius:9px;font-size:1.12rem}.tiles{gap:5px}.rung{gap:7px}.rung-label{width:43px;font-size:.56rem}.rung-status{font-size:.68rem}.clue{font-size:1.04rem}.guess-row{gap:7px}.submit{min-width:105px;padding:0 12px;font-size:.78rem}.word-input{font-size:1.24rem;letter-spacing:.18em;height:56px}.heading{font-size:3.5rem}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+
+/* Gameplay-first Prickly header and scoreboard */
+.logo-fallback{font:800 .94rem "Plus Jakarta Sans",sans-serif;color:var(--lime);white-space:nowrap}
+.topbar{height:64px;max-width:790px;padding:0 12px}
+.logo img{width:164px;max-height:44px}.back{white-space:nowrap}
+.shell{width:min(760px,calc(100% - 24px));margin:9px auto 40px}
+.game-intro{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 13px}
+.intro-copy{min-width:0}
+.heading{margin:0;font-size:clamp(3.35rem,9vw,4.75rem);line-height:.99}
+.subhead{margin:7px 0 0;max-width:none;font-size:1rem;line-height:1.45;color:#ddd1e9}
+.spike-badge{width:94px;height:94px;flex-shrink:0;object-fit:cover;border-radius:17px;border:1px solid #ffffff3d}
+.layout{display:flex;flex-direction:column;gap:11px}
+.sidebar{min-height:0;padding:13px 22px;display:block;border-radius:16px;background:#ffffff0b}
+.sidebar:after{display:none}
+.side-bottom{border:0;margin:0;padding:0;display:flex;justify-content:space-between;gap:20px}
+.stat-number{font-size:1.5rem;line-height:1.1}.stat-label{font-size:.73rem}
+.card-top{padding:18px 23px 15px}.card-body{padding:17px 23px 25px}
+.clue-panel{margin-top:15px;padding:15px 18px}.clue{margin:5px 0;font-size:1.14rem}
+.ladder{margin:17px 0 16px;gap:6px}.rung{min-height:44px}.tile{height:43px;width:43px}
+.feedback{min-height:24px}
+.rules-dialog{width:min(460px,calc(100vw - 28px));max-height:min(86vh,650px);border:1px solid #e1d5e8;border-radius:21px;padding:22px 24px 20px;background:#fff;color:var(--ink);box-shadow:0 24px 80px #08021088;line-height:1.55;font-size:.91rem}
+.rules-dialog::backdrop{background:#120820bd}
+.rules-head{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.rules-head h2{margin:0;font:800 1.45rem "Plus Jakarta Sans",sans-serif}
+.rules-close{width:36px;height:36px;border-radius:50%;background:#f6f1f7;border:0;color:var(--ink);font-size:1.5rem}
+.rules-dialog p{margin:14px 0 0}.rules-note{color:var(--muted);font-size:.8rem}
+.spike-toast{position:fixed;z-index:20;bottom:max(18px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:min(480px,calc(100% - 30px));border:1px solid #b4d862;background:#28153c;color:#fff;box-shadow:0 10px 42px #090419aa;border-radius:16px;padding:13px 17px;display:flex;align-items:baseline;gap:11px;line-height:1.5;font-size:.83rem;font-weight:700}
+.spike-toast[hidden]{display:none}.spike-toast strong{color:var(--lime);font-size:.68rem;letter-spacing:.1em;white-space:nowrap}
+@media(max-width:800px){
+ .shell{margin-top:9px}.layout{display:flex;grid-template-columns:none;gap:10px}
+ .sidebar{display:block;min-height:0;padding:12px 18px}.side-bottom{display:flex;margin:0;padding:0}
+ .heading{font-size:clamp(3rem,10vw,4rem)}.subhead{margin:5px 0 0;font-size:.88rem;line-height:1.38}
+ .card-body{padding:15px 18px 22px}.card-top{padding:15px 18px}.rung.future{display:none}
+}
+@media(max-width:440px){
+ .topbar{height:54px;padding:0 12px}.logo img{width:135px;max-height:36px}.back{padding:7px 9px;font-size:.69rem}
+ .shell{width:calc(100% - 20px);margin:7px auto 27px}
+ .game-intro{gap:10px;margin-bottom:10px}.heading{font-size:clamp(2.6rem,11.8vw,3.45rem)}
+ .subhead{font-size:.76rem;line-height:1.33}.spike-badge{width:69px;height:69px;border-radius:12px}
+ .sidebar{grid-template-columns:none;padding:10px 16px;border-radius:13px}.side-bottom{display:flex;gap:15px}
+ .stat-number{font-size:1.28rem}.stat-label{font-size:.65rem}.card{border-radius:17px}
+ .card-top{padding:13px 15px 12px}.card-eyebrow{font-size:.61rem}.card-title{font-size:1rem}.mini-btn{padding:8px 9px;font-size:.7rem}
+ .card-body{padding:13px 15px 19px}.progress-meta{margin-bottom:7px;font-size:.69rem}.track{height:5px}
+ .clue-panel{padding:12px 13px;margin-top:11px;border-radius:13px}.clue{font-size:1.01rem;line-height:1.32}.clue-help{font-size:.69rem}
+ .ladder{margin:12px 0;gap:5px}.rung{gap:7px;min-height:40px}.rung-label{width:43px}.tile{height:40px;width:40px}
+ .spike-toast{font-size:.77rem}
+}
 </style>
 </head>
 <body>
 <nav class="topbar" aria-label="Site">
-<a class="logo" href="/" aria-label="Vegas Sidekick home"><img src="/images/brand/logo-horizontal-header.png" alt="Vegas Sidekick"></a>
-<a class="back" href="/">← Back to Vegas Sidekick</a>
+<a class="logo" href="/" aria-label="Vegas Sidekick home"><img src="/images/brand/logo-horizontal.png" alt="Vegas Sidekick" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="logo-fallback" hidden>VEGAS SIDEKICK</span></a>
+<a class="back" href="/">← Vegas Sidekick</a>
 </nav>
 <main class="shell">
-<div class="pill">Vegas Sidekick presents · Playable prototype</div>
-<h1 class="heading">PRICK<span>LY.</span></h1>
-<p class="subhead">Change one letter. Crack the clue. Repeat. Four steps stand between you and the approval of a very judgmental cactus.</p>
+<header class="game-intro">
+<div class="intro-copy"><h1 class="heading">PRICK<span>LY.</span></h1><p class="subhead">Change one letter. Solve four clues.</p></div>
+<img class="spike-badge" src="/images/brand/spike-podcast-badge.webp" alt="Spike, the Vegas Sidekick cactus, at his podcast microphone" width="100" height="100">
+</header>
 <section class="layout" aria-label="Prickly word game">
-<aside class="sidebar">
-<div class="spike-stage"><div class="spike-glow"></div><img class="spike" src="/images/brand/spike-icon.png" alt="Spike, Vegas Sidekick's cactus mascot in gold aviators"></div>
-<div class="speaker">Spike says</div>
-<div class="speech" id="spikeSays" aria-live="polite">“Four letters. How much trouble could that be?”</div>
-<div class="side-bottom">
+<div class="sidebar" aria-label="Game statistics"><div class="side-bottom">
 <div><div class="stat-number" id="score">400</div><div class="stat-label">Points remaining</div></div>
 <div><div class="stat-number" id="mistakes">0</div><div class="stat-label">Wrong guesses</div></div>
-</div>
-</aside>
+</div></div>
 <div class="card">
 <div class="card-top">
 <div><div class="card-eyebrow" id="sampleTag">Sample puzzle 1 of 3</div><div class="card-title">The four-letter ladder</div></div>
-<div class="actions-top"><button class="mini-btn" id="rulesBtn" type="button" aria-expanded="false" aria-controls="rules">How to play ?</button></div>
+<div class="actions-top"><button class="mini-btn" id="rulesBtn" type="button" aria-haspopup="dialog" aria-controls="rulesDialog">How to play?</button></div>
 </div>
-<div class="rules" id="rules" hidden><strong>One letter changes each turn.</strong> Start with the given four-letter word. Solve each clue by changing exactly one letter in the previous word, without rearranging letters. Four correct answers finish the ladder. Wrong guesses and hints cost points. This prototype has three replayable sample puzzles.</div>
+<dialog class="rules-dialog" id="rulesDialog" aria-labelledby="rulesTitle">
+<div class="rules-head"><h2 id="rulesTitle">How to play</h2><button class="rules-close" id="closeRules" type="button" aria-label="Close instructions">×</button></div>
+<p>Start with the given four-letter word. Solve each clue by changing <strong>exactly one letter</strong> in the previous word, without rearranging any letters.</p>
+<p>For example, COLD → CORD changes one letter. Solve all four clues to finish the ladder. Wrong guesses and hints cost points. No timer, no sign-up.</p>
+<p class="rules-note">This prototype has three replayable sample puzzles. Daily puzzles are not active yet.</p>
+</dialog>
 <div class="card-body">
 <div id="game">
 <div class="progress-meta"><span id="stepLabel">Clue 1 of 4</span><span id="pointsLabel">400 possible points</span></div>
 <div class="track" aria-hidden="true"><div class="track-fill" id="progressFill"></div></div>
+<div class="clue-panel"><div class="clue-label" id="clueLabel">Your first clue</div><p class="clue" id="clue"></p><p class="clue-help" id="hintText">Change one letter in the starting word.</p></div>
 <div class="ladder" id="ladder" aria-label="Word ladder progress"></div>
-<div class="clue-panel"><div class="clue-label" id="clueLabel">Your first clue</div><p class="clue" id="clue"></p><p class="clue-help" id="hintText">Change one letter in the word above.</p></div>
 <form class="guess-row" id="guessForm" autocomplete="off">
 <div class="field-wrap"><label for="guess" class="card-eyebrow" style="display:block;margin:0 0 7px">Your four-letter answer</label><input id="guess" class="word-input" type="text" maxlength="4" inputmode="text" autocapitalize="characters" autocorrect="off" autocomplete="off" spellcheck="false" aria-describedby="feedback" required></div>
 <button class="submit" type="submit">Enter ↗</button>
@@ -130,6 +178,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(-
 </div>
 </div>
 </section>
+<div class="spike-toast" id="spikeToast" hidden role="status" aria-live="polite"><strong>SPIKE</strong><span id="spikeSays"></span></div>
 <div class="note"><span>PRICKLY is an early game concept, not a live daily challenge. Tell us whether you'd come back for it.</span><a href="/">Discover Vegas Sidekick →</a></div>
 </main>
 <script>
@@ -179,7 +228,15 @@ function render(){
  byId("hintText").textContent=hints[step]===true?hintMessage():"Change exactly one letter in "+previous()+".";
  byId("hintBtn").disabled=!!hints[step];}
 }
-function say(str){byId("spikeSays").textContent="“"+str+"”";}
+var spikeToastTimer;
+function say(str){
+ var toast=byId("spikeToast");
+ if(spikeToastTimer)clearTimeout(spikeToastTimer);
+ if(!str){toast.hidden=true;byId("spikeSays").textContent="";return;}
+ byId("spikeSays").textContent="“"+str+"”";
+ toast.hidden=false;
+ spikeToastTimer=setTimeout(function(){toast.hidden=true;},4500);
+}
 function message(str,type){byId("feedback").textContent=str;byId("feedback").className="feedback "+(type||"");}
 function hintMessage(){var prev=previous(),next=puzzle().steps[step].word;
  for(var j=0;j<4;j++){if(prev[j]!==next[j])return "Hint: Replace letter "+(j+1)+" of "+prev+". The other three stay put.";}
@@ -210,7 +267,7 @@ function reset(next){
  byId("shareFeedback").textContent="";byId("guess").value="";
  byId("guess").disabled=false;byId("hintBtn").disabled=false;
  message("Change one letter to match the clue. You've got this. Probably.","");
- say("Four letters. How much trouble could that be?");
+ say("");
  render();byId("guess").focus({preventScroll:true});
 }
 byId("guess").addEventListener("input",function(){this.value=this.value.replace(/[^a-z]/gi,"").toUpperCase().slice(0,4);});
@@ -239,9 +296,9 @@ byId("skipBtn").addEventListener("click",function(){
  completeWord(true);
  message("The answer was "+answer+". −100 points. Onward.","");
 });
-byId("rulesBtn").addEventListener("click",function(){
- var box=byId("rules"),expanded=box.hidden;box.hidden=!expanded;this.setAttribute("aria-expanded",String(expanded));this.textContent=expanded?"Close rules ×":"How to play ?";
-});
+byId("rulesBtn").addEventListener("click",function(){byId("rulesDialog").showModal();});
+byId("closeRules").addEventListener("click",function(){byId("rulesDialog").close();});
+byId("rulesDialog").addEventListener("click",function(e){if(e.target===this)this.close();});
 byId("nextBtn").addEventListener("click",function(){reset((number+1)%PUZZLES.length);});
 byId("shareBtn").addEventListener("click",async function(){
  var result="PRICKLY • Sample "+(number+1)+"/3\n"+score+"/400 points\n"+misses+" wrong guesses • "+hints.filter(Boolean).length+" hints\nThink you can beat Spike?\nhttps://vegassidekick.com/play/prickly/";
