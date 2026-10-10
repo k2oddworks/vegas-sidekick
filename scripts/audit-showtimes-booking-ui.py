@@ -54,8 +54,13 @@ def main():
                 errors.append(f'{rel}: booking CSS is not on v3')
             if '/assets/showtimes-booking.js?v=2' not in text:
                 errors.append(f'{rel}: booking JS is not on v2')
-            if f'data-booking-theme="{cat}"' not in text:
-                errors.append(f'{rel}: booking theme is missing or does not match category {cat}')
+            # Existing indexed show URLs can retain a historical category path
+            # after editorial recategorization. The database owns the theme.
+            expected_theme = row.get('category', cat) if row else cat
+            if expected_theme not in CATS:
+                errors.append(f'{rel}: unknown booking category {expected_theme}')
+            elif f'data-booking-theme="{expected_theme}"' not in text:
+                errors.append(f'{rel}: booking theme is missing or does not match database category {expected_theme}')
             if 'class="vs-booking-pill"' not in text:
                 errors.append(f'{rel}: booking pill is missing from static HTML')
             if 'Planning ahead?' in text:
