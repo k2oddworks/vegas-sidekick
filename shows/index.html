@@ -89,6 +89,13 @@
     .fb-specs  { background: rgba(217,119,6,.10);  color: #B45309; } .fb-specs.active,  .fb-specs:hover  { background: #D97706; color: #fff; }
     .fb-family { background: rgba(8,145,178,.10);  color: #0E7490; } .fb-family.active, .fb-family:hover { background: #0891B2; color: #fff; }
     .fb-adult  { background: rgba(220,38,38,.10);  color: #B91C1C; } .fb-adult.active,  .fb-adult:hover  { background: #DC2626; color: #fff; }
+    .discount-toggle-row { justify-content: flex-start; }
+    .discount-toggle { display:inline-flex;align-items:center;gap:10px;padding:9px 15px;border:1.5px solid #16804c;border-radius:12px;background:#eefbf1;color:#17653b;font:800 .82rem 'Plus Jakarta Sans',sans-serif;cursor:pointer;min-height:44px; }
+    .discount-toggle[aria-pressed="true"] { background:#17653b;color:#fff; }
+    .discount-toggle:focus-visible { outline:3px solid #ffb000;outline-offset:3px; }
+    .discount-toggle:disabled { opacity:.6;cursor:wait; }
+    .discount-toggle-help { font-size:.72rem;color:var(--muted); }
+    @media(max-width:600px){.discount-toggle-row{flex-wrap:wrap;gap:4px}.discount-toggle{width:100%;justify-content:space-between}.discount-toggle-help{padding-left:3px}}
     .show-count-wrap { margin-left: auto; font-family: var(--font-mono); font-size: 0.6rem; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
     @media (max-width: 940px) { .filter-bar { top: 60px; } }
     @media (max-width: 600px) { .filter-bar { padding: 8px 14px; } .show-count-wrap { display: none; } .filter-label { display: none; } }
@@ -338,6 +345,10 @@
         <button class="filter-btn fb-adult" onclick="setCat('adult',this)">Adult</button>
       </div>
     </div>
+    <div class="filter-row discount-toggle-row">
+      <button id="discount-only" class="discount-toggle" type="button" aria-pressed="false" disabled>Discounts Only <span aria-hidden="true">○</span></button>
+      <span id="discount-help" class="discount-toggle-help" role="status">Checking verified ticket savings…</span>
+    </div>
   </div>
 </div>
 
@@ -476,11 +487,14 @@ const CAT_LABELS = {
 let sort = 'order';
 let catFilter = 'all';
 let query = '';
+let discountsOnly = false;
+let verifiedDiscounts = null;
 let sel = new Set();
 
 function getFiltered() {
   let s = [...SHOWS];
   if (catFilter !== 'all') s = s.filter(x => x.cat === catFilter);
+  if (discountsOnly) s = s.filter(x => verifiedDiscounts && verifiedDiscounts.has(x.slug));
   if (query) {
     const hits = new Set((window.vsSearch ? vsSearch(query) : []).map(r => r.url));
     s = s.filter(x => hits.has('/shows/' + x.cat + '/' + x.slug + '/'));
@@ -497,7 +511,7 @@ function renderGrid() {
   if (shows.length === 0) {
     grid.innerHTML = '<div class="empty-state">' + (query
       ? 'No shows match “' + query.replace(/</g, '&lt;') + '.” Try a different search or <a href="/shows/" style="color:var(--blue);text-decoration:underline;">browse all shows</a>.'
-      : 'No shows in this category yet.') + '</div>';
+      : (discountsOnly ? 'No verified discounts match these filters. Turn off Discounts Only to see all shows.' : 'No shows in this category yet.')) + '</div>';
     document.getElementById('show-count').textContent = 0;
     return;
   }
@@ -645,6 +659,42 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCompare
   var q0 = new URLSearchParams(window.location.search).get('q') || '';
   if (q0) { query = q0; qInput.value = q0; }
   qInput.addEventListener('input', function () { query = qInput.value.trim(); renderGrid(); });
+})();
+
+// Source-of-truth discount eligibility matches the catalog badge rules.
+(function initVerifiedDiscounts() {
+  const button = document.getElementById('discount-only');
+  const helper = document.getElementById('discount-help');
+  const minSaving = 5, largeSaving = 20, maxAgeDays = 30;
+  fetch('/data/show-database.json', {cache:'no-store'})
+    .then(response => { if (!response.ok) throw new Error('Savings source unavailable'); return response.json(); })
+    .then(db => {
+      const eligible = new Set();
+      for (const item of db.records || []) {
+        if (item.status !== 'active' || !Number.isFinite(item.our_price) || !Number.isFinite(item.regular_price)) continue;
+        const saving = item.regular_price - item.our_price;
+        if (saving < minSaving) continue;
+        if (saving >= largeSaving) {
+          const date = item.price_source_last_checked_on;
+          if (typeof date !== 'string' || !/^\\d{4}-\\d{2}-\\d{2}$/.test(date)) continue;
+          const age = Math.floor((Date.now() - Date.parse(date + 'T00:00:00Z')) / 86400000);
+          if (!Number.isFinite(age) || age < 0 || age > maxAgeDays) continue;
+        }
+        eligible.add(item.slug);
+      }
+      verifiedDiscounts = eligible;
+      button.disabled = false;
+      helper.textContent = 'Show verified ticket savings';
+      button.addEventListener('click', () => {
+        discountsOnly = !discountsOnly;
+        button.setAttribute('aria-pressed', String(discountsOnly));
+        button.lastElementChild.textContent = discountsOnly ? '✓' : '○';
+        renderGrid();
+      });
+      renderGrid();
+    }).catch(() => {
+      helper.textContent = 'Savings filter temporarily unavailable';
+    });
 })();
 
 renderGrid();
