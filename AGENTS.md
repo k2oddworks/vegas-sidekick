@@ -186,6 +186,18 @@ Odd-aspect images must not break the desktop gallery. Preserve descriptive alt t
 
 Detailed rollout history and exceptions: `docs/staged-savings-rollout.md`.
 
+## Show ticket SEO metadata (October 2026)
+
+Vegas Sidekick competes for **Las Vegas discounted show tickets**, not only general show discovery. Product-page metadata must sell the right *verified* offer without inventing savings.
+
+- Each active show page needs a unique, legible, show-name-first HTML title and show-specific meta description. Preserve the production's recognizable name; keep "Las Vegas" and "| Vegas Sidekick" when length permits.
+- Use **Discount Tickets** in an active show-page title only with a source-verified starting-price comparison in `data/show-database.json`: `savings_amount >= 5`, `regular_price > our_price`, and `price_source_last_checked_on` no older than **30 days**. This is a starting-ticket comparison, never a promise that every performance or seat is discounted.
+- Otherwise prefer **Tickets from $X** using `our_price`. A historical `regular_price` without a recent check is **not** adequate support for a discount title.
+- Meta descriptions should lead with a verifiable price or starting-price savings where relevant, followed by a real, distinct show fact. Do not fall back to generic filler across dozens of shows.
+- Category, all-shows and Deals landing pages may target **ticket discounts** if they offer a mixture of verified deals and regularly priced shows; never imply every listing is discounted. Do not put an annual year (e.g. 2026) in evergreen category titles, social titles or visible category badges. Retain real event/closure years in archive or event dates.
+- On *every* price or savings change, reconcile the HTML title/meta description alongside the show database and existing category, homepage, Deals, guide and schema propagation paths. When a comparison expires, recheck the ticket source or remove the unverified savings language. Do not change the price verification date without checking.
+- Organic search titles are not the same as the customer-facing H1, hero, or social-copy voice. Do not rewrite the buyer journey merely to fit keywords.
+
 ## Structured data
 
 For active shows:
