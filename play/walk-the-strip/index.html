@@ -237,6 +237,14 @@
 :root{--navy:#170d2a;--blue:#c6f22e;--orange:#ffb000;--dim:#d4c7df}
 body{background:#170d2a;padding-top:72px}@media(max-width:900px){body{padding-top:70px}}
 h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto;max-width:100%;margin:auto}#wrap{display:flex;justify-content:center}#overlay{inset:0 12px;overflow-y:auto}#overlay h2{color:#ffb000}
+@media(max-width:699px){
+  canvas{max-height:min(49dvh,calc(100dvh - 370px));min-height:0}
+  #wrap{align-items:center}
+  #dpad{grid-template-columns:repeat(3,54px);grid-template-rows:repeat(2,45px);gap:5px;padding:5px 0}
+  #dpad button{border-color:#c6f22e80;background:#35224f}
+  .controls-hint{padding:5px 12px 2px;letter-spacing:.04em}
+  .credit{padding:4px 12px 18px}
+}
 </style>
 </head>
 <body>
@@ -266,7 +274,7 @@ h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto
   </div>
 </div>
 
-<div class="controls-hint">Arrow keys / WASD · or swipe on mobile</div>
+<div class="controls-hint">Swipe to move · arrows / WASD · on-screen controls</div>
 
 <div id="dpad">
   <button class="up" data-dir="up">▲</button>
@@ -275,7 +283,7 @@ h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto
   <button class="right" data-dir="right">▶</button>
 </div>
 
-<div class="credit">An off-duty production of the Vegas Sidekick PLAY 🌵<br>No promoters were harmed. Several were mildly disappointed. The swirl sees all.</div>
+<div class="credit">A Vegas Sidekick PLAY production 🌵<br>No promoters were harmed. Several were mildly disappointed. The swirl sees all.</div>
 
 <div id="vs-footer"></div>
 <script src="/components/header.js?v=21"></script>
@@ -515,13 +523,13 @@ h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto
     const ov = document.getElementById("overlay");
     ov.querySelector("h2").textContent = "OUT OF PATIENCE";
     ov.querySelectorAll("p")[0].innerHTML =
-      `Spike racked up <b style="color:var(--blue)">${score}</b> point${score===1?"":"s"} across <b>${crossings}</b> crossing${crossings===1?"":"s"} before a <b style="color:var(--orange)">${lastHitLabel || "Strip regular"}</b> ended the run.<br>Best score: <b style="color:var(--orange)">${best}</b>.`;
-    ov.querySelector(".hint").textContent = "Aim for the gold doors next time — they're worth 5x.";
+      `Spike racked up <b style="color:var(--blue)">${score}</b> point${score===1?"":"s"} across <b>${crossings}</b> completed stage${crossings===1?"":"s"} before a <b style="color:var(--orange)">${lastHitLabel || "Strip regular"}</b> ended the run.<br>Best score: <b style="color:var(--orange)">${best}</b>.`;
+    ov.querySelector(".hint").textContent = "Complete all five stages to reach the theater.";
     ov.querySelector(".quote").textContent =
       score >= 30 ? '"Respectable. You may walk beside me." — Spike'
       : score >= 12 ? '"Adequate. The desert acknowledges you." — Spike'
       : '"The Strip remains undefeated." — Spike';
-    ov.querySelector("button#startBtn").textContent = "CROSS AGAIN";
+    ov.querySelector("button#startBtn").textContent = "TRY AGAIN";
     ov.classList.remove("hidden");
 
     const shareBtn = document.getElementById("shareBtn");
@@ -532,8 +540,7 @@ h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto
 
   function shareScore(){
     const gameUrl = "https://vegassidekick.com/play/walk-the-strip/";
-    const villain = lastHitLabel ? lastHitLabel.toLowerCase() : "the Strip";
-    const text = `🌵 Walk the Strip: I scored ${score} point${score===1?"":"s"} across ${crossings} crossing${crossings===1?"":"s"} before a ${villain} got me. Beat my score → ${gameUrl}`;
+    const text = "🌵 Walk the Strip — "+score+" points · "+crossings+"/5 stages. "+(crossings===5?"Made it to the show!":"Spike ran out of patience.")+" Play → "+gameUrl;
     const shareBtn = document.getElementById("shareBtn");
 
     function confirmShared(label){
@@ -972,6 +979,11 @@ h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto
       ctx.moveTo(4,TILE);ctx.lineTo(4,H-TILE);ctx.moveTo(W-4,TILE);ctx.lineTo(W-4,H-TILE);ctx.stroke();
       ctx.setLineDash([10,12]);ctx.strokeStyle="rgba(198,242,46,.4)";ctx.lineWidth=2;
       ctx.beginPath();ctx.moveTo(19,TILE);ctx.lineTo(19,H-TILE);ctx.moveTo(W-19,TILE);ctx.lineTo(W-19,H-TILE);ctx.stroke();ctx.setLineDash([]);
+    }
+    if(stageIndex===4){
+      ctx.fillStyle="rgba(255,176,0,.15)";ctx.fillRect(0,0,W,TILE);
+      ctx.fillStyle="#ffd46d";ctx.font="800 10px Nunito,sans-serif";
+      ctx.textAlign="center";ctx.fillText("THEATER ENTRANCE",W/2,10);
     }
     // distant neon skyline glow on goal edge
     const glow = ctx.createLinearGradient(0,0,0,TILE*1.5);
