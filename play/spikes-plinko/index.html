@@ -262,6 +262,13 @@ h1{letter-spacing:.07em;background:none;color:#fff;animation:none;font-size:clam
 #overlay .share-score{margin:0 0 12px;background:transparent;color:#c6f22e;border:1px solid #c6f22e;box-shadow:none;padding:9px 23px}
 @media(max-width:420px){.hud{gap:10px}.hud .label{font-size:8px}#soundBtn{padding:4px 8px}}
 @media(prefers-reduced-motion:reduce){h1{animation:none}}
+
+.game-title{display:flex;justify-content:center;align-items:center;gap:12px}
+.title-spike{width:48px;height:48px;object-fit:cover;border-radius:50%;border:2px solid #ffb000;box-shadow:0 0 13px #ffb00055}
+#game-app{min-height:0}#stage{overflow:hidden;padding:1px 8px 3px}
+#dropBar{flex-shrink:0;padding:7px 12px max(10px,env(safe-area-inset-bottom))}
+#dropBtn{min-height:48px}
+@media(max-width:480px){.game-title{gap:9px}.title-spike{width:39px;height:39px}h1{font-size:clamp(27px,7.5vw,39px)}header{padding:5px 8px 2px}.hud{padding:5px 12px}#dropBar{padding:5px 10px max(8px,env(safe-area-inset-bottom))}}
 </style>
 </head>
 <body>
@@ -269,13 +276,13 @@ h1{letter-spacing:.07em;background:none;color:#fff;animation:none;font-size:clam
 
 <div id="game-app">
 <header>
-  <h1>SPIKE’S PLINKO</h1>
+  <div class="game-title"><img src="/images/brand/spike-podcast-badge.webp" alt="Spike the cactus" class="title-spike"><h1>SPIKE’S PLINKO</h1></div>
   <div class="tagline">Five golden drops · Millions of imaginary points</div>
 </header>
 
 <div class="hud">
   <div><span class="label">Score</span><span class="val gold" id="scoreVal">0</span></div>
-  <div><span class="label">Drops</span><span class="val" id="dropsVal">5</span></div>
+  <div><span class="label">Balls left</span><span class="val" id="dropsVal">5</span></div>
   <div><span class="label">Best</span><span class="val orange" id="bestVal">0</span></div>
   <button id="soundBtn">🔇</button>
 </div>
@@ -289,7 +296,7 @@ h1{letter-spacing:.07em;background:none;color:#fff;animation:none;font-size:clam
     <div class="sub" id="overlaySub">Aim the glowing gold ball, then release. Or tap the board to choose a drop position. Five balls per round. No cash value.</div>
     <button id="mainBtn">START DROPPING</button>
   </div>
-  <div id="cactusMark"><img src="/images/brand/spike-podcast-badge.webp" alt=""></div>
+
 </div>
 
 <div id="dropBar">
@@ -303,6 +310,8 @@ h1{letter-spacing:.07em;background:none;color:#fff;animation:none;font-size:clam
 
 <script>
 const fmt=n=>Number(n).toLocaleString('en-US');
+const spikeBallImage=new Image();
+spikeBallImage.src='/images/brand/spike-podcast-badge.webp';
 const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
 const overlay = document.getElementById('overlay');
@@ -320,7 +329,7 @@ function safeGet(k){ try{ return localStorage.getItem(k);}catch(e){return null;}
 function safeSet(k,v){ try{ localStorage.setItem(k,v);}catch(e){} }
 
 // ---------- Board layout ----------
-const ROWS = 10;       // peg rows
+const ROWS = 11;       // peg rows
 const SLOT_COUNT = 9;  // bottom slots
 let W, H, CELL;
 const chipR = 16;
@@ -332,9 +341,10 @@ let dragOffsetX = 0;
 function computeSize(){
   const navSpace = parseFloat(getComputedStyle(document.body).paddingTop) || 0;
   const maxW = Math.max(250, Math.min(560, window.innerWidth) - 16);
-  const maxH = window.innerHeight - navSpace - 230;
+  const viewportH = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+  const maxH = viewportH - navSpace - 190;
   W = maxW;
-  H = Math.max(310, Math.min(640, maxH));
+  H = Math.max(260, Math.min(620, maxH));
   canvas.width = W * devicePixelRatio;
   canvas.height = H * devicePixelRatio;
   canvas.style.width = W+'px';
@@ -345,6 +355,7 @@ function computeSize(){
   buildPegs();
 }
 window.addEventListener('resize', computeSize);
+if(window.visualViewport)window.visualViewport.addEventListener('resize',computeSize);
 
 // ---------- Glowing gold ball rendering ----------
 // Gold balls are drawn with canvas gradients.
@@ -380,41 +391,33 @@ soundBtn.onclick = () => {
 // ---------- Slots ----------
 // symmetric multiplier distribution, center low, edges high (classic plinko risk curve)
 const SLOTS = [
+{mult:1,label:'POINTS',color:'#9566e9'},
+{mult:2,label:'SOLID',color:'#0fb5c9'},
+{mult:5,label:'NICE',color:'#c6f22e'},
+{mult:10,label:'BIG WIN',color:'#ff2e7e'},
 {mult:50,label:'JACKPOT',color:'#ffb000'},
-{mult:10,label:'BIG WIN',color:'#c6f22e'},
-{mult:5,label:'NICE',color:'#9566e9'},
+{mult:10,label:'BIG WIN',color:'#ff2e7e'},
+{mult:5,label:'NICE',color:'#c6f22e'},
 {mult:2,label:'SOLID',color:'#0fb5c9'},
-{mult:1,label:'POINTS',color:'#ff2e7e'},
-{mult:2,label:'SOLID',color:'#0fb5c9'},
-{mult:5,label:'NICE',color:'#9566e9'},
-{mult:10,label:'BIG WIN',color:'#c6f22e'},
-{mult:50,label:'JACKPOT',color:'#ffb000'}
+{mult:1,label:'POINTS',color:'#9566e9'}
 ];
 
 const PEG_COLORS = ['#c6f22e','#ffb000','#9566e9','#0fb5c9','#ff2e7e'];
 
 let pegs = [];
 function buildPegs(){
-  pegs = [];
-  const marginX = 26;
-  const topY = 76;
-  const bottomY = H - 90;
-  const rowGap = (bottomY - topY) / ROWS;
-  for (let row = 0; row < ROWS; row++){
-    const count = 4 + row; // triangle growth (full-density count, then we skip half)
-    const y = topY + row*rowGap;
-    const usableW = W - marginX*2;
-    const gap = usableW / (count+1);
-    // skip every other peg, alternating which parity we skip per row so gaps stagger
-    // like a real plinko board rather than lining up into columns
-    const keepEven = row % 2 === 0;
-    for (let i=1;i<=count;i++){
-      const isEven = i % 2 === 0;
-      if (isEven !== keepEven) continue;
-      const x = marginX + gap*i;
-      pegs.push({ x, y, r: 5.5, hitFlash: 0, color: PEG_COLORS[(row+i) % PEG_COLORS.length] });
-    }
+ pegs=[];
+ const sw=W/SLOT_COUNT,top=60,bottom=H-92,dy=(bottom-top)/Math.max(1,ROWS-1);
+ for(let row=0;row<ROWS;row++){
+  const y=top+row*dy, offset=row%2===0?.5:0;
+  for(let col=0;col<=SLOT_COUNT;col++){
+   const x=(col+offset)*sw;
+   if(x<8||x>W-8)continue;
+   pegs.push({x,y,r:Math.max(4,Math.min(5.4,sw*.105)),hitFlash:0,color:PEG_COLORS[(row+col)%PEG_COLORS.length]});
   }
+  pegs.push({x:12,y:y+dy*.43,r:5.6,hitFlash:0,color:'#ffb000'});
+  pegs.push({x:W-12,y:y+dy*.43,r:5.6,hitFlash:0,color:'#ffb000'});
+ }
 }
 
 // ---------- Game state ----------
@@ -442,7 +445,7 @@ function resetGame(){
 
 function updateDropBtn(){
   dropBtn.disabled = (dropsLeft <= 0) || (state !== 'playing') || balls.some(b=>!b.settled);
-  dropBtn.textContent = dropsLeft > 0 ? `DROP GOLD BALL (${dropsLeft} LEFT)` : 'ROUND COMPLETE';
+  dropBtn.textContent = dropsLeft > 1 ? `DROP GOLD BALL (${dropsLeft} LEFT)` : dropsLeft===1 ? 'DROP THE WILD SPIKE BALL 🌵' : 'ROUND COMPLETE';
   dropsVal.textContent = Math.max(0, dropsLeft);
 }
 
@@ -453,6 +456,7 @@ function dropBall(atX){
   updateDropBtn();
   const startX = (atX !== undefined) ? atX : chipX;
   const clampedX = Math.max(chipR+2, Math.min(W-chipR-2, startX));
+  if(dropsLeft===0)showToast('FINAL BALL: SPIKE UNLEASHED!');
   balls.push({
     x: clampedX, y: chipY,
     vx: (Math.random()-0.5)*3,
@@ -461,7 +465,7 @@ function dropBall(atX){
     trail: [],
     settled: false,
     squashX: 1, squashY: 1, spin: 0, spinV: (Math.random()-0.5)*0.4,
-    phase: 'falling'
+    phase: 'falling',wild:dropsLeft===0,wildTicks:0
   });
 }
 dropBtn.onclick = () => dropBall();
@@ -594,7 +598,12 @@ function updateBalls(){
       continue; // skip normal gravity/peg physics this frame while in chaos
     }
 
-    b.vy += GRAVITY;
+    if(b.wild){
+      b.wildTicks++;
+      if(b.wildTicks<150){b.vx+=Math.sin(b.wildTicks*.31)*.78+(Math.random()-.5)*1.3;
+        if(b.wildTicks%24===0){b.vy=-Math.min(7,Math.abs(b.vy)*.65+2);triggerShake(3);}}
+    }
+    b.vy += GRAVITY*(b.wild?1.48:1);
     b.x += b.vx;
     b.y += b.vy;
     b.vx *= 0.995;
@@ -711,7 +720,7 @@ function landBall(b, slotIdx){
   slotFlash[slotIdx] = 1;
   sfxLand(slot.mult);
   showToast(`${slot.label}! +${fmt(gained)} pts`);
-  const burstScale = slot.mult >= 20 ? 2.2 : slot.mult >= 5 ? 1.4 : 1;
+  const burstScale = b.wild ? 2.3 : slot.mult >= 20 ? 2.2 : slot.mult >= 5 ? 1.4 : 1;
   spawnConfettiBurst(b.x, H-40, slot.color, burstScale);
   if (slot.mult >= 5) triggerShake(slot.mult >= 20 ? 14 : 6);
 
@@ -810,7 +819,13 @@ function drawGoldBall(x,y,r){
  ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();
  ctx.shadowBlur=0;ctx.strokeStyle='#fff0a0';ctx.lineWidth=1.2;ctx.stroke();ctx.restore();
 }
-function drawBall(b){drawBallTrail(b);drawGoldBall(b.x,b.y,b.r);}
+function drawBall(b){
+ drawBallTrail(b);
+ if(b.wild&&spikeBallImage.complete&&spikeBallImage.naturalWidth){
+ ctx.save();ctx.shadowColor='#c6f22e';ctx.shadowBlur=24;ctx.beginPath();ctx.arc(b.x,b.y,b.r+2,0,Math.PI*2);ctx.fillStyle='#ffb000';ctx.fill();
+ ctx.beginPath();ctx.arc(b.x,b.y,b.r,0,Math.PI*2);ctx.clip();ctx.drawImage(spikeBallImage,b.x-b.r,b.y-b.r,b.r*2,b.r*2);ctx.restore();
+ }else drawGoldBall(b.x,b.y,b.r);
+}
 function drawConfetti(){
   for (const c of confetti) {
     ctx.save();
@@ -839,8 +854,11 @@ function drawAimLine(){
 
 function drawChip(){
  if(state!=='playing'||dropsLeft<=0||balls.some(b=>!b.settled))return;
- drawGoldBall(chipX,chipY,chipR*(1+Math.sin(Date.now()/260)*.06));
- ctx.save();ctx.fillStyle='#e2c779';ctx.font="800 10px Nunito,sans-serif";ctx.textAlign='center';ctx.fillText('DRAG TO AIM',chipX,chipY+chipR+17);ctx.restore();
+ if(dropsLeft===1&&spikeBallImage.complete&&spikeBallImage.naturalWidth){
+ ctx.save();ctx.shadowColor='#c6f22e';ctx.shadowBlur=20;ctx.beginPath();ctx.arc(chipX,chipY,chipR+1,0,Math.PI*2);ctx.fillStyle='#ffb000';ctx.fill();
+ ctx.beginPath();ctx.arc(chipX,chipY,chipR,0,Math.PI*2);ctx.clip();ctx.drawImage(spikeBallImage,chipX-chipR,chipY-chipR,chipR*2,chipR*2);ctx.restore();
+ }else drawGoldBall(chipX,chipY,chipR*(1+Math.sin(Date.now()/260)*.06));
+ ctx.save();ctx.fillStyle='#e2c779';ctx.font="800 10px Nunito,sans-serif";ctx.textAlign='center';ctx.fillText(dropsLeft===1?'WILD SPIKE BALL':'DRAG TO AIM',chipX,chipY+chipR+17);ctx.restore();
 }
 function render(){
   ctx.clearRect(0,0,W,H);
