@@ -5,7 +5,7 @@
 
   const html = `
 <nav id="vs-nav" aria-label="Primary navigation">
-  <a class="vs-announce" href="/shows/deals/">&#127915; Going to a Vegas show? <span>Check the deals first. &rarr;</span></a>
+  <a class="vs-announce" href="/shows/deals/">&#127903;&#65039; Going to a Vegas show? <span>Check the deals first. &rarr;</span></a>
   <div class="vs-nav-row">
     <a class="nav-logo" href="/" aria-label="Vegas Sidekick home"><img src="/images/brand/logo-horizontal.png?v=72014685" alt="Vegas Sidekick" width="1425" height="249" loading="eager" fetchpriority="high" decoding="async"></a>
 
