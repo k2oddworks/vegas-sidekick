@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#160d29">
+<meta name="robots" content="noindex, follow">
+<title>Prickly — A Word Game with Spike | Vegas Sidekick</title>
+<meta name="description" content="Change one letter at a time, crack Spike's clues, and climb the word ladder. Try the free Prickly prototype from Vegas Sidekick.">
+<link rel="canonical" href="https://vegassidekick.com/play/prickly/">
+<link rel="icon" type="image/png" href="/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vegas Sidekick">
+<meta property="og:title" content="Prickly — A Word Game with Spike">
+<meta property="og:description" content="One letter. One clue. One very opinionated cactus. Play the Prickly prototype.">
+<meta property="og:url" content="https://vegassidekick.com/play/prickly/">
+<meta property="og:image" content="https://vegassidekick.com/images/brand/spike-hero.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--night:#160d29;--plum:#291443;--ink:#241332;--pink:#ff2e7e;--lime:#c6f22e;--amber:#ffb000;--cyan:#0fb5c9;--muted:#70637d;--paper:#fff;--line:#e8e1ec}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(950px 650px at 15% 5%,#482265 0%,transparent 72%),radial-gradient(740px 420px at 96% 30%,#302654 0%,transparent 70%),#160d29;font-family:Inter,system-ui,sans-serif;color:#fff;min-height:100vh}
+a{color:inherit}button,input{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.45}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+.topbar{height:76px;max-width:1170px;margin:auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.logo{display:inline-flex;align-items:center;max-width:190px}.logo img{display:block;max-width:100%;width:178px;max-height:49px;object-fit:contain;object-position:left center}
+.back{border:1px solid #ffffff30;padding:10px 15px;border-radius:999px;text-decoration:none;font-weight:700;color:#efe5f6;font-size:.8rem}
+.back:hover{border-color:var(--lime);color:var(--lime)}
+.shell{width:min(1110px,calc(100% - 36px));margin:30px auto 46px}
+.pill{display:inline-flex;align-items:center;gap:8px;color:var(--lime);letter-spacing:.17em;text-transform:uppercase;font-size:.72rem;font-weight:800}
+.pill:before{content:"";width:7px;height:7px;background:var(--pink);border-radius:50%}
+.heading{margin:14px 0 8px;font-family:"Plus Jakarta Sans",sans-serif;letter-spacing:-.07em;font-size:clamp(3.7rem,9vw,6.8rem);font-weight:800;line-height:.95}
+.heading span{color:var(--lime)}.subhead{font-size:clamp(.97rem,2vw,1.12rem);line-height:1.65;color:#ddd1e9;margin:16px 0 28px;max-width:660px}
+.layout{display:grid;grid-template-columns:minmax(275px,.75fr) minmax(0,1.25fr);gap:20px;align-items:stretch}
+.sidebar{border:1px solid #ffffff22;border-radius:24px;background:linear-gradient(155deg,#3b1b59,#24143b);padding:27px;min-height:500px;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.sidebar:after{content:"";pointer-events:none;position:absolute;width:290px;height:290px;border:1px solid #ffffff18;border-radius:50%;bottom:115px;right:-130px}
+.spike-stage{height:215px;display:flex;align-items:center;justify-content:center;position:relative;z-index:1;margin:5px 0 7px}
+.spike-glow{position:absolute;width:190px;height:190px;border-radius:50%;background:radial-gradient(circle,#7fa04c6b 0%,#6d348028 55%,transparent 70%);filter:blur(8px)}
+.spike{max-height:222px;max-width:min(100%,220px);object-fit:contain;position:relative;z-index:1;filter:drop-shadow(0 12px 22px #0b061955)}
+.speech{font-size:1.13rem;font-weight:800;line-height:1.45;letter-spacing:-.025em;min-height:76px;position:relative;z-index:1}
+.speaker{font-size:.71rem;text-transform:uppercase;letter-spacing:.15em;font-weight:800;color:var(--lime);margin-bottom:9px}
+.side-bottom{border-top:1px solid #ffffff22;margin-top:auto;padding-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat-number{font-family:"Plus Jakarta Sans",sans-serif;font-size:1.55rem;font-weight:800}.stat-label{color:#c9b8d7;font-size:.74rem;margin-top:3px}
+.card{background:#fff;color:var(--ink);border-radius:24px;box-shadow:0 25px 65px #07020d30;overflow:hidden}
+.card-top{padding:24px 29px 17px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.card-eyebrow{color:#786986;text-transform:uppercase;font-size:.68rem;font-weight:800;letter-spacing:.12em}.card-title{margin:5px 0 0;font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;letter-spacing:-.025em;font-size:1.21rem}
+.actions-top{display:flex;align-items:center;gap:9px}.mini-btn{border:1px solid #dcd1e2;background:#fff;color:#4e3760;padding:9px 12px;border-radius:12px;font-weight:800;font-size:.76rem}.mini-btn:hover{background:#f5f0f8}
+.card-body{padding:25px 29px 29px}
+.progress-meta{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-weight:700;font-size:.75rem;margin-bottom:10px}
+.track{width:100%;height:7px;border-radius:9px;background:#eee8f0;overflow:hidden}.track-fill{height:100%;width:0;background:linear-gradient(90deg,var(--pink),#914be1);border-radius:9px;transition:width .3s}
+.ladder{display:grid;gap:10px;margin:25px 0}.rung{display:flex;align-items:center;gap:12px;min-height:51px}
+.rung-label{font-size:.67rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;width:56px;flex-shrink:0;color:#8d8094}
+.tiles{display:flex;gap:7px;min-width:0}.tile{height:47px;width:47px;display:flex;justify-content:center;align-items:center;border:1.5px solid #e4dbe9;background:#f6f2f8;color:#281532;border-radius:11px;font-family:"Plus Jakarta Sans",sans-serif;font-size:1.25rem;font-weight:800;transition:transform .15s}
+.rung.start .tile{background:#241331;border-color:#241331;color:#fff}
+.rung.done .tile{background:#eaf7cc;border-color:#bad66f;color:#34491d}
+.rung.active .tile{background:#fff8e5;border:2px solid var(--amber);color:#3a243d}
+.rung.future .tile{background:#f8f5fa;color:#c3b7c7}
+.rung-status{font-size:.78rem;color:#9c8da3;font-weight:800;margin-left:auto}
+.rung.done .rung-status{color:#6c9727}
+.clue-panel{border:1px solid #eadff0;background:#faf7fc;border-radius:18px;padding:19px;margin-top:17px}
+.clue-label{font-size:.67rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#87509a}.clue{font-family:"Plus Jakarta Sans",sans-serif;font-size:1.2rem;font-weight:800;letter-spacing:-.035em;line-height:1.45;margin:7px 0 5px}
+.clue-help{font-size:.75rem;color:var(--muted);line-height:1.5;margin:0}
+.guess-row{margin-top:18px;display:flex;gap:10px;align-items:stretch}
+.field-wrap{flex:1;min-width:0;position:relative}.word-input{width:100%;height:60px;background:#fff;border:2px solid #d9cddd;border-radius:14px;color:var(--ink);text-align:center;text-transform:uppercase;font-family:"Plus Jakarta Sans",sans-serif;font-size:1.55rem;font-weight:800;letter-spacing:.26em;outline:none;padding:0 7px 0 15px}.word-input:focus{border-color:#914be1;box-shadow:0 0 0 3px #914be11a;outline:none}
+.submit{border:0;border-radius:14px;padding:0 22px;min-width:140px;background:var(--amber);color:#22142a;font-weight:800;font-size:.89rem}.submit:hover:not(:disabled){background:#ffca46}
+.feedback{min-height:38px;margin-top:12px;line-height:1.45;font-size:.81rem;color:#735f7f;font-weight:700}
+.feedback.error{color:#bd285c}.feedback.success{color:#42802d}
+.tools{display:flex;gap:9px;flex-wrap:wrap;margin-top:4px}.tool{padding:11px 15px;border:1px solid #dfd4e5;background:#fff;color:#5c476b;border-radius:12px;font-weight:800;font-size:.76rem}.tool:hover:not(:disabled){background:#f8f3fb}
+.help{margin-top:18px;border-top:1px solid var(--line);padding-top:16px;font-size:.75rem;color:#807288;line-height:1.55}
+.rules{margin:0;padding:19px 29px;background:#fbf9fc;border-top:1px solid var(--line);font-size:.8rem;line-height:1.65;color:#584762}
+.rules strong{color:#271734}.rules[hidden]{display:none}
+.finish{display:none;text-align:center;padding:32px 12px 8px}.finish.show{display:block}.finish-mark{font-size:2.8rem;margin-bottom:10px}
+.finish h2{font:800 1.95rem "Plus Jakarta Sans",sans-serif;letter-spacing:-.06em;margin:0 0 9px}.finish p{color:#6c5978;line-height:1.65;font-size:.89rem;max-width:380px;margin:0 auto 16px}
+.final-score{font:800 3.5rem "Plus Jakarta Sans",sans-serif;color:#472365;letter-spacing:-.08em;line-height:1}.final-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.13em;color:#887590;font-weight:800;margin-top:6px}
+.finish-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:22px}.finish-actions button{min-height:46px;padding:10px 16px;border-radius:12px;font-weight:800;border:1px solid #dcd0e5;background:#fff;color:#4a2b5a}.finish-actions .primary{background:var(--amber);border-color:var(--amber);color:#241432}
+.note{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;color:#bbaec9;font-size:.75rem;margin:19px 3px 0;line-height:1.6}
+.note a{color:#eff3e2;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:800px){.shell{margin-top:18px}.layout{grid-template-columns:1fr}.sidebar{min-height:auto;padding:18px 22px;display:grid;grid-template-columns:95px 1fr;align-items:center;gap:0 17px}.spike-stage{height:100px;grid-row:1/3;margin:0}.spike{max-height:110px;max-width:95px}.spike-glow{width:95px;height:95px}.speaker{margin-bottom:4px}.speech{font-size:.93rem;min-height:0}.side-bottom{grid-column:1/-1;margin-top:15px;padding-top:13px}.heading{font-size:clamp(3.5rem,13vw,5.3rem)}.subhead{margin-bottom:18px}.card-body{padding:21px 20px 22px}.card-top{padding:19px 20px}}
+@media(max-width:440px){.topbar{height:66px;padding:0 15px}.logo img{width:141px}.back{font-size:.71rem;padding:8px 11px}.shell{width:calc(100% - 22px)}.sidebar{grid-template-columns:76px 1fr;padding:14px}.spike-stage{height:90px}.spike{max-width:75px;max-height:95px}.speech{font-size:.84rem}.stat-number{font-size:1.22rem}.stat-label{font-size:.69rem}.card{border-radius:19px}.card-top{gap:6px}.card-title{font-size:1.05rem}.tile{height:43px;width:43px;border-radius:9px;font-size:1.12rem}.tiles{gap:5px}.rung{gap:7px}.rung-label{width:43px;font-size:.56rem}.rung-status{font-size:.68rem}.clue{font-size:1.04rem}.guess-row{gap:7px}.submit{min-width:105px;padding:0 12px;font-size:.78rem}.word-input{font-size:1.24rem;letter-spacing:.18em;height:56px}.heading{font-size:3.5rem}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<nav class="topbar" aria-label="Site">
+<a class="logo" href="/" aria-label="Vegas Sidekick home"><img src="/images/brand/logo-horizontal-header.png" alt="Vegas Sidekick"></a>
+<a class="back" href="/">← Back to Vegas Sidekick</a>
+</nav>
+<main class="shell">
+<div class="pill">Vegas Sidekick presents · Playable prototype</div>
+<h1 class="heading">PRICK<span>LY.</span></h1>
+<p class="subhead">Change one letter. Crack the clue. Repeat. Four steps stand between you and the approval of a very judgmental cactus.</p>
+<section class="layout" aria-label="Prickly word game">
+<aside class="sidebar">
+<div class="spike-stage"><div class="spike-glow"></div><img class="spike" src="/images/brand/spike-icon.png" alt="Spike, Vegas Sidekick's cactus mascot in gold aviators"></div>
+<div class="speaker">Spike says</div>
+<div class="speech" id="spikeSays" aria-live="polite">“Four letters. How much trouble could that be?”</div>
+<div class="side-bottom">
+<div><div class="stat-number" id="score">400</div><div class="stat-label">Points remaining</div></div>
+<div><div class="stat-number" id="mistakes">0</div><div class="stat-label">Wrong guesses</div></div>
+</div>
+</aside>
+<div class="card">
+<div class="card-top">
+<div><div class="card-eyebrow" id="sampleTag">Sample puzzle 1 of 3</div><div class="card-title">The four-letter ladder</div></div>
+<div class="actions-top"><button class="mini-btn" id="rulesBtn" type="button" aria-expanded="false" aria-controls="rules">How to play ?</button></div>
+</div>
+<div class="rules" id="rules" hidden><strong>One letter changes each turn.</strong> Start with the given four-letter word. Solve each clue by changing exactly one letter in the previous word, without rearranging letters. Four correct answers finish the ladder. Wrong guesses and hints cost points. This prototype has three replayable sample puzzles.</div>
+<div class="card-body">
+<div id="game">
+<div class="progress-meta"><span id="stepLabel">Clue 1 of 4</span><span id="pointsLabel">400 possible points</span></div>
+<div class="track" aria-hidden="true"><div class="track-fill" id="progressFill"></div></div>
+<div class="ladder" id="ladder" aria-label="Word ladder progress"></div>
+<div class="clue-panel"><div class="clue-label" id="clueLabel">Your first clue</div><p class="clue" id="clue"></p><p class="clue-help" id="hintText">Change one letter in the word above.</p></div>
+<form class="guess-row" id="guessForm" autocomplete="off">
+<div class="field-wrap"><label for="guess" class="card-eyebrow" style="display:block;margin:0 0 7px">Your four-letter answer</label><input id="guess" class="word-input" type="text" maxlength="4" inputmode="text" autocapitalize="characters" autocorrect="off" autocomplete="off" spellcheck="false" aria-describedby="feedback" required></div>
+<button class="submit" type="submit">Enter ↗</button>
+</form>
+<div class="feedback" role="status" aria-live="polite" id="feedback">Take your time. Spike has nowhere else to be.</div>
+<div class="tools"><button class="tool" id="hintBtn" type="button">Get a hint −35 pts</button><button class="tool" id="skipBtn" type="button">Reveal word −100 pts</button></div>
+<div class="help">No timer, no sign-up. The same sample can be replayed; daily puzzles are not active yet.</div>
+</div>
+<div class="finish" id="finish" aria-live="polite">
+<div class="finish-mark">🌵</div><h2 id="finishTitle">Ladder complete.</h2>
+<div class="final-score" id="finalScore">400</div><div class="final-label">Points</div>
+<p id="finishText"></p>
+<div class="finish-actions"><button class="primary" id="nextBtn" type="button">Try another puzzle →</button><button id="shareBtn" type="button">Share score ↗</button></div>
+<div class="feedback" id="shareFeedback" role="status"></div>
+</div>
+</div>
+</section>
+<div class="note"><span>PRICKLY is an early game concept, not a live daily challenge. Tell us whether you'd come back for it.</span><a href="/">Discover Vegas Sidekick →</a></div>
+</main>
+<script>
+(function(){
+"use strict";
+var PUZZLES=[
+{start:"COLD",steps:[
+{word:"CORD",clue:"You plug one in to charge your phone."},
+{word:"CARD",clue:"You might keep one in your wallet."},
+{word:"WARD",clue:"A particular section of a hospital."},
+{word:"WARM",clue:"Not cold anymore, but not hot either."}]},
+{start:"HEAT",steps:[
+{word:"SEAT",clue:"Where you sit to watch a show."},
+{word:"MEAT",clue:"A carnivore's dinner."},
+{word:"MEAN",clue:"The opposite of kind."},
+{word:"BEAN",clue:"A little legume that might end up in chili."}]},
+{start:"GAME",steps:[
+{word:"GATE",clue:"Where you wait to board a flight."},
+{word:"LATE",clue:"What you are if you miss the curtain."},
+{word:"LAKE",clue:"A large body of water surrounded by land."},
+{word:"MAKE",clue:"To create or produce something."}]}
+];
+var number=0,step=0,score=400,misses=0,hints=[],usedSkips=0,finished=false;
+var byId=function(id){return document.getElementById(id);};
+var puzzle=function(){return PUZZLES[number];};
+var previous=function(){return step===0?puzzle().start:puzzle().steps[step-1].word;};
+function differences(a,b){var n=0;for(var i=0;i<4;i++){if(a[i]!==b[i])n++;}return n;}
+function render(){
+ byId("sampleTag").textContent="Sample puzzle "+(number+1)+" of "+PUZZLES.length;
+ byId("score").textContent=String(score);
+ byId("mistakes").textContent=String(misses);
+ byId("stepLabel").textContent="Clue "+(step+1)+" of 4";
+ byId("pointsLabel").textContent=score+" points remaining";
+ byId("progressFill").style.width=(step*25)+"%";
+ var ladder=byId("ladder");ladder.replaceChildren();
+ var words=[puzzle().start].concat(puzzle().steps.map(function(x){return x.word;}));
+ for(var i=0;i<words.length;i++){
+  var row=document.createElement("div");row.className="rung "+(i===0?"start":i<=step?"done":i===step+1?"active":"future");
+  var tag=document.createElement("div");tag.className="rung-label";tag.textContent=i===0?"Start":"Step "+i;row.appendChild(tag);
+  var tiles=document.createElement("div");tiles.className="tiles";
+  for(var k=0;k<4;k++){var tile=document.createElement("div");tile.className="tile";tile.textContent=i<=step?words[i][k]:i===step+1?"·":"–";tiles.appendChild(tile);}row.appendChild(tiles);
+  var status=document.createElement("span");status.className="rung-status";status.textContent=i===0?"":i<=step?"✓":i===step+1?"← YOU":"";
+  row.appendChild(status);ladder.appendChild(row);
+ }
+ if(step<4){byId("clueLabel").textContent=step===0?"Your first clue":"Next clue";
+ byId("clue").textContent=puzzle().steps[step].clue;
+ byId("hintText").textContent=hints[step]===true?hintMessage():"Change exactly one letter in "+previous()+".";
+ byId("hintBtn").disabled=!!hints[step];}
+}
+function say(str){byId("spikeSays").textContent="“"+str+"”";}
+function message(str,type){byId("feedback").textContent=str;byId("feedback").className="feedback "+(type||"");}
+function hintMessage(){var prev=previous(),next=puzzle().steps[step].word;
+ for(var j=0;j<4;j++){if(prev[j]!==next[j])return "Hint: Replace letter "+(j+1)+" of "+prev+". The other three stay put.";}
+ return "";}
+function deduct(amount){score=Math.max(0,score-amount);}
+function completeWord(skipped){
+ if(skipped)usedSkips++;
+ step++;
+ byId("guess").value="";
+ if(step===4){complete();return;}
+ render();
+ message(skipped?"Spike helped you past that one. Here's the next.":"Correct. You're getting somewhere.","success");
+ say(skipped?"Fine, I did that one. Next.":step===1?"Huh. You can spell.":step===2?"Two down. I'm mildly impressed.":"One more. Don't get dramatic.");
+ byId("guess").focus({preventScroll:true});
+}
+function complete(){
+ finished=true;byId("game").hidden=true;byId("finish").classList.add("show");
+ byId("score").textContent=String(score);
+ byId("finalScore").textContent=String(score);
+ byId("finishTitle").textContent=usedSkips?"You made it. Mostly.":"Ladder complete.";
+ byId("finishText").textContent="Four clues cleared. "+misses+" wrong "+(misses===1?"guess":"guesses")+", "+hints.filter(Boolean).length+" "+(hints.filter(Boolean).length===1?"hint":"hints")+", "+usedSkips+" revealed. "+(score===400?"Not even Spike can complain about that.":score>=300?"Spike is grudgingly impressed.":"Spike has questions, but he's keeping them to himself.");
+ say(score===400?"Okay, that was annoyingly perfect.":usedSkips?"I'm putting this on my résumé.":"I'll allow it.");
+ try{var best=Number(localStorage.getItem("prickly-prototype-best")||0);if(score>best)localStorage.setItem("prickly-prototype-best",String(score));}catch(e){}
+}
+function reset(next){
+ number=next;step=0;score=400;misses=0;hints=[];usedSkips=0;finished=false;
+ byId("game").hidden=false;byId("finish").classList.remove("show");
+ byId("shareFeedback").textContent="";byId("guess").value="";
+ byId("guess").disabled=false;byId("hintBtn").disabled=false;
+ message("Change one letter to match the clue. You've got this. Probably.","");
+ say("Four letters. How much trouble could that be?");
+ render();byId("guess").focus({preventScroll:true});
+}
+byId("guess").addEventListener("input",function(){this.value=this.value.replace(/[^a-z]/gi,"").toUpperCase().slice(0,4);});
+byId("guessForm").addEventListener("submit",function(e){
+ e.preventDefault();if(finished)return;
+ var guess=byId("guess").value.trim().toUpperCase();
+ if(guess.length!==4){message("Enter exactly four letters.","error");return;}
+ if(differences(guess,previous())!==1){message("Change just ONE letter from "+previous()+". Keep the other three where they are.","error");say("One letter. It's right there in the rules.");return;}
+ if(guess===puzzle().steps[step].word){completeWord(false);return;}
+ deduct(25);misses++;render();
+ message("That follows the one-letter rule, but doesn't fit Spike's clue. Try again. −25 points.","error");
+ say(misses===1?"Good word. Wrong word.":misses===2?"My needles are starting to itch.":"The clue is doing its best.");
+ byId("guess").select();
+});
+byId("hintBtn").addEventListener("click",function(){
+ if(finished||hints[step])return;
+ hints[step]=true;deduct(35);render();message("The changed letter's position is revealed. −35 points.");
+ say("I'm charging for tutoring now.");
+ byId("guess").focus({preventScroll:true});
+});
+byId("skipBtn").addEventListener("click",function(){
+ if(finished)return;
+ var answer=puzzle().steps[step].word;
+ deduct(100);
+ say("The word was "+answer+". Yes, I knew it.");
+ completeWord(true);
+ message("The answer was "+answer+". −100 points. Onward.","");
+});
+byId("rulesBtn").addEventListener("click",function(){
+ var box=byId("rules"),expanded=box.hidden;box.hidden=!expanded;this.setAttribute("aria-expanded",String(expanded));this.textContent=expanded?"Close rules ×":"How to play ?";
+});
+byId("nextBtn").addEventListener("click",function(){reset((number+1)%PUZZLES.length);});
+byId("shareBtn").addEventListener("click",async function(){
+ var result="PRICKLY • Sample "+(number+1)+"/3\n"+score+"/400 points\n"+misses+" wrong guesses • "+hints.filter(Boolean).length+" hints\nThink you can beat Spike?\nhttps://vegassidekick.com/play/prickly/";
+ if(navigator.share){try{await navigator.share({title:"Prickly — Vegas Sidekick",text:result});return;}catch(e){if(e.name==="AbortError")return;}}
+ try{await navigator.clipboard.writeText(result);byId("shareFeedback").textContent="Score copied. Send it to someone competitive.";}
+ catch(e){var el=document.createElement("textarea");el.value=result;el.style.position="fixed";el.style.opacity="0";document.body.appendChild(el);el.select();var ok=false;try{ok=document.execCommand("copy");}catch(err){}el.remove();byId("shareFeedback").textContent=ok?"Score copied.":"Copy your result: "+score+"/400 points";}
+});
+PUZZLES.forEach(function(p){var prev=p.start;p.steps.forEach(function(s){if(!/^[A-Z]{4}$/.test(s.word)||differences(prev,s.word)!==1)throw new Error("Invalid word ladder");prev=s.word;});});
+render();
+})();
+</script>
+</body>
+</html>
