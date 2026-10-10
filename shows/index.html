@@ -459,7 +459,7 @@ const SHOWS = [
   { order:64, slug:'queen-selena', cat:'music', name:'Queen Selena', subtitle:'A Tribute to Selena Quintanilla', venue:'Pegasus Showroom - Alexis Park Resort, 375 E Harmon Ave', price:40, pd:'$40', sp:false, pills:['Selena Tribute','Late 9 PM Show'], img:'/images/product-photos/queen-selena/queen-selena-hero.webp', duration:'65 min', age:'All ages', schedule:'Fri, Sat, Sun · 7 PM' },
   { order:65, slug:'sir-elton', cat:'music', name:'Sir Elton', subtitle:'At the Piano — an Elton John Tribute', venue:'Pegasus Showroom - Alexis Park Resort, 375 E Harmon Ave', price:40, pd:'$40', sp:false, pills:['Elton John Tribute','Monday & Tuesday'], img:'/images/product-photos/sir-elton/sir-elton-hero.webp', duration:'90 min', age:'All ages', schedule:'Mon, Tue · 7 PM' },
   { order:66, slug:'king-of-diamonds', cat:'music', name:'King of Diamonds', subtitle:'The Neil Diamond Tribute', venue:'Athena Showroom - Alexis Park Resort, 375 E Harmon Ave', price:40, pd:'$40', sp:false, pills:['Neil Diamond Tribute','60% Off Regular Price'], img:'/images/product-photos/king-of-diamonds/king-of-diamonds-hero.webp', duration:'75 min', age:'No age restricitions', schedule:'Mon, Tue, Wed, Sun · 9 PM' },
-  { order:67, slug:'america-the-show', cat:'spectaculars', name:'America The Show', subtitle:'A Vegas-Style Celebration of 250 Years', venue:'Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave', price:40, pd:'$40', sp:false, pills:['Classic Showgirl Revue','60% Off Regular Price'], img:'/images/product-photos/america-the-show/america-the-show-hero.webp', duration:'75 min', age:'All ages', schedule:'Sat, Sun · 4 PM' },
+  { order:67, slug:'america-the-show', cat:'music', path:'/shows/spectaculars/america-the-show/', name:'America The Show', subtitle:'A Vegas-Style Celebration of 250 Years', venue:'Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave', price:40, pd:'$40', sp:false, pills:['Classic Showgirl Revue','60% Off Regular Price'], img:'/images/product-photos/america-the-show/america-the-show-hero.webp', duration:'75 min', age:'All ages', schedule:'Sat, Sun · 4 PM' },
   { order:68, slug:'wastin-away', cat:'music', name:'Wastin\' Away', subtitle:'A Poolside Tribute to Jimmy Buffett', venue:'The Siren Poolside - Alexis Park Resort, 375 E Harmon Ave', price:40, pd:'$40', sp:false, pills:['Jimmy Buffett Tribute','Earliest Curtain — 6:30 PM'], img:'/images/product-photos/wastin-away/wastin-away-hero.webp', duration:'80 min', age:'All ages', schedule:'Mon, Tue, Sun · 6:30 PM' },
   { order:69, slug:'motown-brunch', cat:'music', name:'Motown Brunch', subtitle:'Sunday Brunch with Live Motown', venue:'Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave', price:65, pd:'$65', sp:false, pills:['Brunch Included','Only Daytime Show'], img:'/images/product-photos/motown-brunch/motown-brunch-hero.webp', duration:'120 min', age:'21+', schedule:'Sun · 11 AM' },
   { order:70, slug:'mind2mind', cat:'magic', name:'MIND2MIND', subtitle:'An Intimate Evening of Mind Reading', venue:'Azul Lounge - Fontainebleau Las Vegas', price:82, pd:'$82', sp:false, pills:['World-Champion Mentalists','Intimate Lounge Setting'], img:'/images/product-photos/mind2mind/mind2mind-hero.webp', duration:'75 min', age:'12+', schedule:'Mon, Tue, Sun · 7 PM; Fri, Sat · 7 PM & 9:30 PM' },
@@ -508,7 +508,7 @@ function renderGrid() {
   <div class="card-media-col">
     ${s.sp ? '<div class="card-sp-badge">🌵 Sidekick Pick</div>' : ''}
     <div class="card-img-wrap">
-      <a href="/shows/${s.cat}/${s.slug}/" class="card-img-link"><img src="${s.img}" alt="${s.name} Las Vegas" loading="lazy" /></a>
+      <a href="${s.path||'/shows/'+s.cat+'/'+s.slug+'/'}" class="card-img-link"><img src="${s.img}" alt="${s.name} Las Vegas" loading="lazy" /></a>
       <div class="card-cat-tag">${CAT_LABELS[s.cat]}</div>
       <label class="cb-label" title="${dis?'Max 3 selected — deselect one to swap':'Compare'}">
         <input type="checkbox" ${on?'checked':''} ${dis?'disabled':''} onchange="toggleSel('${s.slug}',this)" />
@@ -519,7 +519,7 @@ function renderGrid() {
   </div>
   <div class="card-body">
     <div class="card-cat-eyebrow">${CAT_LABELS[s.cat]}</div>
-    <a href="/shows/${s.cat}/${s.slug}/" class="card-name-link"><div class="card-name">${s.name}${s.subtitle?'<br><span class="card-subtitle">'+s.subtitle+'</span>':''}</div></a>
+    <a href="${s.path||'/shows/'+s.cat+'/'+s.slug+'/'}" class="card-name-link"><div class="card-name">${s.name}${s.subtitle?'<br><span class="card-subtitle">'+s.subtitle+'</span>':''}</div></a>
     <div class="card-venue">${s.venue}</div>
     <div class="card-pills">
       <span class="card-pill cp1">${s.pills[0]}</span>
@@ -529,7 +529,7 @@ function renderGrid() {
       <span class="card-from">From</span>
       <span class="card-price">${s.pd}</span>
     </div>
-    <a href="/shows/${s.cat}/${s.slug}/" class="card-cta">See ${s.name} →</a>
+    <a href="${s.path||'/shows/'+s.cat+'/'+s.slug+'/'}" class="card-cta">See ${s.name} →</a>
   </div>
 </div>`;
   }).join('');
@@ -600,7 +600,7 @@ function openCompare() {
       <div class="cmp-row"><div class="cmp-row-lbl">Schedule</div><div class="cmp-row-val">${s.schedule}</div></div>
       <div class="cmp-row"><div class="cmp-row-lbl">Category</div><div class="cmp-row-val">${CAT_LABELS[s.cat]}</div></div>
       <div class="cmp-row"><div class="cmp-row-lbl">Sidekick Pick</div><div class="cmp-row-val">${s.sp?'🌵 Yes':'—'}</div></div>
-      <a href="/shows/${s.cat}/${s.slug}/" class="cmp-col-cta">See ${s.name} →</a>
+      <a href="${s.path||'/shows/'+s.cat+'/'+s.slug+'/'}" class="cmp-col-cta">See ${s.name} →</a>
     </div>`).join('');
   document.getElementById('cmp-modal').classList.add('visible');
   document.body.style.overflow = 'hidden';

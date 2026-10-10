@@ -19,7 +19,7 @@
   "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "Music & Variety Shows in Las Vegas",
-  "numberOfItems": 22,
+  "numberOfItems": 23,
   "itemListElement": [
     {
       "@type": "ListItem",
@@ -152,10 +152,16 @@
       "position": 22,
       "url": "https://vegassidekick.com/shows/music/barry-manilow/",
       "name": "Barry Manilow The Hits Come Home!"
+    },
+    {
+      "@type": "ListItem",
+      "position": 23,
+      "url": "https://vegassidekick.com/shows/spectaculars/america-the-show/",
+      "name": "America The Show"
     }
   ]
 }
-  </script>
+</script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -395,7 +401,7 @@
       <button class="filter-btn" onclick="setSort('name',this)">A – Z</button>
       <button class="filter-btn" onclick="setSort('price',this)">Price: Low → High</button><button class="filter-btn sort-btn" onclick="vsSavingsSort(this)">Biggest Savings</button>
     </div>
-    <div class="show-count-wrap">Showing <strong id="show-count">22</strong> shows</div>
+    <div class="show-count-wrap">Showing <strong id="show-count">23</strong> shows</div>
   </div>
 </div>
 
@@ -472,7 +478,8 @@ const SHOWS = [
   { order:19, slug:'wastin-away', name:'Wastin\' Away', subtitle:'A Poolside Tribute to Jimmy Buffett', venue:'The Siren Poolside - Alexis Park Resort, 375 E Harmon Ave', price:40, pd:'$40', sp:false, pills:['Jimmy Buffett Tribute','Earliest Curtain — 6:30 PM'], img:'/images/product-photos/wastin-away/wastin-away-hero.webp', duration:'80 min', age:'All ages', schedule:'Mon, Tue, Sun · 6:30 PM' },
   { order:20, slug:'motown-brunch', name:'Motown Brunch', subtitle:'Sunday Brunch with Live Motown', venue:'Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave', price:65, pd:'$65', sp:false, pills:['Brunch Included','Only Daytime Show'], img:'/images/product-photos/motown-brunch/motown-brunch-hero.webp', duration:'120 min', age:'21+', schedule:'Sun · 11 AM' },
   { order:21, slug:'rat-pack-is-back', name:'The Rat Pack Is Back!', subtitle:'A Timeless Tribute to Frank, Dean & Sammy', venue:'Copa Room - Tuscany Suites & Casino', price:92, pd:'$92', sp:false, pills:['Live Big Band Tribute','Sweet Spot — VIP'], img:'/images/product-photos/rat-pack-is-back/rat-pack-is-back-hero.webp', duration:'75 min', age:'12+', schedule:'Mon, Tue, Wed, Thu, Fri · 7:30 PM' },
-  { order:22, slug:'barry-manilow', name:'Barry Manilow', subtitle:'The Hits Come Home!', venue:'International Theater · Westgate Las Vegas', price:91, pd:'$91', sp:false, pills:['Westgate Residency','90-Minute Show'], img:'/images/product-photos/barry-manilow/barry-manilow-hero.webp', duration:'90 min', age:'Not listed', schedule:'Select dates' }
+  { order:22, slug:'barry-manilow', name:'Barry Manilow', subtitle:'The Hits Come Home!', venue:'International Theater · Westgate Las Vegas', price:91, pd:'$91', sp:false, pills:['Westgate Residency','90-Minute Show'], img:'/images/product-photos/barry-manilow/barry-manilow-hero.webp', duration:'90 min', age:'Not listed', schedule:'Select dates' },
+  { order:23, slug:'america-the-show', cat:'music', path:'/shows/spectaculars/america-the-show/', name:'America The Show', subtitle:'A Vegas-Style Celebration of 250 Years', venue:'Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave', price:40, pd:'$40', sp:false, pills:['Classic Showgirl Revue','60% Off Regular Price'], img:'/images/product-photos/america-the-show/america-the-show-hero.webp', duration:'75 min', age:'All ages', schedule:'Sat, Sun · 4 PM' }
 ];
 
 let sort = 'order';
@@ -493,7 +500,7 @@ function renderGrid() {
     const dis = !on && sel.size >= 3;
     return `<div class="show-card${on?' selected':''}${dis?' compare-disabled':''}" data-category="${s.cat||'music'}" id="c-${s.slug}">
   <div class="card-img-wrap">
-    <a href="/shows/music/${s.slug}/" class="card-img-link"><img src="${s.img}" alt="${s.name} Las Vegas" loading="lazy" /></a>
+    <a href="${s.path||'/shows/music/'+s.slug+'/'}" class="card-img-link"><img src="${s.img}" alt="${s.name} Las Vegas" loading="lazy" /></a>
     ${s.sp ? '<div class="card-sp-badge">🌵 Sidekick Pick</div>' : ''}
     <label class="cb-label" title="${dis?'Max 3 selected — deselect one to swap':'Compare'}">
       <input type="checkbox" ${on?'checked':''} ${dis?'disabled':''} onchange="toggleSel('${s.slug}',this)" />
@@ -502,7 +509,7 @@ function renderGrid() {
     </label>
   </div>
   <div class="card-body">
-    <a href="/shows/music/${s.slug}/" class="card-name-link"><div class="card-name">${s.name}${s.subtitle?'<br><span class="card-subtitle">'+s.subtitle+'</span>':''}</div></a>
+    <a href="${s.path||'/shows/music/'+s.slug+'/'}" class="card-name-link"><div class="card-name">${s.name}${s.subtitle?'<br><span class="card-subtitle">'+s.subtitle+'</span>':''}</div></a>
     <div class="card-venue">${s.venue}</div>
     <div class="card-pills">
       <span class="card-pill cp1">${s.pills[0]}</span>
@@ -512,7 +519,7 @@ function renderGrid() {
       <span class="card-from">From</span>
       <span class="card-price">${s.pd}</span>
     </div>
-    <a href="/shows/music/${s.slug}/" class="card-cta">See ${s.name} →</a>
+    <a href="${s.path||'/shows/music/'+s.slug+'/'}" class="card-cta">See ${s.name} →</a>
   </div>
 </div>`;
   }).join('');
@@ -575,7 +582,7 @@ function openCompare() {
       <div class="cmp-row"><div class="cmp-row-lbl">Age Requirement</div><div class="cmp-row-val">${s.age}</div></div>
       <div class="cmp-row"><div class="cmp-row-lbl">Schedule</div><div class="cmp-row-val">${s.schedule}</div></div>
       <div class="cmp-row"><div class="cmp-row-lbl">Sidekick Pick</div><div class="cmp-row-val">${s.sp?'🌵 Yes':'—'}</div></div>
-      <a href="/shows/music/${s.slug}/" class="cmp-col-cta">See ${s.name} →</a>
+      <a href="${s.path||'/shows/music/'+s.slug+'/'}" class="cmp-col-cta">See ${s.name} →</a>
     </div>`).join('');
   document.getElementById('cmp-modal').classList.add('visible');
   document.body.style.overflow = 'hidden';
