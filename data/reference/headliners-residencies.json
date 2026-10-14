@@ -3,7 +3,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "Vegas Sidekick — https://vegassidekick.com/sidekick-index/headliners-residencies/",
-  "verified_on": "2026-10-09",
+  "verified_on": "2026-10-13",
   "city": "Las Vegas",
   "state": "NV",
   "venues": [
@@ -162,9 +162,6 @@
       "type": "Residency",
       "official_url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/barry-manilow-greatest-hits-concert-tour/",
       "dates": [
-        "2026-10-08",
-        "2026-10-09",
-        "2026-10-10",
         "2026-10-15",
         "2026-10-16",
         "2026-10-17",
@@ -207,10 +204,6 @@
       "type": "Residency",
       "official_url": "https://www.venetianlasvegas.com/entertainment/dita-von-teese.html",
       "dates": [
-        "2026-10-08",
-        "2026-10-09",
-        "2026-10-10",
-        "2026-10-11",
         "2026-10-15",
         "2026-10-16",
         "2026-10-17",
@@ -244,39 +237,11 @@
       ]
     },
     {
-      "act": "For KING + COUNTRY",
-      "venue_id": "palms-pearl",
-      "type": "Headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater",
-      "dates": [
-        "2026-10-08"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Legends of Gospel",
-      "venue_id": "the-theater-virgin-hotels",
-      "type": "Limited engagement",
-      "official_url": "https://virginhotelslv.com/venue/the-theater/",
-      "dates": [
-        "2026-10-08",
-        "2026-10-09",
-        "2026-10-11"
-      ],
-      "sources": [
-        "https://virginhotelslv.com/venue/the-theater/"
-      ]
-    },
-    {
       "act": "Metallica",
       "venue_id": "sphere",
       "type": "Residency",
       "official_url": "https://www.thesphere.com/shows/metallica",
       "dates": [
-        "2026-10-08",
-        "2026-10-10",
         "2026-10-15",
         "2026-10-17",
         "2026-10-22",
@@ -304,52 +269,11 @@
       ]
     },
     {
-      "act": "Empire of the Sun",
-      "venue_id": "planet-hollywood-ph-live",
-      "type": "Headliner",
-      "official_url": "https://www.ticketmaster.com/empire-of-the-sun-tickets/artist/1439524?venueId=467893",
-      "dates": [
-        "2026-10-09"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/empire-of-the-sun-tickets/artist/1439524?venueId=467893",
-        "https://newsroom.caesars.com/press-releases/press-release-details/2026/Caesars-Entertainment-Brings-Hotel-Savings-50-Show-Tickets-and-More-to-the-Vegas-5-Day-Sale/default.aspx"
-      ]
-    },
-    {
-      "act": "Josh Groban",
-      "venue_id": "caesars-colosseum",
-      "type": "Residency",
-      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
-      "dates": [
-        "2026-10-09",
-        "2026-10-10"
-      ],
-      "sources": [
-        "https://www.ticketmaster.com/explore/joshgrobanvegas",
-        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
-      ]
-    },
-    {
-      "act": "Michelle Branch",
-      "venue_id": "stage-at-zouk",
-      "type": "Headliner",
-      "official_url": "https://www.rwlasvegas.com/entertainment/",
-      "dates": [
-        "2026-10-09"
-      ],
-      "sources": [
-        "https://www.rwlasvegas.com/entertainment/"
-      ]
-    },
-    {
       "act": "New Kids on the Block",
       "venue_id": "dolby-live",
       "type": "Residency",
       "official_url": "https://parkmgm.mgmresorts.com/en/entertainment/new-kids-on-the-block.html",
       "dates": [
-        "2026-10-09",
-        "2026-10-10",
         "2026-10-14",
         "2026-10-16",
         "2026-10-17"
@@ -359,49 +283,11 @@
       ]
     },
     {
-      "act": "Sebastian Maniscalco",
-      "venue_id": "encore-theater-wynn",
-      "type": "Residency",
-      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/sebastian-maniscalco",
-      "dates": [
-        "2026-10-09",
-        "2026-10-10"
-      ],
-      "sources": [
-        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/sebastian-maniscalco"
-      ]
-    },
-    {
-      "act": "TLC & Salt-N-Pepa",
-      "venue_id": "bleaulive-theater",
-      "type": "Headliner",
-      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
-      "dates": [
-        "2026-10-09"
-      ],
-      "sources": [
-        "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-10/"
-      ]
-    },
-    {
-      "act": "Tumua",
-      "venue_id": "palazzo-theatre",
-      "type": "Comedy headliner",
-      "official_url": "https://www.venetianlasvegas.com/entertainment/tumua.html",
-      "dates": [
-        "2026-10-09"
-      ],
-      "sources": [
-        "https://www.venetianlasvegas.com/entertainment/tumua.html"
-      ]
-    },
-    {
       "act": "Brincos Dieras",
       "venue_id": "the-theater-virgin-hotels",
       "type": "Comedy headliner",
       "official_url": "https://virginhotelslv.com/venue/the-theater/",
       "dates": [
-        "2026-10-10",
         "2027-02-13"
       ],
       "sources": [
@@ -415,7 +301,6 @@
       "type": "Comedy headliner",
       "official_url": "https://www.venetianlasvegas.com/entertainment/heather-mcmahan.html",
       "dates": [
-        "2026-10-10",
         "2027-02-13"
       ],
       "sources": [
@@ -424,62 +309,11 @@
       ]
     },
     {
-      "act": "Juanes",
-      "venue_id": "palms-pearl",
-      "type": "Headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater",
-      "dates": [
-        "2026-10-10"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Mo Amer",
-      "venue_id": "the-chelsea-cosmopolitan",
-      "type": "Comedy headliner",
-      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/mo-amer.html",
-      "dates": [
-        "2026-10-10"
-      ],
-      "sources": [
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/mo-amer.html",
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
-      ]
-    },
-    {
-      "act": "The Wallflowers",
-      "venue_id": "stage-at-zouk",
-      "type": "Headliner",
-      "official_url": "https://www.rwlasvegas.com/entertainment/",
-      "dates": [
-        "2026-10-10"
-      ],
-      "sources": [
-        "https://www.rwlasvegas.com/entertainment/"
-      ]
-    },
-    {
-      "act": "UNDERTALE Determination Symphony World Tour",
-      "venue_id": "resorts-world-theatre",
-      "type": "Special engagement",
-      "official_url": "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
-      "dates": [
-        "2026-10-10"
-      ],
-      "sources": [
-        "https://www.rwlasvegas.com/press/latest-news/",
-        "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre"
-      ]
-    },
-    {
       "act": "Max Amini",
       "venue_id": "encore-theater-wynn",
       "type": "Comedy headliner",
       "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/max-amini",
       "dates": [
-        "2026-10-11",
         "2026-12-26",
         "2026-12-27"
       ],
