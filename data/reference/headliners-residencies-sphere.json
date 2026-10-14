@@ -1,7 +1,7 @@
 {
   "name": "Vegas Sidekick Index — Headliners & Residencies",
   "scope": "Sphere",
-  "verified_on": "2026-10-13",
+  "verified_on": "2026-10-14",
   "venue": {
     "name": "Sphere",
     "city": "Las Vegas",
@@ -114,11 +114,28 @@
         "2027-04-11",
         "2027-04-15",
         "2027-04-17",
-        "2027-04-18"
+        "2027-04-18",
+        "2027-04-28",
+        "2027-04-30",
+        "2027-05-01",
+        "2027-05-05",
+        "2027-05-07",
+        "2027-05-08",
+        "2027-05-12",
+        "2027-05-14",
+        "2027-05-15",
+        "2027-06-02",
+        "2027-06-04",
+        "2027-06-05",
+        "2027-06-09",
+        "2027-06-11",
+        "2027-06-12"
       ],
       "sources": [
         "https://www.sphereentertainmentco.com/john-mayer-live-at-sphere/",
-        "https://www.thesphere.com/shows/john-mayer"
+        "https://www.thesphere.com/shows/john-mayer",
+        "https://www.ticketmaster.com/john-mayer-tickets/artist/770494",
+        "https://www.sphereentertainmentco.com/john-mayer-live-at-sphere-due-to-overwhelming-demand-more-shows-added-june-9-june-11-and-june-12/"
       ]
     },
     {
