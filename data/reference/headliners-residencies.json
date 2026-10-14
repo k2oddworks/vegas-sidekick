@@ -3,7 +3,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "Vegas Sidekick — https://vegassidekick.com/sidekick-index/headliners-residencies/",
-  "verified_on": "2026-10-13",
+  "verified_on": "2026-10-14",
   "city": "Las Vegas",
   "state": "NV",
   "venues": [
@@ -157,6 +157,32 @@
   ],
   "entries": [
     {
+      "act": "BEAT: Belew/Vai/Levin/Bozzio",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2026-10-13"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "New Kids on the Block",
+      "venue_id": "dolby-live",
+      "type": "Residency",
+      "official_url": "https://parkmgm.mgmresorts.com/en/entertainment/new-kids-on-the-block.html",
+      "dates": [
+        "2026-10-14",
+        "2026-10-16",
+        "2026-10-17"
+      ],
+      "sources": [
+        "https://parkmgm.mgmresorts.com/en/entertainment/new-kids-on-the-block.html"
+      ]
+    },
+    {
       "act": "Barry Manilow",
       "venue_id": "westgate-international-theater",
       "type": "Residency",
@@ -196,6 +222,18 @@
       "sources": [
         "https://www.westgateresorts.com/news/westgate-las-vegas-resort-and-casino-announces-new-2027-dates-for-barry-manilows-record-breaking-las-vegas-residency/",
         "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/barry-manilow-greatest-hits-concert-tour/"
+      ]
+    },
+    {
+      "act": "Big Boy's Comedy Fiesta with George Lopez & Marlon Wayans",
+      "venue_id": "palms-pearl",
+      "type": "Comedy headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-10-15"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
       ]
     },
     {
@@ -266,100 +304,6 @@
       "sources": [
         "https://www.metallica.com/help-tour-2026-sphere-tickets.html",
         "https://www.thesphere.com/shows/metallica"
-      ]
-    },
-    {
-      "act": "New Kids on the Block",
-      "venue_id": "dolby-live",
-      "type": "Residency",
-      "official_url": "https://parkmgm.mgmresorts.com/en/entertainment/new-kids-on-the-block.html",
-      "dates": [
-        "2026-10-14",
-        "2026-10-16",
-        "2026-10-17"
-      ],
-      "sources": [
-        "https://parkmgm.mgmresorts.com/en/entertainment/new-kids-on-the-block.html"
-      ]
-    },
-    {
-      "act": "Brincos Dieras",
-      "venue_id": "the-theater-virgin-hotels",
-      "type": "Comedy headliner",
-      "official_url": "https://virginhotelslv.com/venue/the-theater/",
-      "dates": [
-        "2027-02-13"
-      ],
-      "sources": [
-        "https://virginhotelslv.com/venue/the-theater/",
-        "https://virginhotelslv.com/event/brincos-dieras/"
-      ]
-    },
-    {
-      "act": "Heather McMahan",
-      "venue_id": "palazzo-theatre",
-      "type": "Comedy headliner",
-      "official_url": "https://www.venetianlasvegas.com/entertainment/heather-mcmahan.html",
-      "dates": [
-        "2027-02-13"
-      ],
-      "sources": [
-        "https://www.venetianlasvegas.com/entertainment/heather-mcmahan.html",
-        "https://www.venetianlasvegas.com/entertainment/the-palazzo-theatre-presents.html"
-      ]
-    },
-    {
-      "act": "Max Amini",
-      "venue_id": "encore-theater-wynn",
-      "type": "Comedy headliner",
-      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/max-amini",
-      "dates": [
-        "2026-12-26",
-        "2026-12-27"
-      ],
-      "sources": [
-        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/max-amini"
-      ]
-    },
-    {
-      "act": "BEAT: Belew/Vai/Levin/Bozzio",
-      "venue_id": "the-theater-virgin-hotels",
-      "type": "Headliner",
-      "official_url": "https://virginhotelslv.com/venue/the-theater/",
-      "dates": [
-        "2026-10-13"
-      ],
-      "sources": [
-        "https://virginhotelslv.com/venue/the-theater/"
-      ]
-    },
-    {
-      "act": "Lionel Richie",
-      "venue_id": "encore-theater-wynn",
-      "type": "Residency",
-      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/lionel-richie",
-      "dates": [
-        "2026-10-14",
-        "2026-10-16",
-        "2026-10-17",
-        "2026-11-11",
-        "2026-11-13",
-        "2026-11-14"
-      ],
-      "sources": [
-        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/lionel-richie"
-      ]
-    },
-    {
-      "act": "Big Boy's Comedy Fiesta with George Lopez & Marlon Wayans",
-      "venue_id": "palms-pearl",
-      "type": "Comedy headliner",
-      "official_url": "https://www.palms.com/entertainment/pearl-theater",
-      "dates": [
-        "2026-10-15"
-      ],
-      "sources": [
-        "https://www.palms.com/entertainment/pearl-theater"
       ]
     },
     {
@@ -999,6 +943,23 @@
       ]
     },
     {
+      "act": "Lionel Richie",
+      "venue_id": "encore-theater-wynn",
+      "type": "Residency",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/lionel-richie",
+      "dates": [
+        "2026-11-11",
+        "2026-11-13",
+        "2026-11-14",
+        "2027-01-08",
+        "2027-01-09"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/lionel-richie",
+        "https://lionelrichie.com/shows/"
+      ]
+    },
+    {
       "act": "LISA",
       "venue_id": "caesars-colosseum",
       "type": "Residency",
@@ -1493,6 +1454,18 @@
       ]
     },
     {
+      "act": "Brett Young",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater/brett-young",
+      "dates": [
+        "2026-12-05"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/brett-young"
+      ]
+    },
+    {
       "act": "Chris Young",
       "venue_id": "resorts-world-theatre",
       "type": "Headliner",
@@ -1839,6 +1812,19 @@
       ]
     },
     {
+      "act": "Max Amini",
+      "venue_id": "encore-theater-wynn",
+      "type": "Comedy headliner",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/max-amini",
+      "dates": [
+        "2026-12-26",
+        "2026-12-27"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/max-amini"
+      ]
+    },
+    {
       "act": "Derek Hough — Dance for the Holidays",
       "venue_id": "bleaulive-theater",
       "type": "Special engagement",
@@ -2065,6 +2051,32 @@
       ]
     },
     {
+      "act": "Brincos Dieras",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Comedy headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2027-02-13"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/",
+        "https://virginhotelslv.com/event/brincos-dieras/"
+      ]
+    },
+    {
+      "act": "Heather McMahan",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/heather-mcmahan.html",
+      "dates": [
+        "2027-02-13"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/heather-mcmahan.html",
+        "https://www.venetianlasvegas.com/entertainment/the-palazzo-theatre-presents.html"
+      ]
+    },
+    {
       "act": "Yuridia",
       "venue_id": "planet-hollywood-ph-live",
       "type": "Headliner",
@@ -2099,6 +2111,28 @@
       "sources": [
         "https://www.palms.com/entertainment/pearl-theater/joe",
         "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Sting",
+      "venue_id": "caesars-colosseum",
+      "type": "Residency",
+      "official_url": "https://newsroom.caesars.com/press-releases/press-release-details/2026/Sting-Returns-to-The-Colosseum-at-Caesars-Palace-with-New-Las-Vegas-Residency-Sting-3-0-2026-rVi9eC52cU/default.aspx",
+      "dates": [
+        "2027-03-04",
+        "2027-03-06",
+        "2027-03-07",
+        "2027-03-10",
+        "2027-03-12",
+        "2027-10-14",
+        "2027-10-16",
+        "2027-10-17",
+        "2027-10-20",
+        "2027-10-22",
+        "2027-10-23"
+      ],
+      "sources": [
+        "https://newsroom.caesars.com/press-releases/press-release-details/2026/Sting-Returns-to-The-Colosseum-at-Caesars-Palace-with-New-Las-Vegas-Residency-Sting-3-0-2026-rVi9eC52cU/default.aspx"
       ]
     },
     {
@@ -2160,6 +2194,18 @@
       ]
     },
     {
+      "act": "En Vogue",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater/en-vogue",
+      "dates": [
+        "2027-03-13"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater/en-vogue"
+      ]
+    },
+    {
       "act": "Andrew Santino",
       "venue_id": "the-chelsea-cosmopolitan",
       "type": "Comedy headliner",
@@ -2213,6 +2259,30 @@
       ]
     },
     {
+      "act": "Dancing with the Stars: Live! 2027 Tour",
+      "venue_id": "michelob-ultra-arena",
+      "type": "Touring production",
+      "official_url": "https://mandalaybay.mgmresorts.com/en/entertainment.html",
+      "dates": [
+        "2027-04-03"
+      ],
+      "sources": [
+        "https://mandalaybay.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
+      "act": "Leon Bridges",
+      "venue_id": "the-chelsea-cosmopolitan",
+      "type": "Headliner",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html",
+      "dates": [
+        "2027-04-07"
+      ],
+      "sources": [
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+      ]
+    },
+    {
       "act": "John Mayer",
       "venue_id": "sphere",
       "type": "Limited engagement",
@@ -2235,12 +2305,28 @@
         "2027-05-15",
         "2027-06-02",
         "2027-06-04",
-        "2027-06-05"
+        "2027-06-05",
+        "2027-06-09",
+        "2027-06-11",
+        "2027-06-12"
       ],
       "sources": [
         "https://www.sphereentertainmentco.com/john-mayer-live-at-sphere/",
         "https://www.thesphere.com/shows/john-mayer",
-        "https://www.ticketmaster.com/john-mayer-tickets/artist/770494"
+        "https://www.ticketmaster.com/john-mayer-tickets/artist/770494",
+        "https://www.sphereentertainmentco.com/john-mayer-live-at-sphere-due-to-overwhelming-demand-more-shows-added-june-9-june-11-and-june-12/"
+      ]
+    },
+    {
+      "act": "Nickelback",
+      "venue_id": "t-mobile-arena",
+      "type": "Headliner",
+      "official_url": "https://www.t-mobilearena.com/events",
+      "dates": [
+        "2027-04-16"
+      ],
+      "sources": [
+        "https://www.t-mobilearena.com/events"
       ]
     },
     {
@@ -2333,6 +2419,18 @@
       ]
     },
     {
+      "act": "62nd Academy of Country Music Awards",
+      "venue_id": "mgm-grand-garden-arena",
+      "type": "Special event",
+      "official_url": "https://www.acmcountry.com/",
+      "dates": [
+        "2027-05-16"
+      ],
+      "sources": [
+        "https://www.acmcountry.com/"
+      ]
+    },
+    {
       "act": "A Perfect Circle",
       "venue_id": "bleaulive-theater",
       "type": "Limited engagement",
@@ -2343,6 +2441,19 @@
       ],
       "sources": [
         "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/list/?tribe-bar-date=2026-12-01"
+      ]
+    },
+    {
+      "act": "Matchbox Twenty",
+      "venue_id": "caesars-colosseum",
+      "type": "Headliner",
+      "official_url": "https://newsroom.caesars.com/press-releases/press-release-details/2026/Matchbox-Twenty-Brings-30th-Anniversary-Tour-to-The-Colosseum-at-Caesars-Palace--2026-yqDgGqXHe_/default.aspx",
+      "dates": [
+        "2027-06-11"
+      ],
+      "sources": [
+        "https://newsroom.caesars.com/press-releases/press-release-details/2026/Matchbox-Twenty-Brings-30th-Anniversary-Tour-to-The-Colosseum-at-Caesars-Palace--2026-yqDgGqXHe_/default.aspx",
+        "https://matchboxtwenty.com/"
       ]
     },
     {
@@ -2408,54 +2519,6 @@
       "sources": [
         "https://www.palms.com/entertainment/pearl-theater/roger-waters-presents-legacy-a-pink-floyd-show",
         "https://www.palms.com/entertainment/pearl-theater"
-      ]
-    },
-    {
-      "act": "Nickelback",
-      "venue_id": "t-mobile-arena",
-      "type": "Headliner",
-      "official_url": "https://www.t-mobilearena.com/events",
-      "dates": [
-        "2027-04-16"
-      ],
-      "sources": [
-        "https://www.t-mobilearena.com/events"
-      ]
-    },
-    {
-      "act": "Leon Bridges",
-      "venue_id": "the-chelsea-cosmopolitan",
-      "type": "Headliner",
-      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html",
-      "dates": [
-        "2027-04-07"
-      ],
-      "sources": [
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
-      ]
-    },
-    {
-      "act": "Dancing with the Stars: Live! 2027 Tour",
-      "venue_id": "michelob-ultra-arena",
-      "type": "Touring production",
-      "official_url": "https://mandalaybay.mgmresorts.com/en/entertainment.html",
-      "dates": [
-        "2027-04-03"
-      ],
-      "sources": [
-        "https://mandalaybay.mgmresorts.com/en/entertainment.html"
-      ]
-    },
-    {
-      "act": "62nd Academy of Country Music Awards",
-      "venue_id": "mgm-grand-garden-arena",
-      "type": "Special event",
-      "official_url": "https://www.acmcountry.com/",
-      "dates": [
-        "2027-05-16"
-      ],
-      "sources": [
-        "https://www.acmcountry.com/"
       ]
     }
   ],
