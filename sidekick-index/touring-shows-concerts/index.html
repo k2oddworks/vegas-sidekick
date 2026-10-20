@@ -361,7 +361,12 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
 
   fetch(DATA_URL,{cache:'no-store'})
     .then(function(r){if(!r.ok)throw new Error('Data request failed');return r.json()})
-    .then(function(data){dataset=data;renderVenueFilters();renderAll()})
+    .then(function(data){
+      // Shared expiration rule: use the Las Vegas calendar date; retain historical JSON.
+      const today=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+      data.entries=data.entries.filter(function(entry){return entry.date>=today});
+      dataset=data;renderVenueFilters();renderAll();
+    })
     .catch(function(){datesEl.innerHTML='<div class="error">The touring-events data could not be loaded.</div>'});
 })();
 </script>
