@@ -599,6 +599,11 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   fetch(DATA_URL,{cache:'no-store'})
     .then(function(r){if(!r.ok)throw new Error('Data request failed');return r.json()})
     .then(function(data){
+      // Shared expiration rule: preserve source records, show only upcoming local dates.
+      const today=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+      data.entries=data.entries.map(function(entry){
+        return entry.dates?Object.assign({},entry,{dates:entry.dates.filter(function(date){return date>=today})}):entry;
+      }).filter(function(entry){return entry.dates?entry.dates.length>0:entry.date>=today});
       dataset=data;
       renderVenueFilters();
       renderAll();
