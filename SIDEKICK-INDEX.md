@@ -152,18 +152,16 @@ The JSON supports grouped resort presentation so multiple rooms at one property 
 
 ### Show Price Index
 
-Current snapshot:
+Current comparison:
 
-- observation date: September 27, 2026
-- 71 active Vegas Sidekick shows
-- 148 published starting-price observations
-- 16 shows with all three source prices recorded
+- Spotlight observation date: October 20, 2026 (71 displayed starting prices; Las Vegas LIVE marked unavailable)
+- Vegas.com observation date: September 27, 2026 (61 displayed starting prices)
+- Viator links checked October 14, 2026; no displayed Viator prices
+- 71 indexed shows; 132 displayed price observations
+- Current export: `data/show-price-index/2026-10-20.csv` (each row retains its source observation date; blank rows denote unrecorded prices)
+- Historical export preserved: `data/show-price-index/2026-09-27.csv`
 
-Current snapshot file:
-
-`data/show-price-index/2026-09-27.csv`
-
-The Show Price Index is point-in-time research. Do not silently rewrite an old snapshot to make it look current. A new observation period should create/update the appropriate dated snapshot and visible observation date.
+The Show Price Index is point-in-time research. Label dates by source: this is not a same-day seller comparison. Never overwrite an old snapshot to make it look current.
 
 ---
 

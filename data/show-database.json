@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-19",
+  "updated_on": "2026-10-20",
   "source": "Vegas Sidekick Show Database",
   "records": [
     {
@@ -79,7 +79,8 @@
       },
       "savings_amount": null,
       "savings_percent": null,
-      "is_deal": false
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "all-motown",
@@ -141,7 +142,7 @@
       "savings_amount": 60,
       "savings_percent": 60,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "all-shook-up",
@@ -211,7 +212,7 @@
       "savings_amount": 68,
       "savings_percent": 59,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "allstars-of-magic",
@@ -264,7 +265,8 @@
       },
       "savings_amount": 7,
       "savings_percent": 18,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "america-the-show",
@@ -314,7 +316,7 @@
       "savings_amount": 60,
       "savings_percent": 60,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "an-r-rated-magic-show",
@@ -371,7 +373,8 @@
       },
       "savings_amount": null,
       "savings_percent": null,
-      "is_deal": false
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "atomic-saloon",
@@ -436,7 +439,8 @@
       },
       "savings_amount": null,
       "savings_percent": null,
-      "is_deal": false
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "awakening",
@@ -565,14 +569,15 @@
       },
       "savings_amount": null,
       "savings_percent": null,
-      "is_deal": false
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "barry-manilow",
       "name": "Barry Manilow: The Hits Come Home!",
       "category": "music",
       "status": "active",
-      "our_price": 91,
+      "our_price": 86,
       "regular_price": null,
       "runtime_minutes": 90,
       "age_summary": "Confirm current listing",
@@ -588,7 +593,7 @@
       "notes": "Select performance blocks are posted through April 2027; do not convert this to a recurring weekly schedule.",
       "spotlight": {
         "name": "Barry Manilow: The Hits Come Home! Las Vegas",
-        "our_price": 91,
+        "our_price": 86,
         "regular_price": null,
         "location": "International Theater at Westgate Las Vegas Resort & Casino",
         "runtime_minutes": 90,
@@ -606,7 +611,8 @@
       },
       "savings_amount": null,
       "savings_percent": null,
-      "is_deal": false
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "blue-man-group",
@@ -683,7 +689,8 @@
       },
       "savings_amount": 9,
       "savings_percent": 12,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "brad-garretts-comedy-club",
@@ -726,7 +733,8 @@
       },
       "savings_amount": 7,
       "savings_percent": 14,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "carrot-top",
@@ -792,7 +800,7 @@
       "savings_amount": null,
       "savings_percent": null,
       "is_deal": false,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "chippendales",
@@ -859,7 +867,8 @@
       },
       "savings_amount": 11,
       "savings_percent": 13,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "colin-cloud",
@@ -920,7 +929,8 @@
       },
       "savings_amount": 18,
       "savings_percent": 24,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "comedy-cellar",
@@ -996,14 +1006,15 @@
       },
       "savings_amount": 6,
       "savings_percent": 14,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "criss-angel",
       "name": "Criss Angel MINDFREAK",
       "category": "magic",
       "status": "active",
-      "our_price": 110,
+      "our_price": 111,
       "regular_price": null,
       "runtime_minutes": 75,
       "age_summary": "Recommended for ages 10 and up due to mature content. Everyo",
@@ -1019,7 +1030,7 @@
       "notes": "",
       "spotlight": {
         "name": "Criss Angel MINDFREAK",
-        "our_price": 110,
+        "our_price": 111,
         "regular_price": null,
         "location": "Criss Angel Theater – Planet Hollywood",
         "runtime_minutes": 75,
@@ -1057,7 +1068,8 @@
       },
       "savings_amount": null,
       "savings_percent": null,
-      "is_deal": false
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "donny-osmond",
@@ -1118,15 +1130,16 @@
       },
       "savings_amount": null,
       "savings_percent": null,
-      "is_deal": false
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "fantasy",
       "name": "Fantasy",
       "category": "adult",
       "status": "active",
-      "our_price": 40,
-      "regular_price": 47,
+      "our_price": 47,
+      "regular_price": null,
       "runtime_minutes": 75,
       "age_summary": "18+",
       "venue": "Atrium Theater - Luxor Hotel",
@@ -1141,8 +1154,8 @@
       "notes": "",
       "spotlight": {
         "name": "Fantasy Las Vegas",
-        "our_price": 40,
-        "regular_price": 47,
+        "our_price": 47,
+        "regular_price": null,
         "location": "Atrium Showroom at Luxor",
         "runtime_minutes": 75,
         "age_rule": "All guests must be 18 years of age or older. No children allowed.",
@@ -1192,9 +1205,10 @@
         "affiliate_url": "https://spotlight.vegas/shows/adult/fantasy/ref/vegassidekick",
         "age_label": "18+"
       },
-      "savings_amount": 7,
-      "savings_percent": 15,
-      "is_deal": true
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "ikons-of-rock",
@@ -1259,15 +1273,16 @@
       },
       "savings_amount": 12,
       "savings_percent": 16,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "jabbawockeez",
       "name": "Jabbawockeez",
       "category": "music",
       "status": "active",
-      "our_price": 70,
-      "regular_price": 78,
+      "our_price": 80,
+      "regular_price": 92,
       "runtime_minutes": 75,
       "age_summary": "All ages",
       "venue": "Jabbawockeez Theater - MGM Grand",
@@ -1282,8 +1297,8 @@
       "notes": "",
       "spotlight": {
         "name": "Jabbawockeez",
-        "our_price": 70,
-        "regular_price": 78,
+        "our_price": 80,
+        "regular_price": 92,
         "location": "Jabbawockeez Theater - MGM Grand",
         "runtime_minutes": 75,
         "age_rule": "Recommended for all ages; 4 and older must have a ticket, 3 and under can be admitted as a lap seat. Under 18 MUST be accompanied by an adult.",
@@ -1328,16 +1343,17 @@
         "affiliate_url": "https://spotlight.vegas/shows/production/jabbawockeez/ref/vegassidekick",
         "age_label": "All ages"
       },
-      "savings_amount": 8,
-      "savings_percent": 10,
-      "is_deal": true
+      "savings_amount": 12,
+      "savings_percent": 13,
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "jimmy-kimmels-comedy-club",
       "name": "Jimmy Kimmel's Comedy Club",
       "category": "comedy",
       "status": "active",
-      "our_price": 27,
+      "our_price": 22,
       "regular_price": null,
       "runtime_minutes": 75,
       "age_summary": "18+",
@@ -1353,7 +1369,7 @@
       "notes": "",
       "spotlight": {
         "name": "Jimmy Kimmel's Comedy Club",
-        "our_price": 27,
+        "our_price": 22,
         "regular_price": null,
         "location": "Jimmy Kimmel Comedy Club - The LINQ Promenade",
         "runtime_minutes": 75,
@@ -1371,7 +1387,8 @@
       },
       "savings_amount": null,
       "savings_percent": null,
-      "is_deal": false
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "king-of-diamonds",
@@ -1429,7 +1446,7 @@
       "savings_amount": 60,
       "savings_percent": 60,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "ka",
@@ -1496,7 +1513,7 @@
       "savings_amount": null,
       "savings_percent": null,
       "is_deal": false,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "la-comedy-club",
@@ -1541,7 +1558,7 @@
       "savings_amount": 24,
       "savings_percent": 41,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "las-vegas-live-comedy-club",
@@ -1565,7 +1582,7 @@
       "spotlight": {
         "name": "Las Vegas Live Comedy Club",
         "our_price": 29,
-        "regular_price": 34,
+        "regular_price": null,
         "location": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
         "runtime_minutes": 75,
         "age_rule": "Must be 16 years of age or older",
@@ -1610,7 +1627,8 @@
       },
       "savings_amount": null,
       "savings_percent": null,
-      "is_deal": false
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "laugh-factory",
@@ -1686,7 +1704,8 @@
       },
       "savings_amount": null,
       "savings_percent": null,
-      "is_deal": false
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "mac-king",
@@ -1747,7 +1766,8 @@
       },
       "savings_amount": 11,
       "savings_percent": 18,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "magic-mike-live",
@@ -1788,7 +1808,8 @@
       },
       "savings_amount": 18,
       "savings_percent": 21,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "marc-savard-comedy-hypnosis",
@@ -1828,7 +1849,7 @@
       "savings_amount": 27,
       "savings_percent": 49,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "marriage-can-be-murder",
@@ -1916,14 +1937,15 @@
       },
       "savings_amount": null,
       "savings_percent": null,
-      "is_deal": false
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "michael-jackson-one",
       "name": "Michael Jackson ONE by Cirque du Soleil",
       "category": "cirque",
       "status": "active",
-      "our_price": 163,
+      "our_price": 115,
       "regular_price": null,
       "runtime_minutes": 90,
       "age_summary": "5+",
@@ -1939,7 +1961,7 @@
       "notes": "",
       "spotlight": {
         "name": "Michael Jackson ONE by Cirque du Soleil",
-        "our_price": 163,
+        "our_price": 115,
         "regular_price": null,
         "location": "Mandalay Bay Theatre – The Mandalay Bay Hotel",
         "runtime_minutes": 90,
@@ -1982,14 +2004,15 @@
       },
       "savings_amount": null,
       "savings_percent": null,
-      "is_deal": false
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "mind2mind",
       "name": "MIND2MIND",
       "category": "magic",
       "status": "active",
-      "our_price": 82,
+      "our_price": 51,
       "regular_price": null,
       "runtime_minutes": 75,
       "age_summary": "Ages 12–17 with a parent or guardian; guests 18+ with valid ID",
@@ -2005,7 +2028,7 @@
       "notes": "Direct confirmation from MIND2MIND via email: performances Friday through Tuesday at 8 PM, doors 7:30 PM, one show nightly; residency began June 2026 and is extended through February 2, 2027; ages 12–17 require a parent or guardian and guests 18+ require valid ID.",
       "spotlight": {
         "name": "MIND2MIND",
-        "our_price": 82,
+        "our_price": 51,
         "regular_price": null,
         "location": "Azul Lounge - Fontainebleau Las Vegas",
         "runtime_minutes": 75,
@@ -2043,7 +2066,8 @@
       },
       "savings_amount": null,
       "savings_percent": null,
-      "is_deal": false
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "mj-live",
@@ -2113,7 +2137,7 @@
       "savings_amount": 36,
       "savings_percent": 40,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "motown-brunch",
@@ -2159,7 +2183,7 @@
       "savings_amount": 35,
       "savings_percent": 35,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "mystere",
@@ -2225,7 +2249,8 @@
       },
       "savings_amount": null,
       "savings_percent": null,
-      "is_deal": false
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "nathan-burton-comedy-magic",
@@ -2297,7 +2322,8 @@
       },
       "savings_amount": null,
       "savings_percent": null,
-      "is_deal": false
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "now-you-see-me-live",
@@ -2338,7 +2364,8 @@
       },
       "savings_amount": null,
       "savings_percent": null,
-      "is_deal": false
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "o",
@@ -2404,7 +2431,8 @@
       },
       "savings_amount": null,
       "savings_percent": null,
-      "is_deal": false
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "paranormal",
@@ -2462,7 +2490,7 @@
       "savings_amount": 48,
       "savings_percent": 61,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "penn-and-teller",
@@ -2509,7 +2537,7 @@
       "savings_amount": 41,
       "savings_percent": 38,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "piano-man",
@@ -2579,7 +2607,7 @@
       "savings_amount": 66,
       "savings_percent": 57,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "piff-the-magic-dragon",
@@ -2645,7 +2673,7 @@
       "savings_amount": 25,
       "savings_percent": 36,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "popovich-comedy-pet-theater",
@@ -2706,7 +2734,8 @@
       },
       "savings_amount": 6,
       "savings_percent": 15,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "purple-reign",
@@ -2760,7 +2789,7 @@
       "savings_amount": 44,
       "savings_percent": 46,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "queen-selena",
@@ -2813,7 +2842,8 @@
       },
       "savings_amount": 9,
       "savings_percent": 18,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "rouge",
@@ -2881,15 +2911,15 @@
       "savings_amount": 32,
       "savings_percent": 37,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "rupauls-drag-race-live",
       "name": "RuPaul's Drag Race LIVE!",
       "category": "music",
       "status": "active",
-      "our_price": 55,
-      "regular_price": 82,
+      "our_price": 80,
+      "regular_price": null,
       "runtime_minutes": 90,
       "age_summary": "All ages",
       "venue": "Flamingo Showroom - Flamingo",
@@ -2904,8 +2934,8 @@
       "notes": "Spotlight product page from $55, regular $82 (2026-10-09).",
       "spotlight": {
         "name": "RuPaul's Drag Race LIVE!",
-        "our_price": 55,
-        "regular_price": 82,
+        "our_price": 80,
+        "regular_price": null,
         "location": "Flamingo Showroom - Flamingo",
         "runtime_minutes": 90,
         "age_rule": "No age restrictions",
@@ -2941,10 +2971,10 @@
         "affiliate_url": "https://spotlight.vegas/shows/production/rupauls-drag-race-live/ref/vegassidekick",
         "age_label": "All ages"
       },
-      "savings_amount": 27,
-      "savings_percent": 33,
-      "is_deal": true,
-      "price_source_last_checked_on": "2026-10-09"
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "shin-lim",
@@ -3007,7 +3037,7 @@
       "savings_amount": 35,
       "savings_percent": 34,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "sinatra-live",
@@ -3072,7 +3102,8 @@
       },
       "savings_amount": 9,
       "savings_percent": 18,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "sir-elton",
@@ -3121,14 +3152,15 @@
       },
       "savings_amount": 9,
       "savings_percent": 18,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "steve-falcons-comedy-hypnosis-hour",
       "name": "Steve Falcon's Comedy Hypnosis Hour",
       "category": "comedy",
       "status": "active",
-      "our_price": 58,
+      "our_price": 61,
       "regular_price": 72,
       "runtime_minutes": 85,
       "age_summary": "16 years and over. Guest under the 18 must be accompanied by",
@@ -3144,7 +3176,7 @@
       "notes": "",
       "spotlight": {
         "name": "Steve Falcon Las Vegas",
-        "our_price": 58,
+        "our_price": 61,
         "regular_price": 72,
         "location": "The Underground Theater - MGM Grand",
         "runtime_minutes": 85,
@@ -3188,9 +3220,10 @@
         "affiliate_url": "https://spotlight.vegas/shows/comedy/steve-falcons-comedy-hypnosis-hour/ref/vegassidekick",
         "age_label": "16 years and over. Guest under the 18 must be accompanied by"
       },
-      "savings_amount": 14,
-      "savings_percent": 19,
-      "is_deal": true
+      "savings_amount": 11,
+      "savings_percent": 15,
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "tape-face",
@@ -3256,15 +3289,15 @@
       "savings_amount": 14,
       "savings_percent": 20,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "australian-bee-gees",
       "name": "The Australian Bee Gees Show",
       "category": "music",
       "status": "active",
-      "our_price": 36,
-      "regular_price": 40,
+      "our_price": 40,
+      "regular_price": null,
       "runtime_minutes": 70,
       "age_summary": "5+",
       "venue": "Thunderland Theater- Excalibur",
@@ -3279,8 +3312,8 @@
       "notes": "",
       "spotlight": {
         "name": "The Australian Bee Gees Las Vegas",
-        "our_price": 36,
-        "regular_price": 40,
+        "our_price": 40,
+        "regular_price": null,
         "location": "Thunderland Theater- Excalibur",
         "runtime_minutes": 70,
         "age_rule": "Must be 5 years of age or older. Everyone must have a ticket to enter the event. Guests 18 years of age and under must be accompanied by an adult.",
@@ -3302,7 +3335,8 @@
       },
       "savings_amount": null,
       "savings_percent": null,
-      "is_deal": false
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "the-conjurors",
@@ -3363,7 +3397,8 @@
       },
       "savings_amount": 10,
       "savings_percent": 21,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "empire-strips-back",
@@ -3434,7 +3469,8 @@
       },
       "savings_amount": 8,
       "savings_percent": 19,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "the-king-comes-home",
@@ -3495,7 +3531,8 @@
       },
       "savings_amount": null,
       "savings_percent": null,
-      "is_deal": false
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "the-mentalist",
@@ -3561,7 +3598,7 @@
       "savings_amount": 50,
       "savings_percent": 56,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "rat-pack-is-back",
@@ -3622,7 +3659,8 @@
       },
       "savings_amount": null,
       "savings_percent": null,
-      "is_deal": false
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "wizard-of-oz",
@@ -3665,7 +3703,8 @@
       },
       "savings_amount": null,
       "savings_percent": null,
-      "is_deal": false
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "thunder-from-down-under",
@@ -3734,7 +3773,8 @@
       },
       "savings_amount": null,
       "savings_percent": null,
-      "is_deal": false
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "tournament-of-kings",
@@ -3800,7 +3840,8 @@
       },
       "savings_amount": 10,
       "savings_percent": 11,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "v-the-ultimate-variety-show",
@@ -3871,7 +3912,7 @@
       "savings_amount": 60,
       "savings_percent": 59,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "vegas-the-show",
@@ -3937,7 +3978,7 @@
       "savings_amount": 38,
       "savings_percent": 38,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "wastin-away",
@@ -3991,7 +4032,7 @@
       "savings_amount": 60,
       "savings_percent": 60,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "wayne-newton",
@@ -4045,7 +4086,7 @@
       "savings_amount": 37,
       "savings_percent": 31,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "wow-the-vegas-spectacular",
@@ -4105,7 +4146,8 @@
       },
       "savings_amount": 7,
       "savings_percent": 12,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "x-burlesque",
@@ -4172,7 +4214,8 @@
       },
       "savings_amount": 8,
       "savings_percent": 9,
-      "is_deal": true
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "x-country",
@@ -4233,15 +4276,16 @@
       },
       "savings_amount": null,
       "savings_percent": null,
-      "is_deal": false
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "x-rocks",
       "name": "X Rocks",
       "category": "adult",
       "status": "active",
-      "our_price": 57,
-      "regular_price": 68,
+      "our_price": 66,
+      "regular_price": null,
       "runtime_minutes": 70,
       "age_summary": "18+",
       "venue": "X Rocks Theatre - Horseshoe Las Vegas",
@@ -4256,8 +4300,8 @@
       "notes": "",
       "spotlight": {
         "name": "X Rocks",
-        "our_price": 57,
-        "regular_price": 68,
+        "our_price": 66,
+        "regular_price": null,
         "location": "X Rocks Theatre - Horseshoe Las Vegas",
         "runtime_minutes": 70,
         "age_rule": "Must be 18 years of age or older. Everyone must have a ticket to enter the event.",
@@ -4284,9 +4328,10 @@
         "affiliate_url": "https://spotlight.vegas/shows/adult/x-rocks/ref/vegassidekick",
         "age_label": "18+"
       },
-      "savings_amount": 11,
-      "savings_percent": 16,
-      "is_deal": true
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "zombie-burlesque",
@@ -4352,7 +4397,7 @@
       "savings_amount": 59,
       "savings_percent": 54,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-09"
+      "price_source_last_checked_on": "2026-10-20"
     },
     {
       "slug": "david-goldrake",
@@ -4401,6 +4446,6 @@
       "is_deal": false
     }
   ],
-  "spotlight_reconciled_on": "2026-09-08",
+  "spotlight_reconciled_on": "2026-10-20",
   "deal_threshold_dollars": 5
 }

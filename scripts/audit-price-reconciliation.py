@@ -60,7 +60,7 @@ cases = {
     "magic-mike-live": (69, 87, 18),
     "thunder-from-down-under": (70, 71, None),
     "o": (121, None, None),
-    "rupauls-drag-race-live": (55, 82, 27),
+    "rupauls-drag-race-live": (80, None, None),
     "v-the-ultimate-variety-show": (41, 101, 60),
     "tape-face": (57, 71, 14),
     "ka": (80, None, None),
