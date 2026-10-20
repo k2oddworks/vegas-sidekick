@@ -1,7 +1,7 @@
 # SIDEKICK-INDEX.md — Vegas Sidekick Reference System
 
 **Status:** Current production system  
-**Last updated:** October 14, 2026  
+**Last updated:** October 19, 2026  
 **Canonical scope:** `/sidekick-index/`
 
 This file is the source of truth for the **Sidekick Index** project: its purpose, page taxonomy, data boundaries, shared UX, source files, mobile behavior, and maintenance rules.
@@ -114,10 +114,10 @@ These counts are a **dated snapshot**, not permanent product rules.
 
 ### More Touring Shows & Concerts
 
-As verified October 8, 2026:
+As verified October 19, 2026:
 
-- 149 indexed event entries
-- 13 covered venues
+- 135 indexed event entries
+- 16 covered venues
 
 Current venue set:
 
@@ -134,14 +134,17 @@ Current venue set:
 - Downtown Las Vegas Events Center
 - Notoriety Live
 - Desert Breeze Event Center
+- Bel-Aire Backyard at Durango
+- The Palazzo Theatre at The Venetian Resort
+- The Chelsea at The Cosmopolitan of Las Vegas
 
 The venue list is expected to grow. Do not hard-code marketing copy that becomes wrong when more venues are added.
 
 ### Headliners & Residencies
 
-As verified October 14, 2026:
+As verified October 19, 2026:
 
-- 169 act / engagement records
+- 170 act / engagement records
 - 22 underlying venue records
 - 9 resort/venue groups used to simplify customer-facing venue filtering where appropriate
 
