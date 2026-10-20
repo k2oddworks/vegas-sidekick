@@ -3,7 +3,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "Vegas Sidekick — https://vegassidekick.com/sidekick-index/headliners-residencies/",
-  "verified_on": "2026-10-14",
+  "verified_on": "2026-10-19",
   "city": "Las Vegas",
   "state": "NV",
   "venues": [
@@ -2203,6 +2203,26 @@
       ],
       "sources": [
         "https://www.palms.com/entertainment/pearl-theater/en-vogue"
+      ]
+    },
+    {
+      "act": "Mötley Crüe",
+      "venue_id": "caesars-colosseum",
+      "type": "Residency",
+      "official_url": "https://www.motley.com/",
+      "dates": [
+        "2027-03-19",
+        "2027-03-20",
+        "2027-03-24",
+        "2027-03-26",
+        "2027-03-27",
+        "2027-03-31",
+        "2027-04-02",
+        "2027-04-03"
+      ],
+      "sources": [
+        "https://newsroom.caesars.com/press-releases/press-release-details/2026/Mtley-Cre-to-Play-The-Colosseum-at-Caesars-Palace-March-19-April-3-2027/default.aspx",
+        "https://www.motley.com/"
       ]
     },
     {
