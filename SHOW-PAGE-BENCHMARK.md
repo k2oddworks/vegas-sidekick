@@ -162,6 +162,8 @@ Do not copy show-specific CSS/JS for the booking module unless there is a genuin
 
 ### Verified regular weekly schedules
 
+Advertise the regular weekly schedule. Do not add temporary banners or list occasional dark dates, one-off absences, or welcome-back performances on evergreen show pages. Keep regular non-performance weekdays in the schedule picker; permanent closures and lasting schedule changes still require updates.
+
 When the show has a verified regular weekly schedule, use the shared conversion-focused booking module rather than the old large day-card grid.
 
 The module should include:

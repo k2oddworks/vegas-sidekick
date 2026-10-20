@@ -86,6 +86,8 @@ Mobile heroes use the established safe treatment unless a show-specific focal ov
 
 ### Locked showtimes booking system
 
+Advertise the regular weekly schedule. Do not add temporary banners or list occasional dark dates, one-off absences, or welcome-back performances on evergreen show pages. Keep regular non-performance weekdays in the schedule picker; permanent closures and lasting schedule changes still require updates.
+
 The shared showtimes module is now the production standard for active show pages.
 
 For shows with a verified regular weekly schedule:
