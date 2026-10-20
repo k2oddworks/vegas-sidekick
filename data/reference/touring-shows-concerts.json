@@ -3,7 +3,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "Vegas Sidekick — https://vegassidekick.com/sidekick-index/touring-shows-concerts/",
-  "verified_on": "2026-10-13",
+  "verified_on": "2026-10-19",
   "city": "Las Vegas",
   "state": "Nevada",
   "source_note": "Official venue calendars, official ticketing pages and established concert listings. This index tracks visiting and limited-run shows that are not ongoing Vegas productions and are not currently classified in the Headliners & Residencies index. Recurring restaurant/bar entertainment, resident productions and recurring local series are excluded.",
@@ -98,6 +98,22 @@
       "short_name": "Desert Breeze",
       "property": "Desert Breeze Park",
       "official_url": "https://www.clarkcountynv.gov/government/departments/parks___recreation/events/special-event-services"
+    },
+    {
+      "id": "bel-aire-backyard",
+      "name": "Bel-Aire Backyard at Durango",
+      "short_name": "Bel-Aire Backyard",
+      "official_url": "https://www.belairebackyardlv.com/concertseries/"
+    },
+    {
+      "id": "palazzo-theatre",
+      "name": "The Palazzo Theatre at The Venetian Resort",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/comedy-shows.html"
+    },
+    {
+      "id": "the-chelsea-cosmopolitan",
+      "name": "The Chelsea at The Cosmopolitan of Las Vegas",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
     }
   ],
   "entries": [
@@ -1235,6 +1251,15 @@
       "official_url": "https://thesmithcenter.com/tickets/myrons/"
     },
     {
+      "name": "Alan Cumming: Uncut",
+      "date": "2027-01-24",
+      "doors": "7:00 PM",
+      "time_label": "Show",
+      "type": "Touring show",
+      "venue_id": "palazzo-theatre",
+      "official_url": "https://www.ticketmaster.com/alan-cumming-uncut-las-vegas-nevada-01-24-2027/event/1700651BD25B1439"
+    },
+    {
       "name": "Jesse Cook",
       "date": "2027-01-25",
       "doors": "See listing",
@@ -1348,6 +1373,15 @@
       "official_url": "https://thesmithcenter.com/tickets/broadway-las-vegas-series/"
     },
     {
+      "name": "Andrew Dice Clay",
+      "date": "2027-03-05",
+      "doors": "8:00 PM",
+      "time_label": "Show",
+      "type": "Comedy",
+      "venue_id": "palazzo-theatre",
+      "official_url": "https://www.ticketmaster.com/andrew-dice-clay-las-vegas-nevada-03-05-2027/event/17006546B4A4F9D2"
+    },
+    {
       "name": "The Brubeck Brothers Quartet",
       "date": "2027-03-06",
       "doors": "See listing",
@@ -1386,6 +1420,26 @@
       "type": "Festival",
       "venue_id": "desert-breeze-event-center",
       "official_url": "https://www.extremethinglv.com/"
+    },
+    {
+      "name": "Giggly Squad",
+      "subtitle": "The Gehls Gehl Tour",
+      "date": "2027-04-10",
+      "doors": "8:00 PM",
+      "time_label": "Show",
+      "type": "Comedy",
+      "venue_id": "the-chelsea-cosmopolitan",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/giggly-squad.html"
+    },
+    {
+      "name": "The Elovaters",
+      "subtitle": "Shark Belly Motel Tour · Twin Fin & Dylan Cotrone",
+      "date": "2027-04-11",
+      "doors": "7:00 PM",
+      "time_label": "Show",
+      "type": "Concert",
+      "venue_id": "bel-aire-backyard",
+      "official_url": "https://www.belairebackyardlv.com/concertseries/"
     },
     {
       "name": "Matthew Morrison",
