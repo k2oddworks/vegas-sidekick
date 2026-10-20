@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-09",
+  "updated_on": "2026-10-19",
   "source": "Vegas Sidekick Show Database",
   "records": [
     {
@@ -743,10 +743,10 @@
       "ticket_url": "https://spotlight.vegas/shows/comedy/carrot-top/ref/vegassidekick",
       "official_trailer": "https://youtu.be/XRdqvnCZe-A",
       "page_path": "/shows/comedy/carrot-top/",
-      "verified_on": "2026-09-09",
-      "freshness_label": "September 2026",
+      "verified_on": "2026-10-19",
+      "freshness_label": "October 2026",
       "verification": "verified_spotlight",
-      "notes": "",
+      "notes": "Carrot Top returns for the October 19, 2026, 8 PM welcome-back performance at Luxor after an extended dark period. Remains an active residency; consult venue ticketing for date exceptions.",
       "spotlight": {
         "name": "Carrot Top",
         "our_price": 68,
@@ -4058,14 +4058,14 @@
       "age_summary": "All ages",
       "venue": "Rio Showroom - Rio Hotel",
       "showroom": "",
-      "schedule_summary": "Dates & times vary · check booking page",
+      "schedule_summary": "Tue–Sun · 7 PM",
       "ticket_url": "https://spotlight.vegas/shows/production/wow-the-vegas-spectacular/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/spectaculars/wow-the-vegas-spectacular/",
-      "verified_on": "2026-09-08",
-      "freshness_label": "September 2026",
+      "verified_on": "2026-10-19",
+      "freshness_label": "October 2026",
       "verification": "verified_spotlight",
-      "notes": "",
+      "notes": "Rio and production scheduling: Tuesday–Sunday at 7 PM, one performance nightly; check date-specific exceptions. Spotlight source snapshot may include older secondary showtimes.",
       "spotlight": {
         "name": "WOW - The Vegas Spectacular",
         "our_price": 51,
@@ -4074,17 +4074,30 @@
         "runtime_minutes": 90,
         "age_rule": "Appropriate for all ages. Recommended for ages 3 and up. All patrons must have a ticket, regardless of age. Infants under 1 year old can be held on the lap of a paying ticket holder.",
         "other_restrictions": "No refunds/exchanges. No cameras/audio/video Weapons of any kind are strictly prohibited. All guests and their belongings are subject to security screening prior to entry. Venue utilizes smoke, haze, strobing lights, and other stage effects. The venue reserves the right to implement security procedures designed to protect the experience for our customers. FM Transmitted Assisted Listening Devices with Hearing Aid Loop available on request.",
-        "schedule_days": {},
-        "schedule_summary": "Dates & times vary · check booking page",
-        "schedule_variable": true,
+        "schedule_days": {
+          "Tuesday": [
+            "7 PM"
+          ],
+          "Wednesday": [
+            "7 PM"
+          ],
+          "Thursday": [
+            "7 PM"
+          ],
+          "Friday": [
+            "7 PM"
+          ],
+          "Saturday": [
+            "7 PM"
+          ],
+          "Sunday": [
+            "7 PM"
+          ]
+        },
+        "schedule_summary": "Tue–Sun · 7 PM",
+        "schedule_variable": false,
         "schedule_raw": [
-          "Show times vary: 5:00pm, 7:00pm & 9:00pm",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
+          "Historical Spotlight snapshot advertised variable 5 PM, 7 PM and 9 PM showtimes; official production and Rio currently advertise Tuesday–Sunday at 7 PM."
         ],
         "spotlight_url": "https://spotlight.vegas/shows/production/wow-the-vegas-spectacular/",
         "affiliate_url": "https://spotlight.vegas/shows/production/wow-the-vegas-spectacular/ref/vegassidekick",
