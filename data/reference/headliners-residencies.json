@@ -3,7 +3,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "Vegas Sidekick — https://vegassidekick.com/sidekick-index/headliners-residencies/",
-  "verified_on": "2026-10-19",
+  "verified_on": "2026-10-21",
   "city": "Las Vegas",
   "state": "NV",
   "venues": [
@@ -267,11 +267,84 @@
         "2026-12-17",
         "2026-12-18",
         "2026-12-19",
-        "2026-12-20"
+        "2026-12-20",
+        "2027-01-14",
+        "2027-01-15",
+        "2027-01-16",
+        "2027-01-17",
+        "2027-01-21",
+        "2027-01-22",
+        "2027-01-23",
+        "2027-01-24",
+        "2027-01-27",
+        "2027-01-28",
+        "2027-01-29",
+        "2027-01-30",
+        "2027-02-04",
+        "2027-02-05",
+        "2027-02-06",
+        "2027-02-07",
+        "2027-02-18",
+        "2027-02-19",
+        "2027-02-20",
+        "2027-02-21",
+        "2027-02-25",
+        "2027-02-26",
+        "2027-02-27",
+        "2027-02-28",
+        "2027-03-04",
+        "2027-03-05",
+        "2027-03-06",
+        "2027-03-07",
+        "2027-03-11",
+        "2027-03-12",
+        "2027-03-13",
+        "2027-03-14",
+        "2027-04-01",
+        "2027-04-02",
+        "2027-04-03",
+        "2027-04-04",
+        "2027-04-08",
+        "2027-04-09",
+        "2027-04-10",
+        "2027-04-11",
+        "2027-04-15",
+        "2027-04-16",
+        "2027-04-17",
+        "2027-04-18",
+        "2027-04-22",
+        "2027-04-23",
+        "2027-04-24",
+        "2027-04-25",
+        "2027-04-29",
+        "2027-04-30",
+        "2027-05-01",
+        "2027-05-02",
+        "2027-05-06",
+        "2027-05-07",
+        "2027-05-08",
+        "2027-05-09",
+        "2027-06-03",
+        "2027-06-04",
+        "2027-06-05",
+        "2027-06-06",
+        "2027-06-10",
+        "2027-06-11",
+        "2027-06-12",
+        "2027-06-13",
+        "2027-06-17",
+        "2027-06-18",
+        "2027-06-19",
+        "2027-06-20",
+        "2027-06-24",
+        "2027-06-25",
+        "2027-06-26",
+        "2027-06-27"
       ],
       "sources": [
         "https://www.venetianlasvegas.com/entertainment/dita-von-teese.html",
-        "https://www.ticketmaster.com/voltaire-at-the-venetian-resort-tickets-las-vegas/venue/189545"
+        "https://www.ticketmaster.com/voltaire-at-the-venetian-resort-tickets-las-vegas/venue/189545",
+        "https://www.patreon.com/Ditavonteese/posts/las-vegas-added-172870224"
       ]
     },
     {
@@ -1032,6 +1105,8 @@
         "2026-12-05",
         "2026-12-11",
         "2026-12-12",
+        "2027-01-08",
+        "2027-01-09",
         "2027-01-15",
         "2027-01-16",
         "2027-01-22",
@@ -1039,7 +1114,8 @@
       ],
       "sources": [
         "https://www.sphereentertainmentco.com/eagles-live-in-concert-at-sphere-due-to-demand-more-shows-added-2/",
-        "https://www.thesphere.com/shows/eagles"
+        "https://www.thesphere.com/shows/eagles",
+        "https://eagles.com/blogs/news/eagles-at-sphere-january-8"
       ]
     },
     {
@@ -1863,6 +1939,18 @@
       ]
     },
     {
+      "act": "Alanis Morissette",
+      "venue_id": "bleaulive-theater",
+      "type": "Headliner",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2027-01-01"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/month/2026-12/"
+      ]
+    },
+    {
       "act": "Lord Huron",
       "venue_id": "the-theater-virgin-hotels",
       "type": "Headliner",
@@ -1875,6 +1963,18 @@
       ]
     },
     {
+      "act": "Train",
+      "venue_id": "bleaulive-theater",
+      "type": "Headliner",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2027-01-02"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/upcoming-events/month/2026-12/"
+      ]
+    },
+    {
       "act": "Usama Siddiquee",
       "venue_id": "palazzo-theatre",
       "type": "Comedy headliner",
@@ -1884,6 +1984,19 @@
       ],
       "sources": [
         "https://www.venetianlasvegas.com/entertainment/usama-siddiquee.html"
+      ]
+    },
+    {
+      "act": "Jim Gaffigan",
+      "venue_id": "encore-theater-wynn",
+      "type": "Comedy headliner",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows",
+      "dates": [
+        "2027-01-06",
+        "2027-01-07"
+      ],
+      "sources": [
+        "https://lasvegassun.com/news/2026/oct/21/star-studded-entertainment-announcements-feature-f/"
       ]
     },
     {
@@ -2009,6 +2122,18 @@
       ]
     },
     {
+      "act": "Marvel Studios’ Black Panther in Concert",
+      "venue_id": "resorts-world-theatre",
+      "type": "Limited engagement",
+      "official_url": "https://www.rwlasvegas.com/entertainment/marvel-studios-black-panther-in-concert/",
+      "dates": [
+        "2027-02-06"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/marvel-studios-black-panther-in-concert/"
+      ]
+    },
+    {
       "act": "Collective Soul",
       "venue_id": "venetian-theatre",
       "type": "Limited engagement",
@@ -2020,6 +2145,21 @@
       ],
       "sources": [
         "https://www.venetianlasvegas.com/entertainment/collective-soul.html"
+      ]
+    },
+    {
+      "act": "Frankie Moreno — 2027 residency",
+      "venue_id": "westgate-international-theater",
+      "type": "Residency",
+      "official_url": "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/",
+      "dates": [
+        "2027-02-11",
+        "2027-05-20",
+        "2027-08-12",
+        "2027-11-18"
+      ],
+      "sources": [
+        "https://www.fox5vegas.com/2026/10/21/frankie-moreno-announces-2027-westgate-las-vegas-residency/"
       ]
     },
     {
@@ -2086,6 +2226,27 @@
       ],
       "sources": [
         "https://www.ticketmaster.com/artist/1169217?venueId=467893"
+      ]
+    },
+    {
+      "act": "Cyndi Lauper",
+      "venue_id": "caesars-colosseum",
+      "type": "Residency",
+      "official_url": "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
+      "dates": [
+        "2027-02-19",
+        "2027-02-20",
+        "2027-02-24",
+        "2027-02-26",
+        "2027-02-27",
+        "2027-09-03",
+        "2027-09-04",
+        "2027-09-08",
+        "2027-09-10",
+        "2027-09-11"
+      ],
+      "sources": [
+        "https://investor.caesars.com/news-releases/news-release-details/cyndi-lauper-announces-2027-dates-colosseum-caesars-palace"
       ]
     },
     {
@@ -2477,6 +2638,18 @@
       ]
     },
     {
+      "act": "Papa Roach — Rise of the Roach Tour",
+      "venue_id": "planet-hollywood-ph-live",
+      "type": "Headliner",
+      "official_url": "https://help.ticketmaster.com/hc/en-us/articles/52078417174801-Papa-Roach-Rise-of-the-Roach-Tour",
+      "dates": [
+        "2027-06-19"
+      ],
+      "sources": [
+        "https://help.ticketmaster.com/hc/en-us/articles/52078417174801-Papa-Roach-Rise-of-the-Roach-Tour"
+      ]
+    },
+    {
       "act": "Oasis",
       "venue_id": "allegiant-stadium",
       "type": "Limited engagement",
@@ -2539,6 +2712,20 @@
       "sources": [
         "https://www.palms.com/entertainment/pearl-theater/roger-waters-presents-legacy-a-pink-floyd-show",
         "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Jimmy Carr",
+      "venue_id": "encore-theater-wynn",
+      "type": "Comedy headliner",
+      "official_url": "https://www.jimmycarr.com/tour/usa/",
+      "dates": [
+        "2027-11-11",
+        "2027-11-12",
+        "2027-11-13"
+      ],
+      "sources": [
+        "https://www.jimmycarr.com/tour/usa/"
       ]
     }
   ],
