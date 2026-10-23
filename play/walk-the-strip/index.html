@@ -495,6 +495,16 @@ h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto
     document.getElementById("score").textContent = score;
     document.getElementById("lives").textContent = "🌵".repeat(Math.max(0,lives));
     document.getElementById("best").textContent = best;
+    // The completed-stage count is authoritative. Never allow the banner
+    // or level rules to drift back to Stage 1 after a successful exit.
+    const earnedStage=Math.min(STAGES.length-1,Math.max(0,crossings));
+    if(playing && earnedStage!==stageIndex && !transitioning) {
+      stageIndex=earnedStage;
+      loadStage();
+    }
+    const displayStage=STAGES[Math.min(STAGES.length-1,Math.max(0,stageIndex))];
+    document.getElementById("stageCounter").textContent="STAGE "+(stageIndex+1)+" OF "+STAGES.length;
+    document.getElementById("stageName").textContent=displayStage.name;
   }
 
   function celebrateNewBest(){
@@ -668,6 +678,14 @@ h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto
       if (popups[i].t <= 0) popups.splice(i, 1);
     }
     if (!playing) return;
+    // Keep stage presentation synchronized with actual completed exits.
+    const effectiveStage=Math.min(STAGES.length-1,crossings);
+    if(!transitioning && effectiveStage!==stageIndex){
+      stageIndex=effectiveStage;
+      loadStage();
+    }
+    document.getElementById("stageCounter").textContent="STAGE "+(stageIndex+1)+" OF "+STAGES.length;
+    document.getElementById("stageName").textContent=STAGES[stageIndex].name;
     if (spike.hop > 0) spike.hop = Math.max(0, spike.hop - dt);
     if(spike.hop === 0 && queuedMove && !transitioning){
       const dir=queuedMove;queuedMove=null;move(dir);
