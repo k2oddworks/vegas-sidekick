@@ -460,7 +460,8 @@ h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto
     spike = { col:5, row:12, x:5*TILE, y:12*TILE, hop:0 };
   }
   function loadStage(){
-    queuedMove=null;resetSpike();buildHazards(stageIndex);buildGoalZones();invuln=.8;transitioning=false;
+    stageIndex=Math.min(STAGES.length-1,crossings);
+    queuedMove=null;resetSpike();buildHazards(stageIndex);buildGoalZones();invuln=1;transitioning=false;stageAnnouncement=1.5;
     document.getElementById("stageCounter").textContent="STAGE "+(stageIndex+1)+" OF 5";
     document.getElementById("stageName").textContent=STAGES[stageIndex].name;
   }
@@ -481,7 +482,7 @@ h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto
   }
 
   function startGame(){
-    if(stageTimer)clearTimeout(stageTimer);stageIndex=0;transitioning=false;
+    if(stageTimer)clearTimeout(stageTimer);stageIndex=0;transitioning=false;stageAnnouncement=0;
     score = 0; crossings = 0; lives = 3; playing = true; invuln = 0; hitMsg = null; hitTimer = 0; lastHitLabel = "";
     bestAtRunStart = best; beatBestThisRun = false;
     popups = [];
@@ -576,7 +577,7 @@ h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto
   // ---------- INPUT ----------
   let queuedMove=null;
   function move(dir){
-    if (!playing || transitioning) return;
+    if (!playing || transitioning || stageAnnouncement>0) return;
     // Save one input during the short hop animation so quick taps are not lost.
     if (spike.hop > 0){ queuedMove=dir; return; }
     let {col,row} = spike;
@@ -601,18 +602,11 @@ h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto
       updateHUD();
       transitioning=true;
       queuedMove=null;
-      if(stageIndex===STAGES.length-1){
-        stageTimer=setTimeout(winGame,700);
-      }else{
-        // Advance the stage and its visible label immediately on reaching the exit.
-        // Only hold the character reset briefly for the stage-clear celebration.
-        stageIndex++;
-        const nextStage=STAGES[stageIndex];
-        document.getElementById("stageCounter").textContent="STAGE "+(stageIndex+1)+" OF "+STAGES.length;
-        document.getElementById("stageName").textContent=nextStage.name;
-        popups.push({x:W/2,y:H*.47,color:"#c6f22e",text:"STAGE "+stageIndex+" CLEAR!",t:1.2,rate:.85,big:true});
-        stageTimer=setTimeout(()=>{if(playing)loadStage();},900);
-      }
+      stageIndex=Math.min(STAGES.length-1,crossings);
+      document.getElementById("stageCounter").textContent="STAGE "+(stageIndex+1)+" OF 5";
+      document.getElementById("stageName").textContent=STAGES[stageIndex].name;
+      if(crossings>=STAGES.length)stageTimer=setTimeout(winGame,700);
+      else stageTimer=setTimeout(()=>{if(playing)loadStage();},650);
     }
   }
 
@@ -669,6 +663,7 @@ h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto
       if (popups[i].t <= 0) popups.splice(i, 1);
     }
     if (!playing) return;
+    if(stageAnnouncement>0)stageAnnouncement=Math.max(0,stageAnnouncement-dt);
     // Keep stage presentation synchronized with actual completed exits.
     const effectiveStage=Math.min(STAGES.length-1,crossings);
     if(!transitioning && effectiveStage!==stageIndex){
@@ -990,7 +985,10 @@ h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto
         ctx.fillRect(0,y,W,TILE);
       } else {
         // Strip pavers — alternating tile bands with grout lines
-        ctx.fillStyle = STAGES[stageIndex].bridge?(r%2?"#243248":"#2a3a52"):(r%2?"#211932":"#271b38");
+        ctx.fillStyle = [
+          ["#241634","#312044"],["#15334c","#20465a"],["#293f4d","#405565"],
+          ["#451b37","#602844"],["#29183d","#4a2a5a"]
+        ][stageIndex][r%2];
         ctx.fillRect(0,y,W,TILE);
         ctx.strokeStyle = "rgba(244,246,255,.06)";
         ctx.lineWidth = 1;
@@ -1002,11 +1000,24 @@ h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto
       }
     }
 
+    if(stageIndex===1){
+      for(let r=2;r<ROWS-1;r+=3){
+        ctx.fillStyle="#14c5e6";ctx.fillRect(0,r*TILE,10,TILE);
+        ctx.fillStyle="#ff4db5";ctx.fillRect(W-10,r*TILE,10,TILE);
+      }
+    }
     if(STAGES[stageIndex].bridge){
       ctx.strokeStyle="#ffb000";ctx.lineWidth=6;ctx.beginPath();
       ctx.moveTo(4,TILE);ctx.lineTo(4,H-TILE);ctx.moveTo(W-4,TILE);ctx.lineTo(W-4,H-TILE);ctx.stroke();
       ctx.setLineDash([10,12]);ctx.strokeStyle="rgba(198,242,46,.4)";ctx.lineWidth=2;
       ctx.beginPath();ctx.moveTo(19,TILE);ctx.lineTo(19,H-TILE);ctx.moveTo(W-19,TILE);ctx.lineTo(W-19,H-TILE);ctx.stroke();ctx.setLineDash([]);
+    }
+    if(stageIndex===3){
+      for(let r=1;r<ROWS-1;r+=2){
+        ctx.fillStyle=r%4===1?"#ff6b2b":"#c6f22e";
+        ctx.fillRect(0,r*TILE+3,12,TILE-6);
+        ctx.fillRect(W-12,r*TILE+3,12,TILE-6);
+      }
     }
     if(stageIndex===4){
       ctx.fillStyle="rgba(255,176,0,.15)";ctx.fillRect(0,0,W,TILE);
@@ -1021,6 +1032,17 @@ h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto
     ctx.fillRect(0,0,W,TILE*1.5);
 
     for (const h of hazards) drawHazard(h);
+    if(playing && stageAnnouncement>0){
+      ctx.save();ctx.globalAlpha=Math.min(1,stageAnnouncement*2);
+      ctx.fillStyle="#160d2b";ctx.fillRect(0,H*.33,W,H*.34);
+      ctx.strokeStyle="#ffb000";ctx.lineWidth=3;ctx.strokeRect(3,H*.33,W-6,H*.34);
+      ctx.textAlign="center";ctx.fillStyle="#ffb000";
+      ctx.font="800 28px 'Barlow Condensed',sans-serif";
+      ctx.fillText("STAGE "+(stageIndex+1)+" OF 5",W/2,H*.44);
+      ctx.fillStyle="#fff";ctx.font="800 30px 'Barlow Condensed',sans-serif";
+      ctx.fillText(STAGES[stageIndex].name,W/2,H*.52);
+      ctx.restore();
+    }
     if (playing || lives > 0) drawSpike(spike.x, spike.y);
 
     for (const p of popups){
