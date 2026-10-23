@@ -365,7 +365,7 @@ h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto
   // ---------- STATE ----------
   let spike, hazards, score, crossings, best, bestAtRunStart, beatBestThisRun, lives, playing,
       invuln, hitMsg, hitLabel, hitTimer, lastHitLabel, goalZones, popups;
-  let stageIndex=0,transitioning=false,stageTimer=null;
+  let stageIndex=0,transitioning=false,stageTimer=null,stageAnnouncement=0;
   best = Number(localStorage_safe_get("vs_dc_best")) || 0;
   document.getElementById("best").textContent = best;
   popups = [];
