@@ -255,7 +255,7 @@ h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto
   <div class="tagline">Five stages · One show · Very little patience</div>
 </header>
 
-<div class="stage-banner" aria-live="polite"><span id="stageCounter">STAGE 1 OF 5</span> <strong id="stageName">THE SIDEWALK</strong></div><div class="hud">
+<div class="stage-banner" aria-live="polite" aria-atomic="true"><span id="stageCounter">STAGE 1 OF 5</span> <strong id="stageName">THE SIDEWALK</strong></div><div class="hud">
   <div><span class="label">Score</span><span class="crossings" id="score">0</span></div>
   <div><span class="label">Best</span><span id="best">0</span></div>
   <div><span class="label">Patience</span><span class="lives" id="lives">🌵🌵🌵</span></div>
@@ -599,10 +599,18 @@ h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto
       spawnScorePopup(mult, col);
       updateHUD();
       transitioning=true;
-      if(stageIndex===STAGES.length-1)stageTimer=setTimeout(winGame,700);
-      else{
-        popups.push({x:W/2,y:H*.47,color:"#c6f22e",text:"STAGE CLEAR!",t:1.2,rate:.85,big:true});
-        stageTimer=setTimeout(()=>{if(!playing)return;stageIndex++;loadStage();},900);
+      queuedMove=null;
+      if(stageIndex===STAGES.length-1){
+        stageTimer=setTimeout(winGame,700);
+      }else{
+        // Advance the stage and its visible label immediately on reaching the exit.
+        // Only hold the character reset briefly for the stage-clear celebration.
+        stageIndex++;
+        const nextStage=STAGES[stageIndex];
+        document.getElementById("stageCounter").textContent="STAGE "+(stageIndex+1)+" OF "+STAGES.length;
+        document.getElementById("stageName").textContent=nextStage.name;
+        popups.push({x:W/2,y:H*.47,color:"#c6f22e",text:"STAGE "+stageIndex+" CLEAR!",t:1.2,rate:.85,big:true});
+        stageTimer=setTimeout(()=>{if(playing)loadStage();},900);
       }
     }
   }
