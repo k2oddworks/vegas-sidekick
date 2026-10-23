@@ -274,7 +274,7 @@ h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto
   </div>
 </div>
 
-<div class="controls-hint">Swipe to move · arrows / WASD · on-screen controls</div>
+<div class="controls-hint">Tap to move forward · swipe to steer or go back · arrows / WASD</div>
 
 <div id="dpad">
   <button class="up" data-dir="up">▲</button>
@@ -460,7 +460,7 @@ h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto
     spike = { col:5, row:12, x:5*TILE, y:12*TILE, hop:0 };
   }
   function loadStage(){
-    resetSpike();buildHazards(stageIndex);buildGoalZones();invuln=.8;transitioning=false;
+    queuedMove=null;resetSpike();buildHazards(stageIndex);buildGoalZones();invuln=.8;transitioning=false;
     document.getElementById("stageCounter").textContent="STAGE "+(stageIndex+1)+" OF 5";
     document.getElementById("stageName").textContent=STAGES[stageIndex].name;
   }
@@ -573,8 +573,11 @@ h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto
   document.getElementById("startBtn").addEventListener("click", startGame);
 
   // ---------- INPUT ----------
+  let queuedMove=null;
   function move(dir){
-    if (!playing || transitioning || spike.hop > 0) return;
+    if (!playing || transitioning) return;
+    // Save one input during the short hop animation so quick taps are not lost.
+    if (spike.hop > 0){ queuedMove=dir; return; }
     let {col,row} = spike;
     if (dir==="up") row--;
     else if (dir==="down") row++;
@@ -614,17 +617,22 @@ h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto
     b.addEventListener("pointerdown", (e) => { e.preventDefault(); move(b.dataset.dir); });
   });
 
-  // swipe
-  let touchStart = null;
-  canvas.addEventListener("pointerdown", e => { touchStart = {x:e.clientX, y:e.clientY}; });
-  canvas.addEventListener("pointerup", e => {
-    if (!touchStart) return;
-    const dx = e.clientX - touchStart.x, dy = e.clientY - touchStart.y;
-    if (Math.abs(dx) < 18 && Math.abs(dy) < 18){ move("up"); }
-    else if (Math.abs(dx) > Math.abs(dy)) move(dx > 0 ? "right" : "left");
-    else move(dy > 0 ? "down" : "up");
-    touchStart = null;
+  // A tap advances one tile. Swipes provide all four directions.
+  let touchStart=null;
+  canvas.addEventListener("pointerdown",e=>{
+    if(e.button!==undefined && e.button!==0)return;
+    touchStart={id:e.pointerId,x:e.clientX,y:e.clientY};
+    if(canvas.setPointerCapture)canvas.setPointerCapture(e.pointerId);
   });
+  canvas.addEventListener("pointerup",e=>{
+    if(!touchStart || e.pointerId!==touchStart.id)return;
+    const dx=e.clientX-touchStart.x,dy=e.clientY-touchStart.y;
+    touchStart=null;
+    if(Math.hypot(dx,dy)<18)move("up");
+    else if(Math.abs(dx)>Math.abs(dy))move(dx>0?"right":"left");
+    else move(dy>0?"down":"up");
+  });
+  canvas.addEventListener("pointercancel",()=>{touchStart=null;});
 
   // ---------- UPDATE ----------
   function hitSpike(h){
@@ -653,6 +661,9 @@ h1 .accent{color:#c6f22e}canvas{border-color:#8f60c5;max-height:57dvh;width:auto
     }
     if (!playing) return;
     if (spike.hop > 0) spike.hop = Math.max(0, spike.hop - dt);
+    if(spike.hop === 0 && queuedMove && !transitioning){
+      const dir=queuedMove;queuedMove=null;move(dir);
+    }
     if (invuln > 0) invuln -= dt;
     if (hitTimer > 0) hitTimer -= dt;
 
