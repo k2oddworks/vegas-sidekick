@@ -114,6 +114,13 @@
       "id": "the-chelsea-cosmopolitan",
       "name": "The Chelsea at The Cosmopolitan of Las Vegas",
       "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+    },
+    {
+      "id": "the-theater-virgin-hotels",
+      "name": "The Theater at Virgin Hotels Las Vegas",
+      "short_name": "The Theater",
+      "property": "Virgin Hotels Las Vegas",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/"
     }
   ],
   "entries": [
@@ -1420,6 +1427,16 @@
       "type": "Festival",
       "venue_id": "desert-breeze-event-center",
       "official_url": "https://www.extremethinglv.com/"
+    },
+    {
+      "name": "The Plot in You",
+      "subtitle": "World Tour: Part 1",
+      "date": "2027-03-21",
+      "doors": "6:00 PM",
+      "time_label": "Doors",
+      "type": "Concert",
+      "venue_id": "the-theater-virgin-hotels",
+      "official_url": "https://virginhotelslv.com/event/the-plot-in-you/"
     },
     {
       "name": "Giggly Squad",
