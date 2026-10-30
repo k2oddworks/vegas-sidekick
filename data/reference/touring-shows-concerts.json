@@ -121,6 +121,13 @@
       "short_name": "The Theater",
       "property": "Virgin Hotels Las Vegas",
       "official_url": "https://virginhotelslv.com/venue/the-theater/"
+    },
+    {
+      "id": "fremont-street-experience",
+      "name": "Fremont Street Experience",
+      "short_name": "Fremont Street",
+      "property": "Downtown Las Vegas",
+      "official_url": "https://vegasexperience.com/"
     }
   ],
   "entries": [
@@ -1227,6 +1234,16 @@
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/trippie-redd-the-non-disclosure-agreement-tour-169zkfsopza5fkdv"
     },
     {
+      "name": "2027 Countdown Under the Canopy",
+      "subtitle": "Alien Ant Farm · Hoobastank · Wuki · Bubba Sparxxx · Petey Pablo",
+      "date": "2026-12-31",
+      "doors": "7:00 PM",
+      "time_label": "First stage",
+      "type": "Special event",
+      "venue_id": "fremont-street-experience",
+      "official_url": "https://www.kirvindoak.com/fremont-street-experience-announces-lineup-for-2027-countdown-under-the-canopy-new-years-eve-celebration/"
+    },
+    {
       "name": "Curious George and the Golden Meatball",
       "date": "2027-01-10",
       "doors": "2:00 PM",
@@ -1437,6 +1454,17 @@
       "type": "Concert",
       "venue_id": "the-theater-virgin-hotels",
       "official_url": "https://virginhotelslv.com/event/the-plot-in-you/"
+    },
+    {
+      "name": "Frank Turner & The Sleeping Souls",
+      "subtitle": "Last Evenings World Tour · Skinny Lister & Beans On Toast",
+      "date": "2027-03-27",
+      "doors": "6:30 PM",
+      "time_label": "Doors",
+      "type": "Concert",
+      "room": "Music Hall",
+      "venue_id": "house-of-blues-las-vegas",
+      "official_url": "https://www.livenation.com/event/1A9Zk4oGkdNT3tq/frank-turner-the-sleeping-souls-last-evenings-world-tour"
     },
     {
       "name": "Giggly Squad",
