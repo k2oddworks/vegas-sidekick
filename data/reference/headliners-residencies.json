@@ -949,6 +949,18 @@
       ]
     },
     {
+      "act": "Pete Davidson",
+      "venue_id": "the-chelsea-cosmopolitan",
+      "type": "Comedy headliner",
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/pete-davidson.html",
+      "dates": [
+        "2026-11-06"
+      ],
+      "sources": [
+        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/pete-davidson.html"
+      ]
+    },
+    {
       "act": "Brad Williams",
       "venue_id": "palazzo-theatre",
       "type": "Comedy headliner",
@@ -2262,6 +2274,26 @@
       ]
     },
     {
+      "act": "The Doobie Brothers",
+      "venue_id": "bleaulive-theater",
+      "type": "Limited residency",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/the-doobie-brothers/",
+      "dates": [
+        "2027-02-26",
+        "2027-02-27",
+        "2027-03-05",
+        "2027-03-06",
+        "2027-08-27",
+        "2027-08-28",
+        "2027-09-01",
+        "2027-09-03",
+        "2027-09-04"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/entertainment/the-doobie-brothers/"
+      ]
+    },
+    {
       "act": "Joe",
       "venue_id": "palms-pearl",
       "type": "Headliner",
@@ -2324,6 +2356,23 @@
       "sources": [
         "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/guest-services/amenities/clint-black/",
         "https://www.ticketmaster.com/event/17006538010573B0"
+      ]
+    },
+    {
+      "act": "Foreigner — 50 Years of Hits",
+      "venue_id": "venetian-theatre",
+      "type": "Limited residency",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/foreigner.html",
+      "dates": [
+        "2027-03-10",
+        "2027-03-12",
+        "2027-03-13",
+        "2027-03-17",
+        "2027-03-19",
+        "2027-03-20"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/foreigner.html"
       ]
     },
     {
@@ -2597,6 +2646,28 @@
       "sources": [
         "https://www.palms.com/entertainment/pearl-theater/haash-no-me-hablen-de-amor",
         "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "LL Cool J — Rock the Bells: The Residency",
+      "venue_id": "dolby-live",
+      "type": "Residency",
+      "official_url": "https://parkmgm.mgmresorts.com/en/entertainment/ll-cool-j.html",
+      "dates": [
+        "2027-05-15",
+        "2027-05-16",
+        "2027-05-19",
+        "2027-05-21",
+        "2027-05-22",
+        "2027-07-09",
+        "2027-07-10",
+        "2027-07-11",
+        "2027-07-14",
+        "2027-07-16",
+        "2027-07-17"
+      ],
+      "sources": [
+        "https://parkmgm.mgmresorts.com/en/entertainment/ll-cool-j.html"
       ]
     },
     {
