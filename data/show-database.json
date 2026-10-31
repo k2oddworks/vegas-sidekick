@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-20",
+  "updated_on": "2026-10-31",
   "source": "Vegas Sidekick Show Database",
   "records": [
     {
@@ -2146,25 +2146,25 @@
       "status": "active",
       "our_price": 65,
       "regular_price": 100,
-      "runtime_minutes": 120,
-      "age_summary": "21+",
-      "venue": "Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",
-      "showroom": "",
+      "runtime_minutes": 90,
+      "age_summary": "All ages",
+      "venue": "Alexis Garden showroom at The Modern Showrooms, Alexis Park Resort, 375 E Harmon Ave",
+      "showroom": "Alexis Garden",
       "schedule_summary": "Sun · 11 AM",
       "ticket_url": "https://spotlight.vegas/shows/music/motown-brunch/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/motown-brunch/",
-      "verified_on": "2026-10-09",
-      "freshness_label": "September 2026",
+      "verified_on": "2026-10-31",
+      "freshness_label": "October 2026",
       "verification": "verified_spotlight",
-      "notes": "",
+      "notes": "Official production states Sunday ticket time / doors open 11 AM; live performance lasts about 90 minutes. Actual show start after doors opens is not independently confirmed. All ages; Alexis Garden.",
       "spotlight": {
         "name": "Motown Brunch",
         "our_price": 65,
         "regular_price": 100,
-        "location": "Athena Showlounge - Alexis Park Resort, 375 E Harmon Ave",
-        "runtime_minutes": 120,
-        "age_rule": "Must be 21 years of age or older.",
+        "location": "Alexis Garden showroom at The Modern Showrooms, Alexis Park Resort, 375 E Harmon Ave",
+        "runtime_minutes": 90,
+        "age_rule": "All ages per official producer; Spotlight age restriction previously conflicted.",
         "other_restrictions": "",
         "schedule_days": {
           "Sunday": [
@@ -2178,7 +2178,7 @@
         ],
         "spotlight_url": "https://spotlight.vegas/shows/music/motown-brunch/",
         "affiliate_url": "https://spotlight.vegas/shows/music/motown-brunch/ref/vegassidekick",
-        "age_label": "21+"
+        "age_label": "All ages"
       },
       "savings_amount": 35,
       "savings_percent": 35,
