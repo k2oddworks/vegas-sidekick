@@ -881,14 +881,14 @@
       "age_summary": "10+",
       "venue": "Harrah's Cabaret - Harrah’s Las Vegas",
       "showroom": "",
-      "schedule_summary": "Tue, Wed, Thu, Fri, Sat · 7 PM",
+      "schedule_summary": "Tue–Sat · 7 PM",
       "ticket_url": "https://spotlight.vegas/shows/magic/colin-cloud/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/magic/colin-cloud/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-10-31",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
-      "notes": "",
+      "notes": "Regular weekly schedule confirmed by site owner 2026-10-31; temporary date exceptions are handled by ticket checkout.",
       "spotlight": {
         "name": "Colin Cloud Mastermind",
         "our_price": 57,
@@ -914,14 +914,14 @@
             "7 PM"
           ]
         },
-        "schedule_summary": "Tue, Wed, Thu, Fri, Sat · 7 PM",
+        "schedule_summary": "Tue–Sat · 7 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Tuesday - 7:00pm",
-          "Wednesday - 7:00pm",
-          "Thursday - 7:00pm",
-          "Friday - 7:00pm",
-          "Saturday - 7:00pm"
+          "Tuesday - 7 PM",
+          "Wednesday - 7 PM",
+          "Thursday - 7 PM",
+          "Friday - 7 PM",
+          "Saturday - 7 PM"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/colin-cloud/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/colin-cloud/ref/vegassidekick",
@@ -1401,14 +1401,14 @@
       "age_summary": "No age restricitions",
       "venue": "Athena Showroom - Alexis Park Resort, 375 E Harmon Ave",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Sun · 9 PM",
+      "schedule_summary": "Mon–Wed, Sun · 9 PM",
       "ticket_url": "https://spotlight.vegas/shows/tribute/neil-diamond/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/king-of-diamonds/",
-      "verified_on": "2026-10-09",
+      "verified_on": "2026-10-31",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
-      "notes": "",
+      "notes": "Regular weekly schedule confirmed by site owner 2026-10-31; temporary date exceptions are handled by ticket checkout.",
       "spotlight": {
         "name": "King of Diamonds - The Neil Diamond Tribute",
         "our_price": 40,
@@ -1431,13 +1431,13 @@
             "9 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Sun · 9 PM",
+        "schedule_summary": "Mon–Wed, Sun · 9 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Monday - 9:00pm",
-          "Tuesday - 9:00pm",
-          "Wednesday - 9:00pm",
-          "Sunday - 9:00pm"
+          "Monday - 9 PM",
+          "Tuesday - 9 PM",
+          "Wednesday - 9 PM",
+          "Sunday - 9 PM"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/tribute/neil-diamond/",
         "affiliate_url": "https://spotlight.vegas/shows/tribute/neil-diamond/ref/vegassidekick",
@@ -2802,14 +2802,14 @@
       "age_summary": "All ages",
       "venue": "Pegasus Showroom - Alexis Park Resort, 375 E Harmon Ave",
       "showroom": "",
-      "schedule_summary": "Fri, Sat, Sun · 7 PM",
+      "schedule_summary": "Fri–Sun · 7 PM",
       "ticket_url": "https://spotlight.vegas/shows/tribute/queen-selena/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/queen-selena/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-10-31",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
-      "notes": "",
+      "notes": "Regular weekly schedule confirmed by site owner 2026-10-31; temporary date exceptions are handled by ticket checkout.",
       "spotlight": {
         "name": "Queen Selena",
         "our_price": 40,
@@ -2829,12 +2829,12 @@
             "7 PM"
           ]
         },
-        "schedule_summary": "Fri, Sat, Sun · 7 PM",
+        "schedule_summary": "Fri–Sun · 7 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Friday - 7:00pm",
-          "Saturday - 7:00pm",
-          "Sunday - 7:00pm"
+          "Friday - 7 PM",
+          "Saturday - 7 PM",
+          "Sunday - 7 PM"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/tribute/queen-selena/",
         "affiliate_url": "https://spotlight.vegas/shows/tribute/queen-selena/ref/vegassidekick",
@@ -2856,14 +2856,14 @@
       "age_summary": "18+",
       "venue": "The STRAT Theater",
       "showroom": "",
-      "schedule_summary": "Tue, Wed, Thu, Sun · 9 PM; Fri, Sat · 8 PM & 10 PM",
+      "schedule_summary": "Tue–Sun · 9 PM (dark Mon)",
       "ticket_url": "https://spotlight.vegas/shows/adult/rouge/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/adult/rouge/",
-      "verified_on": "2026-10-09",
+      "verified_on": "2026-10-31",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
-      "notes": "",
+      "notes": "Regular weekly schedule confirmed by site owner 2026-10-31; temporary date exceptions are handled by ticket checkout.",
       "spotlight": {
         "name": "Rouge Las Vegas",
         "our_price": 54,
@@ -2883,26 +2883,24 @@
             "9 PM"
           ],
           "Friday": [
-            "8 PM",
-            "10 PM"
+            "9 PM"
           ],
           "Saturday": [
-            "8 PM",
-            "10 PM"
+            "9 PM"
           ],
           "Sunday": [
             "9 PM"
           ]
         },
-        "schedule_summary": "Tue, Wed, Thu, Sun · 9 PM; Fri, Sat · 8 PM & 10 PM",
+        "schedule_summary": "Tue–Sun · 9 PM (dark Mon)",
         "schedule_variable": false,
         "schedule_raw": [
-          "Tuesday – 9:00pm",
-          "Wednesday – 9:00pm",
-          "Thursday – 9:00pm",
-          "Friday – 8:00pm & 10:00pm",
-          "Saturday – 8:00pm & 10:00pm",
-          "Sunday – 9:00pm"
+          "Tuesday - 9 PM",
+          "Wednesday - 9 PM",
+          "Thursday - 9 PM",
+          "Friday - 9 PM",
+          "Saturday - 9 PM",
+          "Sunday - 9 PM"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/adult/rouge/",
         "affiliate_url": "https://spotlight.vegas/shows/adult/rouge/ref/vegassidekick",
@@ -3302,14 +3300,14 @@
       "age_summary": "5+",
       "venue": "Thunderland Theater- Excalibur",
       "showroom": "",
-      "schedule_summary": "Monday 6:00pm · Tuesday 6:00pm · Wednesday 6:00pm",
+      "schedule_summary": "Sat–Thu · 6 PM (dark Fri)",
       "ticket_url": "https://spotlight.vegas/shows/tribute/the-australian-bee-gees/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/australian-bee-gees/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-10-31",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
-      "notes": "",
+      "notes": "Regular weekly schedule confirmed by site owner 2026-10-31; temporary date exceptions are handled by ticket checkout.",
       "spotlight": {
         "name": "The Australian Bee Gees Las Vegas",
         "our_price": 40,
@@ -3318,16 +3316,35 @@
         "runtime_minutes": 70,
         "age_rule": "Must be 5 years of age or older. Everyone must have a ticket to enter the event. Guests 18 years of age and under must be accompanied by an adult.",
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater. Additional Information Get seating info from the Australian Bee Gees Seating Chart .",
-        "schedule_days": {},
-        "schedule_summary": "Monday 6:00pm · Tuesday 6:00pm · Wednesday 6:00pm",
+        "schedule_days": {
+          "Monday": [
+            "6 PM"
+          ],
+          "Tuesday": [
+            "6 PM"
+          ],
+          "Wednesday": [
+            "6 PM"
+          ],
+          "Thursday": [
+            "6 PM"
+          ],
+          "Saturday": [
+            "6 PM"
+          ],
+          "Sunday": [
+            "6 PM"
+          ]
+        },
+        "schedule_summary": "Sat–Thu · 6 PM (dark Fri)",
         "schedule_variable": false,
         "schedule_raw": [
-          "Monday 6:00pm",
-          "Tuesday 6:00pm",
-          "Wednesday 6:00pm",
-          "Thursday 6:00pm",
-          "Saturday 6:00pm",
-          "Sunday 6:00pm"
+          "Monday - 6 PM",
+          "Tuesday - 6 PM",
+          "Wednesday - 6 PM",
+          "Thursday - 6 PM",
+          "Saturday - 6 PM",
+          "Sunday - 6 PM"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/tribute/the-australian-bee-gees/",
         "affiliate_url": "https://spotlight.vegas/shows/tribute/the-australian-bee-gees/ref/vegassidekick",
@@ -3411,14 +3428,14 @@
       "age_summary": "18+",
       "venue": "Empire Strips Back Theater - Rio Hotel",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Thu · 8 PM; Fri, Sat · 7 PM & 9:30 PM; Sun · 7 PM",
+      "schedule_summary": "Mon–Thu · 8 PM; Fri–Sat · 7 PM & 9:30 PM; Sun · 7 PM",
       "ticket_url": "https://spotlight.vegas/shows/burlesque/empire-strips-back/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/adult/empire-strips-back/",
-      "verified_on": "2026-09-08",
+      "verified_on": "2026-10-31",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
-      "notes": "",
+      "notes": "Regular weekly schedule confirmed by site owner 2026-10-31; temporary date exceptions are handled by ticket checkout.",
       "spotlight": {
         "name": "The Empire Strips Back",
         "our_price": 35,
@@ -3452,16 +3469,16 @@
             "7 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Wed, Thu · 8 PM; Fri, Sat · 7 PM & 9:30 PM; Sun · 7 PM",
+        "schedule_summary": "Mon–Thu · 8 PM; Fri–Sat · 7 PM & 9:30 PM; Sun · 7 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Monday - 8:00pm",
-          "Tuesday - 8:00pm",
-          "Wednesday - 8:00pm",
-          "Thursday - 8:00pm",
-          "Friday - 7:00pm & 9:30pm",
-          "Saturday - 7:00pm & 9:30pm",
-          "Sunday - 7:00pm"
+          "Monday - 8 PM",
+          "Tuesday - 8 PM",
+          "Wednesday - 8 PM",
+          "Thursday - 8 PM",
+          "Friday - 7 PM & 9:30 PM",
+          "Saturday - 7 PM & 9:30 PM",
+          "Sunday - 7 PM"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/burlesque/empire-strips-back/",
         "affiliate_url": "https://spotlight.vegas/shows/burlesque/empire-strips-back/ref/vegassidekick",
@@ -3991,14 +4008,14 @@
       "age_summary": "All ages",
       "venue": "The Siren Poolside - Alexis Park Resort, 375 E Harmon Ave",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Sun · 6:30 PM",
+      "schedule_summary": "Sun, Mon · 6 PM",
       "ticket_url": "https://spotlight.vegas/shows/music/wastin-away/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/wastin-away/",
-      "verified_on": "2026-10-09",
+      "verified_on": "2026-10-31",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
-      "notes": "",
+      "notes": "Regular weekly schedule confirmed by site owner 2026-10-31; temporary date exceptions are handled by ticket checkout.",
       "spotlight": {
         "name": "Wastin' Away Las Vegas",
         "our_price": 40,
@@ -4009,21 +4026,17 @@
         "other_restrictions": "",
         "schedule_days": {
           "Sunday": [
-            "6:30 PM"
+            "6 PM"
           ],
           "Monday": [
-            "6:30 PM"
-          ],
-          "Tuesday": [
-            "6:30 PM"
+            "6 PM"
           ]
         },
-        "schedule_summary": "Mon, Tue, Sun · 6:30 PM",
+        "schedule_summary": "Sun, Mon · 6 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Sunday - 6:30pm",
-          "Monday - 6:30pm",
-          "Tuesday - 6:30pm"
+          "Sunday - 6 PM",
+          "Monday - 6 PM"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/music/wastin-away/",
         "affiliate_url": "https://spotlight.vegas/shows/music/wastin-away/ref/vegassidekick",
