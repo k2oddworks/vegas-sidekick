@@ -2857,6 +2857,17 @@
       "sources": [
         "https://www.jimmycarr.com/tour/usa/"
       ]
+    },
+    {
+      "name": "Twilight in Concert",
+      "subtitle": "Live-to-film concert · 2:00 PM matinee and 7:30 PM evening performance",
+      "date": "2027-03-20",
+      "doors": "2:00 PM & 7:30 PM",
+      "time_label": "Shows",
+      "type": "Touring show",
+      "room": "Reynolds Hall",
+      "venue_id": "smith-center",
+      "official_url": "https://thesmithcenter.com/calendar/"
     }
   ],
   "venue_groups": [
