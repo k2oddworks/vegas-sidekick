@@ -1266,6 +1266,16 @@
       "official_url": "https://www.kirvindoak.com/fremont-street-experience-announces-lineup-for-2027-countdown-under-the-canopy-new-years-eve-celebration/"
     },
     {
+      "name": "Countdown Under the Canopy 2027",
+      "subtitle": "New Year's Eve · Hoobastank · Alien Ant Farm · Petey Pablo · Bubba Sparxxx · Wuki",
+      "date": "2026-12-31",
+      "doors": "7:00 PM",
+      "time_label": "Gates",
+      "type": "Festival",
+      "venue_id": "fremont-street-experience",
+      "official_url": "https://fremontstreetexperience.com/nye-faq/"
+    },
+    {
       "name": "Curious George and the Golden Meatball",
       "date": "2027-01-10",
       "doors": "2:00 PM",
@@ -1466,6 +1476,17 @@
       "type": "Festival",
       "venue_id": "desert-breeze-event-center",
       "official_url": "https://www.extremethinglv.com/"
+    },
+    {
+      "name": "Twilight in Concert",
+      "subtitle": "Live-to-film concert · 2:00 PM matinee and 7:30 PM evening performance",
+      "date": "2027-03-20",
+      "doors": "2:00 PM & 7:30 PM",
+      "time_label": "Shows",
+      "type": "Touring show",
+      "room": "Reynolds Hall",
+      "venue_id": "smith-center",
+      "official_url": "https://thesmithcenter.com/calendar/"
     },
     {
       "name": "The Plot in You",
