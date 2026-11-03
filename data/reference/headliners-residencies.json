@@ -1976,16 +1976,6 @@
       ]
     },
     {
-      "name": "Countdown Under the Canopy 2027",
-      "subtitle": "New Year's Eve · Hoobastank · Alien Ant Farm · Petey Pablo · Bubba Sparxxx · Wuki",
-      "date": "2026-12-31",
-      "doors": "7:00 PM",
-      "time_label": "Gates",
-      "type": "Festival",
-      "venue_id": "fremont-street-experience",
-      "official_url": "https://fremontstreetexperience.com/nye-faq/"
-    },
-    {
       "act": "Alanis Morissette",
       "venue_id": "bleaulive-theater",
       "type": "Headliner",
@@ -2491,17 +2481,6 @@
         "https://newsroom.caesars.com/press-releases/press-release-details/2026/Mtley-Cre-to-Play-The-Colosseum-at-Caesars-Palace-March-19-April-3-2027/default.aspx",
         "https://www.motley.com/"
       ]
-    },
-    {
-      "name": "Twilight in Concert",
-      "subtitle": "Live-to-film concert · 2:00 PM matinee and 7:30 PM evening performance",
-      "date": "2027-03-20",
-      "doors": "2:00 PM & 7:30 PM",
-      "time_label": "Shows",
-      "type": "Touring show",
-      "room": "Reynolds Hall",
-      "venue_id": "smith-center",
-      "official_url": "https://thesmithcenter.com/calendar/"
     },
     {
       "act": "Andrew Santino",
