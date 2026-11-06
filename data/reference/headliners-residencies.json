@@ -3,7 +3,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "Vegas Sidekick — https://vegassidekick.com/sidekick-index/headliners-residencies/",
-  "verified_on": "2026-11-01",
+  "verified_on": "2026-11-06",
   "city": "Las Vegas",
   "state": "NV",
   "venues": [
@@ -1691,11 +1691,16 @@
         "2026-12-09",
         "2026-12-10",
         "2026-12-11",
-        "2026-12-12"
+        "2026-12-12",
+        "2027-01-21",
+        "2027-01-22",
+        "2027-01-23",
+        "2027-01-24"
       ],
       "sources": [
         "https://www.wynnlasvegas.com/entertainment/upcoming-shows/nate-bargatze"
-      ]
+      ],
+      "notes": "December 12, 2026 and January 23, 2027 have two performances each (7:30 PM and 10:30 PM); other listed dates are 8 PM. January run includes five performances across four dates."
     },
     {
       "act": "Victoria Monét",
@@ -2312,6 +2317,27 @@
       ],
       "sources": [
         "https://investor.caesars.com/news-releases/news-release-details/cyndi-lauper-announces-2027-dates-colosseum-caesars-palace"
+      ]
+    },
+    {
+      "act": "Chicago",
+      "venue_id": "venetian-theatre",
+      "type": "Limited engagement",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/chicago.html",
+      "dates": [
+        "2027-02-19",
+        "2027-02-20",
+        "2027-02-21",
+        "2027-02-24",
+        "2027-02-26",
+        "2027-02-27",
+        "2027-03-03",
+        "2027-03-05",
+        "2027-03-06"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/chicago.html",
+        "https://chicagotheband.com/news/chicago-returns-to-the-venetian-theatre-4/"
       ]
     },
     {
