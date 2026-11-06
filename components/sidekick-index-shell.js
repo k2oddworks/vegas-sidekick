@@ -6,7 +6,6 @@
   const pages=[
     {path:'/sidekick-index/',label:'Overview',accent:'#c6f22e',fg:'#171225'},
     {path:'/sidekick-index/headliners-residencies/',label:'Headliners & Residencies',accent:'#ff2e7e',fg:'#fff'},
-    {path:'/sidekick-index/show-price-index/',label:'Show Price Index',accent:'#0fb5c9',fg:'#fff'},
     {path:'/sidekick-index/touring-shows-concerts/',label:'More Touring Shows & Concerts',accent:'#7c3aed',fg:'#fff'}
   ];
 
@@ -86,7 +85,7 @@
   function boot(){
     if(!location.pathname.startsWith('/sidekick-index'))return;
     addStyles();
-    mountNav();
+    if(cleanPath(location.pathname)!=='/sidekick-index/' && cleanPath(location.pathname)!=='/sidekick-index/show-price-index/')mountNav();
     if(moveSharedSignup())return;
     const observer=new MutationObserver(function(){
       if(moveSharedSignup())observer.disconnect();
