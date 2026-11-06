@@ -3,7 +3,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "Vegas Sidekick — https://vegassidekick.com/sidekick-index/touring-shows-concerts/",
-  "verified_on": "2026-11-01",
+  "verified_on": "2026-11-06",
   "city": "Las Vegas",
   "state": "Nevada",
   "source_note": "Official venue calendars, official ticketing pages and established concert listings. This index tracks visiting and limited-run shows that are not ongoing Vegas productions and are not currently classified in the Headliners & Residencies index. Recurring restaurant/bar entertainment, resident productions and recurring local series are excluded.",
@@ -140,6 +140,13 @@
       "name": "Las Vegas Convention Center",
       "short_name": "LVCC",
       "official_url": "https://www.semafest.com/"
+    },
+    {
+      "id": "encore-theater-wynn",
+      "name": "Encore Theater at Wynn Las Vegas",
+      "short_name": "Encore Theater",
+      "property": "Wynn Las Vegas",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows"
     }
   ],
   "entries": [
@@ -1035,6 +1042,16 @@
       "official_url": "https://swandivelasvegas.com/event/ours/swan-dive/las-vegas-nevada/"
     },
     {
+      "name": "Scott Bradlee's Postmodern Jukebox",
+      "subtitle": "The Future Is Vintage World Tour",
+      "date": "2026-11-27",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "encore-theater-wynn",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows"
+    },
+    {
       "name": "INZO",
       "subtitle": "Local Void Takeover",
       "date": "2026-11-28",
@@ -1234,6 +1251,16 @@
       "room": "Music Hall",
       "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
       "venue_id": "house-of-blues-las-vegas"
+    },
+    {
+      "name": "Love Actually in Concert",
+      "subtitle": "Film screening with live orchestra",
+      "date": "2026-12-17",
+      "doors": "8:00 PM",
+      "time_label": "Show",
+      "type": "Touring show",
+      "venue_id": "encore-theater-wynn",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/love-actually-in-concert"
     },
     {
       "name": "Brandon Victor Dixon",
