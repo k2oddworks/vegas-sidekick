@@ -579,11 +579,17 @@
         "2026-10-24",
         "2026-11-04",
         "2026-11-06",
-        "2026-11-07"
+        "2026-11-07",
+        "2027-05-21",
+        "2027-05-22",
+        "2027-05-27",
+        "2027-05-28",
+        "2027-05-29"
       ],
       "sources": [
         "https://www.ticketmaster.com/tim-mcgraw-tickets/artist/762799",
-        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930"
+        "https://www.ticketmaster.com/the-colosseum-at-caesars-palace-tickets-las-vegas/venue/467930",
+        "https://caesars.gcs-web.com/news-releases/news-release-details/tim-mcgraw-announces-five-new-2027-dates-colosseum-caesars"
       ]
     },
     {
@@ -2739,6 +2745,24 @@
       ],
       "sources": [
         "https://www.acmcountry.com/"
+      ]
+    },
+    {
+      "act": "Rush",
+      "venue_id": "sphere",
+      "type": "Residency",
+      "official_url": "https://thesphere.com/shows/rush",
+      "dates": [
+        "2027-05-21",
+        "2027-05-23",
+        "2027-05-26",
+        "2027-05-28",
+        "2027-05-30"
+      ],
+      "sources": [
+        "https://www.sphereentertainmentco.com/rush-announces-five-date-elevate-from-the-norm-residency-at-sphere/",
+        "https://www.rush.com/sphere/",
+        "https://thesphere.com/shows/rush"
       ]
     },
     {
