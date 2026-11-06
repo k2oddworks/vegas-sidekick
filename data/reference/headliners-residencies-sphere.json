@@ -142,6 +142,23 @@
       ]
     },
     {
+      "act": "Rush",
+      "type": "Residency",
+      "official_url": "https://thesphere.com/shows/rush",
+      "dates": [
+        "2027-05-21",
+        "2027-05-23",
+        "2027-05-26",
+        "2027-05-28",
+        "2027-05-30"
+      ],
+      "sources": [
+        "https://www.sphereentertainmentco.com/rush-announces-five-date-elevate-from-the-norm-residency-at-sphere/",
+        "https://www.rush.com/sphere/",
+        "https://thesphere.com/shows/rush"
+      ]
+    },
+    {
       "act": "Carín León",
       "type": "Limited residency",
       "official_url": "https://www.thesphere.com/shows/carin-leon",
