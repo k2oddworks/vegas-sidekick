@@ -55,6 +55,8 @@ blockquote cite{font-size:.87rem;font-style:normal;color:var(--muted)}blockquote
 .end-link a:hover{background:#ffc44d}
 footer{background:#f5f4f7;border-top:1px solid var(--line);padding:26px 0;color:#69647c;font-size:.82rem}
 @media(max-width:620px){.hero{padding:95px 0 40px}h1{font-size:2.35rem}.wrap{width:calc(100% - 34px)}main.article{padding-top:36px}blockquote{padding:22px}figure{margin:24px 0 34px}.end-link{padding:22px}}
+
+.signup-panel{margin:42px 0;padding:28px;border:1px solid #dfe3ee;border-radius:18px;background:#f6f8fc}.signup-panel h2{margin:0 0 12px}.signup-panel p{margin-bottom:14px}.signup-form{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 10px}.signup-form input{min-width:0;flex:1 1 210px;border:1px solid #bbbdd0;border-radius:9px;padding:13px 15px;font:inherit;background:#fff;color:#18172a}.signup-form input:focus-visible{outline:3px solid #ffb000;outline-offset:2px}.signup-form button{border:0;border-radius:9px;background:#ffb000;color:#16120b;padding:13px 22px;font:800 .95rem var(--display);cursor:pointer}.signup-form button:disabled{opacity:.6;cursor:wait}.signup-note{font-size:.82rem;color:#605c72}.signup-status{font-size:.91rem;font-weight:600;min-height:1.4em}.signup-status[hidden]{display:none}
 </style>
 </head>
 <body>
@@ -102,6 +104,17 @@ footer{background:#f5f4f7;border-top:1px solid var(--line);padding:26px 0;color:
 <p>The Index isn't a ticket seller, and it isn't limited to the shows Vegas Sidekick recommends individually. It's a reference for visitors, locals and anyone trying to follow the Las Vegas entertainment calendar.</p>
 <h2>Looking for the regular Vegas shows?</h2>
 <p>The Sidekick Index focuses on headliners, residencies and touring engagements. For the magic, comedy, production shows and other Las Vegas favorites that perform regularly, browse our <a href="/shows/"><strong>All Shows guide</strong></a>. It’s the better starting point if you’re looking for something to see on almost any night of your trip.</p>
+<section class="signup-panel" aria-labelledby="dispatch-signup-title">
+<h2 id="dispatch-signup-title">Get Vegas show updates by email</h2>
+<p>New headliners, added dates and other useful Vegas entertainment updates. Occasional emails, not a daily blast.</p>
+<form class="signup-form" id="dispatchSignupForm">
+<label for="dispatchEmail" class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">Email address</label>
+<input type="email" id="dispatchEmail" name="email" placeholder="Your email address" autocomplete="email" required aria-label="Email address">
+<button type="submit" id="dispatchSignupBtn">Join the list</button>
+</form>
+<p class="signup-status" id="dispatchSignupStatus" role="status" aria-live="polite" hidden></p>
+<p class="signup-note">No selling your data. Unsubscribe any time.</p>
+</section>
 <div class="schedule-note"><strong>About the dates:</strong> These calendars reflect the performances recorded in the Vegas Sidekick Index at the time of the update. Announcements, venues and dates can change; check the current Index and the event's official source before making plans.</div>
 <section class="end-link" aria-labelledby="index-cta-heading">
 <h2 id="index-cta-heading">Find your next Vegas show</h2>
@@ -112,5 +125,33 @@ footer{background:#f5f4f7;border-top:1px solid var(--line);padding:26px 0;color:
 <div id="vs-footer"></div>
 <script src="/components/header.js?v=21"></script>
 <script src="/components/footer.js?v=33"></script>
+<script>
+(function(){
+  const form=document.getElementById('dispatchSignupForm');
+  const button=document.getElementById('dispatchSignupBtn');
+  const status=document.getElementById('dispatchSignupStatus');
+  form.addEventListener('submit',async function(event){
+    event.preventDefault();
+    if(!form.reportValidity())return;
+    button.disabled=true;
+    status.hidden=true;
+    try{
+      const response=await fetch('https://subscribe.vegassidekick.com',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({email:document.getElementById('dispatchEmail').value.trim()})
+      });
+      if(!response.ok)throw new Error('Subscription service returned '+response.status);
+      form.hidden=true;
+      status.textContent='Thanks for signing up. Keep an eye on your inbox.';
+      status.hidden=false;
+    }catch(error){
+      status.textContent='Could not sign you up right now. Please try again.';
+      status.hidden=false;
+      button.disabled=false;
+    }
+  });
+})();
+</script>
 </body>
 </html>
