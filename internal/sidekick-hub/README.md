@@ -17,7 +17,7 @@
 1. The current prototype uses **localStorage** for user edits. It does not synchronize across devices.
 2. The QA snapshot does not by itself verify correctness or media relevance. Factual checks start pending.
 3. Re-scanning does not yet provide a complete hash-based evidence-change review workflow.
-4. This initial integrated Index workspace does not yet include the original standalone desk's paginated 1080 x 1080 social-graphic export. Bring that feature forward before replacement.
+4. The integrated Index workspace now includes paginated 1080 x 1080 PNG graphic export, but real-browser download behavior and fidelity have not yet been tested; its calendar and filtering still need parity checks against the standalone desk.
 5. Browser/device-level end-to-end regression testing, persistence, actual Cloudflare Access, and D1 backend have **not** been completed.
 6. Do not merge this branch into main while any of these security/deployment issues remain unresolved.
 
