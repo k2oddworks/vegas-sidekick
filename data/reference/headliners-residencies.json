@@ -3,7 +3,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "Vegas Sidekick — https://vegassidekick.com/sidekick-index/headliners-residencies/",
-  "verified_on": "2026-11-06",
+  "verified_on": "2026-11-07",
   "city": "Las Vegas",
   "state": "NV",
   "venues": [
@@ -2649,6 +2649,19 @@
       ],
       "sources": [
         "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/engelbert-humperdinck/"
+      ]
+    },
+    {
+      "act": "Feid",
+      "venue_id": "mgm-grand-garden-arena",
+      "type": "Headliner",
+      "official_url": "https://mgmgrand.mgmresorts.com/en/entertainment/feid.html",
+      "dates": [
+        "2027-04-17"
+      ],
+      "sources": [
+        "https://mgmgrand.mgmresorts.com/en/entertainment/feid.html",
+        "https://news.pollstar.com/2026/11/06/global-latin-star-feid-announces-2027-north-american-arena-tour/"
       ]
     },
     {
