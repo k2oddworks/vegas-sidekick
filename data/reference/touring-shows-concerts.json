@@ -108,12 +108,14 @@
     {
       "id": "palazzo-theatre",
       "name": "The Palazzo Theatre at The Venetian Resort",
-      "official_url": "https://www.venetianlasvegas.com/entertainment/comedy-shows.html"
+      "official_url": "https://www.venetianlasvegas.com/entertainment/comedy-shows.html",
+      "short_name": "Palazzo Theatre"
     },
     {
       "id": "the-chelsea-cosmopolitan",
       "name": "The Chelsea at The Cosmopolitan of Las Vegas",
-      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
+      "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html",
+      "short_name": "The Chelsea"
     },
     {
       "id": "the-theater-virgin-hotels",
@@ -558,7 +560,7 @@
     },
     {
       "name": "Thrillerween: Michael Jackson Night",
-      "subtitle": "Club 90's Presents",
+      "subtitle": "Club 90’s Presents",
       "date": "2026-10-24",
       "doors": "9:00 PM",
       "type": "Theme night",
@@ -667,8 +669,8 @@
       "official_url": "https://virginhotelslv.com/event/18th-annual-thriller-halloween-party/"
     },
     {
-      "name": "2000's Halloween",
-      "subtitle": "Club 90's Presents",
+      "name": "2000’s Halloween",
+      "subtitle": "Club 90’s Presents",
       "date": "2026-10-30",
       "doors": "9:00 PM",
       "type": "Theme night",
@@ -1042,16 +1044,6 @@
       "official_url": "https://swandivelasvegas.com/event/ours/swan-dive/las-vegas-nevada/"
     },
     {
-      "name": "Scott Bradlee's Postmodern Jukebox",
-      "subtitle": "The Future Is Vintage World Tour",
-      "date": "2026-11-27",
-      "doors": "See listing",
-      "time_label": "Time",
-      "type": "Concert",
-      "venue_id": "encore-theater-wynn",
-      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows"
-    },
-    {
       "name": "INZO",
       "subtitle": "Local Void Takeover",
       "date": "2026-11-28",
@@ -1284,7 +1276,7 @@
     },
     {
       "name": "Countdown Under the Canopy 2027",
-      "subtitle": "New Year's Eve · Hoobastank · Alien Ant Farm · Petey Pablo · Bubba Sparxxx · Wuki",
+      "subtitle": "New Year’s Eve · Hoobastank · Alien Ant Farm · Petey Pablo · Bubba Sparxxx · Wuki",
       "date": "2026-12-31",
       "doors": "7:00 PM",
       "time_label": "Gates",
