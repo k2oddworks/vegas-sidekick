@@ -183,7 +183,7 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
 
     <aside class="method">
       <h2>What belongs here</h2>
-      <p>This index tracks visiting concerts, touring productions and short-run events. Ongoing Vegas productions belong in the regular show catalog, while major residencies and notable headliner engagements belong in <a href="/sidekick-index/headliners-residencies/">Headliners &amp; Residencies</a>. Event sources were last checked October 19, 2026; elapsed dates were removed October 13, 2026. <a href="/data/reference/touring-shows-concerts.json">View the underlying JSON data →</a></p>
+      <p>This index tracks visiting concerts, touring productions and short-run events. Ongoing Vegas productions belong in the regular show catalog, while major residencies and notable headliner engagements belong in <a href="/sidekick-index/headliners-residencies/">Headliners &amp; Residencies</a>. Event sources were last checked <span id="verified-date">November 7, 2026</span>. Past events stay in the underlying data but drop off the calendar automatically. <a href="/data/reference/touring-shows-concerts.json">View the underlying JSON data →</a></p>
       <p><strong>Data reuse:</strong> The Sidekick Index factual dataset is published under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Reuse and adapt the licensed data with attribution to Vegas Sidekick. <a href="/data-license/">Data license →</a></p>
     </aside>
   </div>
@@ -331,6 +331,16 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
     venuesEl.innerHTML=html||'<div class="error">No upcoming events match this venue.</div>';
   }
 
+  function verifiedLong(iso,fallback){
+    const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(iso||'');
+    if(!m)return fallback;
+    return ['January','February','March','April','May','June','July','August','September','October','November','December'][+m[2]-1]+' '+(+m[3])+', '+m[1];
+  }
+  function showVerifiedDate(iso){
+    const el=document.getElementById('verified-date');
+    if(el)el.textContent=verifiedLong(iso,el.textContent);
+  }
+
   function updatedLabel(iso,fallback){
     const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(iso||'');
     if(!m)return fallback;
@@ -370,8 +380,8 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
     .then(function(data){
       // Shared expiration rule: use the Las Vegas calendar date; retain historical JSON.
       const today=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
-      data.entries=data.entries.filter(function(entry){return entry.date>=today});
-      dataset=data;renderVenueFilters();renderAll();
+      data.entries=data.entries.filter(function(entry){return entry.date>=today&&entry.status!=='canceled'});
+      dataset=data;showVerifiedDate(data.verified_on);renderVenueFilters();renderAll();
     })
     .catch(function(){datesEl.innerHTML='<div class="error">The touring-events data could not be loaded.</div>'});
 })();
