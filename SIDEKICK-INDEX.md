@@ -1,7 +1,7 @@
 # SIDEKICK-INDEX.md — Vegas Sidekick Reference System
 
 **Status:** Current production system  
-**Last updated:** October 19, 2026  
+**Last updated:** November 7, 2026  
 **Canonical scope:** `/sidekick-index/`
 
 This file is the source of truth for the **Sidekick Index** project: its purpose, page taxonomy, data boundaries, shared UX, source files, mobile behavior, and maintenance rules.
@@ -37,18 +37,20 @@ Do not create empty datasets, filler categories, or thin reference pages just to
 
 ## 2. Current Reference Pages
 
-The current Sidekick Index system has four public routes:
+The current Sidekick Index system has three active public routes and one archived route:
 
 | Page | Route | Purpose |
 |---|---|---|
 | Overview | `/sidekick-index/` | Explains the Index and routes users to the current reference datasets. |
 | Headliners & Residencies | `/sidekick-index/headliners-residencies/` | Major residencies, headliners, and notable limited engagements. |
-| Show Price Index | `/sidekick-index/show-price-index/` | Dated comparison of advertised starting prices for the active Vegas Sidekick show catalog. |
+| Show Price Index (archived) | `/sidekick-index/show-price-index/` | Public price tracking is paused. The page shows an archive notice, is `noindex`, and is not in the sitemap or the shared navigation. The dated CSV snapshots are preserved. |
 | More Touring Shows & Concerts | `/sidekick-index/touring-shows-concerts/` | Visiting concerts, touring productions, and short-run events outside the major headliner/residency calendar and regular weekly show catalog. |
 
 Shared navigation between these pages is handled by:
 
 `components/sidekick-index-shell.js`
+
+The shell lists Overview, Headliners & Residencies and More Touring Shows & Concerts. The archived Show Price Index is intentionally not in it.
 
 That shell also moves the existing Vegas Sidekick email signup into the shared Sidekick Index placement above the footer.
 
@@ -106,53 +108,39 @@ If an act clearly belongs in Headliners & Residencies, do not also add it to Mor
 
 When classification is ambiguous, choose the page that best matches how a normal Vegas visitor would think about the engagement.
 
+`python3 scripts/audit-sidekick-index-datasets.py` fails when the same performance (same act, any word order, same date) appears twice, whether inside one dataset or across both.
+
+### Expired and canceled events
+
+- **Expired dates are never deleted.** Both pages keep every record in the JSON and only show dates on or after today's Los Angeles date. Elapsed records stay in the downloadable data.
+- **Canceled events are kept too.** Add `"status": "canceled"` to the entry and explain it in `notes` (what was canceled, who said so, when it was checked). The pages and the audit skip canceled entries as live performances, so they never show as upcoming. Only the value `canceled` is supported; do not invent other statuses without updating the pages and the audit script.
+- Postponed or rescheduled events are not canceled: change the dates once the new dates are verified at an official source.
+
 ---
 
 ## 4. Current Data State
 
-These counts are a **dated snapshot**, not permanent product rules.
+Counts change with every update. The JSON files are the source of truth: each carries `verified_on`, and the page "updated" labels and method-box dates are read from it. To get live numbers:
 
-### More Touring Shows & Concerts
+```bash
+python3 - <<'PY'
+import json
+for f in ("headliners-residencies","touring-shows-concerts"):
+    d = json.load(open(f"data/reference/{f}.json"))
+    print(f, d["verified_on"], len(d["entries"]), "entries", len(d["venues"]), "venue records")
+PY
+```
 
-As verified October 19, 2026:
+Dated snapshot, as verified November 7, 2026 (not a product rule):
 
-- 135 indexed event entries
-- 16 covered venues
+- Headliners & Residencies: 187 act / engagement records (including 1 canceled record kept for history), 23 underlying venue records, 9 resort/venue groups for customer-facing filtering.
+- More Touring Shows & Concerts: 143 event entries, 21 venue records in the file (20 with events at the time of this snapshot; a venue record with no events, such as Hard Rock Live, is allowed).
 
-Current venue set:
+The Headliners JSON supports grouped resort presentation so multiple rooms at one property do not have to become separate top-level filter pills. Do not hard-code venue lists or counts in marketing copy or on the pages; they change as venues are added.
 
-- Brooklyn Bowl Las Vegas
-- House of Blues Las Vegas
-- 24 Oxford
-- Fremont Country Club
-- Backstage Bar & Billiards
-- Swan Dive
-- The Space Las Vegas
-- AREA15
-- Hard Rock Live Las Vegas
-- The Smith Center
-- Downtown Las Vegas Events Center
-- Notoriety Live
-- Desert Breeze Event Center
-- Bel-Aire Backyard at Durango
-- The Palazzo Theatre at The Venetian Resort
-- The Chelsea at The Cosmopolitan of Las Vegas
+### Show Price Index (archived)
 
-The venue list is expected to grow. Do not hard-code marketing copy that becomes wrong when more venues are added.
-
-### Headliners & Residencies
-
-As verified October 19, 2026:
-
-- 170 act / engagement records
-- 22 underlying venue records
-- 9 resort/venue groups used to simplify customer-facing venue filtering where appropriate
-
-The JSON supports grouped resort presentation so multiple rooms at one property do not have to become separate top-level filter pills.
-
-### Show Price Index
-
-Current comparison:
+The public page is archived (archive notice, `noindex`, removed from the sitemap and shared navigation). The research below is preserved and should not be used as current prices:
 
 - Spotlight observation date: October 20, 2026 (71 displayed starting prices; Las Vegas LIVE marked unavailable)
 - Vegas.com observation date: September 27, 2026 (61 displayed starting prices)
@@ -208,10 +196,9 @@ The Index pages should feel related without forcing every dataset into identical
 
 - Overview
 - Headliners & Residencies
-- Show Price Index
 - More Touring Shows & Concerts
 
-The active page is visibly selected.
+The active page is visibly selected. The archived Show Price Index is not in the pills.
 
 ### Shared email signup
 
@@ -266,7 +253,7 @@ This behavior currently applies to:
 - engagement-type filters where they overflow
 - month-jump rails
 
-The Show Price Index uses a wide comparison table rather than pill rails. On mobile:
+If the Show Price Index is ever restored, it uses a wide comparison table rather than pill rails. On mobile:
 
 - horizontal table scrolling must remain enabled
 - touch momentum / overscroll handling should work
@@ -329,7 +316,7 @@ Keep `dateModified`, observation dates, and verification language honest.
 
 ### Sitemap
 
-New Sidekick Index pages should be added to `sitemap.xml`.
+New Sidekick Index pages should be added to `sitemap.xml`. Keep each `lastmod` in step with the page's `dateModified` / dataset `verified_on`. The archived, `noindex` Show Price Index is intentionally not listed.
 
 Do not add an unpublished/empty reference page to the sitemap just to reserve a URL.
 
@@ -341,7 +328,7 @@ Current dedicated social images include:
 - `/images/sidekick-index/las-vegas-headliners-residencies-social.png`
 - `/images/sidekick-index/more-touring-shows-concerts-social.png`
 
-The Show Price Index currently uses its configured page metadata and should get a dedicated share image only when one is intentionally created.
+The archived Show Price Index has no dedicated share image; create one only if the page is intentionally restored.
 
 Do not invent social artwork filenames.
 
@@ -414,7 +401,7 @@ Before committing meaningful Sidekick Index changes:
 - confirm wide tables remain horizontally usable
 - parse inline JavaScript after edits
 - parse JSON-LD after edits
-- validate JSON source files after data edits
+- validate JSON source files after data edits (`python3 scripts/audit-sidekick-index-datasets.py`, which also checks for duplicate performances)
 - check the sitemap if routes changed
 - keep GitHub commit status separate from production verification
 
