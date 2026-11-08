@@ -33,7 +33,7 @@
       "usageInfo":"https://vegassidekick.com/data-license/",
       "name":"More Touring Shows & Concerts",
       "description":"Upcoming visiting concerts, touring shows and limited-run events in Las Vegas outside the major headliner and regular production-show calendars.",
-      "dateModified":"2026-11-06",
+      "dateModified":"2026-11-07",
       "isPartOf":{"@type":"WebSite","name":"Vegas Sidekick","url":"https://vegassidekick.com/"}
     },
     {
@@ -42,7 +42,7 @@
       "name":"Sidekick Index — More Touring Shows & Concerts",
       "description":"A source-linked dataset of visiting concerts, touring shows and limited-run events in Las Vegas.",
       "url":"https://vegassidekick.com/sidekick-index/touring-shows-concerts/",
-      "dateModified":"2026-11-06",
+      "dateModified":"2026-11-07",
       "spatialCoverage":{"@type":"Place","name":"Las Vegas, Nevada"},
       "creator":{"@type":"Organization","name":"Vegas Sidekick","url":"https://vegassidekick.com/"},
       "maintainer":{"@type":"Person","name":"Kris Kidd","url":"https://vegassidekick.com/about/kris-kidd/"},
@@ -147,7 +147,7 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
       <div class="stat"><strong>—</strong><span>events</span></div>
       <div class="stat"><strong>—</strong><span>venues</span></div>
       <div class="stat"><strong>—</strong><span>months</span></div>
-      <div class="stat"><strong>Oct 19</strong><span>updated</span></div>
+      <div class="stat"><strong>Nov 7</strong><span>updated</span></div>
     </div>
   </div>
 </header>
@@ -331,6 +331,12 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
     venuesEl.innerHTML=html||'<div class="error">No upcoming events match this venue.</div>';
   }
 
+  function updatedLabel(iso,fallback){
+    const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(iso||'');
+    if(!m)return fallback;
+    return ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+m[2]-1]+' '+(+m[3]);
+  }
+
   function updateStats(){
     const list=entries();
     const months=new Set(list.map(function(e){return monthKey(e.date)})).size;
@@ -339,7 +345,7 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
       '<div class="stat"><strong>'+list.length+'</strong><span>events</span></div>'+
       '<div class="stat"><strong>'+venueCount+'</strong><span>venue'+(venueCount===1?'':'s')+'</span></div>'+
       '<div class="stat"><strong>'+months+'</strong><span>months</span></div>'+
-      '<div class="stat"><strong>Oct 19</strong><span>updated</span></div>';
+      '<div class="stat"><strong>'+updatedLabel(dataset&&dataset.verified_on,'Nov 7')+'</strong><span>updated</span></div>';
   }
 
   function updateCopy(){
