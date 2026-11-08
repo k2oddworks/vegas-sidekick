@@ -1826,6 +1826,23 @@
       ]
     },
     {
+      "act": "Triumph",
+      "venue_id": "bleaulive-theater",
+      "type": "Headliner",
+      "status": "canceled",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/triumph/",
+      "dates": [
+        "2026-12-13"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/entertainment/triumph/",
+        "https://www.fontainebleaulasvegas.com/event/triumph-the-rock-roll-machine-reloaded-tour/",
+        "https://www.livenation.com/event/1AvjZ_8GkRS2v2N/triumph-the-rock-roll-machine-reloaded-tour",
+        "https://consequence.net/2026/10/triumph-cancel-fall-tour/"
+      ],
+      "notes": "Canceled. On Oct 30, 2026 the band canceled all remaining 2026 dates of the Rock & Roll Machine Reloaded Tour, citing medical circumstances. Live Nation lists this Dec 13 Fontainebleau show as Cancelled (checked Nov 7, 2026). Kept as a historical record; canceled entries are not shown on the calendar."
+    },
+    {
       "act": "Lindsey Stirling",
       "venue_id": "venetian-theatre",
       "type": "Limited engagement",
