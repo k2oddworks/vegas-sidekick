@@ -231,7 +231,7 @@
       ]
     },
     {
-      "act": "Big Boy's Comedy Fiesta with George Lopez & Marlon Wayans",
+      "act": "Big Boy’s Comedy Fiesta with George Lopez & Marlon Wayans",
       "venue_id": "palms-pearl",
       "type": "Comedy headliner",
       "official_url": "https://www.palms.com/entertainment/pearl-theater",
@@ -407,7 +407,6 @@
         "2026-10-16"
       ],
       "sources": [
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html",
         "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
       ]
     },
@@ -945,6 +944,7 @@
         "2026-11-06"
       ],
       "sources": [
+        "https://www.rwlasvegas.com/entertainment/ms-lauryn-hill-wyclef-jean-celebrating-30-years-of-the-score/",
         "https://www.rwlasvegas.com/press/ms-lauryn-hill-wyclef-jean-celebrate-30-years-of-their-groundbreaking-album-the-score-at-resorts-world-theatre-on-november-6-2026/"
       ]
     },
@@ -1111,6 +1111,7 @@
         "2026-11-14"
       ],
       "sources": [
+        "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
         "https://www.rwlasvegas.com/press/latest-news/",
         "https://www.axs.com/venues/128058/resorts-world-theatre-las-vegas-tickets?page=2"
       ]
@@ -1323,6 +1324,7 @@
         "2026-12-06"
       ],
       "sources": [
+        "https://www.ticketmaster.com/crissangel",
         "https://newsroom.caesars.com/press-releases/press-release-details/2026/ALICE-COOPER--CRISS-ANGEL-ANNOUNCE-ADDITIONAL-DATES-FOR-WELCOME-TO-OUR-NIGHTMARE-AT-PLANET-HOLLYWOOD-RESORT--CASINO--2026-Sz7iALbPbI/default.aspx",
         "https://www.ticketmaster.com/welcome-to-our-nightmare-tickets/artist/4435264"
       ]
@@ -1349,6 +1351,7 @@
         "2026-11-28"
       ],
       "sources": [
+        "https://www.fontainebleaulasvegas.com/entertainment/",
         "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-11/"
       ]
     },
@@ -1445,6 +1448,7 @@
         "2026-12-03"
       ],
       "sources": [
+        "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
         "https://www.rwlasvegas.com/press/resorts-world-las-vegas-packs-rodeo-world-2026-with-10-days-of-headline-entertainment-and-nfr-action/"
       ]
     },
@@ -1482,6 +1486,7 @@
         "2026-12-05"
       ],
       "sources": [
+        "https://www.fontainebleaulasvegas.com/entertainment/",
         "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
       ]
     },
@@ -1494,6 +1499,7 @@
         "2026-12-04"
       ],
       "sources": [
+        "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
         "https://www.rwlasvegas.com/press/resorts-world-las-vegas-packs-rodeo-world-2026-with-10-days-of-headline-entertainment-and-nfr-action/"
       ]
     },
@@ -1593,6 +1599,7 @@
         "2026-12-05"
       ],
       "sources": [
+        "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
         "https://www.rwlasvegas.com/press/resorts-world-las-vegas-packs-rodeo-world-2026-with-10-days-of-headline-entertainment-and-nfr-action/"
       ]
     },
@@ -1678,6 +1685,7 @@
         "2026-12-09"
       ],
       "sources": [
+        "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
         "https://www.rwlasvegas.com/entertainment/",
         "https://www.rwlasvegas.com/press/resorts-world-las-vegas-packs-rodeo-world-2026-with-10-days-of-headline-entertainment-and-nfr-action/"
       ]
@@ -1711,6 +1719,7 @@
         "2026-12-09"
       ],
       "sources": [
+        "https://www.fontainebleaulasvegas.com/entertainment/",
         "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
       ]
     },
@@ -1749,6 +1758,7 @@
         "2026-12-12"
       ],
       "sources": [
+        "https://www.fontainebleaulasvegas.com/entertainment/",
         "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
       ]
     },
@@ -1786,7 +1796,6 @@
         "2026-12-12"
       ],
       "sources": [
-        "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html",
         "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment.html"
       ]
     },
@@ -1823,6 +1832,7 @@
         "2026-12-12"
       ],
       "sources": [
+        "https://www.rwlasvegas.com/entertainment/?location=Resorts-World-Theatre",
         "https://www.rwlasvegas.com/entertainment/",
         "https://www.rwlasvegas.com/press/resorts-world-las-vegas-packs-rodeo-world-2026-with-10-days-of-headline-entertainment-and-nfr-action/"
       ]
@@ -1831,14 +1841,18 @@
       "act": "Triumph",
       "venue_id": "bleaulive-theater",
       "type": "Headliner",
+      "status": "canceled",
       "official_url": "https://www.fontainebleaulasvegas.com/entertainment/triumph/",
       "dates": [
         "2026-12-13"
       ],
       "sources": [
         "https://www.fontainebleaulasvegas.com/entertainment/triumph/",
-        "https://www.fontainebleaulasvegas.com/event/triumph-the-rock-roll-machine-reloaded-tour/"
-      ]
+        "https://www.fontainebleaulasvegas.com/event/triumph-the-rock-roll-machine-reloaded-tour/",
+        "https://www.livenation.com/event/1AvjZ_8GkRS2v2N/triumph-the-rock-roll-machine-reloaded-tour",
+        "https://consequence.net/2026/10/triumph-cancel-fall-tour/"
+      ],
+      "notes": "Canceled. On Oct 30, 2026 the band canceled all remaining 2026 dates of the Rock & Roll Machine Reloaded Tour, citing medical circumstances. Live Nation lists this Dec 13 Fontainebleau show as Cancelled (checked Nov 7, 2026). Kept as a historical record; canceled entries are not shown on the calendar."
     },
     {
       "act": "Lindsey Stirling",
@@ -1853,18 +1867,6 @@
       "sources": [
         "https://www.venetianlasvegas.com/entertainment/lindsey-stirling.html",
         "https://www.ticketmaster.com/The-Venetian-Theatre-at-The-Venetian-tickets-Las-Vegas/venue/189345"
-      ]
-    },
-    {
-      "act": "Love Actually In Concert",
-      "venue_id": "encore-theater-wynn",
-      "type": "Special engagement",
-      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/love-actually-in-concert",
-      "dates": [
-        "2026-12-17"
-      ],
-      "sources": [
-        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/love-actually-in-concert"
       ]
     },
     {
@@ -1902,6 +1904,7 @@
         "2026-12-19"
       ],
       "sources": [
+        "https://www.fontainebleaulasvegas.com/entertainment/",
         "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
       ]
     },
@@ -1957,6 +1960,7 @@
         "2026-12-29"
       ],
       "sources": [
+        "https://www.fontainebleaulasvegas.com/entertainment/",
         "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/2026-12/"
       ]
     },
@@ -1995,6 +1999,7 @@
         "2027-01-01"
       ],
       "sources": [
+        "https://www.fontainebleaulasvegas.com/entertainment/",
         "https://www.fontainebleaulasvegas.com/upcoming-events/month/2026-12/"
       ]
     },
@@ -2019,6 +2024,7 @@
         "2027-01-02"
       ],
       "sources": [
+        "https://www.fontainebleaulasvegas.com/entertainment/",
         "https://www.fontainebleaulasvegas.com/upcoming-events/month/2026-12/"
       ]
     },
@@ -2044,6 +2050,7 @@
         "2027-01-07"
       ],
       "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows",
         "https://lasvegassun.com/news/2026/oct/21/star-studded-entertainment-announcements-feature-f/"
       ]
     },
@@ -2098,6 +2105,7 @@
         "2027-01-27"
       ],
       "sources": [
+        "https://www.rwlasvegas.com/entertainment/the-piano-guys/",
         "https://www.rwlasvegas.com/press/the-piano-guys-bring-west-coast-tour-2027-to-resorts-world-theatre-january-27-2027/"
       ]
     },
@@ -2207,6 +2215,7 @@
         "2027-11-18"
       ],
       "sources": [
+        "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/entertainment/",
         "https://www.fox5vegas.com/2026/10/21/frankie-moreno-announces-2027-westgate-las-vegas-residency/"
       ]
     },
@@ -2814,6 +2823,7 @@
         "2027-06-11"
       ],
       "sources": [
+        "https://www.fontainebleaulasvegas.com/entertainment/",
         "https://www.fontainebleaulasvegas.com/upcoming-events/category/bleaulive/list/?tribe-bar-date=2026-12-01"
       ]
     },
@@ -2889,6 +2899,7 @@
         "2027-09-18"
       ],
       "sources": [
+        "https://www.thesphere.com/shows/carin-leon",
         "https://carinleon.com/en-us/pages/tour",
         "https://www.sphereentertainmentco.com/carin-leon-announces-his-return-to-las-vegas-sphere-in-2027-after-becoming-the-first-latin-artist-to-debut-at-the-groundbreaking-venue/",
         "https://carinleonlive.com/"

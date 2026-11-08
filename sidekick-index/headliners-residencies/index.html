@@ -234,7 +234,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
 
     <aside class="method">
       <h2>How this index is maintained</h2>
-      <p>Dates are taken from current venue, ticketing, artist and promoter sources and were last source-checked October 19, 2026; elapsed dates were removed October 13, 2026. Vegas Sidekick keeps a visible verification date and source trail rather than relying on unsourced calendar copy. <a href="/data/reference/headliners-residencies.json">View the underlying JSON data →</a></p>
+      <p>Dates are taken from current venue, ticketing, artist and promoter sources and were last source-checked <span id="verified-date">November 7, 2026</span>. Past dates stay in the underlying data but drop off the calendar automatically, and canceled engagements are marked as canceled and hidden. Vegas Sidekick keeps a visible verification date and source trail rather than relying on unsourced calendar copy. <a href="/data/reference/headliners-residencies.json">View the underlying JSON data →</a></p>
       <p><strong>Data reuse:</strong> The Sidekick Index factual dataset is published under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Reuse and adapt the licensed data with attribution to Vegas Sidekick. <a href="/data-license/">Data license →</a></p>
     </aside>
   </div>
@@ -355,8 +355,8 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   }
   function engagementBucket(entry){
     const type=entry.type.toLowerCase();
-    if(type==='residency'||type==='limited residency'||type==='resident production') return 'residency';
-    if(type==='limited engagement'||type==='headliner'||type==='comedy headliner'||type==='special engagement') return 'limited';
+    if(type==='residency'||type==='limited residency'||type==='comedy residency'||type==='resident production') return 'residency';
+    if(type==='limited engagement'||type==='headliner'||type==='comedy headliner'||type==='special engagement'||type==='special event'||type==='touring production') return 'limited';
     return 'other';
   }
   function currentEntries(){
@@ -540,6 +540,22 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
     venuesEl.innerHTML=html||'<div class="error">No upcoming dates match these filters.</div>';
   }
 
+  function verifiedLong(iso,fallback){
+    const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(iso||'');
+    if(!m)return fallback;
+    return ['January','February','March','April','May','June','July','August','September','October','November','December'][+m[2]-1]+' '+(+m[3])+', '+m[1];
+  }
+  function showVerifiedDate(iso){
+    const el=document.getElementById('verified-date');
+    if(el)el.textContent=verifiedLong(iso,el.textContent);
+  }
+
+  function updatedLabel(iso,fallback){
+    const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(iso||'');
+    if(!m)return fallback;
+    return ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+m[2]-1]+' '+(+m[3]);
+  }
+
   function updateStats(){
     const entries=currentEntries();
     const performances=entries.reduce(function(n,e){return n+e.dates.length},0);
@@ -550,7 +566,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
       '<div class="stat"><strong>'+entries.length+'</strong><span>acts / engagements</span></div>'+
       '<div class="stat"><strong>'+performances+'</strong><span>listed dates</span></div>'+
       '<div class="stat"><strong>'+escapeHtml(venueStat)+'</strong><span>current scope</span></div>'+
-      '<div class="stat"><strong>Nov 7</strong><span>updated</span></div>';
+      '<div class="stat"><strong>'+updatedLabel(dataset&&dataset.verified_on,'Nov 7')+'</strong><span>updated</span></div>';
   }
 
   function updateViewCopy(){
@@ -601,10 +617,11 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
     .then(function(data){
       // Shared expiration rule: preserve source records, show only upcoming local dates.
       const today=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
-      data.entries=data.entries.map(function(entry){
+      data.entries=data.entries.filter(function(entry){return entry.status!=='canceled'}).map(function(entry){
         return entry.dates?Object.assign({},entry,{dates:entry.dates.filter(function(date){return date>=today})}):entry;
       }).filter(function(entry){return entry.dates?entry.dates.length>0:entry.date>=today});
       dataset=data;
+      showVerifiedDate(data.verified_on);
       renderVenueFilters();
       renderAll();
     })
