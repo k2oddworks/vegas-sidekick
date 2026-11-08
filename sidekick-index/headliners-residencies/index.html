@@ -355,7 +355,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
   }
   function engagementBucket(entry){
     const type=entry.type.toLowerCase();
-    if(type==='residency'||type==='limited residency'||type==='resident production') return 'residency';
+    if(type==='residency'||type==='limited residency'||type==='comedy residency'||type==='resident production') return 'residency';
     if(type==='limited engagement'||type==='headliner'||type==='comedy headliner'||type==='special engagement') return 'limited';
     return 'other';
   }
@@ -540,6 +540,12 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
     venuesEl.innerHTML=html||'<div class="error">No upcoming dates match these filters.</div>';
   }
 
+  function updatedLabel(iso,fallback){
+    const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(iso||'');
+    if(!m)return fallback;
+    return ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+m[2]-1]+' '+(+m[3]);
+  }
+
   function updateStats(){
     const entries=currentEntries();
     const performances=entries.reduce(function(n,e){return n+e.dates.length},0);
@@ -550,7 +556,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
       '<div class="stat"><strong>'+entries.length+'</strong><span>acts / engagements</span></div>'+
       '<div class="stat"><strong>'+performances+'</strong><span>listed dates</span></div>'+
       '<div class="stat"><strong>'+escapeHtml(venueStat)+'</strong><span>current scope</span></div>'+
-      '<div class="stat"><strong>Nov 7</strong><span>updated</span></div>';
+      '<div class="stat"><strong>'+updatedLabel(dataset&&dataset.verified_on,'Nov 7')+'</strong><span>updated</span></div>';
   }
 
   function updateViewCopy(){
