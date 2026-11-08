@@ -3,7 +3,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "Vegas Sidekick — https://vegassidekick.com/sidekick-index/touring-shows-concerts/",
-  "verified_on": "2026-11-06",
+  "verified_on": "2026-11-07",
   "city": "Las Vegas",
   "state": "Nevada",
   "source_note": "Official venue calendars, official ticketing pages and established concert listings. This index tracks visiting and limited-run shows that are not ongoing Vegas productions and are not currently classified in the Headliners & Residencies index. Recurring restaurant/bar entertainment, resident productions and recurring local series are excluded.",
@@ -83,7 +83,7 @@
       "name": "Downtown Las Vegas Events Center",
       "short_name": "DLVEC",
       "property": "Downtown Las Vegas",
-      "official_url": "https://dlvec.com/events/"
+      "official_url": "https://dlvec.com/events-ticketing/"
     },
     {
       "id": "notoriety-live",
@@ -1281,16 +1281,6 @@
       "type": "Concert",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/trippie-redd-the-non-disclosure-agreement-tour-169zkfsopza5fkdv"
-    },
-    {
-      "name": "2027 Countdown Under the Canopy",
-      "subtitle": "Alien Ant Farm · Hoobastank · Wuki · Bubba Sparxxx · Petey Pablo",
-      "date": "2026-12-31",
-      "doors": "7:00 PM",
-      "time_label": "First stage",
-      "type": "Special event",
-      "venue_id": "fremont-street-experience",
-      "official_url": "https://www.kirvindoak.com/fremont-street-experience-announces-lineup-for-2027-countdown-under-the-canopy-new-years-eve-celebration/"
     },
     {
       "name": "Countdown Under the Canopy 2027",
