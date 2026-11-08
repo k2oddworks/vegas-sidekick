@@ -1826,19 +1826,6 @@
       ]
     },
     {
-      "act": "Triumph",
-      "venue_id": "bleaulive-theater",
-      "type": "Headliner",
-      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/triumph/",
-      "dates": [
-        "2026-12-13"
-      ],
-      "sources": [
-        "https://www.fontainebleaulasvegas.com/entertainment/triumph/",
-        "https://www.fontainebleaulasvegas.com/event/triumph-the-rock-roll-machine-reloaded-tour/"
-      ]
-    },
-    {
       "act": "Lindsey Stirling",
       "venue_id": "venetian-theatre",
       "type": "Limited engagement",
