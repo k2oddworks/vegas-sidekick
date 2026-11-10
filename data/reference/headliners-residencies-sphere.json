@@ -1,7 +1,7 @@
 {
   "name": "Vegas Sidekick Index — Headliners & Residencies",
   "scope": "Sphere",
-  "verified_on": "2026-10-21",
+  "verified_on": "2026-11-10",
   "venue": {
     "name": "Sphere",
     "city": "Las Vegas",
@@ -170,6 +170,26 @@
       "sources": [
         "https://carinleon.com/en-us/pages/tour",
         "https://www.sphereentertainmentco.com/carin-leon-announces-his-return-to-las-vegas-sphere-in-2027-after-becoming-the-first-latin-artist-to-debut-at-the-groundbreaking-venue/"
+      ]
+    },
+    {
+      "act": "P!NK",
+      "type": "Residency",
+      "official_url": "https://www.thesphere.com/shows/pink",
+      "dates": [
+        "2027-09-29",
+        "2027-10-01",
+        "2027-10-02",
+        "2027-10-06",
+        "2027-10-08",
+        "2027-10-09",
+        "2027-10-27",
+        "2027-10-29",
+        "2027-10-30"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/media/news-releases/2026/11-09-pink-announces-2027-residency-at-sphere-in-las-vegas.html",
+        "https://www.thesphere.com/shows/pink"
       ]
     }
   ]
