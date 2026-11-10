@@ -3,7 +3,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "Vegas Sidekick — https://vegassidekick.com/sidekick-index/headliners-residencies/",
-  "verified_on": "2026-11-07",
+  "verified_on": "2026-11-10",
   "city": "Las Vegas",
   "state": "NV",
   "venues": [
@@ -2930,6 +2930,39 @@
       ],
       "sources": [
         "https://www.jimmycarr.com/tour/usa/"
+      ]
+    },
+    {
+      "act": "P!NK",
+      "venue_id": "sphere",
+      "type": "Residency",
+      "official_url": "https://www.thesphere.com/shows/pink",
+      "dates": [
+        "2027-09-29",
+        "2027-10-01",
+        "2027-10-02",
+        "2027-10-06",
+        "2027-10-08",
+        "2027-10-09",
+        "2027-10-27",
+        "2027-10-29",
+        "2027-10-30"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/media/news-releases/2026/11-09-pink-announces-2027-residency-at-sphere-in-las-vegas.html",
+        "https://www.thesphere.com/shows/pink"
+      ]
+    },
+    {
+      "act": "Jo Koy",
+      "venue_id": "caesars-colosseum",
+      "type": "Comedy headliner",
+      "official_url": "https://newsroom.caesars.com/press-releases/press-release-details/2026/Jo-Koy-Announces-Return-to-The-Colosseum-at-Caesars-Palace-February-13-2027-2026-jksHUw_G-5/default.aspx",
+      "dates": [
+        "2027-02-13"
+      ],
+      "sources": [
+        "https://newsroom.caesars.com/press-releases/press-release-details/2026/Jo-Koy-Announces-Return-to-The-Colosseum-at-Caesars-Palace-February-13-2027-2026-jksHUw_G-5/default.aspx"
       ]
     }
   ],
