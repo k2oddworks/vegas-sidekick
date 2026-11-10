@@ -1,7 +1,7 @@
 # SIDEKICK-INDEX.md — Vegas Sidekick Reference System
 
 **Status:** Current production system  
-**Last updated:** November 7, 2026  
+**Last updated:** November 10, 2026  
 **Canonical scope:** `/sidekick-index/`
 
 This file is the source of truth for the **Sidekick Index** project: its purpose, page taxonomy, data boundaries, shared UX, source files, mobile behavior, and maintenance rules.
