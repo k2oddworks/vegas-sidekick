@@ -17,6 +17,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Audit show purchase CTAs and closed-show links
+        run: python3 scripts/audit-ticket-links.py
+
       - name: Generate Media Library inventory
         run: python3 scripts/generate-media-library.py
 
