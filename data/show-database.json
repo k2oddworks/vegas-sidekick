@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-31",
+  "updated_on": "2026-11-10",
   "source": "Vegas Sidekick Show Database",
   "records": [
     {
@@ -4458,5 +4458,7 @@
     }
   ],
   "spotlight_reconciled_on": "2026-10-20",
-  "deal_threshold_dollars": 5
+  "deal_threshold_dollars": 5,
+  "catalog_price_consistency_checked_on": "2026-11-10",
+  "catalog_price_consistency_note": "All active show-page starting prices matched database on November 10, 2026; external Spotlight starting-price checks are separately recorded per show in price_source_last_checked_on."
 }
