@@ -326,7 +326,7 @@
       "our_price": 40,
       "regular_price": null,
       "runtime_minutes": 65,
-      "age_summary": "All ages",
+      "age_summary": "All ages; recommended 18+",
       "venue": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
       "schedule_summary": "Wed, Thu, Fri, Sat · 7 PM",
@@ -369,7 +369,7 @@
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/an-r-rated-magic-show/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/an-r-rated-magic-show/ref/vegassidekick",
-        "age_label": "All ages"
+        "age_label": "All ages; recommended 18+"
       },
       "savings_amount": null,
       "savings_percent": null,
@@ -580,7 +580,7 @@
       "our_price": 86,
       "regular_price": null,
       "runtime_minutes": 90,
-      "age_summary": "Confirm current listing",
+      "age_summary": "4+",
       "venue": "International Theater at Westgate Las Vegas Resort & Casino",
       "showroom": "",
       "schedule_summary": "Dates & times vary · check booking page",
@@ -590,7 +590,7 @@
       "verified_on": "2026-09-15",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
-      "notes": "Select performance blocks are posted through April 2027; do not convert this to a recurring weekly schedule.",
+      "notes": "Select performance blocks are posted through April 2027; do not convert this to a recurring weekly schedule. Age 4+ confirmed by site owner November 10, 2026.",
       "spotlight": {
         "name": "Barry Manilow: The Hits Come Home! Las Vegas",
         "our_price": 86,
@@ -607,7 +607,7 @@
         ],
         "spotlight_url": "https://spotlight.vegas/shows/music/barry-manilow/",
         "affiliate_url": "https://spotlight.vegas/shows/music/barry-manilow/ref/vegassidekick",
-        "age_label": "Confirm current listing"
+        "age_label": "4+"
       },
       "savings_amount": null,
       "savings_percent": null,
@@ -703,14 +703,14 @@
       "age_summary": "18+",
       "venue": "The District - MGM Grand",
       "showroom": "",
-      "schedule_summary": "Nightly – 8:00pm · Seating · Seating will be assigned upon arrival and will be best available within the zone purchased.",
+      "schedule_summary": "Nightly · 8 PM",
       "ticket_url": "https://spotlight.vegas/shows/comedy/brad-garretts-comedy-club/ref/vegassidekick",
       "official_trailer": "https://youtu.be/dXT1zsASfZE",
       "page_path": "/shows/comedy/brad-garretts-comedy-club/",
       "verified_on": "2026-09-08",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
-      "notes": "",
+      "notes": "Seating assigned on arrival, best available within purchased zone.",
       "spotlight": {
         "name": "Brad Garrett's Comedy Club",
         "our_price": 44,
@@ -720,12 +720,10 @@
         "age_rule": "Must be 18 years of age or older. Guests under the age of 18 are NOT permitted.",
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater. Additional Information Get seating info from the Brad Garrett’s Comedy Club Seating Chart .",
         "schedule_days": {},
-        "schedule_summary": "Nightly – 8:00pm · Seating · Seating will be assigned upon arrival and will be best available within the zone purchased.",
+        "schedule_summary": "Nightly · 8 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Nightly – 8:00pm",
-          "Seating",
-          "Seating will be assigned upon arrival and will be best available within the zone purchased."
+          "Nightly – 8:00pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/comedy/brad-garretts-comedy-club/",
         "affiliate_url": "https://spotlight.vegas/shows/comedy/brad-garretts-comedy-club/ref/vegassidekick",
@@ -1017,7 +1015,7 @@
       "our_price": 111,
       "regular_price": null,
       "runtime_minutes": 75,
-      "age_summary": "Recommended for ages 10 and up due to mature content. Everyo",
+      "age_summary": "Recommended 10+. Guests 18 and under must be accompanied by an adult; everyone needs a ticket.",
       "venue": "Criss Angel Theater – Planet Hollywood",
       "showroom": "",
       "schedule_summary": "Wed, Thu, Fri, Sat, Sun · 7 PM",
@@ -1064,7 +1062,7 @@
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/criss-angel/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/criss-angel/ref/vegassidekick",
-        "age_label": "Recommended for ages 10 and up due to mature content. Everyo"
+        "age_label": "Recommended 10+"
       },
       "savings_amount": null,
       "savings_percent": null,
@@ -1221,7 +1219,7 @@
       "age_summary": "5+",
       "venue": "The STRAT Theater",
       "showroom": "",
-      "schedule_summary": "Tue, Wed, Thu, Fri, Sat, Sun · 7 PM",
+      "schedule_summary": "Tue–Sun · 6:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/tribute/ikons-of-rock/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/ikons-of-rock/",
@@ -1239,33 +1237,33 @@
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater. No bags will be permitted into the venue except for small purses (8\"x8\" max). Backpacks of any size are not allowed. Guests will need to check-in their bags at the bell desk or return prohibited items to their rooms. Smart/Meta glasses are not permitted in The STRAT Theater.",
         "schedule_days": {
           "Tuesday": [
-            "7 PM"
+            "6:30 PM"
           ],
           "Wednesday": [
-            "7 PM"
+            "6:30 PM"
           ],
           "Thursday": [
-            "7 PM"
+            "6:30 PM"
           ],
           "Friday": [
-            "7 PM"
+            "6:30 PM"
           ],
           "Saturday": [
-            "7 PM"
+            "6:30 PM"
           ],
           "Sunday": [
-            "7 PM"
+            "6:30 PM"
           ]
         },
-        "schedule_summary": "Tue, Wed, Thu, Fri, Sat, Sun · 7 PM",
+        "schedule_summary": "Tue–Sun · 6:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Tuesday - 7:00pm",
-          "Wednesday - 7:00pm",
-          "Thursday - 7:00pm",
-          "Friday - 7:00pm",
-          "Saturday - 7:00pm",
-          "Sunday - 7:00pm"
+          "Tuesday - 6:30pm",
+          "Wednesday - 6:30pm",
+          "Thursday - 6:30pm",
+          "Friday - 6:30pm",
+          "Saturday - 6:30pm",
+          "Sunday - 6:30pm"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/tribute/ikons-of-rock/",
         "affiliate_url": "https://spotlight.vegas/shows/tribute/ikons-of-rock/ref/vegassidekick",
@@ -1398,50 +1396,50 @@
       "our_price": 40,
       "regular_price": 100,
       "runtime_minutes": 75,
-      "age_summary": "No age restricitions",
+      "age_summary": "All ages",
       "venue": "Athena Showroom - Alexis Park Resort, 375 E Harmon Ave",
       "showroom": "",
-      "schedule_summary": "Mon–Wed, Sun · 9 PM",
+      "schedule_summary": "Sun, Mon, Wed, Sat · 9 PM",
       "ticket_url": "https://spotlight.vegas/shows/tribute/neil-diamond/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/music/king-of-diamonds/",
       "verified_on": "2026-10-31",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
-      "notes": "Regular weekly schedule confirmed by site owner 2026-10-31; temporary date exceptions are handled by ticket checkout.",
+      "notes": "Regular weekly schedule confirmed by site owner November 10, 2026; date-specific exceptions appear at checkout.",
       "spotlight": {
         "name": "King of Diamonds - The Neil Diamond Tribute",
         "our_price": 40,
         "regular_price": 100,
         "location": "Athena Showroom - Alexis Park Resort, 375 E Harmon Ave",
         "runtime_minutes": 75,
-        "age_rule": "No age restricitions",
+        "age_rule": "No age restrictions",
         "other_restrictions": "Photo and video is acceptable but no flash photography and no livestreaming. Smoking is not allowed in the theater.",
         "schedule_days": {
-          "Monday": [
+          "Sunday": [
             "9 PM"
           ],
-          "Tuesday": [
+          "Monday": [
             "9 PM"
           ],
           "Wednesday": [
             "9 PM"
           ],
-          "Sunday": [
+          "Saturday": [
             "9 PM"
           ]
         },
-        "schedule_summary": "Mon–Wed, Sun · 9 PM",
+        "schedule_summary": "Sun, Mon, Wed, Sat · 9 PM",
         "schedule_variable": false,
         "schedule_raw": [
+          "Sunday - 9 PM",
           "Monday - 9 PM",
-          "Tuesday - 9 PM",
           "Wednesday - 9 PM",
-          "Sunday - 9 PM"
+          "Saturday - 9 PM"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/tribute/neil-diamond/",
         "affiliate_url": "https://spotlight.vegas/shows/tribute/neil-diamond/ref/vegassidekick",
-        "age_label": "No age restricitions"
+        "age_label": "All ages"
       },
       "savings_amount": 60,
       "savings_percent": 60,
@@ -1564,21 +1562,21 @@
       "slug": "las-vegas-live-comedy-club",
       "name": "Las Vegas LIVE Comedy Club",
       "category": "comedy",
-      "status": "needs_review",
-      "our_price": 29,
+      "status": "closed",
+      "our_price": null,
       "regular_price": null,
       "runtime_minutes": 75,
       "age_summary": "16+",
       "venue": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
-      "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 9 PM",
-      "ticket_url": "https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/ref/vegassidekick",
+      "schedule_summary": "Closed",
+      "ticket_url": "",
       "official_trailer": "",
       "page_path": "/shows/comedy/las-vegas-live-comedy-club/",
-      "verified_on": "2026-10-08",
-      "freshness_label": "September 2026",
+      "verified_on": "2026-11-10",
+      "freshness_label": "November 2026",
       "verification": "verified_spotlight",
-      "notes": "Spotlight advertises $29 / regular $34 but marks booking Not Available on October 8, 2026. Page retained, purchase CTAs and deal promotion paused. Recheck availability before reactivating.",
+      "notes": "Closed, confirmed by site owner November 10, 2026. Preserve page as archive; remove active ticket CTAs and Event/Offer schema.",
       "spotlight": {
         "name": "Las Vegas Live Comedy Club",
         "our_price": 29,
@@ -2077,7 +2075,7 @@
       "our_price": 54,
       "regular_price": 90,
       "runtime_minutes": 70,
-      "age_summary": "5 + ages with an adult. All patrons require a ticket regardl",
+      "age_summary": "Ages 5+. Guests under 18 need an adult; all patrons need a ticket.",
       "venue": "Saxe Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Wed, Thu, Fri, Sat, Sun · 7 PM",
@@ -2132,7 +2130,7 @@
         ],
         "spotlight_url": "https://spotlight.vegas/shows/tribute/mj-live-at-planet-hollywood/",
         "affiliate_url": "https://spotlight.vegas/shows/tribute/mj-live-at-planet-hollywood/ref/vegassidekick",
-        "age_label": "5 + ages with an adult. All patrons require a ticket regardl"
+        "age_label": "5+"
       },
       "savings_amount": 36,
       "savings_percent": 40,
@@ -2190,7 +2188,7 @@
       "name": "Mystère by Cirque du Soleil",
       "category": "cirque",
       "status": "active",
-      "our_price": 84,
+      "our_price": 67,
       "regular_price": null,
       "runtime_minutes": 90,
       "age_summary": "All ages",
@@ -2206,7 +2204,7 @@
       "notes": "",
       "spotlight": {
         "name": "Mystere by Cirque du Soleil",
-        "our_price": 84,
+        "our_price": 67,
         "regular_price": null,
         "location": "Mystère Theatre – TI Hotel",
         "runtime_minutes": 90,
@@ -2250,7 +2248,7 @@
       "savings_amount": null,
       "savings_percent": null,
       "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-10"
     },
     {
       "slug": "nathan-burton-comedy-magic",
@@ -2992,7 +2990,7 @@
       "verified_on": "2026-10-09",
       "freshness_label": "September 2026",
       "verification": "verified_spotlight",
-      "notes": "Official Venetian guidance: audiences 4+ (verified 2026-09-12).",
+      "notes": "Official Venetian age policy: ages 4+; site owner reconfirmed November 10, 2026. Spotlight text conflicts; use venue age rule.",
       "spotlight": {
         "name": "Shin Lim Las Vegas",
         "our_price": 67,
@@ -3030,7 +3028,7 @@
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/shin-lim/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/shin-lim/ref/vegassidekick",
-        "age_label": "No children ages 4 and under"
+        "age_label": "4+"
       },
       "savings_amount": 35,
       "savings_percent": 34,
@@ -3161,7 +3159,7 @@
       "our_price": 61,
       "regular_price": 72,
       "runtime_minutes": 85,
-      "age_summary": "16 years and over. Guest under the 18 must be accompanied by",
+      "age_summary": "16+. Guests under 18 must be accompanied by an adult.",
       "venue": "The Underground Theater - MGM Grand",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Thu, Fri, Sat, Sun · 9:30 PM; Wed · 8 PM",
@@ -3216,7 +3214,7 @@
         ],
         "spotlight_url": "https://spotlight.vegas/shows/comedy/steve-falcons-comedy-hypnosis-hour/",
         "affiliate_url": "https://spotlight.vegas/shows/comedy/steve-falcons-comedy-hypnosis-hour/ref/vegassidekick",
-        "age_label": "16 years and over. Guest under the 18 must be accompanied by"
+        "age_label": "16+"
       },
       "savings_amount": 11,
       "savings_percent": 15,
@@ -3294,7 +3292,7 @@
       "name": "The Australian Bee Gees Show",
       "category": "music",
       "status": "active",
-      "our_price": 40,
+      "our_price": 33,
       "regular_price": null,
       "runtime_minutes": 70,
       "age_summary": "5+",
@@ -3310,7 +3308,7 @@
       "notes": "Regular weekly schedule confirmed by site owner 2026-10-31; temporary date exceptions are handled by ticket checkout.",
       "spotlight": {
         "name": "The Australian Bee Gees Las Vegas",
-        "our_price": 40,
+        "our_price": 33,
         "regular_price": null,
         "location": "Thunderland Theater- Excalibur",
         "runtime_minutes": 70,
@@ -3353,7 +3351,7 @@
       "savings_amount": null,
       "savings_percent": null,
       "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-10"
     },
     {
       "slug": "the-conjurors",
@@ -3559,7 +3557,7 @@
       "our_price": 40,
       "regular_price": 90,
       "runtime_minutes": 75,
-      "age_summary": "All ages",
+      "age_summary": "All ages; recommended 16+",
       "venue": "V Theater - Miracle Mile Shops - Planet Hollywood Hotel",
       "showroom": "",
       "schedule_summary": "Mon, Tue, Thu, Fri, Sat, Sun · 7:30 PM",
@@ -3610,7 +3608,7 @@
         ],
         "spotlight_url": "https://spotlight.vegas/shows/magic/the-mentalist/",
         "affiliate_url": "https://spotlight.vegas/shows/magic/the-mentalist/ref/vegassidekick",
-        "age_label": "All ages"
+        "age_label": "All ages; recommended 16+"
       },
       "savings_amount": 50,
       "savings_percent": 56,
