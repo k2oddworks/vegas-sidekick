@@ -155,6 +155,18 @@
       "name": "Las Vegas Festival Grounds",
       "short_name": "Festival Grounds",
       "official_url": "https://help.whenwewereyoungfestival.com/article/2171-what-is-when-we-were-young"
+    },
+    {
+      "id": "golden-nugget-showroom",
+      "name": "Golden Nugget Showroom",
+      "short_name": "Golden Nugget",
+      "official_url": "https://www.goldennugget.com/las-vegas/calendar/"
+    },
+    {
+      "id": "south-point-showroom",
+      "name": "South Point Showroom",
+      "short_name": "South Point",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
     }
   ],
   "entries": [
@@ -425,7 +437,8 @@
       "type": "Touring production",
       "room": "Reynolds Hall",
       "venue_id": "smith-center",
-      "official_url": "https://thesmithcenter.com/tickets/broadway-las-vegas-series/"
+      "official_url": "https://thesmithcenter.com/tickets/broadway-las-vegas-series/",
+      "end_date": "2026-11-01"
     },
     {
       "name": "ARTMS",
@@ -955,7 +968,8 @@
       "time_label": "Schedule",
       "type": "Festival",
       "venue_id": "downtown-las-vegas-events-center",
-      "official_url": "https://dlvec.com/event/neon-city-festival/"
+      "official_url": "https://dlvec.com/event/neon-city-festival/",
+      "end_date": "2026-11-22"
     },
     {
       "name": "Senses Fail",
@@ -1027,7 +1041,8 @@
       "type": "Touring production",
       "room": "Reynolds Hall",
       "venue_id": "smith-center",
-      "official_url": "https://thesmithcenter.com/tickets/broadway-las-vegas-series/"
+      "official_url": "https://thesmithcenter.com/tickets/broadway-las-vegas-series/",
+      "end_date": "2026-11-29"
     },
     {
       "name": "Eres Emo?",
@@ -1048,6 +1063,24 @@
       "type": "Concert",
       "venue_id": "swan-dive-las-vegas",
       "official_url": "https://swandivelasvegas.com/event/ours/swan-dive/las-vegas-nevada/"
+    },
+    {
+      "name": "Ambrosia",
+      "date": "2026-11-27",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "golden-nugget-showroom",
+      "official_url": "https://www.goldennugget.com/las-vegas/calendar/"
+    },
+    {
+      "name": "Frankie Scinta",
+      "date": "2026-11-27",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
     },
     {
       "name": "INZO",
@@ -1088,6 +1121,24 @@
       "venue_id": "house-of-blues-las-vegas"
     },
     {
+      "name": "Frankie Scinta",
+      "date": "2026-11-28",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
+      "name": "Brent Barrett",
+      "date": "2026-12-02",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "smith-center",
+      "official_url": "https://thesmithcenter.com/tickets/"
+    },
+    {
       "name": "Tony DeSare",
       "subtitle": "Merry Christmas, Baby",
       "date": "2026-12-03",
@@ -1097,6 +1148,24 @@
       "room": "Myron’s",
       "venue_id": "smith-center",
       "official_url": "https://thesmithcenter.com/tickets/myrons/"
+    },
+    {
+      "name": "Larry Fleet",
+      "date": "2026-12-03",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "golden-nugget-showroom",
+      "official_url": "https://www.goldennugget.com/las-vegas/calendar/"
+    },
+    {
+      "name": "Aaron Watson",
+      "date": "2026-12-03",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
     },
     {
       "name": "An Evening with The Kruse Brothers",
@@ -1137,6 +1206,24 @@
       "official_url": "https://virginhotelslv.com/event/whitey-morgan-and-the-78s/"
     },
     {
+      "name": "Colin Stough",
+      "date": "2026-12-04",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "golden-nugget-showroom",
+      "official_url": "https://www.goldennugget.com/las-vegas/calendar/"
+    },
+    {
+      "name": "Aaron Watson",
+      "date": "2026-12-04",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
       "name": "An Evening with Tyler Halverson",
       "date": "2026-12-05",
       "doors": "9:30 PM",
@@ -1157,6 +1244,33 @@
       "venue_id": "house-of-blues-las-vegas"
     },
     {
+      "name": "Sammy Kershaw",
+      "date": "2026-12-05",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "golden-nugget-showroom",
+      "official_url": "https://www.goldennugget.com/las-vegas/calendar/"
+    },
+    {
+      "name": "Aaron Watson",
+      "date": "2026-12-05",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
+      "name": "Clint Holmes — Holmes for the Holidays",
+      "date": "2026-12-05",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "smith-center",
+      "official_url": "https://thesmithcenter.com/tickets/"
+    },
+    {
       "name": "Baby Bash, Lil Rob, NB Ridaz, Amanda Perez & Big Gemini",
       "date": "2026-12-06",
       "doors": "7:30 PM",
@@ -1173,6 +1287,87 @@
       "room": "Music Hall",
       "official_url": "https://lasvegas.houseofblues.com/shows/rooms/music-hall",
       "venue_id": "house-of-blues-las-vegas"
+    },
+    {
+      "name": "Ray Wylie Hubbard",
+      "date": "2026-12-06",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "golden-nugget-showroom",
+      "official_url": "https://www.goldennugget.com/las-vegas/calendar/"
+    },
+    {
+      "name": "Aaron Watson",
+      "date": "2026-12-06",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
+      "name": "Clint Holmes — Holmes for the Holidays",
+      "date": "2026-12-06",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "smith-center",
+      "official_url": "https://thesmithcenter.com/tickets/"
+    },
+    {
+      "name": "Neal McCoy",
+      "date": "2026-12-07",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "golden-nugget-showroom",
+      "official_url": "https://www.goldennugget.com/las-vegas/calendar/"
+    },
+    {
+      "name": "Chancey Williams",
+      "date": "2026-12-07",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
+      "name": "Mark Chesnutt",
+      "date": "2026-12-08",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "golden-nugget-showroom",
+      "official_url": "https://www.goldennugget.com/las-vegas/calendar/"
+    },
+    {
+      "name": "Chancey Williams",
+      "date": "2026-12-08",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
+      "name": "Bellamy Brothers",
+      "date": "2026-12-09",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "golden-nugget-showroom",
+      "official_url": "https://www.goldennugget.com/las-vegas/calendar/"
+    },
+    {
+      "name": "Chancey Williams",
+      "date": "2026-12-09",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
     },
     {
       "name": "The Horse I Rode In On with Corb Lund",
@@ -1192,6 +1387,24 @@
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/wyatt-flores-169zkf3jbza5agkk"
     },
     {
+      "name": "Bellamy Brothers",
+      "date": "2026-12-10",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "golden-nugget-showroom",
+      "official_url": "https://www.goldennugget.com/las-vegas/calendar/"
+    },
+    {
+      "name": "Presley Barker",
+      "date": "2026-12-10",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
       "name": "Turnpike Troubadours",
       "subtitle": "Hooey Presents",
       "support": "Red Shahan",
@@ -1200,6 +1413,24 @@
       "type": "Concert",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/hooey-presents-turnpike-troubadours-17ayv0g62soqkki"
+    },
+    {
+      "name": "Pam Tillis & Lorrie Morgan",
+      "date": "2026-12-11",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "golden-nugget-showroom",
+      "official_url": "https://www.goldennugget.com/las-vegas/calendar/"
+    },
+    {
+      "name": "Presley Barker",
+      "date": "2026-12-11",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
     },
     {
       "name": "Syd",
@@ -1221,6 +1452,24 @@
       "type": "Concert",
       "venue_id": "fremont-country-club",
       "official_url": "https://www.eventim.us/event/xmas-in-the-dark-2/702891"
+    },
+    {
+      "name": "Jamey Johnson",
+      "date": "2026-12-12",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "golden-nugget-showroom",
+      "official_url": "https://www.goldennugget.com/las-vegas/calendar/"
+    },
+    {
+      "name": "Presley Barker",
+      "date": "2026-12-12",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
     },
     {
       "name": "Mother Soki",
@@ -1251,6 +1500,24 @@
       "venue_id": "house-of-blues-las-vegas"
     },
     {
+      "name": "Human Nature",
+      "date": "2026-12-15",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
+      "name": "Human Nature",
+      "date": "2026-12-16",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
       "name": "Love Actually in Concert",
       "subtitle": "Film screening with live orchestra",
       "date": "2026-12-17",
@@ -1259,6 +1526,15 @@
       "type": "Touring show",
       "venue_id": "encore-theater-wynn",
       "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/love-actually-in-concert"
+    },
+    {
+      "name": "Human Nature",
+      "date": "2026-12-17",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
     },
     {
       "name": "Brandon Victor Dixon",
@@ -1281,6 +1557,69 @@
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/trippie-redd-the-non-disclosure-agreement-tour-169zkfsopza5fkdv"
     },
     {
+      "name": "Human Nature",
+      "date": "2026-12-18",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
+      "name": "Bronx Wanderers Christmas",
+      "date": "2026-12-19",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
+      "name": "Bronx Wanderers Christmas",
+      "date": "2026-12-20",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
+      "name": "Michelle Johnson — Christmas in New York",
+      "date": "2026-12-20",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "smith-center",
+      "official_url": "https://thesmithcenter.com/tickets/"
+    },
+    {
+      "name": "Terry Fator — A Very Terry Christmas",
+      "date": "2026-12-22",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
+      "name": "Earl Turner",
+      "date": "2026-12-22",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "smith-center",
+      "official_url": "https://thesmithcenter.com/tickets/"
+    },
+    {
+      "name": "Terry Fator — A Very Terry Christmas",
+      "date": "2026-12-23",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
       "name": "Red Eye Gin",
       "date": "2026-12-26",
       "doors": "7:30 PM",
@@ -1288,6 +1627,24 @@
       "type": "Concert",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.axs.com/venues/125151/brooklyn-bowl-las-vegas-las-vegas-tickets"
+    },
+    {
+      "name": "Bronx Wanderers Christmas",
+      "date": "2026-12-26",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
+      "name": "Bronx Wanderers Christmas",
+      "date": "2026-12-27",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
     },
     {
       "name": "Countdown Under the Canopy 2027",
@@ -1309,6 +1666,15 @@
       "official_url": "https://www.axs.com/venues/128643/house-of-blues-las-vegas-las-vegas-tickets"
     },
     {
+      "name": "Sierra Boggess",
+      "date": "2027-01-09",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "smith-center",
+      "official_url": "https://thesmithcenter.com/tickets/"
+    },
+    {
       "name": "Curious George and the Golden Meatball",
       "date": "2027-01-10",
       "doors": "2:00 PM",
@@ -1319,6 +1685,24 @@
       "official_url": "https://thesmithcenter.com/tickets/2627/curious-george-the-smith-center-las-vegas-01-10-27/"
     },
     {
+      "name": "The Babys",
+      "date": "2027-01-15",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "golden-nugget-showroom",
+      "official_url": "https://www.goldennugget.com/las-vegas/calendar/"
+    },
+    {
+      "name": "Kozmic Blues — Janis & Jimi",
+      "date": "2027-01-16",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "smith-center",
+      "official_url": "https://thesmithcenter.com/tickets/"
+    },
+    {
       "name": "The Outsiders",
       "subtitle": "Runs Jan 19–24",
       "date": "2027-01-19",
@@ -1327,7 +1711,44 @@
       "type": "Touring production",
       "room": "Reynolds Hall",
       "venue_id": "smith-center",
-      "official_url": "https://thesmithcenter.com/tickets/broadway-las-vegas-series/"
+      "official_url": "https://thesmithcenter.com/tickets/broadway-las-vegas-series/",
+      "end_date": "2027-01-24"
+    },
+    {
+      "name": "Terry Fator — Pure Imagination",
+      "date": "2027-01-19",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
+      "name": "Terry Fator — Pure Imagination",
+      "date": "2027-01-20",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
+      "name": "Terry Fator — Pure Imagination",
+      "date": "2027-01-21",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
+      "name": "Spin Doctors",
+      "date": "2027-01-22",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "golden-nugget-showroom",
+      "official_url": "https://www.goldennugget.com/las-vegas/calendar/"
     },
     {
       "name": "Rick Braun",
@@ -1379,6 +1800,24 @@
       "venue_id": "house-of-blues-las-vegas"
     },
     {
+      "name": "The Lovin' Spoonful",
+      "date": "2027-01-29",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "golden-nugget-showroom",
+      "official_url": "https://www.goldennugget.com/las-vegas/calendar/"
+    },
+    {
+      "name": "REBEL — The Classic Rock Tenors",
+      "date": "2027-01-29",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
       "name": "The Legend of Korra in Concert",
       "date": "2027-01-30",
       "doors": "7:30 PM",
@@ -1387,6 +1826,33 @@
       "room": "Reynolds Hall",
       "venue_id": "smith-center",
       "official_url": "https://thesmithcenter.com/tickets/2627/the-legend-of-korra-in-concert/"
+    },
+    {
+      "name": "REBEL — The Classic Rock Tenors",
+      "date": "2027-01-30",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
+      "name": "Jefferson Starship",
+      "date": "2027-02-05",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "golden-nugget-showroom",
+      "official_url": "https://www.goldennugget.com/las-vegas/calendar/"
+    },
+    {
+      "name": "Phat Cat Swinger",
+      "date": "2027-02-05",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
     },
     {
       "name": "Polyphia",
@@ -1400,6 +1866,24 @@
       "venue_id": "house-of-blues-las-vegas"
     },
     {
+      "name": "Phat Cat Swinger",
+      "date": "2027-02-06",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
+      "name": "Phat Cat Swinger",
+      "date": "2027-02-07",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
       "name": "Jumaane Smith",
       "date": "2027-02-11",
       "doors": "See listing",
@@ -1408,6 +1892,15 @@
       "room": "Myron’s",
       "venue_id": "smith-center",
       "official_url": "https://thesmithcenter.com/tickets/myrons/"
+    },
+    {
+      "name": "Ambrosia",
+      "date": "2027-02-12",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "golden-nugget-showroom",
+      "official_url": "https://www.goldennugget.com/las-vegas/calendar/"
     },
     {
       "name": "Blue October",
@@ -1431,6 +1924,51 @@
       "venue_id": "house-of-blues-las-vegas"
     },
     {
+      "name": "Human Nature — Get Ready Motown Through the Eras",
+      "date": "2027-02-16",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
+      "name": "Human Nature — Get Ready Motown Through the Eras",
+      "date": "2027-02-17",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
+      "name": "Human Nature — Get Ready Motown Through the Eras",
+      "date": "2027-02-18",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
+      "name": "The Cowsills",
+      "date": "2027-02-19",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "golden-nugget-showroom",
+      "official_url": "https://www.goldennugget.com/las-vegas/calendar/"
+    },
+    {
+      "name": "Amira Elfeky",
+      "date": "2027-02-19",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "house-of-blues-las-vegas",
+      "official_url": "https://www.axs.com/venues/128643/house-of-blues-las-vegas-las-vegas-tickets"
+    },
+    {
       "name": "Hamilton de Holanda",
       "date": "2027-02-20",
       "doors": "See listing",
@@ -1439,6 +1977,42 @@
       "room": "Myron’s",
       "venue_id": "smith-center",
       "official_url": "https://thesmithcenter.com/tickets/myrons/"
+    },
+    {
+      "name": "The Righteous Brothers — Hall of Fame Tour",
+      "date": "2027-02-23",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
+      "name": "The Righteous Brothers — Hall of Fame Tour",
+      "date": "2027-02-24",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
+      "name": "The Righteous Brothers — Hall of Fame Tour",
+      "date": "2027-02-25",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Limited engagement",
+      "venue_id": "south-point-showroom",
+      "official_url": "https://southpointcasino.com/entertainment/showroom/"
+    },
+    {
+      "name": "Dokken with George Lynch",
+      "date": "2027-02-26",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "golden-nugget-showroom",
+      "official_url": "https://www.goldennugget.com/las-vegas/calendar/"
     },
     {
       "name": "Jazzmeia Horn",
@@ -1459,7 +2033,8 @@
       "type": "Touring production",
       "room": "Reynolds Hall",
       "venue_id": "smith-center",
-      "official_url": "https://thesmithcenter.com/tickets/broadway-las-vegas-series/"
+      "official_url": "https://thesmithcenter.com/tickets/broadway-las-vegas-series/",
+      "end_date": "2027-03-07"
     },
     {
       "name": "Andrew Dice Clay",
@@ -1478,6 +2053,15 @@
       "type": "Concert",
       "venue_id": "brooklyn-bowl-las-vegas",
       "official_url": "https://www.axs.com/venues/125151/brooklyn-bowl-las-vegas-las-vegas-tickets"
+    },
+    {
+      "name": "The Grass Roots",
+      "date": "2027-03-05",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "golden-nugget-showroom",
+      "official_url": "https://www.goldennugget.com/las-vegas/calendar/"
     },
     {
       "name": "The Brubeck Brothers Quartet",
