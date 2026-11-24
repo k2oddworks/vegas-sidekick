@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-11-10",
+  "updated_on": "2026-11-24",
   "source": "Vegas Sidekick Show Database",
   "records": [
     {
@@ -739,8 +739,8 @@
       "name": "Carrot Top",
       "category": "comedy",
       "status": "active",
-      "our_price": 68,
-      "regular_price": null,
+      "our_price": 62,
+      "regular_price": 68,
       "runtime_minutes": 75,
       "age_summary": "16+",
       "venue": "Atrium Showroom at Luxor",
@@ -755,8 +755,8 @@
       "notes": "Carrot Top returns for the October 19, 2026, 8 PM welcome-back performance at Luxor after an extended dark period. Remains an active residency; consult venue ticketing for date exceptions.",
       "spotlight": {
         "name": "Carrot Top",
-        "our_price": 68,
-        "regular_price": null,
+        "our_price": 62,
+        "regular_price": 68,
         "location": "Atrium Showroom at Luxor",
         "runtime_minutes": 75,
         "age_rule": "Must be 16 years of age or older. Guests 18 years of age and under must be accompanied by an adult 21+.",
@@ -795,18 +795,18 @@
         "affiliate_url": "https://spotlight.vegas/shows/comedy/carrot-top/ref/vegassidekick",
         "age_label": "16+"
       },
-      "savings_amount": null,
-      "savings_percent": null,
-      "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "savings_amount": 6,
+      "savings_percent": 9,
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "chippendales",
       "name": "Chippendales",
       "category": "adult",
       "status": "active",
-      "our_price": 76,
-      "regular_price": 87,
+      "our_price": 49,
+      "regular_price": 76,
       "runtime_minutes": 90,
       "age_summary": "18+",
       "venue": "Chippendales Theatre - Planet Hollywood",
@@ -821,8 +821,8 @@
       "notes": "",
       "spotlight": {
         "name": "Chippendales Las Vegas",
-        "our_price": 76,
-        "regular_price": 87,
+        "our_price": 49,
+        "regular_price": 76,
         "location": "Chippendales Theatre - Planet Hollywood",
         "runtime_minutes": 90,
         "age_rule": "Must be 18 years of age or older.",
@@ -863,17 +863,17 @@
         "affiliate_url": "https://spotlight.vegas/shows/adult/chippendales/ref/vegassidekick",
         "age_label": "18+"
       },
-      "savings_amount": 11,
-      "savings_percent": 13,
+      "savings_amount": 27,
+      "savings_percent": 36,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "colin-cloud",
       "name": "Colin Cloud: Mastermind",
       "category": "magic",
       "status": "active",
-      "our_price": 57,
+      "our_price": 51,
       "regular_price": 75,
       "runtime_minutes": 90,
       "age_summary": "10+",
@@ -889,7 +889,7 @@
       "notes": "Regular weekly schedule confirmed by site owner 2026-10-31; temporary date exceptions are handled by ticket checkout.",
       "spotlight": {
         "name": "Colin Cloud Mastermind",
-        "our_price": 57,
+        "our_price": 51,
         "regular_price": 75,
         "location": "Harrah's Cabaret - Harrah’s Las Vegas",
         "runtime_minutes": 90,
@@ -925,10 +925,10 @@
         "affiliate_url": "https://spotlight.vegas/shows/magic/colin-cloud/ref/vegassidekick",
         "age_label": "10+"
       },
-      "savings_amount": 18,
-      "savings_percent": 24,
+      "savings_amount": 24,
+      "savings_percent": 32,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "comedy-cellar",
@@ -1136,8 +1136,8 @@
       "name": "Fantasy",
       "category": "adult",
       "status": "active",
-      "our_price": 47,
-      "regular_price": null,
+      "our_price": 38,
+      "regular_price": 47,
       "runtime_minutes": 75,
       "age_summary": "18+",
       "venue": "Atrium Theater - Luxor Hotel",
@@ -1152,8 +1152,8 @@
       "notes": "",
       "spotlight": {
         "name": "Fantasy Las Vegas",
-        "our_price": 47,
-        "regular_price": null,
+        "our_price": 38,
+        "regular_price": 47,
         "location": "Atrium Showroom at Luxor",
         "runtime_minutes": 75,
         "age_rule": "All guests must be 18 years of age or older. No children allowed.",
@@ -1203,18 +1203,18 @@
         "affiliate_url": "https://spotlight.vegas/shows/adult/fantasy/ref/vegassidekick",
         "age_label": "18+"
       },
-      "savings_amount": null,
-      "savings_percent": null,
-      "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "savings_amount": 9,
+      "savings_percent": 19,
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "ikons-of-rock",
       "name": "Ikons of Rock",
       "category": "music",
       "status": "active",
-      "our_price": 62,
-      "regular_price": 74,
+      "our_price": 70,
+      "regular_price": null,
       "runtime_minutes": 70,
       "age_summary": "5+",
       "venue": "The STRAT Theater",
@@ -1229,8 +1229,8 @@
       "notes": "",
       "spotlight": {
         "name": "Ikons of Rock",
-        "our_price": 62,
-        "regular_price": 74,
+        "our_price": 70,
+        "regular_price": null,
         "location": "The STRAT Theater",
         "runtime_minutes": 70,
         "age_rule": "Ages 5+. Ages 5-17 must be accompanied by adult 21 or older.",
@@ -1269,17 +1269,17 @@
         "affiliate_url": "https://spotlight.vegas/shows/tribute/ikons-of-rock/ref/vegassidekick",
         "age_label": "5+"
       },
-      "savings_amount": 12,
-      "savings_percent": 16,
-      "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "jabbawockeez",
       "name": "Jabbawockeez",
       "category": "music",
       "status": "active",
-      "our_price": 80,
+      "our_price": 76,
       "regular_price": 92,
       "runtime_minutes": 75,
       "age_summary": "All ages",
@@ -1295,7 +1295,7 @@
       "notes": "",
       "spotlight": {
         "name": "Jabbawockeez",
-        "our_price": 80,
+        "our_price": 76,
         "regular_price": 92,
         "location": "Jabbawockeez Theater - MGM Grand",
         "runtime_minutes": 75,
@@ -1341,17 +1341,17 @@
         "affiliate_url": "https://spotlight.vegas/shows/production/jabbawockeez/ref/vegassidekick",
         "age_label": "All ages"
       },
-      "savings_amount": 12,
-      "savings_percent": 13,
+      "savings_amount": 16,
+      "savings_percent": 17,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "jimmy-kimmels-comedy-club",
       "name": "Jimmy Kimmel's Comedy Club",
       "category": "comedy",
       "status": "active",
-      "our_price": 22,
+      "our_price": 26,
       "regular_price": null,
       "runtime_minutes": 75,
       "age_summary": "18+",
@@ -1367,7 +1367,7 @@
       "notes": "",
       "spotlight": {
         "name": "Jimmy Kimmel's Comedy Club",
-        "our_price": 22,
+        "our_price": 26,
         "regular_price": null,
         "location": "Jimmy Kimmel Comedy Club - The LINQ Promenade",
         "runtime_minutes": 75,
@@ -1386,7 +1386,7 @@
       "savings_amount": null,
       "savings_percent": null,
       "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "king-of-diamonds",
@@ -1451,8 +1451,8 @@
       "name": "KÀ by Cirque du Soleil",
       "category": "cirque",
       "status": "active",
-      "our_price": 80,
-      "regular_price": null,
+      "our_price": 70,
+      "regular_price": 91,
       "runtime_minutes": 90,
       "age_summary": "3+",
       "venue": "KÀ Theatre – MGM Grand",
@@ -1467,8 +1467,8 @@
       "notes": "Spotlight product page and current Cirque category list $80 without verified regular comparison; remove savings claim.",
       "spotlight": {
         "name": "KÀ by Cirque du Soleil",
-        "our_price": 80,
-        "regular_price": null,
+        "our_price": 70,
+        "regular_price": 91,
         "location": "KÀ Theatre – MGM Grand",
         "runtime_minutes": 90,
         "age_rule": "Everyone must be 3 years of age or older to attend the event. Guests under the age of 18 must be accompanied by an adult.",
@@ -1508,18 +1508,18 @@
         "affiliate_url": "https://spotlight.vegas/shows/cirque-du-soleil/ka/ref/vegassidekick",
         "age_label": "3+"
       },
-      "savings_amount": null,
-      "savings_percent": null,
-      "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "savings_amount": 21,
+      "savings_percent": 23,
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "la-comedy-club",
       "name": "LA Comedy Club Las Vegas",
       "category": "comedy",
       "status": "active",
-      "our_price": 35,
-      "regular_price": 59,
+      "our_price": 45,
+      "regular_price": null,
       "runtime_minutes": 75,
       "age_summary": "15+",
       "venue": "Dragon Room - The STRAT",
@@ -1534,8 +1534,8 @@
       "notes": "",
       "spotlight": {
         "name": "LA Comedy Club",
-        "our_price": 35,
-        "regular_price": 59,
+        "our_price": 45,
+        "regular_price": null,
         "location": "Dragon Room - The STRAT",
         "runtime_minutes": 75,
         "age_rule": "Ages 15+ - Ages 15-17 must be accompanied by a guardian.",
@@ -1553,10 +1553,10 @@
         "affiliate_url": "https://spotlight.vegas/shows/comedy/la-comedy-club/ref/vegassidekick",
         "age_label": "15+"
       },
-      "savings_amount": 24,
-      "savings_percent": 41,
-      "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "las-vegas-live-comedy-club",
@@ -1710,7 +1710,7 @@
       "name": "Mac King Comedy Magic",
       "category": "magic",
       "status": "active",
-      "our_price": 50,
+      "our_price": 43,
       "regular_price": 61,
       "runtime_minutes": 70,
       "age_summary": "5+",
@@ -1726,7 +1726,7 @@
       "notes": "",
       "spotlight": {
         "name": "Mac King",
-        "our_price": 50,
+        "our_price": 43,
         "regular_price": 61,
         "location": "Thunderland Theater- Excalibur",
         "runtime_minutes": 70,
@@ -1762,17 +1762,17 @@
         "affiliate_url": "https://spotlight.vegas/shows/magic/mac-king/ref/vegassidekick",
         "age_label": "5+"
       },
-      "savings_amount": 11,
-      "savings_percent": 18,
+      "savings_amount": 18,
+      "savings_percent": 30,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "magic-mike-live",
       "name": "Magic Mike Live",
       "category": "adult",
       "status": "active",
-      "our_price": 69,
+      "our_price": 47,
       "regular_price": 87,
       "runtime_minutes": 90,
       "age_summary": "All guests must be at least 18 years old to attend the show ",
@@ -1788,7 +1788,7 @@
       "notes": "Spotlight product page from $69, regular $87 (2026-10-09).",
       "spotlight": {
         "name": "Magic Mike Las Vegas",
-        "our_price": 69,
+        "our_price": 47,
         "regular_price": 87,
         "location": "MAGIC MIKE LIVE Theater - SAHARA Las Vegas",
         "runtime_minutes": 90,
@@ -1804,10 +1804,10 @@
         "affiliate_url": "https://spotlight.vegas/shows/adult/magic-mike-live/ref/vegassidekick",
         "age_label": "All guests must be at least 18 years old to attend the show "
       },
-      "savings_amount": 18,
-      "savings_percent": 21,
+      "savings_amount": 40,
+      "savings_percent": 46,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "marc-savard-comedy-hypnosis",
@@ -2188,8 +2188,8 @@
       "name": "Mystère by Cirque du Soleil",
       "category": "cirque",
       "status": "active",
-      "our_price": 67,
-      "regular_price": null,
+      "our_price": 55,
+      "regular_price": 67,
       "runtime_minutes": 90,
       "age_summary": "All ages",
       "venue": "Mystère Theatre – TI Hotel",
@@ -2204,8 +2204,8 @@
       "notes": "",
       "spotlight": {
         "name": "Mystere by Cirque du Soleil",
-        "our_price": 67,
-        "regular_price": null,
+        "our_price": 55,
+        "regular_price": 67,
         "location": "Mystère Theatre – TI Hotel",
         "runtime_minutes": 90,
         "age_rule": "No age restrictions",
@@ -2245,10 +2245,10 @@
         "affiliate_url": "https://spotlight.vegas/shows/cirque-du-soleil/mystere/ref/vegassidekick",
         "age_label": "All ages"
       },
-      "savings_amount": null,
-      "savings_percent": null,
-      "is_deal": false,
-      "price_source_last_checked_on": "2026-11-10"
+      "savings_amount": 12,
+      "savings_percent": 18,
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "nathan-burton-comedy-magic",
@@ -2328,8 +2328,8 @@
       "name": "Now You See Me LIVE",
       "category": "magic",
       "status": "active",
-      "our_price": 72,
-      "regular_price": null,
+      "our_price": 58,
+      "regular_price": 72,
       "runtime_minutes": 120,
       "age_summary": "5+",
       "venue": "MGM Grand Theater - MGM Grand",
@@ -2344,8 +2344,8 @@
       "notes": "",
       "spotlight": {
         "name": "Now You See Me Live Las Vegas",
-        "our_price": 72,
-        "regular_price": null,
+        "our_price": 58,
+        "regular_price": 72,
         "location": "MGM Grand Theater - MGM Grand",
         "runtime_minutes": 120,
         "age_rule": "Guest must be 5 years of age or older to attend. Under eighteen 18 years of age must be accompanied by an adult.",
@@ -2360,10 +2360,10 @@
         "affiliate_url": "https://spotlight.vegas/shows/magic/now-you-see-me-live/ref/vegassidekick",
         "age_label": "5+"
       },
-      "savings_amount": null,
-      "savings_percent": null,
-      "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "savings_amount": 14,
+      "savings_percent": 19,
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "o",
@@ -2495,7 +2495,7 @@
       "name": "Penn & Teller",
       "category": "magic",
       "status": "active",
-      "our_price": 66,
+      "our_price": 70,
       "regular_price": 107,
       "runtime_minutes": 90,
       "age_summary": "5+",
@@ -2511,7 +2511,7 @@
       "notes": "Schedule times intentionally treated as variable after Rio and Spotlight showed conflicting current start times on 2026-09-12. Keep Thu–Sun days; do not restore a fixed hour without re-verifying both sources.",
       "spotlight": {
         "name": "Penn & Teller Las Vegas",
-        "our_price": 66,
+        "our_price": 70,
         "regular_price": 107,
         "location": "Penn & Teller Theater - Rio Hotel",
         "runtime_minutes": 90,
@@ -2532,10 +2532,10 @@
         "affiliate_url": "https://spotlight.vegas/shows/magic/penn-and-teller/ref/vegassidekick",
         "age_label": "5+"
       },
-      "savings_amount": 41,
-      "savings_percent": 38,
+      "savings_amount": 37,
+      "savings_percent": 35,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "piano-man",
@@ -2612,7 +2612,7 @@
       "name": "Piff The Magic Dragon",
       "category": "magic",
       "status": "active",
-      "our_price": 45,
+      "our_price": 42,
       "regular_price": 70,
       "runtime_minutes": 75,
       "age_summary": "8+",
@@ -2628,7 +2628,7 @@
       "notes": "",
       "spotlight": {
         "name": "Piff The Magic Dragon",
-        "our_price": 45,
+        "our_price": 42,
         "regular_price": 70,
         "location": "Flamingo Showroom – Flamingo",
         "runtime_minutes": 75,
@@ -2668,10 +2668,10 @@
         "affiliate_url": "https://spotlight.vegas/shows/magic/piff-the-magic-dragon/ref/vegassidekick",
         "age_label": "8+"
       },
-      "savings_amount": 25,
-      "savings_percent": 36,
+      "savings_amount": 28,
+      "savings_percent": 40,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "popovich-comedy-pet-theater",
@@ -2848,8 +2848,8 @@
       "name": "Rouge",
       "category": "adult",
       "status": "active",
-      "our_price": 54,
-      "regular_price": 86,
+      "our_price": 48,
+      "regular_price": null,
       "runtime_minutes": 85,
       "age_summary": "18+",
       "venue": "The STRAT Theater",
@@ -2864,8 +2864,8 @@
       "notes": "Regular weekly schedule confirmed by site owner 2026-10-31; temporary date exceptions are handled by ticket checkout.",
       "spotlight": {
         "name": "Rouge Las Vegas",
-        "our_price": 54,
-        "regular_price": 86,
+        "our_price": 48,
+        "regular_price": null,
         "location": "The STRAT Theater",
         "runtime_minutes": 85,
         "age_rule": "Must be 18 years of age or older",
@@ -2904,18 +2904,18 @@
         "affiliate_url": "https://spotlight.vegas/shows/adult/rouge/ref/vegassidekick",
         "age_label": "18+"
       },
-      "savings_amount": 32,
-      "savings_percent": 37,
-      "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "rupauls-drag-race-live",
       "name": "RuPaul's Drag Race LIVE!",
       "category": "music",
       "status": "active",
-      "our_price": 80,
-      "regular_price": null,
+      "our_price": 74,
+      "regular_price": 102,
       "runtime_minutes": 90,
       "age_summary": "All ages",
       "venue": "Flamingo Showroom - Flamingo",
@@ -2930,8 +2930,8 @@
       "notes": "Spotlight product page from $55, regular $82 (2026-10-09).",
       "spotlight": {
         "name": "RuPaul's Drag Race LIVE!",
-        "our_price": 80,
-        "regular_price": null,
+        "our_price": 74,
+        "regular_price": 102,
         "location": "Flamingo Showroom - Flamingo",
         "runtime_minutes": 90,
         "age_rule": "No age restrictions",
@@ -2967,10 +2967,10 @@
         "affiliate_url": "https://spotlight.vegas/shows/production/rupauls-drag-race-live/ref/vegassidekick",
         "age_label": "All ages"
       },
-      "savings_amount": null,
-      "savings_percent": null,
-      "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "savings_amount": 28,
+      "savings_percent": 27,
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "shin-lim",
@@ -3156,7 +3156,7 @@
       "name": "Steve Falcon's Comedy Hypnosis Hour",
       "category": "comedy",
       "status": "active",
-      "our_price": 61,
+      "our_price": 45,
       "regular_price": 72,
       "runtime_minutes": 85,
       "age_summary": "16+. Guests under 18 must be accompanied by an adult.",
@@ -3172,7 +3172,7 @@
       "notes": "",
       "spotlight": {
         "name": "Steve Falcon Las Vegas",
-        "our_price": 61,
+        "our_price": 45,
         "regular_price": 72,
         "location": "The Underground Theater - MGM Grand",
         "runtime_minutes": 85,
@@ -3216,17 +3216,17 @@
         "affiliate_url": "https://spotlight.vegas/shows/comedy/steve-falcons-comedy-hypnosis-hour/ref/vegassidekick",
         "age_label": "16+"
       },
-      "savings_amount": 11,
-      "savings_percent": 15,
+      "savings_amount": 27,
+      "savings_percent": 38,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "tape-face",
       "name": "Tape Face",
       "category": "comedy",
       "status": "active",
-      "our_price": 57,
+      "our_price": 45,
       "regular_price": 71,
       "runtime_minutes": 75,
       "age_summary": "All ages",
@@ -3242,7 +3242,7 @@
       "notes": "Spotlight product and current category show $57 compared with $71; reserve large green banner for $20+ only.",
       "spotlight": {
         "name": "Tape Face Las Vegas",
-        "our_price": 57,
+        "our_price": 45,
         "regular_price": 71,
         "location": "The Underground Theater - MGM Grand",
         "runtime_minutes": 75,
@@ -3282,10 +3282,10 @@
         "affiliate_url": "https://spotlight.vegas/shows/comedy/tape-face/ref/vegassidekick",
         "age_label": "All ages"
       },
-      "savings_amount": 14,
-      "savings_percent": 20,
+      "savings_amount": 26,
+      "savings_percent": 37,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "australian-bee-gees",
@@ -3420,7 +3420,7 @@
       "name": "The Empire Strips Back — A Burlesque Parody",
       "category": "adult",
       "status": "active",
-      "our_price": 35,
+      "our_price": 39,
       "regular_price": 43,
       "runtime_minutes": 120,
       "age_summary": "18+",
@@ -3436,7 +3436,7 @@
       "notes": "Regular weekly schedule confirmed by site owner 2026-10-31; temporary date exceptions are handled by ticket checkout.",
       "spotlight": {
         "name": "The Empire Strips Back",
-        "our_price": 35,
+        "our_price": 39,
         "regular_price": 43,
         "location": "Empire Strips Back Theater - Rio Hotel",
         "runtime_minutes": 120,
@@ -3482,10 +3482,10 @@
         "affiliate_url": "https://spotlight.vegas/shows/burlesque/empire-strips-back/ref/vegassidekick",
         "age_label": "18+"
       },
-      "savings_amount": 8,
-      "savings_percent": 19,
-      "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false,
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "the-king-comes-home",
@@ -3726,7 +3726,7 @@
       "name": "Thunder From Down Under",
       "category": "adult",
       "status": "active",
-      "our_price": 70,
+      "our_price": 49,
       "regular_price": 71,
       "runtime_minutes": 70,
       "age_summary": "18+",
@@ -3742,7 +3742,7 @@
       "notes": "Spotlight product page from $70, regular $71 (2026-10-09). $1 difference below $5 deal threshold; no customer-facing savings claim.",
       "spotlight": {
         "name": "Thunder From Down Under",
-        "our_price": 70,
+        "our_price": 49,
         "regular_price": 71,
         "location": "Thunderland Theater – Excalibur Hotel",
         "runtime_minutes": 70,
@@ -3786,17 +3786,17 @@
         "affiliate_url": "https://spotlight.vegas/shows/adult/thunder-from-down-under/ref/vegassidekick",
         "age_label": "18+"
       },
-      "savings_amount": null,
-      "savings_percent": null,
-      "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "savings_amount": 22,
+      "savings_percent": 31,
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "tournament-of-kings",
       "name": "Tournament of Kings",
       "category": "family",
       "status": "active",
-      "our_price": 78,
+      "our_price": 68,
       "regular_price": 88,
       "runtime_minutes": 75,
       "age_summary": "All ages",
@@ -3812,7 +3812,7 @@
       "notes": "",
       "spotlight": {
         "name": "Tournament of Kings",
-        "our_price": 78,
+        "our_price": 68,
         "regular_price": 88,
         "location": "King Arthur’s Arena – Excalibur Hotel",
         "runtime_minutes": 75,
@@ -3853,10 +3853,10 @@
         "affiliate_url": "https://spotlight.vegas/shows/production/tournament-of-kings/ref/vegassidekick",
         "age_label": "All ages"
       },
-      "savings_amount": 10,
-      "savings_percent": 11,
+      "savings_amount": 20,
+      "savings_percent": 23,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "v-the-ultimate-variety-show",
@@ -4050,7 +4050,7 @@
       "name": "Wayne Newton: Up Close and Personal",
       "category": "music",
       "status": "active",
-      "our_price": 84,
+      "our_price": 66,
       "regular_price": 121,
       "runtime_minutes": 80,
       "age_summary": "5+",
@@ -4066,7 +4066,7 @@
       "notes": "",
       "spotlight": {
         "name": "Wayne Newton Las Vegas",
-        "our_price": 84,
+        "our_price": 66,
         "regular_price": 121,
         "location": "Bugsys Cabaret - Flamingo Hotel",
         "runtime_minutes": 80,
@@ -4094,10 +4094,10 @@
         "affiliate_url": "https://spotlight.vegas/shows/music/wayne-newton/ref/vegassidekick",
         "age_label": "5+"
       },
-      "savings_amount": 37,
-      "savings_percent": 31,
+      "savings_amount": 55,
+      "savings_percent": 45,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "wow-the-vegas-spectacular",
@@ -4165,7 +4165,7 @@
       "name": "X Burlesque",
       "category": "adult",
       "status": "active",
-      "our_price": 82,
+      "our_price": 76,
       "regular_price": 90,
       "runtime_minutes": 75,
       "age_summary": "18+",
@@ -4181,7 +4181,7 @@
       "notes": "",
       "spotlight": {
         "name": "X Burlesque",
-        "our_price": 82,
+        "our_price": 76,
         "regular_price": 90,
         "location": "Bugsy's Cabaret - Flamingo Hotel",
         "runtime_minutes": 75,
@@ -4223,17 +4223,17 @@
         "affiliate_url": "https://spotlight.vegas/shows/adult/x-burlesque/ref/vegassidekick",
         "age_label": "18+"
       },
-      "savings_amount": 8,
-      "savings_percent": 9,
+      "savings_amount": 14,
+      "savings_percent": 16,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "x-country",
       "name": "X Country",
       "category": "adult",
       "status": "active",
-      "our_price": 65,
+      "our_price": 57,
       "regular_price": 68,
       "runtime_minutes": 90,
       "age_summary": "18+",
@@ -4249,7 +4249,7 @@
       "notes": "",
       "spotlight": {
         "name": "X Country Las Vegas",
-        "our_price": 65,
+        "our_price": 57,
         "regular_price": 68,
         "location": "Harrah’s Cabaret – Harrah’s",
         "runtime_minutes": 90,
@@ -4285,18 +4285,18 @@
         "affiliate_url": "https://spotlight.vegas/shows/adult/x-country/ref/vegassidekick",
         "age_label": "18+"
       },
-      "savings_amount": null,
-      "savings_percent": null,
-      "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "savings_amount": 11,
+      "savings_percent": 16,
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "x-rocks",
       "name": "X Rocks",
       "category": "adult",
       "status": "active",
-      "our_price": 66,
-      "regular_price": null,
+      "our_price": 47,
+      "regular_price": 66,
       "runtime_minutes": 70,
       "age_summary": "18+",
       "venue": "X Rocks Theatre - Horseshoe Las Vegas",
@@ -4311,8 +4311,8 @@
       "notes": "",
       "spotlight": {
         "name": "X Rocks",
-        "our_price": 66,
-        "regular_price": null,
+        "our_price": 47,
+        "regular_price": 66,
         "location": "X Rocks Theatre - Horseshoe Las Vegas",
         "runtime_minutes": 70,
         "age_rule": "Must be 18 years of age or older. Everyone must have a ticket to enter the event.",
@@ -4339,10 +4339,10 @@
         "affiliate_url": "https://spotlight.vegas/shows/adult/x-rocks/ref/vegassidekick",
         "age_label": "18+"
       },
-      "savings_amount": null,
-      "savings_percent": null,
-      "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "savings_amount": 19,
+      "savings_percent": 29,
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "zombie-burlesque",

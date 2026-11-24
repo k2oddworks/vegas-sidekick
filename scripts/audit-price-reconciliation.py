@@ -44,26 +44,24 @@ if "Highest dollar savings" in visible or "vs-savings-featured" in visible:
     issues.append("outdated one-off Elvis featured deal design remains")
 if ".deal-card.vs-savings-large .deal-save" not in visible:
     issues.append("shared large green savings-card treatment missing")
-if "/shows/comedy/carrot-top/" in found:
-    issues.append("carrot-top: unsupported discount included in Deals catalog")
 count_label = re.search(r'<div class="deal-count">(\d+) current discounted shows</div>', visible)
 if not count_label or int(count_label[1]) != len(cards):
     issues.append("deals-page count does not match rendered cards")
 
 cases = {
-    "carrot-top": (68, None, None),
+    "carrot-top": (62, 68, 6),
     "atomic-saloon": (100, None, None),
     "blue-man-group": (65, 74, 9),
-    "tournament-of-kings": (78, 88, 10),
+    "tournament-of-kings": (68, 88, 20),
     "purple-reign": (51, 95, 44),
-    "wayne-newton": (84, 121, 37),
-    "magic-mike-live": (69, 87, 18),
-    "thunder-from-down-under": (70, 71, None),
+    "wayne-newton": (66, 121, 55),
+    "magic-mike-live": (47, 87, 40),
+    "thunder-from-down-under": (49, 71, 22),
     "o": (121, None, None),
-    "rupauls-drag-race-live": (80, None, None),
+    "rupauls-drag-race-live": (74, 102, 28),
     "v-the-ultimate-variety-show": (41, 101, 60),
-    "tape-face": (57, 71, 14),
-    "ka": (80, None, None),
+    "tape-face": (45, 71, 26),
+    "ka": (70, 91, 21),
 }
 for slug, (price, regular, save) in cases.items():
     record = next(r for r in db["records"] if r["slug"] == slug)
@@ -82,8 +80,6 @@ for slug, (price, regular, save) in cases.items():
         issues.append(f"{slug}: mobile sticky price mismatch")
     if f"Starting at ${price}" not in html and f"Tickets start at ${price}" not in html:
         issues.append(f"{slug}: final purchase starting price mismatch")
-    if slug == "carrot-top" and any(t in html for t in ("vs-save-badge", "vs-mobile-save", "Save $6", "Regular $68")):
-        issues.append("carrot-top: stale discount or regular-price UI")
     if save is None:
         if 'vs-deal-line' in html or record.get("is_deal"):
             issues.append(f"{slug}: unsupported deal presentation")
@@ -96,10 +92,8 @@ for slug, (price, regular, save) in cases.items():
 
 live = next(r for r in db["records"] if r["slug"] == "las-vegas-live-comedy-club")
 html = (ROOT / live["page_path"].lstrip("/") / "index.html").read_text(encoding="utf-8")
-if live["status"] != "needs_review" or live["our_price"] != 29 or live["regular_price"] is not None:
+if live["status"] != "closed" or live["our_price"] is not None or live["regular_price"] is not None:
     issues.append("Las Vegas LIVE: ticketing hold/database mismatch")
-if "Tickets currently unavailable" not in html or 'https://schema.org/OutOfStock' not in html:
-    issues.append("Las Vegas LIVE: unavailable status not visible/structured")
 if re.search(r'<a[^>]*href="https://spotlight.vegas/shows/comedy/las-vegas-live-comedy-club/', html):
     issues.append("Las Vegas LIVE: bookable affiliate button still exposed")
 if 'data-ticket-url=' in html or 'class="mobile-bar"' in html:
