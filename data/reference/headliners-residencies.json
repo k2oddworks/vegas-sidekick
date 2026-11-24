@@ -821,7 +821,8 @@
       "type": "Headliner",
       "official_url": "https://www.palms.com/entertainment/pearl-theater",
       "dates": [
-        "2026-10-31"
+        "2026-10-31",
+        "2027-01-17"
       ],
       "sources": [
         "https://www.palms.com/entertainment/pearl-theater/jodeci",
@@ -1106,7 +1107,11 @@
       "official_url": "https://www.palms.com/entertainment/pearl-theater/babyface-live-in-las-vegas-2026",
       "dates": [
         "2026-11-13",
-        "2026-11-14"
+        "2026-11-14",
+        "2027-02-12",
+        "2027-02-13",
+        "2027-05-07",
+        "2027-05-08"
       ],
       "sources": [
         "https://www.palms.com/entertainment/pearl-theater/babyface-live-in-las-vegas-2026",
@@ -1715,12 +1720,20 @@
         "2027-01-21",
         "2027-01-22",
         "2027-01-23",
-        "2027-01-24"
+        "2027-01-24",
+        "2027-02-24",
+        "2027-02-25",
+        "2027-02-26",
+        "2027-02-27",
+        "2027-03-31",
+        "2027-04-01",
+        "2027-04-02",
+        "2027-04-03"
       ],
       "sources": [
         "https://www.wynnlasvegas.com/entertainment/upcoming-shows/nate-bargatze"
       ],
-      "notes": "December 12, 2026 and January 23, 2027 have two performances each (7:30 PM and 10:30 PM); other listed dates are 8 PM. January run includes five performances across four dates."
+      "notes": "December 12, 2026 and January 23, 2027 have two performances each; see official listing for current showtimes."
     },
     {
       "act": "Victoria Monét",
@@ -3221,6 +3234,102 @@
       ],
       "sources": [
         "https://www.venetianlasvegas.com/entertainment.html"
+      ]
+    },
+    {
+      "act": "U2 — The Greatest Show On Earth World Tour",
+      "venue_id": "allegiant-stadium",
+      "type": "Headliner",
+      "official_url": "https://www.allegiantstadium.com/events/category/concerts",
+      "dates": [
+        "2027-10-09"
+      ],
+      "sources": [
+        "https://www.allegiantstadium.com/events/category/concerts"
+      ]
+    },
+    {
+      "act": "Cody Jinks & The Tonedeaf Hippies",
+      "venue_id": "bleaulive-theater",
+      "type": "Headliner",
+      "official_url": "https://www.fontainebleaulasvegas.com/entertainment/",
+      "dates": [
+        "2027-04-25"
+      ],
+      "sources": [
+        "https://www.fontainebleaulasvegas.com/entertainment/"
+      ]
+    },
+    {
+      "act": "95.5 The Bull Santa Jam",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-12-06"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Midland",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2026-12-10"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Flo Rida",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2027-01-01"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Mike Epps",
+      "venue_id": "palms-pearl",
+      "type": "Comedy headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2027-01-16"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Johnny Gill",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2027-02-05"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Diana Krall",
+      "venue_id": "palms-pearl",
+      "type": "Headliner",
+      "official_url": "https://www.palms.com/entertainment/pearl-theater",
+      "dates": [
+        "2027-02-06"
+      ],
+      "sources": [
+        "https://www.palms.com/entertainment/pearl-theater"
       ]
     }
   ],
