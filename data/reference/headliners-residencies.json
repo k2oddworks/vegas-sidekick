@@ -1916,13 +1916,15 @@
       "dates": [
         "2026-12-26",
         "2026-12-27",
+        "2026-12-29",
         "2026-12-31",
         "2027-01-01",
         "2027-01-02"
       ],
       "sources": [
         "https://sphere.backstreetboys.com/",
-        "https://www.thesphere.com/shows/backstreet-boys"
+        "https://www.thesphere.com/shows/backstreet-boys",
+        "https://backstreetboys.com/news/backstreet-boys-add-one-more-new-date-for-the-into-the-millennium-sphere-residency/"
       ]
     },
     {
@@ -2946,11 +2948,21 @@
         "2027-10-09",
         "2027-10-27",
         "2027-10-29",
-        "2027-10-30"
+        "2027-10-30",
+        "2027-11-03",
+        "2027-11-05",
+        "2027-11-06",
+        "2028-01-19",
+        "2028-01-21",
+        "2028-01-22",
+        "2028-01-26",
+        "2028-01-28",
+        "2028-01-29"
       ],
       "sources": [
         "https://www.venetianlasvegas.com/media/news-releases/2026/11-09-pink-announces-2027-residency-at-sphere-in-las-vegas.html",
-        "https://www.thesphere.com/shows/pink"
+        "https://www.thesphere.com/shows/pink",
+        "https://www.sphereentertainmentco.com/pnk-extends-sphere-residency-into-2028-due-to-overwhelming-demand/"
       ]
     },
     {
@@ -2963,6 +2975,92 @@
       ],
       "sources": [
         "https://newsroom.caesars.com/press-releases/press-release-details/2026/Jo-Koy-Announces-Return-to-The-Colosseum-at-Caesars-Palace-February-13-2027-2026-jksHUw_G-5/default.aspx"
+      ]
+    },
+    {
+      "act": "Brandy & Monica — The Boy Is Mine",
+      "venue_id": "resorts-world-theatre",
+      "type": "Residency",
+      "official_url": "https://www.rwlasvegas.com/entertainment/the-boy-is-mine-residency/",
+      "dates": [
+        "2027-05-29",
+        "2027-05-30",
+        "2027-06-02",
+        "2027-06-04",
+        "2027-06-05",
+        "2027-07-09",
+        "2027-07-10",
+        "2027-07-14",
+        "2027-07-16",
+        "2027-07-17"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/the-boy-is-mine-residency/",
+        "https://www.monica.com/the-boy-is-mine-2027-vegas-residency/"
+      ]
+    },
+    {
+      "act": "Zach Bryan",
+      "venue_id": "allegiant-stadium",
+      "type": "Headliner",
+      "official_url": "https://www.allegiantstadium.com/events/detail/zach-bryan-27",
+      "dates": [
+        "2027-07-16"
+      ],
+      "sources": [
+        "https://www.allegiantstadium.com/events/detail/zach-bryan-27"
+      ]
+    },
+    {
+      "act": "Nate Jackson",
+      "venue_id": "encore-theater-wynn",
+      "type": "Comedy headliner",
+      "official_url": "https://www.ticketmaster.com/search?q=Nate+Jackson+Las+Vegas",
+      "dates": [
+        "2027-07-16",
+        "2027-07-17"
+      ],
+      "sources": [
+        "https://www.ticketmaster.com/nate-jackson-miracle-baby-las-vegas-07-16-2027/event/17006570DDABC61E",
+        "https://www.ticketmaster.com/nate-jackson-miracle-baby-las-vegas-nevada-07-17-2027/event/17006570DDB1C631"
+      ]
+    },
+    {
+      "act": "David Foster & Katharine McPhee",
+      "venue_id": "encore-theater-wynn",
+      "type": "Headliner",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/david-foster-and-katharine-mcphee",
+      "dates": [
+        "2027-03-05",
+        "2027-03-06"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/david-foster-and-katharine-mcphee"
+      ]
+    },
+    {
+      "act": "Jack Johnson",
+      "venue_id": "encore-theater-wynn",
+      "type": "Headliner",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/jack-johnson",
+      "dates": [
+        "2027-06-02",
+        "2027-06-03"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/jack-johnson"
+      ]
+    },
+    {
+      "act": "The Offspring",
+      "venue_id": "venetian-theatre",
+      "type": "Headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment/the-offspring.html",
+      "dates": [
+        "2026-12-31"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment/the-offspring.html"
       ]
     }
   ],
