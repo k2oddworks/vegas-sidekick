@@ -747,7 +747,8 @@
       "type": "Headliner",
       "official_url": "https://virginhotelslv.com/venue/the-theater/",
       "dates": [
-        "2026-10-30"
+        "2026-10-30",
+        "2027-03-26"
       ],
       "sources": [
         "https://virginhotelslv.com/venue/the-theater/"
@@ -1971,15 +1972,14 @@
       "type": "Comedy headliner",
       "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/max-amini",
       "dates": [
-        "2026-12-26",
-        "2026-12-27",
         "2027-02-19",
         "2027-02-20"
       ],
       "sources": [
         "https://www.wynnlasvegas.com/entertainment/upcoming-shows/max-amini",
         "https://www.wynnlasvegas.com/entertainment/upcoming-shows"
-      ]
+      ],
+      "notes": "December 26–27, 2026 performances rescheduled to February 19–20, 2027; checked November 24, 2026 against Wynn's event calendar."
     },
     {
       "act": "Derek Hough — Dance for the Holidays",
@@ -2310,7 +2310,9 @@
       "sources": [
         "https://virginhotelslv.com/venue/the-theater/",
         "https://virginhotelslv.com/event/brincos-dieras/"
-      ]
+      ],
+      "status": "postponed",
+      "notes": "February 13, 2027 performance listed as postponed by AXS; checked November 24, 2026. Replacement date not confirmed."
     },
     {
       "act": "Heather McMahan",
@@ -3330,6 +3332,115 @@
       ],
       "sources": [
         "https://www.palms.com/entertainment/pearl-theater"
+      ]
+    },
+    {
+      "act": "Mojo Brookzz — Outta Pocket Tour",
+      "venue_id": "resorts-world-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/",
+      "dates": [
+        "2027-02-12"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/"
+      ]
+    },
+    {
+      "act": "We Them Ones Comedy Tour",
+      "venue_id": "resorts-world-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/",
+      "dates": [
+        "2027-04-02"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/"
+      ]
+    },
+    {
+      "act": "Los Tigres del Norte",
+      "venue_id": "resorts-world-theatre",
+      "type": "Headliner",
+      "official_url": "https://www.rwlasvegas.com/entertainment/",
+      "dates": [
+        "2027-09-11"
+      ],
+      "sources": [
+        "https://www.rwlasvegas.com/entertainment/"
+      ]
+    },
+    {
+      "act": "Legends of Gospel — Vegas Residency",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Limited residency",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2027-01-16",
+        "2027-01-17"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Uriah Heep",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2027-02-26"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Gregory Porter & Paul Taylor",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2027-03-20"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Bryce Crawford",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Special engagement",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2027-04-17"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "BeBe & CeCe Winans",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2027-04-30"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
+      ]
+    },
+    {
+      "act": "Jesse & Joy",
+      "venue_id": "the-theater-virgin-hotels",
+      "type": "Headliner",
+      "official_url": "https://virginhotelslv.com/venue/the-theater/",
+      "dates": [
+        "2027-09-17"
+      ],
+      "sources": [
+        "https://virginhotelslv.com/venue/the-theater/"
       ]
     }
   ],
