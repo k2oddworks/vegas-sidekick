@@ -80,7 +80,7 @@
       "savings_amount": null,
       "savings_percent": null,
       "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "all-motown",
@@ -142,7 +142,7 @@
       "savings_amount": 60,
       "savings_percent": 60,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "all-shook-up",
@@ -212,7 +212,7 @@
       "savings_amount": 68,
       "savings_percent": 59,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "allstars-of-magic",
@@ -266,7 +266,7 @@
       "savings_amount": 7,
       "savings_percent": 18,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "america-the-show",
@@ -316,7 +316,7 @@
       "savings_amount": 60,
       "savings_percent": 60,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "an-r-rated-magic-show",
@@ -374,7 +374,7 @@
       "savings_amount": null,
       "savings_percent": null,
       "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "atomic-saloon",
@@ -440,7 +440,7 @@
       "savings_amount": null,
       "savings_percent": null,
       "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "awakening",
@@ -570,7 +570,7 @@
       "savings_amount": null,
       "savings_percent": null,
       "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "barry-manilow",
@@ -612,7 +612,7 @@
       "savings_amount": null,
       "savings_percent": null,
       "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "blue-man-group",
@@ -690,7 +690,7 @@
       "savings_amount": 9,
       "savings_percent": 12,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "brad-garretts-comedy-club",
@@ -732,7 +732,7 @@
       "savings_amount": 7,
       "savings_percent": 14,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "carrot-top",
@@ -807,16 +807,16 @@
       "status": "active",
       "our_price": 49,
       "regular_price": 76,
-      "runtime_minutes": 90,
+      "runtime_minutes": 75,
       "age_summary": "18+",
       "venue": "Chippendales Theatre - Planet Hollywood",
       "showroom": "",
-      "schedule_summary": "Tue, Wed, Thu, Sun · 8 PM; Fri, Sat · 8 PM & 10 PM",
+      "schedule_summary": "Mon, Tue, Thu, Sun · 8 PM; Fri, Sat · 8 PM & 10 PM",
       "ticket_url": "https://spotlight.vegas/shows/adult/chippendales/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/adult/chippendales/",
-      "verified_on": "2026-09-08",
-      "freshness_label": "September 2026",
+      "verified_on": "2026-11-24",
+      "freshness_label": "November 2026",
       "verification": "verified_spotlight",
       "notes": "",
       "spotlight": {
@@ -824,14 +824,14 @@
         "our_price": 49,
         "regular_price": 76,
         "location": "Chippendales Theatre - Planet Hollywood",
-        "runtime_minutes": 90,
+        "runtime_minutes": 75,
         "age_rule": "Must be 18 years of age or older.",
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater. Additional Information The Chippendales Theater (previously Sin City Theater) is located on the Mezzanine level of the property, on the south side of the mezzanine, next to the wedding chapel.",
         "schedule_days": {
-          "Tuesday": [
+          "Monday": [
             "8 PM"
           ],
-          "Wednesday": [
+          "Tuesday": [
             "8 PM"
           ],
           "Thursday": [
@@ -849,15 +849,15 @@
             "8 PM"
           ]
         },
-        "schedule_summary": "Tue, Wed, Thu, Sun · 8 PM; Fri, Sat · 8 PM & 10 PM",
+        "schedule_summary": "Mon, Tue, Thu, Sun · 8 PM; Fri, Sat · 8 PM & 10 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Tuesday - 8:00pm",
-          "Wednesday - 8:00pm",
-          "Thursday - 8:00pm",
-          "Friday - 8:00pm & 10:00pm",
-          "Saturday - 8:00pm & 10:00pm",
-          "Sunday - 8:00pm"
+          "Monday – 8 PM",
+          "Tuesday – 8 PM",
+          "Thursday – 8 PM",
+          "Friday – 8 PM & 10 PM",
+          "Saturday – 8 PM & 10 PM",
+          "Sunday – 8 PM"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/adult/chippendales/",
         "affiliate_url": "https://spotlight.vegas/shows/adult/chippendales/ref/vegassidekick",
@@ -1005,7 +1005,7 @@
       "savings_amount": 6,
       "savings_percent": 14,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "criss-angel",
@@ -1067,7 +1067,7 @@
       "savings_amount": null,
       "savings_percent": null,
       "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "donny-osmond",
@@ -1129,7 +1129,7 @@
       "savings_amount": null,
       "savings_percent": null,
       "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "fantasy",
@@ -1444,7 +1444,7 @@
       "savings_amount": 60,
       "savings_percent": 60,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "ka",
@@ -1524,12 +1524,12 @@
       "age_summary": "15+",
       "venue": "Dragon Room - The STRAT",
       "showroom": "",
-      "schedule_summary": "Nightly · Happy Hour Variety Show – 6:00pm · Touring Comics – 8:00pm",
+      "schedule_summary": "Multiple shows nightly · 6 PM, 8 PM & 10 PM",
       "ticket_url": "https://spotlight.vegas/shows/comedy/la-comedy-club/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/comedy/la-comedy-club/",
-      "verified_on": "2026-10-09",
-      "freshness_label": "September 2026",
+      "verified_on": "2026-11-24",
+      "freshness_label": "November 2026",
       "verification": "verified_spotlight",
       "notes": "",
       "spotlight": {
@@ -1540,14 +1540,53 @@
         "runtime_minutes": 75,
         "age_rule": "Ages 15+ - Ages 15-17 must be accompanied by a guardian.",
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater.",
-        "schedule_days": {},
-        "schedule_summary": "Nightly · Happy Hour Variety Show – 6:00pm · Touring Comics – 8:00pm",
+        "schedule_days": {
+          "Monday": [
+            "6 PM",
+            "8 PM",
+            "10 PM"
+          ],
+          "Tuesday": [
+            "6 PM",
+            "8 PM",
+            "10 PM"
+          ],
+          "Wednesday": [
+            "6 PM",
+            "8 PM",
+            "10 PM"
+          ],
+          "Thursday": [
+            "6 PM",
+            "8 PM",
+            "10 PM"
+          ],
+          "Friday": [
+            "6 PM",
+            "8 PM",
+            "10 PM"
+          ],
+          "Saturday": [
+            "6 PM",
+            "8 PM",
+            "10 PM"
+          ],
+          "Sunday": [
+            "6 PM",
+            "8 PM",
+            "10 PM"
+          ]
+        },
+        "schedule_summary": "Multiple shows nightly · 6 PM, 8 PM & 10 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Nightly",
-          "Happy Hour Variety Show – 6:00pm",
-          "Touring Comics – 8:00pm",
-          "Bret Ernst (Tuesday/Wednesday) Butch Bradley (Thursday – Monday) – 10:00pm"
+          "Monday – 6 PM & 8 PM & 10 PM",
+          "Tuesday – 6 PM & 8 PM & 10 PM",
+          "Wednesday – 6 PM & 8 PM & 10 PM",
+          "Thursday – 6 PM & 8 PM & 10 PM",
+          "Friday – 6 PM & 8 PM & 10 PM",
+          "Saturday – 6 PM & 8 PM & 10 PM",
+          "Sunday – 6 PM & 8 PM & 10 PM"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/comedy/la-comedy-club/",
         "affiliate_url": "https://spotlight.vegas/shows/comedy/la-comedy-club/ref/vegassidekick",
@@ -1703,7 +1742,7 @@
       "savings_amount": null,
       "savings_percent": null,
       "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "mac-king",
@@ -1813,40 +1852,40 @@
       "slug": "marc-savard-comedy-hypnosis",
       "name": "Marc Savard Comedy Hypnosis",
       "category": "comedy",
-      "status": "active",
-      "our_price": 28,
-      "regular_price": 55,
+      "status": "closed",
+      "our_price": null,
+      "regular_price": null,
       "runtime_minutes": 70,
       "age_summary": "All ages",
       "venue": "Nathan Burton Theater - Showcase Mall",
       "showroom": "",
-      "schedule_summary": "Times vary · Check live calendar",
-      "ticket_url": "https://spotlight.vegas/shows/comedy/marc-savard-comedy-hypnosis/ref/vegassidekick",
+      "schedule_summary": "Closed",
+      "ticket_url": "",
       "official_trailer": "https://youtu.be/E0bECqHgo20",
       "page_path": "/shows/comedy/marc-savard-comedy-hypnosis/",
-      "verified_on": "2026-10-09",
-      "freshness_label": "September 2026",
-      "verification": "verified_spotlight",
-      "notes": "Schedule explicitly confirmed variable by Kris on 2026-09-09; do not restore a fixed 7 PM pattern.",
+      "verified_on": "2026-11-24",
+      "freshness_label": "November 2026",
+      "verification": "owner_confirmed_closed",
+      "notes": "Closed, confirmed by site owner November 24, 2026. Preserve historical page.",
       "spotlight": {
         "name": "Marc Savard Comedy Hypnosis",
-        "our_price": 28,
-        "regular_price": 55,
+        "our_price": null,
+        "regular_price": null,
         "location": "Nathan Burton Theater - Showcase Mall",
         "runtime_minutes": 70,
         "age_rule": "No age restrictions. Lap sitting is allowed for children ages 2 and under.",
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater.",
         "schedule_days": {},
-        "schedule_summary": "Times vary · Check live calendar",
+        "schedule_summary": "Closed",
         "schedule_variable": true,
         "schedule_raw": [],
         "spotlight_url": "https://spotlight.vegas/shows/comedy/marc-savard-comedy-hypnosis/",
-        "affiliate_url": "https://spotlight.vegas/shows/comedy/marc-savard-comedy-hypnosis/ref/vegassidekick",
+        "affiliate_url": "",
         "age_label": "All ages"
       },
-      "savings_amount": 27,
-      "savings_percent": 49,
-      "is_deal": true,
+      "savings_amount": null,
+      "savings_percent": null,
+      "is_deal": false,
       "price_source_last_checked_on": "2026-10-20"
     },
     {
@@ -1936,7 +1975,7 @@
       "savings_amount": null,
       "savings_percent": null,
       "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "michael-jackson-one",
@@ -2003,7 +2042,7 @@
       "savings_amount": null,
       "savings_percent": null,
       "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "mind2mind",
@@ -2065,7 +2104,7 @@
       "savings_amount": null,
       "savings_percent": null,
       "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "mj-live",
@@ -2135,7 +2174,7 @@
       "savings_amount": 36,
       "savings_percent": 40,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "motown-brunch",
@@ -2181,7 +2220,7 @@
       "savings_amount": 35,
       "savings_percent": 35,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "mystere",
@@ -2321,7 +2360,7 @@
       "savings_amount": null,
       "savings_percent": null,
       "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "now-you-see-me-live",
@@ -2430,7 +2469,7 @@
       "savings_amount": null,
       "savings_percent": null,
       "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "paranormal",
@@ -2488,7 +2527,7 @@
       "savings_amount": 48,
       "savings_percent": 61,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "penn-and-teller",
@@ -2605,7 +2644,7 @@
       "savings_amount": 66,
       "savings_percent": 57,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "piff-the-magic-dragon",
@@ -2733,7 +2772,7 @@
       "savings_amount": 6,
       "savings_percent": 15,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "purple-reign",
@@ -2787,7 +2826,7 @@
       "savings_amount": 44,
       "savings_percent": 46,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "queen-selena",
@@ -2841,7 +2880,7 @@
       "savings_amount": 9,
       "savings_percent": 18,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "rouge",
@@ -3033,7 +3072,7 @@
       "savings_amount": 35,
       "savings_percent": 34,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "sinatra-live",
@@ -3099,7 +3138,7 @@
       "savings_amount": 9,
       "savings_percent": 18,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "sir-elton",
@@ -3293,7 +3332,7 @@
       "category": "music",
       "status": "active",
       "our_price": 33,
-      "regular_price": null,
+      "regular_price": 40,
       "runtime_minutes": 70,
       "age_summary": "5+",
       "venue": "Thunderland Theater- Excalibur",
@@ -3309,7 +3348,7 @@
       "spotlight": {
         "name": "The Australian Bee Gees Las Vegas",
         "our_price": 33,
-        "regular_price": null,
+        "regular_price": 40,
         "location": "Thunderland Theater- Excalibur",
         "runtime_minutes": 70,
         "age_rule": "Must be 5 years of age or older. Everyone must have a ticket to enter the event. Guests 18 years of age and under must be accompanied by an adult.",
@@ -3348,10 +3387,10 @@
         "affiliate_url": "https://spotlight.vegas/shows/tribute/the-australian-bee-gees/ref/vegassidekick",
         "age_label": "5+"
       },
-      "savings_amount": null,
-      "savings_percent": null,
-      "is_deal": false,
-      "price_source_last_checked_on": "2026-11-10"
+      "savings_amount": 7,
+      "savings_percent": 18,
+      "is_deal": true,
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "the-conjurors",
@@ -3547,7 +3586,7 @@
       "savings_amount": null,
       "savings_percent": null,
       "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "the-mentalist",
@@ -3613,7 +3652,7 @@
       "savings_amount": 50,
       "savings_percent": 56,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "rat-pack-is-back",
@@ -3675,7 +3714,7 @@
       "savings_amount": null,
       "savings_percent": null,
       "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "wizard-of-oz",
@@ -3719,7 +3758,7 @@
       "savings_amount": null,
       "savings_percent": null,
       "is_deal": false,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "thunder-from-down-under",
@@ -3927,7 +3966,7 @@
       "savings_amount": 60,
       "savings_percent": 59,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "vegas-the-show",
@@ -3993,7 +4032,7 @@
       "savings_amount": 38,
       "savings_percent": 38,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "wastin-away",
@@ -4043,7 +4082,7 @@
       "savings_amount": 60,
       "savings_percent": 60,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "wayne-newton",
@@ -4158,7 +4197,7 @@
       "savings_amount": 7,
       "savings_percent": 12,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "x-burlesque",
@@ -4301,12 +4340,12 @@
       "age_summary": "18+",
       "venue": "X Rocks Theatre - Horseshoe Las Vegas",
       "showroom": "",
-      "schedule_summary": "Mon, Thu, Sat · 9:30 PM",
+      "schedule_summary": "Sat · 9:30 PM",
       "ticket_url": "https://spotlight.vegas/shows/adult/x-rocks/ref/vegassidekick",
       "official_trailer": "",
       "page_path": "/shows/adult/x-rocks/",
-      "verified_on": "2026-09-08",
-      "freshness_label": "September 2026",
+      "verified_on": "2026-11-24",
+      "freshness_label": "November 2026",
       "verification": "verified_spotlight",
       "notes": "",
       "spotlight": {
@@ -4318,22 +4357,14 @@
         "age_rule": "Must be 18 years of age or older. Everyone must have a ticket to enter the event.",
         "other_restrictions": "The use of cameras and audio/video devices are strictly prohibited and smoking is not allowed in the theater.",
         "schedule_days": {
-          "Monday": [
-            "9:30 PM"
-          ],
-          "Thursday": [
-            "9:30 PM"
-          ],
           "Saturday": [
             "9:30 PM"
           ]
         },
-        "schedule_summary": "Mon, Thu, Sat · 9:30 PM",
+        "schedule_summary": "Sat · 9:30 PM",
         "schedule_variable": false,
         "schedule_raw": [
-          "Monday - 9:30pm",
-          "Thursday - 9:30pm",
-          "Saturday - 9:30pm"
+          "Saturday – 9:30 PM"
         ],
         "spotlight_url": "https://spotlight.vegas/shows/adult/x-rocks/",
         "affiliate_url": "https://spotlight.vegas/shows/adult/x-rocks/ref/vegassidekick",
@@ -4408,7 +4439,7 @@
       "savings_amount": 59,
       "savings_percent": 54,
       "is_deal": true,
-      "price_source_last_checked_on": "2026-10-20"
+      "price_source_last_checked_on": "2026-11-24"
     },
     {
       "slug": "david-goldrake",
@@ -4457,7 +4488,7 @@
       "is_deal": false
     }
   ],
-  "spotlight_reconciled_on": "2026-10-20",
+  "spotlight_reconciled_on": "2026-11-24",
   "deal_threshold_dollars": 5,
   "catalog_price_consistency_checked_on": "2026-11-10",
   "catalog_price_consistency_note": "All active show-page starting prices matched database on November 10, 2026; external Spotlight starting-price checks are separately recorded per show in price_source_last_checked_on."

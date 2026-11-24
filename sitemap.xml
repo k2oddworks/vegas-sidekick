@@ -337,15 +337,7 @@
       <image:loc>https://vegassidekick.com/images/product-photos/laugh-factory/laugh-factory-hero.jpg</image:loc>
     </image:image>
   </url>
-  <url>
-    <loc>https://vegassidekick.com/shows/comedy/marc-savard-comedy-hypnosis/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-11-10</lastmod>
-      <image:image>
-      <image:loc>https://vegassidekick.com/images/product-photos/marc-savard-comedy-hypnosis/marc-savard-comedy-hypnosis-hero.jpg</image:loc>
-    </image:image>
-  </url>
+  
   <url>
     <loc>https://vegassidekick.com/shows/comedy/marriage-can-be-murder/</loc>
     <changefreq>yearly</changefreq>

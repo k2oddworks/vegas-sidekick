@@ -41,8 +41,7 @@ window.vsDealsFilter=function(btn){
  decorate();const cards=[...document.querySelectorAll('.show-card')],active=btn?.dataset.active!=='1';
  if(btn){btn.dataset.active=active?'1':'0';btn.classList.toggle('active',active);btn.textContent=active?'🔥 Showing Deals':'🔥 Deals';}
  cards.forEach(c=>{c.style.display=active&&c.dataset.vsDeal!=='1'?'none':'';});
- const count=document.querySelector('.show-count-wrap');
- if(count)count.textContent=cards.filter(c=>c.style.display!=='none').length+(active?' deals':' shows');
+ // Availability totals intentionally not shown in customer-facing catalogs.
 };
 fetch('/data/show-database.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Show Database unavailable');return r.json();}).then(db=>{
  records=new Map((db.records||[]).filter(r=>r.status==='active').map(r=>[r.slug,r]));decorate();

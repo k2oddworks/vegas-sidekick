@@ -44,9 +44,8 @@ if "Highest dollar savings" in visible or "vs-savings-featured" in visible:
     issues.append("outdated one-off Elvis featured deal design remains")
 if ".deal-card.vs-savings-large .deal-save" not in visible:
     issues.append("shared large green savings-card treatment missing")
-count_label = re.search(r'<div class="deal-count">(\d+) current discounted shows</div>', visible)
-if not count_label or int(count_label[1]) != len(cards):
-    issues.append("deals-page count does not match rendered cards")
+if '<div class="deal-count">Current ticket discounts</div>' not in visible:
+    issues.append("deals-page discount heading missing")
 
 cases = {
     "carrot-top": (62, 68, 6),
