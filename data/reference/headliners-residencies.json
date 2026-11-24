@@ -159,6 +159,18 @@
       "name": "Harrah's Showroom at Harrah's Las Vegas",
       "short_name": "Harrah's Showroom",
       "official_url": "https://www.ticketmaster.com/harrahs-showroom-at-harrahs-las-vegas-billets-las-vegas/venue/467856"
+    },
+    {
+      "id": "strat-theater",
+      "name": "The STRAT Theater",
+      "short_name": "The STRAT",
+      "official_url": "https://thestrat.com/entertainment"
+    },
+    {
+      "id": "penn-teller-theater",
+      "name": "Penn & Teller Theater at Rio",
+      "short_name": "Rio",
+      "official_url": "https://www.riolasvegas.com/entertainment"
     }
   ],
   "entries": [
@@ -1947,10 +1959,13 @@
       "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows/max-amini",
       "dates": [
         "2026-12-26",
-        "2026-12-27"
+        "2026-12-27",
+        "2027-02-19",
+        "2027-02-20"
       ],
       "sources": [
-        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/max-amini"
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows/max-amini",
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows"
       ]
     },
     {
@@ -2807,12 +2822,18 @@
         "2027-05-23",
         "2027-05-26",
         "2027-05-28",
-        "2027-05-30"
+        "2027-05-30",
+        "2027-06-15",
+        "2027-06-17",
+        "2027-06-19",
+        "2027-06-24",
+        "2027-06-26"
       ],
       "sources": [
         "https://www.sphereentertainmentco.com/rush-announces-five-date-elevate-from-the-norm-residency-at-sphere/",
         "https://www.rush.com/sphere/",
-        "https://thesphere.com/shows/rush"
+        "https://thesphere.com/shows/rush",
+        "https://www.thesphere.com/shows/rush"
       ]
     },
     {
@@ -3061,6 +3082,145 @@
       ],
       "sources": [
         "https://www.venetianlasvegas.com/entertainment/the-offspring.html"
+      ]
+    },
+    {
+      "act": "Joe Walsh & Friends — VetsAid",
+      "venue_id": "mgm-grand-garden-arena",
+      "type": "Special event",
+      "official_url": "https://www.vetsaid.org/",
+      "dates": [
+        "2027-01-29"
+      ],
+      "sources": [
+        "https://www.vetsaid.org/"
+      ]
+    },
+    {
+      "act": "Kansas",
+      "venue_id": "penn-teller-theater",
+      "type": "Headliner",
+      "official_url": "https://www.riolasvegas.com/entertainment",
+      "dates": [
+        "2027-01-16"
+      ],
+      "sources": [
+        "https://www.riolasvegas.com/entertainment"
+      ]
+    },
+    {
+      "act": "Ali Wong",
+      "venue_id": "encore-theater-wynn",
+      "type": "Comedy headliner",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows",
+      "dates": [
+        "2027-04-30",
+        "2027-05-01"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows"
+      ]
+    },
+    {
+      "act": "Debbie Gibson — Winterlicious",
+      "venue_id": "strat-theater",
+      "type": "Limited engagement",
+      "official_url": "https://thestrat.com/entertainment",
+      "dates": [
+        "2026-12-17",
+        "2026-12-18",
+        "2026-12-19",
+        "2026-12-20"
+      ],
+      "sources": [
+        "https://thestrat.com/entertainment"
+      ]
+    },
+    {
+      "act": "Clay Aiken — A Joyful Noise",
+      "venue_id": "harrahs-showroom",
+      "type": "Headliner",
+      "official_url": "https://www.caesars.com/harrahs-las-vegas/shows",
+      "dates": [
+        "2026-12-19"
+      ],
+      "sources": [
+        "https://www.caesars.com/harrahs-las-vegas/shows"
+      ]
+    },
+    {
+      "act": "Chris Tucker",
+      "venue_id": "encore-theater-wynn",
+      "type": "Comedy headliner",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows",
+      "dates": [
+        "2027-01-15",
+        "2027-01-16",
+        "2027-01-17"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows"
+      ]
+    },
+    {
+      "act": "John Crist",
+      "venue_id": "encore-theater-wynn",
+      "type": "Comedy headliner",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows",
+      "dates": [
+        "2027-03-12"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows"
+      ]
+    },
+    {
+      "act": "Jimmy O. Yang",
+      "venue_id": "encore-theater-wynn",
+      "type": "Comedy headliner",
+      "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows",
+      "dates": [
+        "2027-05-29",
+        "2027-05-30"
+      ],
+      "sources": [
+        "https://www.wynnlasvegas.com/entertainment/upcoming-shows"
+      ]
+    },
+    {
+      "act": "Mondays Dark — 13th Anniversary",
+      "venue_id": "palazzo-theatre",
+      "type": "Special event",
+      "official_url": "https://www.venetianlasvegas.com/entertainment.html",
+      "dates": [
+        "2026-12-14"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment.html"
+      ]
+    },
+    {
+      "act": "Bridget Everett",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment.html",
+      "dates": [
+        "2027-03-12"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment.html"
+      ]
+    },
+    {
+      "act": "Adam Ray",
+      "venue_id": "palazzo-theatre",
+      "type": "Comedy headliner",
+      "official_url": "https://www.venetianlasvegas.com/entertainment.html",
+      "dates": [
+        "2027-03-20"
+      ],
+      "sources": [
+        "https://www.venetianlasvegas.com/entertainment.html"
       ]
     }
   ],
