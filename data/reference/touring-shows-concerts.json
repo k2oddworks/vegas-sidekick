@@ -1818,6 +1818,26 @@
       "official_url": "https://southpointcasino.com/entertainment/showroom/"
     },
     {
+      "name": "The Buddy Rich Big Band Machine feat. Cathy Rich and Gregg Potter",
+      "date": "2027-01-29",
+      "doors": "7:00 PM",
+      "time_label": "Show",
+      "type": "Concert",
+      "room": "Myron’s",
+      "venue_id": "smith-center",
+      "official_url": "https://thesmithcenter.com/tickets/2627/buddy-rich-big-band/"
+    },
+    {
+      "name": "Seth Rudetsky's Concert Series starring Vanessa Williams",
+      "date": "2027-01-29",
+      "doors": "7:30 PM",
+      "time_label": "Show",
+      "type": "Concert",
+      "room": "Reynolds Hall",
+      "venue_id": "smith-center",
+      "official_url": "https://thesmithcenter.com/tickets/2627/seth-rudetsky-and-vanessa-williams-the-smith-center-las-vegas-01-29-2027/"
+    },
+    {
       "name": "The Legend of Korra in Concert",
       "date": "2027-01-30",
       "doors": "7:30 PM",
@@ -2239,6 +2259,16 @@
       "official_url": "https://www.axs.com/venues/128643/house-of-blues-las-vegas-las-vegas-tickets"
     },
     {
+      "name": "Bored Teachers — Is It Friday Yet?!",
+      "date": "2027-05-08",
+      "doors": "7:30 PM",
+      "time_label": "Show",
+      "type": "Comedy",
+      "room": "Reynolds Hall",
+      "venue_id": "smith-center",
+      "official_url": "https://thesmithcenter.com/tickets/2627/bored-teachers-is-it-friday-yet-comedy-tour/"
+    },
+    {
       "name": "BOOP! The Musical",
       "subtitle": "Runs May 11–16",
       "date": "2027-05-11",
@@ -2279,6 +2309,16 @@
       "official_url": "https://www.allegiantstadium.com/events/detail/noah-kahan-27"
     },
     {
+      "name": "Stewart Copeland: The Police Deranged for Orchestra",
+      "date": "2027-05-29",
+      "doors": "7:30 PM",
+      "time_label": "Show",
+      "type": "Concert",
+      "room": "Reynolds Hall",
+      "venue_id": "smith-center",
+      "official_url": "https://thesmithcenter.com/tickets/2627/stewart-copeland-the-police-deranged-for-orchestra/"
+    },
+    {
       "name": "The Airborne Toxic Event",
       "date": "2027-06-03",
       "doors": "7:00 PM",
@@ -2298,6 +2338,17 @@
       "room": "Reynolds Hall",
       "venue_id": "smith-center",
       "official_url": "https://thesmithcenter.com/tickets/broadway-las-vegas-series/"
+    },
+    {
+      "name": "Art Garfunkel — Shinier World Tour",
+      "date": "2027-07-31",
+      "doors": "7:30 PM",
+      "time_label": "Show",
+      "type": "Concert",
+      "room": "Reynolds Hall",
+      "venue_id": "smith-center",
+      "official_url": "https://thesmithcenter.com/tickets/2627/art-garfunkel-the-smith-center-las-vegas/",
+      "notes": "Rescheduled from September 25, 2026 to July 31, 2027 per official venue announcement."
     },
     {
       "name": "When We Were Young Festival",
