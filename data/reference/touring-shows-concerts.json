@@ -149,6 +149,12 @@
       "short_name": "Encore Theater",
       "property": "Wynn Las Vegas",
       "official_url": "https://www.wynnlasvegas.com/entertainment/upcoming-shows"
+    },
+    {
+      "id": "las-vegas-festival-grounds",
+      "name": "Las Vegas Festival Grounds",
+      "short_name": "Festival Grounds",
+      "official_url": "https://help.whenwewereyoungfestival.com/article/2171-what-is-when-we-were-young"
     }
   ],
   "entries": [
@@ -1275,6 +1281,15 @@
       "official_url": "https://www.brooklynbowl.com/las-vegas/events/detail/trippie-redd-the-non-disclosure-agreement-tour-169zkfsopza5fkdv"
     },
     {
+      "name": "Red Eye Gin",
+      "date": "2026-12-26",
+      "doors": "7:30 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.axs.com/venues/125151/brooklyn-bowl-las-vegas-las-vegas-tickets"
+    },
+    {
       "name": "Countdown Under the Canopy 2027",
       "subtitle": "New Year’s Eve · Hoobastank · Alien Ant Farm · Petey Pablo · Bubba Sparxxx · Wuki",
       "date": "2026-12-31",
@@ -1283,6 +1298,15 @@
       "type": "Festival",
       "venue_id": "fremont-street-experience",
       "official_url": "https://fremontstreetexperience.com/nye-faq/"
+    },
+    {
+      "name": "Nirvana Mania",
+      "date": "2027-01-02",
+      "doors": "7:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "house-of-blues-las-vegas",
+      "official_url": "https://www.axs.com/venues/128643/house-of-blues-las-vegas-las-vegas-tickets"
     },
     {
       "name": "Curious George and the Golden Meatball",
@@ -1447,6 +1471,15 @@
       "official_url": "https://www.ticketmaster.com/andrew-dice-clay-las-vegas-nevada-03-05-2027/event/17006546B4A4F9D2"
     },
     {
+      "name": "Currents",
+      "date": "2027-03-05",
+      "doors": "6:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.axs.com/venues/125151/brooklyn-bowl-las-vegas-las-vegas-tickets"
+    },
+    {
       "name": "The Brubeck Brothers Quartet",
       "date": "2027-03-06",
       "doors": "See listing",
@@ -1465,6 +1498,15 @@
       "room": "Myron’s",
       "venue_id": "smith-center",
       "official_url": "https://thesmithcenter.com/tickets/myrons/"
+    },
+    {
+      "name": "Clutch",
+      "date": "2027-03-19",
+      "doors": "6:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.axs.com/venues/125151/brooklyn-bowl-las-vegas-las-vegas-tickets"
     },
     {
       "name": "40 Fingers",
@@ -1498,6 +1540,15 @@
       "official_url": "https://thesmithcenter.com/calendar/"
     },
     {
+      "name": "Chiodos",
+      "date": "2027-03-20",
+      "doors": "6:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.axs.com/venues/125151/brooklyn-bowl-las-vegas-las-vegas-tickets"
+    },
+    {
       "name": "The Plot in You",
       "subtitle": "World Tour: Part 1",
       "date": "2027-03-21",
@@ -1519,6 +1570,15 @@
       "official_url": "https://www.livenation.com/event/1A9Zk4oGkdNT3tq/frank-turner-the-sleeping-souls-last-evenings-world-tour"
     },
     {
+      "name": "Alexisonfire & Poison the Well",
+      "date": "2027-03-31",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.axs.com/venues/125151/brooklyn-bowl-las-vegas-las-vegas-tickets"
+    },
+    {
       "name": "Giggly Squad",
       "subtitle": "The Gehls Gehl Tour",
       "date": "2027-04-10",
@@ -1529,6 +1589,15 @@
       "official_url": "https://cosmopolitanlasvegas.mgmresorts.com/en/entertainment/giggly-squad.html"
     },
     {
+      "name": "Metal Church & Armored Saint",
+      "date": "2027-04-10",
+      "doors": "6:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "house-of-blues-las-vegas",
+      "official_url": "https://www.axs.com/venues/128643/house-of-blues-las-vegas-las-vegas-tickets"
+    },
+    {
       "name": "The Elovaters",
       "subtitle": "Shark Belly Motel Tour · Twin Fin & Dylan Cotrone",
       "date": "2027-04-11",
@@ -1537,6 +1606,15 @@
       "type": "Concert",
       "venue_id": "bel-aire-backyard",
       "official_url": "https://www.belairebackyardlv.com/concertseries/"
+    },
+    {
+      "name": "The Damned",
+      "date": "2027-04-17",
+      "doors": "7:30 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "house-of-blues-las-vegas",
+      "official_url": "https://www.axs.com/venues/128643/house-of-blues-las-vegas-las-vegas-tickets"
     },
     {
       "name": "Matthew Morrison",
@@ -1559,6 +1637,33 @@
       "official_url": "https://thesmithcenter.com/tickets/2627/leslie-odom-jr-the-smith-center-las-vegas-04-28-27/"
     },
     {
+      "name": "Alaska Thunderfuck",
+      "date": "2027-05-01",
+      "doors": "7:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "house-of-blues-las-vegas",
+      "official_url": "https://www.axs.com/venues/128643/house-of-blues-las-vegas-las-vegas-tickets"
+    },
+    {
+      "name": "Avatar",
+      "date": "2027-05-14",
+      "doors": "7:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "house-of-blues-las-vegas",
+      "official_url": "https://www.axs.com/venues/128643/house-of-blues-las-vegas-las-vegas-tickets"
+    },
+    {
+      "name": "Silversun Pickups",
+      "date": "2027-05-19",
+      "doors": "6:30 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "brooklyn-bowl-las-vegas",
+      "official_url": "https://www.axs.com/venues/125151/brooklyn-bowl-las-vegas-las-vegas-tickets"
+    },
+    {
       "name": "Noah Kahan",
       "subtitle": "The Last of the Bugs World Tour",
       "date": "2027-05-21",
@@ -1567,6 +1672,24 @@
       "type": "Concert",
       "venue_id": "allegiant-stadium",
       "official_url": "https://www.allegiantstadium.com/events/detail/noah-kahan-27"
+    },
+    {
+      "name": "The Airborne Toxic Event",
+      "date": "2027-06-03",
+      "doors": "7:00 PM",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "house-of-blues-las-vegas",
+      "official_url": "https://www.axs.com/venues/128643/house-of-blues-las-vegas-las-vegas-tickets"
+    },
+    {
+      "name": "When We Were Young Festival",
+      "date": "2027-10-16",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Festival",
+      "venue_id": "las-vegas-festival-grounds",
+      "official_url": "https://help.whenwewereyoungfestival.com/article/2171-what-is-when-we-were-young"
     }
   ]
 }
