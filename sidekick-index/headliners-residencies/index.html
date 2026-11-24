@@ -234,7 +234,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
 
     <aside class="method">
       <h2>How this index is maintained</h2>
-      <p>Dates are taken from current venue, ticketing, artist and promoter sources and were last source-checked <span id="verified-date">November 10, 2026</span>. Past dates stay in the underlying data but drop off the calendar automatically, and canceled engagements are marked as canceled and hidden. Vegas Sidekick keeps a visible verification date and source trail rather than relying on unsourced calendar copy. <a href="/data/reference/headliners-residencies.json">View the underlying JSON data →</a></p>
+      <p>Dates are taken from current venue, ticketing, artist and promoter sources and were last source-checked <span id="verified-date">November 10, 2026</span>. Past dates stay in the underlying data but drop off the calendar automatically, and canceled and postponed engagements are marked and hidden. Vegas Sidekick keeps a visible verification date and source trail rather than relying on unsourced calendar copy. <a href="/data/reference/headliners-residencies.json">View the underlying JSON data →</a></p>
       <p><strong>Data reuse:</strong> The Sidekick Index factual dataset is published under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Reuse and adapt the licensed data with attribution to Vegas Sidekick. <a href="/data-license/">Data license →</a></p>
     </aside>
   </div>
@@ -617,7 +617,7 @@ h1{margin-top:12px;max-width:920px;font-size:clamp(2.6rem,6vw,5rem);line-height:
     .then(function(data){
       // Shared expiration rule: preserve source records, show only upcoming local dates.
       const today=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
-      data.entries=data.entries.filter(function(entry){return entry.status!=='canceled'}).map(function(entry){
+      data.entries=data.entries.filter(function(entry){return entry.status!=='canceled'&&entry.status!=='postponed'}).map(function(entry){
         return entry.dates?Object.assign({},entry,{dates:entry.dates.filter(function(date){return date>=today})}):entry;
       }).filter(function(entry){return entry.dates?entry.dates.length>0:entry.date>=today});
       dataset=data;
