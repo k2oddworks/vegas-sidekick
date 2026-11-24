@@ -380,7 +380,7 @@ h1{margin-top:12px;max-width:930px;font-size:clamp(2.6rem,6vw,5rem);line-height:
     .then(function(data){
       // Shared expiration rule: use the Las Vegas calendar date; retain historical JSON.
       const today=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
-      data.entries=data.entries.filter(function(entry){return (entry.end_date||entry.date)>=today&&entry.status!=='canceled'}).map(function(entry){return entry.date<today&&entry.end_date?Object.assign({},entry,{original_date:entry.date,date:today}):entry});
+      data.entries=data.entries.filter(function(entry){return (entry.end_date||entry.date)>=today&&entry.status!=='canceled'&&entry.status!=='postponed'}).map(function(entry){return entry.date<today&&entry.end_date?Object.assign({},entry,{original_date:entry.date,date:today}):entry});
       dataset=data;showVerifiedDate(data.verified_on);renderVenueFilters();renderAll();
     })
     .catch(function(){datesEl.innerHTML='<div class="error">The touring-events data could not be loaded.</div>'});
