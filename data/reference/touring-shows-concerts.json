@@ -1837,6 +1837,15 @@
       "official_url": "https://southpointcasino.com/entertainment/showroom/"
     },
     {
+      "name": "Kodo One Earth Tour 2027: Luminance",
+      "date": "2027-02-03",
+      "doors": "See listing",
+      "time_label": "Time",
+      "type": "Concert",
+      "venue_id": "smith-center",
+      "official_url": "https://thesmithcenter.com/tickets/2627/kodo-one-earth-tour-the-smith-center-las-vegas-02-03-2027/"
+    },
+    {
       "name": "Jefferson Starship",
       "date": "2027-02-05",
       "doors": "See listing",
@@ -2230,6 +2239,18 @@
       "official_url": "https://www.axs.com/venues/128643/house-of-blues-las-vegas-las-vegas-tickets"
     },
     {
+      "name": "BOOP! The Musical",
+      "subtitle": "Runs May 11–16",
+      "date": "2027-05-11",
+      "end_date": "2027-05-16",
+      "doors": "See schedule",
+      "time_label": "Schedule",
+      "type": "Touring production",
+      "room": "Reynolds Hall",
+      "venue_id": "smith-center",
+      "official_url": "https://thesmithcenter.com/tickets/broadway-las-vegas-series/"
+    },
+    {
       "name": "Avatar",
       "date": "2027-05-14",
       "doors": "7:00 PM",
@@ -2265,6 +2286,18 @@
       "type": "Concert",
       "venue_id": "house-of-blues-las-vegas",
       "official_url": "https://www.axs.com/venues/128643/house-of-blues-las-vegas-las-vegas-tickets"
+    },
+    {
+      "name": "Maybe Happy Ending",
+      "subtitle": "Runs Jun 8–13",
+      "date": "2027-06-08",
+      "end_date": "2027-06-13",
+      "doors": "See schedule",
+      "time_label": "Schedule",
+      "type": "Touring production",
+      "room": "Reynolds Hall",
+      "venue_id": "smith-center",
+      "official_url": "https://thesmithcenter.com/tickets/broadway-las-vegas-series/"
     },
     {
       "name": "When We Were Young Festival",
