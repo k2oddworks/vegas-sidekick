@@ -12,7 +12,7 @@ FILES = (
     ("headliners-residencies", "Headliners & Residencies", "act", "dates"),
     ("touring-shows-concerts", "Touring Shows & Concerts", "name", "date"),
 )
-STATUSES = {"canceled"}
+STATUSES = {"canceled", "postponed"}
 
 
 def name_key(text):
@@ -60,7 +60,7 @@ def validate():
                     errors.append(f"{path}: entry {i} ({entry[act_key]}) unknown status {status!r}")
                 elif not entry.get("notes"):
                     errors.append(f"{path}: entry {i} ({entry[act_key]}) {status} needs a notes explanation")
-                continue  # canceled records are preserved but never count as live performances
+                continue  # canceled and postponed records are preserved but never count as live performances
             for day in dates:
                 if isinstance(day, str):
                     performances[(name_key(entry[act_key]), day)].append((stem, entry[act_key]))
