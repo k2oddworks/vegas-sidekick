@@ -48,6 +48,9 @@ def validate():
                     continue
             else:
                 dates = [dates]
+                end = entry.get("end_date")
+                if end is not None and (not isinstance(end, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", end) or not isinstance(dates[0], str) or end < dates[0]):
+                    errors.append(f"{path}: entry {i} invalid end_date {end!r}")
             for day in dates:
                 if not isinstance(day, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", day):
                     errors.append(f"{path}: entry {i} malformed date {day!r}")
