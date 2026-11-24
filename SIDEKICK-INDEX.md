@@ -110,11 +110,11 @@ When classification is ambiguous, choose the page that best matches how a normal
 
 `python3 scripts/audit-sidekick-index-datasets.py` fails when the same performance (same act, any word order, same date) appears twice, whether inside one dataset or across both.
 
-### Expired and canceled events
+### Expired, canceled and postponed events
 
 - **Expired dates are never deleted.** Both pages keep every record in the JSON and only show dates on or after today's Los Angeles date. Elapsed records stay in the downloadable data.
-- **Canceled events are kept too.** Add `"status": "canceled"` to the entry and explain it in `notes` (what was canceled, who said so, when it was checked). The pages and the audit skip canceled entries as live performances, so they never show as upcoming. Only the value `canceled` is supported; do not invent other statuses without updating the pages and the audit script.
-- Postponed or rescheduled events are not canceled: change the dates once the new dates are verified at an official source.
+- **Canceled events are kept too.** Add `"status": "canceled"` to the entry and explain it in `notes` (what was canceled, who said so, when it was checked). The pages and the audit skip canceled entries as live performances, so they never show as upcoming. Supported inactive statuses are `canceled` and `postponed`; do not invent other statuses without updating the pages and the audit script.
+- **Postponed events without confirmed replacement dates:** set `"status": "postponed"`, retain original dates and document the official source and check date in `notes`. Both calendars hide these entries. Once replacement dates are verified, update dates, preserve original dates in notes and remove the postponed status. For confirmed rescheduling, update dates directly and record the original dates in notes.
 
 ---
 
