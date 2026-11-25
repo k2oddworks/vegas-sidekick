@@ -42,6 +42,11 @@ jobs:
           print(f"Validated tracked Media Library deploy asset: {count} images")
           PY
 
+      - name: Generate Hub installation icons
+        run: |
+          python3 -m pip install Pillow
+          python3 scripts/generate-hub-icons.py
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:

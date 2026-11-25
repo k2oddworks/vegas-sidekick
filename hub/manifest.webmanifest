@@ -9,10 +9,22 @@
   "theme_color": "#111111",
   "icons": [
     {
-      "src": "/images/brand/spike-icon.png",
-      "sizes": "any",
+      "src": "/images/brand/hub-icon-192.png",
+      "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "/images/brand/hub-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/brand/hub-icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
