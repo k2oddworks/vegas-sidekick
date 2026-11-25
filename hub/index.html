@@ -2,27 +2,50 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow,noarchive">
-<meta name="theme-color" content="#10263c">
-<title>Vegas Sidekick Hub | Private Workspace</title>
+<meta name="theme-color" content="#111111">
+<title>Vegas Sidekick Hub</title>
+<link rel="icon" href="/favicon.png">
 <style>
-:root{color-scheme:dark;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-*{box-sizing:border-box}body{margin:0;min-height:100vh;background:#0e2337;color:#f6f9fc;display:grid;place-items:center;padding:24px}
-main{width:min(100%,520px);border:1px solid #38546a;background:#163149;border-radius:18px;padding:clamp(24px,5vw,42px)}
-.brand{font-size:18px;letter-spacing:.06em;font-weight:850}.brand span{color:#d4ef69}
-.tag{font-size:11px;letter-spacing:.12em;color:#d4ef69;font-weight:800;margin-top:32px}
-h1{font-size:clamp(27px,5vw,37px);line-height:1.12;letter-spacing:-.035em;margin:12px 0 16px}
-p{font-size:15px;line-height:1.65;color:#d1dce5;margin:0 0 20px}
-.status{display:flex;align-items:center;gap:10px;border-top:1px solid #365067;padding-top:20px;font-size:13px;color:#bacbd6}
-.dot{width:9px;height:9px;border-radius:50%;background:#ffb000;flex:none}
-a{color:#d4ef69;text-underline-offset:3px}
+:root{color-scheme:dark;--bg:#111;--panel:#1b1b1b;--line:#333;--text:#f5f5f5;--muted:#aaa;--lime:#c6f22e;--amber:#ffb000;font-family:Inter,system-ui,-apple-system,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);min-height:100dvh}a{color:inherit}button,a{ -webkit-tap-highlight-color:transparent}button{font:inherit;color:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid var(--lime);outline-offset:4px}button{min-height:48px}.skip{position:absolute;left:12px;top:-100px;background:var(--lime);color:#111;padding:12px;z-index:9}.skip:focus{top:12px}
+.shell{max-width:1080px;margin:auto;padding:0 20px calc(100px + env(safe-area-inset-bottom))}.header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:calc(18px + env(safe-area-inset-top)) 0 18px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px}.mark{width:44px;height:44px;background:var(--lime);color:#111;display:grid;place-items:center;border-radius:12px;font-weight:900;letter-spacing:-.08em;font-size:18px}.wordmark{font-weight:850;letter-spacing:-.04em;font-size:19px;line-height:1.1}.wordmark span{color:var(--lime)}.small{font-size:12px;color:var(--muted);line-height:1.5}.label{font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}.header .small{margin-top:4px}.date{margin:28px 0 8px}h1{font-size:clamp(30px,6vw,48px);line-height:1.1;letter-spacing:-.055em;margin:0 0 12px}h2{font-size:19px;margin:0 0 12px;letter-spacing:-.025em}p{color:var(--muted);line-height:1.6;margin:0 0 16px;font-size:15px}.panel{border:1px solid var(--line);background:var(--panel);border-radius:16px;padding:20px;margin-top:22px}.status{display:flex;align-items:center;gap:9px;margin-bottom:15px;font-size:12px;color:var(--lime);font-weight:700}.dot{width:8px;height:8px;background:var(--lime);border-radius:50%}.steps{list-style:none;padding:0;margin:0}.steps li{display:flex;gap:12px;align-items:center;min-height:52px;border-top:1px solid var(--line);font-size:14px}.stepmark{width:24px;height:24px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;flex:none;color:var(--muted);font-size:12px}.done{color:var(--lime);border-color:var(--lime)}.current{color:var(--amber);border-color:var(--amber)}.steps .small{margin-left:auto;text-align:right}.nav{position:fixed;bottom:0;left:0;right:0;background:#171717;border-top:1px solid var(--line);padding:8px 16px calc(8px + env(safe-area-inset-bottom));display:flex;justify-content:center;gap:12px;z-index:3}.nav button{border:0;background:transparent;min-width:92px;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:var(--muted);font-size:12px;padding:5px 18px}.nav button[aria-current="page"]{background:#292e1b;color:var(--lime)}svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.action{display:inline-flex;align-items:center;justify-content:center;min-height:48px;border:1px solid var(--line);border-radius:10px;padding:0 15px;text-decoration:none;font-size:14px;font-weight:650}.action:hover{border-color:var(--lime)}[hidden]{display:none!important}.view:focus{outline:none}.settings-row{padding:15px 0;border-top:1px solid var(--line)}.settings-row strong{display:block;font-size:15px;margin-bottom:5px}.settings-row p{margin:0}.footer-note{margin-top:22px}
+@media(min-width:760px){.shell{padding:0 40px 110px}.content{max-width:760px}.panel{padding:26px}.nav{gap:24px}.nav button{min-width:140px}}
+@media(max-width:360px){.shell{padding-left:14px;padding-right:14px}.steps .small{font-size:10px}.panel{padding:15px}}
 </style>
 </head>
-<body><main>
-<div class="brand">VEGAS <span>SIDEKICK</span> / HUB</div>
-<div class="tag">INTERNAL WORKSPACE</div>
-<h1>Private workspace setup in progress.</h1>
-<p>This address is reserved for Vegas Sidekick's internal operations hub. The working dashboard is not available here until private sign-in and secure storage are configured.</p>
-<div class="status"><span class="dot"></span>Access is not enabled yet · <a href="https://vegassidekick.com/">Return to Vegas Sidekick</a></div>
-</main></body></html>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="shell">
+<header class="header"><div class="brand"><div class="mark" aria-hidden="true">VS</div><div><div class="wordmark">VEGAS <span>SIDEKICK</span></div><div class="small">HUB / INTERNAL OPERATIONS</div></div></div></header>
+<main id="main" class="content">
+<section id="home" class="view" tabindex="-1" aria-labelledby="home-title">
+<div class="label date" id="date"></div><h1 id="home-title">Your workspace.</h1><p>One place to manage Vegas Sidekick.</p>
+<div class="panel"><div class="status"><span class="dot"></span> Application foundation</div><h2>Getting the Hub ready</h2><p>The operational tools will appear here as they become available. No business data is stored in this release.</p><ol class="steps">
+<li><span class="stepmark done" aria-hidden="true">✓</span>Private access<span class="small">Basic access tested</span></li>
+<li><span class="stepmark current" aria-hidden="true">2</span>Application shell<span class="small">Ready for review</span></li>
+<li><span class="stepmark" aria-hidden="true">3</span>App installation<span class="small">Next</span></li>
+<li><span class="stepmark" aria-hidden="true">4</span>Secure storage<span class="small">Planned</span></li>
+<li><span class="stepmark" aria-hidden="true">5</span>Task management<span class="small">Planned</span></li>
+</ol></div>
+<div class="small footer-note">Vegas Sidekick Hub · Foundation preview</div>
+</section>
+<section id="settings" class="view" tabindex="-1" aria-labelledby="settings-title" hidden>
+<div class="label date">Workspace</div><h1 id="settings-title">Settings</h1>
+<div class="panel"><h2>Account & access</h2><div class="settings-row"><strong>Sign-in</strong><p>Access is managed by Cloudflare.</p></div><div class="settings-row"><strong>Sign out</strong><p>End your current Cloudflare Access session.</p></div><a class="action" href="/cdn-cgi/access/logout">Sign out</a></div>
+<div class="panel"><h2>About</h2><div class="settings-row"><strong>Vegas Sidekick Hub</strong><p>Foundation preview · Stage 2.2</p></div><a class="action" href="/">Open public website</a></div>
+</section>
+</main></div>
+<nav class="nav" aria-label="Hub navigation">
+<button type="button" data-view="home" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10H3z"/><path d="M9 20v-7h6v7"/></svg>Home</button>
+<button type="button" data-view="settings"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M19 5l-2 2M7 17l-2 2"/><circle cx="12" cy="12" r="8"/></svg>Settings</button>
+</nav>
+<script>
+document.getElementById('date').textContent=new Intl.DateTimeFormat('en-US',{weekday:'long',month:'long',day:'numeric',timeZone:'America/Los_Angeles'}).format(new Date());
+const buttons=[...document.querySelectorAll('[data-view]')];
+function showView(focus){const name=location.hash==='#settings'?'settings':'home';for(const id of ['home','settings'])document.getElementById(id).hidden=id!==name;for(const b of buttons){if(b.dataset.view===name)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')}if(focus){window.scrollTo(0,0);document.getElementById(name).focus({preventScroll:true})}}
+for(const b of buttons)b.addEventListener('click',()=>{location.hash=b.dataset.view;if(location.hash==='#'+b.dataset.view)showView(true)});
+window.addEventListener('hashchange',()=>showView(true));showView(false);
+</script>
+</body></html>
