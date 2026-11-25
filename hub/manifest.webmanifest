@@ -1,0 +1,18 @@
+{
+  "id": "/hub/",
+  "name": "Vegas Sidekick Hub",
+  "short_name": "Sidekick Hub",
+  "start_url": "/hub/",
+  "scope": "/hub/",
+  "display": "standalone",
+  "background_color": "#111111",
+  "theme_color": "#111111",
+  "icons": [
+    {
+      "src": "/images/brand/spike-icon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

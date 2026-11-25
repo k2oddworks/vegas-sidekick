@@ -6,7 +6,9 @@
 <meta name="robots" content="noindex,nofollow,noarchive">
 <meta name="theme-color" content="#111111">
 <title>Vegas Sidekick Hub</title>
-<link rel="icon" href="/favicon.png">
+<link rel="icon" href="/images/brand/spike-icon.png">
+<link rel="manifest" href="/hub/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/images/brand/spike-icon.png">
 <script>try{if(localStorage.getItem('vs-hub-theme')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
 <style>
 :root{color-scheme:dark;--bg:#111;--panel:#1b1b1b;--line:#333;--text:#f5f5f5;--muted:#aaa;--lime:#c6f22e;--amber:#ffb000;--nav:#171717;--active:#292e1b;--brand-lime:#c6f22e;font-family:Inter,system-ui,-apple-system,sans-serif}
@@ -27,8 +29,8 @@ html[data-theme="light"]{color-scheme:light;--bg:#f5f6f2;--panel:#fff;--line:#d6
 <div class="label date" id="date"></div><h1 id="home-title">Your workspace.</h1><p>One place to manage Vegas Sidekick.</p>
 <div class="panel"><div class="status"><span class="dot"></span> Application foundation</div><h2>Getting the Hub ready</h2><p>The operational tools will appear here as they become available. No business data is stored in this release.</p><ol class="steps">
 <li><span class="stepmark done" aria-hidden="true">✓</span>Private access<span class="small">Basic access tested</span></li>
-<li><span class="stepmark current" aria-hidden="true">2</span>Application shell<span class="small">Ready for review</span></li>
-<li><span class="stepmark" aria-hidden="true">3</span>App installation<span class="small">Next</span></li>
+<li><span class="stepmark done" aria-hidden="true">✓</span>Application shell<span class="small">Built</span></li>
+<li><span class="stepmark current" aria-hidden="true">3</span>App installation<span class="small">Ready for testing</span></li>
 <li><span class="stepmark" aria-hidden="true">4</span>Secure storage<span class="small">Planned</span></li>
 <li><span class="stepmark" aria-hidden="true">5</span>Task management<span class="small">Planned</span></li>
 </ol></div>
@@ -37,7 +39,7 @@ html[data-theme="light"]{color-scheme:light;--bg:#f5f6f2;--panel:#fff;--line:#d6
 <section id="settings" class="view" tabindex="-1" aria-labelledby="settings-title" hidden>
 <div class="label date">Workspace</div><h1 id="settings-title">Settings</h1>
 <div class="panel"><h2>Account & access</h2><div class="settings-row"><strong>Sign-in</strong><p>Access is managed by Cloudflare.</p></div><div class="settings-row"><strong>Sign out</strong><p>End your current Cloudflare Access session.</p></div><a class="action" href="/cdn-cgi/access/logout">Sign out</a></div>
-<div class="panel"><h2>About</h2><div class="settings-row"><strong>Vegas Sidekick Hub</strong><p>Foundation preview · Stage 2.2</p></div><a class="action" href="/">Open public website</a></div>
+<div class="panel"><h2>Install app</h2><p id="install-help">Open your browser menu and choose Install app or Add to home screen. If you are already using the installed app, no action is needed.</p><button type="button" class="action" id="install-app" hidden>Install Sidekick Hub</button></div><div class="panel"><h2>About</h2><div class="settings-row"><strong>Vegas Sidekick Hub</strong><p>Foundation preview · Stage 2.3</p></div><a class="action" href="/">Open public website</a></div>
 </section>
 </main></div>
 <nav class="nav" aria-label="Hub navigation">
@@ -45,6 +47,13 @@ html[data-theme="light"]{color-scheme:light;--bg:#f5f6f2;--panel:#fff;--line:#d6
 <button type="button" data-view="settings"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M19 5l-2 2M7 17l-2 2"/><circle cx="12" cy="12" r="8"/></svg>Settings</button>
 </nav>
 <script>
+let installPrompt;
+const installButton=document.getElementById('install-app'),installHelp=document.getElementById('install-help');
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;installButton.hidden=false});
+installButton.addEventListener('click',async()=>{if(!installPrompt)return;const prompt=installPrompt;installPrompt=null;installButton.hidden=true;try{await prompt.prompt();await prompt.userChoice}catch(e){}});
+function installed(){installButton.hidden=true;installHelp.textContent='Sidekick Hub is installed.'}
+window.addEventListener('appinstalled',installed);
+if(matchMedia('(display-mode: standalone)').matches||navigator.standalone===true)installed();
 const toggle=document.getElementById('theme-toggle');
 function syncTheme(){const light=document.documentElement.dataset.theme==='light';const label=light?'Switch to dark mode':'Switch to light mode';toggle.setAttribute('aria-label',label);toggle.title=label;document.querySelector('meta[name="theme-color"]').content=light?'#f5f6f2':'#111111'}
 toggle.addEventListener('click',()=>{const next=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=next;try{localStorage.setItem('vs-hub-theme',next)}catch(e){}syncTheme()});syncTheme();
