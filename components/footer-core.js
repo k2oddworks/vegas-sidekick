@@ -31,7 +31,7 @@
       <section class="vs-footer-brand" aria-labelledby="vsFooterBrandName">
         <div class="vs-footer-brand-stack" id="vsFooterBrandStack">
           <button class="vs-footer-badge-button" id="vsFooterBadge" type="button" aria-label="Bring the Vegas Sidekick badge to the front">
-            <img class="vs-footer-badge" src="/images/brand/vegas-sidekick-circle-logo.webp" alt="" width="640" height="640" loading="lazy" decoding="async">
+            <img class="vs-footer-badge" src="/images/brand/vegas-sidekick-circle-logo-transparent.svg" alt="" width="640" height="640" loading="lazy" decoding="async">
           </button>
           <button class="vs-footer-spike-button" id="vsFooterSpike" type="button" aria-label="Bring Spike to the front">
             <img class="vs-footer-spike" src="/images/brand/spike-profile-avatar.webp" alt="" width="140" height="140" loading="lazy">
