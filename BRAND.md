@@ -63,7 +63,7 @@ Use dedicated show/news/guide artwork for relevant sharing previews. Never subst
 
 ### Scope of this standard
 
-The creative direction and identity are approved. The character production standard is [SPIKE-CHARACTER-BIBLE.md](SPIKE-CHARACTER-BIBLE.md). Reusable campaign templates are documented in [SOCIAL-TEMPLATES.md](SOCIAL-TEMPLATES.md). Marketing execution planning remains a separate phase. The existing site design below remains applicable to functional UI; do not treat historic visual descriptions as instructions to restore retired branding.
+The creative direction and identity are approved. The character production standard is [SPIKE-CHARACTER-BIBLE.md](SPIKE-CHARACTER-BIBLE.md). Reusable campaign templates are documented in [SOCIAL-TEMPLATES.md](SOCIAL-TEMPLATES.md). The 2027 operating framework is [MARKETING-2027.md](MARKETING-2027.md). The existing site design below remains applicable to functional UI; do not treat historic visual descriptions as instructions to restore retired branding.
 
 ---
 
