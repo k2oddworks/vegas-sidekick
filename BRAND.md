@@ -63,7 +63,7 @@ Use dedicated show/news/guide artwork for relevant sharing previews. Never subst
 
 ### Scope of this standard
 
-The creative direction and identity are approved. Detailed mascot production sheets, campaign templates and marketing execution plans are separate subsequent phases. The existing site design below remains applicable to functional UI; do not treat historic visual descriptions as instructions to restore retired branding.
+The creative direction and identity are approved. The character production standard is [SPIKE-CHARACTER-BIBLE.md](SPIKE-CHARACTER-BIBLE.md). Campaign templates and marketing execution plans remain separate subsequent phases. The existing site design below remains applicable to functional UI; do not treat historic visual descriptions as instructions to restore retired branding.
 
 ---
 
@@ -126,6 +126,8 @@ drifts into generic affiliate mush, it's because it forgot this.
 ---
 
 ## 4. Spike — the mascot
+
+For visual continuity, performance rules and reusable creative prompts, see [SPIKE-CHARACTER-BIBLE.md](SPIKE-CHARACTER-BIBLE.md).
 
 A compact green ribbed barrel/hedgehog cactus with white-framed sunglasses and opaque white lenses, no mouth or eyebrows in new character artwork. The realistic social avatar uses an offset neon starburst; approved badge variants may retain their existing flower or simplified treatment. Use the supplied canonical assets rather than modifying them. Assets live in `/images/brand/`.
 
