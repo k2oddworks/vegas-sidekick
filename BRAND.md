@@ -3,12 +3,67 @@
 **What this is:** the brand, voice and editorial rulebook for `vegassidekick.com`.
 Paste it into a fresh chat to bring it up to speed on *what we sound like and why*.
 
-**Its sibling:** `CLAUDE.md` in this repo is the **technical** doc — file layout, build
-conventions, the price-change and show-closing checklists, JSON-LD requirements. This
-doc deliberately does not repeat it. When the two touch the same subject, CLAUDE.md
-wins on mechanics, BRAND.md wins on wording.
+**Companion standards:** `AGENTS.md` governs execution and `SHOW-PAGE-BENCHMARK.md` governs current show-page UX. `CLAUDE.md` is legacy reference only. This document governs brand and editorial voice.
 
-*Accurate as of 2026-09-07.*
+*2027 creative identity updated November 27, 2026. Historical snapshots below retain their original dates.*
+
+---
+
+## 2027 identity — approved creative direction (November 27, 2026)
+
+**The Insider With a Weird Side.** Serious about entertainment information; unserious about ourselves.
+
+- Vegas Sidekick slogan: **Vegas has a show for that.**
+- Spike slogan: **You'll never want to do Vegas without Spike.**
+- Creative direction: bold modern surrealism with selective retro Vegas influences.
+- Use saturated color, realistic absurdity, clean composition, deadpan humor and selective nostalgia. One strong visual idea per execution.
+- The website remains a credible, functional entertainment resource. Social and advertising can be louder; do not globally recolor the website or change the established booking UI.
+- Spike is the Deadpan Insider (70%), Mysterious Celebrity (20%), Lovable Weirdo (10%). His existence is funny; he does not try to be funny. Never explain why he is a cactus. Fictional marketing scenarios are not evidence of real attendance or expertise.
+- Brand architecture: Vegas Sidekick is the information authority; Spike is the personality; Spike Television is an optional fictional creative vehicle, not a separate business.
+
+### Creative palette
+
+These are the working 2027 social/marketing color standards, adopted from the approved direction. Existing website functional tokens and category colors remain in force.
+
+| Color | Hex | Role |
+|---|---|---|
+| Electric Cyan | `#00CFE8` | Attention, profile background, large color fields |
+| Hot Magenta | `#F50080` | Brand recognition, outlines, wordmark accent |
+| Neon Lime | `#B7F000` | Selective highlights and starburst accents |
+| Midnight Navy | `#061630` | Dark backgrounds and contrast |
+| Pure White | `#FFFFFF` | Legibility and white sunglasses |
+| Warm Amber | `#FFB000` | Primary ticket purchase actions on site; unchanged |
+
+Palette values are design tokens, not a requirement to recolor approved raster artwork. Use navy/white for readable text; check contrast for actual text/background combinations. Avoid white text on cyan or lime and avoid relying on color alone for information.
+
+### Typography and composition
+
+- Plus Jakarta Sans 700/800: display, headlines, campaign titles. Inter 400–700: body and UI. IBM Plex Mono: optional utility labels. Cormorant Garamond italic remains limited to the existing show editorial treatment.
+- Use the supplied wordmark artwork rather than retyping or approximating it.
+- Social graphics: one dominant headline or subject; supporting text secondary; no dense copy or gratuitous glow. Keep critical content within platform-specific crop-safe areas.
+- Preserve logo aspect ratio, sufficient clear space, and readable scale. Never stretch, recolor, or add effects to approved logos.
+- Prefer the transparent pill for horizontal navigation, transparent circle for badge placements, and text-free cyan avatar at small social sizes. Preserve the dark interior of both badges.
+
+### Canonical assets
+
+All paths relative to the site root; originals retained.
+
+| Asset | Path |
+|---|---|
+| Header pill (transparent exterior) | `/images/brand/vegas-sidekick-pill-logo-transparent.svg` |
+| Circle badge (transparent exterior) | `/images/brand/vegas-sidekick-circle-logo-transparent.svg` |
+| Original pill | `/images/brand/vegas-sidekick-pill-logo.webp` |
+| Original circle | `/images/brand/vegas-sidekick-circle-logo.webp` |
+| Social avatar | `/images/brand/spike-profile-avatar.webp` |
+| General sharing cover | `/images/brand/vegas-sidekick-social-cover.webp` |
+| Browser favicon | `/favicon.png`, `/favicon.ico`, `/images/brand/favicons/favicon.svg` |
+| Mobile icon derivatives | `/images/brand/favicons/` |
+
+Use dedicated show/news/guide artwork for relevant sharing previews. Never substitute generated event imagery for actual show photography. The public deployment and crop/contrast checks remain separate QA tasks.
+
+### Scope of this standard
+
+The creative direction and identity are approved. Detailed mascot production sheets, campaign templates and marketing execution plans are separate subsequent phases. The existing site design below remains applicable to functional UI; do not treat historic visual descriptions as instructions to restore retired branding.
 
 ---
 
@@ -72,10 +127,7 @@ drifts into generic affiliate mush, it's because it forgot this.
 
 ## 4. Spike — the mascot
 
-A friendly saguaro cactus. 3D-rendered, glossy deep green with soft vertical ribbing,
-golden-yellow star-shaped spine clusters, **gold-framed aviator sunglasses** with dark
-gradient lenses, and a warm closed-mouth smile. Two thick arm-branches. Assets live in
-`/images/spike-*.png`.
+A compact green ribbed barrel/hedgehog cactus with white-framed sunglasses and opaque white lenses, no mouth or eyebrows in new character artwork. The realistic social avatar uses an offset neon starburst; approved badge variants may retain their existing flower or simplified treatment. Use the supplied canonical assets rather than modifying them. Assets live in `/images/brand/`.
 
 **What Spike is for:** Spike is the *voice of the recommendation*. Where the page is
 being factual — venue, running time, age limit — that's the site talking. Where the
@@ -137,7 +189,7 @@ two paragraphs. Show pages are long *in total* but never long *in a block*.
 
 ---
 
-## 6. Visual identity
+## 6. Functional website visual identity (existing system)
 
 Redesigned **August 2026** to the current neon system. Any page still showing navy +
 orange + Bebas Neue is stale and should be migrated, not matched.
@@ -179,7 +231,7 @@ have inherited a great late-20th-century graphic identity and then rebuilt it fo
 --ink     #171225   primary text
 --bg      #ffffff   page background
 --soft    #f5f4fb   soft section background
---blue    #3b82f6   PRIMARY — CTAs and price (locked in)
+--blue    #3b82f6   existing informational accent; not primary ticket CTA
 --pink    #ff2e7e   highlight accent, use sparingly
 --lime    #c6f22e   lime accent
 --purple  #7c3aed   eyebrows and secondary
@@ -370,14 +422,13 @@ play/                 WebGL experiments (Vegas sign, Sphere, Mandalay Bay)
 Search is a dependency-free client-side match over a local JS array. **Adding a show
 page does not add it to search** — you must append to `search-data.js`.
 
-The model show page is `shows/music/vegas-the-show/index.html`; the design and feature
-benchmark is `shows/adult/absinthe/index.html`. Copy those, not older pages.
+The current show-page benchmark is `shows/magic/nathan-burton-comedy-magic/index.html`. Follow `AGENTS.md` and `SHOW-PAGE-BENCHMARK.md`; older examples are historical.
 
 ---
 
 ## 10. Standing operating procedures
 
-Detailed steps live in `CLAUDE.md`. Invoke them by name and they fire:
+Follow current repository instructions in `AGENTS.md` and relevant audit scripts. Legacy checklist names:
 
 - **Price Change Checklist** — updating any show's price
 - **Show Closing Checklist** — a show ends its run (three parts: pull from catalogue,

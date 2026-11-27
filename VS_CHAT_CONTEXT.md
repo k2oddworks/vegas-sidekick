@@ -13,7 +13,7 @@ Vegas Sidekick (`vegassidekick.com`) is a Las Vegas show-discovery and ticket-af
 
 Founder / Chief Experience Officer: **Kris Kidd**.
 
-Mascot: **Spike**, a saguaro cactus wearing gold aviators.
+Mascot: **Spike**, a compact green ribbed cactus with white sunglasses. The approved 2027 identity, creative palette, slogans and canonical assets are documented in `BRAND.md`; that reference supersedes older mascot descriptions.
 
 The site should feel like advice from a knowledgeable Vegas local who works in tickets, not a generic tourism portal or ticket marketplace.
 
@@ -28,6 +28,8 @@ Never invent, guess, or fabricate an affiliate URL. If the correct ticket URL is
 ---
 
 ## 2. Brand Voice — Non-Negotiable
+
+2027 direction: **The Insider With a Weird Side** — bold modern surrealism with selective retro influence in marketing; credible, functional website UI. See `BRAND.md` for the governing design standard.
 
 The governing brand reference is the **Vegas Sidekick Brand Bible**, especially Section 3 Voice & Tone and its Do/Don't guidance.
 
