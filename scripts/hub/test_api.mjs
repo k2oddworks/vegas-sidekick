@@ -1,0 +1,30 @@
+import {DatabaseSync} from "node:sqlite";
+import {readFileSync} from "node:fs";
+import assert from "node:assert/strict";
+import worker,{taskRequest} from "./worker.mjs";
+const sqlite=new DatabaseSync(":memory:");
+sqlite.exec("PRAGMA foreign_keys=ON");
+sqlite.exec(readFileSync(new URL("./0001_tasks.sql",import.meta.url),"utf8"));
+const db={prepare(sql){return {bind(...args){return {sql,args,async first(){return sqlite.prepare(sql).get(...args)||null},async all(){return {results:sqlite.prepare(sql).all(...args)}}}}}},async batch(statements){sqlite.exec("BEGIN");try{const r=statements.map(s=>({meta:{changes:Number(sqlite.prepare(s.sql).run(...s.args).changes)}}));sqlite.exec("COMMIT");return r}catch(e){sqlite.exec("ROLLBACK");throw e}}};
+const json=(x,status=200)=>Response.json(x,{status});
+async function call(method,path,input,origin="https://vegassidekick.com"){
+ const r=await taskRequest(new Request("https://vegassidekick.com/hub/api"+path,{method,headers:{Origin:origin,"Content-Type":"application/json"},...(input===undefined?{}:{body:JSON.stringify(input)})}),db,"test-actor",json);
+ return [r.status,await r.json()];
+}
+const unauth=await worker.fetch(new Request("https://vegassidekick.com/hub/api/tasks"),{ACCESS_TEAM_DOMAIN:"test.cloudflareaccess.com",ACCESS_AUD:"test",DB:db});
+assert.equal(unauth.status,401);
+assert.equal((await call("POST","/tasks",{title:"x",department:"shows"},"https://evil.example"))[0],400);
+assert.equal((await call("POST","/tasks",{title:"x",department:"shows",source:"automation"}))[0],400);
+assert.equal((await call("POST","/tasks",{title:"x",department:"shows",due_on:"2026-02-30"}))[0],400);
+let [status,result]=await call("POST","/tasks",{title:"Audit",department:"shows"});
+assert.equal(status,201);const id=result.task.id;
+assert.equal((await call("GET","/tasks"))[1].tasks.length,1);
+[status,result]=await call("PATCH","/tasks/"+id,{revision:1,status:"completed",verification:"checked"});
+assert.equal(status,200);assert.equal(result.task.completed_by,"test-actor");
+assert.equal((await call("PATCH","/tasks/"+id,{revision:1,title:"stale"}))[0],409);
+[status,result]=await call("PATCH","/tasks/"+id,{revision:2,status:"todo"});
+assert.equal(status,200);assert.equal(result.task.completed_at,null);
+const history=(await call("GET","/tasks/"+id+"/activity"))[1].activity;
+assert.equal(history.length,3);assert.deepEqual(new Set(history.map(x=>x.event_type)),new Set(["created","completed","reopened"]));
+assert.equal((await call("DELETE","/tasks/"+id))[0],405);
+console.log("Task API smoke tests passed");

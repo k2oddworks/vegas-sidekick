@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/hub/worker.mjs'
+      - 'scripts/hub/test_api.mjs'
       - 'scripts/hub/upload_version.py'
       - '.github/workflows/hub-api-version.yml'
 permissions:
@@ -22,6 +23,7 @@ jobs:
           node-version: 22
       - run: node --check scripts/hub/worker.mjs
       - run: python3 scripts/hub/test_schema.py
+      - run: node --experimental-sqlite scripts/hub/test_api.mjs
       - name: Upload and activate tested version
         if: github.ref == 'refs/heads/main'
         env:
