@@ -1,0 +1,29 @@
+name: Hub API version upload
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/hub/worker.mjs'
+      - 'scripts/hub/upload_version.py'
+      - '.github/workflows/hub-api-version.yml'
+permissions:
+  contents: read
+concurrency:
+  group: hub-api-version
+  cancel-in-progress: false
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --check scripts/hub/worker.mjs
+      - run: python3 scripts/hub/test_schema.py
+      - name: Upload inactive version (no production switch)
+        env:
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: python3 scripts/hub/upload_version.py
