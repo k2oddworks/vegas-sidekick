@@ -28,3 +28,18 @@ const history=(await call("GET","/tasks/"+id+"/activity"))[1].activity;
 assert.equal(history.length,3);assert.deepEqual(new Set(history.map(x=>x.event_type)),new Set(["created","completed","reopened"]));
 assert.equal((await call("DELETE","/tasks/"+id))[0],405);
 console.log("Task API smoke tests passed");
+
+const [ps,pr]=await call("POST","/projects",{title:"Project",department:"shows"});
+assert.equal(ps,201);const pid=pr.project.id;
+assert.equal((await call("GET","/projects"))[1].projects.length,1);
+const [ts,tr]=await call("POST","/tasks",{title:"Parent",department:"shows",project_id:pid});
+assert.equal(ts,201);const parent=tr.task.id;
+const [ss,sr]=await call("POST","/tasks",{title:"Child",department:"shows",project_id:pid,parent_task_id:parent});
+assert.equal(ss,201);const child=sr.task.id;
+assert.equal((await call("POST","/tasks",{title:"Too deep",department:"shows",project_id:pid,parent_task_id:child}))[0],400);
+assert.equal((await call("POST","/tasks",{title:"Wrong project",department:"shows",parent_task_id:parent}))[0],400);
+assert.equal((await call("PATCH","/tasks/"+parent,{revision:1,project_id:null}))[0],400);
+assert.equal((await call("PATCH","/tasks/"+child,{revision:1,parent_task_id:null}))[0],200);
+assert.equal((await call("PATCH","/tasks/"+id,{revision:3,project_id:pid}))[0],200);
+assert.equal((await call("GET","/tasks/"+id))[1].task.project_id,pid);
+console.log("Project and subtask tests passed");
