@@ -1,4 +1,4 @@
-"""Upload an inactive Worker version; never change routes or deployment traffic."""
+"""Upload and activate a tested version; never change routes or Access settings."""
 import json
 import os
 import urllib.request
@@ -54,4 +54,44 @@ part("worker.mjs", "application/javascript+module", Path(__file__).with_name("wo
 body = b"".join(parts) + f"--{boundary}--\r\n".encode()
 result = request(base + "/versions?bindings_inherit=strict", body, f"multipart/form-data; boundary={boundary}")
 print("Inactive version uploaded:", result["id"])
-print("No deployment or route changes made.")
+version = result["id"]
+# Check that anonymous access is denied before and after activation.
+from urllib.parse import urlparse
+import time
+class NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, *args, **kwargs):
+        return None
+def anonymous_blocked():
+    opener = urllib.request.build_opener(NoRedirect())
+    req = urllib.request.Request("https://vegassidekick.com/hub/api/test", headers={"Cache-Control":"no-cache"})
+    try:
+        with opener.open(req, timeout=20):
+            return False
+    except urllib.error.HTTPError as exc:
+        if exc.code in (401,403):
+            return True
+        location = urlparse(exc.headers.get("Location", ""))
+        return (exc.code in (302,303,307,308) and location.scheme == "https"
+                and (location.hostname or "").endswith(".cloudflareaccess.com"))
+def verify_blocked():
+    for _ in range(3):
+        if anonymous_blocked():
+            return
+        time.sleep(3)
+    raise RuntimeError("Anonymous access protection not confirmed.")
+verify_blocked()
+current = request(base + "/deployments")
+previous = current.get("deployments", []) if isinstance(current, dict) else current
+if not previous or len(previous[0].get("versions", [])) != 1:
+    raise SystemExit("Expected a single active version; review deployment manually.")
+old = previous[0]["versions"][0]["version_id"]
+def activate(v):
+    return request(base + "/deployments", json.dumps({"strategy":"percentage","versions":[{"version_id":v,"percentage":100}]}).encode(), "application/json")
+activate(version)
+try:
+    verify_blocked()
+except Exception:
+    activate(old)
+    raise SystemExit("Anonymous access check failed; previous version restored.")
+print("Activated version:", version)
+print("Anonymous API request blocked; routes unchanged.")
