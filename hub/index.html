@@ -18,6 +18,8 @@
 @media(max-width:360px){.shell{padding-left:14px;padding-right:14px}.steps .small{font-size:10px}.panel{padding:15px}}
 html[data-theme="light"]{color-scheme:light;--bg:#f5f6f2;--panel:#fff;--line:#d6d9d1;--text:#171a14;--muted:#575d52;--lime:#426300;--amber:#925500;--nav:#fff;--active:#e7efcf}
 .theme-toggle{flex:none;width:48px;height:48px;display:grid;place-items:center;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--text)}.theme-toggle:hover{border-color:var(--lime)}.theme-toggle .moon{display:none}html[data-theme="light"] .theme-toggle .moon{display:block}html[data-theme="light"] .theme-toggle .sun{display:none}.header{gap:8px}.brand{min-width:0;gap:9px}.wordmark{font-size:clamp(15px,4.5vw,19px)}.header .small{font-size:clamp(9px,2.8vw,12px)}.skip{background:var(--brand-lime)}
+
+.task-tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:16px 0}.task-tools>*{flex:1;min-width:0}.task-tools .action{flex:none}.primary{background:var(--brand-lime);color:#111;border:0;font-weight:750}.task-card{padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);margin:10px 0;overflow-wrap:anywhere}.task-card h2{font-size:17px;margin:8px 0}.task-meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.priority{font-size:12px;font-weight:800;border:1px solid var(--line);border-radius:6px;padding:3px 7px}.priority[data-p="1"],.priority[data-p="2"]{color:var(--amber)}.task-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.task-actions button{background:transparent}.task-form{display:grid;gap:14px}.task-form label{display:grid;gap:5px;font-size:13px;font-weight:650}.task-form input,.task-form select,.task-form textarea,.task-tools input,.task-tools select{font:inherit;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:12px;min-height:48px;width:100%;min-width:0}.task-form textarea{resize:vertical;min-height:80px}.task-form input:focus-visible,.task-form select:focus-visible,.task-form textarea:focus-visible{outline:2px solid var(--lime)}.task-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.task-message{overflow-wrap:anywhere;white-space:pre-wrap}.task-history{white-space:pre-wrap;overflow-wrap:anywhere;border-top:1px solid var(--line);padding-top:12px;margin-top:12px}.nav button{min-width:0;flex:1;max-width:140px;padding:5px 8px}.nav{gap:6px}.task-form button:disabled,.task-actions button:disabled{opacity:.6}.task-card p{white-space:pre-wrap}.task-form .action{background:var(--panel)}.task-form .primary{background:var(--brand-lime)}@media(max-width:400px){.task-grid{grid-template-columns:1fr}.task-tools{display:grid;grid-template-columns:1fr 1fr}.task-tools input{grid-column:1/-1}}
 </style>
 </head>
 <body>
@@ -27,24 +29,39 @@ html[data-theme="light"]{color-scheme:light;--bg:#f5f6f2;--panel:#fff;--line:#d6
 <main id="main" class="content">
 <section id="home" class="view" tabindex="-1" aria-labelledby="home-title">
 <div class="label date" id="date"></div><h1 id="home-title">Your workspace.</h1><p>One place to manage Vegas Sidekick.</p>
-<div class="panel"><div class="status"><span class="dot"></span> Application foundation</div><h2>Getting the Hub ready</h2><p>The operational tools will appear here as they become available. No business data is stored in this release.</p><ol class="steps">
+<div class="panel"><div class="status"><span class="dot"></span> Application foundation</div><h2>Getting the Hub ready</h2><p>The operational tools will appear here as they become available. Open Tasks to manage work. Use non-sensitive test tasks until the remaining security checks are complete.</p><ol class="steps">
 <li><span class="stepmark done" aria-hidden="true">✓</span>Private access<span class="small">Basic access tested</span></li>
 <li><span class="stepmark done" aria-hidden="true">✓</span>Application shell<span class="small">Built</span></li>
-<li><span class="stepmark current" aria-hidden="true">3</span>App installation<span class="small">Ready for testing</span></li>
-<li><span class="stepmark" aria-hidden="true">4</span>Secure storage<span class="small">Planned</span></li>
-<li><span class="stepmark" aria-hidden="true">5</span>Task management<span class="small">Planned</span></li>
+<li><span class="stepmark done" aria-hidden="true">✓</span>App installation<span class="small">Tested</span></li>
+<li><span class="stepmark done" aria-hidden="true">✓</span>Secure storage<span class="small">Connected</span></li>
+<li><span class="stepmark current" aria-hidden="true">5</span>Task management<span class="small">Pilot</span></li>
 </ol></div>
-<div class="small footer-note">Vegas Sidekick Hub · Foundation preview</div>
+<div class="small footer-note">Vegas Sidekick Hub · Task management pilot</div>
+</section>
+<section id="tasks" class="view" tabindex="-1" aria-labelledby="tasks-title" hidden>
+<div class="label date">Operations</div><h1 id="tasks-title">Tasks</h1>
+<p>Manage your workload across Vegas Sidekick.</p>
+<div class="task-tools"><button class="action primary" id="new-task" type="button">+ New task</button><button class="action" id="refresh-tasks" type="button">Refresh</button></div>
+<p id="task-message" class="task-message" role="status" aria-live="polite"></p>
+<div class="panel" id="task-editor" hidden><h2 id="editor-title">New task</h2>
+<form id="task-form" class="task-form">
+<label>Title<input name="title" required maxlength="200"></label>
+<div class="task-grid"><label>Department<select name="department" required></select></label><label>Priority<select name="priority"><option value="1">P1 · Critical</option><option value="2">P2 · High</option><option value="3" selected>P3 · Normal</option><option value="4">P4 · Backlog</option></select></label><label>Status<select name="status"></select></label><label>Due date<input name="due_on" type="date"></label></div>
+<label>Description<textarea name="description" maxlength="10000"></textarea></label><label>Notes<textarea name="notes" maxlength="10000"></textarea></label><label>Verification notes<textarea name="verification" maxlength="10000"></textarea></label>
+<p id="editor-message" class="task-message" role="status"></p>
+<div class="task-actions"><button class="action primary" type="submit" id="save-task">Save task</button><button class="action" type="button" id="cancel-task">Cancel</button></div></form></div>
+<div class="task-tools"><input id="task-search" type="search" placeholder="Search tasks" aria-label="Search tasks"><select id="task-filter" aria-label="Filter by status"><option value="open">Open tasks</option><option value="all">All statuses</option></select><select id="department-filter" aria-label="Filter by department"><option value="">All departments</option></select></div>
+<div id="task-count" class="small"></div><div id="task-list"></div>
 </section>
 <section id="settings" class="view" tabindex="-1" aria-labelledby="settings-title" hidden>
 <div class="label date">Workspace</div><h1 id="settings-title">Settings</h1>
 <div class="panel"><h2>Account & access</h2><div class="settings-row"><strong>Sign-in</strong><p>Access is managed by Cloudflare.</p></div><div class="settings-row"><strong>Sign out</strong><p>End your current Cloudflare Access session.</p></div><a class="action" href="/cdn-cgi/access/logout">Sign out</a></div>
-<div class="panel"><h2>Install app</h2><p id="install-help">Open your browser menu and choose Install app or Add to home screen. If you are already using the installed app, no action is needed.</p><button type="button" class="action" id="install-app" hidden>Install Sidekick Hub</button></div><div class="panel"><h2>About</h2><div class="settings-row"><strong>Vegas Sidekick Hub</strong><p>Foundation preview · Stage 2.3</p></div><a class="action" href="/">Open public website</a></div>
+<div class="panel"><h2>Install app</h2><p id="install-help">Open your browser menu and choose Install app or Add to home screen. If you are already using the installed app, no action is needed.</p><button type="button" class="action" id="install-app" hidden>Install Sidekick Hub</button></div><div class="panel"><h2>About</h2><div class="settings-row"><strong>Vegas Sidekick Hub</strong><p>Task management pilot · Stage 2.5.3</p></div><a class="action" href="/">Open public website</a></div>
 </section>
 </main></div>
 <nav class="nav" aria-label="Hub navigation">
 <button type="button" data-view="home" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10H3z"/><path d="M9 20v-7h6v7"/></svg>Home</button>
-<button type="button" data-view="settings"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M19 5l-2 2M7 17l-2 2"/><circle cx="12" cy="12" r="8"/></svg>Settings</button>
+<button type="button" data-view="tasks"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="17" rx="2"/><path d="m8 12 2 2 5-5M8 17h8"/></svg>Tasks</button><button type="button" data-view="settings"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M19 5l-2 2M7 17l-2 2"/><circle cx="12" cy="12" r="8"/></svg>Settings</button>
 </nav>
 <script>
 let installPrompt;
@@ -59,8 +76,9 @@ function syncTheme(){const light=document.documentElement.dataset.theme==='light
 toggle.addEventListener('click',()=>{const next=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=next;try{localStorage.setItem('vs-hub-theme',next)}catch(e){}syncTheme()});syncTheme();
 document.getElementById('date').textContent=new Intl.DateTimeFormat('en-US',{weekday:'long',month:'long',day:'numeric',timeZone:'America/Los_Angeles'}).format(new Date());
 const buttons=[...document.querySelectorAll('[data-view]')];
-function showView(focus){const name=location.hash==='#settings'?'settings':'home';for(const id of ['home','settings'])document.getElementById(id).hidden=id!==name;for(const b of buttons){if(b.dataset.view===name)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')}if(focus){window.scrollTo(0,0);document.getElementById(name).focus({preventScroll:true})}}
+function showView(focus){const name=['settings','tasks'].includes(location.hash.slice(1))?location.hash.slice(1):'home';for(const id of ['home','tasks','settings'])document.getElementById(id).hidden=id!==name;for(const b of buttons){if(b.dataset.view===name)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')}if(name==='tasks')window.dispatchEvent(new Event('hub-tasks-open'));if(focus){window.scrollTo(0,0);document.getElementById(name).focus({preventScroll:true})}}
 for(const b of buttons)b.addEventListener('click',()=>{location.hash=b.dataset.view;if(location.hash==='#'+b.dataset.view)showView(true)});
 window.addEventListener('hashchange',()=>showView(true));showView(false);
 </script>
+<script src="/hub/tasks.js?v=1" defer></script>
 </body></html>
